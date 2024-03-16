@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billed_Up_to_Date_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>If(
+(ISPICKVAL(Status,&apos;Churn&apos; )
+&amp;&amp;
+( 
+ISBLANK(Billed_Upto__c) || ((Billed_Upto__c &lt;  PurchaseDate  )|| (Billed_Upto__c &gt;  UsageEndDate ))
+)),true,false
+)</errorConditionFormula>
+    <errorDisplayField>Billed_Upto__c</errorDisplayField>
+    <errorMessage>Please specify a Valid Billed Upto Date!</errorMessage>
+</ValidationRule>

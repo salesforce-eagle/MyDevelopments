@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_considering_us__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for considering us ?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Integration capabilities</fullName>
+                <default>false</default>
+                <label>Integration capabilities</label>
+            </value>
+            <value>
+                <fullName>Product superiority</fullName>
+                <default>false</default>
+                <label>Product superiority</label>
+            </value>
+            <value>
+                <fullName>Quick turnaround</fullName>
+                <default>false</default>
+                <label>Quick turnaround</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

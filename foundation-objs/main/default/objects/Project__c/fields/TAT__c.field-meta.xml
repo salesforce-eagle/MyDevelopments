@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAT__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>( Go_Live_Date__c  -   LOE_Received_Date__c  ) / 7</formula>
+    <label>TAT</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

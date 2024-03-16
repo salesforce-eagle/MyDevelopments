@@ -1,0 +1,1 @@
+   sfdx force:source:retrieve -m "CustomObject: Opportunity, Profile:Admin, Layout:Opportunity-Global"

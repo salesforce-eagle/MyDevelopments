@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>QuoteLineItemTriggerHandler</members>
+        <members>QuoteTriggerHandler</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>CTX_UnSyncQuoteOpportunity</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <!--<types>
+        <members>Auto_Renewal_Discount_Approval_Eligible_Email</members>
+
+        <name>CustomLabel</name>
+    </types>-->
+
+    <version>58.0</version>
+</Package>

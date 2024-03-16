@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>B2B Enterprise</fullName>
+                <default>false</default>
+                <label>B2B Enterprise</label>
+            </value>
+            <value>
+                <fullName>B2C QR code generation</fullName>
+                <default>false</default>
+                <label>B2C QR code generation</label>
+            </value>
+            <value>
+                <fullName>Callback Request</fullName>
+                <default>false</default>
+                <label>Callback Request</label>
+            </value>
+            <value>
+                <fullName>cancellation</fullName>
+                <default>false</default>
+                <label>cancellation</label>
+            </value>
+            <value>
+                <fullName>Clearone App related</fullName>
+                <default>false</default>
+                <label>Clearone App related</label>
+            </value>
+            <value>
+                <fullName>ClearSave</fullName>
+                <default>false</default>
+                <label>ClearSave</label>
+            </value>
+            <value>
+                <fullName>E-Inv 2.0 Webinar Related</fullName>
+                <default>false</default>
+                <label>E-Inv 2.0 Webinar Related</label>
+            </value>
+            <value>
+                <fullName>E-Invoicing</fullName>
+                <default>false</default>
+                <label>E-Invoicing</label>
+            </value>
+            <value>
+                <fullName>E-Way Bill</fullName>
+                <default>false</default>
+                <label>E-Way Bill</label>
+            </value>
+            <value>
+                <fullName>Feature activation request</fullName>
+                <default>false</default>
+                <label>Feature activation request</label>
+            </value>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Finance Related</fullName>
+                <default>false</default>
+                <label>Finance Related</label>
+            </value>
+            <value>
+                <fullName>Free Support</fullName>
+                <default>false</default>
+                <label>Free Support</label>
+            </value>
+            <value>
+                <fullName>gst</fullName>
+                <default>false</default>
+                <label>gst</label>
+            </value>
+            <value>
+                <fullName>GST Filing Assistance</fullName>
+                <default>false</default>
+                <label>GST Filing Assistance</label>
+            </value>
+            <value>
+                <fullName>GSTIN Verification credit issue</fullName>
+                <default>false</default>
+                <label>GSTIN Verification credit issue</label>
+            </value>
+            <value>
+                <fullName>GST Product demo</fullName>
+                <default>false</default>
+                <label>GST Product demo</label>
+            </value>
+            <value>
+                <fullName>ingestion issue</fullName>
+                <default>false</default>
+                <label>ingestion issue</label>
+            </value>
+            <value>
+                <fullName>Invoice Copy Request</fullName>
+                <default>false</default>
+                <label>Invoice Copy Request</label>
+            </value>
+            <value>
+                <fullName>New Returns Related</fullName>
+                <default>false</default>
+                <label>New Returns Related</label>
+            </value>
+            <value>
+                <fullName>No action required</fullName>
+                <default>false</default>
+                <label>No action required</label>
+            </value>
+            <value>
+                <fullName>Non E-Inv Related</fullName>
+                <default>false</default>
+                <label>Non E-Inv Related</label>
+            </value>
+            <value>
+                <fullName>Non Gst Related</fullName>
+                <default>false</default>
+                <label>Non Gst Related</label>
+            </value>
+            <value>
+                <fullName>other support issues</fullName>
+                <default>false</default>
+                <label>other support issues</label>
+            </value>
+            <value>
+                <fullName>Product issue - Cleartax end</fullName>
+                <default>false</default>
+                <label>Product issue - Cleartax end</label>
+            </value>
+            <value>
+                <fullName>sales &amp; marketing</fullName>
+                <default>false</default>
+                <label>sales &amp; marketing</label>
+            </value>
+            <value>
+                <fullName>Sales Issues</fullName>
+                <default>false</default>
+                <label>Sales Issues</label>
+            </value>
+            <value>
+                <fullName>Support Issues</fullName>
+                <default>false</default>
+                <label>Support Issues</label>
+            </value>
+            <value>
+                <fullName>Tax Cloud</fullName>
+                <default>false</default>
+                <label>Tax Cloud</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+            <value>
+                <fullName>Unclear Issue</fullName>
+                <default>false</default>
+                <label>Unclear Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

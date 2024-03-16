@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>marketing_tunrover_dealdesk__c</fullName>
+    <externalId>false</externalId>
+    <label>marketing tunrover(dealdesk)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;25Cr</fullName>
+                <default>false</default>
+                <label>&lt;25Cr</label>
+            </value>
+            <value>
+                <fullName>25-50Cr</fullName>
+                <default>false</default>
+                <label>25-50Cr</label>
+            </value>
+            <value>
+                <fullName>51-100 Cr</fullName>
+                <default>false</default>
+                <label>51-100 Cr</label>
+            </value>
+            <value>
+                <fullName>101-200 Cr</fullName>
+                <default>false</default>
+                <label>101-200 Cr</label>
+            </value>
+            <value>
+                <fullName>201-500 Cr</fullName>
+                <default>false</default>
+                <label>201-500 Cr</label>
+            </value>
+            <value>
+                <fullName>501-1000 Cr</fullName>
+                <default>false</default>
+                <label>501-1000 Cr</label>
+            </value>
+            <value>
+                <fullName>1001-2500 Cr</fullName>
+                <default>false</default>
+                <label>1001-2500 Cr</label>
+            </value>
+            <value>
+                <fullName>2501-5000 Cr</fullName>
+                <default>false</default>
+                <label>2501-5000 Cr</label>
+            </value>
+            <value>
+                <fullName>&lt; 50 Lakhs</fullName>
+                <default>false</default>
+                <label>&lt; 50 Lakhs</label>
+            </value>
+            <value>
+                <fullName>50 Lakhs - 1Cr</fullName>
+                <default>false</default>
+                <label>50 Lakhs - 1Cr</label>
+            </value>
+            <value>
+                <fullName>1 - 5 Cr</fullName>
+                <default>false</default>
+                <label>1 - 5 Cr</label>
+            </value>
+            <value>
+                <fullName>5 - 10 Cr</fullName>
+                <default>false</default>
+                <label>5 - 10 Cr</label>
+            </value>
+            <value>
+                <fullName>10 - 25 Cr</fullName>
+                <default>false</default>
+                <label>10 - 25 Cr</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

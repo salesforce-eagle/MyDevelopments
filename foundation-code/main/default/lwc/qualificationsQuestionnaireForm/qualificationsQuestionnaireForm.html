@@ -1,0 +1,33 @@
+<template>
+    <template if:true={isVisible}>
+        <lightning-card title="Qualification Questionnaire">
+            <div class="slds-var-m-around_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={questionnaireList}
+                    columns={questionnaireColumns}
+                    onsave={handleSave}
+                    draft-values={draftValues}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+            </br>
+            <center>
+                <lightning-button 
+                    label="Previous" 
+                    variant="brand" 
+                    icon-name="utility:chevronleft" 
+                    onclick={previousHandler}>
+                </lightning-button>
+                &nbsp; Page {page} of {totalPage} &nbsp;
+                <lightning-button 
+                    label="Next" 
+                    variant="brand" 
+                    icon-name="utility:chevronright" 
+                    icon-position="right"
+                    onclick={nextHandler}>
+                </lightning-button>
+            </center>
+        </lightning-card>
+    </template>
+</template>

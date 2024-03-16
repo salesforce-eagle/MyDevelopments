@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejected_reversal_rerstriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>(PRIORVALUE(Status) = &apos;Approved&apos; || PRIORVALUE(Status) = &apos;Rejected&apos;) &amp;&amp; ISCHANGED(Status)</errorConditionFormula>
+    <errorMessage>Sorry, Can not edit  approved/rejected requests!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_GSTIN_Should_Be_Of_15_Characters</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(  Name )), LEN(  Name ) &lt;&gt; 15 )</errorConditionFormula>
+    <errorMessage>Not a valid GSTIN. Please Enter 15 characters in Billing GSTIN</errorMessage>
+</ValidationRule>

@@ -1,0 +1,100 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_MAX_ADV_API_CT_Controller" showheader="false" >
+   <html>
+      <head>
+         <style type="text/css">
+            .test{
+            color:blue;
+            }
+            .info-table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            }
+            .info-table th,.info-table td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            }
+            table { page-break-inside:auto}
+            tr { page-break-inside:avoid; page-break-after:auto}
+            th {page-break-inside:avoid; page-break-after:auto}
+         </style>
+      </head>
+      <body>
+         <apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+         </apex:panelGroup>
+         <b><u> Scope of Services for Max ITC Integration - Series Z- </u></b>
+
+           <p> <b>Functionality to be provided</b></p>
+  <ul>
+  <li><b>Ingest purchase register and run reconciliation</b> manually or automatically 
+</li>
+  <li><b>Receive reconciliation results</b> which will include summary of results and purchase document level reconciliation result that will include match status and payment status (hold GST or make payment) among other result parameters
+</li>
+  <li><b>Automate payment actions</b> as per the MaxITC results
+    <ul>
+  <li>As soon as results are received in ERP, an automatic program will be triggered inside ERP which will trigger following actions
+  <ul>
+  <li>If the payment status of the document is ‘hold GST’, GST amount of that invoice will be held and the remaining amount will automatically appear as payable on the due date of invoice
+</li>
+  <li>If the payment status of the document is ‘make full payment’ then the payment will happen as-is
+</li>
+  <li>When the payment status for a document changes from ‘hold gst’ to ‘make full payment’ in future reconciliation run, the GST amount will be released in the next payment cycle
+</li>
+</ul>  
+  
+ 
+</li>
+</ul>  
+
+</li>
+  <li><b>GSTIN activation</b>
+  <ul>
+  <li>Users will be able to activate GSTIN using OTP in ERP itself
+</li>
+ 
+</ul>  
+  
+   
+</li>
+</ul>  
+          
+Activities to be performed to provide this functionality<br/> 
+
+<b> Cleartax responsibility </b>          
+
+ <ul>
+  <li>Transform the source data/documents into the format acceptable by Cleartax APIs and/or in consonance with what is prescribed/acceptable by the Government
+</li>
+  <li>Perform field level validation and business validation checks as per Cleartax schema
+</li>
+  <li>Load the transformed data/documents using RESTful APIs to the Cleartax application.
+</li>
+   <li>Receive the response based on user action like uploaded date, GSTN Sync status, cancelled date, etc from Cleartax APIs along with additional information, errors and other metadata
+</li>
+  <li>Update the reconciliation results and other metadata back in the ERP
+</li>
+</ul>  
+ 
+<b> Customer Responsibility </b>
+ <ul>
+  <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.
+</li>
+  <li>Customers shall obtain and maintain all licenses, registrations, approvals, consents, permissions, sanctions, etc. under all applicable laws to implement the MaxITC product.
+</li>
+  <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax.
+</li>
+   <li>The customer shall provide appropriate documentation about the system configuration with the Cleartax team for study and understanding</li>
+  <li>Appropriate and timely system access to the Cleartax team shall be provided at periodic intervals or based on the milestones
+</li>
+  <li>On submission of the system to the customer team for Approval/Testing, in the interest of timely completion of the project, it’s expected that such Approvals/Testing is ideally completed at the earliest by the customer team
+</li>
+</ul>  
+          
+               
+       
+         <apex:include pageName="{!nextPage9}"/>
+      </body>
+   </html>
+</apex:page>

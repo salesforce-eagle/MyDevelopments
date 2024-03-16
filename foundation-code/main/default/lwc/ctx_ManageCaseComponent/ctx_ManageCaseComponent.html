@@ -1,0 +1,10 @@
+<template>
+    <lightning-tabset variant="scoped" active-tab-value ="">
+        <lightning-tab label="My Cases" value="myCases">
+            <c-ctx_-my-existing-cases my-cases={myCases}></c-ctx_-my-existing-cases>
+        </lightning-tab>
+        <lightning-tab label="Create a case" value="createcase">
+            <c-ctx_-create-case-form email={email} contact={contact} onrefreshcases={refreshCases}></c-ctx_-create-case-form>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

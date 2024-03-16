@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <!--    objs    -->
+    <types>
+        <members>Product2.Is_Applicable_for_Licensing__c</members>
+        <members>Product2.SaaS_Product__c</members>
+        <members>Asset.Product_Line__c</members>
+        <members>Asset.Create_License_on_Asset_Creation__c</members>
+        <members>Account.IsTestAccount__c</members>
+        
+        <name>CustomField</name>
+    </types>
+
+    <!--    code    -->
+    <types>
+        <members>LoggerTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    
+    <types>
+        <members>CTX_LicensingAssetFilterLogic</members>
+        <members>CTX_UpsertAssetLicense</members>
+        <members>CTX_UpsertAssetLicensingClass</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        <members>CTX_AssetWorkspaceLinkageController</members>
+        <members>CTX_ProductWorkspace_Response_Parser</members>
+        <members>LoggerTriggerHandler</members>
+        <!--    <members>AssetTriggerHandler</members> Delta Merge Required -->
+        <members>CTX_CSMJorneyQueueable</members>
+        <members>CTX_SendLoggerEmailNotifications</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_DeleteAssetWorkspaceLinkContainer</members>
+        <members>ctx_LinkAssetWorkspaceContainer</members>
+        <members>ctx_DeactivateLicenseAura</members>
+        <members>Ctx_ActivateSingleLicenseContainer</members>
+        
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <types>
+        <members>ctx_LinkAssetWorkspace</members>
+        <members>ctx_DeleteAssetWorkspaceLink</members>
+        <members>ctx_DeactivateLicense</members>
+        <members>ctx_ActivateSingleLicense</members>
+        <members>ctx_BannerWithRelatedRecordLink</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!--    processes   -->
+    <types>
+        <members>Asset.Add_Workspace</members>
+        <members>Asset.Remove_Workspaces</members>
+        <members>Asset.Deactivate_License</members>
+        <members>Asset.Activate_License</members>
+        
+        <name>QuickAction</name>
+    </types>
+
+    <!--    functional  -->
+    <types>
+        <members>Asset_Record_Page5</members>
+        <members>Opportunity_Record_Page</members>
+        <members>Opportunity_Page_360</members>
+        
+        <name>FlexiPage</name>
+    </types>
+
+    
+    <version>52.0</version>
+</Package>

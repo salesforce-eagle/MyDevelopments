@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type_cumulated__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if(OR(RecordType.DeveloperName=&quot;Renewal&quot;,RecordType.DeveloperName=&quot;Renewal_Multi_year&quot;),&quot;Renewal&quot;,RecordType.DeveloperName)</formula>
+    <label>Record Type (cumulated)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

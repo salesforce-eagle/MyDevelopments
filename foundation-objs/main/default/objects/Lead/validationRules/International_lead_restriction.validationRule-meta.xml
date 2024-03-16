@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International_lead_restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>!CONTAINS( $Profile.Id , &apos;00eC5000000LqdV&apos;) &amp;&amp;
+!CONTAINS( $Profile.Id , &apos;00e2x0000012b83&apos;) &amp;&amp; 
+!CONTAINS( $Profile.Id , &apos;00eC5000000LsGK&apos;) &amp;&amp; 
+!CONTAINS( $Profile.Name , &apos;Channel Partner - International&apos;) &amp;&amp;
+ISNEW() &amp;&amp; CONTAINS( RecordTypeId , &apos;012C50000004HY1&apos;)
+&amp;&amp; !CONTAINS ( $Profile.Name , &apos;GCC&apos; )</errorConditionFormula>
+    <errorMessage>International leads can be created only by international profiles!</errorMessage>
+</ValidationRule>

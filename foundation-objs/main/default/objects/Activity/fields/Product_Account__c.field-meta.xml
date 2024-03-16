@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Account__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ASP/GSP</fullName>
+                <default>false</default>
+                <label>ASP/GSP</label>
+            </value>
+            <value>
+                <fullName>E-invoicing</fullName>
+                <default>false</default>
+                <label>E-invoicing</label>
+            </value>
+            <value>
+                <fullName>E-way Bill</fullName>
+                <default>false</default>
+                <label>E-way Bill</label>
+            </value>
+            <value>
+                <fullName>Reconciliation</fullName>
+                <default>false</default>
+                <label>Reconciliation</label>
+            </value>
+            <value>
+                <fullName>Airline credit</fullName>
+                <default>false</default>
+                <label>Airline credit</label>
+            </value>
+            <value>
+                <fullName>GSTIN verification</fullName>
+                <default>false</default>
+                <label>GSTIN verification</label>
+            </value>
+            <value>
+                <fullName>B2C QR code</fullName>
+                <default>false</default>
+                <label>B2C QR code</label>
+            </value>
+            <value>
+                <fullName>GSTR 9/9C</fullName>
+                <default>false</default>
+                <label>GSTR 9/9C</label>
+            </value>
+            <value>
+                <fullName>Managed Service</fullName>
+                <default>false</default>
+                <label>Managed Service</label>
+            </value>
+            <value>
+                <fullName>Einv + EWB</fullName>
+                <default>false</default>
+                <label>Einv + EWB</label>
+            </value>
+            <value>
+                <fullName>MAX ITC</fullName>
+                <default>false</default>
+                <label>MAX ITC</label>
+            </value>
+            <value>
+                <fullName>Clearone</fullName>
+                <default>false</default>
+                <label>Clearone</label>
+            </value>
+            <value>
+                <fullName>GSTR 6</fullName>
+                <default>false</default>
+                <label>GSTR 6</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

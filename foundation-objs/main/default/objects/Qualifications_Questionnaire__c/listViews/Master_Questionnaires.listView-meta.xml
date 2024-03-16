@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Questionnaires</fullName>
+    <columns>NAME</columns>
+    <columns>Questionnaire__c</columns>
+    <columns>Question_Related_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Qualifications_Questionnaire__c.Master_Record</value>
+    </filters>
+    <label>Master Questionnaires</label>
+</ListView>

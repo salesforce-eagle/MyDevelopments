@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Count_OP_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Total Opportunity Product Count(ARR)</description>
+    <externalId>false</externalId>
+    <label>Total Count OP Count</label>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Billing_Type__c</field>
+        <operation>equals</operation>
+        <value>ARR</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

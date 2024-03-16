@@ -1,0 +1,47 @@
+<aura:component implements 	= "force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:actionOverride,lightning:hasPageReference" 
+                access		= "global"
+                controller	= "CTX_OpportunityCustomPathApexClass"	>
+    
+    <aura:attribute name="salesStageNewValue" 	type="String"/>
+    <aura:attribute name="stageNameNewValue" 	type="String"/>
+    <aura:attribute name="recordType" type="String" />
+    <aura:attribute name="displayInternalStage" type="Boolean"/>
+    <aura:attribute name="picklistField" 	type="Object"/>
+    <aura:attribute name="currentRecordType" type="Id" />
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.picklistField}"
+                      mode="EDIT"
+                      recordUpdated="{!c.doInit}"/>
+    
+    
+    <lightning:card footer="" title="Opportunity Stage">
+        <lightning:picklistPath aura:id="picklistPath1" recordId="{!v.recordId}"
+                                variant="linear"
+                                picklistFieldApiName="Sales_Stage_New__c"
+                                onselect="{!c.handleSelect_SalesStageNew}">
+        </lightning:picklistPath>
+        
+        <center>
+            <lightning:button variant="brand-outline" label="Mark As Current Stage" title="Change Stage" onclick="{! c.handleClick }" />
+        </center>
+    </lightning:card>
+    
+    <aura:renderIf isTrue="{!v.displayInternalStage}">
+        <lightning:card footer="" title="Internal Next Steps">
+            <lightning:picklistPath aura:id="picklistPath2" recordId="{!v.recordId}"
+                                    variant="non-linear"
+                                    picklistFieldApiName="StageName"
+                                    onselect="{!c.handleSelect_StageName}">
+            </lightning:picklistPath>
+        </lightning:card>
+    </aura:renderIf>
+
+        
+
+    
+
+    
+    
+</aura:component>

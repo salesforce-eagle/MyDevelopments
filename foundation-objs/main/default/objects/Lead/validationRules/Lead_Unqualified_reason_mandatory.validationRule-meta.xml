@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Unqualified_reason_mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(TEXT(Status) == &apos;Unqualified&apos; , (ISBLANK(TEXT(Loss_Reason__c)) || ISBLANK(Other_Reason_for_Loss__c) || (ISBLANK(TEXT(Competition_Currently_Using__c))) ))</errorConditionFormula>
+    <errorDisplayField>Loss_Reason__c</errorDisplayField>
+    <errorMessage>Please mention Loss Reason, Other Reason for Loss and Competition/currently using</errorMessage>
+</ValidationRule>

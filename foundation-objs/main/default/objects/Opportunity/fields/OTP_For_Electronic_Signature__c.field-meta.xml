@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OTP_For_Electronic_Signature__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>OTP For Electronic Signature</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>E_Sign_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>email</fullName>
+                <default>true</default>
+                <label>email</label>
+            </value>
+            <value>
+                <fullName>mobile</fullName>
+                <default>false</default>
+                <label>mobile</label>
+            </value>
+            <value>
+                <fullName>both</fullName>
+                <default>false</default>
+                <label>both</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>electronic</controllingFieldValue>
+            <valueName>email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>electronic</controllingFieldValue>
+            <valueName>mobile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>electronic</controllingFieldValue>
+            <valueName>both</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

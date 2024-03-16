@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ageing_Since_Period_Start_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(isblank(Asset__r.PurchaseDate),&quot;&quot;,
+if((Today()-Asset__r.PurchaseDate)&lt;0,&quot;&quot;,
+if((Today()-Asset__r.PurchaseDate)&lt;=15,&quot;0 - 15 Days&quot;,
+if((Today()-Asset__r.PurchaseDate)&lt;=30,&quot;16 - 30 Days&quot;,
+if((Today()-Asset__r.PurchaseDate)&lt;=60,&quot;31 - 60 Days&quot;,
+if((Today()-Asset__r.PurchaseDate)&lt;=90,&quot;60 - 90 Days&quot;,&quot;Greater than 90 Days&quot;))))))</formula>
+    <label>Ageing(Since Period Start Date)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

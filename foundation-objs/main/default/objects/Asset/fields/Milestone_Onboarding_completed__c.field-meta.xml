@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Onboarding_completed__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(and(isblank(Onboarding_Completed_Date__c),today()- max_of_opportunity_or_po__c &gt;12,max_of_opportunity_or_po__c&gt;=Date(2021,6,1)),&quot;Onboarding Pending, if not a genuine case, mail to the sales rep along with the issues&quot;,&quot;&quot;)</formula>
+    <label>Milestone-Onboarding completed</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

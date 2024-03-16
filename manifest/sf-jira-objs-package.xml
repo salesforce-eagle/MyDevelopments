@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Team_Responsible_SF_Jira__mdt</members>
+    
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <!--    <members>Case.JIRA_Issue_Id__c</members>
+        <members>Case.Updated_in_JIRA__c</members>
+        <members>Case.Planned_Release_Date_JIRA__c</members>
+        <members>Case.Actual_Release_Date_JIRA__c</members>
+        <members>Case.QA_Release_Date_JIRA__c</members>
+        <members>Case.Developer_Comment_JIRA__c</members>
+        <members>Case.Status_JIRA__c</members>
+        <members>Case.Jira_URL__c</members>
+        <members>Case.Account_Name__c</members>
+        <members>Case.Contact_Name__c</members>
+        <members>Case.User_Role_Type__c</members>   -->
+
+        <members>Case.JIRA_Ticket_Created_Date__c</members>
+        <members>Case.L3_Developer_JIRA__c</members>
+        <members>Case.QA_Handover_Date_JIRA__c</members>
+        <members>Case.Actual_PRD_UX_Completion_Date_Jira__c</members>
+
+        <!--    <members>EmailMessage.Jira_Comment_Id__c</members>  -->
+
+        <name>CustomField</name>
+    </types>
+
+
+    <types>
+        <members>Team_Responsible_SF_Jira__mdt.Capture</members>
+        <members>Team_Responsible_SF_Jira__mdt.Cimplyfive</members>
+        <members>Team_Responsible_SF_Jira__mdt.Clear_Identity</members>
+        <members>Team_Responsible_SF_Jira__mdt.E_Inv_EWB</members>
+        <members>Team_Responsible_SF_Jira__mdt.GCC</members>
+        <members>Team_Responsible_SF_Jira__mdt.GST</members>
+        <members>Team_Responsible_SF_Jira__mdt.Discounting</members>
+        <members>Team_Responsible_SF_Jira__mdt.Invoicing</members>
+        <members>Team_Responsible_SF_Jira__mdt.IRP</members>
+        <members>Team_Responsible_SF_Jira__mdt.MITC_On_Call_Jira</members>
+        <members>Team_Responsible_SF_Jira__mdt.Notice_Management</members>
+        <members>Team_Responsible_SF_Jira__mdt.TDS</members>
+
+        <name>CustomMetadata</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

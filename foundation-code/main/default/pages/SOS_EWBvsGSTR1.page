@@ -1,0 +1,51 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EWBvsGSTR1controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <p class="test">
+Feature List of EWB vs GSTR 1 Recon is as below
+            </p>
+            <table class="info-table"> 
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                            <td>
+							E-Way Bill Extension
+							</td>
+                            <td>
+						EWB vs GSTR 1 Recon 
+</td>
+                            <td >
+							
+Reconciling and reporting the difference between the E-way bill generated with the corresponding liability/invoices shown in GSTR-1, to ensure proper compliance of GST Act with respect to provisions related to E-way Bill and GST returns.
+
+
+</td>
+                        </tr>
+ 
+			   
+            </table>
+			
+         <apex:include pageName="{!nextPage9}"/>
+      </body>
+   </html>
+</apex:page>

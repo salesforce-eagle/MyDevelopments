@@ -1,0 +1,69 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EINVIntegration_FTP_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS8==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           <p><b>a. Scope of Services for SFTP Integration and Cleartax responsibility </b></p>
+                     <ol style="list-style-type: lower-roman;">
+                        <li>Pull the customer SFTP server at regular intervals.</li>
+                        <li>Pick input files from customer SFTP server and upload to ClearTax APIs.</li>
+                        <li>Validate invoice contents and generate e-Invoice with Government APIs. </li>
+                         <li>Receive the generated e-Invoice, QR code and IRN from ClearTax APIs and push to the customer SFTP server.</li>
+                         <li>Push the output files with error messages to the customer SFTP server for unsuccessfully uploaded files.</li>
+                     </ol>
+                     <p><b>b. Scope Limitation and Customer Dependencies </b> </p>
+                      <ol style="list-style-type: lower-roman;">
+                        <li>Extract required data from ERP and place it on the customer SFTP server in an Excel or CSV file (input file for ClearTax) with at least all the mandatory fields required for E-Invoicing. </li>
+                        <li>Extract required data from ERP and place it on the customer SFTP server in an Excel or CSV file (input file for ClearTax) with at least all the mandatory fields required for E-Invoicing.</li>
+                        <li>Error handling and retry for errors in the response file.</li>
+                          <li>FTP server is hosted in the Customer environment.</li>
+                          <li>FTP details to be provided to ClearTax</li>
+                          <ol>
+                              <li>FTP Host, Port, Protocol</li>
+                              <li>FTP Username, Password</li>
+                              <li>Directory paths as per the structure defined by ClearTax.</li>
+                              <li>Files as per the file naming convention must be as defined by ClearTax.</li>
+                          </ol>
+                     </ol>
+                      <p><b>c. Integration Post Go-Live Support – </b> Cleartax will provide one-month post go live support to the customer from 
+                          the production go-live date of integration. Such support includes fixing any breakages in functionality only with 
+                          respect to the original scope of work for integration. It excludes</p>
+                      <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) 
+                            stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                     </ol>
+                      <p><b>d. Annual Maintenance (AMC) for Integration - </b>Customer may avail annual maintenance services for integration for the 
+                          Period of Engagement by paying appropriate AMC fee. The AMC support will include fixing any breakages in functionality 
+                          only with respect to the original scope of work for integration. It excludes</p>
+                      <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema 
+                            fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                     </ol>
+            <br/>
+            <apex:include pageName="{!nextPage15}"/>
+        </body>
+    </html>
+</apex:page>

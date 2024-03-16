@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Role_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Team Responsible</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Channel</fullName>
+                <default>false</default>
+                <label>Channel</label>
+            </value>
+            <value>
+                <fullName>Lead Gen</fullName>
+                <default>false</default>
+                <label>Lead Gen</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>Field Sales</fullName>
+                <default>false</default>
+                <label>Field Sales</label>
+            </value>
+            <value>
+                <fullName>GST L1 Email Support Team</fullName>
+                <default>false</default>
+                <label>GST L1 Email Support Team</label>
+            </value>
+            <value>
+                <fullName>GST L2 Support Team</fullName>
+                <default>false</default>
+                <label>GST L2 Support Team</label>
+            </value>
+            <value>
+                <fullName>KAM</fullName>
+                <default>false</default>
+                <label>KAM</label>
+            </value>
+            <value>
+                <fullName>GST Dev On Call Team</fullName>
+                <default>false</default>
+                <label>GST Dev On Call Team</label>
+            </value>
+            <value>
+                <fullName>Sales and Finance Team</fullName>
+                <default>false</default>
+                <label>Sales and Finance Team</label>
+            </value>
+            <value>
+                <fullName>GST Finance</fullName>
+                <default>false</default>
+                <label>GST Finance</label>
+            </value>
+            <value>
+                <fullName>GST CA/SME Sales Agents</fullName>
+                <default>false</default>
+                <label>GST CA/SME Sales Agents</label>
+            </value>
+            <value>
+                <fullName>GST CA/Product Agents</fullName>
+                <default>false</default>
+                <label>GST CA/Product Agents</label>
+            </value>
+            <value>
+                <fullName>Presales consultants</fullName>
+                <default>false</default>
+                <label>Presales consultants</label>
+            </value>
+            <value>
+                <fullName>Solution Engineer team</fullName>
+                <default>false</default>
+                <label>Solution Engineer team</label>
+            </value>
+            <value>
+                <fullName>L1 Support - CT</fullName>
+                <default>false</default>
+                <label>L1 Support - CT</label>
+            </value>
+            <value>
+                <fullName>L1 Support - Invest</fullName>
+                <default>false</default>
+                <label>L1 Support - Invest</label>
+            </value>
+            <value>
+                <fullName>L1 Support - TC</fullName>
+                <default>false</default>
+                <label>L1 Support - TC</label>
+            </value>
+            <value>
+                <fullName>L1 Support - TDS</fullName>
+                <default>false</default>
+                <label>L1 Support - TDS</label>
+            </value>
+            <value>
+                <fullName>L1 Support - MP Ops</fullName>
+                <default>false</default>
+                <label>L1 Support - MP Ops</label>
+            </value>
+            <value>
+                <fullName>CA Support</fullName>
+                <default>false</default>
+                <label>CA Support</label>
+            </value>
+            <value>
+                <fullName>Invest - Operations</fullName>
+                <default>false</default>
+                <label>Invest - Operations</label>
+            </value>
+            <value>
+                <fullName>Consumer - Dev on Call</fullName>
+                <default>false</default>
+                <label>Consumer - Dev on Call</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>ENT E Invoice L1 Team</fullName>
+                <default>false</default>
+                <label>ENT E Invoice L1 Team</label>
+            </value>
+            <value>
+                <fullName>ENT E Invoice L2 Team</fullName>
+                <default>false</default>
+                <label>ENT E Invoice L2 Team</label>
+            </value>
+            <value>
+                <fullName>E invoice Dev on call</fullName>
+                <default>false</default>
+                <label>E invoice Dev on call</label>
+            </value>
+            <value>
+                <fullName>Priority ENT E Invoice L1 Team</fullName>
+                <default>false</default>
+                <label>Priority ENT E Invoice L1 Team</label>
+            </value>
+            <value>
+                <fullName>Priority ENT E Invoice L2 Team</fullName>
+                <default>false</default>
+                <label>Priority ENT E Invoice L2 Team</label>
+            </value>
+            <value>
+                <fullName>ENT GST L1 Team</fullName>
+                <default>false</default>
+                <label>ENT GST L1 Team</label>
+            </value>
+            <value>
+                <fullName>ENT GST L2 Team</fullName>
+                <default>false</default>
+                <label>ENT GST L2 Team</label>
+            </value>
+            <value>
+                <fullName>Priority ENT GST L1 Team</fullName>
+                <default>false</default>
+                <label>Priority ENT GST L1 Team</label>
+            </value>
+            <value>
+                <fullName>Priority ENT GST L2 Team</fullName>
+                <default>false</default>
+                <label>Priority ENT GST L2 Team</label>
+            </value>
+            <value>
+                <fullName>Priority ENT GST Dev On Call Team</fullName>
+                <default>false</default>
+                <label>Priority ENT GST Dev On Call Team</label>
+            </value>
+            <value>
+                <fullName>ENT GST Dev On Call Team</fullName>
+                <default>false</default>
+                <label>ENT GST Dev On Call Team</label>
+            </value>
+            <value>
+                <fullName>Priority ENT E Invoice Dev On Call Team</fullName>
+                <default>false</default>
+                <label>Priority ENT E Invoice Dev On Call Team</label>
+            </value>
+            <value>
+                <fullName>ENT E Invoice Dev On Call Team</fullName>
+                <default>false</default>
+                <label>ENT E Invoice Dev On Call Team</label>
+            </value>
+            <value>
+                <fullName>GCC E-invoice L1 Team</fullName>
+                <default>false</default>
+                <label>GCC E-invoice L1 Team</label>
+            </value>
+            <value>
+                <fullName>GCC E-invoice L2 Team</fullName>
+                <default>false</default>
+                <label>GCC E-invoice L2 Team</label>
+            </value>
+            <value>
+                <fullName>GCC E-invoice Dev on Call Team</fullName>
+                <default>false</default>
+                <label>GCC E-invoice Dev on Call Team</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

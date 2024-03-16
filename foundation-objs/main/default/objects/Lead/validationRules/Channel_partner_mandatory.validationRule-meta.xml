@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_partner_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( Direct_deal_by_Channel_team__c == FALSE , OR( ISBLANK (Channel_Partner_Account__c),ISPICKVAL (Channel_Partner_Sales_Mode__c,&apos;&apos;),ISBLANK (Channel_Partner_Rep__c))
+, Lead_Owner_department__c == &apos;Channel Sales&apos;,
+ISPICKVAL(Sub_Stages__c,&apos;Demo Completed&apos;) )</errorConditionFormula>
+    <errorDisplayField>Channel_Partner_Account__c</errorDisplayField>
+    <errorMessage>Please enter Channel partner details : Account, Sales mode &amp; Rep</errorMessage>
+</ValidationRule>

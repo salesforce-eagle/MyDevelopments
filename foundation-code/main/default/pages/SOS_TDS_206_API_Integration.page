@@ -1,0 +1,112 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_TDS_206_API_Integration_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                 .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+              <apex:panelGroup rendered="{!SOS1==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for API integration (TDS 206 AB Verification ) - </u></b>
+
+             
+           <ol type = '1'>
+           <li>
+                The deliverables shall encompass designing and development of the following components.
+                        <ol><li>
+                                The customer needs an automated solution for TDS 206 AB Verification on a real-time basis.
+                            </li>
+                            <li>The customer will either provide:   
+                                    <ol type="i"><li>A staging database in its environment which will be exposed to ClearTax. All data updates from ERP to the staging database and backward will be managed by the customer.
+                                        </li>
+                                        <li>Or a flat file with the PAN data that needs to be transmitted to ClearTax
+                                        </li>
+                                    </ol>
+                            </li>
+                            <li>The scope of ClearTax is to fetch data from the database or flat file to ClearTax and backward.
+                            </li>
+                                    <ol type="i"><li>Data extraction: the customer will extract data from its ERP and provide it in a staging database.
+                                        </li>
+                                        <li>Data transformation: The input data in the staging table created by the customer will be as per the ClearTax format and will not require any transformations.
+                                        </li>
+                                        <li>TDS 206 AB Verification: The given PAN will be sent to the Government Portal and the result will be sent back with the up-to-date 206 AB status back to the ERP.
+                                        </li>
+                                        <li>Error notification: In the event of an error during TDS 206 AB Verification, the user will be notified about the error message.
+                                        </li>
+                                    </ol>
+                            <li>
+ClearTax to process the PANs in the table, verify the PANs and post back the 206 AB status into the same table along with setting up the fields to identify the status.
+                            </li>
+                            <li>While verifying 206 AB status, if any situation arises where ClearTax is unable to verify it, ClearTax will update the error details into the Error Log column of the given table.
+                            </li>
+               </ol></li>
+<li>Handle errors and exceptions for (i) Cleartax validations (ii) Internet downtime (iii) Cleartax  API downtime (iv) Invalid response from Cleartax application.</li>
+            </ol>
+<b><u>Scope Limitations and Customer Dependencies - 
+    </u>
+            </b>
+
+<ol type="i">
+<li>
+The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.</li>
+<li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra team and the customer provides necessary access to Cleartax and its system integrator . This activity should be done by the Customer within 5 working days from project kick-off date
+</li>
+<li>Network: Cleartax does not provide end to end service on network set up</li>
+<li>Basis: Cleartax does not provide any support related to Basis.</li>
+<li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+<li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees to additionally pay for such remote access.</li>
+<li>Customer shall share appropriate Business requirement/functional documentation about the system configuration with the consulting team for study and understanding.</li>
+<li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.</li>
+<li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). In the interest of timely completion of the project, all the test cases as per the functionalities agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer within 14 days of moving the project to UAT. </li>
+<li>Once the UAT sign-off is provided the customer need to give necessary clearance to move the code to production within 7 days.</li>
+<li>In case the UAT sign off is not provided within 14 days as per point (ix) above, the project will be deemed to have successfully gone live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer. </li>
+            </ol>
+<b><p><u>Integration Post Go-Live Support -</u></p></b>
+<p>
+Cleartax will provide one-month post go live support to the customer from the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+</p>
+<ol type="i">
+<li>
+additional features or enhancements which are not contained in the original scope of work for integration.</li>
+<li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work. </li>
+
+
+
+
+
+            </ol>
+<b><p><u>Annual Maintenance (AMC) for Integration -</u></p></b>
+<p>
+Customer may avail annual maintenance services for integration for the Period of Engagement by paying appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+
+</p>
+<ol type="i">
+<li>
+additional features or enhancements which are not contained in the original scope of work for integration.</li>
+<li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.
+    </li></ol>
+
+
+
+<apex:include pageName="{!nextPage12}"/>
+            
+        </body>
+    </html>
+</apex:page>

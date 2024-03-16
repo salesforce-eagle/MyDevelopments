@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Compliance_service__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type of Compliance service</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GSTR-1</fullName>
+                <default>false</default>
+                <label>GSTR-1</label>
+            </value>
+            <value>
+                <fullName>Recon of Inward Register v/s GSTR-2A/GSTR-2B</fullName>
+                <default>false</default>
+                <label>Recon of Inward Register v/s GSTR-2A/GSTR-2B</label>
+            </value>
+            <value>
+                <fullName>GSTR-3B</fullName>
+                <default>false</default>
+                <label>GSTR-3B</label>
+            </value>
+            <value>
+                <fullName>GSTR-6</fullName>
+                <default>false</default>
+                <label>GSTR-6</label>
+            </value>
+            <value>
+                <fullName>GSTR ITC-04</fullName>
+                <default>false</default>
+                <label>GSTR ITC-04</label>
+            </value>
+            <value>
+                <fullName>GSTR-7</fullName>
+                <default>false</default>
+                <label>GSTR-7</label>
+            </value>
+            <value>
+                <fullName>GSTR-8</fullName>
+                <default>false</default>
+                <label>GSTR-8</label>
+            </value>
+            <value>
+                <fullName>Return filing summary</fullName>
+                <default>false</default>
+                <label>Return filing summary</label>
+            </value>
+            <value>
+                <fullName>GSTIN Verification Summary</fullName>
+                <default>false</default>
+                <label>GSTIN Verification Summary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

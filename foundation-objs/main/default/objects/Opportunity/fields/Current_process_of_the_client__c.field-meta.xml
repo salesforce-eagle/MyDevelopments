@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_process_of_the_client__c</fullName>
+    <externalId>false</externalId>
+    <label>Current process of the client</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST Compliance - Manual</fullName>
+                <default>false</default>
+                <label>GST Compliance - Manual</label>
+            </value>
+            <value>
+                <fullName>GST Compliance - Automated</fullName>
+                <default>false</default>
+                <label>GST Compliance - Automated</label>
+            </value>
+            <value>
+                <fullName>Sales data prepared directly from ERP</fullName>
+                <default>false</default>
+                <label>GST - Sales data prepared directly from ERP</label>
+            </value>
+            <value>
+                <fullName>E-Invoice (draft G1) vs Sales Register reconciliation via Excel</fullName>
+                <default>false</default>
+                <label>E-Invoice (draft G1) vs Sales Register reconciliation via Excel</label>
+            </value>
+            <value>
+                <fullName>E-Invoice (draft G1) vs Sales Register reconciliation via Tool</fullName>
+                <default>false</default>
+                <label>E-Invoice (draft G1) vs Sales Register reconciliation via Tool</label>
+            </value>
+            <value>
+                <fullName>Less than 80% ITC matching without manual effort</fullName>
+                <default>false</default>
+                <label>Max - Less than 80% ITC matching without manual effort</label>
+            </value>
+            <value>
+                <fullName>Non Compliant vendor communication - One way tool</fullName>
+                <default>false</default>
+                <label>Max/GST - Non Compliant vendor communication - One way tool</label>
+            </value>
+            <value>
+                <fullName>Non Compliant vendor communication - Two way tool</fullName>
+                <default>false</default>
+                <label>Max- Non Compliant vendor communication - Two way tool</label>
+            </value>
+            <value>
+                <fullName>Non Compliant vendor communication - Manually</fullName>
+                <default>false</default>
+                <label>Max/GST- Non Compliant vendor communication - Manually</label>
+            </value>
+            <value>
+                <fullName>Non Compliant vendor - Automated blocking</fullName>
+                <default>false</default>
+                <label>Max- Non Compliant vendor - Automated blocking</label>
+            </value>
+            <value>
+                <fullName>Recent uptick in number of notices recieved</fullName>
+                <default>false</default>
+                <label>Notice- Recent uptick in number of notices recieved</label>
+            </value>
+            <value>
+                <fullName>ID : Avg. Credit Period while Purchasing &gt;30 days</fullName>
+                <default>false</default>
+                <label>ID : Avg. Credit Period while Purchasing &gt;30 days</label>
+            </value>
+            <value>
+                <fullName>TDS : 26AS recon through tool</fullName>
+                <default>false</default>
+                <label>TDS : 26AS recon through tool</label>
+            </value>
+            <value>
+                <fullName>TDS - Consultant</fullName>
+                <default>false</default>
+                <label>TDS - Consultant</label>
+            </value>
+            <value>
+                <fullName>TDS - Tool</fullName>
+                <default>false</default>
+                <label>TDS - Tool</label>
+            </value>
+            <value>
+                <fullName>TDS - Inhouse (Gov utility)</fullName>
+                <default>false</default>
+                <label>TDS - Inhouse (Gov utility)</label>
+            </value>
+            <value>
+                <fullName>CA led</fullName>
+                <default>false</default>
+                <label>CA led</label>
+            </value>
+            <value>
+                <fullName>Manually</fullName>
+                <default>false</default>
+                <label>Manually</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

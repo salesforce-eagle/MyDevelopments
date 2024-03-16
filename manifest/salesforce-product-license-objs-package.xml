@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    <types>
+        <members>Account.Number_of_Workspace__c</members>
+        <members>Account.Workspace_Details__c</members>
+        <members>Account.Workspace_Master_Admin__c</members>
+        <members>Account.GSTIN_Details__c</members>
+        <members>Account.No_of_GSTIN__c</members>
+        <members>Account.PAN_Details__c</members>
+        <members>Account.Consumed_Products__c</members>
+        <members>Account.Product_Email__c</members>
+        <members>Account.Master_admin_Email__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,71 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_Limitations1_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+    <apex:panelGroup rendered="{!assistASLimitaionCheck}">
+
+                       <b><u> Scope Limitations for Assisted Services
+ - </u></b>
+  
+<p>
+    
+    <b>Customer’s role / responsibility with regard to Indirect tax compliances
+</b></p>
+<p>In order to enable Cleartax to carry out the aforesaid scope in an appropriate manner, it would require the support and help of, and accurate and complete information from the Customer. The following is the illustrative list of activities that the Customer would require to perform in order to help Cleartax to perform the services in a smooth manner:
+</p>          
+<ul>
+<li>The Customer will be solely responsible for maintaining the statutory books of accounts and other register / records as required by Tax law applicable in India;</li>
+<li>The Customer will be required to provide data and documents on timely basis</li>
+<li>The Customer will be required to assist with the error summary generated after validation checks.</li>
+<li>The Customer should inform Cleartax, immediately about any change in the nature of its business or any change in the information/documentation provided to Cleartax.</li>
+<li>The Customer should have a single point contact team with whom Cleartax can coordinate for required information and provide other details.</li></ul>
+<p><b>Scope Limitation</b></p>
+Please note that the following services (by way of illustration) would not be within the ambit of this scope of work as detailed above.
+<ul>
+<li>The above scope of work relates to assistance in relation to tax compliance matters undertaken by the Customer. Identifying matters that need consultation or advice or recommendation from a professional consultant / counsel will be the sole responsibility of the Customer.</li>
+<li>While executing the above scope of work, Cleartax will be guided by and follow the tax positions and tax rates as have been adopted by the Customer. Such an act of Cleartax shall not be construed to be Cleartax’s acceptance or validation or correctness of the positions adopted by the Customer.</li>
+<li>Actual maintenance of accounting records for the Customer, passing of necessary accounting entries.</li>
+<li>Cleartax will rely on the information / documents / data provided to it by the Customer, which shall be solely provided to Cleartax for executing the scope of work under this engagement letter, and for no other purpose. Any delay in receipt of information from the Customer or any incompleteness or inaccuracy in the data or information provided by the Customer or extracted by Cleartax using the IT systems of the Customer may affect the statutory compliance, resulting in consequences from the authorities for which Cleartax shall not be responsible.</li>
+<li>The present engagement relates to services specified above. Other services can be mutually agreed through separate engagement letter and fees.</li>
+<li> Representation to the government or statutory or tax authorities in any form for any assignment/ engagement will not be part of the scope.</li>
+<li>Issuing of any chartered accountant’s certificate, attestation or digitally attesting / signing, preparation of any agreements, contracts or other documents will not be a part of scope.</li>
+</ul>
+Cleartax does not provide tax, legal or accounting advice. Cleartax services are not intended to provide, and should not be relied on for, tax, legal or accounting advice, and Cleartax disclaims all liabilities that may arise thereof.
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>-->
+        </apex:panelGroup>
+    <apex:include pageName="{!nextPage12}"/>
+        
+</body>
+</html>
+</apex:page>

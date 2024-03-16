@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Dates_Restriction</fullName>
+    <active>true</active>
+    <description>Estimated Implementation End Date, Estimated UAT End Date, Estimated Go Live Date (Project plan) to be non editable if stage is &apos;Implementation&apos;</description>
+    <errorConditionFormula>AND(Rocketlane_Integration__c=FALSE,(IF(AND(OR(TEXT(Project_Stage__c) = &apos;Implementation&apos;,
+TEXT(Project_Stage__c) = &apos;UAT&apos;,
+TEXT(Project_Stage__c) = &apos;Live&apos;),(ISCHANGED( Estimated_Implementation_End_Date__c) || ISCHANGED( Estimated_UAT_End_Date__c ) || ISCHANGED( Estimated_Go_Live_Date__c ) )) , True, false)))</errorConditionFormula>
+    <errorMessage>Estimated Implementation End Date, Estimated UAT End Date, Estimated Go Live Date (Project plan) can&apos;t be edited if stage is &apos;Implementation&apos;, &apos;UAT&apos; or &apos;Live&apos;.</errorMessage>
+</ValidationRule>

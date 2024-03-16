@@ -1,0 +1,49 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AirlineCreditModuleBase_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS15==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           
+           <p>
+               
+            <b><u> Scope of Services for Airline credit module - </u></b>
+            </p>
+            Customer to provide following data:
+                        <ul>
+                            
+                            <li>Relevant details of airline travels* made by the employees of the Customer;</li>
+                            <li>Other relevant details, if any</li></ul>
+                        Cleartax to provide the following, based on data provided by Customer:
+                        <ul>
+                            
+                            <li>Fetching of data on an invoice level from airline portal using Cleartax BOT (basis the details provided by the Company such as PNR, First and Last name, Login details, etc.);</li>
+                            <li>Generating the PDF copies and excel summary of the fetched invoices to legally claim ITC.</li>
+                            <li>Generating a purchase register summary from the extracted PDF invoices.</li>
+                            </ul>
+                        
+                        
+            <apex:include pageName="{!nextPage22}"/>
+        </body>
+    </html>
+</apex:page>

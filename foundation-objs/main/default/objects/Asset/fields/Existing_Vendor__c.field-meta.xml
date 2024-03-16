@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Existing_Vendor__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Existing Vendor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>BDO</fullName>
+                <default>false</default>
+                <label>BDO</label>
+            </value>
+            <value>
+                <fullName>Brillo</fullName>
+                <default>false</default>
+                <label>Brillo</label>
+            </value>
+            <value>
+                <fullName>Computax</fullName>
+                <default>false</default>
+                <label>Computax</label>
+            </value>
+            <value>
+                <fullName>Cygnet</fullName>
+                <default>false</default>
+                <label>Cygnet</label>
+            </value>
+            <value>
+                <fullName>Deloitte</fullName>
+                <default>false</default>
+                <label>Deloitte</label>
+            </value>
+            <value>
+                <fullName>EY</fullName>
+                <default>false</default>
+                <label>EY</label>
+            </value>
+            <value>
+                <fullName>Farvision</fullName>
+                <default>false</default>
+                <label>Farvision</label>
+            </value>
+            <value>
+                <fullName>Focus GST</fullName>
+                <default>false</default>
+                <label>Focus GST</label>
+            </value>
+            <value>
+                <fullName>Genesis</fullName>
+                <default>false</default>
+                <label>Genesis</label>
+            </value>
+            <value>
+                <fullName>Govt Portal</fullName>
+                <default>false</default>
+                <label>Govt Portal</label>
+            </value>
+            <value>
+                <fullName>H&amp;R Block</fullName>
+                <default>false</default>
+                <label>H&amp;R Block</label>
+            </value>
+            <value>
+                <fullName>HeroGST</fullName>
+                <default>false</default>
+                <label>HeroGST</label>
+            </value>
+            <value>
+                <fullName>In House</fullName>
+                <default>false</default>
+                <label>In House</label>
+            </value>
+            <value>
+                <fullName>In house Software</fullName>
+                <default>false</default>
+                <label>In house Software</label>
+            </value>
+            <value>
+                <fullName>Iris</fullName>
+                <default>false</default>
+                <label>Iris</label>
+            </value>
+            <value>
+                <fullName>Jio GST</fullName>
+                <default>false</default>
+                <label>Jio GST</label>
+            </value>
+            <value>
+                <fullName>Karvy</fullName>
+                <default>false</default>
+                <label>Karvy</label>
+            </value>
+            <value>
+                <fullName>KPMG</fullName>
+                <default>false</default>
+                <label>KPMG</label>
+            </value>
+            <value>
+                <fullName>Local CA</fullName>
+                <default>false</default>
+                <label>Local CA</label>
+            </value>
+            <value>
+                <fullName>Masters GST</fullName>
+                <default>false</default>
+                <label>Masters GST</label>
+            </value>
+            <value>
+                <fullName>Navison</fullName>
+                <default>false</default>
+                <label>Navison</label>
+            </value>
+            <value>
+                <fullName>NSDL</fullName>
+                <default>false</default>
+                <label>NSDL</label>
+            </value>
+            <value>
+                <fullName>Octa GST</fullName>
+                <default>false</default>
+                <label>Octa GST</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>Punjabbulls</fullName>
+                <default>false</default>
+                <label>Punjabbulls</label>
+            </value>
+            <value>
+                <fullName>PWC</fullName>
+                <default>false</default>
+                <label>PWC</label>
+            </value>
+            <value>
+                <fullName>Relyon</fullName>
+                <default>false</default>
+                <label>Relyon</label>
+            </value>
+            <value>
+                <fullName>SAP</fullName>
+                <default>false</default>
+                <label>SAP</label>
+            </value>
+            <value>
+                <fullName>SAP ASP</fullName>
+                <default>false</default>
+                <label>SAP ASP</label>
+            </value>
+            <value>
+                <fullName>Saral</fullName>
+                <default>false</default>
+                <label>Saral</label>
+            </value>
+            <value>
+                <fullName>SuperTax</fullName>
+                <default>false</default>
+                <label>SuperTax</label>
+            </value>
+            <value>
+                <fullName>TaxGenie</fullName>
+                <default>false</default>
+                <label>TaxGenie</label>
+            </value>
+            <value>
+                <fullName>TCS</fullName>
+                <default>false</default>
+                <label>TCS</label>
+            </value>
+            <value>
+                <fullName>Udyog</fullName>
+                <default>false</default>
+                <label>Udyog</label>
+            </value>
+            <value>
+                <fullName>Velocis</fullName>
+                <default>false</default>
+                <label>Velocis</label>
+            </value>
+            <value>
+                <fullName>WEB</fullName>
+                <default>false</default>
+                <label>WEB</label>
+            </value>
+            <value>
+                <fullName>Webtel</fullName>
+                <default>false</default>
+                <label>Webtel</label>
+            </value>
+            <value>
+                <fullName>WEP</fullName>
+                <default>false</default>
+                <label>WEP</label>
+            </value>
+            <value>
+                <fullName>Winman</fullName>
+                <default>false</default>
+                <label>Winman</label>
+            </value>
+            <value>
+                <fullName>WIpro</fullName>
+                <default>false</default>
+                <label>WIpro</label>
+            </value>
+            <value>
+                <fullName>Big 4/TCS</fullName>
+                <default>false</default>
+                <label>Big 4/TCS</label>
+            </value>
+            <value>
+                <fullName>Cygnet/Master/Wep</fullName>
+                <default>false</default>
+                <label>Cygnet/Master/Wep</label>
+            </value>
+            <value>
+                <fullName>Supertax/Karvey/H&amp;R Bloack</fullName>
+                <default>false</default>
+                <label>Supertax/Karvey/H&amp;R Bloack</label>
+            </value>
+            <value>
+                <fullName>Webtel/Computax</fullName>
+                <default>false</default>
+                <label>Webtel/Computax</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <lightning-input label="License ID" value={licenseId} onchange={handleChange} required></lightning-input>
+            <div class="slds-m-top_medium">
+               <center>
+                    <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+                </center> 
+            </div>
+        </div>
+    </lightning-card>
+</template>

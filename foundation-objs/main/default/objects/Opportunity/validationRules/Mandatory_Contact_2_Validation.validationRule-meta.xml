@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Contact_2_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(((ISCHANGED(Finance_POC_contact__c ) &amp;&amp; !ISBLANK(Finance_POC_contact__c )) || (ISCHANGED(Finance_Head_contact__c ) &amp;&amp; !ISBLANK(Finance_Head_contact__c )) || (ISCHANGED(Tax_Head_contact__c)&amp;&amp; !ISBLANK(Tax_Head_contact__c))|| (ISCHANGED(IT_Head_contact__c)&amp;&amp; !ISBLANK(IT_Head_contact__c))),
+
+If(ISBLANK( Finance_POC_contact__c ) || (!ISBLANK( Finance_POC_contact__c ) &amp;&amp;  !ISCHANGED(Finance_POC_contact__c) &amp;&amp; !ISCHANGED(Finance_Head_contact__c) &amp;&amp; !ISCHANGED(Tax_Head_contact__c) &amp;&amp; !ISCHANGED(Finance_Head_contact__c)  ) ,
+ IF(ISBLANK( Finance_Head_contact__c ) || (!ISBLANK( Finance_Head_contact__c ) &amp;&amp;  !ISCHANGED(Finance_Head_contact__c ) &amp;&amp; !ISCHANGED(Tax_Head_contact__c) &amp;&amp; !ISCHANGED(IT_Head_contact__c)) ,
+  IF(ISBLANK( Tax_Head_contact__c) || (!ISBLANK( Tax_Head_contact__c) &amp;&amp;  !ISCHANGED(Tax_Head_contact__c) &amp;&amp; !ISCHANGED(IT_Head_contact__c)) ,
+   IF(ISBLANK( IT_Head_contact__c) || (!ISBLANK( IT_Head_contact__c) &amp;&amp;  !ISCHANGED(IT_Head_contact__c)) ,
+    true
+   ,(ISBLANK( IT_Head_contact__r.Email ) || 
+   ISBLANK( IT_Head_contact__r.Designation__c ) || 
+   ISBLANK( IT_Head_contact__r.Phone )) )
+  ,(ISBLANK( Tax_Head_contact__r.Email ) || 
+  ISBLANK( Tax_Head_contact__r.Designation__c ) || 
+  ISBLANK( Tax_Head_contact__r.Phone )) )
+ ,(ISBLANK( Finance_Head_contact__r.Email ) || 
+ ISBLANK( Finance_Head_contact__r.Designation__c ) || 
+ ISBLANK( Finance_Head_contact__r.Phone )))
+,(ISBLANK( Finance_POC_contact__r.Email ) || 
+ISBLANK( Finance_POC_contact__r.Designation__c ) || 
+ISBLANK( Finance_POC_contact__r.Phone )) ),
+
+false)</errorConditionFormula>
+    <errorMessage>Please fill all details(Name, Email, Department, Primary Mobile,Designation) of the contacts !</errorMessage>
+</ValidationRule>

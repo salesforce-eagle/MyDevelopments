@@ -1,0 +1,90 @@
+<aura:component implements	= "force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                controller	= "CTX_FeedbackLogClass"
+                access		= "global" >
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    
+    
+    
+    <!--	Placeholders	-->
+    <aura:attribute name="objectName" 		type="String" />
+    <aura:attribute name="feedback" 		type="String" />
+    <aura:attribute name="whatWentWell" 	type="String" />
+    <aura:attribute name="whatWentWrong" 	type="String" />
+    <aura:attribute name="currentRating" 	type="Integer" />
+    
+    <!--	Feedback Component Start : START	-->
+    <aura:attribute name="activeSections" type="List" />
+    <aura:attribute name="bDoServerCall" type="Boolean" />
+    <aura:attribute name="ratingPath" type="String" />
+    
+    
+    <br/><br/>
+    <center><b>Welcome to the Feedback Window !</b></center><br/><br/>
+    <p>We are in the journey of making your Salesforce experience better. 
+        Please share your honest feedback and comments so that we can give you the experience you desire !</p>
+    <br/><br/>
+    <lightning:accordion
+                         allowMultipleSectionsOpen="true"
+                         onsectiontoggle="{! c.handleSectionToggle }"
+                         activeSectionName="{! v.activeSections }" >
+        
+        <lightning:accordionSection name="LogFeedback" label="Provide Your Feedback Here">
+            <aura:set attribute="body">
+                
+                <div class="slds-grid slds-wrap">
+                    
+                    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+                        <lightning:input name="objectName" 
+                                         label="Object Name" 
+                                         value="{!v.objectName}" 
+                                         placeholder="Enter the Object Name.."	/>
+                    </span>
+                    
+                    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+                        <lightning:inputRichText value="{!v.feedback}" 
+                                                 label="Feedback"
+                                                 labelVisible="true"
+                                                 placeholder="Log Your Feedback Here.."/>
+                    </span>
+                    
+                    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+                        <lightning:inputRichText value="{!v.whatWentWell}" 
+                                                 label="What wnet Well"
+                                                 labelVisible="true"
+                                                 placeholder="Log Your Feedback Here.."/>
+                    </span>
+                    
+                    <span class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+                        <lightning:inputRichText value="{!v.whatWentWrong}" 
+                                                 label="What went Wrong"
+                                                 labelVisible="true"
+                                                 placeholder="Log Your Feedback Here.."/>
+                    </span>
+                </div>
+                <br/>
+                <center>
+                    <div class="slds-p-right_medium">
+                        <lightning:button variant="brand" 
+                                          label="Log Feebback" 
+                                          title="Save" 
+                                          onclick="{! c.handleSave }" />
+                        
+                        <lightning:button label="Cancel" 
+                                          title="Cancel" 
+                                          onclick="{! c.handleCancel }"/>
+                    </div>
+                </center>
+                
+            </aura:set>
+        </lightning:accordionSection>
+        
+    </lightning:accordion>
+    <!--	Feedback Component Start : START	-->
+    
+    
+    
+    
+    
+    
+</aura:component>

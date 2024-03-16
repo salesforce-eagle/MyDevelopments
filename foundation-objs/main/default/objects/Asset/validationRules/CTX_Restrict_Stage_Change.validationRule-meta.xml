@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Restrict_Stage_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+CSM_Handled_Asset__c = true,
+
+OR(
+AND(
+TEXT(Onboarding_status__c) != &apos;Onboarding Complete&apos;,
+ISCHANGED(Stage__c),
+ISPICKVAL(PRIORVALUE(Stage__c),&apos;Onboarding&apos;)
+),
+AND(
+Is_Asset_Activated__c = false,
+ISCHANGED(Stage__c),
+ISPICKVAL((Stage__c), &apos;Success&apos;),
+ISPICKVAL(PRIORVALUE(Stage__c), &apos;Activation&apos;) 
+),
+AND(
+Is_Asset_Success__c = false,
+ISCHANGED(Stage__c),
+ISPICKVAL(PRIORVALUE(Stage__c), &apos;Success&apos;) 
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Can not change the stage unless the current stage is completed.</errorMessage>
+</ValidationRule>

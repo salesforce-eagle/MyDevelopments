@@ -1,0 +1,256 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,Annexure_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title>
+            <style type="text/css">
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding-left:1.5px !important;
+                padding-top:1.5px !important;
+                padding-bottom:1.5px !important;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:avoid}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px;
+}-->    
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px">
+            <apex:panelGroup rendered="{!(NOT(gccCheck) &&(prodLineIsGST || prodLineIsEinv || prodLineIsMax))}" >
+                <div class="headding-box" style="page-break-after: avoid"> &nbsp;&nbsp;&nbsp;INTEGRATION TERMS</div>
+                <!-- Product_Line__c = GST -->
+                <apex:panelGroup rendered="{!prodLineIsGST}">
+                    <h4>GST</h4>
+                    
+                    <table class="info-table" style="page-break-before: avoid"> 
+                        <tbody>
+                            <tr>
+                                <td><b>Project Stage</b></td>
+                                <td><b>Description</b></td>
+                                <td><b>Duration</b></td>
+                                <td><b>Owner</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Kick-off</b></td>
+                                <td>Introductory meeting to be conducted between Customer and Clear to discuss the Integration Development Project</td>
+                                <td>3 days from Project Start Date</td>
+                                <td>Clear &amp; Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Project Planning &amp; Pre-Req Closure</b></td>
+                                <td>1.Close prerequisites as requested by Clear such as, developer provisioning, establishing network connectivity,and provide all information in the requirements list shared by Clear<br/>
+                                2.Notify and share the integration development project plan (“Project Plan”) with the Customer
+                                </td>
+                                <td>15 days from Kick-Off end</td>
+                                <td>1.Customer <br/> 2. Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>Implementation</b></td>
+                                <td>Implement integration development as per the Project Plan to be carried out by Clear</td>
+                                <td>21 days from Pre-Req Closure</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>UAT</b></td>
+                                <td>User Acceptance Testing and Issue Reporting</td>
+                                <td>14 days from Implementation end</td>
+                                <td>Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Cutover and Go Live</b></td>
+                                <td>Carry out cutover activities and go-live</td>
+                                <td>7 days from UAT Closure</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center"><b>TOTAL</b></td>
+                                <td>60  Days</td>
+                                <td><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </apex:panelGroup>
+                
+                <!-- Product_Line__c = 	E-invoicing & E-Way Bill -->
+                <apex:panelGroup rendered="{!prodLineIsEinv}">
+                    <h4>EINV/EWB Integration</h4>
+                    <table class="info-table" style="page-break-before: avoid">
+                        <tbody>
+                            <tr>
+                                <td><b>Project Stage</b></td>
+                                <td><b>Description</b></td>
+                                <td><b>Duration</b></td>
+                                <td><b>Owner</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Kick-off</b></td>
+                                <td>Introductory meeting to be conducted between Customer and Clear to discuss the Integration Development Project</td>
+                                <td>3 days from Integration Asset Start Date</td>
+                                <td>Clear &amp; Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Project Planning &amp; Pre-Req Closure</b></td>
+                                <td>1.Close prerequisites as requested by Clear such as, developer provisioning, establishing network connectivity,and provide all information in the requirements list shared by Clear<br/>
+                                2.Notify and share the integration development project plan (“Project Plan”) with the Customer
+                                </td>
+                                <td>7 days from Kick-Off end</td>
+                                <td>1.Customer <br/> 2. Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>Implementation</b></td>
+                                <td>Implement integration development as per the Project Plan to be carried out by Clear</td>
+                                <td>14 days from Pre-req closure by the Customer</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>UAT</b></td>
+                                <td>User Acceptance Testing and Issue Reporting</td>
+                                <td>14 days from Implementation end</td>
+                                <td>Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Cutover and Go Live</b></td>
+                                <td>Carry out cutover activities and go-live</td>
+                                <td>7 days from UAT Closure</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center"><b>TOTAL</b></td>
+                                <td>45 Days</td>
+                                <td><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </apex:panelGroup>
+                
+                <!-- Product_Line__c = Max -->
+                <apex:panelGroup rendered="{!prodLineIsMax}">
+                    <h4>MAX ITC</h4>
+                    <table class="info-table" style="page-break-before: avoid"> 
+                        <tbody>
+                            <tr>
+                                <td><b>Project Stage</b></td>
+                                <td><b>Description</b></td>
+                                <td><b>Duration</b></td>
+                                <td><b>Owner</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Kick-off</b></td>
+                                <td>Introductory meeting to be conducted between Customer and Clear to discuss the Integration Development Project</td>
+                                <td>3 days from Project Start Date</td>
+                                <td>Clear &amp; Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Project Planning &amp; Pre-Req Closure</b></td>
+                                <td>1.Close prerequisites as requested by Clear such as, developer provisioning, establishing network connectivity,and provide all information in the requirements list shared by Clear
+                                2.Notify and share the integration development project plan (“Project Plan”) with the Customer
+                                </td>
+                                <td>21 days from Kick-Off end</td>
+                                <td>1.Customer <br/> 2. Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>Implementation</b></td>
+                                <td>Implement integration development as per the Project Plan to be carried out by Clear</td>
+                                <td>35 days from Pre-req closure</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td><b>UAT</b></td>
+                                <td>User Acceptance Testing and Issue Reporting</td>
+                                <td>21 days from Implementation end</td>
+                                <td>Customer</td>
+                            </tr>
+                            <tr>
+                                <td><b>Cutover and Go Live</b></td>
+                                <td>Carry out cutover activities and go-live</td>
+                                <td>10 days from UAT Closure</td>
+                                <td>Clear</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center"><b>TOTAL</b></td>
+                                <td>90 Calendar Days</td>
+                                <td><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </apex:panelGroup> 
+                <br/>
+                Note: A maximum of 30 days grace period may be allowed for delay in deliverables from Customer or Clear.
+                
+            </apex:panelGroup>           
+            <br/>
+            <apex:include pageName="{!nextPage37}"/> 
+        </body>
+    </html>
+    
+</apex:page>

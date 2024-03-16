@@ -1,0 +1,37 @@
+<template>
+
+    <!-- Modal Section -->
+    <lightning-card>
+    <lightning-quick-action-panel header="API Threshold Parameters">
+    <template if:true={isLoading}>
+        <div class="slds-spinner_container slds-grid">
+            <div class="slds-align_absolute-center">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+        <template if:true={isShowModal}>
+            <lightning-layout multiple-rows>
+            <lightning-layout-item size="6" padding="around-small">
+                <legend class="slds-form-element__legend slds-form-element__label">Search API</legend>
+                <lightning-input type="search" onchange={handleSearch}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+                    <lightning-datatable
+                        key-field="identityname"
+                        data={filetabledata}
+                        columns={columns}
+                        onsave={handleSave}
+                        oncancel={hideModalBox}
+                        draft-values={draftValues}
+                    >
+                    </lightning-datatable>
+                </template>
+    </lightning-quick-action-panel>
+</lightning-card>
+
+</template>

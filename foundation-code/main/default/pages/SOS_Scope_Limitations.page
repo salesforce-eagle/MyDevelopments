@@ -1,0 +1,58 @@
+<apex:page renderAs="PDF"  showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+
+    <b>Scope Limitation </b>
+<p>
+    
+    
+Please note that the following services (by way of illustration) would not be within the ambit of this scope of work as detailed above. 
+</p><ul>
+<li>The above scope of work relates to assistance in relation to tax compliance matters undertaken by the Customer. Identifying matters that need consultation or advice or recommendation from a professional consultant / counsel will be the sole responsibility of the Customer.
+</li>
+<li>
+While executing the above scope of work, Cleartax will be guided by and follow the tax positions and tax rates as have been adopted by the Customer. 
+Such an act of Cleartax shall not be construed to be Cleartax’s acceptance or validation or correctness of the positions adopted by the Customer.
+</li>
+<li>
+Actual maintenance of accounting records for the Customer, passing of necessary accounting entries.
+</li>
+<li>
+Cleartax will rely on the information / documents / data provided to it by the Customer, which shall be solely provided to Cleartax for executing the scope of work under this engagement letter, and for no other purpose. Any delay in receipt of information from the Customer or any incompleteness or inaccuracy in the data or information provided by the Customer or extracted by Cleartax using the IT systems of the Customer may affect the statutory compliance, resulting in consequences from the authorities for which Cleartax shall not be responsible.
+</li>
+<li>
+The present engagement relates to services specified above. Other services can be mutually agreed through separate engagement letter and fees.
+</li>
+<li>
+Representation to the government or statutory or tax authorities in any form for any assignment/ engagement will not be part of the scope.
+</li>
+<li>
+Issuing of any chartered accountant’s certificate, attestation or digitally attesting / signing, preparation of any agreements, contracts or other documents will not be a part of scope.
+</li>
+<li>Cleartax does not provide tax, legal or accounting advice. Cleartax services are not intended to provide, and should not be relied on for, tax, legal or accounting advice, and Cleartax disclaims all liabilities that may arise thereof.
+</li>
+    </ul>
+</body>
+</html>
+</apex:page>

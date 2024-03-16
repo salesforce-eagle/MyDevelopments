@@ -1,0 +1,27 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_DATA_ARCHIVAL_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body style="font-family:Times New Roman !important;font-size:12px;">
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Quotes_Created__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Total Quotes Created in ana opportunity</description>
+    <externalId>false</externalId>
+    <label>No of Quotes Created(C)</label>
+    <summaryForeignKey>Quote.OpportunityId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

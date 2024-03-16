@@ -1,0 +1,127 @@
+<?xml version=”1.0″ encoding=”UTF-8″?>
+<Package xmlns=”http://soap.sforce.com/2006/04/metadata”>
+    
+    <types>
+        <members>CTX_CSMJourneyHandler</members>
+        <members>CTX_CSMJourneyOnbaordingFlow</members>
+        <members>CTX_CSMJorneyQueueable</members>
+        <members>CTX_CSM_TASK_CreationFormula</members>
+        <members>CTX_GenerateCSMTasksBatch</members>
+        <members>CTX_MuliselectLookUpController</members>
+        <members>CTX_CSMEscalationsBatch</members>
+        <members>AssetTriggerHandler</members>
+        <members>CTX_CSMActivationEscalationBatch</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_CSMAssetActivationChecklist</members>
+        <members>ctx_CSMAssetOnboardingSection</members>
+        <members>ctx_CustomPath</members>
+        <members>ctx_IntroductoryEmailPreview</members>
+        <members>ctx_MultiSelectLookup</members>
+
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <types>
+        <members>Asset.CTX_DelayReason_Comments_Mandatory</members>
+        <members>Asset.CTX_Restrict_Stage_Change</members>
+        <members>Asset.CTX_Stage_Completion_Date_Validation</members>
+        <members>Asset.CTX_Activation_DelayReason_Mandatory</members>
+        <members>Asset.CTX_PrerequesitesMandatoryValidation</members>
+        <members>Asset.CTX_Stage_Move_Back_Restriction</members>
+
+        <name>ValidationRule</name>
+    </types>
+
+    <types>
+        <members>CSM_Task_Creation__mdt</members>
+        <members>CSM_Escalation_mdt</members>
+        <name>CustomObject</name>
+    </types>
+    
+    <types>
+        <members>Activity.Status_of_Customer__c</members>
+        <members>Asset.Onbaording_Stage__c</members>
+        <members>Asset.CSM_Handled_Asset__c</members>
+        <members>Asset.Ageing_of_Asset__c</members>
+        <members>Asset.Ageing_Since_Created_Date__c</members>
+        <members>Asset.Ageing_Since_Created_Date__c</members>
+        <members>Asset.Sales_CSM_Handover_Completion_Date__c</members>
+        <members>Asset.Introduction_Email_Completion_Date__c</members>
+        <members>Asset.Prerequisite_collection_Completion_Date__c</members>
+        <members>Asset.License_Account_creation_Completion_Date__c</members>
+        <members>Asset.Product_training_Completion_Date__c</members>
+        <members>Asset.Sales_CSM_Handover_Status__c</members>
+        <members>Asset.Introduction_Email_Kickoff_call_Status__c</members>
+        <members>Asset.Customer_Prerequisite_collection_Status__c</members>
+        <members>Asset.Customer_License_Account_creation_Status__c</members>
+        <members>Asset.Product_training_Status__c</members>
+        <members>Asset.Is_Onboarding_Delayed__c</members>
+        <members>Asset.Onbaording_Delay_Reason__c</members>
+        <members>Asset.Onbaording_Delay_Reason_Comment__c</members>
+        <members>Asset.Prerequisites_Check__c</members>
+        <members>Asset.Prerequisites__c</members>
+        <members>Asset.Is_Activation_Delayed__c</members>
+        <members>Asset.Activation_Delay_Reason__c</members>
+        <members>Asset.Activation_Delay_Reason_Comment__c</members>
+        <members>Asset.Is_Asset_Activated__c</members>
+        <members>Asset.Is_Asset_Success__c</members>
+        <members>Asset.Is_Non_GST_EInv_Success__c</members>
+        <members>Product2.CSM_Handled_Product__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Eighth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Fifth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Nineth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Seventh_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Sixth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_GST_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_EInvoice_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Invoicing_API_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Invoicing_API_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Clear_Capture_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Clear_Capture_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Clear_Capture_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Clear_Capture_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_Clear_Capture_Fifth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Non_Int_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Non_Int_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Non_Int_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Non_Int_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Integrated_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Integrated_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Integrated_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Activation_MAX_Integrated_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_GST_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_GST_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_GST_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_GST_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_GST_Fifth_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_EInvoice_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_EInvoice_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_EInvoice_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_EInvoice_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Invoicing_API_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Invoicing_API_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Invoicing_API_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Invoicing_API_Fourth_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Clear_Capture_First_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Clear_Capture_Second_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Clear_Capture_Third_Task</members>
+         <members>CSM_Task_Creation__mdt.Success_Clear_Capture_Fourth_Task</members>
+
+        <name>CustomMetadata</name>
+    </types>
+
+
+    <version>55.0</version>
+</Package>

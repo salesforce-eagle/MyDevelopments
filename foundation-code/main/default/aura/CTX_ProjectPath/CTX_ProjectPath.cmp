@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" controller="CTX_ProjectPathController">
+    <lightning:picklistPath aura:id="picklistPath" recordId="{!v.recordId}"
+                            variant="linear"
+                            picklistFieldApiName="SI_Payment_Tracker__c"
+                            onselect="{!c.handlePicklistSelect}">
+    </lightning:picklistPath>
+</aura:component>

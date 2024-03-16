@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Push_Reasons__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Deal Push Reasons</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&quot;- Challenge to winning bid by competitor</fullName>
+                <default>false</default>
+                <label>&quot;- Challenge to winning bid by competitor</label>
+            </value>
+            <value>
+                <fullName>Change in POC/pilot Scope</fullName>
+                <default>false</default>
+                <label>Change in POC/pilot Scope</label>
+            </value>
+            <value>
+                <fullName>Customer budget restrictions</fullName>
+                <default>false</default>
+                <label>Customer budget restrictions</label>
+            </value>
+            <value>
+                <fullName>Delays with purchasing department</fullName>
+                <default>false</default>
+                <label>Delays with purchasing department</label>
+            </value>
+            <value>
+                <fullName>Issues with order execution</fullName>
+                <default>false</default>
+                <label>Issues with order execution</label>
+            </value>
+            <value>
+                <fullName>Issues with product quality (existing products) Legal / Contract negotiations</fullName>
+                <default>false</default>
+                <label>Issues with product quality (existing products) Legal / Contract negotiations</label>
+            </value>
+            <value>
+                <fullName>Technical complications during POC/Pilot</fullName>
+                <default>false</default>
+                <label>Technical complications during POC/Pilot</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

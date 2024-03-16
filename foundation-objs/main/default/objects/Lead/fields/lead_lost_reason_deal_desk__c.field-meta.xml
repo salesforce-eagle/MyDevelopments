@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>lead_lost_reason_deal_desk__c</fullName>
+    <externalId>false</externalId>
+    <label>lead lost reason deal desk</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Already finalized a Vendor</fullName>
+                <default>false</default>
+                <label>Already finalized a Vendor</label>
+            </value>
+            <value>
+                <fullName>Company Closed</fullName>
+                <default>false</default>
+                <label>Company Closed</label>
+            </value>
+            <value>
+                <fullName>E-Invoice Not Applicable</fullName>
+                <default>false</default>
+                <label>E-Invoice Not Applicable</label>
+            </value>
+            <value>
+                <fullName>GST Exempt</fullName>
+                <default>false</default>
+                <label>GST Exempt</label>
+            </value>
+            <value>
+                <fullName>Less Invoices</fullName>
+                <default>false</default>
+                <label>Less Invoices</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Pricing Issue</fullName>
+                <default>false</default>
+                <label>Pricing Issue</label>
+            </value>
+            <value>
+                <fullName>denied to talk</fullName>
+                <default>false</default>
+                <label>denied to talk</label>
+            </value>
+            <value>
+                <fullName>Happy with current Competitor software</fullName>
+                <default>false</default>
+                <label>Happy with current Competitor software</label>
+            </value>
+            <value>
+                <fullName>Happy with the current vendor/CA/Service provider</fullName>
+                <default>false</default>
+                <label>Happy with the current vendor/CA/Service provider</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

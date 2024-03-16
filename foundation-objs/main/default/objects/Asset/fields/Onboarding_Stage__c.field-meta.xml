@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Current stage in the onboarding process</description>
+    <externalId>false</externalId>
+    <label>Onboarding Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not started</fullName>
+                <default>true</default>
+                <label>Not started</label>
+            </value>
+            <value>
+                <fullName>Sales CSM Handover</fullName>
+                <default>false</default>
+                <label>Sales CSM Handover</label>
+            </value>
+            <value>
+                <fullName>Introduction Email / Kickoff Call</fullName>
+                <default>false</default>
+                <label>Introduction Email / Kickoff Call</label>
+            </value>
+            <value>
+                <fullName>Customer Prerequisite Collection</fullName>
+                <default>false</default>
+                <label>Customer Prerequisite Collection</label>
+            </value>
+            <value>
+                <fullName>Customer License Account Creation</fullName>
+                <default>false</default>
+                <label>Customer License Account Creation</label>
+            </value>
+            <value>
+                <fullName>Product Training</fullName>
+                <default>false</default>
+                <label>Product Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

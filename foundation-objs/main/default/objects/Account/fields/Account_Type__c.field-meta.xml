@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Account Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No assets-No opportunities(NAL)</fullName>
+                <default>false</default>
+                <label>No assets-No opportunities(NAL)</label>
+            </value>
+            <value>
+                <fullName>No assets - Closed opportunities(NAL-lost)</fullName>
+                <default>false</default>
+                <label>No assets - Closed opportunities(NAL-lost)</label>
+            </value>
+            <value>
+                <fullName>No assets - Open opportunities(NAL-actively pitching)</fullName>
+                <default>false</default>
+                <label>No assets - Open opportunities(NAL-actively pitching)</label>
+            </value>
+            <value>
+                <fullName>Active Assets-Closed / No opportunities(Existing cx)</fullName>
+                <default>false</default>
+                <label>Active Assets - Closed / No opportunities(Existing cx)</label>
+            </value>
+            <value>
+                <fullName>Active Assets - Open opportunities(Existing cx-cross-sell)</fullName>
+                <default>false</default>
+                <label>Active Assets - Open opportunities(Existing cx-cross-sell)</label>
+            </value>
+            <value>
+                <fullName>Non Active Assets - Closed / No opportunities(Old cx)</fullName>
+                <default>false</default>
+                <label>Non Active Assets - Closed / No opportunities(Old cx)</label>
+            </value>
+            <value>
+                <fullName>Non Active Assets - Open opportunities(winback)</fullName>
+                <default>false</default>
+                <label>Non Active Assets - Open opportunities(winback)</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,56 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_ASP_GSP_Lic_Tally_Desktop_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                 .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+              <apex:panelGroup rendered="{!SOS1==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Tally Connector- </u></b>
+
+             
+            <p><b>Features of Tally Connector Desktop Application for GST :</b></p>
+            <p>GST Tally connector part of ClearTax Desktop app connects to the Tally software present in the user machine and imports the Sales and Purchase documents to ClearTax.</p>
+            <p>For <b>GST tally connector integration</b> for Enterprises, there are few system requirements and prerequisites to be done prior to sale commitments and integration.</p>
+            <p>Desktop app</p>
+            <ul>
+             <li>Permissions to install Desktop app on customer premise</li>  
+                <li>OS Supported: Windows 7, 10</li> 
+                <li>RAM 4GB  and above</li> 
+                <li>Direct internet connectivity to be available (means, internet connectivity via proxy server is not supported yet)</li> 
+                <li>Whitelist of Desktop app in antivirus softwares (incase needed)</li> 
+                </ul>
+            <p>Tally requirements</p>
+            <ul>
+                <li>Tally ERP 9 and Prime</li> 
+                <li>Volume of sales and purchase documents to be checked.<ul><li>
+                    ~ 10K at FY level  shall be supported currently.
+        </li></ul>            </li> 
+                <li>Accounting entries done in Tally should be in the standard convention.  All the documents (sales/purchase/ expense vouchers, journals, ledgers etc) that are <b>marked as "GST applicable"</b> in Tally software get imported. Note: Accounting entries done in non-standard methods will result in mismatch in data.</li> 
+                <li>Multiple GSTINs present under Single company in Tally are currently not supported (i.e. Customized Tally software is not supported)</li> 
+                <li>If Remote desktop software is used for accessing tally, there might be a need to check the feasibility for connecting to Tally software from the client machine.</li> 
+                </ul>
+                
+            
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

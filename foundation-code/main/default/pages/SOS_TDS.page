@@ -1,0 +1,69 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_TDS_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS23==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <b><u> Scope of Services for Clear TDS- </u></b>
+
+            <table class="info-table">
+                            
+                            <tr><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>TDS return filing</b></td>
+                                <td><b>TDS return filing</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>TDS certificates</b></td>
+                                <td>Generation of Form 16A for all the PANs in case of form 26Q<br/>
+                                    Generation of Form 16 for all the PANs in case of form 24Q with ClearTax cover page
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>PAN verification</b></td>
+                                <td>The PAN status (active/inactive) and corresponding Name as per Income Tax Database</td>
+                            </tr>
+                            <tr>
+                                <td><b>Challan verification</b></td>
+                                <td>The Challan status (matched/unmatched) as per the NSDL OLTAS challan depository</td>
+                            </tr>
+                            <tr>
+                                <td><b>Data migration</b></td>
+                                <td>The Old data can be imported using the conso file pertaining to each return</td>
+                            </tr>
+                            <tr>
+                                <td><b>Data import</b></td>
+                                <td>Through an excel template / manual data entry. The customisation of the excel template is not possible.</td>
+                            </tr>
+                            <tr>
+                                <td><b>FVU Download</b></td>
+                                <td>FVU file (output file of TDS return) can be downloaded. Direct e-filing via ClearTDS is prement upon making the payment.<br/>
+                                    Direct upload to Income Tax Portal shall be enabled soon.</td>
+                            </tr>
+                        </table>
+            <br/>
+            <apex:include pageName="{!nextPage30}"/>
+        </body>
+    </html>
+</apex:page>

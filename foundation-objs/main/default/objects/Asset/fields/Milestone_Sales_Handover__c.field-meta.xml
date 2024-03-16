@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Sales_Handover__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(and(isblank(Expected_Onboarding_Completion_Date_c__c),today()- max_of_opportunity_or_po__c &gt;7,max_of_opportunity_or_po__c&gt;=Date(2021,6,1)),&quot;Sales Handover Pending, if not a genuine case, mail to the sales rep along with the issues&quot;,&quot;&quot;)</formula>
+    <label>Milestone-Sales Handover</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

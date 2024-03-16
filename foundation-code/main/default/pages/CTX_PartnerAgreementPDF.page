@@ -1,0 +1,1740 @@
+<apex:page StandardController="Account" extensions="CTX_PartnerAgreementController" renderAs="pdf" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style type="text/css">  
+                <!-- Table -->
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .table-bordered {
+                border: 1px solid #000;
+                border-collapse : collapse;
+                font-size : 15px;
+                }
+                
+                th, td {
+                padding: 15px;
+                }
+                
+                
+                thead>tr>th {
+                vertical-align: bottom;
+                border: 1px solid #000;
+                border-spacing: 0;
+                text-align:center;
+                border-collapse: collapse;
+                background : #202d79;
+                color:white;
+                }
+                
+                td {
+                border: 1px solid #000;
+                border-spacing: 0;
+                border-collapse: collapse;
+                text-align:justify;
+                }
+                
+                @page {
+                size:A4;
+                margin-top: 75px;
+                padding:0px;
+                margin-bottom: 75px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-right{
+                content: counter(page);
+                font-size:80%
+                }
+                }
+                @page :first {
+                @top-left {
+                }
+                @bottom-right {
+                }
+                }
+                div.footer {
+                margin-bottom:80px;
+                margin-top:3px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                div.header {
+                margin-top:5px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                .pageNumber{
+                position:relative;
+                text-align:center;
+                }
+                .pageNumber:before{
+                content: counter(page);
+                position:absolute;
+                bottom:0px;
+                left:50%;
+                width:100%
+                }
+                div.con{
+                text-align: justify;
+                }
+                ol.upperCase {
+                list-style-type: upper-alpha;
+                }
+                ol.lowerCase {
+                list-style-type: lower-alpha;
+                }
+                ol.upperRoman {
+                list-style-type: upper-roman;
+                }
+                ol.lowerRoman {
+                list-style-type: lower-roman;
+                }
+                
+                ol.inside {
+                list-style-type: none;
+                counter-reset: item;
+                margin: 0;
+                padding: 0;
+                }
+                
+                ol.inside > li {
+                display: table;
+                counter-increment: item;
+                margin-bottom: 0.6em;
+                }
+                
+                ol.inside > li.inner:before {
+                content: counters(item, ".");
+                display: table-cell;
+                padding-right: 0.6em;    
+                }
+                
+                li.inner ol.inside > li.inner {
+                margin: 0;
+                }
+                
+                li.inner ol.inside > li.inner:before {
+                content: counters(item, ".") " ";
+                }
+                
+            </style>
+        </head>
+        
+        <body style="font-family:Times New Roman !important;font-size:15px; text-align:justify">
+            <apex:outputPanel id="thePanel" layout="block" rendered="{!IF(urlRec = null,false,true)}">
+                <div style="page-break-after: always;">
+                    <img height="100%" width="100%" src="{!urlRec}"/>
+                </div>
+            </apex:outputPanel>
+            
+            <div class="footer" >
+                <table style="width:100%;table-layout: fixed;border: none !important;">
+                    <tr>
+                        <td  class="pageNumber" style="border:none;font-size:80%;"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="header">
+                <div style="text-align:right;font-size:12px;">
+                    Stamp Ref. No: {!stampRefNumber}
+                </div>
+            </div>
+            <div style="text-align:center;text-decoration: underline;text-underline-position: under;">
+                CLEARTAX CHANNEL PARTNER AGREEMENT
+            </div>
+            
+            <div style="page-break-after: always;">
+                <p>
+                    This Cleartax Channel Partner Agreement(<b>“Agreement”</b>), effective as of the last date of execution
+                    below (<b>“Effective Date”</b>) is executed at Bangalore by and between.
+                </p>
+                
+                <p><i>Between</i></p>
+                
+                <p>
+                    <b>Defmacro Software Private Limited</b>, a company incorporated under the Companies Act, 2013, having its
+                    registered
+                    office at B-3 Lower Ground Floor, School Lane, Naraina Vihar, New Delhi 110028 and Corporate Office at 23,24
+                    AMR TECH PARK, Block 1, First Floor, Hosur Main Road, Hongasandra, Bangalore, Karnataka PIN:560068
+                    (hereinafter referred to as “Cleartax” which expression shall unless repugnant to the context thereof mean
+                    and include
+                    its successors and assigns);
+                </p>
+                
+                <p><i>AND</i></p>
+                
+                <p>
+                    <b>{!accInst.Name}</b>, a company incorporated under the Companies Act, 2013, having its registered office at {!billingAddress} and Corporate Office at {!billingAddress} bearing Corporate Identification No. 
+                    <apex:outputPanel id="thePanel1" layout="inline" rendered="{!IF(accInst.CIN_code__c = null || accInst.CIN_code__c = 'NA',true,false)}">______ </apex:outputPanel>
+                    <apex:outputPanel id="thePanel2" layout="inline" rendered="{!IF(accInst.CIN_code__c != null && accInst.CIN_code__c != 'NA',true,false)}">{!accInst.CIN_code__c}</apex:outputPanel>
+                    (hereinafter referred to as <b>“Channel Partner”</b> which expression shall unless repugnant to the context thereof mean and include its successors and assigns)
+                </p>
+                <p>
+                    Cleartax and Channel Partner shall hereinafter be individually referred to as a <b>“Party”</b> and
+                    collectively as
+                    the <b>“Parties”</b>.
+                </p>
+                
+                <p><b>RECITALS</b></p>
+                
+                <p><b>WHEREAS,</b></p>
+                
+                <ol class="upperCase">
+                    <li >
+                        Cleartax is engaged in the business of developing, owning, implementing, providing softwares’, tailor
+                        made
+                        solutions and other related ancillary support services in the area of taxation including but not limited
+                        to products
+                        and services which facilitate TDS (Tax deduction at source) filing, Income Tax filing, GST (Goods
+                        Service Tax)
+                        compliance, E-Way bill and E-Invoicing for its various customers, across India.
+                    </li>
+                    <li >
+                        Channel Partner desires to act as an independent Channel Partner of the Services, with the non-exclusive
+                        right to
+                        market and promote the Services on the instructions of Cleartax.
+                    </li>
+                    <li >
+                        Relying on the representations, warranties, and indemnities, Cleartax has agreed to enter into this
+                        Agreement with
+                        the Channel Partner.
+                    </li>
+                </ol>
+                
+                <p><b>WHEREAS,</b> in consideration of the payments, mutual covenants and premises set-forth herein, the Parties
+                    have
+                    agreed on the terms and conditions as provided below.</p>
+                
+                <p><b>NOW THIS AGREEMENT WITNESSETH AS FOLLOWS:</b></p>
+                
+                <p><b>Definition(s): </b></p>
+                
+                <ol class="upperCase">
+                    <li >
+                        <i>“Agreement”</i> means this Channel Partner Agreement which includes all the annexures and all
+                        subsequent
+                        addendum or addenda.
+                    </li>
+                    <li>
+                        <i>“Addendum”</i> or <i>“Addenda”</i> means document(s) attached to or incorporated into the Agreement
+                        as determined
+                        and notified by Cleartax from time to time which modify, amend, add or replace any provision of this
+                        Agreement.
+                    </li>
+                    <li>
+                        <i>“Applicable Law”</i> means any law, statute, rule, regulation, order, circular, decree, directive,
+                        judgment,
+                        decision or other similar mandate of any applicable central, national, state or local governmental
+                        authority
+                        having competent jurisdiction over, or application to a party or subject matter in question.
+                    </li>
+                    <li >
+                        <i>“Business Development Material”</i> means sample or demo software, printed or non-printed advertising
+                        material, brochures, email / CRM login and all other materials owned, provided and approved by Cleartax.
+                    </li>
+                    <li >
+                        <i>“Confidential Information”</i> means and includes any and all oral, written or machine readable data and, or
+                        information that has been or may hereafter be disclosed to the Channel Partner by Cleartax or any of its
+                        representatives or on its or their behalf, whether furnished before or after the effective date of this
+                        Agreement,
+                        and whether tangible or intangible, and in whatever form or medium provided, such as drawings, sketches,
+                        documents, photographs, samples, specifications, reports, memoranda or procedures, screens, computer
+                        programs, or unwritten information that is disclosed by demonstration or discussion. Such Confidential
+                        Information shall include, without limitation, the rights comprised in any patent, copyright,
+                        compilation of
+                        data, industrial design, trademarks, trade secrets, know-how, or other form of rights generally
+                        understood as
+                        intellectual property, whether at common law or by statute or convention, rights to apply for
+                        registration under a statute in respect of those or like rights, methods, procedures, plans and
+                        strategies, and information relating
+                        to clients, business plans, proposed acquisitions, promotional and marketing activities, customer
+                        information,
+                        financial information, business forecast, technology, manufacturing processes, research developments,
+                        personnel training technique and materials, designs, inventions and engineering concepts, and any other
+                        business affairs of Cleartax , as well as any and all copies, notes, summaries, analyses, compilations,
+                        studies,
+                        reports and other documents or data and/or information, in whatever form or medium, generated by the
+                        Channel Partner or its representatives that contains, reflects, or is derived, in whole or in part, from
+                        the data
+                        and/or information furnished by the Cleartax or any of its representatives or on its or their behalf.
+                    </li>
+                    <li >
+                        <i>“Customer”</i> means a person to which Channel Partner has sold or proposes to sell the Services or who is
+                        seeking or is solicited to avail Services directly from Cleartax.
+                    </li>
+                    <li>
+                        <i>“Master Subscription and Services Agreement”</i> means the applicable agreement accessible at
+                        <a>www.cleartax.in/legal</a> governing the use of Services by the Customer.                     
+                    </li>
+                    <li>
+                        <i>“Charges”</i> means the amounts paid or payable by Cleartax to Channel Partner in lieu of the services rendered
+                        by the Channel Partner resulting in purchase of the Services by a Customer. 
+                    </li>
+                    <li>
+                        <i>Marks”</i> means (i) Cleartax’s names, word marks, device mark, logos, logotypes, trade dress, designs or other
+                        trademarks; (ii) the trademark and trade name “Cleartax,” and all trademarks and trade names derived from
+                        it, and (iii) any and all copyrights of Cleartax.                        
+                    </li>
+                    <li>
+                        <i>“Intellectual Property”</i> shall mean all, present and future, patents, utility models, trademarks, brands, brand
+                        extensions, service marks, trade and business names, registered designs, design rights, copyright and
+                        neighboring rights, database rights, domain names, and rights in business information, inventions, software,
+                        trade secrets, recipes, formulations, tradecraft for cost reductions and improvements of all kinds, confidential
+                        information of all kinds and other similar proprietary rights which may subsist in any part of the world and
+                        whether registered or not, including, where such rights are obtained or enhanced by registration, any
+                        registration of such rights and rights to apply for such registrations.
+                    </li>
+                    <li>
+                        <i>“Non-Cleartax Application”</i> means a web-based, mobile, offline or other software application functionality
+                        that interoperates with a Service, that is not provided by Cleartax.
+                    </li>
+                    <li>
+                        <i>"Records”</i> means Channel Partner’s books of accounts, audits, Customer data, etc., including electronic
+                        records and documentation, relating to Customers.
+                    </li>
+                    <li>
+                        <i>“Order Form”</i> means an ordering document or online order specifying the Services to be provided hereunder
+                        that is entered into between Customer and Cleartax, including any addenda, exhibits and supplements thereto.
+                        By entering into an Order Form hereunder, an affiliate agrees to be bound by the terms of this Agreement as
+                        if it were an original party hereto.
+                    </li>
+                    <li>
+                        <i>“Services”</i> means the software products, applications, programs, procedures, routines, support
+                        services and, or any other services of the like nature provided by Cleartax which are purchased by
+                        the Customer from Cleartax as result of the services rendered by the Channel Partner.
+                    </li>
+                </ol>
+                <ol class="inside">
+                    <li class="inner">
+                        <b>Rights and Obligations of the Channel Partner</b>
+                        <div style="padding-top:0.6em;">
+                            Channel Partner covenants, agrees and undertakes that
+                        </div>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            
+                            <li class="inner">
+                                It shall market and promote the Services to Customers, at its own expense and using its own efforts.
+                            </li>
+                            <li class="inner">
+                                It shall promote the Services with the objective of onboarding new Customers to purchase the Services of
+                                Cleartax. 
+                            </li>
+                            <li class="inner">
+                                It shall perform its obligations under this Agreement (i) with reasonable care and skill; (ii) by using
+                                appropriately skilled and qualified staff; (iii) in a professional manner; (iv) maintain high -quality marketing
+                                and customer service standards;
+                            </li>
+                            <li class="inner">
+                                It shall adhere to policies established by Cleartax including but not limited to the policies on anti-bribery and
+                                anti-corruption which are notified by Cleartax from time to time. Any breach of such policies will be considered
+                                a material breach of this Agreement. 
+                            </li>
+                            <li class="inner">
+                                It shall not act in any manner which conflicts with the interests of Cleartax.
+                            </li>
+                            <li class="inner">
+                                It shall not assign or subcontract any of its rights or obligations under this Agreement or appoint any agent to
+                                perform such obligations on behalf of the Channel Partner.
+                            </li>
+                            <li class="inner">
+                                It shall not use the Marks in its advertising, publications or in any manner without the prior written consent of
+                                Cleartax.
+                            </li>
+                            <li class="inner">
+                                It shall not sell or offer for sale, the Services on any online marketplaces or business platforms including online
+                                portals without the prior written consent of Cleartax.
+                            </li>
+                            <li class="inner">
+                                It shall, upon request, return any Business Development Material provided by Cleartax and shall not make any
+                                unauthorized copies of such material. It shall use the Business Development Material in the form provided by
+                                Cleartax and shall not make any modifications.
+                            </li>
+                            <li class="inner">
+                                It shall not make, publish, or communicate to any person or entity or in any public forum any defamatory or
+                                disparaging remarks, comments, or statements concerning Cleartax or its affiliates or their respective businesses,
+                                or any of their respective employees, officers, and existing and prospective customers, suppliers, investors and
+                                other associated third parties.
+                            </li>
+                            <li class="inner">
+                                It shall take prior consent of Cleartax before it affects any change in its ownership or constitution which affects
+                                or is likely to affect the (i) nature of business carried out by the Channel Partner and, or (ii) affects its ability to
+                                perform its obligations under this Agreement. Cleartax reserves the right to terminate this Agreement forthwith
+                                in the event of any such change in the ownership or constitution.
+                            </li>
+                            <li class="inner">
+                                Channel Partner agrees to provide necessary information of the Customer including but not limited to name,
+                                email address, contact number, etc., promptly upon request by Cleartax.
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Provision of Services to the Customer</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Subject to receipt of applicable charges from the Customer by Cleartax and upon acceptance of terms of the
+                                Master Subscription and Services Agreement by the Customer, Cleartax shall make the Services available to
+                                the Customer.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges and agrees that the access to Services provided to the Customer are limited, nonexclusive,
+                                revocable and non-transferable.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges and agrees that Customer shall directly enter into contractual arrangements with
+                                Cleartax for the purpose of availing the Services.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges and agrees that the provision and usage of Services shall be subject to and
+                                governed by the Master Subscription and Services Agreement accessible at <a>www.cleartax.in/legal</a> or such other
+                                amended or updated terms notified to Channel Partner.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges and agrees that the Services may be subject to any unavailability caused by
+                                circumstances beyond Cleartax’s reasonable control, including any force majeure events, any computer,
+                                communications, internet service or hosting facility failures or delays involving hardware, software, power or
+                                other systems not within Cleartax’s possession or reasonable control. The Services may be temporarily limited,
+                                interrupted or curtailed due to maintenance, repair, modifications, upgrades or relocation.
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Charges and Payment</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Subject to the terms of this Agreement, in consideration of the services rendered by Channel Partner from
+                                <b>{!startDate}</b>, until <b>{!endDate}</b> (<b>“Referral Period”</b>), resulting in the purchase of Services by a
+                                Customer the Referral Period and upon receipt of applicable charges from the Customer by Cleartax, Cleartax
+                                shall pay applicable Charges to the Channel Partner as set forth in Annexure 1 and this Clause 3.
+                            </li>
+                            <li class="inner">
+                                Cleartax will pay valid and undisputed invoices within thirty days (30) from the date of receipt of invoice along
+                                with supporting documents, as may be sought by Cleartax, except for those portions of any invoice that Cleartax
+                                disputes in good faith. Channel partner agrees that Cleartax shall not be liable to pay for any invoice which is
+                                raised after the lapse of sixty days (60) from the date on which the Charges become payable.
+                            </li>
+                            <li class="inner">
+                                Parties shall endeavor to settle any dispute relating to the invoice within a period of fifteen days (15) from the
+                                date of receipt of the notice of dispute. If Parties fail to settle the disputed amount within the aforesaid period,
+                                the disputed amount shall be settled between the Parties in accordance with the dispute resolution procedure
+                                provided in this Agreement.
+                            </li>
+                            <li class="inner">
+                                Any costs and expenses incurred by Channel Partner for the performance of its obligations, duties and actions
+                                under this Agreement shall be borne by Channel Partner.
+                            </li>
+                            <li class="inner">
+                                Except for applicable goods and services tax, all other taxes, duties, sales expenses or fees of any nature
+                                whatsoever levied by any governmental, tax or statutory authority or local authority in relation to or under this
+                                Agreement shall be borne and paid by the Channel Partner. Income tax, if applicable, will be deducted at source as per law.
+                            </li>
+                            <li class="inner">
+                                Channel Partner shall always be compliant with the GST requirements as set out hereunder in Annexure 2.
+                            </li>
+                            <li class="inner">
+                                Cleartax shall not be liable to pay Charges to any third party or agent, sub-contractor, affiliate or other entity of
+                                Channel Partner or engaged by the Channel Partner.
+                            </li>
+                            <li class="inner">
+                                Channel Partner shall renew the Services sold to the Customer before the end of relevant subscription term and
+                                in no case later than thirty (30) days after the lapse of the subscription. Failing which, Cleartax may approach
+                                the Customer for renewal and may renew the subscription without any payment obligation towards the Channel
+                                Partner.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Sales Policies</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                The prices, charges and terms of sale of Services shall be established by Cleartax and notified to the Channel
+                                Partner from time to time. The sales policies shall be those currently in effect and established from time-to-time
+                                by Cleartax in its price books, bulletins, emails, website and other authorized releases.
+                            </li>
+                            <li class="inner">
+                                Notwithstanding anything contained in the Agreement, Cleartax reserves the right to amend the price of Services
+                                and the Charges at any time.
+                            </li>
+                            <li class="inner">
+                                Orders of prospective Customers solicited by Channel Partner shall be forwarded to and will be subject to
+                                acceptance by Cleartax. Cleartax reserves the right to refuse provision of Services to any Customer.
+                            </li>
+                            <li class="inner">
+                                Cleartax, at its sole discretion, may periodically introduce business development programs, incentive schemes
+                                to encourage the Channel Partner to proactively promote the Services of Cleartax. The terms and conditions of
+                                the programs or incentive schemes interalia including the proposed targets, applicable rates at which charges
+                                will be paid out, duration of the program, payment terms and such other obligations mentioned in the program
+                                or scheme document shall govern the relationship between Parties in addition to the terms mentioned herein.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Term and Termination</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Subject to earlier termination rights as provided below, this Agreement shall remain valid until <b>{!endDate}</b>
+                                (“Term”). Thirty (30) days prior to the expiry of the Agreement, the Channel Partner may request in writing for
+                                renewal of the Agreement. Cleartax at its sole and absolute discretion may renew this Agreement through an
+                                Addendum specifying the extended term of the Agreement (“Renewal Period”). Unless the Addendum sets out
+                                additional or modified terms and conditions, the terms and conditions set out in this Agreement shall form part
+                                of the Addendum. The Agreement shall stand terminated if not renewed by the Parties.
+                            </li>
+                            <li class="inner">
+                                Notwithstanding anything contained in this Agreement, this Agreement may be terminated by Cleartax for
+                                convenience at any time by providing thirty (30) days prior written notice to the other Party.
+                            </li>
+                            <li class="inner">
+                                Notwithstanding anything in this Agreement, this Agreement shall be immediately terminated by Cleartax
+                                without furnishing any prior notice to the Channel Partner upon happening of any of the below mentioned:
+                                <ol class="lowerCase" style="padding-top:0.6em;">
+                                    <li>
+                                        The Channel Partner acts maliciously or fraudulently or tries to unduly enrich itself either by causing
+                                        wrongful loss to Cleartax or gains wrongfully while promoting the business of Cleartax or otherwise
+                                        while acting in the capacity of a Channel Partner;
+                                    </li>
+                                    <li>
+                                        The Channel Partner breaches any terms and conditions of this Agreement or acts against the interests of
+                                        Cleartax whether through untrue or misleading representations, warrants or information, while providing
+                                        Services to the Customers;
+                                    </li>
+                                    <li>
+                                        The Channel Partner is found guilty of misconduct, negligence or acts in bad faith while carrying out the
+                                        business as per this Agreement.
+                                    </li>
+                                    <li>
+                                        If the Channel Partner voluntarily or involuntarily becomes the subject of bankruptcy, insolvency or
+                                        similar proceeding or makes a composition with its creditors generally or if a receiver or administrator or
+                                        trustee is appointed to take possession of the business or properties or undertaking of the Channel Partner.
+                                    </li>
+                                    <li>
+                                        If the Channel Partner ceases to carry on its business for a period of thirty (30) days as presently
+                                        conducted.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="inner">
+                                Upon the termination of this Agreement, the Channel Partner shall hand over within thirty (30) days after such
+                                termination, all Confidential Information, materials, system access or documents in its possession (whether in
+                                physical or machine-readable form), including any copies thereof that belong to or are provided by Cleartax.
+                                The Channel Partner also acknowledges and agrees not to make or retain any copies of the said materials or
+                                documents.
+                            </li>
+                            <li class="inner">
+                                In the event of termination for any reason or expiration, Cleartax may directly provide the Services to the
+                                Customers at such mutually agreeable terms and conditions with the Customer. Further Channel Partner shall
+                                pay any unpaid Charges accrued to Cleartax prior to the effective date of termination.
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Relationship</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                This Agreement has been entered between the Parties on a principal-to-principal basis. The Parties are in the
+                                capacity of an independent contractor and the execution of this Agreement shall not in any manner, either
+                                expressly or in an implied manner, directly or indirectly, be construed that the Channel Partner is an employee
+                                or an agent of Cleartax for whatsoever purpose.
+                            </li>
+                            <li class="inner">
+                                Channel Partner does not have, nor shall hold itself to any third-party including Customer as having any right,
+                                power or authority to create any contract or obligation, either express or implied, on behalf of or binding upon
+                                Cleartax, unless Cleartax shall consent to that in writing.
+                            </li>
+                            <li class="inner">
+                                It shall not be projected or construed that the Parties are in any way, any of the following:
+                                <ol class="lowerCase" style="padding-top:0.6em;">
+                                    <li>
+                                        Equity holders of each other;
+                                    </li>
+                                    <li>
+                                        Subsidiaries of the other or;
+                                    </li>
+                                    <li>
+                                        Jointly and severally obligated as a single legal or financial entity for any purpose whatsoever.
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Relationship</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Channel Partner represents and warrants that:
+                                <ol class="lowerCase" style="padding-top:0.6em;">
+                                    <li>
+                                        it is duly organized under Applicable Law and has sufficient authority to enter into this Agreement;
+                                    </li>
+                                    <li>
+                                        the person entering into this Agreement is authorized to sign this Agreement on behalf of such Channel
+                                        Partner.
+                                    </li>
+                                    <li>
+                                        the execution of this Agreement and all other documents to be executed pursuant thereto or in connection
+                                        therewith, and such documents will constitute valid and binding obligations and be enforceable against
+                                        the Channel Partner in accordance with their respective terms.
+                                    </li>
+                                    <li>
+                                        the execution and performance under this Agreement does not conflict with any contractual obligations
+                                        Channel Partner to any third party.
+                                    </li>
+                                    <li>
+                                        there are no legal proceedings, including appeals and applications for review, in progress, pending
+                                        against or relating to the Channel Partner or its affiliates or any of the assets or properties of the Channel
+                                        Partner that could materially adversely affect its ability to perform its obligations under this Agreement.
+                                    </li>
+                                    <li>
+                                        it shall not make any representation in respect of the Services without prior written consent of Cleartax.
+                                    </li>
+                                    <li>
+                                        it shall market the Services in a professional manner.                                    
+                                    </li>
+                                    <li>
+                                        it shall immediately cease to use the Marks upon the termination of this Agreement.                                    
+                                    </li>
+                                    <li>
+                                        all the information which has been given by or on behalf of the Channel Partner to the Cleartax with
+                                        respect to the Channel Partner is true and accurate in all respects.
+                                    </li>
+                                    <li>
+                                        its business is being conducted in accordance with its certificate of incorporation, memorandum of
+                                        association and the articles of association.
+                                    </li>
+                                    <li>
+                                        it has obtained all governmental authorizations, consents and approvals and corporate approval, and
+                                        other consents required under Applicable Law for the execution and performance of this Agreement
+                                        have been obtained, and continue in force.                                    
+                                    </li>
+                                    <li>
+                                        The execution, delivery or performance by the Channel Partner of this Agreement
+                                        <ol class="upperRoman" style="padding-top:0.6em;">
+                                            <li>
+                                                does not violate the certificate of incorporation, memorandum of association and the articles of
+                                                association.
+                                            </li>
+                                            <li>
+                                                does not contravene any provision of Applicable Law or violate or contravene the provisions of or
+                                                constitute a default under any documents, contracts, agreements or any order, writ, injunction or
+                                                decree of any court or tribunal or Governmental Authority to which they are subject, or any other
+                                                instruments to which the Channel Partner is a party or which are applicable to it.
+                                            </li>
+                                            <li>
+                                                does not conflict with, result in any breach of, or constitute a default under, or give rise to a right to
+                                                terminate, amend, modify, abandon or accelerate, any agreement, contract, license, registration or
+                                                permit which is applicable to the Channel Partner.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        None of the following has occurred and is subsisting, or threatened in writing, in relation to the Channel
+                                        Partner:
+                                        
+                                        <ol class="upperRoman" style="padding-top:0.6em;">
+                                            <li>
+                                                appointment of an administrator
+                                            </li>
+                                            <li>
+                                                an application or an order made, proceedings commenced, a resolution passed or proposed in a
+                                                Notice of meeting or other steps taken for. the winding up, dissolution or administration of the
+                                                Channel Partner; or
+                                            </li>
+                                            <li>
+                                                the Channel Partner entering into an arrangement, compromise or composition with or assignment
+                                                of the benefit of its creditors or a class of them.
+                                            </li>
+                                            <li>
+                                                The Channel Partner:
+                                                <ol class="lowerRoman" style="padding-top:0.6em;">
+                                                    <li>
+                                                        being (or taken to be under Applicable Law) unable to pay its debts;
+                                                    </li>
+                                                    <li>
+                                                        stopping or suspending, or threatening to stop or suspend, payment of all or a class of its debts
+                                                        except pursuant to a good faith dispute;
+                                                    </li>
+                                                    <li>
+                                                        appointment of a receiver, manager, administrator or similar officer to any of the assets and
+                                                        undertakings of the Channel Partner or;
+                                                    </li>
+                                                    <li>
+                                                        becoming bankrupt or insolvent or making an arrangement with his/its creditors generally or
+                                                        taking advantage of any statute for the relief of insolvent debtors.
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Nothing has occurred and is subsisting, or is threatened in relation to the Channel Partner under
+                                        Applicable Law of any jurisdiction which has a substantially similar effect to any of the paragraphs
+                                        referred to in paragraph above.
+                                    </li>
+                                    <li>
+                                        Neither the Channel Partner nor any of the Channel Partner’s officers, agents or employees, so
+                                        authorised, has committed or omitted to do any act or thing the commission or omission of which is in
+                                        contravention of any Applicable Law in respect of the Channel Partner.
+                                    </li>
+                                    <li>
+                                        The Channel Partner does not have any outstanding claims relating to liability from any of its customers
+                                        and has not received written complaints from customers in relation to quality of the services.
+                                    </li>
+                                    <li>
+                                        The Channel Partner has at all times complied with Applicable Laws including, Prevention of Money-
+                                        Laundering Act, 2002.
+                                    </li>
+                                    <li>
+                                        The Channel Partner has not received any claims or liabilities arising or any actions, investigations,
+                                        orders from any governmental authority with respect to its activities.
+                                    </li>
+                                    <li>
+                                        The Channel Partner has not received any notice of any action or investigation or other proceedings of
+                                        any nature whatsoever, by any governmental authority which would restrain, prohibit or otherwise
+                                        challenge or impede the transactions contemplated under this Agreement or has or is likely to have an
+                                        adverse effect on this transaction, the Channel Partner or Cleartax.
+                                    </li>
+                                    <li>
+                                        There are no investigations pending or threatened in writing in respect of the Channel Partner by any
+                                        governmental authority.
+                                    </li>
+                                    <li>
+                                        The Channel Partner is not subject to any waiver, declaration or exemption granted or issued by any
+                                        governmental authority.
+                                    </li>
+                                    <li>
+                                        Since incorporation of the Channel Partner, there has been no litigation, arbitration, administrative or
+                                        criminal proceedings, pending, involving the Channel Partner or any past or present directors, officers
+                                        or employees of the Channel Partner.
+                                    </li>
+                                    <li>
+                                        The Channel Partner is compliant in making filings with the all governmental and statutory authorities
+                                        as required by Applicable Law including but not limited to the Registrar of Companies and the Income
+                                        Tax Department.  
+                                    </li>
+                                    <li>
+                                        The Channel Partner has put in place information technology systems to ensure that there is no
+                                        unauthorized access to the data which is in possession of the Channel Partner including data pertaining
+                                        to the customers of the Channel Partner.
+                                    </li>
+                                    <li>
+                                        The Channel Partner has not and nor any Associated Persons or former Associated Persons has, directly
+                                        or indirectly: 
+                                        <ol class="upperRoman" style="padding-top:0.6em;">
+                                            <li>
+                                                violated or is in violation of Money Laundering Laws, Anti-Bribery Laws, or rules, regulations,
+                                                guidelines of the OFAC (“OFAC Regulations”) and other applicable anti-corruption Laws; or
+                                            </li>
+                                            <li>
+                                                made, offered or promised to make, or authorized the payment or giving of money, or anything else
+                                                of value, to any (i) executive, official, employee or person acting in an official capacity for or on
+                                                behalf of a government department, government agency or a government-controlled entity or a
+                                                public international organization (e.g., the International Monetary Fund or the World Bank), or (ii)
+                                                political party or official thereof, or candidate for political office (each of the foregoing a
+                                                “Government Official”), or (iii) any other person, while knowing that all or some portion of the
+                                                money or value will be offered, given or promised to a government official for the purposes of
+                                                obtaining or retaining business or securing any improper advantage or in other circumstances when
+                                                such offer, payment or promise would be unlawful; or been subject to any investigation by any
+                                                Governmental Authorities or regulators with regard to any actual or alleged breach of any relevant
+                                                anti-corruption law.
+                                            </li>
+                                        </ol>
+                                        <div style="padding-top:0.6em;">
+                                            Provided that in the case of former Associated Persons such action took place whilst the former
+                                            Associated Person was an Associated Person.
+                                        </div>
+                                    </li>
+                                    <li >
+                                        Neither the Channel Partner nor any of its current or former Associated Persons is or has been the
+                                        subject of any investigation, inquiry or litigation, administrative or enforcement proceedings by any
+                                        Governmental Authority or any customer regarding any offence or alleged offence under Anti-Bribery
+                                        Laws or Money Laundering Laws, and no notice has been received that such investigation, inquiry or
+                                        proceedings have been threatened or are pending, and there are no circumstances likely to give rise to
+                                        any such investigation, inquiry or proceedings.
+                                    </li>
+                                    <li>
+                                        The Channel Partner is not (i) currently identified on the Specially Designated Nationals and Blocked
+                                        Persons List maintained by the OFAC and/or on any other similar list maintained by OFAC or any other
+                                        U.S. governmental agency pursuant to any authorising statute, executive order or regulation; and (ii) a
+                                        Person with whom a citizen of the United States is prohibited to engage in transactions by any trade
+                                        embargo, economic sanction, or other prohibition of United States law, regulation, or executive order
+                                        of the President of the United States.
+                                        
+                                        <div style="padding-top:0.6em;">
+                                            For the purposes of this Agreement:
+                                        </div>
+                                        <ol class="upperRoman" style="padding-top:0.6em;">
+                                            
+                                            <li>
+                                                “Anti-Bribery Law” means the Indian Prevention of Corruption Act 1988, the US Foreign
+                                                Corrupt Practices Act of 1977 and the UK Bribery Act 2010, and shall include any Applicable
+                                                Laws that relate to the bribery or corruption, in each case as amended, re-enacted or replaced
+                                                from time to time;
+                                            </li>
+                                            <li>
+                                                “Associated Person” means a Person (including any director, officer, employee, agent or other
+                                                intermediary) who performs services for or on behalf of that Person or who holds shares of
+                                                capital stock, partnership interests, limited liability company membership interests and units,
+                                                shares, interest and other participations in that Person (in each case when performing such
+                                                services or acting in such capacity);
+                                            </li>
+                                            <li>
+                                                “Money Laundering Law” means the Indian Prevention of Money Laundering Act, 2002 and
+                                                all applicable anti-money laundering statutes of all jurisdictions, including, without limitation,
+                                                Indian and U.S. anti-money laundering laws, the rules and regulations thereunder and any
+                                                related or similar rules, regulations or guidelines, issued, administered or enforced by any
+                                                governmental or regulatory agency; and
+                                            </li>
+                                            <li>
+                                                “OFAC” means the Office of Foreign Assets Control of the Department of the Treasury of the
+                                                United States of America.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        The Channel Partner has not nor has any affiliate or their respective directors, officers, managers,
+                                        employees, its independent contractors, representatives or agents violated the provisions of the Foreign
+                                        Corrupt Practices Act, 1977 (“FCPA”), the U.K. Bribery Act or Prevention of Corruption Act, 1988
+                                        (“PCA”) or any other applicable anti-bribery or anti-corruption law. None of the any of their directors,
+                                        officers, employees and its agents or representative has, in any way in relation to the Channel Partner
+                                        or any of the Channel Partner’s subsidiaries or controlled affiliates, (i) have offered, promised, made,
+                                        paid or received or will offer, promise, make, pay or receive any bribe, kickback or other similar
+                                        payment or transfer of value for the benefit of any person in connection with obtaining or retaining
+                                        business or to secure an improper advantage (including, but not limited to, with respect to its respective
+                                        capital contributions, including additional contributions and funding and in-kind capital contributions)
+                                        or any other party hereto; (ii) have authorized, induced, or caused or will authorize, induce, or cause
+                                        any person to offer, promise, make, pay or receive any such payment or transfer of value in connection
+                                        with obtaining or retaining business or to secure an improper advantage (including, but not limited to,
+                                        with respect to its respective capital contributions, including additional contributions and funding and in-kind capital contributions) or any other party hereto; or (iii) possess knowledge or reason to know
+                                        that any such payment or transfer of value has occurred or will occur in connection with obtaining or
+                                        retaining business or to secure an improper advantage (including, but not limited to, with respect to its
+                                        respective capital contributions, including additional contributions and funding and in-kind capital
+                                        contributions).
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Non-Competition</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                During the Term and for 12 months thereafter, Channel Partner shall not:
+                                <ol class="lowerCase" style="padding-top:0.6em;">
+                                    <li>
+                                        directly or indirectly market, promote, or solicit customers or subscriptions for, supply, sell or re- sell any
+                                        product or service in competition with the Services;
+                                    </li>
+                                    <li>
+                                        have any controlling interest in any entity that markets, promotes, sells or provides any product or service
+                                        in competition with the Services;
+                                    </li>
+                                    <li>
+                                        enter into any agreements or arrangements with any other provider to resell, redistribute, promote, sublicense,
+                                        market, or otherwise commercialize any other product or service that competes or is similar with
+                                        the Services;
+                                    </li>
+                                    <li>
+                                        display on its website or elsewhere any advertising or marketing materials of any provider of any product
+                                        or service that compete with the Services.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="inner">
+                                Each obligation listed in this Clause shall be treated as a separate obligation and shall be severally enforceable
+                                as such. In the event of any obligation or obligations being or becoming unenforceable in whole or in part, such
+                                part or parts as are unenforceable shall be deleted or amended and any such deletion or amendment shall not
+                                affect the enforceability of other parts of this Clause or this Agreement in whole. Channel Partner acknowledges
+                                that the restrictions contained in this are reasonable in all the circumstances.
+                            </li>
+                            <li class="inner">
+                                Cleartax shall have the continuing right to market and sell the Services and any other products or services to
+                                any third parties, including but not limited to current, future and potential Customers.
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="inner">
+                        <b>Record Keeping and Audit</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Channel Partner shall maintain all Records in relation to transactions covered within this Agreement for a
+                                minimum period of five (5) years or such other higher periods as required under the law.
+                            </li>
+                            <li class="inner">
+                                Channel Partner will establish and maintain copies of complete and accurate audit Records for compliance with
+                                this Agreement. Cleartax has the right to audit, take copies of the complete and accurate audit Records
+                                established by Channel Partner for compliance with this Agreement and its programs.
+                            </li>
+                            <li class="inner">
+                                On receipt of reasonable notice from Cleartax of an audit. Channel Partner will give Cleartax and/or its auditors
+                                (internal or third party) prompt access to its Records during its normal business hours.
+                            </li>
+                            <li class="inner">
+                                The right to audit Records by Cleartax shall survive for two (2) years after termination of the Agreement.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Confidentiality</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                The Channel Partner agrees to use all Confidential Information provided pursuant to this Agreement solely for
+                                the purpose of this Agreement and to hold the Confidential Information in the strictest confidence and as the
+                                property of the Cleartax and will not disclose any Confidential Information in any manner whatsoever except
+                                as expressly permitted herein. The Channel Partner further agrees to restrict access to, and the use, possession,
+                                knowledge and development of, the Confidential Information to such of its representatives who have a need to
+                                know the Confidential Information for the sole purpose of evaluating the Purpose. The Channel Partner
+                                undertakes and agrees to inform any person who receives Confidential Information of the confidential nature of
+                                such Confidential Information, instructs any such person to treat such Confidential Information in the same
+                                manner and to the same extent as is required of it under this Agreement and to provide any such person with a
+                                copy of this Agreement or ensure they are bound by similar terms of confidentiality which are no less stringent
+                                than the ones contained herein. The Channel Partner agrees that the Confidential Information is of substantial
+                                value to the Cleartax and that unauthorized use or disclosure would have an adverse effect on the Cleartax. The
+                                Channel Partner shall be fully responsible for any violation of this Agreement by any person who receives
+                                Confidential Information from the Channel Partner or any of its representatives or at its or their request. The
+                                Channel Partner further agrees that it shall not copy, reproduce in any form or attempt to reverse engineer,
+                                decompile, disassemble, reverse, translate or store in a retrieval system or database the Confidential
+                                Information, except for such copies and storage as may be reasonably required internally by the Channel Partner
+                                for the purpose of this Agreement.
+                            </li>
+                            <li class="inner">
+                                The obligations and restrictions set forth in the Clause above do not apply to that part of the Confidential Information which: (i) was within the Channel Partner’s possession prior to its being disclosed by the Cleartax
+                                or any of its representatives or on its or their behalf, provided that the Channel Partner or any of its
+                                representatives was not bound by a confidentiality obligation with respect to such information; (ii) is or becomes
+                                generally available to the public by other than unauthorized disclosure; (iii) is independently developed by the
+                                Channel Partner without reference or use, in whole or in part, to any Confidential Information; or (iv) is released
+                                for disclosure by Cleartax with its written consent. Notwithstanding anything to the contrary herein contained,
+                                the Channel Partner may disclose that part of the Confidential Information which it is lawfully requested or
+                                required to disclose pursuant to an order of a court or other authority of competent jurisdiction, but only after
+                                the Channel Partner first promptly notifies Cleartax of such request or requirement to allow Cleartax the
+                                opportunity to seek a protective order or other appropriate remedy.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges that a breach of this Clause may result in irreparable harm to Cleartax for which
+                                monetary damages may not provide a sufficient remedy. Accordingly, Cleartax may seek equitable relief or
+                                injunctive relief in relation to such breach.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Intellectual Property Rights</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Cleartax owns and retains all right, title and interest (including without limitation all patent rights, copyrights,
+                                trademark rights, trade secret rights and other intellectual property rights), in and to the Services. Channel
+                                Partner agrees that only Cleartax shall have the right to maintain, enhance or otherwise modify the Services. If
+                                Channel Partner provides Cleartax with reports of defects in the Services or proposes or suggests any changes
+                                or modifications , Cleartax shall have the right to use and exploit such feedback including, without limitation,
+                                the incorporation of such feedback into Cleartax’s Services, without any obligation to Channel Partner.
+                            </li>
+                            <li class="inner">
+                                Channel Partner shall not gain by virtue of this Agreement, any rights of ownership of copyrights, patents,
+                                design, trade secrets, trademarks or any other IPR.
+                            </li>
+                            <li class="inner">
+                                Channel Partner acknowledges that if performance of this Agreement results into creation of any intellectual
+                                property rights , the same shall be called as “Foreground IPR” and the Channel Partner acknowledges and agrees
+                                that all such Foreground IPR shall be deemed to have been unequivocally assigned to Cleartax, whether or not
+                                Cleartax is aware of or the Channel Partner has omitted to inform Cleartax about creation of such Foreground
+                                IPR. The Channel Partner hereby waives all claims, rights, interests with respect to such Foreground IPR. The
+                                Channel Partner shall execute all necessary and appropriate documents and deeds as Cleartax may require in
+                                perfecting the title of Cleartax to the Foreground IPR.
+                            </li>
+                            <li class="inner">
+                                Channel Partner shall use the Marks only to promote sale of Cleartax’s Services. Channel Partner shall display
+                                Marks in good taste, in a manner that preserves their value and in accordance with any standards provided by
+                                the Cleartax for display. Use of Marks will never mean, or be implied to mean, that there is a transfer of any
+                                interest/ ownership of the Marks. Channel Partner will not register or use any trade, company, business or
+                                internet domain name which contains Cleartax’s Marks in whole or in part or any other name which is
+                                confusingly similar thereto.
+                            </li>
+                            <li class="inner">
+                                Except for the rights expressly granted to the Channel Partner under this Agreement, Cleartax will retain all
+                                right, title and interest in its IPR and Foreground IPR under this Agreement.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Indemnity</b>
+                        <div style="padding-top:0.6em;">
+                            Notwithstanding anything contained in this Agreement, the Channel Partner shall defend, indemnify and hold
+                            harmless Cleartax (and its affiliates, officers, directors and employees) upon demand from and against any and
+                            all damages, actions, proceedings, claims, demands, costs, losses, liabilities, diminution in value, loss of
+                            earnings, profits and revenue, opportunity costs, expenses (including court costs and reasonable attorneys’ legal
+                            fees) in connection with, arising out of, or in relation to (i) breach or non-compliance of its obligations, consents,
+                            grants, undertakings, representations or warranties, and (ii) misrepresentation, negligence, fraud, wilful
+                            concealment and misconduct (iii) misuse of the Services and products of Cleartax for any illegal or unauthorised
+                            purposes; (iv) any injuries to persons or damage to property, body, business character, reputation including theft,
+                            resulting from the acts or omissions of Channel Partner; (v) any claims by a third party on Cleartax for the acts
+                            committed or omitted by the Channel Partner; (vi) any violation of municipal, state or central laws governing
+                            the Services and products or their sale, that may result from such act or omission by the Channel Partner.
+                        </div>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Limitation of Liability</b>
+                        <div style="padding-top:0.6em;">
+                            Notwithstanding anything contained in this Agreement, except for payments to be paid to the Channel Partner
+                            in accordance with Clause 3 of this Agreement, Cleartax shall not be liable for any claims, irrespective of the
+                            basis of the claim (whether in contract, tort, negligence, by statute or otherwise), arising out of or in relation to
+                            this Agreement.
+                        </div>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Force Majeure</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Neither Party shall be liable to the other, nor be in default if, and to the extent, that the performance or delay in
+                                performance of any of its obligations under this Agreement is prevented, restricted, delayed or interfered with
+                                due to circumstances beyond the reasonable control of such Party, including but not limited to, applicable laws,
+                                fires, floods, tsunami, explosions, epidemics, diseases, accidents, acts of God, threat of wars, riots, strikes,
+                                lockouts, or other concerted acts of workmen, acts of Government, shortages of materials and/or industrial
+                                emergency or terrorist attacks.
+                            </li>
+                            <li class="inner">
+                                The Party claiming an event of force majeure shall promptly notify the other Party in writing and in any event
+                                not later than seven (7) days and provide full particulars of the cause or event and the date of first occurrence
+                                thereof, and keep the other Party informed of any further developments relating to the cause or event.
+                            </li>
+                            <li class="inner">
+                                The Party so affected shall use its best efforts to remove the cause of non-performance, and the Parties shall
+                                resume performance hereunder when such cause is removed.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Notices</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                Unless otherwise provided herein, all notices, requests, waivers and other communications shall be made in
+                                writing, in the English language and by letter (delivered by hand, courier or registered post), email or facsimile
+                                transmission (save as otherwise stated) (“Notices”) and to the addresses and authorized representatives set forth,
+                                unless the addresses or the authorized representative is changed by Notice.
+                                <div style="padding-top:0.6em;">
+                                    <table class="table-bordered" style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Sl. No.</th>
+                                                <th>Representative of the Channel Partner</th>
+                                                <th>Information for Notices</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1.</td>
+                                                <td>To the authorized signatory/ representative of Channel Partner</td>
+                                                <td>Registered address and/or corporate address if any asmentioned in the name clause. Email address as intimated to Cleartax.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div style="padding-top:0.6em;">
+                                    <table class="table-bordered" style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Sl. No.</th>
+                                                <th>Representative of Cleartax</th>
+                                                <th>Information for Notices</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1.</td>
+                                                <td>Legal Department</td>
+                                                <td>
+                                                    <div>
+                                                        Address: <b>Defmacro Software Private Limited,</b>
+                                                    </div>
+                                                    <div style="padding-top:0.6em;">
+                                                        Registered office at B-3 Lower Ground Floor, School Lane,
+                                                        Naraina Vihar, New Delhi 110028
+                                                    </div>
+                                                    <div style="padding-top:0.6em;">
+                                                        Corporate Office at 23,24 AMR TECH PARK, Block 1, First
+                                                        Floor, Hosur Main Road, Hongasandra, Bangalore,
+                                                        Karnataka PIN:560068
+                                                    </div>
+                                                    <div style="padding-top:0.6em;">
+                                                        Email: <a href="mailto:legal@cleartax.in">legal@cleartax.in</a>, <a href="mailto:compliance@cleartax.in">compliance@cleartax.in</a>
+                                                    </div>
+                                                    <div style="padding-top:0.6em;">
+                                                        Attention: Legal Department
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li class="inner">
+                                In the event a Party refuses delivery or acceptance of a Notice under this Agreement, it shall be deemed that the
+                                Notice was given upon proof of the refused delivery, provided the same was sent in the manner specified in this
+                                Agreement. However, the Parties agree that if a Notice which is not delivered in accordance with the provisions
+                                of this Agreement is acknowledged by an authorized representative of a Party then such Notice shall be deemed
+                                to have been validly delivered in accordance with the terms of this Agreement without regard to the provisions
+                                of this Clause 15.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>Governing Law and Dispute Resolution</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                This Agreement shall be governed by and construed in accordance with the laws of India.
+                            </li>
+                            <li class="inner">
+                                Subject to Clause 16.3 below, the courts at Bangalore, Karnataka shall have jurisdiction on the matters arising
+                                from or in connection with this Agreement, subject to Applicable Law.
+                            </li>
+                            <li class="inner">
+                                All disputes and differences arising out of or in connection with any of the matters set out in this Agreement
+                                (“Dispute”), if not resolved by amicable settlement within 30 (thirty) days from the Dispute, shall be finally and
+                                conclusively determined by arbitration by a sole arbitrator appointed by Cleartax to the dispute, in accordance
+                                with the Arbitration and Conciliation Act, 1996, of India, for the time being in force.
+                            </li>
+                            <li class="inner">
+                                The arbitrator shall reach and render a decision in writing with respect to the appropriate award to be rendered
+                                or remedy to be granted pursuant to the dispute.
+                            </li>	
+                            <li class="inner">
+                                To the extent practical, decisions of the arbitrator shall be rendered no more than 90 (Ninety) days following
+                                commencement of proceedings with respect thereto.
+                            </li>
+                            <li class="inner">
+                                The arbitration shall be conducted in English, and the seat and venue for arbitration shall be Bangalore,
+                                Karnataka.
+                            </li>
+                            <li class="inner">
+                                The arbitrator shall be entitled to award costs of the arbitration.
+                            </li>
+                            <li class="inner">
+                                The arbitration award by the arbitrator shall be final and binding upon the Parties and shall not be subject to
+                                appeal.
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li class="inner">
+                        <b>MISCELLANEOUS</b>
+                        <ol class="inside" style="padding-top:0.6em;">
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Successors and Assigns</span>. Except as otherwise expressly provided herein, the provisions hereof shall inure to the
+                                benefit of and be binding upon the successors, permitted assigns, heirs, executors and administrators of the
+                                Parties.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Waivers, Delays or Omissions</span>. No delay or omission in exercise of any right, power or remedy accruing to any
+                                Party, upon any breach or default of any other Party under this Agreement, shall impair any such right, power
+                                or remedy of any Party nor shall it be construed to be a waiver of any such breach or default, or an acquiescence
+                                therein, or of any similar breach or default thereafter occurring or of any other breach or default theretofore or
+                                thereafter occurring. Any waiver, permit, consent or approval of any kind or character on the part of any Party
+                                of any breach or default under this Agreement or any waiver on the part of any Party of any provisions or
+                                conditions of this Agreement, must be in writing and shall be effective only to the extent specifically set forth
+                                in such writing.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Specific performance and remedies</span>. This Agreement is binding upon and shall inure to the benefit of the Parties.
+                                Cleartax shall be entitled to seek specific performance of this Agreement. All remedies, either under this
+                                Agreement or by Applicable Law or otherwise afforded, will be cumulative and not alternative.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Assignment</span>. The Channel Partner shall not be entitled to assign their respective rights and obligations under
+                                this Agreement to any Person. Notwithstanding the foregoing, Cleartax shall however, be entitled to assign its
+                                rights and obligations under this Agreement to any of its affiliates, and in this case, such affiliate shall be entitled
+                                to enforce the representations, warranties and covenants against the Channel Partner or any of them as if it were
+                                named in this Agreement.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Entire agreement</span>. This Agreement, including the recitals and schedules, supersedes all prior discussions
+                                (whether oral or written), emails, agreements between the Parties with respect to the subject matter of this
+                                Agreement, and this Agreement is the sole and entire agreement between the Parties hereto with respect to the
+                                subject matter hereof.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Cumulative Remedies</span>. All the remedies available to Cleartax, either under this Agreement or under Applicable
+                                Law or otherwise afforded, will be cumulative and not alternative or exclusive of any rights, powers, privileges
+                                or remedies provided by this Agreement, Applicable Law or otherwise. No single or partial exercise of any
+                                right, power, privilege or remedy by Cleartax under this Agreement shall prevent any further or other exercise
+                                thereof or the exercise of any other right, power, privilege or remedy.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Further Actions</span>. The Parties shall do or cause to be done such further acts, deeds, matters and things and execute
+                                such further documents and papers as may reasonably be required to give effect to the terms of this Agreement.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Amendment</span>. No modification or amendment to this Agreement and no waiver of any of the terms or conditions
+                                hereto shall be valid or binding unless made in writing and duly executed by all the Parties.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Severability</span>. If any provision of this Agreement is held to be illegal, invalid, or unenforceable under any present
+                                or future Applicable Law, and if the rights or obligations under this Agreement of Cleartax shall not be
+                                materially and adversely affected thereby, (a) such provision shall be fully severable; (b) this Agreement shall be construed and enforced as if such illegal, invalid, or unenforceable provision had never comprised a part
+                                hereof; and, (c) the remaining provisions of this Agreement shall remain in full force and effect and shall not
+                                be affected by the illegal, invalid, or unenforceable provision or by its severance herefrom. Without prejudice
+                                to the foregoing, the Parties hereto shall mutually agree to provide a legal valid and enforceable provision as
+                                similar in terms and effect to such illegal, invalid or unenforceable provision as may be possible.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Relationship between the Parties</span>. Nothing in this Agreement or in any document referred to in it shall constitute
+                                any of the Parties a partner of the other, nor shall the execution, completion and implementation of this
+                                Agreement confer on any Party any power to bind or impose any obligation on any other party or to pledge the
+                                credit of any other Party.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Counterparts</span>. This Agreement may be executed simultaneously in any number of counterparts, each of which
+                                shall be deemed an original, but all of which shall constitute one and the same instrument. Any Party may
+                                execute this Agreement by signing any one or more of such originals or counterparts. The delivery of signed
+                                counterparts by facsimile transmission or electronic mail in “portable document format” (PDF) shall be as
+                                effective as signing and delivering the counterpart in person.
+                            </li>
+                            <li class="inner">
+                                <span style="text-decoration: underline;text-underline-position: under;">Survival</span> Non-Competition, Confidentiality, Intellectual Property Rights, Notices, Limitation of Liability, Entire
+                                Agreement, Severability, Dispute Resolution, Jurisdiction and Governing law, Representations and Warranties,
+                                Waiver shall survive termination or expiration of this Agreement.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div style="page-break-after: always;">
+                <!--<apex:include pageName="CTX_PartnerAgreementAnnexure1"/>-->
+                <div style="text-align:center;text-decoration: underline;text-underline-position: under;">
+                    <b>Annexure-1</b>
+                </div>
+                <div style="text-align:left;text-decoration: underline;text-underline-position: under;">
+                    <b>PART-A</b>
+                </div>
+                <ol class="upperRoman" style="padding-top:0.6em;">
+                    <li>
+                        <div style="text-align:left;text-decoration: underline;text-underline-position: under;"><b>Channel Partner Terms (Commission Model)</b></div>
+                        <div style="padding-top:0.6em;">
+                            <table class="table-bordered" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Charges Percentage</th>
+                                        <th>Renewal Charges Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>E-Invoicing</td>
+                                        <td>{!accInst.Commission_New_Sales__c}</td>
+                                        <td>{!accInst.Commission_Renewal_Sales__c}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ASP-GSP</td>
+                                        <td>{!accInst.Commission_New_Sales__c}</td>
+                                        <td>{!accInst.Commission_Renewal_Sales__c}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EWB</td>
+                                        <td>{!accInst.Commission_New_Sales__c}</td>
+                                        <td>{!accInst.Commission_Renewal_Sales__c}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance Based Incentive (Paid Halfyearly)*
+                                            <div>
+                                                H1- April – September
+                                            </div>
+                                            <div>
+                                                H2 – October - March
+                                            </div>
+                                        </td>
+                                        <td>Additional {!accInst.Commission_Performance_Incentive__c} percent may
+                                            be claimed by the Channel
+                                            Partner if it conducts sales
+                                            in excess of INR 8 lakhs in
+                                            the immediately preceding
+                                            Half Year.
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="padding-top:0.6em;">
+                            *Note: In the event, the Channel Partner sells products in excess of INR 8 lakhs in a particular half year, then the
+                            Channel Partner shall be eligible to claim performance-based incentive. Cleartax, at its sole and absolute
+                            discretion, determine if the Channel Partner has conducted sales above the prescribed threshold in the relevant
+                            half year. Cleartax reserves the right to withdraw or modify the terms of, performance-based incentives at any
+                            time. Invoices for performance-based incentives shall be raised within one month from the completion of the
+                            relevant half year.
+                        </div>
+                    </li>
+                </ol>
+                <ol style="padding-top:0.6em;">
+                    <li>
+                        <b>Lead Lock-In Process and Acquisition -</b> Prior to initiating any sales activity on any lead, the Channel Partner
+                        shall ensure that the lead is locked in and registered in ClearTax’s system to avoid any conflict with leads pursued
+                        by Cleartax’s internal teams. The process for locking in lead is as below:
+                        
+                        <ol class="lowerCase" style="padding-top:0.6em;">
+                            <li>
+                                Channel Partner to share prospective Customer’s PAN and registered name.
+                            </li>
+                            <li>
+                                Cleartax to verify internally and revert with PANs that are available to be locked.
+                            </li>
+                            <li>
+                                Channel Partner to pursue only locked leads.
+                            </li>
+                            <li>
+                                The Channel Partner is permitted to pursue the lead for a period of 90 days (“Lock-In Period”). The
+                                Channel Partner shall ensure that it sells the Services within the Lock-in period. The Lock-in period may
+                                be extended by another 30 days if mutually agreed between the Parties in writing. The Channel Partner
+                                shall request for an extension of the Lock-in Period by sending an email to the concerned Cleartax account
+                                manager.
+                            </li>
+                            <li>
+                                Unless an extension in the Lock-In Period is requested, locked leads will lapse in 90 days from the first
+                                date of locking.
+                            </li>
+                            <li>
+                                In the event the Channel Partner is unable to sell the Service to the Locked-in Customers within the initial
+                                90 days and during the extension period of the lock-in, as the case may be, then, Cleartax shall be free to
+                                pursue such Customers from the date of expiry of the Lock In Period.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        The Charges payable to the Channel Partner will be computed on the amount received from the Customer. For
+                        instance if 50 percent of the amount is received from the Customer then Charges will be calculated on the 50
+                        percent amount only. The remaining Charges will become payable upon receipt of the remaining 50 percent of
+                        the amount from the Customer.                    
+                    </li>
+                    <li>
+                        The price at which Services will be sold to the Customer shall be determined solely by Cleartax.
+                    </li>
+                    <li>
+                        [Channel Partner shall be responsible for key account management and support to Customers for the Services
+                        after they start using the Services OR
+                        Cleartax shall be responsible for key account management and support to Customers for the Services after they
+                        start using the Services]
+                    </li>
+                    <li>
+                        Cleartax will pay Charges on renewals of subscription by the Customer if the Channel Partners fulfils all the
+                        conditions setforth
+                    </li>
+                    <li>
+                        the Channel Partner has valid and subsisting agreement with Cleartax as on the date of renewals.
+                    </li>
+                    <li>
+                        The Channel Partner is an active partner with Cleartax as on the date of renewal. A channel Partner shall be
+                        considered “Active” if it sells products exceeding INR 5 lakhs to new Customers in the preceding financial year
+                        or sells products exceeding INR 2 lakhs to new enterprise customers in the preceding three months. Cleartax, may
+                        from time to time determine whether or not the Channel partner is an active partner, based upon Cleartax policies.
+                    </li>
+                    <li>
+                        the renewal is solely facilitated by the Channel Partner. Channel Partner shall ensure that a Customer renews the
+                        subscription to the Services within 30 days of lapse of earlier subscription. Failing which Cleartax may directly
+                        approach the Customer for renewal and shall have no obligation to pay Charges to the Channel Partner.
+                    </li>
+                    <li>
+                        In the event a Customer signs a contract for more than one year then the Channel Partner shall be paid Charges
+                        on the first year. For the subsequent years the Charges will be paid as per the rate at which renewal charges are
+                        paid.
+                    </li>
+                    <li>
+                        Cleartax shall enter into an appropriate agreement or letter of engagement with the Customer and it shall directly
+                        raise invoice to the Customer. The Channel Partner shall in no circumstance raise any invoice directly to the
+                        customer for the provision of Cleartax Services.
+                    </li>
+                    <li>
+                        If any Customer referred by the Channel Partner fails to subscribe to the product of Cleartax, for any whatsoever,
+                        then no Charge shall be paid to the Channel Partner.
+                    </li>
+                    <li>
+                        Cleartax reserves the right to verify the credentials and approve of the Customer.
+                    </li>
+                    <li>
+                        Channel Partner shall ensure that there is no duplicity of invoices raised by it. For instance, Channel Partner shall
+                        not raise more than one invoice for successful acquisition of one Customer.                    
+                    </li>
+                    <li>
+                        The Channel Partner shall not be entitled to Charges on the amount received by Cleartax or by any third party
+                        appointed by Cleartax for integration and customisation of the software or solution. The Charges are payable only
+                        as a percentage of the software subscription charges and not on any charges received for one time setup,
+                        onboarding, annual maintenance etc.
+                    </li>
+                    <li>
+                        Channel Partner shall renew the Services sold to the Customer before the end of relevant subscription term and
+                        in no case later than thirty (30) days after the lapse of the subscription. Failing which, Cleartax may approach the
+                        Customer for renewal and may renew the subscription without any payment obligation towards the Channel
+                        Partner
+                    </li>
+                </ol>
+            </div>
+            <div style="page-break-after: always;">
+                <div style="text-align:left;text-decoration: underline;text-underline-position: under;">
+                    <b>PART-B</b>
+                </div>
+                <div style="padding-top:1.5em;">
+                    <table class="table-bordered" style="width:100%;table-layout: fixed;">
+                        <tbody>
+                            <tr>
+                                <td><b>Charges</b></td>
+                                <td>[30%] of the Selling Price.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Selling Price</b></td>
+                                <td>As provided by Cleartax at the start of the Month</td>
+                            </tr>
+                            <tr>
+                                <td><b>Fee payable on Renewal (only if it is solely facilitated by the Channel Partner)</b></td>
+                                <td>15% of the value of the MOP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="padding-top:1.5em;">
+                    <b>Table 2:</b>
+                    <table class="table-bordered">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 5px;"><b>Product SKU (CA)</b></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">GST Kit</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">ITR</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">TDS</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;"><b>Product SKU (SME)</b></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">GST Kit</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">E-Way Bill</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">E-Invoicing</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px;">Invoicing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="padding-top:1.5em;">
+                    <div style="text-align:left;text-decoration: underline;text-underline-position: under;">
+                        <b>Terms &amp; Conditions</b>
+                    </div>
+                    <ol style="padding-top:0.6em;">
+                        <li>
+                            The minimum operating price (“MOP”) of the SKUs shall be as determined and notified by Cleartax business head
+                            to the Channel Partner from time to time. Cleartax may notify additional SKUs from time to time.
+                        </li>
+                        <li>
+                            Cleartax will generate a unique identification number and allocate the same to the Channel Partner. The Channel
+                            Partner shall use the same for the purpose of seeking payment of Charges, confirmation of client acquisition etc
+                            and such other purposes as may be communicated by Cleartax from time to time.
+                        </li>
+                        <li>
+                            Channel Partner will source its own leads and convert them to be Customers of Cleartax. Cleartax will assign a
+                            Channel Manager to the Channel Partner to train its team. The Channel Manager shall handhold the team on the
+                            field actively for an initial 30 days. Thereafter Channel Manager’s assistance shall be available on need basis.
+                            Channel Partner shall play pro-active role in the renewal of subscription by Customers.
+                        </li>
+                        <li>
+                            Responsibility Matrix:
+                            <div style="padding-top:0.6em;">
+                                <table class="table-bordered" style="width:100%;table-layout: fixed;">
+                                    <thead>
+                                        <tr>
+                                            <th style="padding: 5px;"><b>Type</b></th>
+                                            <th style="padding: 5px;"><b>Responsibility</b></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 5px;">Sales Team Training</td>
+                                            <td style="padding: 5px;">Cleartax responsibility</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">Marketing Collaterals</td>
+                                            <td style="padding: 5px;">Cleartax responsibility</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">BTL Marketing &amp; Events</td>
+                                            <td style="padding: 5px;">As per mutual agreement</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">Sales team Field Support</td>
+                                            <td style="padding: 5px;">30 days active then sparing support</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">Post Sales onboarding</td>
+                                            <td style="padding: 5px;">Cleartax Responsibility</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">Post Sales Support</td>
+                                            <td style="padding: 5px;">Cleartax Responsibility</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px;">Renewal</td>
+                                            <td style="padding: 5px;">Channel Partner</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            This Annexure 1 details will be appropriately modified by Cleartax each quarter and communicated to the Channel
+                            Partner.
+                        </li>
+                        <li>
+                            Cleartax shall verify the credentials of the customer, the commitments made to the Customer and at its discretion
+                            either confirm or reject the sale to the said customer. Decision of Cleartax shall be final in this regard. No Charges shall be paid to the Channel Partner on rejected sales. Post successful verification Cleartax will onboard and support
+                            and take care of the customer.
+                        </li>
+                        <li>
+                            Cleartax, by the 5th day of the previous month, shall communicate to the Channel Partner the details of the
+                            Collection realised by Cleartax from the customers in the preceding month. Within 7 days of receipt of the same,
+                            the Channel Partner shall claim Charges by raising proper tax invoices along with supporting documents. Disputes,
+                            if any, shall be settled by the Parties in the said five days time period. Cleartax, by the 15th day of the succeeding
+                            month, shall make payment of undisputed invoices raised by the Channel Partner.
+                        </li>
+                        <li>
+                            A customer will be considered closed by the Channel Partner only after the applicable online payment is made by
+                            the Customer to the account of Cleartax. The date on which sale amount is credited to the account of Cleartax by
+                            the Customer, shall be considered as the applicable date for the purpose of measuring achievements of target for a
+                            given month or quarter or year.
+                        </li>
+                        <li>
+                            Notwithstanding anything in the Agreement, Cleartax, at its sole discretion will be entitled to terminate the
+                            Agreement by issuing seven days prior notice, if the Channel Partner fails to meet the target for a respective month
+                            or the quarter, as the case may be. Cleartax will periodically communicate the target sales to be achieved by the
+                            Channel Partner.
+                        </li>
+                        <li>
+                            In the event a Customer signs a contract for more than one year then the Channel Partner shall be paid Charges on
+                            the first year payment received from the Customer. For the subsequent years the Charges will be paid as per the
+                            rate at which renewal Charges are paid.
+                        </li>
+                        <li>
+                            The Channel Partner shall not be entitled to Charges on the amount received by Cleartax or any third party
+                            appointed by Cleartax for integration or customisation of the software or services.                            
+                        </li>
+                        <li>
+                            The net amount excluding applicable taxes received by Cleartax from the Customer shall be considered for
+                            calculation of Charges.
+                        </li>
+                        <li>
+                            The Channel Partner agrees to provide a NO PENDING DUES certificate to Cleartax at the end of each quarter for
+                            the Charges paid in the preceding quarter.   
+                        </li>
+                        <li>
+                            Channel Partner, whenever necessary, shall communicate to Cleartax, the details of the payments made by the
+                            Customer to Cleartax.      
+                        </li>
+                        <li>
+                            The following shall not be considered for payment of Charges.
+                            <ol class="lowerCase" style="padding-top:0.6em;">
+                                <li>
+                                    Sale made to the affiliate, associate, subsidiary or group entity of the existing Customer. Provided such sale
+                                    is concluded with the efforts made by Cleartax and not of the Channel Partner.
+                                </li>
+                                <li>
+                                    Sale made to Channel Partner or its affiliate, associate or group entity.
+                                </li>
+                                <li>
+                                    Unless otherwise agreed by Cleartax in writing, sale made to the Customer below the Minimum Sale Price
+                                    mentioned hereinabove.
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Finalization of the subscription fee or other consideration upon which the service will be provided to the Customer
+                            shall be at the sole and absolute discretion of Cleartax. Channel Partner shall keep Cleartax informed of any
+                            discussion or price negotiations it had with the Customer.
+                        </li>
+                        <li>
+                            Channel Partner shall in no circumstances raise any invoice directly to the customer for the provision of Cleartax
+                            products or services. Invoices shall be issued directly to the Customer by Cleartax.
+                        </li>
+                        <li>
+                            Channel Partner shall ensure that there is no duplicity of invoices raised by it. For instance, Channel Partner shall
+                            not raise more than one invoice for successful acquisition of one Customer.
+                        </li>
+                        <li>
+                            The Channel Partner ceases to be an active partner if it fails to sell products exceeding INR 2 lakhs to new CA/SME
+                            Customers in the preceding financial year or fails to sell products exceeding INR 75,000/- to new CA/SME
+                            customers in the preceding three months. Cleartax, may from time to time determine whether or not the Channel
+                            partner is an active partner, based upon Cleartax policies
+                        </li>
+                        <li>
+                            No claim for Charges by the Channel Partner shall be entertained after two months from the date of sale to the
+                            customer.
+                        </li>
+                        <li>
+                            The Channel Partner shall notify Cleartax immediately and in no event later than 30 days from the date of sale to
+                            the end customer, any clash of leads purportedly pursued by the Channel Partner and any other person.
+                        </li>
+                        <li>
+                            For any additional product requirements, Channel Partner shall communicate with Cleartax for the quotation. 
+                        </li>
+                        <li>
+                            The prices, charges and terms of sale of the products and Services (including for managed services such as GST
+                            filing, Accounting and other services) shall be established by Cleartax and notified to Channel Partner from time
+                            to time through email or otherwise.
+                        </li>
+                        <li>
+                            Channel Partner shall renew the Services sold to the Customer before the end of relevant subscription term and in
+                            no case later than thirty (30) days after the lapse of the subscription. Failing which, Cleartax may approach the
+                            Customer for renewal and may renew the subscription without any payment obligation towards the Channel Partner.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div style="page-break-after: always;">
+                <div style="text-align:center;text-decoration: underline;text-underline-position: under;">
+                    <b>Annexure 2 – GST Compliance</b>
+                </div>
+                
+                <ol style="padding-top:10px;">
+                    <li>
+                        Other Payment Terms: Under GST, input credits will be available based on matching concept between ClearTax
+                        and Channel Partner. Channel Partner hereby agrees that all payments due to Channel Partner by ClearTax shall be
+                        linked to proper discharge of tax liability by the Channel Partner within statutory time periods. In case of any
+                        disputes due to non-matching of GST credit, same shall be resolved by Channel Partner within 90 days of the
+                        invoice date, failing which we shall not remit the invoice amount.
+                    </li>
+                    <li>
+                        Tax Indemnity clause:
+                        <ol class="lowerCase" style="padding-top:0.6em;">
+                            <li>
+                                ClearTax has the right to recover loss of input tax credit along with consequential interest and penalty suffered by
+                                it due to any non-compliance of GST laws and rules thereto by the Channel Partner.
+                            </li>
+                            <li>
+                                Any GST liability arising on the Channel Partner on account contravention of the provisions of the GST regulations,
+                                would be borne by the Channel Partner itself and ClearTax shall not be liable to compensate the same.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Timely provision of invoices/ DN/ CN: Channel Partner to provide invoice/ DN/ CN to enable ClearTax to claim
+                        tax benefit in a timely manner on or before stipulated time period. All necessary adjustment entries (Credit Note,
+                        Purchase Returns, Debit Notes) shall be made before September of the succeeding financial year.
+                    </li>
+                    <li>
+                        Anti-profiteering:
+                        <ol class="lowerCase" style="padding-top:0.6em;">
+                            <li>
+                                Under the Revised Model GST Law, any economic or tax benefit arising out of the implementation of GST is
+                                mandatorily required to be passed on to us by you. Similarly, the benefits enjoyed by your vendors and other
+                                players in the supply chain are also required to be passed on to you by them, which in turn shall be passed on to us
+                                by way of price reductions. Accordingly, you are expected to pass on any direct or indirect benefits arising thereon.
+                            </li>
+                            <li>
+                                The responsibility to pass on the above benefits vests with you, as our ‘responsible vendor’ and we reserve our
+                                right to understand and seek the manner/ mechanism in which such benefits are passed on to us.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Others:
+                        <ol class="lowerCase" style="padding-top:0.6em;">
+                            <li>
+                                Wherever applicable ClearTax has the right to deduct "Tax deducted at source’ at the rate prescribed under the law
+                                and remit the same to the Government.
+                            </li>
+                            <li>
+                                Any local levies and or other charges levied by any Central/state/local authorities wherever applicable shall be
+                                extra and Channel Partner shall be liable to discharge the same. 
+                            </li>
+                            <li>
+                                Any Liability arising out of dispute on the tax structure, calculation and payment to the Government will be to the
+                                Channel Partner’s account
+                            </li>
+                            <li>
+                                Where the supply of goods/services are liable to GST under reverse charge mechanism, then the Channel Partner
+                                should clearly mention the category under which it has been registered and also that “the liability of payment of
+                                GST is on the Recipient of Service”.
+                            </li>
+                            <li>
+                                The invoice should clearly specify any abatement, if any claimed or otherwise from the Taxable Value while
+                                calculating the GST.  
+                            </li>
+                            <li>
+                                The Agreement shall be void, if at any point of time you are found be to a black listed dealer as per GSTN rating
+                                system and further no payment shall be entertained.  
+                            </li>
+                            <li>
+                                Any loss of tax, credit is levied due to cancellation of registration of the Channel Partner, the Channel Partner shall
+                                be liable to reimburse such loss incurred.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Declaration: In the event a Channel Partner is not registered under GST, they shall provide a signed declaration in
+                        the format sought by Cleartax.
+                    </li>
+                </ol>
+            </div>
+            <div style="page-break-after: auto;">
+                <p style="padding-bottom:0.6em;">
+                    The Parties have executed this Agreement by duly affixing their signatures below to be effective from the Effective
+                    date as mentioned above.
+                </p>
+                <table class="table-bordered" style="width:100%;table-layout: fixed;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0px 5px;">For and on Behalf of <b>{!accInst.Name}</b></td>
+                            <td style="padding: 0px 5px;">For and on behalf of <b>Defmacro Software Pvt Ltd</b></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 30px;"></td>
+                            <td style="padding: 30px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px 5px;"><b>Authorized Signatory: </b> {!primaryContact.Name}</td>
+                            <td style="padding: 0px 5px;"><b>Authorized Signatory: </b> Sumit Kawariya</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px 5px;"><b>Title: </b> {!primaryContact.Designation__c}</td>
+                            <td style="padding: 0px 5px;"><b>Title: </b> Finance Controller</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px 5px;"><b>Email: </b> <a href="mailto:{!accInst.Master_Admin_Email__c}">{!accInst.Master_admin_Email__c}</a></td>
+                            <td style="padding: 0px 5px;"><b>Email: </b> <a href="mailto:sumit.kawariya@cleartax.in">sumit.kawariya@cleartax.in</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px 5px;"><b>Date: </b></td>
+                            <td style="padding: 0px 5px;"><b>Date: </b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </body>
+    </html>
+</apex:page>

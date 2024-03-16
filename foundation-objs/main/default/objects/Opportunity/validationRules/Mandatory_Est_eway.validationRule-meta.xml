@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Est_eway</fullName>
+    <active>true</active>
+    <errorConditionFormula>INCLUDES(Product__c,&apos;E-invoice / EWB&apos;) &amp;&amp;
+ ISNULL(  Expected_Number_of_eway_bill__c  )</errorConditionFormula>
+    <errorDisplayField>Expected_Number_of_eway_bill__c</errorDisplayField>
+    <errorMessage>Please enter Estimated Number of eway bill</errorMessage>
+</ValidationRule>

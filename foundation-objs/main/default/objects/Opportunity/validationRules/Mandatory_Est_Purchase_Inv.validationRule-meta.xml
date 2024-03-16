@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Est_Purchase_Inv</fullName>
+    <active>true</active>
+    <errorConditionFormula>(INCLUDES(Product__c,&apos;Clear Capture&apos;) ||
+INCLUDES(Product__c,&apos;GST&apos;) ||
+INCLUDES(Product__c,&apos;Max ITC&apos;)) &amp;&amp;
+ ISNULL(   Estimated_Number_of_Purchase_Invoice__c   )</errorConditionFormula>
+    <errorDisplayField>Estimated_Number_of_Purchase_Invoice__c</errorDisplayField>
+    <errorMessage>Please enter Estimated Number of Purchase Invoice.</errorMessage>
+</ValidationRule>

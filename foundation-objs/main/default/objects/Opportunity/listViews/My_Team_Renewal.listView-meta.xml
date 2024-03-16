@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Team_Renewal</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Cross_Sell_Upsell</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>equals</operation>
+        <value>ASP/GSP,Recon,E-way Bill,E-Invoicing,KAM,CFO Dashboard,Airline Credit,Managed Services,Others</value>
+    </filters>
+    <label>My Team_Cross Sell</label>
+    <sharedTo>
+        <role>North_Regional_KAM_Users</role>
+        <role>North_and_East_Regional_KAM_Head</role>
+        <role>South_Regional_KAM_Head</role>
+        <role>South_Regional_KAM_Users</role>
+        <role>West_Regional_KAM_Head</role>
+        <role>West_Regional_KAM_Users</role>
+    </sharedTo>
+</ListView>

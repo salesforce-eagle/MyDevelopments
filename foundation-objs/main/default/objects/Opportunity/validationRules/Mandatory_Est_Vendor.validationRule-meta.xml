@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Est_Vendor</fullName>
+    <active>true</active>
+    <errorConditionFormula>(INCLUDES(Product__c,&apos;Clear Capture&apos;) ||
+INCLUDES(Product__c,&apos;Max ITC&apos;)) &amp;&amp;
+ ISNULL(  No_of_Vendors__c  )</errorConditionFormula>
+    <errorDisplayField>No_of_Vendors__c</errorDisplayField>
+    <errorMessage>Please enter Estimated Number of Vendor</errorMessage>
+</ValidationRule>

@@ -1,0 +1,209 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EINV_EWB_SFTP_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           
+		   <b><u> Scope of Services for FTP/SFTP Server cost by CT Integration for Einv/EWB - </u></b>
+            
+		    <p><b>a)Feature List of Cleartax E-Invoicing Software is as below</b></p>
+            
+			<table class="info-table">
+                <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li> Excel Ingestion option (Custom Mapper, govt. template, CT template).</li>
+                            <li>Excel / JSON output (In govt. template); for non-integrated clients.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Data Validation</td> 
+                    <td>
+                        <ul>
+                            <li>Validation check (for e-Invoice Schema, ANX-1, EWB Part A) on the invoice content.</li>
+                            <li>Sends invoice to Invoice Registration portal (IRP) for e-Invoice (Invoice Reference Number/QR code) generation.</li>
+                            <li>Collects the generated e-Invoice and QR code from IRP.</li>
+                        </ul>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td> 
+                        Custom invoice printing from IRP-signed JSON (incl. Digitally signed QR, co. logo, etc.)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>Basic MIS of historical e-invoicing activity on Cleartax</td>
+                </tr>
+                <tr>
+                    <td><b>Data Archive</b></td>
+                    <td></td>
+                    <td>Archiving and retrieval of e-invoices.</td>
+                </tr>
+            </table>
+            <br/>
+           
+                    <p> <b>b) Feature List of Cleartax E-way Bill Software is as below</b></p>
+                    <table class="info-table" >
+                        <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                        <tr>
+                            <td><b>Compliance</b></td>
+                            <td>E-way bill Preparation and Generation</td>
+                            <td > 
+                                Support and generation of all E-way bills.
+                                .</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Advanced Generation Features</td> 
+                            <td>
+                                Generate Consolidated E-way bill, Auto Regeneration of E-way bill, Bulk Print of all E-way bills, Bulk Update of Transporter details (Part B), Cancellation of  EWB &#38; Amendment.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Tax/Field Validation.</td>
+                            <td> 
+                                Validation / Suggestion of correct rate of tax applied, and highlight the discrepancies . Real Time Error Update facility.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>User &#38; Role Management</td> 
+                            <td>Create users with roles (admin, IT, tax accountant) and privileges (access to view/edit/delete data and tied to specific GSTIN’s).</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Dashboards and Interface portal (Web &#38; Mobile)</td>
+                            <td>Portal Accessible on web &#38; mobile. In built government notifications, acknowledgements.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>E-way bill update/Changes-Real time basis</td>
+                            <td>Future updates or changes in the NIC portal would be automatically transformed to ClearTax E-way bill Software provided to customer as part of upgradation to software</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>User Training</td>
+                            <td>Online training to finance team members on how to operate the software.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Business Intelligence Reporting</b></td>
+                            <td>Reports-Tax Ledger, State Wise</td>
+                            <td>
+                                Standard MIS reports (Recon of Sales/EWB Issued &#38; Purchase &#38; Inward EWB’s) etc other similar reports for:
+                               <!-- <ol style="list-style-type: none;">
+                                    <li>- Outward Supplies</li>
+                                    <li>- Inward Supplies</li>
+                                    <li>- CEWB Generated</li>
+                                    <li>- Cancelled Eway Bill</li>
+                                    <li>- Rejected E-way bills by me</li>
+                                    <li>- Assigned for transporters</li>
+                                </ol>-->
+                                - Outward Supplies<br/>
+                                - Inward Supplies<br/>
+                                - CEWB Generated<br/>
+                                - Cancelled Eway Bill<br/>
+                                - Rejected E-way bills by me<br/>
+                                - Assigned for transporters<br/>
+                            </td>
+                        </tr>
+                        </table>
+                        <br/>
+						
+						
+                        <p><b>c. Scope of Services for SFTP Integration and Cleartax responsibility</b> </p>
+						
+						<ol style="list-style-type: lower-roman;">
+ 
+						
+						
+					 <li>Cleartax will create and host the SFTP server in its own environment.
+</li>
+ <li>Pull the customer SFTP server at regular intervals.
+</li>
+ <li>Pick input files from customer SFTP server and upload to ClearTax APIs.
+</li>
+ <li>Email notification to admin in case of failure. 
+</li>
+ <li>Validate invoice contents and generate e-Invoice and E-way bill with Government APIs.
+</li>
+<li>Receive the generated e-Invoice, QR code, E-way bill and IRN from ClearTax APIs and push to the SFTP server.
+</li>
+ <li>Push the output files with error messages to the SFTP server for unsuccessfully uploaded files.
+</li>
+ <li>FTP details to be provided to customer
+<ol style="list-style-type: decimal;">
+ <li>FTP Host, Port, Protocol
+</li>
+ <li>FTP Username, Password
+</li>
+ </ol>
+ 
+</li>
+  
+                     
+ </ol>
+             
+                    <p><b>d. Customer Dependencies and responsibility.  </b></p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>Extract required data from ERP and place it on the customer SFTP server in an Excel or CSV file (input file for ClearTax) </li>
+						<li>Pick up data in Excel or CSV file (output file from ClearTax) from customer SFTP server and consume it.</li>
+						<li>Error handling and retry for errors in the response file.</li>
+						<li>Directory paths as per the structure defined by ClearTax.</li>
+						<li>Files as per the file naming convention must be as defined by ClearTax.</li>
+                    </ol>
+                    <p><b>e. Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+                        the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+                        scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+                    <p>
+                        <b>f. Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+                        appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / 
+                            schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

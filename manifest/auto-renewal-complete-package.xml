@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+<!--    OBJECT Package START    
+    <types>
+        <members>Customer_Survey_Question_Answers__c</members>
+        <members>Customer_Survey__c</members>
+
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>QuoteLineItem.Applicable_TDS__c</members>
+        <members>QuoteLineItem.TAN_Number__c</members>
+        <members>QuoteLineItem.Order_Details__c</members>
+        <members>QuoteLineItem.Is_Price_Locked__c</members>
+        <members>QuoteLineItem.Renewal_Service_Payload__c</members>
+        <members>QuoteLineItem.Is_TDS_Applicable__c</members>
+        <members>QuoteLineItem.Total_Renewal_Price__c</members>
+        <members>QuoteLineItem.Usage_Log__c</members>
+        <members>QuoteLineItem.Usage_Parameters__c</members>
+        <members>QuoteLineItem.Over_Usage_Charge__c</members>
+        <members>QuoteLineItem.TDS_Price__c</members>
+        <members>QuoteLineItem.Total_Tax_Value__c</members>
+        <members>Account.Account_Number__c</members>
+        <members>Account.Bank_Name__c</members>
+        <members>Account.Bank_IFSC_Code__c</members>
+        <members>Account.Bank_Branch__c</members>
+        <members>Account.Bank_Swift_Code__c</members>
+        <members>Account.Is_Auto_Renewal_Enabled__c</members>
+        <members>Account.Bank_Account_Name__c</members>
+        <members>Opportunity.Is_Auto_Renewal_Enabled__c</members>
+
+        <members>Account.Auto_Renewal_Validation_Error__c</members>
+        <members>Account.Is_Auto_Renewal_Validated__c</members>
+
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Auto_Renewal_Constraints.EINVOICE_STAND_EWB_GENERATION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_STAND_GSTIN_ADDITION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_STAND_IRN_GENERATION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_STAND_PAN_ADDITION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_STAND_USER_ADDITION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_ULT_EWB_GENERATION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_ULT_GSTIN_ADDITION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_ULT_IRN_GENERATION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_ULT_PAN_ADDITION</members>
+        <members>Auto_Renewal_Constraints.EINVOICE_ULT_USER_ADDITION</members>
+        <members>AutoRenewal_Plan_Tier_Configs_Metadata.EINVOICE_STANDARD</members>
+        <members>AutoRenewal_Plan_Tier_Configs_Metadata.EINVOICE_ULTIMATE</members>
+        
+        <name>CustomMetadata</name>
+    </types>
+   OBJECT Package END  
+
+    CODE Package START 
+    <types>
+        <members>CTX_AdditionalGstinTrigger</members>
+
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>CTX_AssetAutoRenewalBatch</members>
+        <members>CTX_AutoRenewalFlag</members>
+        <members>CTX_FetchUsageDetails</members>
+        <members>CTX_AutoRenewalFlagCallout</members>
+        <members>CTX_GetRenewalParameterAndPrice</members>
+        <members>CTX_UpdateRenewalDetails</members>
+        <members>CTX_RenewLicense</members>
+        <members>CTX_AutoRenewLicenseHelper</members>
+        <members>CTX_AutoRenewLicense</members>
+        <members>CTX_AutoRenewActivateLicense</members>
+        <members>CTX_EnableAutoRenewalBatch</members>
+        <members>CTX_LicenseMetadataParser</members>
+        <members>CTX_AutoRenewLicensingClass</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        <members>CTX_SyncQLIDetailsToAsset</members>
+        <members>CTX_CustomStringToFormulaParser</members>
+        <members>CTX_CreateAssetOrderHelper</members>
+        <members>QuoteTriggerHandler</members>
+        <members>OpportunityConstants</members>
+        <members>AssetConstants</members>
+        <members>QuoteLineItemTriggerHandler</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>AccountTriggerHandler</members>
+        <members>AssetTriggerHelper</members>
+        <members>CTX_AdditionalGstinTriggerHandler</members>
+        <members>CTX_AdditionalGstinTriggerHelper</members>
+        
+        <members>CTX_ExtendProductLicense</members>
+        <members>CTX_UpsertSalesContract_SAP</members>
+       
+       <members>CTX_AutorenewalValidation</members>
+       <members>CTX_GetRenewalDryRunDetails</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_ListenSalesSyncFailureEvent</members>
+        <members>cTX_ActivateLicense</members>
+        <members>ctx_SyncQLIDetailsToAsset</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>
+   CODE Package END  
+<types>
+        <members>cTX_ValidateAutoRenewalLicense</members>
+        <name>LightningComponentBundle</name>
+</types>
+<types>
+        <members>CTX_AutorenewalValidation</members>
+        <name>ApexClass</name>
+</types>-->
+<!-- CUSTOM Label Details   : Created In Production
+    <types>
+        <members>CTX_AutoRenewal_Error_Msg</members>
+        <members>CTX_RenewLicense_EP</members>
+        <members>CTX_Auto_Renewal_Enabled_License_EP</members>
+        <members>CTX_FetchUsageDetails_EP</members>
+        <members>Auto_Renewal_Opportunity_Required_Fields</members>
+        <members>CTX_AutoRenewAssetStatus</members>
+        <members>CTX_EnableAutoRenewalDate</members>
+        <members>CTX_AutoRenewal_Days_Extension</members>
+        
+        <name>CustomLabels</name>
+     </types>
+ CUSTOM Lateb Details : END -->
+<!--    CLASS - <members>CTX_AutoRenewalFlagQueueable</members> -->
+
+
+    <!--<types>
+        <members>Account.Onboarding_Score_Customer_Feedback__c</members>
+        <members>Account.Product_Score_Customer_Feedback__c</members>
+        <members>Account.Service_Score_Customer_Feedback__c</members>
+
+        <name>CustomField</name>
+    </types>-->
+
+    <types>
+        <members>CTX_AssetAutoRenewalBatch</members>
+        <members>CTX_AutoRenewalFlag</members>
+        <members>CTX_FetchUsageDetails</members>
+        <members>CTX_AutoRenewalFlagCallout</members>
+        <members>CTX_GetRenewalParameterAndPrice</members>
+        <members>CTX_UpdateRenewalDetails</members>
+        <members>CTX_RenewLicense</members>
+        <members>CTX_AutoRenewLicenseHelper</members>
+        <members>CTX_AutoRenewLicense</members>
+        <members>CTX_AutoRenewActivateLicense</members>
+        <members>CTX_EnableAutoRenewalBatch</members>
+        <members>CTX_LicenseMetadataParser</members>
+        <members>CTX_AutoRenewLicensingClass</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        <members>CTX_SyncQLIDetailsToAsset</members>
+        <members>CTX_CustomStringToFormulaParser</members>
+        <members>CTX_CreateAssetOrderHelper</members>
+        <members>QuoteTriggerHandler</members>
+        <members>OpportunityConstants</members>
+        <members>AssetConstants</members>
+        <members>QuoteLineItemTriggerHandler</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>AccountTriggerHandler</members>
+        <members>AssetTriggerHelper</members>
+        <members>CTX_AdditionalGstinTriggerHandler</members>
+        <members>CTX_AdditionalGstinTriggerHelper</members>
+        
+        <members>CTX_ExtendProductLicense</members>
+        <members>CTX_UpsertSalesContract_SAP</members>
+       
+       <members>CTX_AutorenewalValidation</members>
+       <members>CTX_GetRenewalDryRunDetails</members>
+
+        <name>ApexClass</name>
+    </types>
+    
+    <version>52.0</version>
+</Package>

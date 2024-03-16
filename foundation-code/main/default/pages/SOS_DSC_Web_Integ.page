@@ -1,0 +1,45 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_DSC_Web_Integ_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for DSC Web &amp; Integration user:- </u></b>    
+<ul>
+<li>
+Enable the users to digitally sign their invoices and return Digital Signed Invoice PDFs</li>
+<li>The bulk signing of invoices is available</li>
+<li>Users can restrict the access of DSC within their teams</li>
+<li>Users can set up to 3 active DSCs</li>
+<li>For integrations users, they can set up the automatic digital signing of all their documents without any user intervention</li>
+<li>Only class 2 docu-signer DSC supported</li>
+<li>Cleartax will not provide DSC; the user/client needs to obtain the same separately</li>
+<li>DSC certificate charges need to be borne by customers separately</li>
+<li>Class 2 docusigner charges not included with the pricing</li>    
+</ul>
+    </body>
+
+<apex:include pageName="{!nextpage12}"/>
+</html>
+</apex:page>

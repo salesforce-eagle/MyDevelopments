@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_rule_for_con_fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Sub_Stages__c,&apos;Demo Completed&apos;) &amp;&amp; (ISBLANK(Phone) || ISBLANK(Email) || ISBLANK( TEXT(Designation_Oppor__c) ) || ISBLANK( Designation__c)) &amp;&amp; RecordType.Name != &apos;International&apos;</errorConditionFormula>
+    <errorMessage>Please fill Primary Mobile, Email, Department and Designation!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Expert_Verified_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND(Tax_Expert_Verified__c = true, ISBLANK( TEXT(Tax_Expert_ID_Type__c) )), True, false)</errorConditionFormula>
+    <errorDisplayField>Tax_Expert_ID_Type__c</errorDisplayField>
+    <errorMessage>Please Enter Tax Expert ID Type</errorMessage>
+</ValidationRule>

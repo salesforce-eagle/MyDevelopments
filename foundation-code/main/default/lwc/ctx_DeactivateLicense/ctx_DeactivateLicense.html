@@ -1,0 +1,25 @@
+<template>
+    <template if:false={hidePopup}>
+        <div class="slds-var-p-around_xx-large">
+            <div class="slds-align_absolute-center">
+                Are you sure, You want to deactivate this license?
+            </div>
+
+            <div class="slds-align_absolute-center">
+                <lightning-button label="Close" variant="neutral" title="Close" onclick={closeQuickAction} class="slds-var-p-around_medium"></lightning-button>
+                <lightning-button label="Confirm" variant="brand" title="Confirm" onclick={handleConfirmDeactivate} class="slds-var-p-around_medium"></lightning-button>
+            </div>
+        </div>
+    </template>
+    <template if:true={showSpinner}>
+        <div class="slds-spinner_container slds-grid">
+            <div class="slds-align_absolute-center">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

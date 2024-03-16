@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Lead.Event_Type__c</members>
+        <members>Lead.hs_analytics_first_url__c</members>
+        <members>Lead.Lead_Source_Details__c</members>
+        <members>Lead.Activity_Type__c</members>
+        <members>Lead.Customer_Type__c</members>
+        <members>Lead.ID_Type__c</members>
+        <members>Lead.Turnover_text__c</members>
+        <members>Lead.Strength_of_Sales_Team__c</members>
+        <members>Lead.No_of_CA_Clients__c</members>
+        <members>Lead.product_interested_in__c</members>
+        <members>Lead.Whatsapp_Consent__c</members>
+        <members>Lead.Language_Preffered__c</members>
+        <members>Lead.Preffered_time_to_reach_out__c</members>
+        <members>Lead.No_of_Vendors__c</members>
+        <members>Lead.Company_GSTIN__c</members>
+        <members>Lead.Erp_New__c</members>
+        <members>Lead.Number_of_Sales_Invoices__c</members>
+        <members>Lead.Remarks__c</members>
+        <members>Lead.Profile_completion_info__c</members>
+        <members>Lead.Anon_ID__c</members>
+        <members>Lead.UTM_Source__c</members>
+        <members>Lead.UTM_Medium__c</members>
+        <members>Lead.UTM_Campaign__c</members>
+        <members>Lead.UTM_ID__c</members>
+        <members>Lead.UTM_Content__c</members>
+        <members>Lead.JSON_Field__c</members>
+        <members>Lead.Market_Team__c</members>
+        <members>Lead.Lead_Request_Type__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

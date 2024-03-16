@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!-- 
+    Prerequisite - Make sure objs path is true in package.xml file
+        Format: 
+                ObjectName.ValidationRuleAPIName
+    -->
+    <types>
+        <members>CTX_CaseEmailBatch</members>
+        <members>CTX_CaseEmailsShooter</members>
+
+        <name>CustomObject</name>
+    </types>
+
+
+    <version>58.0</version>
+</Package>

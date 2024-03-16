@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pt_Last_Usage_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Latest date on which the usage occurred against the asset</description>
+    <externalId>false</externalId>
+    <label>Last Usage Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

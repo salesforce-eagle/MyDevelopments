@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Name_for_RL</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Rocketlane_Integration__c == TRUE,ISBLANK( Company_Name__c ))</errorConditionFormula>
+    <errorDisplayField>Company_Name__c</errorDisplayField>
+    <errorMessage>Please enter Company name for Rocketlane integration</errorMessage>
+</ValidationRule>

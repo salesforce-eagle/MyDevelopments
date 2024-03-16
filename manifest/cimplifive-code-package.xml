@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>generateOrderFormPDF</members>
+        <members>CTX_QuoteController</members>
+        <members>CTX_AccountShare</members>
+        <members>CTX_LeadConverterHelper</members>
+        <members>leadConvertGeneric</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>CustomerInformation</members>
+        <members>SubscriptionCharges</members>
+        <members>ServiceCharges</members>
+        <members>PaymentCharges</members>
+        <members>POInformation</members>
+        <members>ContactDetails</members>
+        <members>PricingParameters</members>
+        <members>Annexure</members>
+        <members>General</members>
+        <members>SpecialTerms</members>
+
+        <name>ApexPage</name>
+    </types>
+
+    </types>
+    <version>52.0</version>
+</Package>

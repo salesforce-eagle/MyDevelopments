@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Account.Account_Owner_Cimplifive__c</members>
+        <members>Opportunity.Company_Secretary__c</members>
+        <members>Lead.Scope__c</members>
+        <members>Account.Billing_Entity__c</members>
+        <members>Lead.Billing_Entity__c</members>
+        <members>Lead.seniority__c</members>
+
+        <members>Opportunity.Billing_Frequency_for_retainership__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Billing_Entity</members>
+        <members>Presales_Resource</members>
+        <members>Seniority</members>
+
+        <name>GlobalValueSet</name>
+    </types>
+    
+
+    </types>
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,17 @@
+<template>
+    <div class="divOuter">
+        <div class="divInner">
+            <div data-id='demoBlock' style="padding-left:15px;"></div>
+        </div>
+    </div>
+    <div class="divOuter">
+        <div class="divInner">
+            <input class="slds-input partitioned" onkeyup={onOTPToVerifyChange} value={otpToverify} style={cssLetterSpacing} type="text" maxlength="6" placeholder="XXXXXX"/>
+        </div>
+    </div>
+    <template if:true={otpError}>
+        <div>
+            <b class="slds-text-color_error">{errorMessage}</b>
+        </div>
+    </template>
+</template>

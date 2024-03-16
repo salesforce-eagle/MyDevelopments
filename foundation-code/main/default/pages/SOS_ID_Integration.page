@@ -1,0 +1,684 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_ID_Integration_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <p>
+                <b>Scope of services for Invoice Discounting </b>
+            </p>
+           
+
+<p><b>Functionality to be provided:</b></p>
+<ul>
+    <li>
+        <p>License for Customer to use the Platform on a non- exclusive, revocable basis for the terms of the agreement&nbsp;</p>
+    </li>
+    <li>
+        <p>Provide access to the Platform to the suppliers of the Customer to fulfil the early payment request using the below options : </p>
+        <ul type="circle">
+            <li><apex:outputText rendered="{!displayOwnFunds}">
+           
+                Own Funds
+                 
+        </apex:outputText></li>
+           <li>
+                <apex:outputText rendered="{!displayBankFinancing}">
+            
+                Bank Financing : {!SyncedQuote.Bank_Name__c}
+                
+               
+        </apex:outputText>
+            </li> 
+            <li>
+            <apex:outputText rendered="{!displayTreDS}">
+            
+                TreDS : {!SyncedQuote.TreDS_platform__c }
+                     
+        </apex:outputText>
+            
+            </li>
+            <li>
+            <apex:outputText rendered="{!displayTenorExtension}">
+            
+                External Financing-along with Tenor extension
+                     
+        </apex:outputText>
+            
+            </li>
+            
+        </ul>
+      
+       
+        
+    </li>
+    <li>
+        <p>Provide training to the employees of the Customer and the Suppliers in efficiently using the Platform, in a manner that shall be decided by the Xpedize in its sole discretion.</p>
+    </li>
+    <li>
+        <p>Provide Periodic MIS reports and/or analytics insights on Platform usage to the Customer</p>
+    </li>
+</ul>
+<p><b>Method of Integration with Customer ERP:&nbsp;</b></p>
+<p></p>
+            <apex:outputText rendered="{!displayAPIBasedIntegration}">
+                
+                <div align="left">
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><b>API Based Integration</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Integration Route</p>
+                                </td>
+                                <td>
+                                    <p>Rest API (Representational State Transfer Application Programming Interface)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Connectivity</p>
+                                </td>
+                                <td>
+                                    <p>RESTful</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Data Transfer Format</p>
+                                </td>
+                                <td>
+                                    <p>JSON (JavaScript Object Notation)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Authentication</p>
+                                </td>
+                                <td>
+                                    <p>SSL (Secure Sockets Layer) + Dedicated Username &amp; Password</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Configuration In ERP</p>
+                                </td>
+                                <td>
+                                    <p>RFC (Remote Function Call) Connection to be setup</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Flow</p>
+                                </td>
+                                <td>
+                                    <p>Data will be sent and received via the RFC connection. The same will call the API&apos;s</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+                <p></p>
+            </apex:outputText>
+            <apex:outputText rendered="{!displayMiddlewareBasedIntegration}">
+                <div align="left">
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><b>Middleware based Integration</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Integration Route</p>
+                                </td>
+                                <td>
+                                    <p>Middleware ( PI (Process Integration) /PO (Process Orchestrator) /CPI (Cloud Process Integration)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Connectivity</p>
+                                </td>
+                                <td>
+                                    <p>RESTful/Web Services</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Data Transfer Format</p>
+                                </td>
+                                <td>
+                                    <p>ERP-&gt;XML (Extensible Markup Language)&nbsp;-&gt;Middleware-&gt;JSON</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Authentication</p>
+                                </td>
+                                <td>
+                                    <p>SSL + Dedicated Username &amp; Password</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Configuration In ERP</p>
+                                </td>
+                                <td>
+                                    <p>Web services to be setup in ERP &amp; RFC Connection to be setup in Middleware</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Flow</p>
+                                </td>
+                                <td>
+                                    <p>From the ERP data will be send to middleware , which will forward and receive the data via the API&apos;s</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+                <p></p>
+            </apex:outputText>
+            <apex:outputText rendered="{!displaySFTPBasedIntegration}">
+                <div align="left">
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><b>SFTP based Integration</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Integration Route</p>
+                                </td>
+                                <td>
+                                    <p>SFTP (Secure File Transfer Protocol)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Connectivity</p>
+                                </td>
+                                <td>
+                                    <p>HTTPS (HyperText Transfer Protocol)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Data Transfer Format</p>
+                                </td>
+                                <td>
+                                    <p>CSV (Comma Separated Values)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Authentication</p>
+                                </td>
+                                <td>
+                                    <p>SFTP+Dedicate Username Password</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Configuration In ERP</p>
+                                </td>
+                                <td>
+                                    <p>Scheduler to push &amp; pull the file from SFTP location to be setup</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Flow</p>
+                                </td>
+                                <td>
+                                    <p>Data will be generated in a CSV file which will be placed in the SFTP location.A software utility IMC (Invoice Manager Customer) on the Platform will pick and send data from this SFTP location</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p></p>
+                <p></p>
+            </apex:outputText>
+<p></p>
+<p><b>Feature List of Interfaces to be developed in Customer ERP</b></p>
+<p></p>
+<div align="left">
+    <table border="1">
+<tbody>
+            <tr>
+                <td>
+                    <p><b>#</b></p>
+                </td>
+                <td>
+                    <p><b>Interface</b></p>
+                </td>
+                <td>
+                    <p><b>Feature</b></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>Vendor Master</p>
+                </td>
+                <td>
+                    <p>- This Interface will pick Vendor Master fields from ERP Tables</p>
+                    <p>- An exclusive table would be maintained for controlling the account group for which data will be excluded while sending the vendor master.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>Open Invoice</p>
+                </td>
+                <td>
+                    <p>-This interface will pick all the open invoices for given document types.</p>
+                    <p>-ZBLART table would be developed for maintenance of required document types for sending the data related to open invoices.</p>
+                    <p>-&nbsp;If any invoice gets reversed in the future, then this program will push the data for that reversed invoice as well.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>Vendor Adjustment</p>
+                </td>
+                <td>
+                    <p>-All credit/debit notes related to the open invoices would be shared with the Xpedize Platform from ERP under this interface.-ZBLART_CR table would be developed for maintenance of the document types.-Xpedize Platform would adjust all credit/debit notes when original invoice reference number is captured while posting credit note and debit note</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+                    <p>Vendor Payment</p>
+                </td>
+                <td>
+                    <p>- All vendor Xpedize invoices with document type provided in open invoices interface will be pushed from ERP to Xpedize Platform to knock off the open invoice against it from the Xpedize Platform.</p>
+                    <p>- Partial payment&nbsp;when done would be considered as complete payment and the invoice would be knocked&nbsp;off from the Platform.</p>
+                    <p>- Advance payments done against POs would also be sent to the Platform via this interface and would get adjusted with Open Invoices under the same PO number.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+                    <p>Return Posting File</p>
+                </td>
+                <td>
+                    <p>-This interface will post credit/debit notes to ERP post-approval of early payment requests on the Xpedize Platform.&nbsp;</p>
+                    <p>-Customer would have an option to fulfil the vendor early payment request either by using:</p>
+                    <p>1. Own Fund (Treasury)</p>
+                    <p>2. External Financing- Bank&nbsp;</p>
+                    <p>3. External Financing- TreDS</p>
+                    <p>4. External Financing-along with Tenor extension.</p>
+                </td>
+            </tr>
+            <apex:outputText rendered="{!displayOwnFunds}">
+                <tr>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p>Own Fund (Treasury)</p>
+                    </td>
+                    <td>
+                        <p>-While using Own Fund , Customer would use its funds to fulfill early payment requests of vendors against invoices.&nbsp;</p>
+                        <p>-The accounting entry, in that case, would be</p>
+                        <ul>
+                        <li>Vendor A/c Dr. </li><li>Interest A/c Dr. </li><li>   Cash Discount GL A/c Cr. </li></ul>
+                        <p>-One new debit note will get posted in the ERP in this interface. In this new debit note,&nbsp;o It will have Original Invoice number, Fiscal year and line item in invoice reference number Field.o Payment terms and baseline date would be updated, and old payment terms and baseline date would get preserved in a Reference Key available on ERP.</p>
+                    </td>
+                </tr>
+            </apex:outputText>
+            <apex:outputText rendered="{!displayBankFinancing}">
+                <tr>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p>External Financing- Bank</p>
+                    </td>
+                    <td>
+                        <p>-In the case of Bank financing cases, when a new credit/debit note gets posted in ERP then the following accounting entry is posted in case when Interest is recovered from net payment to Supplier:&nbsp;</p>
+                        <ul><li>Vendor A/c Dr</li><li> Cash Discount GL A/c Cr</li><li> SCF Program GL A/c Cr</li></ul>
+                        <p>- In case interest is debited upfront and is paid by Customer, the accounting entry would be:</p>
+                        <ul>
+                        <li>Vendor A/c Dr. </li><li>Interest A/c Dr. </li><li>   Cash Discount GL A/c Cr. </li><li>  Bank A/c Cr.  </li><li> SCF Program GL A/c Cr. </li></ul>
+                        
+                        
+                        
+                        
+                        <p>-Original invoice is cleared in vendor ledger and the new document created will be due on original due date.</p>
+                    </td>
+                </tr>
+            </apex:outputText>
+            <apex:outputText rendered="{!displayTreDS}">
+                <tr>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p>External Financing- TreDS</p>
+                    </td>
+                    <td>
+                        <p>-In the case of external financing Via TreDS, the accounting entry would be:&nbsp;</p>
+                        <ul>
+                        <li>Vendor A/c Dr. </li><li>Interest A/c Dr. </li><li>   Cash Discount GL A/c Cr. </li><li>  Bank A/c Cr.  </li><li> SCF Program GL A/c Cr. </li></ul>
+                        <p>-Original invoice is cleared in vendor ledger and the new document created will be due on original due date.</p>
+                    </td>
+                </tr>
+            </apex:outputText>
+    <apex:outputText rendered="{!displayTenorExtension}">
+            <tr>
+                <td>
+                    <p></p>
+                </td>
+                <td>
+                    <p>External Financing - along with Tenor extension</p>
+                </td>
+                <td>
+                    <p>-In the case of external financing &nbsp;along with tenor extension, the accounting entry would be:&nbsp;</p>
+                   <ul>
+                        <li>Vendor A/c Dr. </li><li>Interest A/c Dr. </li><li>   Cash Discount GL A/c Cr. </li><li>  Bank A/c Cr.  </li><li> SCF Program GL A/c Cr. </li></ul>
+                    <p>-New document would be created which would be due on any such extended date as specified by Customer.</p>
+                </td>
+            </tr>
+        </apex:outputText>
+        </tbody>
+    </table>
+</div>
+<p></p>
+<p><b>Xpedize Responsibility:</b></p>
+<p>Xpedize will work with the Customer team on the following mentioned activities:</p>
+<p></p>
+<ul>
+    <li>
+        <p>Design the flow architecture from Xpedize to Customer ERP and vice versa.</p>
+    </li>
+    <li>
+        <p>Identify options to integrate various business systems, application directories and security enablers.</p>
+    </li>
+    <li>
+        <p>Develop all necessary interfaces in the Customer ERP</p>
+    </li>
+    <li>
+        <p>Perform unit testing and business testing</p>
+    </li>
+    <li>
+        <p>Provide Functional specification (FS) and Technical specification (TS) documents of the new interfaces developed in Customer ERP</p>
+    </li>
+    <li>
+        <p>Provide knowledge transfers to customer end-users</p>
+    </li>
+    <li>
+        <p>Provide go-live support for 15 days</p>
+    </li>
+    <li>
+        <p>Provide any other help on SOS basis in cases where Platform is being upgraded or modified for providing better services to Customer &nbsp;</p>
+    </li>
+</ul>
+<p><b>Customer responsibility:</b></p>
+<ul>
+    <li>
+        <p>The Customer shall not reverse engineer, decompile, decode, decrypt, disassemble, or in any way derive source code from the Software.</p>
+    </li>
+    <li>
+        <p>Customer has and shall maintain all rights as are required to allow Xpedize to provide the Services to Customer as set forth in this order form, including without limitation to approach its suppliers for onboarding to the program or to apprise / enrol them of any changes / pilots that will be carried out intermittently to increase Platform usage / throughput / revenue.</p>
+    </li>
+    <li>
+        <p>Customer will obtain prior written approval of the data owners before sharing any data with Xpedize.</p>
+    </li>
+    <li>
+        <p>To meet the service objectives as stated above, Customer shall facilitate sharing of vendor master data during integration / deployment to facilitate faster onboarding of all its vendors as per agreed project plan. Any additional vendors (apart from vendors who were already onboarded at the time of Go-Live) that require onboarding after the first 2 months of Go-Live will be charged at INR 1,000 / vendor</p>
+    </li>
+</ul>
+<p></p>
+<p></p>
+<p><b>Integration Terms-&nbsp;</b></p>
+<div align="left">
+    <table border="1">
+<tbody>
+            <tr>
+                <td><b>#</b></td>
+                <td>
+                    <p><b>Clause</b></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>&nbsp;1</p>
+                </td>
+                <td>
+                    <p>In the event the Customer avails integration development services, then the Customer acknowledges and agrees it shall, within(a) a period of eight(8) business days from the date of execution of this Agreement, provide all the requirements sought by Xpedize (including but not limited to access to Customer&rsquo;s information technology systems for availing the integration services and assigning integration project manager/point of contact from customer side) to initiate integration development and agree on integration development plan timelines; failing which, Xpedize shall charge an additional amount of INR 10,000 per business day for every additional day of delay, until the date of acceptance of the integration development plan.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>User Acceptance Testing: Upon completion of the integration development as agreed in the integration development plan, Xpedize shall deliver integration development to the Customer for user acceptance testing&nbsp;along with the FUT document (capturing standard test case scenarios).&nbsp;The Customer shall complete the user acceptance testing within a period of&nbsp;seven business days&nbsp;of submission of the integration development plan as set out in Clause 3.4 and notify Xpedize of (i) its acceptance or (ii) any changes required in the integration development, failing which the integration development delivered by Xpedize shall be deemed accepted. In the event the Customer fails to conduct user acceptance testing within such period Xpedize may, in its sole discretion, charge an additional amount of INR 10,000 per day for every additional day of delay, until the date of completion of user acceptance testing.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>Any request for changes post-delivery of the integration development must be in writing and shall set out in sufficient detail that the change requested is within the scope of services set out in the applicable Order Form and is in accordance with the agreed integration development plan. Xpedize shall then use commercially reasonable efforts to perform the changes requested to the extent feasible in Xpedize&rsquo;s sole discretion and reissue the integration development to the Customer</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+                    <p>The integration development shall be deemed accepted and the Customer shall be deemed liable to make all outstanding payments as agreed in the Order Form upon (i)delivery of the integration development by Xpedize; (ii) failure of the Customer to conduct user acceptance testing; (iii) failure of the Customer to notify Xpedize of the changes requested in sufficient detail within fourteen (14) days of submission of integration development or within seven (7) days of the submission of the changes&nbsp;requested, as the case may be.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+                    <p>Any changes subsequent to the acceptance or deemed acceptance of the integration development, requested by the Customer may be carried out by Xpedize at its sole and absolute discretion and at additional costs as notified by Xpedize.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>6</p>
+                </td>
+                <td>
+                    <p>The Customer acknowledges and agrees that the integration consultation services shall be provided by Xpedize for a fixed period thirty (30) business days commencing from the date of execution of the Order Form. Xpedize shall charge an additional amount of INR 10,000 per day, in the event the integration consultation exceeds the thirty (30) day period. The integration consultation service shall be deemed completed upon expiry of thirty (30) days.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p><b>Stages and timelines for integration development &ndash; Xpedize Invoice Discounting</b></p>
+<p></p>
+<div align="left">
+    <table border="1">
+<tbody>
+            <tr>
+                <td>
+                    <p><b>#</b></p>
+                </td>
+                <td>
+                    <p><b>Integration Development- Stages</b></p>
+                </td>
+                <td>
+                    <p><b>Event/Date for commencement and closure of a stage</b></p>
+                </td>
+                <td>
+                    <p><b>Description</b></p>
+                </td>
+                <td>
+                    <p><b>Duration in business days</b></p>
+                </td>
+                <td>
+                    <p><b>Owner</b></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>1</p>
+                </td>
+                <td>
+                    <p>Kick off meeting</p>
+                </td>
+                <td>
+                    <p>Signing of order form to kick off the meeting.</p>
+                </td>
+                <td>
+                    <p>Introductory meeting to be organized with all the stakeholders by Sales Team (Xpedize-Integration/Xpedize-PM, Customer-SAP team, Customer-Finance &amp; AP Team)</p>
+                </td>
+                <td>
+                    <p>Within 3 days from order signing</p>
+                </td>
+                <td>
+                    <p>Xpedize-Sales</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>2</p>
+                </td>
+                <td>
+                    <p>Integration Development Plan and Prerequisites gathering</p>
+                </td>
+                <td>
+                    <p>End of kick off meeting to the finalization of integration development plan.</p>
+                </td>
+                <td>
+                    <p>Provide prerequisites as discussed in the kick-off meeting and other details as sought by the Xpedize team.</p>
+                </td>
+                <td>
+                    <p>Within 5 days from kick-off meeting</p>
+                </td>
+                <td>
+                    <p>Customer</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>3</p>
+                </td>
+                <td>
+                    <p>Implementation</p>
+                </td>
+                <td>
+                    <p>Finalization of Integration Development Plan to completion of implementation along with testing on development server.</p>
+                </td>
+                <td>
+                    <p>Development of program in accordance with SOW and Integration Development Plan</p>
+                </td>
+                <td>
+                    <p>Within 14 days from the end of development plan</p>
+                </td>
+                <td>
+                    <p>Xpedize-Integration</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>4</p>
+                </td>
+                <td>
+                    <p>User Acceptance Testing &apos;UAT&apos;</p>
+                </td>
+                <td>
+                    <p>Completion of development to completion of UAT.</p>
+                </td>
+                <td>
+                    <p>UAT Testing and confirmation by the Customer to move into Production.Integration development shall be deemed accepted if the customer fails to complete the UAT within 14 days.</p>
+                </td>
+                <td>
+                    <p>Within 7 days from the end of development</p>
+                </td>
+                <td>
+                    <p>Customer</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>5</p>
+                </td>
+                <td>
+                    <p>Cutover and Go live</p>
+                </td>
+                <td>
+                    <p>Completion of UAT to move integration development to production.</p>
+                </td>
+                <td>
+                    <p>Quality to production movement along with penny value testing</p>
+                </td>
+                <td>
+                    <p>Within 3 days from completion of UAT</p>
+                </td>
+                <td>
+                    <p>Xpedize-Integration</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p>Total Period (working days)</p>
+                </td>
+                <td colspan="2">
+                    <p>32 Business days</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

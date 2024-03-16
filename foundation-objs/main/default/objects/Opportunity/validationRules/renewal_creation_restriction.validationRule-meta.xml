@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>renewal_creation_restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISNEW(), 
+RecordType.Name = &quot;Renewal&quot;,
+  !CONTAINS(UPPER(CreatedBy.Profile.Name) , &apos;ADMIN&apos; )  
+)</errorConditionFormula>
+    <errorMessage>Renewal Record can not be created !</errorMessage>
+</ValidationRule>

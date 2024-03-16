@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>CTX_CaseService</members>
+        <members>CTX_CaseServiceParserClass</members>
+        <members>CTX_ServiceWrapper</members>
+	    <members>CTX_UpsertCaseDetails</members>
+        <members>CTX_CaseAPICalloutClass</members>
+        <!--<members>CaseTriggerHandler</members>-->
+
+        <name>ApexClass</name>
+    </types>
+
+    <!--<types>
+        <members>Case.Products_Available__c</members>
+        <members>Case.Product_Page_URL__c</members>
+        <members>Case.Document_Number__c</members>
+        <members>Case.Pre_Signed_Attachment_URL__c</members>
+        <members>Case.Product_Metadata__c</members>
+        <members>Case.Workspace_Id__c</members>
+        <members>Case.Product_Unique_Identifier__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Case_Mapping_For_Product_Ticketing__mdt</members>
+
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+		<members>Case_Mapping_For_Product_Ticketing.Invoice_Discount</members>
+		<members>Case_Mapping_For_Product_Ticketing.Notice_Management</members>
+		<members>Case_Mapping_For_Product_Ticketing.TDS</members>
+		<members>Case_Mapping_For_Product_Ticketing.Clear_Invoicing</members>
+		<members>Case_Mapping_For_Product_Ticketing.Capture</members>
+		<members>Case_Mapping_For_Product_Ticketing.MAX_ITC</members>
+		<members>Case_Mapping_For_Product_Ticketing.E_Invoicing_E_Way_Bill</members>
+	    <members>Case_Mapping_For_Product_Ticketing.GST_2_0</members>
+               
+        <name>CustomMetadata</name>
+    </types>-->
+
+<!--
+    Support_Case_API_End_Point, Support_Case_API_Token, Global_Account_Product_UI, Support_API_Enablement  : Custom Label
+    https://cleartax.lightning.force.com/lightning/setup/ExternalStrings/page?address=%2F101Os000003b8rK
+    https://cleartax.lightning.force.com/lightning/setup/ExternalStrings/page?address=%2F101Os000003bBfY
+    https://cleartax.lightning.force.com/lightning/setup/ExternalStrings/page?address=%2F101Os000003bD4f
+
+    SupportCaseAPI : Remote Site Setting
+    https://cleartax.lightning.force.com/lightning/setup/SecurityRemoteProxy/page?address=%2F0rpOs00000002Hx
+-->
+
+
+    <version>58.0</version>
+</Package>

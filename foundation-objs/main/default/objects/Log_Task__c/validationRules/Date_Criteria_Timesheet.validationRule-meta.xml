@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Criteria_Timesheet</fullName>
+    <active>true</active>
+    <errorConditionFormula>(
+Date__c &lt;  Asset__r.MS_Start_Date__c || 
+Date__c &gt;  (Asset__r.MS_End_Date__c + 30 )
+)</errorConditionFormula>
+    <errorMessage>Please ensure date entered is not older than 30 days from today and it is between MS Start Date and MS End Date</errorMessage>
+</ValidationRule>

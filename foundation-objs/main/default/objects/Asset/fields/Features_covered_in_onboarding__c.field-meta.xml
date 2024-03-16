@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Features_covered_in_onboarding__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Features covered in onboarding</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account setup</fullName>
+                <default>false</default>
+                <label>Account setup</label>
+            </value>
+            <value>
+                <fullName>Data Preparation &amp; Ingestion</fullName>
+                <default>false</default>
+                <label>Data Preparation &amp; Ingestion</label>
+            </value>
+            <value>
+                <fullName>Filing</fullName>
+                <default>false</default>
+                <label>Filing</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Reconciliation</fullName>
+                <default>false</default>
+                <label>Reconciliation</label>
+            </value>
+            <value>
+                <fullName>E-Invoicing</fullName>
+                <default>false</default>
+                <label>E-Invoicing</label>
+            </value>
+            <value>
+                <fullName>EWB</fullName>
+                <default>false</default>
+                <label>EWB</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

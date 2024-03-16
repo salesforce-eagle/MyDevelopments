@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Case Record Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>B2B CA/SME</fullName>
+                <default>false</default>
+                <label>B2B CA/SME</label>
+            </value>
+            <value>
+                <fullName>B2B Enterprise</fullName>
+                <default>false</default>
+                <label>B2B Enterprise</label>
+            </value>
+            <value>
+                <fullName>B2C</fullName>
+                <default>false</default>
+                <label>B2C</label>
+            </value>
+            <value>
+                <fullName>E Invoicing</fullName>
+                <default>false</default>
+                <label>E Invoicing</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

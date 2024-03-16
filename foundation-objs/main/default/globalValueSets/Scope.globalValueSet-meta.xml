@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>TDS</fullName>
+        <default>false</default>
+        <label>TDS</label>
+    </customValue>
+    <customValue>
+        <fullName>Airline Credit</fullName>
+        <default>false</default>
+        <label>Airline Credit</label>
+    </customValue>
+    <customValue>
+        <fullName>AMC</fullName>
+        <default>false</default>
+        <label>AMC</label>
+    </customValue>
+    <customValue>
+        <fullName>ASP/GSP</fullName>
+        <default>false</default>
+        <label>GST</label>
+    </customValue>
+    <customValue>
+        <fullName>Assisted Services</fullName>
+        <default>false</default>
+        <label>Assisted Services</label>
+    </customValue>
+    <customValue>
+        <fullName>B2C QR Code</fullName>
+        <default>false</default>
+        <label>B2C QR Code</label>
+    </customValue>
+    <customValue>
+        <fullName>E-invoice / EWB</fullName>
+        <default>false</default>
+        <label>E-invoice / EWB</label>
+    </customValue>
+    <customValue>
+        <fullName>Custom Template Printing</fullName>
+        <default>false</default>
+        <label>Custom Template Printing</label>
+    </customValue>
+    <customValue>
+        <fullName>GEeR-up Reports</fullName>
+        <default>false</default>
+        <label>GEeR-up Reports</label>
+    </customValue>
+    <customValue>
+        <fullName>GSTIN Verification</fullName>
+        <default>false</default>
+        <label>GSTIN Verification</label>
+    </customValue>
+    <customValue>
+        <fullName>Integration</fullName>
+        <default>false</default>
+        <label>Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC</fullName>
+        <default>false</default>
+        <label>Max ITC</label>
+    </customValue>
+    <customValue>
+        <fullName>E-invoice - International</fullName>
+        <default>false</default>
+        <label>E-invoice - International</label>
+    </customValue>
+    <customValue>
+        <fullName>I2P</fullName>
+        <default>false</default>
+        <label>I2P</label>
+    </customValue>
+    <customValue>
+        <fullName>ID</fullName>
+        <default>false</default>
+        <label>ID</label>
+    </customValue>
+    <customValue>
+        <fullName>Clear Capture</fullName>
+        <default>false</default>
+        <label>Clear AP</label>
+    </customValue>
+    <customValue>
+        <fullName>CimplyFive</fullName>
+        <default>false</default>
+        <label>CimplyFive</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISSDOCS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISSDOCS</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISSPLUS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISSPLUS</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISSGLOBAL</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISSGLOBAL</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISS</label>
+    </customValue>
+    <customValue>
+        <fullName>Recon</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Recon</label>
+    </customValue>
+    <customValue>
+        <fullName>DIGITIZATION</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>DIGITIZATION</label>
+    </customValue>
+    <customValue>
+        <fullName>RETAINERSHIP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>RETAINERSHIP</label>
+    </customValue>
+    <customValue>
+        <fullName>CUSTOMIZATION</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CUSTOMIZATION</label>
+    </customValue>
+    <customValue>
+        <fullName>ON-PREM</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ON-PREM</label>
+    </customValue>
+    <customValue>
+        <fullName>CIMPLYBEST</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CIMPLYBEST</label>
+    </customValue>
+    <customValue>
+        <fullName>E-way Bill</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>E-way Bill</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Invoicing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>E-Invoicing</label>
+    </customValue>
+    <customValue>
+        <fullName>KAM</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>KAM</label>
+    </customValue>
+    <customValue>
+        <fullName>CFO Dashboard</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CFO Dashboard</label>
+    </customValue>
+    <customValue>
+        <fullName>Managed Services</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Managed Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Others</label>
+    </customValue>
+    <customValue>
+        <fullName>ClearOne (invoicing)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ClearOne (invoicing)</label>
+    </customValue>
+    <customValue>
+        <fullName>TDS 206 AB</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TDS 206 AB</label>
+    </customValue>
+    <customValue>
+        <fullName>Add-Ons</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Add-Ons</label>
+    </customValue>
+    <customValue>
+        <fullName>ClearTDS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ClearTDS</label>
+    </customValue>
+    <customValue>
+        <fullName>Clear Invoicing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Clear Invoicing</label>
+    </customValue>
+    <customValue>
+        <fullName>Yet to prospect</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Yet to prospect</label>
+    </customValue>
+    <customValue>
+        <fullName>Startup</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Startup</label>
+    </customValue>
+    <customValue>
+        <fullName>KYC-APIs</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>KYC-APIs</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISSLISTED-EQUITY</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISSLISTED-EQUITY</label>
+    </customValue>
+    <customValue>
+        <fullName>BLISSLISTED-DEBT</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BLISSLISTED-DEBT</label>
+    </customValue>
+    <masterLabel>Scope</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

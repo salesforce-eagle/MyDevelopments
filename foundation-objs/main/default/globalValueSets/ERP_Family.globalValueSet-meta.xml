@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SAP</fullName>
+        <default>false</default>
+        <label>SAP</label>
+    </customValue>
+    <customValue>
+        <fullName>SAP ECC / S4 Hana</fullName>
+        <default>false</default>
+        <label>SAP ECC / S4 Hana</label>
+    </customValue>
+    <customValue>
+        <fullName>SAP B1</fullName>
+        <default>false</default>
+        <label>SAP B1</label>
+    </customValue>
+    <customValue>
+        <fullName>Oracle</fullName>
+        <default>false</default>
+        <label>Oracle</label>
+    </customValue>
+    <customValue>
+        <fullName>Microsoft</fullName>
+        <default>false</default>
+        <label>Microsoft</label>
+    </customValue>
+    <masterLabel>ERP Family</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

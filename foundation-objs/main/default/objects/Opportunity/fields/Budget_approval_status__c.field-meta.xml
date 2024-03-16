@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_approval_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Budget approval status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Cannot afford</fullName>
+                <default>false</default>
+                <label>Cannot afford</label>
+            </value>
+            <value>
+                <fullName>Pending - Meeting completed</fullName>
+                <default>false</default>
+                <label>Pending - Meeting completed</label>
+            </value>
+            <value>
+                <fullName>Pending - Meeting pending</fullName>
+                <default>false</default>
+                <label>Pending - Meeting pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

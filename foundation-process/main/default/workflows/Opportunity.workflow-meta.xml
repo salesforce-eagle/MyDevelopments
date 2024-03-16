@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Finance_Approval_Approved_Mail</fullName>
+        <description>Finance Approval Approved Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Finance_Approval_Approved_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>Finance_Rejection_Mail</fullName>
+        <description>Finance Rejection Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>nilesh@growthspree.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sangeetha.k@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shubham.chaturvedi@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sumeeth.vohra@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Finance_Rejection_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>Legal_Approval_Approved_Mail</fullName>
+        <ccEmails>raksha@warpdrivetech.in</ccEmails>
+        <description>Legal Approval Approved Mail</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Legal_Approval_Approved_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>Legal_Approval_Assignment</fullName>
+        <description>Legal Approval Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aishwarya.viswanathan@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ankit.jaiswal@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mahima.pradeep@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>megha.agarwal@cleartax.in@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ramakanth.reddy@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Finance_approval_template</template>
+    </alerts>
+    <alerts>
+        <fullName>Legal_Approval_Rejection_Mail</fullName>
+        <ccEmails>raksha@warpdrivetech.in</ccEmails>
+        <description>Legal Approval Rejection Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Legal_Rejection_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>OrderForm_Esign_request_failure_email_alert</fullName>
+        <description>OrderForm Esign request failure email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>aishwarya.viswanathan@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>akash.gaurav@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kartikeya.singh@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ESign_Error_Message_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Approver_for_Extension</fullName>
+        <description>Send Email to Approver for Extension</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lokesh@ctxdev.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nilesh@growthspree.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pramodh@ctxdev.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_to_Extension</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Mail_after_Opportunity_Closure</fullName>
+        <ccEmails>rohit.razdan@cleartax.in</ccEmails>
+        <ccEmails>rahul.roy@cleartax.in</ccEmails>
+        <ccEmails>bhupendra.kumar@cleartax.in</ccEmails>
+        <ccEmails>ar@cleartax.in</ccEmails>
+        <ccEmails>harshit.saxena@cleartax.in</ccEmails>
+        <description>Send Mail after Opportunity Closure</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>Central_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Channel_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Finance</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside_Sales_head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Leadership_Sales</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>North_and_East_Regional_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>PSU_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_South</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_West_North</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>South_Regional_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Territory_Head_KA_KL_TN</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>West_Regional_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>abhishek.rastogi@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>anand.khare@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ankit.manocha-3krm@force.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ayush.rai@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>brahma.mutyala@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>chetan.agrawal@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>indranil.mukherjee@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kanik.arora@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rahul.k@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ramakanth.reddy@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>raunak.verma@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sameer.seth@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>saurabh.sehgal@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sumit.kawariya@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>suparv.jain@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>venus.pais@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Closure_Mail</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Capture_date_on_which_oppty_is_lost</fullName>
+        <field>Lost_Date__c</field>
+        <formula>Today()</formula>
+        <name>Capture date on which oppty is lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Approval_Approved</fullName>
+        <description>Update Approval Status to &apos;Finance Approval Approved&apos;</description>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Finance Approval Approved</literalValue>
+        <name>Finance Approval Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Approval_InProgress</fullName>
+        <description>Update Approval Status to &apos;Finance Approval In Progress&apos;</description>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Finance Approval In Progress</literalValue>
+        <name>Finance Approval InProgress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Approval_Rejected</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Finance Approval Rejected</literalValue>
+        <name>Finance Approval Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_approval_status_In_Progress</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Finance approval status In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_approval_status_approved</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Finance approval status approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_approval_status_rejected</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Finance approval status rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legal_Approval_Approved</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Legal Approval Approved</literalValue>
+        <name>Legal Approval Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legal_Approval_InProgress</fullName>
+        <description>Update Approval Status to Legal Approval In Progress</description>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Legal Approval In Progress</literalValue>
+        <name>Legal Approval InProgress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legal_Approval_Rejected</fullName>
+        <field>Finance_approval_status__c</field>
+        <literalValue>Legal Approval Rejected</literalValue>
+        <name>Legal Approval Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Oppty_Close_Date_to_Today</fullName>
+        <field>CloseDate</field>
+        <formula>Today()</formula>
+        <name>Oppty Close Date to Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reason_For_Reject_to_null</fullName>
+        <field>Reason_for_reject__c</field>
+        <name>Reason For Reject	to null</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approve_Rejection_Date</fullName>
+        <field>Finance_Approval_Rejection_Date__c</field>
+        <formula>Today()</formula>
+        <name>Update Approve/Rejection Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Extersion_Approval_as_Approved</fullName>
+        <field>Extension_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Extersion Approval as Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Extersion_Approval_as_In_Progress</fullName>
+        <field>Extension_Approval_Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Update Extersion Approval as In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Extersion_Approval_as_Rejected</fullName>
+        <field>Extension_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Extersion Approval as Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Legal_Approval_Rejection_Date</fullName>
+        <field>Legal_Approval_Rejection_Date__c</field>
+        <formula>Today()</formula>
+        <name>Update Legal Approval/Rejection Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_StageName_as_Closed_Own</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Update StageName as Closed Own</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_as_StageName_based_after_Approved</fullName>
+        <field>StageName</field>
+        <literalValue>Onboarded</literalValue>
+        <name>Update as StageName based after Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Closure Mail</fullName>
+        <actions>
+            <name>Send_Mail_after_Opportunity_Closure</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ESign Request failure</fullName>
+        <actions>
+            <name>OrderForm_Esign_request_failure_email_alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.ESign_Message__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Opportunity Closed Won Date</fullName>
+        <actions>
+            <name>Oppty_Close_Date_to_Today</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Opportunity Lost Date</fullName>
+        <actions>
+            <name>Capture_date_on_which_oppty_is_lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update StageName after In Finance Approvel</fullName>
+        <actions>
+            <name>Update_as_StageName_based_after_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+    RecordTypeId=&apos;0122x000000t7bGAAQ&apos;, 
+    OR(
+        AND(
+            ISPICKVAL(Order_Form_Required__c, &apos;No&apos;),
+            ISPICKVAL(Finance_approval_status__c,&apos;Finance Approval Approved&apos;)
+        ),
+        AND(
+            ISPICKVAL(Order_Form_Required__c, &apos;Yes&apos;),
+            ESign_Completed1__c &gt;= 1
+        )
+    )
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update StageName after In Finance Approvel Non Channel Partners</fullName>
+        <actions>
+            <name>Update_StageName_as_Closed_Own</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+    RecordTypeId!=&apos;0122x000000t7bGAAQ&apos;,
+    OR(
+       AND(
+           ISPICKVAL(Finance_approval_status__c,&apos;Finance Approval Approved&apos;),
+           ISPICKVAL(Order_Form_Required__c, &apos;No&apos;)
+      ),
+       AND(
+            ISPICKVAL(Order_Form_Required__c, &apos;Yes&apos;),
+            ESign_Completed1__c &gt;= 1
+       )
+    )
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

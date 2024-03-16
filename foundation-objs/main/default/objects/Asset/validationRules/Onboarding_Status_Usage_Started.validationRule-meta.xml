@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Status_Usage_Started</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND(
+TEXT(Onboarding_status__c) = &apos;Usage Started&apos;,ISCHANGED(Onboarding_status__c),
+AND($User.ProfileId != &apos;00e2x0000012b83&apos;,$User.ProfileId !=&apos;00e2x000001RHWQ&apos;)
+), true, false
+)</errorConditionFormula>
+    <errorMessage>Please contact system admin to move to Usage Started</errorMessage>
+</ValidationRule>

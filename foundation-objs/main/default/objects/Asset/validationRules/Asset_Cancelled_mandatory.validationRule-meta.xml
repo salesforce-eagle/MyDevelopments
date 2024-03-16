@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_Cancelled_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND((TEXT(Status) == &apos;Churn&apos; ||TEXT(Status) == &apos;Sales return&apos;),
+(ISBLANK(TEXT(Churn_Reason__c))||ISBLANK(Other_Reason_for_Churn__c) || (ISBLANK(TEXT( Churn_Level_2_Reason__c ))) ),ISCHANGED(Status))</errorConditionFormula>
+    <errorMessage>Please mention Churn / Risk Reason, Detail Reason for Churn / Risk, Churn Level 2 reason !</errorMessage>
+</ValidationRule>

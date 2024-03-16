@@ -1,0 +1,32 @@
+<?xml version=”1.0″ encoding=”UTF-8″?>
+<Package xmlns=”http://soap.sforce.com/2006/04/metadata”>
+    
+    <types>
+        <members>CTX_CSMJourneyHandler</members>
+        <members>CTX_CSMJourneyOnbaordingFlow</members>
+        <members>CTX_CSMJorneyQueueable</members>
+        <members>CTX_CSM_TASK_CreationFormula</members>
+        <members>CTX_GenerateCSMTasksBatch</members>
+        <members>CTX_MuliselectLookUpController</members>
+        <members>CTX_CSMEscalationsBatch</members>
+        <members>AssetTriggerHandler</members>
+        <members>AccountTriggerHandler</members>
+        <members>AccountTriggerHelper</members>
+        <members>CTX_CSMActivationEscalationBatch</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_CSMAssetActivationChecklist</members>
+        <members>ctx_CSMAssetOnboardingSection</members>
+        <members>ctx_CustomPath</members>
+        <members>ctx_IntroductoryEmailPreview</members>
+        <members>ctx_MultiSelectLookup</members>
+
+        <name>LightningComponentBundle</name>
+    </types>
+
+
+    <version>55.0</version>
+</Package>

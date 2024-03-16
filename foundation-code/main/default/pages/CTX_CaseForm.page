@@ -1,0 +1,138 @@
+<apex:page controller="CTX_CaseFormController" showHeader="false" lightningStylesheets="false" id="Page">
+    <apex:includeLightning />    
+    <apex:slds /> 
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" />
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" />
+    <apex:styleSheet value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css" />
+    
+    <apex:slds />
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"/>
+            <style>
+            .displayNone { 
+                display:none; 
+            }
+    .displayBlock {
+        display:block;
+    }
+    .ui-autocomplete-loading { 
+        background: white url(/img/loading32.gif) right center no-repeat;
+        background-size:15px 15px; 
+    }
+    .placeHolder {
+        font-style: italic;
+    }
+    .ui-autocomplete {
+        position: absolute;
+    }
+    
+    .caseTab .tertiaryPalette, .individualPalette .caseBlock .tertiaryPalette, .layoutEdit .individualPalette .caseBlock .tertiaryPalette {
+        background-color: #3a6690 !important;
+        border-color: #3a6690 !important;
+    }
+    
+    .secondaryPalette {
+        
+        border-color: #3a6690 !important;
+    }
+    
+    .bPageBlock {
+        padding: 0;
+        margin-bottom: 10px;
+        border-top-width: 1px !important;
+    }
+    
+    </style>
+    
+    
+    <center><br/><br/>
+        <div class="g-signin2" data-width="200" data-height="35" data-longtitle="true" data-onsuccess="onSignIn">
+            
+            </div>
+        
+        </center>
+        
+        <apex:form id="form">
+            <apex:outputPanel id="test">
+            
+            
+            <center>  <h1>
+            {!VFMessage}
+        </h1>
+        <br/>
+            <button type="button" data-width="100" data-height="25" class="btn btn-default btn-sm" onclick="signOut()">
+                <span class="glyphicon glyphicon-log-out"></span> Sign Out
+                </button>
+                <br/><br/>
+                    </center>   
+                
+                
+                
+                
+                
+                
+                
+                
+                <apex:actionRegion >
+                    <apex:actionFunction action="{!emailId}" name="methodOneInJavascript" rerender="test">
+                        <apex:param name="firstParam" assignTo="{!loggedEmailID}" value="" />
+                            <apex:param name="secondParam" assignTo="{!googleIDToken}" value="" />
+                                </apex:actionFunction>
+                            </apex:actionRegion>
+                            <apex:pageMessages id="msg"></apex:pageMessages>
+                            <apex:outputPanel rendered="{!showFormUI}">
+                                <div id="LightningComponentid" class="slds-var-p-around_large"/>  
+                            
+                                <script>
+                                    $Lightning.use("c:CaseFormApplication", function() {
+                                        $Lightning.createComponent("c:ctx_CreateSupportCase",
+                                                                   { 
+                                                                   },
+                                                                   "LightningComponentid",
+                                                                   function(cmp) {
+                                                                       console.log('LWC Componenet added in VF page');
+                                                                   });
+                                    });
+                                </script>
+                            </apex:outputPanel>
+                            </apex:outputPanel>
+                            </apex:form>
+                            
+                            
+                            <script src="https://apis.google.com/js/platform.js" ></script>
+    <!--<meta name="google-signin-client_id" content="751199466534-g06q1toa5djsnccbo5pr3u5fahc8itsh.apps.googleusercontent.com"/>-->
+    <meta name="google-signin-client_id" content="110340045555-t1deoecrffvsflkstjldktafbtsighud.apps.googleusercontent.com"/>
+    <!--<meta name="google-signin-client_id" content="994524175313-ab12nhof3a7mnitpiaeqabjr54v3pn6t.apps.googleusercontent.com"/>-->
+    
+    
+    <script>
+    //search
+    //110340045555-t1deoecrffvsflkstjldktafbtsighud.apps.googleusercontent.com - ctx serviceuat
+    // 267090853070-iivdi0c0rnhajbsh90kslfmjsi0qnjmb.apps.googleusercontent.com - wd 
+    //994524175313-9a4r61c5mpfpplm2qpnnihkvhsq8q4ig.apps.googleusercontent.com - serviceuat and servicedev testing
+    // 751199466534-g06q1toa5djsnccbo5pr3u5fahc8itsh.apps.googleusercontent.com - ctx uat
+    
+    
+    function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;       
+        var profile = googleUser.getBasicProfile();       
+        methodOneInJavascript(profile.getEmail(),id_token);
+        
+        
+    }
+    
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.disconnect();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+        var out = '@loggedout.';
+        methodOneInJavascript(out,null);
+    }
+    </script>
+</apex:page>

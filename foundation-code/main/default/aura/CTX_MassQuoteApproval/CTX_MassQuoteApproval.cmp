@@ -1,0 +1,83 @@
+<aura:component controller="CTX_MassApprovalController" implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="approvalList" type="Object"/>
+    <!--<c:ctx_CustomToastCmp aura:id="notifLib"/>-->
+
+    <!-- Events -->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <div>
+        <div class="multiApproval slds-p-around_large">
+            <lightning:spinner aura:id="Spinner" variant="brand" alternativeText="Loading"/>
+            <div class="slds-text-heading_medium slds-p-around_x-small slds-m-bottom_medium"><b>Pending Quote Approvals</b></div>
+            <aura:if isTrue="{!not(empty(v.approvalList))}" >
+                <aura:iteration items="{!v.approvalList}" var="approval">
+                    <div class="slds-p-around_x-small" style="display: inline-flex; width: 100%;">
+                        <div style="display: inline-flex; width: 100%;">
+                            <lightning:icon size="small" class="headerIcon" iconName="standard:approval" alternativeText="approval" />&nbsp;
+                            <p class="headerText">{!approval.objName}</p>
+                        </div>
+                        <div class="btnDiv">
+                           <!-- <lightning:button onclick="{!c.handleReject}" disabled="{!empty(approval.data)}" name="{!approval.objName}" label="Reject" variant="brand" class="floatRight"/>
+                            <lightning:button onclick="{!c.handleApprove}" disabled="{!empty(approval.data)}" name="{!approval.objName}" label="Approve" variant="brand" class="floatRight slds-m-right_small"/>-->
+                        </div>
+                    </div>
+                    <div class="slds-p-around_x-small slds-m-bottom_small">
+                        <table class="approvalTable slds-table slds-no-cell-focus slds-table_bordered slds-table_cell-buffer">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th scope="col">
+                                        <div class="slds-truncate">Quote Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">Account Name</div>
+                                    </th>
+                                    <!--<th scope="col">
+                                        <div class="slds-truncate">Step</div>
+                                    </th>-->
+                                     <th scope="col">
+                                        <div class="slds-truncate">Submitted By</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">Submitted Time</div>
+                                    </th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!approval.data}" var="rec">
+                                    <tr class="slds-hint-parent">
+                                        <!--<td style="border-left: 1px solid #DDD;">
+                                            <center>
+                                                <lightning:input type="checkbox" checked="{!rec.isChecked}" variant="label-hidden" />
+                                            </center>
+                                        </td>-->
+                                        <td>
+                                            <a class="slds-truncate underline" href="javascript:void(0);" onclick="{!c.navigateToRecord}" id="{!rec.record.Id}" title="{!rec.record.Id}">
+                                               {!rec.record.Name}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <span class="slds-truncate" title="{!rec.record.Name}">{!rec.record.Account.Name}</span>
+                                        </td>
+                                        <td>
+                                           <span class="slds-truncate" title="{!rec.submitterName}">{!rec.submitterName}</span>
+                                        </td>
+                                        <td> 
+                                            <span class="slds-truncate" title="{!rec.submittedTime}">{!rec.submittedTime}</span>
+                                        </td>
+                                        <!--<td>
+                                            <span class="slds-truncate" title="{!rec.record.Name}">{!approval.CreatedDate}</span>
+                                        </td>-->
+                                    </tr>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                </aura:iteration>
+                <aura:set attribute="else">
+                    <p style="padding: 4px;">No Pending Approvals</p>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>product_2_deal_desk__c</fullName>
+    <externalId>false</externalId>
+    <label>product 2 (deal desk)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Airline Credit,</fullName>
+                <default>false</default>
+                <label>Airline Credit,</label>
+            </value>
+            <value>
+                <fullName>ASP/GSP,</fullName>
+                <default>false</default>
+                <label>ASP/GSP,</label>
+            </value>
+            <value>
+                <fullName>CFO Dashboard,</fullName>
+                <default>false</default>
+                <label>CFO Dashboard,</label>
+            </value>
+            <value>
+                <fullName>E-invoicing,E-way BillKAM,Managed Services,</fullName>
+                <default>false</default>
+                <label>E-invoicing,E-way BillKAM,Managed Services,</label>
+            </value>
+            <value>
+                <fullName>Others,</fullName>
+                <default>false</default>
+                <label>Others,</label>
+            </value>
+            <value>
+                <fullName>Recon,</fullName>
+                <default>false</default>
+                <label>Recon,</label>
+            </value>
+            <value>
+                <fullName>Max ITC,</fullName>
+                <default>false</default>
+                <label>Max ITC,</label>
+            </value>
+            <value>
+                <fullName>ClearOne(invoicing),</fullName>
+                <default>false</default>
+                <label>ClearOne(invoicing),</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

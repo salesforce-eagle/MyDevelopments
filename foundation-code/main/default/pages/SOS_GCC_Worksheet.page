@@ -1,0 +1,347 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOW_MaxItc_Integration_Series_Y_Cont" showheader="false" >
+    <html>
+
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+    <body>
+    
+Einv license : 
+<p>
+    ClearTax to provide KSA E-invoicing solution with following features :
+</p>
+<ul>
+    
+
+<li>Generate Tax invoices, Simplified Tax invoices and their associated Credit/ debit notes</li>
+<li>Cloud solution for generation, storage &amp; retrieval of e-invoices</li>
+<li>E-invoice generation as per ZATCA guidelines</li>
+<li>Connectivity with ZATCA platform for Clearance or Reporting of invoices</li>
+<li>Invoices in English and Arabic</li>
+<li>Smart data validations</li>
+<li>Emailing of invoices (if applicable)</li>
+<li>KSA data residency and data privacy</li>
+<li>Enterprise grade security</li>
+<li>User access management</li>
+<li>Standard MIS and dashboards</li>
+<li>Historical data storage and retrieval  (if applicable)</li>
+<li>Helpdesk support (remote)"</li>
+    </ul>
+
+Einv setup and onboarding :
+<p>
+    Excel Customer
+</p>
+<p>
+    
+ClearTax will conduct 2 hours of Onboarding and training session. The session will include:</p>
+<ul><li>Feature walkthrough of ClearTax web platform</li>
+<li>Training on using excel template for uploading data on ClearTax</li>
+<li>Device registration and account setup on ClearTax platform</li>
+</ul>
+
+
+<p>Scope of services for KSA E-Invoicing API Integration Development</p>
+<p><b>A. Scope of Services</b></p>
+
+        
+<p>ClearTax will provide end-to-end e-invoicing API integration with Customer's ERP for KSA E-invoicing compliance as per ZATCA guidelines. The deliverables shall encompass designing and development of the following components where it is technically feasible as per the ClearTax Integration team.</p>
+<ol>
+    <li>
+        <p>Create UI based configuration option to -</p>
+
+<ul>
+    <li>
+        <p>To set/alter VAT Number</p>
+    </li>
+    <li>
+        <p>To set/alter auth token</p>
+    </li>
+    <li>
+        <p>To set/alter Device/EGS Unit ID and metadata</p>
+    </li>
+    <li>
+        <p>To enable/disable integration logging</p>
+    </li>
+    </ul>    </li>
+
+    <li>
+        <p>Design and develop a custom dashboard in ERP (hereinafter referred to as ClearTax Compliance Cockpit)</p>
+
+
+<ol type="a">
+    <li>
+        <p>The selection screen shall have options to filter documents based on Company code/Plant code, Document number range/series, Document date range, Document type, Document status, and any other relevant attribute.</p>
+    </li>
+    <li>
+        <p>The report to extract and list outward documents from the source ERP shall cover the following Clear Tax document types relevant for E-Invoicing like Standard Tax Invoice,Simplified Tax Invoice, Credit Note and Debit Note.</p>
+    </li>
+    <li>
+        <p>The report shall display the status of E-Invoice actions at document level. Based on the activity, the status of the documents may change with the success message and metadata (QR Code, UUID, Invoice Hash, Previous Invoice Hash and Invoice Counter Value) or error message for the use of end users.</p>
+    </li>
+    <li>
+        <p>The report shall have UI elements to select a document and action buttons to trigger the following actions:</p>
+
+<ul>
+    <li>
+        <p>Generate E-Invoice (both Standard and Simplified) (Generate E-Invoice API)</p>
+    </li>
+    <li>
+        <p>Get E-Invoice PDF/A3 with embedded XML from ClearTax (Get PDF API)</p>
+    </li>
+    <li>
+        <p>Send E-Invoice via Email (Add-on Scope) (Send PDF via Email API)</p>
+  </li></ul>
+  
+
+    </li>
+    <li>
+        <p>The actions may be triggered as per customer's request either -</p>
+
+
+<ul>
+    <li>
+        <p>When an invoice is generated or approved and / or</p>
+    </li>
+    <li>
+      <p>On click of UI elements in the ClearTax Compliance Cockpit.</p>
+    </li>
+      </ul>
+  </li>
+
+    <li>
+        <p>For each action specified above </p>
+<ul>
+    <li>
+        <p>Transform the source data/documents into the format acceptable by Cleartax APIs in consonance with what is prescribed/acceptable by ZATCA.</p>
+    </li>
+    <li>
+        <p>Perform field level validation and business validation checks as per Cleartax and ZATCA API schema. This happens on the ClearTax side. There are no validations added in the ERP except some bare minimum validations required for functioning of the program.</p>
+    </li>
+    <li>
+        <p>Load the transformed data/documents using RESTful APIs to the Cleartax application.</p>
+    </li>
+    <li>
+        <p>Receive the response based on user action like generated QR Code (Quick Response code), UUID, Invoice hash, Previous invoice hash, Cryptographic stamp and Invoice Counter Value from Cleartax APIs along with additional information, errors and other metadata. For Simplified Tax Invoice, ClearTax will generate the QR code and Cryptographic Stamp, but for Standard Tax Invoice, ZATCA will be providing the same.</p>
+    </li>
+    <li>
+        <p>Update the ERP with generated QR Code (Quick Response code), UUID, Invoice hash, Previous invoice hash, Cryptographic stamp and Invoice Counter Value and mark the Invoice as Generated.</p>
+    </li>
+    <li>
+        <p>If required, save the final XML file inside ERP or Database or File Server provided by Customer depending on the feasibility of the destination.</p>
+      
+    </li>
+</ul>
+ </li>
+   
+</ol></li><li>
+        <p>Handle errors and exceptions received from ClearTax APIs for (i) Data validations (ii) Internet downtime (iii) API downtime (iv) Invalid response from APIs.</p>
+    </li>
+    <li>
+        <p>Provide ClearTax SSL/TLS certificates to Customer&rsquo;s IT team for installation in environment (Development, Quality and Production).</p>
+    </li>
+    <li>
+        <p><b>Post go-live support :</b> ClearTax shall provide 30 days post go live support to the Customer. This support will include fixing any breakages in functionality with respect to integration scope of work. &nbsp;</p>
+    </li></ol>
+
+<p><b>(B) Customer Dependencies</b></p>
+<ul>
+    <li>
+        <p>The customer shall formulate an internal team with :</p>
+        <ul>
+            <li>
+                <p>1 Project POC for overall internal project management and handling ClearTax interactions throughout the integration&nbsp;</p>
+            </li>
+            <li>
+                <p>Bandwidth of System architect/ Senior IT stakeholder to review and finalize tech architecture along with ClearTax integration team</p>
+            </li>
+            <li>
+                <p>Functional stakeholders (Finance, Compliance) for UAT and overall compliance related query resolution</p>
+            </li>
+            <li>
+                <p>IT, DB, Infra/ Network team members to work with ClearTax integration team on day-to-day basis</p>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <p>The Customer shall share appropriate Business requirement/functional documentation about the system configuration with the consulting team for study and understanding.</p>
+    </li>
+    <li>
+        <p>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator. Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.</p>
+    </li>
+    <li>
+        <p>Cleartax and its System Integrator (SI) will&nbsp;commence the project once infrastructure set up and necessary access has been provided. This activity shall be done by the Customer within 15 working days from project kick-off date.</p>
+    </li>
+    <li>
+        <p>The customer shall complete testing of integration flow in stipulated timelines to ensure timely go-live.</p>
+    </li>
+</ul>
+
+<p><b>(C) Integration Scope Limitations</b></p>
+<ul>
+    <li>
+        <p>The scope of integration is limited to application development and testing.</p>
+    </li>
+    <li>
+        <p>Any data required for System Integration Testing (SIT) and User Acceptance Testing (UAT) shall be provided by the Customer team during the integration project.</p>
+    </li>
+    <li>
+        <p>The Customer must provide invoice data as per ClearTax defined format (in alignment with ZATCA guidelines).&nbsp;</p>
+    </li>
+    <li>
+        <p>ClearTax integration team and its System Integrator (SI) will complete end-to-end integration development and post go-live support remotely&nbsp;</p>
+    </li>
+    <li>
+        <p>Following tasks will be out of scope for ClearTax</p>
+        <ul>
+            <li>
+                <p>Any consultation or configuration at network, firewall, Operating System, Basis level or IT infrastructure level</p>
+            </li>
+            <li>
+                <p>Any modifications required in Customer&rsquo;s internal ERP or PoS system to comply with prohibited functionalities by ZATCA&nbsp;</p>
+            </li>
+            <li>
+                <p>Any customized reports or data analytics&nbsp;</p>
+            </li>
+            <li>
+                <p>Any data cleaning/correction within Customer&rsquo;s ERP/ POS systems</p>
+            </li>
+        </ul>
+    </li>
+</ul>
+        
+        
+        <p>Scope of Services for ClearTax KSA E-Invoicing API Integration Consultation</p>
+
+<p>
+  <b>(A) Scope of Services</b>
+</p>
+<p>ClearTax will provide e-invoicing API integration consultation for KSA E-invoicing compliance as per ZATCA guidelines. The deliverables shall encompass consultation on the following components (based on technical feasibility)&nbsp;</p>
+<ol>
+    <li>
+        <p>Exposing relevant APIs to the customer and providing authentication tokens.</p>
+    </li>
+    <li>
+        <p>Providing technical documentation on exposed APIs.</p>
+    </li>
+    <li>
+        <p>Providing consultation on technical feasibility and data sufficiency from the API perspective to enable speedy execution and completion for the customer.</p>
+    </li>
+    <li>
+        <p>Resolving client queries and errors faced while using the APIs.</p>
+    </li>
+</ol>
+
+<p><b>(B) Customer Dependencies</b></p>
+<ul>
+    <li>
+        <p>The customer shall formulate an internal team with :</p>
+        <ul>
+            <li>
+                <p>1 Project POC for overall internal project management and handling ClearTax interactions throughout the integration&nbsp;</p>
+            </li>
+            <li>
+                <p>Bandwidth of System architect/ Senior IT stakeholder to review and finalize tech architecture along with ClearTax integration team</p>
+            </li>
+            <li>
+                <p>Functional stakeholders (Finance, Compliance) for UAT and overall compliance related query resolution</p>
+            </li>
+            <li>
+                <p>IT, DB, Infra/ Network team members to work with ClearTax integration team on day-to-day basis</p>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <p>The Customer shall share appropriate Business requirement/functional documentation about the system configuration with the consulting team for study and understanding.</p>
+    </li>
+    <li>
+        <p>The customer shall complete testing of integration flow in stipulated timelines to ensure timely go-live.</p>
+    </li>
+</ul>
+
+<p><b>(C) Integration Scope Limitations</b></p>
+<ul>
+    <li>
+        <p>The scope of integration is limited to consultation only</p>
+    </li>
+    <li>
+        <p>The Customer must prepare invoice data as per ClearTax defined format (in alignment with ZATCA guidelines).&nbsp;</p>
+    </li>
+    <li>
+        <p>ClearTax integration consultation team will provide consultation remotely&nbsp;</p>
+    </li>
+    <li>
+        <p>Consultation related to following items will be out of scope for ClearTax</p>
+        <ul>
+            <li>
+                <p>Any consultation or configuration at network, firewall, Operating System, Basis level or IT infrastructure level</p>
+            </li>
+            <li>
+                <p>Any modifications required in Customer&rsquo;s internal ERP or PoS system to comply with prohibited functionalities by ZATCA&nbsp;</p>
+            </li>
+            <li>
+                <p>Any customized reports or data analytics&nbsp;</p>
+            </li>
+            <li>
+                <p>Any data cleaning/correction within Customer&rsquo;s ERP/ POS systems</p>
+            </li>
+        </ul>
+    </li>
+</ul>        
+        
+        
+        <p><b>
+  Annual maintenance of ClearTax &lt;&gt; Customer ERP/ PoS integration 
+</b></p>
+<p>
+  
+ClearTax will provide AMC support for fixing any breakages in functionality with respect to original scope of work for integration. 
+        </p><p>
+  It excludes : 
+</p><ol type="a">
+  <li>additional features or enhancements which are not contained in the original scope of work for integration and </li>
+  <li>any changes arising due to changes ERP/ Database systems or system upgrades or data schema changes by customer or third parties on boarded by customer</li></ol>
+
+<p>Integration Consultation</p>
+
+
+  <ol>
+    <li>
+  
+The Customer shall, within a period of 10 business days from the date of execution of this Order Form, provide all the requirements sought by Cleartax and finalise the Integration Development Plan.
+        </li><li>The Integration Consultation shall be provided by Cleartax for a fixed period of 60 days commencing from the date of execution of this Order Form. The Integration Consultation shall be deemed completed upon expiry of 60 days. Cleartax shall charge an mutually agreed additional amount, in the event the Integration Consultation exceeds the 60-day period.</li><li> Notwithstanding anything to the contrary, the Customer agrees that any request for Integration Development which is not stipulated in the Order Form, shall be requests for enhancement of the scope of services and such additional Integration Development may be provided by Cleartax, at its sole and absolute discretion and at additional cost as notified by Cleartax.
+</li>    </ol>
+
+
+
+<p><strong>CUSTOMER&apos;S RESPONSIBILITY TOWARDS ZATCA COMPLIANCE</strong></p>
+<ul>
+    <li>The Customer must ensure that all the invoices and their associated notes are shared with ClearTax for e-invoice generation. In case Customer fails to share any invoice or its associated notes with ClearTax then ClearTax will not be responsible for compliance requirements of such documents. The Customer will be solely responsible to provide appropriate clarification to ZATCA or any other relevant authority for such missing documents.</li>
+    <li>In case the Customer is maintaining a separate Books of Accounts or any other ERP/ Point of Sale (PoS) system which is not connected with ClearTax then the Customer must be solely responsible for generating E-invoices for the documents generated from such systems.</li>
+    <li>The Customer will be solely responsible to ensure that Customer&rsquo;s ERP/ PoS system is in compliance with all the necessary prohibitory condition(s) as mentioned and updated from time to time, in the E-Invoice Guidelines, VAT Law or any other Statute or law under the Kingdom of Saudi Arabia. Any changes required in Customer&rsquo;s internal ERP/ PoS systems to comply with such guidelines will be out of scope for ClearTax.</li>
+    <li>From Phase II of KSA E-invoicing, Customer must share details of each e-invoice generation device with ClearTax and ZATCA. Customer must ensure that each device should use its own unique Device ID and no two devices are sharing the same Device ID.</li>
+  <li> The Customer must provide invoice data as per ClearTax defined format (in alignment with ZATCA guidelines). ClearTax will not be responsible for issues related to input data shared by Customer’s ERP or PoS system with ClearTax.</li>
+</ul>
+
+<b>GOOGLE TRANSLATION TERMS :</b> ClearTax utilizes Google Translation APIs for translating text from English inputs (provided by Customer) to Arabic. ClearTax shall not be liable for any inaccuracies in translation based on Google translation API output.
+        <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

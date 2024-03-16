@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+   <types>
+        <members>AccountTriggerHandler</members>
+        <members>CTX_AutoRenewalFlag</members>
+        <members>CTX_AssetAutoRenewalBatch</members>
+        <members>CTX_FetchUsageDetails</members>
+        <members>CTX_LicenseMetadataParser</members>
+        <members>CTX_GetRenewalParameterAndPrice</members>
+        <members>CTX_CustomStringToFormulaParser</members>
+        <members>CTX_CreateAssetOrderHelper</members>
+        <members>CTX_AutoRenewalFlagCallout</members>
+        <members>CTX_UpdateRenewalDetails</members>
+        <members>CTX_RenewLicense</members>
+        <members>CTX_AutoRenewLicenseHelper</members>
+        <members>CTX_SendEmailOnAutoRenewalFailure</members>
+        <members>CTX_AutoRenewLicense</members>
+        <members>CTX_AutoRenewLicensingClass</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        <members>CTX_SyncQLIDetailsToAsset</members>
+        <members>CTX_UpgradePlanService</members>
+
+        <members>CTX_AutoRenewActivateLicense</members>
+        <members>CTX_MultipleAssetCreateOnSpecialProduct</members>
+        <members>CTX_UpsertAssetLicensingClass</members>
+        <members>CTX_UpsertAssetLicense</members>
+        
+        <name>ApexClass</name>
+    </types>
+
+    <!--<types>
+        <members>Account.Auto_Renewal_Product__c</members>
+        <members>Account.New_Product_Added__c</members>
+        <members>Account.Old_Product_Removed__c</members>
+        <members>Account.Enable_GST_Auto_Renewal__c</members>
+        <members>Account.Enable_E_Invoicing_Auto_Renewal__c</members>
+
+        <members>QuoteLineItem.Is_Plan_Upgradable__c</members>
+        <members>QuoteLineItem.Recommended_Plan_Tier__c</members>
+        <members>QuoteLineItem.Recommended_Plan_Parameters__c</members>
+        <members>QuoteLineItem.No_of_days_to_Upgrade__c</members>
+        <members>QuoteLineItem.Total_Tax_Value_Recommended__c</members>
+        <members>QuoteLineItem.TDS_Price_Recommended__c</members>
+        <members>QuoteLineItem.Total_Renewal_Price_Recommended__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Product_Info_Metadata__mdt</members>
+
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>*</members>
+
+        <name>CustomMetadata</name>
+    </types>-->
+
+    <version>58.0</version>
+</Package>

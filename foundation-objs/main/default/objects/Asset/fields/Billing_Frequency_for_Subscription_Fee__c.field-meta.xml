@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency_for_Subscription_Fee__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Billing Frequency for Subscription Fee</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Half-yearly in advance</fullName>
+                <default>false</default>
+                <label>Half-yearly in advance</label>
+            </value>
+            <value>
+                <fullName>Half-yearly in end (Approval Driven)</fullName>
+                <default>false</default>
+                <label>Half-yearly in end (Approval Driven)</label>
+            </value>
+            <value>
+                <fullName>Monthly in advance</fullName>
+                <default>false</default>
+                <label>Monthly in advance</label>
+            </value>
+            <value>
+                <fullName>Monthly in end (Approval Driven)</fullName>
+                <default>false</default>
+                <label>Monthly in end (Approval Driven)</label>
+            </value>
+            <value>
+                <fullName>Quarterly in advance</fullName>
+                <default>false</default>
+                <label>Quarterly in advance</label>
+            </value>
+            <value>
+                <fullName>Quarterly in end (Approval Driven)</fullName>
+                <default>false</default>
+                <label>Quarterly in end (Approval Driven)</label>
+            </value>
+            <value>
+                <fullName>Yearly in advance</fullName>
+                <default>false</default>
+                <label>Yearly in advance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

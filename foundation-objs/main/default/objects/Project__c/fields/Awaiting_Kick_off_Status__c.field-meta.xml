@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Awaiting_Kick_off_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISPICKVAL(Project_Stage__c ,&apos;&apos;)),
+IF(NOT(ISBLANK(Project_Kick_off_Date__c)), iF(Project_Kick_off_Date__c &gt;  Benchmark_Date_Awaiting_Kick_off__c ,
+&quot;RED&quot;,
+&quot;GREEN&quot;),
+IF(TODAY() &gt; Benchmark_Date_Awaiting_Kick_off__c,
+&quot;RED&quot;,&quot;GREEN&quot;
+)),&apos;NA&apos;)</formula>
+    <label>Awaiting Kick-off Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

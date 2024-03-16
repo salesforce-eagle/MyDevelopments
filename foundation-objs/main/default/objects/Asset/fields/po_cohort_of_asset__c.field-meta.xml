@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>po_cohort_of_asset__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if(PurchaseDate&lt;Date(2021,6,1) , &apos;Prior to 1st june&apos;,if(PurchaseDate&lt; Date(2021,7,1),&apos;Within June&apos;,&apos;Post 1st July&apos;))</formula>
+    <label>po cohort of asset</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_pending_reason_15_days__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Onboarding pending reason &gt;15 days</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client Delay - Unavailability of team / Rescheduling because of internal work</fullName>
+                <default>false</default>
+                <label>Client Delay - Unavailability of team / Rescheduling because of internal work</label>
+            </value>
+            <value>
+                <fullName>Client Delay - Stuck in client side integration</fullName>
+                <default>false</default>
+                <label>Client Delay - Stuck in client side integration</label>
+            </value>
+            <value>
+                <fullName>CT involved - Integration is in process</fullName>
+                <default>false</default>
+                <label>CT involved - Integration is in process</label>
+            </value>
+            <value>
+                <fullName>LOE  Vs SF Mismatch</fullName>
+                <default>false</default>
+                <label>LOE  Vs SF Mismatch</label>
+            </value>
+            <value>
+                <fullName>LOE Vs Client expectation Mismatch</fullName>
+                <default>false</default>
+                <label>LOE Vs Client expectation Mismatch</label>
+            </value>
+            <value>
+                <fullName>Client Delay - Data Complexity</fullName>
+                <default>false</default>
+                <label>Client Delay - Data Complexity</label>
+            </value>
+            <value>
+                <fullName>OB completed within 15 days</fullName>
+                <default>false</default>
+                <label>OB completed within 15 days</label>
+            </value>
+            <value>
+                <fullName>Max ITC/ Integration/ MS/ Uneecops</fullName>
+                <default>false</default>
+                <label>Max ITC/ Integration/ MS/ Uneecops</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

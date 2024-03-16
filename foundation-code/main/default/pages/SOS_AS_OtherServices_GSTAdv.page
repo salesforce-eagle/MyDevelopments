@@ -1,0 +1,66 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_OtherServices_GSTAdv_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for Assisted Services - Other Services- </u></b>         
+    <p>
+        
+        Cleartax will provide following services to the Customer holding GST Registrations in various states, using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’) : -</p>
+    <p>
+        
+Cleartax’s scope of work shall be a high-level review of the transactions / documents / tax positions etc. adopted by the Customer and approach for the same shall be basis a reasonable sample size of the transaction / compliance / location as mutually agreed by Cleartax and Customer.
+</p>
+<p>
+Based on the information provided by the Customer, Cleartax will undertake the following scope of work using Cleartax’s GST Technology Platform .
+</p>
+<ul>
+<li>
+GST Implications on Outward Supplies:
+<ul><li>
+Reconciliation between GSTR1 vs GSTR-3B; sales register vs GSTR-1 on summary level.</li>
+<li>
+ISD distribution, scrap sales, sale of fixed assets, requirement of inter-customer invoicing, and identifying the place of supply, tax heads, etc.
+</li><li>
+Identifying the transactions which would attract GST but missed out to be paid / disclosed in GST Returns.</li></ul></li>
+<li>
+GST Implications on Inward Supplies:
+<ul><li>
+Reconciliation of input tax credit availed in GSTR-3B with Books / GLs and GSTR-2A vs GSTR-3B on summary level.</li>
+<li>
+Identifying the transactions that would attract GST under reverse charge mechanism and reconciling with RCM disclosed paid in GSTR-3B.
+</li>
+<li>
+Identifying the implication of ITC reversals required (if any).
+</li></ul></li><i><li>
+Workings of GST Refund and their pending applications.</li>
+<li>
+Checking the PAN/GSTINs, status of active/cancellation, return filing scope, etc of Vendor and Customer.
+    </li></i></ul>
+     <apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

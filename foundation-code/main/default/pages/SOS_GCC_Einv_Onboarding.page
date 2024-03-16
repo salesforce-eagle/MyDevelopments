@@ -1,0 +1,41 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_Einv_Onboarding_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body style="font-family:Times New Roman !important;font-size:12px;">
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <p>
+                <b>Scope of Services for E-invoicing Onboarding</b>
+            </p>   
+            <p>
+                
+                ClearTax will conduct 2 hours of Onboarding and training session. The session will include:</p>
+            <ul><li>Feature walkthrough of ClearTax web platform</li>
+                <li>Training on using excel template for uploading data on ClearTax</li>
+                <li>Device registration and account setup on ClearTax platform</li>
+            </ul>
+            
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

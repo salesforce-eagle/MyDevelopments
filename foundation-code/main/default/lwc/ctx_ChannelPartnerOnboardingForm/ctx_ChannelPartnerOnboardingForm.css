@@ -1,0 +1,13 @@
+:host {
+    --slds-c-accordion-heading-font-size : 1.5rem;
+}
+
+@media all and (min-width: 980px) {
+    .background {
+        padding: 0% 10%;
+    }
+}
+
+.slds-spinner_container {
+   background-color : rgba(255, 255, 255, 0.75);
+}

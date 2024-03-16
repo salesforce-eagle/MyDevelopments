@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Product Line</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Clear Capture</fullName>
+                <default>true</default>
+                <label>Clear Capture</label>
+            </value>
+            <value>
+                <fullName>EINV</fullName>
+                <default>false</default>
+                <label>EINV</label>
+            </value>
+            <value>
+                <fullName>GST</fullName>
+                <default>false</default>
+                <label>GST</label>
+            </value>
+            <value>
+                <fullName>Invoicing API</fullName>
+                <default>false</default>
+                <label>Invoicing API</label>
+            </value>
+            <value>
+                <fullName>Max</fullName>
+                <default>false</default>
+                <label>Max</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+            <value>
+                <fullName>Clear Supply Chain</fullName>
+                <default>false</default>
+                <label>Clear Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Notice Management</fullName>
+                <default>false</default>
+                <label>Notice Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

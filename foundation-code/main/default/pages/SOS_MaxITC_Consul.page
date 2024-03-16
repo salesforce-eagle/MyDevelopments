@@ -1,0 +1,109 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_MaxITC_Consul_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS1==1}">
+            <div style="page-break-after: avoid;font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;font-weight: bold;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            <br/>
+            </apex:panelGroup>
+            <div style="padding-left: 20px;">
+                
+                <h3 style="text-align:center;">
+                    <b>Scope of Services for Max ITC Integration Series Z</b>
+                </h3>
+<p>Functionality to be provided</p>
+<ul>
+    <li>
+        <p>Ingest purchase register and run reconciliation&nbsp;manually or automatically&nbsp;</p>
+    </li>
+    <li>
+        <p>Receive reconciliation results&nbsp;which will include summary of results and purchase document level reconciliation result that will include match status and payment status (hold GST or make payment) among other result parameters</p>
+    </li>
+    <li>
+        <p>Automate payment actions&nbsp;as per the MaxITC results</p>
+        <ul>
+            <li>
+                <p>As soon as results are received in ERP, an automatic program will be triggered inside ERP which will trigger following actions</p>
+                <ul>
+                    <li>
+                        <p>If the payment status of the document is &lsquo;hold GST&rsquo;, GST amount of that invoice will be held and the remaining amount will automatically appear as payable on the due date of invoice</p>
+                    </li>
+                    <li>
+                        <p>If the payment status of the document is &lsquo;make full payment&rsquo; then the payment will happen as-is</p>
+                    </li>
+                    <li>
+                        <p>When the payment status for a document changes from &lsquo;hold gst&rsquo; to &lsquo;make full payment&rsquo; in future reconciliation run, the GST amount will be released in the next payment cycle</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<p>Activities to be performed to provide this functionality</p>
+<p>Customer responsibility</p>
+<ul>
+    <li>
+        <p>Transform the source data/documents into the format acceptable by Cleartax APIs and/or in consonance with what is prescribed/acceptable by the Government</p>
+    </li>
+    <li>
+        <p>Perform field level validation and business validation checks as per Cleartax schema</p>
+    </li>
+    <li>
+        <p>Load the transformed data/documents using RESTful APIs to the Cleartax application.</p>
+    </li>
+    <li>
+        <p>Receive the response based on user action like uploaded date, GSTN Sync status, cancelled date, etc from Cleartax APIs along with additional information, errors and other metadata</p>
+    </li>
+    <li>
+        <p>Update the reconciliation results and other metadata back in the ERP</p>
+    </li>
+</ul>
+<p>Cleartax Responsibility</p>
+<p>The scope of ClearTax is limited to -</p>
+<ol>
+    <li>
+        <p>Exposing relevant APIs to the customer and providing authentication tokens.</p>
+    </li>
+    <li>
+        <p>Providing technical documentation on APIs exposed.</p>
+    </li>
+    <li>
+        <p>Providing 3 consultations on technical feasibility and data sufficiency from the API perspective.</p>
+    </li>
+</ol>
+
+
+</div>
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

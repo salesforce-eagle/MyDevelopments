@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <!--<members>CTX_UpsertAssetLicense</members>
+        <members>CTX_UpsertAssetLicensingClass</members>
+
+        <members>CTX_AutoRenewalFlag</members>
+        
+        <members>CTX_AutoRenewalFlagCallout</members>
+        <members>CTX_AutoRenewLicense</members>
+        <members>CTX_AutoRenewLicensingClass</members>
+
+        <members>OpportunityTriggerHelper</members>
+        <members>CTX_MultipleAssetCreateOnSpecialProduct</members>
+
+        <members>CTX_LicensingConstants</members>
+
+        <members>QuoteLineItemTriggerHandler</members>
+
+        <members>CTX_GetRenewalParameterAndPrice</members>
+        
+        <members>AccountTriggerHandler</members>
+
+        <members>CTX_LicensingAssetFilterLogic</members>
+
+        <members>CTX_FetchUsageDetails</members>
+
+        <members>CTX_UnSyncQuoteOpportunity</members>
+
+        <members>CTX_ClearResourceConstraintsClass</members>-->
+
+        <members>CTX_UpdatedCSMKAMDetailsAPI</members>
+        <!--<members>CTX_LicensingAPICalloutClass</members>-->
+
+        <name>ApexClass</name>
+    </types>
+
+
+    <!--<types>
+        <members>Special_Product_Combination__mdt</members>
+        <members>Resource_Constraints__mdt</members>
+
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>QuoteLineItem.No_of_PAN_SIMPLE_DETAILS_APIs_No_of_FS__c</members>
+        <members>QuoteLineItem.No_of_FSSAI_VERIFICATION_APIs__c</members>
+        <members>QuoteLineItem.No_of_PAN_VERIFICATION_BASIC_APIs__c</members>
+        <members>QuoteLineItem.No_of_GST_ANALYTICS_AUTH_APIs__c</members>
+        <members>QuoteLineItem.No_of_GST_ANALYTICS_DETAILS_APIs__c</members>
+        <members>QuoteLineItem.No_of_INTERNATIONAL_BUSINESS_NAME_SEARC__c</members>
+        <members>QuoteLineItem.No_of_LEGAL_NAME_PAN_FETCH_APIs__c</members>
+        <members>QuoteLineItem.No_of_GST_OWNERSHIP_VERIFICATION_APIs__c</members>
+        <members>QuoteLineItem.No_of_AADHAAR_VERIFICATION_DIGILOCKER_A__c</members>
+        <members>QuoteLineItem.No_of_COMPANY_FINANCIALS_DETAILS_APIs__c</members>
+        <members>QuoteLineItem.No_of_UPI_VERIFICATION_APIs__c</members>
+        <members>QuoteLineItem.No_of_UPI_FETCH_APIs__c</members>
+        <members>QuoteLineItem.No_of_UPI_QR_GENERATION_APIs__c</members>
+        <members>QuoteLineItem.No_of_COMPANY_DETAILS_FULL_APIs__c</members>
+        <members>QuoteLineItem.No_of_EPFO_UAN_VERIFICATION_APIs__c</members>
+        <members>QuoteLineItem.No_of_OTP_VERIFICATION_PHONE_APIs__c</members>
+        <members>QuoteLineItem.No_of_OTP_VERIFICATION_EMAIL_APIs__c</members>
+        <members>QuoteLineItem.No_of_EINVOICE_QR_EXTRACTION_APIs__c</members>
+        <members>QuoteLineItem.No_of_EINVOICE_IRN_DETAILS_APIs__c</members>
+        <members>QuoteLineItem.No_of_UNREGISTERED_GST_APPLICANT_DETAIL__c</members>
+        <members>QuoteLineItem.No_of_UNREGISTERED_GST_APPLICANT_VERIFI__c</members>
+        <members>QuoteLineItem.No_of_HSN_SAC_SEARCH_APIs__c</members>
+        <members>QuoteLineItem.No_of_EINVOICE_INBOUND_DETAILS_APIs__c</members>
+        <members>QuoteLineItem.No_of_AADHAAR_DEMOGRAPHICS_FETCH_APIs__c</members>
+        <members>QuoteLineItem.No_of_COMPANY_DOCUMENTS_FETCH_APIs__c</members>
+
+        <members>QuoteLineItem.OTP_SKUs__c</members>
+        <members>Quote.Auto_Renewal_Discount_Approval_Stage__c</members>
+        <members>Asset.OTP_SKUs__c</members>
+        <members>Project__c.OTP_SKUs__c</members>
+        <members>Asset.Identity_Resource_Constraints__c</members>
+
+        <members>Quote.Data_Archival__c</members>
+        <members>Quote.Auto_Retry__c</members>
+        <members>Quote.Translation__c</members>
+        <members>Asset.Data_Archival__c</members>
+        <members>Asset.Auto_Retry__c</members>
+        <members>Asset.Translation__c</members>
+
+        <name>CustomField</name>
+    </types>-->
+
+    <!--<types>
+        <members>Special_Products</members>
+
+        <name>CustomLabel</name>
+    </types>-->
+
+    <!--<types>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DETAILS_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_BANK_ACCOUNT_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_CUSTOMER_IDENTITY_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_DRIVING_LICENSE_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_BASIC</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_AUTH</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_GST_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_GST_ADVANCED_PLUS</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_FILING_CREDITS</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_SEARCH_BY_NAME</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_VERIFICATION_CREDITS</members>
+        <members>Resource_Constraints.IDENTITY_PAN_DETAILED_DESCRIPTION</members>
+        <members>Resource_Constraints.IDENTITY_PAN_OCR</members>
+        <members>Resource_Constraints.IDENTITY_PAN_TO_GSTIN_LIST</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_FN</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_QR</members>
+        <members>Resource_Constraints.IDENTITY_SYNC_PAN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_UDYOG_AADHAR_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_VEHICLE_REGISTRATION_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_PAN_SIMPLE_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_FSSAI_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_GST_ANALYTICS_AUTH</members>
+        <members>Resource_Constraints.IDENTITY_GST_ANALYTICS_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_LEGAL_NAME_PAN_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_GST_OWNERSHIP_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_AADHAAR_VERIFICATION_DIGILOCKER</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_FINANCIALS_SUMMARY</members>
+        <members>Resource_Constraints.IDENTITY_UPI_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_UPI_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_UPI_QR_GENERATION</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DETAILS_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_OTP_VERIFICATION_PHONE</members>
+        <members>Resource_Constraints.IDENTITY_OTP_VERIFICATION_EMAIL</members>
+        <members>Resource_Constraints.IDENTITY_EINVOICE_QR_EXTRACTION</members>
+        <members>Resource_Constraints.IDENTITY_EINVOICE_IRN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_HSN_SAC_SEARCH</members>
+        ​<members>Resource_Constraints.IDENTITY_EINVOICE_INBOUND_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_AADHAAR_DEMOGRAPHICS_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DOCUMENTS_FETCH</members>
+
+        <members>Resource_Constraints.IDENTITY_UNREGISTERED_GST_APPLICANT_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_BASIC</members>
+        <members>Resource_Constraints.IDENTITY_UNREGISTERED_GST_APPLICANT_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_INTERNATIONAL_BUSINESS_NAME_SEARCH</members>
+
+        <members>*</members>
+        
+        <name>CustomMetadata</name>
+    </types>
+
+    <types>
+        <members>Resource_Constraints__mdt</members>
+
+        <name>CustomObject</name>
+    </types>-->
+
+
+    <version>58.0</version>
+</Package>

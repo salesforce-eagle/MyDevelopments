@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Transition_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>EWB Transition Status (temp)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Completed,</fullName>
+                <default>false</default>
+                <label>Not Transitioned</label>
+            </value>
+            <value>
+                <fullName>Live,</fullName>
+                <default>false</default>
+                <label>Refusing to initiate transition until NIC mandates</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>Transitioned Partially - reason unknown for partial transition</label>
+            </value>
+            <value>
+                <fullName>Pending,</fullName>
+                <default>false</default>
+                <label>Transitioned Partially - on track to full transition</label>
+            </value>
+            <value>
+                <fullName>a</fullName>
+                <default>false</default>
+                <label>Transitioned Partially - to be completed after NIC mandates</label>
+            </value>
+            <value>
+                <fullName>b</fullName>
+                <default>false</default>
+                <label>Transitioned Completely</label>
+            </value>
+            <value>
+                <fullName>No Usage</fullName>
+                <default>false</default>
+                <label>No Usage</label>
+            </value>
+            <value>
+                <fullName>Potential Churn</fullName>
+                <default>false</default>
+                <label>Potential Churn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

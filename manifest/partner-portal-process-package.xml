@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+ 
+    <types>
+        <members>unfiled$public/CTX_Channel_Partner_Creation_Mail</members>
+        <members>unfiled$public/Channel_Partner_Request_Approval_Template</members>
+
+        <name>EmailTemplate</name>
+    </types>
+
+    <types>
+        <members>Account.CTX_Channel_Partner_Creation_Mail_Alert</members>
+        
+        <name>WorkflowAlert</name>
+    </types>
+
+    <types>
+        <members>Account.Update_Channel_Partner_Onboarding_Stage1</members>
+        <members>Account.Update_Approval_Status</members>
+        <members>Account.Update_Channel_Partner_Onboarding_Stage</members>
+        <members>Account.Update_Channel_Partner_Onboarding_Stage3</members>	
+
+        <name>WorkflowFieldUpdate</name>
+    </types>
+
+    <types>
+        <members>Account.Channel_Partner_Approval</members>
+        
+        <name>ApprovalProcess</name>
+    </types>
+    
+    <types>
+        <members>CTX_AccountAfterRecordTriggeredFlow</members>
+        
+        <name>Flow</name>
+    </types>
+
+    <types>
+        <members>Account.Generate_Partner_Agreement_Form</members>
+        
+        <name>QuickAction</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

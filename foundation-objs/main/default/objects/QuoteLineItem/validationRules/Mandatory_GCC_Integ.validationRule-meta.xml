@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_GCC_Integ</fullName>
+    <active>false</active>
+    <errorConditionFormula>Product2.OrderForm_Product_Name__c = &apos;Clear E-invoice API Integration&apos; &amp;&amp; ISBLANK(TEXT( GCC_Einv_Integration__c ))</errorConditionFormula>
+    <errorMessage>Please specify GCC Einv Integration.</errorMessage>
+</ValidationRule>

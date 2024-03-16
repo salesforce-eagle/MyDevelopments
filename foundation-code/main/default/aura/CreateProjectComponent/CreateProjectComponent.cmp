@@ -1,0 +1,456 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" controller="CreateProjectController" >
+     
+    <aura:attribute name="options" type="List" default=""/>
+    <aura:attribute name="value" type="String" default=""/>
+    <aura:attribute name="radioButtionDisable" type="boolean" default="false"/>
+    <aura:attribute name="SubmitButtonDisable" type="boolean" default="false"/>
+    <aura:attribute name="showRadion" type="boolean" default="true"/>
+    <aura:attribute name="recordId" type="String" default=""/>
+    <aura:attribute name="listOfSIPartners" type="List" default=""/>
+    <aura:attribute name="showSIPartnerAccounts" type="boolean" default="false"/>
+    <aura:attribute name="experties" type="Map" default=""/>
+    <aura:attribute name="selectedValue" type="String" default=""/>
+    <aura:attribute name="inputvalue" type="String" default=""/>
+    <aura:attribute name="numberInputvalue" type="Integer" default="0" />
+    <aura:attribute name="Cityinputvalue" type="String" />
+    <aura:attribute name="Regioninputvalue" type="String" />
+    <aura:attribute name="SelectedRow" type="Object" default="" />
+    <aura:attribute name="showIntegrationAssets" type="boolean" default="false" />
+    <aura:attribute name="showProjectSelectionDialog" type="boolean" default="false" />
+    <aura:attribute name="listOfRelatedIntegrationAssets" type="List" />
+    <aura:attribute name="listOfSelectedRows" type="List"/>
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    <aura:attribute name="selectedProjectLookUpRecord" type="Sobject" default="{}"/>
+    <aura:attribute name="ShowExistingProjects" type="boolean" default="false"/>
+    <aura:attribute name="showDevelopmentInHouse" type="boolean" default="false"/>
+    <aura:attribute name="isSIPartner" type="boolean" default="false"/>
+    <aura:attribute name="SelectedSEUserId" type="String" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="selectedSIPartnerRecordId" type="String" />
+    <aura:attribute name="disableSave" type="boolean" default="false" />
+    <aura:attribute name="showSEForProject" type="boolean" default="false"/>
+    <aura:attribute name="OrderInstance" type="Order" />
+    <aura:attribute name="showProjectRecordInformation" type="boolean"/>
+    <aura:attribute name="customerAccountName" type="String" />
+    
+    <aura:attribute name="isSelectAll" type="boolean" />
+    <aura:attribute name="listOfAccounts" type="List" ></aura:attribute>
+    <!--<aura:attribute name="searchTerm" type="String"></aura:attribute>-->
+    <aura:attribute name="filteredAccounts" type="Account[]"></aura:attribute>
+    <aura:attribute name="isFiltered" type="boolean" ></aura:attribute>
+    <aura:attribute name="displayNonAmcFields" type="boolean" default="true"/>
+    
+    <ltng:require styles="{!$Resource.modelHeightWidth}"/>
+    <aura:html tag="style">
+        <!--.slds-modal__container{ 
+        height : auto; width: 80%; max-width: 75%; 
+        } 
+        .modal-body{ 
+        height : 0vh !important; 
+        max-height: 0vh !important; 
+        width: 0vh !important;
+        max-width: 0vh !important;
+        } 
+        .slds-modal__footer{ 
+        display: inline !important; 
+        }-->
+        <!-- <aura:html tag="style">-->
+        <!-- .slds-modal {
+        visibility: hidden;
+        display: none;
+        }
+        .slds-backdrop{
+        display: none;
+        
+        }        -->
+        <!--- </aura:html>-->
+    </aura:html>
+    
+    <aura:handler name='init' value="{!this}" action="{!c.onload}"/>
+    <aura:handler name="change" value="{!v.inputvalue}" action="{!c.onInputValueChange}" />
+    <aura:handler name="change" value="{!v.selectedValue}" action="{!c.onExpertiesChange}" />
+    <aura:handler name="change" value="{!v.numberInputvalue}" action="{!c.onNumberInputChange}" />
+    <aura:handler name="change" value="{!v.Regioninputvalue}" action="{!c.onRegionInputChange}" />
+    <aura:handler name="change" value="{!v.Cityinputvalue}" action="{!c.onCityInputChange}" />    
+    <!--<lightning:Card title="Create Project Button" class="slds-p-around_small">
+       <center> <lightning:button name="Creat Project" variant="brand" label="Creat Project" title="Creat Project" onclick="{!c.handelCreateProject}" /></center>
+    </lightning:Card>-->
+    
+    
+    <!--<aura:if isTrue="{!v.isOpen}"> commented -->
+    
+    <!--###### MODAL BOX Start######--> 
+    <!-- commented <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container"> commented --> 
+    <!-- ###### MODAL BOX HEADER Start ######-->
+    <!--- <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                         variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Project</h2>
+                </header>
+                <div class="slds-modal__content slds-modal_large" id="modal-content-id-1">
+                    <p>  commented -->
+    
+    <lightning:Card title="" class="slds-p-around_small">
+        
+        <aura:if isTrue="{!v.showRadion}">
+            <lightning:radioGroup name="Type of Project"
+                                  label="Type Of Project"
+                                  options="{! v.options }"
+                                  value="{! v.value }"
+                                  type="radio"
+                                  required="true"
+                                  disabled="{!v.radioButtionDisable}"/>
+            <br/>
+            <br/>
+            <center>
+                <lightning:button name="Submit" variant="brand" label="Submit" title="Submit" onclick="{!c.handleonClick}" disabled="{!v.SubmitButtonDisable}"/>
+            </center>
+        </aura:if>
+        
+        
+        <aura:if isTrue="{!v.showSEForProject}">
+            Please select the SE User if needed else Click on next:
+            <div class="slds-p-around_small">
+                Customer Account SE : {!v.customerAccountName}
+            </div>
+            <c:customLookup objectAPIName="User" IconName="standard:user" selectedRecord="{!v.selectedLookUpRecord}" label="SE User Name"/>      
+            <br/>
+            <div>
+                <lightning:button label="Next " class="slds-button_brand" name="Next" onclick="{!c.onSelectSEForSIProject}"> </lightning:button>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showSIPartnerAccounts}">
+            <table>
+                <tr>
+                    <td>   
+                        <lightning:select class="slds-m-right_small" name="expertie" label="ERP :" aura:id="expertieId" value="{!v.selectedValue}">
+                            <option value="">--None--</option>
+                            <aura:iteration items="{!v.experties}" var="ind" indexVar="key">
+                                <option value="{!ind.key}" text="{!ind.value}" selected="{!ind.key==!v.selectedValue}"  />
+                            </aura:iteration>
+                        </lightning:select>
+                    </td>
+                    <br/>
+                    <td> 
+                        <lightning:input class="slds-m-right_small" type="Number" name="No of active projects" label="No of active projects" value="{!v.numberInputvalue}" />
+                    </td>
+                    <br/>
+                    <td>  
+                        <lightning:input class="slds-m-right_small" type="Text" name="City" label="City" value="{!v.Cityinputvalue}" />
+                    </td>
+                    <br/>
+                    <td> 
+                        <lightning:input class="slds-m-right_small" type="Text" name="Region" label="Region" value="{!v.Regioninputvalue}" />
+                    </td>
+                </tr>
+            </table>
+            
+            
+            <br/>
+            <!--Contact List Table-->
+            
+             <div class="slds-table--header-fixed_container" style="height:450px;">
+                <div class="slds-scrollable_y" style="height:100%;">
+                    <table class="slds-table slds-table_bordered slds-table--header-fixed">
+                        <thead>  
+                            <tr class="slds-text-title--caps">
+                                <th>           
+                                    <label class="slds-checkbox">
+                                        <!--<ui:inputCheckbox value="{!v.isSelectAll}" change="{!c.handleSelectAllProject}" aura:id="selectAll"/>
+                                <span class="slds-checkbox--><!--faux" />
+                                <span class="slds-form-element__label"></span>-->
+                                    </label>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate " title="Name">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="ERP">ERP</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="NoOfActiveProjects">No.of ActiveProjects</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate " title="Region">Region</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="City">City</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>       
+                            <aura:if isTrue="{!!v.isFiltered}">
+                                <aura:iteration items="{!v.listOfAccounts}" var="item">
+                                    <tr>
+                                        <td>
+                                            <label class="slds-checkbox">
+                                                <ui:inputCheckbox aura:id="rowSelectionCheckboxId" value="false" text="{!item}" change="{!c.onCheckboxChange}"/>  
+                                                <!--<ui:inputCheckbox aura:id="checkAccount" change="{!c.handleUnselectOtherAccounts}" value="{!v.isSelectAll}" text="{!item}"/>
+                                        --><span class="slds-checkbox--faux" />
+                                                <span class="slds-form-element__label"></span>
+                                            </label>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!item.Name}">{!item.Name}</div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!item.ERP__c}">{!item.ERP__c}</div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!item.No_of_active_projects__c}">{!item.No_of_active_projects__c}</div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!item.Region__r.Name}">{!item.Region__r.Name}</div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!item.City__r.Name}">{!item.City__r.Name}</div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </aura:if>
+                            
+                            
+                            <!-- <aura:if isTrue="{!v.isFiltered}">
+                        
+                        <aura:iteration items="{!v.filteredAccounts}" var="item">
+                            <tr>
+                                <td>
+                                    <label class="slds-checkbox">
+                                        <ui:inputCheckbox aura:id="checkAccount" change="{!c.handleUnselectOtherAccounts}" value="{!v.isSelectAll}" text="{!item}"/>
+                                        <span class="slds-checkbox--><!--faux" />
+                                        <span class="slds-form-element__label"></span>
+                                    </label>
+                                </td>
+                               
+                                 <td scope="row">
+                                    <div class="slds-truncate" title="{!item.Name}">{!item.Name}</div>
+                                </td>
+                                <td scope="row">
+                                    <div class="slds-truncate" title="{!item.Experties__c}">{!item.Experties__c}</div>
+                                </td>
+                                <td scope="row">
+                                    <div class="slds-truncate" title="{!item.No_of_active_projects__c}">{!item.No_of_active_projects__c}</div>
+                                </td>
+                                <td scope="row">
+                                    <div class="slds-truncate" title="{!item.Region__r.Name}">{!item.Region__r.Name}</div>
+                                </td>
+                                <td scope="row">
+                                    <div class="slds-truncate" title="{!item.City__r.Name}">{!item.City__r.Name}</div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </aura:if>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br/>
+            <div>
+                <lightning:button label="Select Partner" class="slds-button_brand" name="selectePartner" onclick="{!c.handleProjectSubmit}"> </lightning:button>
+            </div>
+            
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showDevelopmentInHouse}">
+            Please select the SE User if Needed else Click on Next:
+            <div class="slds-p-around_small">
+                Customer Account SE : {!v.customerAccountName}
+            </div>
+            <c:customLookup objectAPIName="User" IconName="standard:user" selectedRecord="{!v.selectedLookUpRecord}" label="SE User Name"/>      
+            <br/>
+            <div>
+                <lightning:button label="Next " class="slds-button_brand" name="Next" onclick="{!c.onSelectSEForProject}"> </lightning:button>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showIntegrationAssets}">
+            
+            <table class="slds-table slds-table--bordered slds-table--cell-buffer" role="grid">      
+                <thead>  
+                    <tr class="slds-text-title--caps">
+                        <th>           
+                            <label class="slds-checkbox">
+                                <!--<ui:inputCheckbox value="{!v.isSelectAll}" change="{!c.handleSelectAllProject}" aura:id="selectAll"/>
+                                <span class="slds-checkbox--><!--faux" />
+                                <span class="slds-form-element__label"></span>-->
+                            </label>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="AssetName">Asset Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="OrderId">Order Id</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="OrderStatus">Order Status</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="CreatedDate">Order Start Date</div>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>       
+                    
+                    <aura:iteration items="{!v.listOfRelatedIntegrationAssets}" var="item">
+                        <tr>
+                            <td>
+                                <label class="slds-checkbox">
+                                    <ui:inputCheckbox aura:id="rowSelectionOrderCheckboxId" value="false" text="{!item}" change="{!c.onOrderCheckboxChange}"/>  
+                                    <!--<ui:inputCheckbox aura:id="checkAccount" change="{!c.handleUnselectOtherAccounts}" value="{!v.isSelectAll}" text="{!item}"/>
+                                        --><span class="slds-checkbox--faux" />
+                                    <span class="slds-form-element__label"></span>
+                                </label>
+                            </td>
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!item.Name}">{!item.Name}</div>
+                            </td>
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!item.OrderNumber}">{!item.Order_Line__r.Order.OrderNumber}</div>
+                            </td>
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!item.Order_Line__r.Order.Status}">{!item.Order_Line__r.Order.Status}</div>
+                            </td>
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!item.Order_Line__r.Order.EffectiveDate}">{!item.Order_Line__r.Order.EffectiveDate}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                    
+                </tbody>
+                
+            </table>
+            
+            <br/>
+            <div>
+                <lightning:button label="Save" class="slds-button_brand" name="Save" onclick="{!c.handleOnSave}" disabled="{!v.disableSave}"> </lightning:button>
+            </div>
+            
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showProjectSelectionDialog}">
+            <div role="dialog" class="slds-modal slds-fade-in-open ">
+                <div class="slds-modal__container">
+                    <!--Modal Box Header Start-->
+                    <header class="slds-modal__header">
+                        <h1 class="slds-text-heading--medium">Confirmation</h1>
+                    </header>
+                    <!--Modal Box Header End-->
+                    
+                    <!--Modal Box Content Start-->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <center><b>Do you want system to auto create the Project and Link</b></center>
+                    </div>
+                    <!--Modal Box Content End-->
+                    
+                    <!--Modal Box Button Start-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button name='No' label='No' onclick='{!c.handleConfirmDialogNo}'/>
+                        <lightning:button variant="brand" name='Yes' label='Yes' onclick='{!c.handleConfirmDialogYes}'/>
+                    </footer>
+                    <!--Modal Box Button End-->
+                </div>
+            </div>
+            <!--<div class="slds-backdrop slds-backdrop--><!--open"></div>-->            
+        </aura:if>
+        <br/>
+        <br/>
+        <aura:if isTrue="{!v.ShowExistingProjects}">
+            Please selecte the Existing Project:
+            <c:customLookup objectAPIName="Project__c" IconName="custom:custom50" selectedRecord="{!v.selectedProjectLookUpRecord}" label="Project Name"/>      
+            <br/>
+            <div>
+                <lightning:button label="Save Project" class="slds-button_brand" name="Save Project" onclick="{!c.handleonSaveProject}"> </lightning:button>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showProjectRecordInformation}">
+            
+            <lightning:recordEditForm aura:id="recordEditForm"
+                                      objectApiName="Project__c"
+                                      onsubmit="{!c.handlesubmitCreatProject}"
+                                      onsuccess="{!c.onsuccessHandler}"
+                                      
+                                      >
+                <lightning:messages/>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2" >
+                        <!-- Your lightning:inputField components here -->
+                        <!--<lightning:inputField fieldName="Project_Name__c" />-->
+                        <lightning:inputField fieldName="OwnerId"/>
+                        <lightning:inputField fieldName="CTX_SE__c" />
+                        <lightning:inputField fieldName="Status__c" />
+                        <lightning:inputField fieldName="Product__c" required="true"/>
+                        <lightning:inputField fieldName="LOE_Received_Date__c"/>
+                        <lightning:inputField fieldName="Scope_Category__c"/>
+                        <lightning:inputField fieldName="Scope_Discussion_Start_Date__c"/>
+                        <lightning:inputField fieldName="UAT_Requested_Date__c" /> 
+                        <lightning:inputfield fieldName="Project_Stage__c"/>
+                        
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <!-- Your lightning:inputField components here -->
+                        <lightning:inputField fieldName="Pre_Sales_Kickoff_Date__c"/>
+                        <lightning:inputField fieldName="Project_Start_date__c" />
+                        <lightning:inputField fieldName="Implementation_Kick_off_Date__c" />
+                        <!--<lightning:inputfield fieldName="Implementation_Start_Date__c"/> -->
+                        <aura:if isTrue="{!v.displayNonAmcFields}">
+                            <lightning:inputField fieldName="Estimated_Implementation_End_Date__c" required="true"/>
+                            <lightning:inputField fieldName="Estimated_UAT_End_Date__c" required="true"/>
+                            <lightning:inputField fieldName="Estimated_Go_Live_Date__c" required="true"/>
+                            <lightning:inputField fieldName="Estimated_go_live_date_Current_status__c" required="true"/>
+                            
+                        </aura:if>
+                                    
+                        <lightning:inputField fieldName="UAT_Start_Date__c" />
+                        <lightning:inputField fieldName="UAT_Completion_Date__c" />
+                        <lightning:inputField fieldName="Go_Live_Date__c" />
+                        <lightning:inputField fieldName="Mode_of_Integration__c" />
+                        <lightning:inputField fieldName="Estimated_Due_Date__c" />
+                         <lightning:inputField fieldName="Client_ERP__c" />
+                        <lightning:inputField fieldName="Project_Manager__c" />
+                        <lightning:inputField fieldName="Project_Kick_off_Date__c" />
+                        <lightning:inputField fieldName="Project_Plan_Sign_off_Date__c" />
+                         <lightning:inputField fieldName="UAT_Sign_off_Date__c"/>
+                        <lightning:inputField fieldName="Build_Completion_Date__c" />
+                        <lightning:inputField fieldName="Issue_Details__c" /> 
+                        <lightning:inputfield fieldName="Project_Update_Level__c"/>
+                        <lightning:inputField fieldName="Inegration_Due_Date__c" />
+                    </div>
+                    
+                    
+                </div>
+                
+                
+                <lightning:button class="slds-m-top_small" type="submit" label="Create new" />
+            </lightning:recordEditForm>
+        </aura:if>
+        
+        
+    </lightning:Card>
+    <!-- </p>
+                </div> commented-->
+    
+    
+    <!--###### MODAL BOX FOOTER Part Start ######-->
+    <!--<footer class="slds-modal__footer">
+                     <lightning:button variant="neutral" 
+                                       label="Cancel"
+                                       title="Cancel"
+                                       onclick="{! c.closeModel }"/>
+                     <lightning:button variant="brand" 
+                                       label="Like and Close"
+                                       title="Like and Close"
+                                       onclick="{! c.likenClose }"/>
+                 </footer>-->
+    <!--  </div> commented
+        </section>  commented --> 
+    <!--<div class="slds-backdrop slds-backdrop_open"></div>-->
+    <!-- </aura:if> commented --> 
+    
+</aura:component>

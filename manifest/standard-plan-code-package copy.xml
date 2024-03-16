@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+ 
+    <types>
+        <!--    Niraj Kumar's Classes   -->
+        <members>CTX_ProductSyncByProductLineBatch</members>
+        <members>CTX_ProductSyncByProductLineCallout</members>
+        <members>CTX_ProductSyncByProductLineCallout_TEST</members>
+        <members>CTX_ProductSyncCalloutMockResponse</members>
+        <members>CTX_LicenceDeactivationCallout_TEST</members>
+        <members>WrapperCTX_ProductSync_Parse</members>
+        <members>CTX_LicenceDeactivationCallout</members>
+
+        <!--    Bibhu's Classes   -->
+        <members>AssetTriggerHandler</members>
+        <members>DealClosureQueueable</members>
+        <members>DealClosureCallOut</members>
+        <members>CTX_AssetExtractAPI</members>
+        <members>CTX_FetchAssetService</members>
+        <members>CTX_UtilityClass</members>
+
+        <!--    Kartikeya's Classes   -->
+        <members>OpportunityTriggerHelper</members>
+        <members>QuoteLineItemHelper</members>
+        <members>CTX_ProductSyncByProductCodeBatch</members>
+        <members>CTX_ProductSyncByProductCodeCallout</members>
+        <members>generateOrderFormPDF</members>
+        <members>QuoteTriggerHandler</members>
+        <members>QuoteLineItemTriggerHandler</members>
+        <members>QuoteConstants</members>
+
+        <!--    AshwinKrishna's Classes -->
+        <members>CTX_QliFieldUpdateBasedOnPlatform</members>
+        <members>QuoteProductController</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <!--    AshwinKrishna's Component -->
+        <members>qliProductEditor</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <types>
+        <!--    Kartikeya's Page    -->
+        <members>PricingParameters</members>
+
+        <name>ApexPage</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

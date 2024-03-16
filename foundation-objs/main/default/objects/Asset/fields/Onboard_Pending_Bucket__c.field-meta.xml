@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboard_Pending_Bucket__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Onboard Pending Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Partial Training Done</fullName>
+                <default>false</default>
+                <label>Partial Training Done</label>
+            </value>
+            <value>
+                <fullName>Uneecops</fullName>
+                <default>false</default>
+                <label>Uneecops</label>
+            </value>
+            <value>
+                <fullName>Client not reachable</fullName>
+                <default>false</default>
+                <label>Client not reachable</label>
+            </value>
+            <value>
+                <fullName>B2C-QR date extension post 1st Oct</fullName>
+                <default>false</default>
+                <label>B2C-QR date extension post 1st Oct</label>
+            </value>
+            <value>
+                <fullName>Handover Not Done</fullName>
+                <default>false</default>
+                <label>Handover Not Done</label>
+            </value>
+            <value>
+                <fullName>No issues</fullName>
+                <default>false</default>
+                <label>No issues</label>
+            </value>
+            <value>
+                <fullName>CT involved - Integration is in process</fullName>
+                <default>false</default>
+                <label>CT involved - Integration is in process</label>
+            </value>
+            <value>
+                <fullName>Client Delay - Stuck in client side integration</fullName>
+                <default>false</default>
+                <label>Client Delay - Stuck in client side integration</label>
+            </value>
+            <value>
+                <fullName>Client Delay - Unavailability of team / Rescheduling because of internal work</fullName>
+                <default>false</default>
+                <label>Client Delay - Unavailability of team / Rescheduling because of internal work</label>
+            </value>
+            <value>
+                <fullName>Client denied usage</fullName>
+                <default>false</default>
+                <label>Client denied usage</label>
+            </value>
+            <value>
+                <fullName>Test ID</fullName>
+                <default>false</default>
+                <label>Test ID</label>
+            </value>
+            <value>
+                <fullName>PO Future date</fullName>
+                <default>false</default>
+                <label>PO Future date</label>
+            </value>
+            <value>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+                <label>Managed Services</label>
+            </value>
+            <value>
+                <fullName>Channel Partner Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Channel Partner Issues</label>
+            </value>
+            <value>
+                <fullName>Client expectation mismatch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client expectation mismatch</label>
+            </value>
+            <value>
+                <fullName>Default</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Default</label>
+            </value>
+            <value>
+                <fullName>Delay from Client</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay from Client</label>
+            </value>
+            <value>
+                <fullName>Extension agreed with Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Extension agreed with Integration</label>
+            </value>
+            <value>
+                <fullName>Extension agreed with Sales</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Extension agreed with Sales</label>
+            </value>
+            <value>
+                <fullName>Integration Delay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration Delay</label>
+            </value>
+            <value>
+                <fullName>LOE Vs SF mismatch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>LOE Vs SF mismatch</label>
+            </value>
+            <value>
+                <fullName>No issues (age&lt;15 days)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No issues (age&lt;15 days)</label>
+            </value>
+            <value>
+                <fullName>OB will happen after Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OB will happen after Integration</label>
+            </value>
+            <value>
+                <fullName>Onboarding Scheduled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding Scheduled</label>
+            </value>
+            <value>
+                <fullName>One to Many</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One to Many</label>
+            </value>
+            <value>
+                <fullName>Onsite training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onsite training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

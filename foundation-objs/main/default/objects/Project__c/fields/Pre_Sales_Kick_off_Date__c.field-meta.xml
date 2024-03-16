@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Sales_Kick_off_Date__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <deprecated>false</deprecated>
+    <description>Date on which the first pre-sale meeting was held.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date on which the first pre-sale meeting was held.</inlineHelpText>
+    <label>Pre-Sales Kick-off Date</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

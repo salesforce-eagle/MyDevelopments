@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overall_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Status__c,&apos;Active&apos;),
+   IF(NOT(ISBLANK(Go_Live_Date__c)), iF(Go_Live_Date__c &gt;   Benchmark_Date_Overall__c , 
+      &quot;RED&quot;, 
+      &quot;GREEN&quot;),
+   IF(TODAY() &gt;  Benchmark_Date_Overall__c,
+      &quot;RED&quot;, 
+      &quot;GREEN&quot;)
+),
+
+IF( ISPICKVAL(Status__c,&apos;At Risk&apos;),
+   IF(NOT(ISBLANK(Go_Live_Date__c)), iF(Go_Live_Date__c &gt;  Benchmark_Date_Overall__c, 
+      &quot;RED&quot;,  
+      &quot;AMBER&quot;),
+   IF(TODAY() &gt;  Benchmark_Date_Overall__c,
+      &quot;RED&quot;, 
+      &quot;AMBER&quot;)
+),
+
+IF( ISPICKVAL(Status__c,&apos;On-hold&apos;),
+   IF(NOT(ISBLANK(Go_Live_Date__c)), iF(Go_Live_Date__c &gt;  Benchmark_Date_Overall__c, 
+      &quot;RED&quot;, IF(LOE_Received_Date__c &gt; TODAY(),&quot;GREEN&quot;, 
+      &quot;AMBER&quot;)),
+   IF(TODAY() &gt;  Benchmark_Date_Overall__c,
+      &quot;RED&quot;,IF(LOE_Received_Date__c &gt; TODAY(),&quot;GREEN&quot;, 
+      &quot;AMBER&quot;))
+),
+
+IF( ISPICKVAL(Status__c,&apos;Complete&apos;),
+   IF(NOT(ISBLANK(Go_Live_Date__c)), iF(Go_Live_Date__c &gt;  Benchmark_Date_Overall__c, 
+      &quot;RED&quot;,  
+      &quot;GREEN&quot;),
+   IF(TODAY() &gt;  Benchmark_Date_Overall__c,
+      &quot;RED&quot;, 
+      &quot;GREEN&quot;)
+),
+
+&apos;&apos;
+))))</formula>
+    <label>Overall Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

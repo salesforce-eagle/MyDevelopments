@@ -1,0 +1,149 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,CustomerInformation_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+        <html>
+        <head>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 10px;
+                font-weight: bold;
+                }
+                <!-- Not working
+.text-catplize{
+text-transform : capitalize;
+}-->
+                .headding-box{
+                font-size : 10px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                font-size : 6px;
+                width: 100%;
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-size : 6px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-after:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                font-size : 10px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px;
+}-->    
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;padding:2px">
+
+            <apex:outputText rendered="{!NOT(gccCheck) && NOT(cimplifiveCheck)}">
+				 <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;1.&nbsp;&nbsp;CUSTOMER AND BILLING INFORMATION </div><br/>
+                <table class="info-table"  style="width:100%">
+                    <tr><th>Customer Name:</th> <td>{!accountName}</td></tr> <!--class="info-table-th" -->
+                    <tr><th>Bill to Address: </th> <td class="info-table-td">{!billingAddress} {!syncedQuote.Opportunity.Address_Line_2__c } {!syncedQuote.Opportunity.City_2__c } {!syncedQuote.Opportunity.State_2__c } {!syncedQuote.Opportunity.Pincode__c }</td></tr>
+                    <tr><th>Ship to Address:</th> <td class="info-table-td">{!shippingAddress}</td></tr>
+                    <tr><th>Billing PAN:</th> <td class="info-table-td">{!syncedQuote.Opportunity.PAN_No_as_per_PO__c}</td></tr>
+                    <tr><th>Billing GSTIN:</th><td class="info-table-td">{!syncedQuote.Opportunity.Billing_GST__c}</td></tr>
+                    <tr><th>Place of Supply:</th><td class="info-table-td">{!syncedQuote.Opportunity.Place_of_Supply__c}</td>  </tr>
+                    <tr><th>TAN:</th><td class="info-table-td">{!syncedQuote.Opportunity.TAN__c}</td></tr>
+                    <tr><th>If SEZ (Yes /No):</th><td class="info-table-td">{!syncedQuote.Opportunity.If_SEZ__c}</td></tr>
+                </table> 
+                </apex:outputText>
+            
+            <apex:outputText rendered="{!(gccCheck)}">
+				 <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;1.&nbsp;&nbsp;CUSTOMER AND BILLING INFORMATION </div><br/>
+                <table class="info-table"  style="width:100%;padding: 3px">
+                    <tr><th>Customer Name:</th> <td class="info-table-td">{!accountName}</td></tr> <!--class="info-table-th" -->
+                    <tr><th>Bill to Address: </th> <td class="info-table-td">{!billingAddress} {!syncedQuote.Opportunity.Address_Line_2__c } {!syncedQuote.Opportunity.City_2__c } {!syncedQuote.Opportunity.State_2__c } {!syncedQuote.Opportunity.Pincode__c }</td></tr>
+                    <tr><th>Ship to Address:</th> <td class="info-table-td">{!shippingAddress}</td></tr>
+                    <tr><th>Place of Supply:</th><td class="info-table-td">{!syncedQuote.Opportunity.Place_of_Supply__c}</td>  </tr>
+                    <tr><th>CR Number :</th><td class="info-table-td">{!syncedQuote.Opportunity.cr_number_gcc__c}</td>  </tr>
+                    <tr><th>VAT Number :</th><td class="info-table-td">{!syncedQuote.Opportunity.vat_number_gcc__c}</td>  </tr>
+                    <apex:outputText rendered="{!IF(syncedQuote.Opportunity.TIN_number__c != NULL,true,false)}">
+						<tr><th>TIN number :</th><td class="info-table-td">{!syncedQuote.Opportunity.TIN_number__c}</td>  </tr>
+                    </apex:outputText>
+                    
+                </table> 
+                </apex:outputText>
+                        <apex:outputText rendered="{!cimplifiveCheck}">
+				 <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;1.&nbsp;&nbsp;SUBSCRIBER AND BILLING INFORMATION </div><br/>
+                <table class="info-table"  style="width:100%;padding: 3px">
+                    <tr><th>Subscriber Name:</th> <td class="info-table-td">{!accountName}</td></tr> <!--class="info-table-th" -->
+                    <tr><th>Bill to Address: </th> <td class="info-table-td">{!billingAddress} {!syncedQuote.Opportunity.Address_Line_2__c } {!syncedQuote.Opportunity.City_2__c } {!syncedQuote.Opportunity.State_2__c } {!syncedQuote.Opportunity.Pincode__c }</td></tr>
+                    <tr><th>Ship to Address:</th> <td class="info-table-td">{!shippingAddress}</td></tr>
+                    <tr><th>CIN:</th><td class="info-table-td">{!syncedQuote.Opportunity.CIN__c}</td>  </tr>
+                    <tr><th>TAN:</th><td class="info-table-td">{!syncedQuote.Opportunity.TAN__c}</td></tr>
+                    <tr><th>Billing GSTIN:</th><td class="info-table-td">{!syncedQuote.Opportunity.Billing_GST__c}</td></tr>
+                        <tr><th>Place of Supply:</th><td class="info-table-td">{!syncedQuote.Opportunity.Place_of_Supply__c}</td>  </tr>
+                    <tr><th>If SEZ (Yes /No):</th><td class="info-table-td">{!syncedQuote.Opportunity.If_SEZ__c}</td>  </tr>
+                    
+                    
+                </table> 
+                </apex:outputText>
+            <br/>
+            <br/>
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;2.&nbsp;&nbsp;PRICING </div>
+		<apex:include pageName="{!nextPage1}"/>
+        </body>
+    </html>
+    
+</apex:page>

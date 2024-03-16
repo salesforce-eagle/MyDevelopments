@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+Asset__r.Opportunity__r.Owner.IsActive = TRUE, 
+Asset__r.Opportunity__r.Owner.FirstName +&quot; &quot;+ Asset__r.Opportunity__r.Owner.LastName ,  
+IF(Asset__r.Account.Sales_Owner__r.IsActive = TRUE,Asset__r.Account.Sales_Owner__r.FirstName +&quot; &quot;+Asset__r.Account.Sales_Owner__r.LastName, Asset__r.Account.Owner_Full_Name__c)
+)</formula>
+    <label>Action Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hs_lifecyclestage_opportunity_date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The date when a contact&apos;s lifecycle stage changed to Opportunity. This is automatically set by HubSpot for each contact.</description>
+    <externalId>false</externalId>
+    <label>Became an Opportunity Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

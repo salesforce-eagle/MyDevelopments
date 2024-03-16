@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Quote.Price_Offered_to_Match_Competitor__c</members>
+        <members>Quote.Old_Anchor_Price__c</members>
+        <members>Quote.Next_Pitch_Date__c</members>
+        <members>Quote.Features_not_in_Use__c</members>
+        <members>Quote.Reason_for_Discount_Request__c</members>
+        <members>Quote.Opportunity_Type__c</members>
+        
+        <name>CustomField</name>
+        </types>
+    <version>52.0</version>
+</Package>

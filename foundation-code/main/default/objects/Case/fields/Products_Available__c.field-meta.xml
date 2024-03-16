@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_Available__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Related To</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST 2.0</fullName>
+                <default>false</default>
+                <label>GST 2.0</label>
+            </value>
+            <value>
+                <fullName>GST 1.0</fullName>
+                <default>false</default>
+                <label>GST 1.0</label>
+            </value>
+            <value>
+                <fullName>E-Invoicing &amp; E-Way Bill</fullName>
+                <default>false</default>
+                <label>E-Invoicing &amp; E-Way Bill</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+            <value>
+                <fullName>Tax Cloud</fullName>
+                <default>false</default>
+                <label>Tax Cloud</label>
+            </value>
+            <value>
+                <fullName>MAX ITC</fullName>
+                <default>false</default>
+                <label>MAX ITC</label>
+            </value>
+            <value>
+                <fullName>Capture</fullName>
+                <default>false</default>
+                <label>Capture</label>
+            </value>
+            <value>
+                <fullName>Cimplyfive</fullName>
+                <default>false</default>
+                <label>Cimplyfive</label>
+            </value>
+            <value>
+                <fullName>Clear Identity</fullName>
+                <default>false</default>
+                <label>Clear Identity</label>
+            </value>
+            <value>
+                <fullName>GST</fullName>
+                <default>false</default>
+                <label>GST</label>
+            </value>
+            <value>
+                <fullName>Invoice Discount</fullName>
+                <default>false</default>
+                <label>Invoice Discount</label>
+            </value>
+            <value>
+                <fullName>e-invoicing</fullName>
+                <default>false</default>
+                <label>e-invoicing</label>
+            </value>
+            <value>
+                <fullName>IRP</fullName>
+                <default>false</default>
+                <label>IRP</label>
+            </value>
+            <value>
+                <fullName>Clear Invoicing</fullName>
+                <default>false</default>
+                <label>Clear Invoicing</label>
+            </value>
+            <value>
+                <fullName>E Invoice - KSA</fullName>
+                <default>false</default>
+                <label>E Invoice - KSA</label>
+            </value>
+            <value>
+                <fullName>Notice Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Notice Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

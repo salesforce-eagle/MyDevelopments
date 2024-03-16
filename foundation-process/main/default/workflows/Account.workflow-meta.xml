@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_Owner_change</fullName>
+        <description>Account Owner change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Account_transfer</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Capture_date_on_which_Account_is_lost</fullName>
+        <field>Lost_Date__c</field>
+        <formula>Today()</formula>
+        <name>Capture date on which Account is lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Previous_Owner_Name_update</fullName>
+        <field>Prior_Value_Owner__c</field>
+        <formula>PRIORVALUE(Owner_Full_Name__c)</formula>
+        <name>Previous Owner Name update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Previous_owner_field_update</fullName>
+        <field>Owner_Email__c</field>
+        <formula>PRIORVALUE(Account_Owner_Email_Current__c)</formula>
+        <name>Previous owner field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Owner Change Email</fullName>
+        <actions>
+            <name>Account_Owner_change</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Previous_Owner_Name_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Previous_owner_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Account Lost Date</fullName>
+        <actions>
+            <name>Capture_date_on_which_Account_is_lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Status__c</field>
+            <operation>equals</operation>
+            <value>Churn</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

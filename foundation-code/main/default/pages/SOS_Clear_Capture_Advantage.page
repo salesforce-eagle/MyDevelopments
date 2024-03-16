@@ -1,0 +1,187 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_Einv_IntegAMC_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <p>
+                <b>Scope of services for ClearCapture (Advantage)</b>
+            </p>
+           
+
+<p>Cleartax responsibility: </p>
+
+<p>Functionality to be provided:</p>
+
+<table border="1">
+<tbody>
+<tr>
+<td><p><b>Module</b></p></td>
+<td><p><b>Feature</b></p></td>
+<td><p><b>Description</b></p></td>
+</tr>
+
+<tr>
+<td><p><b>Clear Capture</b></p></td>
+<td><p>Invoice &amp; digitized data ingestion (Invoice copies are needed to scan the e-inv QR code)</p>
+
+
+</td>
+<td><ul>
+<li><p>Auto-import invoice option: ClearCapture will pick scanned invoice copies from client's FTP/Dedicated DMS folder either on real-time or scheduler basis (can be decided basis agreed scope)</p>
+
+</li>
+<li><p>Import Digitized data from ERP: Clear to pick the digitized data (inward invoice file) from ERP</p>
+
+</li>
+<li><p>User IDs/Accounts to be created for all relevant client company Requestors/users (No restriction on number of users)</p>
+
+</li>
+<li><p>List of requestors/users email addresses to be shared with Clear for account activations</p>
+
+</li>
+</ul>
+
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><p>E-invoice scan &amp; validation</p>
+
+
+</td>
+<td><ul>
+<li><p>Ability to scan a QR code and notify if QR code is valid or not; flag vendor GSTIN which is not compliant</p>
+
+</li>
+<li><p>Populate header level QR code details to create a draft invoice</p>
+
+</li>
+</ul>
+
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><p>Compliant invoice excel data output</p></td>
+<td><ul>
+<li><p>The invoice fields present in the digitized excel will be validated + E-inv QR Code fields will also be provided in exact same template (mapped to a invoice number/ERP reference ID/File name)</p>
+
+</li>
+<li><p>Various taxation related validations to be built in as part of invoice validation to avoid or reduce human errors </p>
+
+</li>
+</ul>
+
+<ul>
+<li><p><b>Few Invoice checks: </b></p>
+
+</li>
+<ul>
+<li><p>E-invoice applicability</p>
+
+</li>
+<li><p>Verification with EWB</p>
+
+</li>
+<li><p>Verification with GSTR 2A </p>
+
+</li>
+<li><p>HSN/SAC code mismatch</p>
+
+</li>
+</ul>
+
+</ul>
+
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><p>Invoice/E-invoice Validation (Both PO &amp; Non-PO invoices)</p></td>
+<td><ul>
+<li><p><b>QR Code, IRN, GSTR2A (All fields)</b></p>
+
+</li>
+<li><p>Vendor GSTN Status (Active/Suspended/Inactive)</p>
+
+</li>
+<li><p>Vendor E-inv mandate (E-Inv applicability)</p>
+
+</li>
+<li><p>Vendor GSTN Status (Filed/Not filed)</p>
+
+</li>
+<li><p>Invoice number field validation (Special characters "-","/" as Low risk, Anything else as High risk)</p>
+
+</li>
+<li><p>Duplicate Invoice entry check</p>
+
+</li>
+<li><p>GSTR2A pull for last 180 days</p>
+
+</li>
+<li><p><b>IRN/E-invoice without QR Code mismatch/error</b></p>
+
+</li>
+</ul>
+
+<p><b>Note:</b> In total, <b>60+ compliance checks</b> will be run on incoming invoices</p></td>
+</tr>
+
+</tbody>
+</table>
+
+
+<p>Customer Responsibility</p>
+
+<ul>
+<li><p>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.</p>
+
+</li>
+<li><p>Customers shall obtain and maintain all licenses, registrations, approvals, consents, permissions, sanctions, etc. under all applicable laws to implement any module/s of the ClearCapture product.</p>
+
+</li>
+<li><p>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax.</p>
+
+</li>
+<li><p>The customer shall provide appropriate documentation about the system configuration with the Cleartax team for study and understanding</p>
+
+</li>
+<li><p>Appropriate and timely system access to the Cleartax team shall be provided at periodic intervals or based on the milestones</p>
+
+</li>
+<li><p>On submission of the system to the customer team for Approval/Testing, in the interest of timely completion of the project, it’s expected that such Approvals/Testing is ideally completed at the earliest by the customer team</p>
+
+</li>
+</ul>
+
+
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

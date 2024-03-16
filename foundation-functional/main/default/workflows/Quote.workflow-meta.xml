@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Quote_Approval_Request</fullName>
+        <description>Quote Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Level_3_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Notification_Email_Template_Folder/Quote_Approval_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Approved</fullName>
+        <description>Quote Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Quote_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Rejected</fullName>
+        <description>Quote Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Notification_Email_Template_Folder/Quote_Rejected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved_or_Rejected_By</fullName>
+        <field>Approved_or_Rejected_By__c</field>
+        <formula>$User.FirstName +&apos; &apos; + $User.LastName</formula>
+        <name>Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Submitted</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Update Approval Status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_In_Quote_Approvals</fullName>
+        <field>Status</field>
+        <literalValue>In Quote Approvals</literalValue>
+        <name>Update Status to In Quote Approvals</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Status_to_previous_value</fullName>
+        <field>Status</field>
+        <name>update Status to previous value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>PreviousValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_field_Approval_sub_status</fullName>
+        <field>Approval_sub_status__c</field>
+        <literalValue>Discount Approval in progress</literalValue>
+        <name>update field Approval sub status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_on_status_when_approved</fullName>
+        <field>Status</field>
+        <name>update on status when approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>NextValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_sub_status_Approved</fullName>
+        <field>Approval_sub_status__c</field>
+        <literalValue>Discount Approved</literalValue>
+        <name>update sub status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_sub_status_Rejected</fullName>
+        <field>Approval_sub_status__c</field>
+        <literalValue>Discount Rejected</literalValue>
+        <name>update sub status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

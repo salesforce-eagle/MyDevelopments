@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isVisibleQuestionnaire__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ISPICKVAL(StageName,&quot;Pre SQL&quot;)  || ISPICKVAL(StageName,&quot;SQL&quot;) || ISPICKVAL(StageName,&quot;POC&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>isVisibleQuestionnaire</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

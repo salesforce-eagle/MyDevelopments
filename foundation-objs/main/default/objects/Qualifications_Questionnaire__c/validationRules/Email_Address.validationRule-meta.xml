@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Address</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Questionnaire__c = &apos;CFO email ID&apos; ||
+Questionnaire__c = &apos;CTO email ID&apos; ||
+Questionnaire__c = &apos;IDT Head / Tax Head email ID&apos; ||
+Questionnaire__c = &apos;Influencer Email ID&apos; ||
+Questionnaire__c = &apos;Economic Buyer Email ID&apos;) &amp;&amp;
+NOT(REGEX( Answer__c ,&apos;([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})&apos;))  &amp;&amp; !ISNEW()</errorConditionFormula>
+    <errorMessage>Please enter valid email address</errorMessage>
+</ValidationRule>

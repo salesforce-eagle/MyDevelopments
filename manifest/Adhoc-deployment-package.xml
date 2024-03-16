@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!--<types>
+        <members>CTX_SendEmailOnAutoRenewalFailure</members>
+        <members>SOS_GST_Premium</members>
+        <members>SOS_GST_Advantage_without_CSM</members>
+        <members>SOS_GST_Advantage_with_CSM</members>
+        <members>SOS_Max_Ultimate_withAPB</members>
+        <members>SOS_Max_Ultimate_withoutAPB</members>
+        <members>SOS_Max_Premium</members>
+
+        <name>ApexClass</name>
+    </types>-->
+
+    <types>
+        <members>*</members>
+        <name>ConnectedApp</name>
+    </types>
+
+    <version>58.0</version>
+</Package>

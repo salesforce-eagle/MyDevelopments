@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Add_On_Type</members>
+        <members>ERP_Family</members>
+
+        <name>GlobalValueSet</name>
+    </types>
+
+    <types>
+        <members>Opportunity.ERP_Family__c</members>
+        <members>Quote.Add_On_Approval_Status__c</members>
+        <members>Quote.Integration_Add_On_Approver__c</members>
+        <members>QuoteLineItem.Add_On_Prices__c</members>
+        <members>QuoteLineItem.Add_On_Discounted_Price__c</members>
+        <members>QuoteLineItem.Actual_Unit_Price__c</members>
+        <members>QuoteLineItem.Actual_Sell_Price__c</members>
+        <name>CustomField</name>
+    </types>
+    
+    <types>
+        <members>Integration_Add_On__c</members>
+        <members>Integration_Scope_Add_On__c</members>
+
+        <name>CustomObject</name>
+    </types>
+
+
+    <version>52.0</version>
+</Package>

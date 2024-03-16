@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue Type 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>E-Invoicing</fullName>
+                <default>false</default>
+                <label>E-Invoicing</label>
+            </value>
+            <value>
+                <fullName>E-Way Bill</fullName>
+                <default>false</default>
+                <label>E-Way Bill</label>
+            </value>
+            <value>
+                <fullName>26QB</fullName>
+                <default>false</default>
+                <label>26QB</label>
+            </value>
+            <value>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+                <label>Account Management</label>
+            </value>
+            <value>
+                <fullName>Acknowledgement Receipts</fullName>
+                <default>false</default>
+                <label>Acknowledgement Receipts</label>
+            </value>
+            <value>
+                <fullName>Add challan on traces</fullName>
+                <default>false</default>
+                <label>Add challan on traces</label>
+            </value>
+            <value>
+                <fullName>Annexure1</fullName>
+                <default>false</default>
+                <label>Annexure1</label>
+            </value>
+            <value>
+                <fullName>Annexure2</fullName>
+                <default>false</default>
+                <label>Annexure2</label>
+            </value>
+            <value>
+                <fullName>Billing/Fling Software (pricing)</fullName>
+                <default>false</default>
+                <label>Billing/Fling Software (pricing)</label>
+            </value>
+            <value>
+                <fullName>Billing Software (pricing)</fullName>
+                <default>false</default>
+                <label>Billing Software (pricing)</label>
+            </value>
+            <value>
+                <fullName>Business/Partnership Proposal</fullName>
+                <default>false</default>
+                <label>Business/Partnership Proposal</label>
+            </value>
+            <value>
+                <fullName>Callback from KAM</fullName>
+                <default>false</default>
+                <label>Callback from KAM</label>
+            </value>
+            <value>
+                <fullName>callback request</fullName>
+                <default>false</default>
+                <label>callback request</label>
+            </value>
+            <value>
+                <fullName>careers</fullName>
+                <default>false</default>
+                <label>careers</label>
+            </value>
+            <value>
+                <fullName>Challan delete issue</fullName>
+                <default>false</default>
+                <label>Challan delete issue</label>
+            </value>
+            <value>
+                <fullName>Clearone App related</fullName>
+                <default>false</default>
+                <label>Clearone App related</label>
+            </value>
+            <value>
+                <fullName>cleartax portal</fullName>
+                <default>false</default>
+                <label>cleartax portal</label>
+            </value>
+            <value>
+                <fullName>connectors</fullName>
+                <default>false</default>
+                <label>connectors</label>
+            </value>
+            <value>
+                <fullName>CT Account Mgmt</fullName>
+                <default>false</default>
+                <label>CT Account Mgmt</label>
+            </value>
+            <value>
+                <fullName>Data_Preparation</fullName>
+                <default>false</default>
+                <label>Data_Preparation</label>
+            </value>
+            <value>
+                <fullName>Data Ingestion</fullName>
+                <default>false</default>
+                <label>Data Ingestion</label>
+            </value>
+            <value>
+                <fullName>Deductee mismatch</fullName>
+                <default>false</default>
+                <label>Deductee mismatch</label>
+            </value>
+            <value>
+                <fullName>Deductions</fullName>
+                <default>false</default>
+                <label>Deductions</label>
+            </value>
+            <value>
+                <fullName>Desktop_App</fullName>
+                <default>false</default>
+                <label>Desktop_App</label>
+            </value>
+            <value>
+                <fullName>desktop app</fullName>
+                <default>false</default>
+                <label>desktop app</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>E-Filing</fullName>
+                <default>false</default>
+                <label>E-Filing</label>
+            </value>
+            <value>
+                <fullName>E-filing:; No Query</fullName>
+                <default>false</default>
+                <label>E-filing:; No Query</label>
+            </value>
+            <value>
+                <fullName>Elaborate</fullName>
+                <default>false</default>
+                <label>Elaborate</label>
+            </value>
+            <value>
+                <fullName>EWB Demo</fullName>
+                <default>false</default>
+                <label>EWB Demo</label>
+            </value>
+            <value>
+                <fullName>Export Refunds</fullName>
+                <default>false</default>
+                <label>Export Refunds</label>
+            </value>
+            <value>
+                <fullName>Feature_Request</fullName>
+                <default>false</default>
+                <label>Feature_Request</label>
+            </value>
+            <value>
+                <fullName>feedback</fullName>
+                <default>false</default>
+                <label>feedback</label>
+            </value>
+            <value>
+                <fullName>filing</fullName>
+                <default>false</default>
+                <label>filing</label>
+            </value>
+            <value>
+                <fullName>form 16</fullName>
+                <default>false</default>
+                <label>form 16</label>
+            </value>
+            <value>
+                <fullName>Form 16 generation error</fullName>
+                <default>false</default>
+                <label>Form 16 generation error</label>
+            </value>
+            <value>
+                <fullName>Full product demo</fullName>
+                <default>false</default>
+                <label>Full product demo</label>
+            </value>
+            <value>
+                <fullName>FUV generation error</fullName>
+                <default>false</default>
+                <label>FUV generation error</label>
+            </value>
+            <value>
+                <fullName>G1</fullName>
+                <default>false</default>
+                <label>G1</label>
+            </value>
+            <value>
+                <fullName>G1 Filing</fullName>
+                <default>false</default>
+                <label>G1 Filing</label>
+            </value>
+            <value>
+                <fullName>G3B</fullName>
+                <default>false</default>
+                <label>G3B</label>
+            </value>
+            <value>
+                <fullName>G3B Filing</fullName>
+                <default>false</default>
+                <label>G3B Filing</label>
+            </value>
+            <value>
+                <fullName>G4</fullName>
+                <default>false</default>
+                <label>G4</label>
+            </value>
+            <value>
+                <fullName>G4 filing</fullName>
+                <default>false</default>
+                <label>G4 filing</label>
+            </value>
+            <value>
+                <fullName>G9</fullName>
+                <default>false</default>
+                <label>G9</label>
+            </value>
+            <value>
+                <fullName>G9 Filing</fullName>
+                <default>false</default>
+                <label>G9 Filing</label>
+            </value>
+            <value>
+                <fullName>Generic query</fullName>
+                <default>false</default>
+                <label>Generic query</label>
+            </value>
+            <value>
+                <fullName>GSP_Interaction</fullName>
+                <default>false</default>
+                <label>GSP_Interaction</label>
+            </value>
+            <value>
+                <fullName>gst</fullName>
+                <default>false</default>
+                <label>gst</label>
+            </value>
+            <value>
+                <fullName>GSTN portal</fullName>
+                <default>false</default>
+                <label>GSTN portal</label>
+            </value>
+            <value>
+                <fullName>GST query</fullName>
+                <default>false</default>
+                <label>GST query</label>
+            </value>
+            <value>
+                <fullName>Gstr9 Availability</fullName>
+                <default>false</default>
+                <label>Gstr9 Availability</label>
+            </value>
+            <value>
+                <fullName>Houseproperty</fullName>
+                <default>false</default>
+                <label>Houseproperty</label>
+            </value>
+            <value>
+                <fullName>Income</fullName>
+                <default>false</default>
+                <label>Income</label>
+            </value>
+            <value>
+                <fullName>integrations</fullName>
+                <default>false</default>
+                <label>integrations</label>
+            </value>
+            <value>
+                <fullName>Internal Team</fullName>
+                <default>false</default>
+                <label>Internal Team</label>
+            </value>
+            <value>
+                <fullName>Investment query</fullName>
+                <default>false</default>
+                <label>Investment query</label>
+            </value>
+            <value>
+                <fullName>Invoice Copy Request</fullName>
+                <default>false</default>
+                <label>Invoice Copy Request</label>
+            </value>
+            <value>
+                <fullName>Invoicing Demo</fullName>
+                <default>false</default>
+                <label>Invoicing Demo</label>
+            </value>
+            <value>
+                <fullName>Issue</fullName>
+                <default>false</default>
+                <label>Issue</label>
+            </value>
+            <value>
+                <fullName>ITR/Clearsave/TDS/Tax_Cloud Related</fullName>
+                <default>false</default>
+                <label>ITR/Clearsave/TDS/Tax_Cloud Related</label>
+            </value>
+            <value>
+                <fullName>ITR 3</fullName>
+                <default>false</default>
+                <label>ITR 3</label>
+            </value>
+            <value>
+                <fullName>ITR Filing - Generic</fullName>
+                <default>false</default>
+                <label>ITR Filing - Generic</label>
+            </value>
+            <value>
+                <fullName>ITR Software Related</fullName>
+                <default>false</default>
+                <label>ITR Software Related</label>
+            </value>
+            <value>
+                <fullName>Junk</fullName>
+                <default>false</default>
+                <label>Junk</label>
+            </value>
+            <value>
+                <fullName>KYC</fullName>
+                <default>false</default>
+                <label>KYC</label>
+            </value>
+            <value>
+                <fullName>learning</fullName>
+                <default>false</default>
+                <label>learning</label>
+            </value>
+            <value>
+                <fullName>License Inquiry</fullName>
+                <default>false</default>
+                <label>License Inquiry</label>
+            </value>
+            <value>
+                <fullName>Licensing Related</fullName>
+                <default>false</default>
+                <label>Licensing Related</label>
+            </value>
+            <value>
+                <fullName>marketing</fullName>
+                <default>false</default>
+                <label>marketing</label>
+            </value>
+            <value>
+                <fullName>Marketplace_Services</fullName>
+                <default>false</default>
+                <label>Marketplace_Services</label>
+            </value>
+            <value>
+                <fullName>Mutual Fund/Clearsave</fullName>
+                <default>false</default>
+                <label>Mutual Fund/Clearsave</label>
+            </value>
+            <value>
+                <fullName>Nil return filing</fullName>
+                <default>false</default>
+                <label>Nil return filing</label>
+            </value>
+            <value>
+                <fullName>No action required</fullName>
+                <default>false</default>
+                <label>No action required</label>
+            </value>
+            <value>
+                <fullName>Non Gst Related</fullName>
+                <default>false</default>
+                <label>Non Gst Related</label>
+            </value>
+            <value>
+                <fullName>Not clear question</fullName>
+                <default>false</default>
+                <label>Not clear question</label>
+            </value>
+            <value>
+                <fullName>Offline Demo</fullName>
+                <default>false</default>
+                <label>Offline Demo</label>
+            </value>
+            <value>
+                <fullName>other products</fullName>
+                <default>false</default>
+                <label>other products</label>
+            </value>
+            <value>
+                <fullName>others</fullName>
+                <default>false</default>
+                <label>others</label>
+            </value>
+            <value>
+                <fullName>Paid Plan Inquiry</fullName>
+                <default>false</default>
+                <label>Paid Plan Inquiry</label>
+            </value>
+            <value>
+                <fullName>Partnership Request</fullName>
+                <default>false</default>
+                <label>Partnership Request</label>
+            </value>
+            <value>
+                <fullName>Password issue</fullName>
+                <default>false</default>
+                <label>Password issue</label>
+            </value>
+            <value>
+                <fullName>penalty</fullName>
+                <default>false</default>
+                <label>penalty</label>
+            </value>
+            <value>
+                <fullName>Phone Support - Request</fullName>
+                <default>false</default>
+                <label>Phone Support - Request</label>
+            </value>
+            <value>
+                <fullName>Post Filing</fullName>
+                <default>false</default>
+                <label>Post Filing</label>
+            </value>
+            <value>
+                <fullName>Process</fullName>
+                <default>false</default>
+                <label>Process</label>
+            </value>
+            <value>
+                <fullName>Recon</fullName>
+                <default>false</default>
+                <label>Recon</label>
+            </value>
+            <value>
+                <fullName>Recon_Feature</fullName>
+                <default>false</default>
+                <label>Recon_Feature</label>
+            </value>
+            <value>
+                <fullName>Recon Demo</fullName>
+                <default>false</default>
+                <label>Recon Demo</label>
+            </value>
+            <value>
+                <fullName>redundant tag</fullName>
+                <default>false</default>
+                <label>redundant tag</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>RET1(SAHEJ)</fullName>
+                <default>false</default>
+                <label>RET1(SAHEJ)</label>
+            </value>
+            <value>
+                <fullName>RET2(SUGAM)</fullName>
+                <default>false</default>
+                <label>RET2(SUGAM)</label>
+            </value>
+            <value>
+                <fullName>RET3</fullName>
+                <default>false</default>
+                <label>RET3</label>
+            </value>
+            <value>
+                <fullName>Return Filing</fullName>
+                <default>false</default>
+                <label>Return Filing</label>
+            </value>
+            <value>
+                <fullName>Return revise</fullName>
+                <default>false</default>
+                <label>Return revise</label>
+            </value>
+            <value>
+                <fullName>Revised Invoice Request</fullName>
+                <default>false</default>
+                <label>Revised Invoice Request</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Software Refund</fullName>
+                <default>false</default>
+                <label>Software Refund</label>
+            </value>
+            <value>
+                <fullName>spam</fullName>
+                <default>false</default>
+                <label>spam</label>
+            </value>
+            <value>
+                <fullName>Support_Issues</fullName>
+                <default>false</default>
+                <label>Support_Issues</label>
+            </value>
+            <value>
+                <fullName>Support Issues</fullName>
+                <default>false</default>
+                <label>Support Issues</label>
+            </value>
+            <value>
+                <fullName>Tally_Connector</fullName>
+                <default>false</default>
+                <label>Tally_Connector</label>
+            </value>
+            <value>
+                <fullName>taxation queries</fullName>
+                <default>false</default>
+                <label>taxation queries</label>
+            </value>
+            <value>
+                <fullName>Taxation Query</fullName>
+                <default>false</default>
+                <label>Taxation Query</label>
+            </value>
+            <value>
+                <fullName>Tax paid</fullName>
+                <default>false</default>
+                <label>Tax paid</label>
+            </value>
+            <value>
+                <fullName>TC Software Related</fullName>
+                <default>false</default>
+                <label>TC Software Related</label>
+            </value>
+            <value>
+                <fullName>TDS Software Related</fullName>
+                <default>false</default>
+                <label>TDS Software Related</label>
+            </value>
+            <value>
+                <fullName>Technical Issue</fullName>
+                <default>false</default>
+                <label>Technical Issue</label>
+            </value>
+            <value>
+                <fullName>unclear issue</fullName>
+                <default>false</default>
+                <label>unclear issue</label>
+            </value>
+            <value>
+                <fullName>webinar</fullName>
+                <default>false</default>
+                <label>webinar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

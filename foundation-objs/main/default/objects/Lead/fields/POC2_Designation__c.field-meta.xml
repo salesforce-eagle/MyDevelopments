@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POC2_Designation__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>POC2 Designation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>Accounts Manager</fullName>
+                <default>false</default>
+                <label>Accounts Manager</label>
+            </value>
+            <value>
+                <fullName>Accounts Officer</fullName>
+                <default>false</default>
+                <label>Accounts Officer</label>
+            </value>
+            <value>
+                <fullName>AGM Finance</fullName>
+                <default>false</default>
+                <label>AGM Finance</label>
+            </value>
+            <value>
+                <fullName>AGM Finance &amp; Taxation</fullName>
+                <default>false</default>
+                <label>AGM Finance &amp; Taxation</label>
+            </value>
+            <value>
+                <fullName>AGM Taxation</fullName>
+                <default>false</default>
+                <label>AGM Taxation</label>
+            </value>
+            <value>
+                <fullName>Assistant Director</fullName>
+                <default>false</default>
+                <label>Assistant Director</label>
+            </value>
+            <value>
+                <fullName>Assistant IDT Manager</fullName>
+                <default>false</default>
+                <label>Assistant IDT Manager</label>
+            </value>
+            <value>
+                <fullName>Assistant Manager Accounts</fullName>
+                <default>false</default>
+                <label>Assistant Manager Accounts</label>
+            </value>
+            <value>
+                <fullName>Assistant Manager Finance</fullName>
+                <default>false</default>
+                <label>Assistant Manager Finance</label>
+            </value>
+            <value>
+                <fullName>Auditor</fullName>
+                <default>false</default>
+                <label>Auditor</label>
+            </value>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CA</label>
+            </value>
+            <value>
+                <fullName>CFO</fullName>
+                <default>false</default>
+                <label>CFO</label>
+            </value>
+            <value>
+                <fullName>Chief Accountant</fullName>
+                <default>false</default>
+                <label>Chief Accountant</label>
+            </value>
+            <value>
+                <fullName>DGM Finance</fullName>
+                <default>false</default>
+                <label>DGM Finance</label>
+            </value>
+            <value>
+                <fullName>Director Finance</fullName>
+                <default>false</default>
+                <label>Director Finance</label>
+            </value>
+            <value>
+                <fullName>Finance Controller</fullName>
+                <default>false</default>
+                <label>Finance Controller</label>
+            </value>
+            <value>
+                <fullName>Finance Head</fullName>
+                <default>false</default>
+                <label>Finance Head</label>
+            </value>
+            <value>
+                <fullName>Finance Manager</fullName>
+                <default>false</default>
+                <label>Finance Manager</label>
+            </value>
+            <value>
+                <fullName>General Manager Finance</fullName>
+                <default>false</default>
+                <label>General Manager Finance</label>
+            </value>
+            <value>
+                <fullName>General Manager IDT</fullName>
+                <default>false</default>
+                <label>General Manager IDT</label>
+            </value>
+            <value>
+                <fullName>General Manager Taxation</fullName>
+                <default>false</default>
+                <label>General Manager Taxation</label>
+            </value>
+            <value>
+                <fullName>IDT Head</fullName>
+                <default>false</default>
+                <label>IDT Head</label>
+            </value>
+            <value>
+                <fullName>Internal Auditor</fullName>
+                <default>false</default>
+                <label>Internal Auditor</label>
+            </value>
+            <value>
+                <fullName>IT Head</fullName>
+                <default>false</default>
+                <label>IT Head</label>
+            </value>
+            <value>
+                <fullName>Manager IT</fullName>
+                <default>false</default>
+                <label>Manager IT</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Senior Manager Accounts</fullName>
+                <default>false</default>
+                <label>Senior Manager Accounts</label>
+            </value>
+            <value>
+                <fullName>Senior Manager Finance</fullName>
+                <default>false</default>
+                <label>Senior Manager Finance</label>
+            </value>
+            <value>
+                <fullName>Tax Analyst</fullName>
+                <default>false</default>
+                <label>Tax Analyst</label>
+            </value>
+            <value>
+                <fullName>Taxation &amp; Legal Head</fullName>
+                <default>false</default>
+                <label>Taxation &amp; Legal Head</label>
+            </value>
+            <value>
+                <fullName>Vice President Finance</fullName>
+                <default>false</default>
+                <label>Vice President Finance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

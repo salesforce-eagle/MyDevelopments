@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Auto_Renewal_Product_Enablement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Auto Renewal Product Enablement</shortDescription>
+        <value>E-invoicing &amp; E-Way Bill,GST,TDS,Max</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KAM_Clause__c</fullName>
+    <externalId>false</externalId>
+    <label>KAM Clause</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KAM Clause by ClearTax</fullName>
+                <default>false</default>
+                <label>KAM Clause by ClearTax</label>
+            </value>
+            <value>
+                <fullName>KAM Clause by Channel Partner</fullName>
+                <default>false</default>
+                <label>KAM Clause by Channel Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

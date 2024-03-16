@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Implementation_End_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Date which is provided as Estimated Implementation End Date as per the Project Plan.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date which is provided as Estimated Implementation End Date as per the Project Plan.</inlineHelpText>
+    <label>Estimated Implementation End Date</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

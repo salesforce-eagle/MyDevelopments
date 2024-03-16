@@ -1,0 +1,317 @@
+<aura:component implements	= "force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,clients:availableForMailAppAppPage,clients:hasItemContext" 
+                controller 	= "CTX_CaseTracker_Class"
+                access		= "global"	>
+    
+    <aura:handler name		= "init" 
+                  value 	= "{!this}" 
+                  action	= "{!c.init}"/>
+    
+    <!--	Information for fetch Case	-->
+    <aura:attribute name = "getCaseNumber" 			type = "String" />
+    <aura:attribute name = "getCaseEmail" 			type = "String" />
+    <!--	Button and Data Visibility	-->
+    <aura:attribute name = "enableButton" 			type = "Boolean" />
+    <aura:attribute name = "disableFields" 			type = "Boolean" />
+    <aura:attribute name = "isResultAvailable" 		type = "Boolean" />
+    <aura:attribute name = "isEmailsAvailable" 		type = "Boolean" />
+    <aura:attribute name = "replayAllBlock" 		type = "Boolean" />
+    <!--	Response Details	-->
+    <aura:attribute name = "returnResult" 			type = "Object" />
+    <aura:attribute name = "tileMap" 				type = "List" />
+    <aura:attribute name = "caseDetails" 			type = "Object" />
+    <aura:attribute name = "caseEmails" 			type = "List" />
+    <aura:attribute name = "latestEmailMessage" 	type = "Object" />
+    
+    
+    <aura:attribute name = "caseNumber" 			type = "String" />
+    <aura:attribute name = "caseStatus" 			type = "String" />
+    <aura:attribute name = "caseSLA" 				type = "String" />
+    <aura:attribute name = "caseCreatedDate" 		type = "String" />
+    <aura:attribute name = "caseLastModifiedDate" 	type = "String" />
+    
+    <aura:attribute name = "showAccordion" 			type = "Boolean" />
+    <aura:attribute name = "showErrorMessage" 		type = "Boolean" />
+    <aura:attribute name = "showLoading" 			type = "Boolean" />
+    
+    <!-- For OTP Section -->
+    <aura:attribute name = "showOtpModal" 			type = "Boolean" />
+    <aura:attribute name = "getOTP" 				type = "String" />
+    <aura:attribute name = "comparingOTP" 			type = "String" />
+    <aura:attribute name = "ltngMinute" 			type = "Integer" default="05"/>
+    <aura:attribute name = "ltngSecond" 			type = "Integer" default="00"/>
+    <aura:attribute name = "ltngTimmer" 			type = "Integer" default="05:00" />
+    <aura:attribute name = "disableOtp" 		type = "boolean" default="false"/> 
+    
+    <aura:attribute name = "buttonLabel" 			type = "String" default = "Generate OTP" />
+    
+    <aura:attribute name = "errorMessage" 			type = "String"	default="Case Details to load here."/>
+    <!--	Custimzed Variables	-->
+    
+    <div class="headerImg">
+        <img class="logoClass slds-p-left_medium" src="{!$Resource.ClearLogo}" alt="User avatar"/>
+    </div>
+    <br/>
+    <div class="slds-text-title_caps slds-text-heading_large slds-text-title_bold slds-text-align_center slds-text-color_weak slds-m-bottom_medium">
+        {!$Label.c.Case_Tracker_Header}
+    </div>
+    
+    <!--	Tracker Block : START	-->
+    <div class="slds-grid slds-wrap">
+        
+        <span class="slds-size_1-of-3 slds-max-small-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-bottom__x-large">
+            <lightning:card title 		= "Provide Your Details" 
+                            iconName	= "standard:case" 
+                            class		= "box_size">
+                
+                <span class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+                    <div class="slds-grid slds-wrap slds-p-left_medium slds-p-right_medium">
+                        <p class="slds-size_7-of-7">
+                            <lightning:input name			= "casenumber"	
+                                             value			="{!v.getCaseNumber}"	
+                                             label			= "Case Number" 
+                                             placeholder	= "Enter Case Number Here.."
+                                             disabled		= "{!v.disableFields}"/> 
+                        </p>
+                    </div>
+                    
+                    <div class="slds-grid slds-wrap slds-p-left_medium slds-p-right_medium">
+                        <p class="slds-size_7-of-7 slds-p-bottom_medium"> 
+                            <lightning:input name="caseEmail" 	
+                                             value			= "{!v.getCaseEmail}" 	
+                                             label			= "Contact Email" 	
+                                             placeholder	= "Enter email through which you created case .."
+                                             disabled		= "{!v.disableFields}"/></p>
+                    </div>
+                    
+                    
+                    <p class="slds-p-left_medium">
+                        <lightning:button class 	= "slds-button slds-button_neutral"
+                                          variant	= "brand" 
+                                          label		= "{!v.buttonLabel}" 
+                                          title		= "Submit" 
+                                          onclick	= "{! c.getCaseDetails }" 
+                                          disabled	= "{!v.disableFields}" />
+                        
+                        <lightning:button class 	= "slds-button slds-button_neutral"
+                                          variant	= "brand"
+                                          label		= "Clear" 
+                                          title		= "Clear" 
+                                          onclick	= "{! c.handleClear }" />
+                    </p>
+                </span>  
+            </lightning:card>
+        </span>
+        
+        
+        <span class="slds-size_2-of-3 slds-max-small-size_1-of-1 slds-p-right_medium slds-p-bottom_medium">
+            <lightning:card title		= "Case Details" 
+                            iconName	= "standard:case" 
+                            class		= "box_size">
+                <aura:if isTrue="{!v.isResultAvailable}">
+                    <div class ="slds-m-left_xx-large"> 
+                        <c:CTX_GenericLightningTileComponent tileLabel = "My Case Details" 
+                                                             tileMap = "{!v.tileMap}"	/>
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left slds-p-left_large">
+                                <b>{!$Label.c.Case_Tracker_Error}</b>
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.showLoading}">
+                    <div class="exampleHolder">
+                        <lightning:spinner alternativeText="Loading" size="medium" />
+                    </div>
+                </aura:if>
+                
+                <aura:if isTrue="{!v.showErrorMessage}">
+                    <div class="slds-clearfix">
+                        <div class="slds-p-left_large slds-p-right_large slds-p-top_large">
+                            <ui:message title="Oops!" severity="info" closable="true">
+                                No Case found for this Case ID and Email
+                            </ui:message>
+                        </div>
+                    </div>
+                </aura:if>
+            </lightning:card>
+        </span>
+        
+        
+        
+        
+        <br/>
+        
+    </div>
+    
+    <!-- OTP Modal Block -->
+    
+    <aura:if isTrue="{!v.showOtpModal}">
+             
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{!c.handleClear}"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Enter OTP</h2>
+                    </header>
+
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>We have sent an OTP on {!v.getCaseEmail}.<br/><br/> Please Enter the OPT here.<br/>
+                            </b>
+                            
+                            <div class="slds-p-top_x-small slds-p-bottom_x-small">
+                                <lightning:input aura:id		= "inputOTP"
+                                                 name			= "OTP"	
+                                                 value			= "{!v.getOTP}"	
+                                                 label			= "OTP" 
+                                                 placeholder	= "Enter OTP Here.."
+                                                 disabled		= "{!v.disableOtp}"/> 
+                            </div>
+                            
+                            <aura:if isTrue="{!!v.disableOtp}">
+                                <b>Your OTP will be valid for : {!v.ltngTimmer}</b>
+                                <aura:set attribute="else">
+                                    <div class="slds-clearfix">
+                                        <div class="slds-float_center">
+                                            <b style="color:red">Session Expired. Please cancel and retry.</b>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                            
+                            
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{!c.handleClear}"/>
+                        <lightning:button variant	= "brand"
+                                          label		= "Submit"
+                                          title		= "Submit"
+                                          onclick	= "{!c.submitOTP}"
+                                          disabled	= "{!v.disableOtp}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    
+    <!--	Child Component Blocks	-->
+    
+    <aura:if isTrue="{!v.replayAllBlock}">
+        <c:CTX_CustomMessaging latestEmailMessage 	= "{!v.latestEmailMessage}" 
+                               getCaseEmail 		= "{!v.getCaseEmail}" 
+                               hideBlock 			= "{!v.replayAllBlock}"	/>
+    </aura:if>
+    
+    <!--	Email Communication Block	-->
+    <aura:if isTrue="{!v.isEmailsAvailable}">
+        
+        <center>
+            <div class="slds-clearfix">
+                <div class="slds-float_center">
+                    <p>
+                        <lightning:button class 	= "slds-button slds-button_neutral"
+                                          variant	= "brand"
+                                          label		= "Click here to contact your support agent" 
+                                          title		= "Click here to contact your support agent" 
+                                          onclick	= "{! c.handleReplay }" />
+                    </p>
+                </div>
+            </div>
+        </center>
+        
+        
+        <div class="slds-grid slds-size_20-of-20">
+            
+            <div class="slds-col slds-size_2-of-20 slds-p-left_small">
+                <span><lightning:icon iconName="standard:email" alternativeText="Email" title="Email" /></span>
+            </div>
+            <div class="slds-col slds-size_17-of-20 slds-p-left_small slds-p-top_x-small">
+                <span>  <div class="slds-text-title_caps slds-text-heading_large slds-text-title_bold slds-text-align_center slds-text-color_weak slds-m-bottom_medium">
+                    Track Your Email Communication
+                    </div></span>
+            </div>
+            
+        </div>
+            
+            
+            
+        
+        <lightning:accordion aura:id					= "accordion" 
+                             title						= "Email Section" 
+                             allowMultipleSectionsOpen	= "true"	>
+            <aura:iteration items="{!v.caseEmails}" var="item">
+                <div class="slds-col slds-grid slds-size_1-of-10">
+                    <div class="slds-col slds-size_1-of-10"> </div>
+                    <div class="slds-col slds-size_6-of-8">
+                        <span>
+                            <lightning:accordionSection name	= "From" 
+                                                        label	= "{! 'Email From: '+ item.FromName +' On: '+item.CreatedDate}"  >
+                                <dl class="slds-dl_horizontal">
+                                    
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate" title="From">From:</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate" title="{!item.FromName}">{!item.FromName}({!item.FromAddress})</p>
+                                    </dd>
+                                    
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate" title="To">To:</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate" title="{!item.ToAddress}">{!item.ToAddress}</p>
+                                    </dd>
+                                    
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate" title="From">Time Stamp:</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate" title="{!item.CreatedDate}">{!item.CreatedDate}</p>
+                                    </dd>
+                                    
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate" title="Subject">Subject:</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate" title="{!item.Subject}">{!item.Subject}</p>
+                                    </dd>
+                                    
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate" title="Body">Body:</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p  title="{!item.TextBody}">
+                                            <lightning:formattedText class="widthForBody slds-truncate slds-hyphenate no-text-overflow" value="{!item.TextBody}" /></p>
+                                    </dd>
+                                    
+                                </dl>
+                            </lightning:accordionSection></span>
+                    </div>
+                </div>
+            </aura:iteration>
+        </lightning:accordion>
+        
+        
+        <aura:set attribute="else">
+            <center><b>No Emails Communications Available for this Service Ticket.</b></center>
+        </aura:set>
+        
+    </aura:if>    
+    
+    
+    
+    
+    
+    
+</aura:component>

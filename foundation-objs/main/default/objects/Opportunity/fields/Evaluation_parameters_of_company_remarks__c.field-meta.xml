@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_parameters_of_company_remarks__c</fullName>
+    <defaultValue>&quot;NA&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Deal evaluation parameters - remarks</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

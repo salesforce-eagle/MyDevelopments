@@ -1,0 +1,195 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EINV_EWB_SFTP_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           
+		   <b><u> Scope of Services for EINV and EWB API integration (NAVISION/ Business Central) - </u></b>
+            
+		    <p><b>a)Feature List of Cleartax E-Invoicing Software is as below</b></p>
+            
+			<table class="info-table">
+                <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li> Excel Ingestion option (Custom Mapper, govt. template, CT template).</li>
+                            <li>Excel / JSON output (In govt. template); for non-integrated clients.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Data Validation</td> 
+                    <td>
+                        <ul>
+                            <li>Validation check (for e-Invoice Schema, ANX-1, EWB Part A) on the invoice content.</li>
+                            <li>Sends invoice to Invoice Registration portal (IRP) for e-Invoice (Invoice Reference Number/QR code) generation.</li>
+                            <li>Collects the generated e-Invoice and QR code from IRP.</li>
+                        </ul>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td> 
+                        Custom invoice printing from IRP-signed JSON (incl. Digitally signed QR, co. logo, etc.)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>Basic MIS of historical e-invoicing activity on Cleartax</td>
+                </tr>
+                <tr>
+                    <td><b>Data Archive</b></td>
+                    <td></td>
+                    <td>Archiving and retrieval of e-invoices.</td>
+                </tr>
+            </table>
+            <br/>
+           
+                   	
+                        <p><b>b. Scope of Services for EINV and EWB API integration (NAVISION/ Business Central)
+ </b> </p><br/>
+ The deliverable shall encompass the designing and development of the following components.
+					<ol style="list-style-type: lower-roman;">
+                <li>Design and develop a dashboard in ERP (hereinafter referred to as ClearTax Compliance)</li>
+				<li>Design and develop an action to the posted sales document (Posted Sales Invoices and Posted Sales Credit Memos). 
+</li>
+				<li>The Logs to extract and list outward and inward documents from the source ERP shall cover  the following  ClearTax document types relevant for E-Invoicing - Invoice and  Credit Note for the transaction types B2B. 
+</li>
+				    <li>The logs shall display the status of E-Invoice actions at a document level. Based on the activity, the status of the documents may change with the success message and metadata (E-waybill number, IRN, QR Code, etc) or error message for the use of end-users.
+</li>
+				<li>Development will be done on 1 instance database of the NAV, No separate development will be done for any other instance database.</li>
+				<li>Document shall have an action button for one or more documents (Sales) to trigger the following actions for a single document:
+<ol style="list-style-type: decimal;">
+                <li>Generate IRN
+</li>
+				<li>Get E-Invoice PDF (Print)
+</li>
+				<li>Get E-Invoice by IRN
+</li>
+				<li>Get E-Invoice PDF (Print)
+</li>
+				<li>Generate E-Waybill by IRN
+</li>
+				<li>Get E-Waybill by IRN
+</li>
+				<li>Cancel E-Waybill
+</li>
+				<li>Get E-Waybill PDF (Print)
+</li>
+				
+				  </ol>
+				  
+</li>
+				    <li>The actions can be triggered as per the customer’s requirement from-<br/>On Click of Ul elements in the respective document.<br/>For each action specified above,
+<ol style="list-style-type: decimal;">
+                <li>Transform the source data/documents into the format acceptable by Cleartax APIs and/or in consonance with what is prescribed/acceptable by the Government.
+</li>
+				<li>Perform field-level validation and business validation checks as per Cleartax and Government API schema. 
+</li>
+				<li>Load the transformed data/ documents using RESTful APIs to the Cleartax application. </li>
+				  <li>Receive the response based on user action lil‹e generated IRN (Invoice Reference Number), signed e-Invoice, signed QR Code (Quick Response code), E-Waybill Number, Cancelled date, etc from Cleartax APIs along with additional information, errors, and other metadata.
+</li>
+				<li>Update the generated IRN, signed e-Invoice, signed QR Code, etc, and other metadata back‹ in the ERP.
+</li>
+				
+				  </ol>
+				  
+</li>
+				<li>Customize invoice printing to include the IRN and QR code within ERP - up to 3 custom invoices; 
+</li>
+				<li>Handle errors and exceptions for (i) Cleartax validations (ii) Internet downtime (iii) Cleartax API downtime
+</li>
+				  </ol>
+				  	
+						
+                    <ol style="list-style-type: lower-roman;">
+                        <li>Extract required data from ERP and place it on the customer SFTP server in an Excel or CSV file (input file for ClearTax) </li>
+						<li>Pick up data in Excel or CSV file (output file from ClearTax) from customer SFTP server and consume it.</li>
+						<li>Error handling and retry for errors in the response file.</li>
+						<li>Directory paths as per the structure defined by ClearTax.</li>
+						<li>Files as per the file naming convention must be as defined by ClearTax.</li>
+                    </ol>
+					
+					 <p><b>c. Scope Limitations and Customer Dependencies </b></p>
+                    <ol style="list-style-type: lower-roman;">
+					<li>Customers have to provide the range of objects from their licence range, Cleartax will not deal with any licence related to object purchase, Customers have to confirm the object range for 2 Tables, 5 Pages, and 2 Codeunit from their licence.
+</li>
+                        <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations 
+                            will need to be done by the customer's IT team.</li>
+                        <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra 
+                            team and the customer provides necessary access to Cleartax and its system integrator . 
+                            This activity should be done by the Customer within 5 working days from project kick-off date</li>
+                        
+                                        <li>Network: Cleartax does not provide end-to-end service on the network setup. 
+</li>
+				<li>Cleartax does not provide any support related to NAV functionality and localization.
+</li>
+				<li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.
+</li>
+				                <li>A remote connection / VPN / iVPN connectivity would be required at the delivery centre of ClearTax /its system integrator. Alternatively, the customer may provide a laptop  in case  VPN access cannot be provided.  If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. Skype or any other mode of remote access shall not be accepted  unless the Customer agrees to additionally pay for such remote access.
+</li>
+				<li>The customer shall share appropriate Business requirements/functional documentation about the system configuration with the consulting team for study and understanding.
+</li>
+				<li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.
+</li>
+				                <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). In the interest of timely completion of the project, all the test cases as per the functionalities agreed in the Scope of Work in this LOE are to be tested and UAT sign-off is to be provided by the customer within 14 days of moving the project to UAT. 
+</li>
+				<li>Once the UAT sign-off is provided the customer needs to give the necessary clearance to move the code to production within 7 days. 
+</li>
+				<li>In case the UAT sign-off is not provided within 14 days as per point (ix) above, the project will be deemed to have successfully gone live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer. </li>
+					
+					</ol>
+                  
+					
+                    <p><b>d. Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+                        the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+                        scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+                    <p>
+                        <b>e. Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+                        appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / 
+                            schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

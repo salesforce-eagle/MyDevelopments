@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_sub_status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Approval sub status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discount Approval in progress</fullName>
+                <default>false</default>
+                <label>Discount Approval in progress</label>
+            </value>
+            <value>
+                <fullName>Discount Approved</fullName>
+                <default>false</default>
+                <label>Discount Approved</label>
+            </value>
+            <value>
+                <fullName>Discount Rejected</fullName>
+                <default>false</default>
+                <label>Discount Rejected</label>
+            </value>
+            <value>
+                <fullName>MS Approval in progress</fullName>
+                <default>false</default>
+                <label>MS Approval in progress</label>
+            </value>
+            <value>
+                <fullName>MS Approval done</fullName>
+                <default>false</default>
+                <label>MS Approval done</label>
+            </value>
+            <value>
+                <fullName>MS Approval Rejected</fullName>
+                <default>false</default>
+                <label>MS Approval Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

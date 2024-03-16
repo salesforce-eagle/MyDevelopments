@@ -1,0 +1,153 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-22-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="body">
+        <template if:true={showToast}>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-notify_container">
+                    <div class={outerClass} role="status">
+                        <span class="slds-assistive-text">{type}</span>
+                        <span class={innerClass} title={message}>
+                            <lightning-icon icon-name={getIconName} alternative-text="icon" styleclass="slds-icon slds-icon_small" variant="inverse" size="small"></lightning-icon>
+                        </span>
+                        <div class="slds-notify__content">
+                            <h2 class="slds-text-heading_small">
+                                <lightning-formatted-rich-text value={message}>
+                                </lightning-formatted-rich-text>
+                            </h2>
+                        </div>
+                        
+                        <div class="slds-notify__close">
+                            <lightning-button-icon icon-name="utility:close" size="small" variant="border-filled" class="slds-button slds-button_icon slds-button_icon-inverse" alternative-text="next" onclick={closeModel} ></lightning-button-icon>
+                        </div>
+                    </div>
+                </div>
+            </div><!--<c-ctx_-toast-component type={type} message={message} icon={icon} onclosemodel={closeModel}></c-ctx_-toast-component>-->
+        </template>
+        <template if:true={isError}>
+			<div class="slds-var-m-around_medium">
+				<div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+					<span class="slds-assistive-text">error</span>
+					<span class="slds-icon_container slds-icon-utility-error slds-m-right_xx-small">
+						<lightning-icon icon-name="utility:error" size="xx-small" class="icon-color-close"></lightning-icon>
+					</span>
+					<div>
+						{errorMessage}
+					</div>
+					<div class="slds-notify__close">
+						<a onclick={closeError}  class="slds-modal__close">
+							<lightning-icon icon-name="utility:close" size="small" class="icon-color-close"></lightning-icon>
+						</a>
+					</div>
+				</div>
+			</div>
+		</template>
+        <div class="slds-var-p-top_medium">
+            <div class="slds-box slds-box_xx-small slds-theme_shade">
+                <h2>Record Type Selection</h2>
+            </div>
+            <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                <lightning-combobox
+                    name="RecordType"
+                    label="Record Type"
+                    value={recordType}
+                    placeholder="--none--"
+                    options={recordTypesOptions}
+                    onchange={handleRecordTypeChange} >
+                </lightning-combobox>
+            </div>
+
+            <template if:true={isPreSalesUser}>
+                <div>
+                <lightning-input 
+                class="slds-p-left_xx-large" 
+                type="checkbox" 
+                data-id="checkbox" 
+                label="Raised by pre-sales?"
+                onchange={handleChange} >
+            </lightning-input>
+            </div>
+        </template>
+
+
+
+            <div class="slds-scollable slds-var-p-top_medium">
+                <template if:true={isRecordTypeSelected}>
+                    <div class="slds-box slds-box_xx-small slds-theme_shade slds-var-p-top_medium">
+                        <h2>Case Details</h2>
+                    </div>
+                    
+                    <div style="position: relative;" class="slds-var-p-vertical_small">
+                        <lightning-record-edit-form 
+                            object-api-name={objectApiName} 
+                            record-type-id={recordTypeId}
+                            onsubmit={handleSubmit}
+                            onsuccess={handleSuccess}
+                            onerror={handleError}>
+                            
+                            <lightning-messages> </lightning-messages>
+                            <lightning-layout multiple-rows>
+                                <template for:each={fields} for:item="field">
+                                    <lightning-layout-item key={field.fieldName} size="6" padding="horizontal-small">
+                                        <lightning-input-field data-id={field.fieldName} field-name={field.fieldName} required={field.isRequired}></lightning-input-field>
+                                    </lightning-layout-item>
+                                </template>
+                            </lightning-layout>
+                            <div data-id="fileSelector" class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                <div class="slds-file-selector slds-file-selector_images">
+                                    <div class="slds-file-selector__dropzone">
+                                    <input type="file" class="slds-file-selector__input slds-assistive-text" onchange={handleFilesChange} multiple id="file-upload-input-123" aria-describedby="error-124" aria-labelledby="file-selector-primary-label-121 file-selector-secondary-label122" />
+                                    <label class="slds-file-selector__body" for="file-upload-input-123" id="file-selector-secondary-label122">
+                                        <span class="slds-file-selector__button slds-button slds-button_neutral">
+                                        <lightning-icon icon-name="utility:upload" size="x-small" class="slds-var-m-right_xx-small"></lightning-icon>Upload file</span>
+                                        <span class="slds-file-selector__text slds-show">or Drop File</span>
+                                    </label>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <template for:each={filesToUpload} for:item="file">
+                                        <tr key={file.Title}>
+                                            <td>
+                                                <label>{file.Title}</label>
+                                            </td>
+                                            <td>
+                                                <lightning-button-icon variant="bare" data-id={file.Title} icon-name="utility:delete"
+                                                    size="small" title="Delete" onclick={handleRemoveFile}></lightning-button-icon>
+                                            </td>
+                
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                            <div class="slds-align_absolute-center">
+                                <lightning-button class="slds-m-top_small slds-var-p-around_small" onclick={closeQuickAction} label="Cancel"></lightning-button>
+                                <lightning-button class="slds-m-top_small slds-var-p-around_small" variant="brand" type="submit" label="Save"></lightning-button>
+                            </div>
+                        </lightning-record-edit-form>
+                        <template if:true={showSpinner}>
+                            <div class="slds-spinner_container slds-grid">
+                                <div class="slds-align_absolute-center">
+                                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </template>
+                    </div>
+                    
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

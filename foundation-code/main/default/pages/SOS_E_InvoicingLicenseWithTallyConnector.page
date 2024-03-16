@@ -1,0 +1,212 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_E_InvoicingLicenseWithT_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+      <!--      <apex:panelGroup rendered="{!SOS17==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; 8. &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>-->
+            <b><u> Scope of Services for E-invoicing license with Tally Connector- </u></b>
+
+            <p> <b>a)  Feature List of Cleartax E-way Bill Software is as below</b>
+            </p>
+            
+            <table class="info-table">
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                    <td><b>Compliance</b></td>
+                    <td>E-way bill Preparation and Generation</td>
+                    <td>Support and generation of all E-way bills.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Advanced Generation Features</td>
+                    <td>Generate Consolidated E-way bill, Auto Regeneration of E-way bill, Bulk Print of all E-way bills, Bulk Update of Transporter details (Part B), Cancellation of  EWB &amp; Amendment.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Tax/Field Validation.</td>
+                    <td>Validation / Suggestion of correct rate of tax applied, and highlight the discrepancies. Real Time Error Update facility.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>User &amp; Role Management</td>
+                    <td>Create users with roles (admin, IT, tax accountant) and privileges (access to view/edit/delete data and tied to specific GSTIN’s).</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Dashboards and Interface portal (Web &amp; Mobile)</td>
+                    <td>Portal Accessible on web &amp; mobile. In built government notifications, acknowledgements.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>E-way bill update/Changes-Real time basis</td>
+                    <td>Future updates or changes in the NIC portal would be automatically transformed to ClearTax E-way bill Software provided to customer as part of upgradation to software</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>User Training</td>
+                    <td>Online training to finance team members on how to operate the software.</td>
+                </tr>
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports-Tax Ledger, State Wise</td>
+                    <td>Standard MIS reports (Recon of Sales/EWB Issued &amp; Purchase &amp; Inward EWB’s) etc other similar reports for:
+                        <ul>
+                            <li>Outward Supplies</li>
+                            <li>Inward Supplies</li>
+                            <li>CEWB Generated</li>
+                            <li>Cancelled Eway Bill</li>
+                            <li>Rejected E-way bills by me</li>
+                            <li>Assigned for transporters</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <p><b>
+                b)Features of Tally Connector</b>
+            </p>
+            <table class="info-table">
+                
+                <tr><th >Sr. No</th><th>Feature</th></tr>
+                <tr>
+                    <td>1</td>
+                    <td>IRN Generation for Invoice, Debit note and Credit note for the following transaction types B2B, SEZWOP, SEZWP, EXPWOP, EXPWP, DE </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>IRN Cancellation</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Print Invoice with IRN and QR code (for Tally Default Print out)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>EWB generation by IRN</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>EWB Cancellation by IRN</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Bulk generation and cancellation of IRNs/EWB</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Print EWB (Standard Print out)</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>B2C QR Code</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Offline Json Export</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Multi GSTIN Support</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Support<ul><li>               
+                        Link to user guide</li>
+                        <li>Link to support homepage</li>
+                        <li>Link to e-invoice law related content page</li>   </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Link to recon and MIS reports
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Link to Tally page on e invoicing product
+                        <ul><li>Reports for all eligible documents, generated/pending/cancelled</li></ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Option to enable/disable einvoicing at voucher level</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Option to change position of QR code at voucher level</td>
+                </tr></table>
+            <br/>
+            <p><b>c) Scope Limitations and Customer Dependenciess</b></p>
+            <ol style="list-style-type: lower-roman;">
+                <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations 
+                    will need to be done by the customer's IT team.</li>
+                <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra 
+                    team and the customer provides necessary access to Cleartax and its system integrator . 
+                    This activity should be done by the Customer within 5 working days from project kick-off date</li>
+                <li>Network: Cleartax does not provide end to end service on network set up.</li>
+                <li>Basis: Cleartax does not provide any support related to Basis.</li>
+                <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+                <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator.
+                    Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  If the Customer chooses to 
+                    provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. 
+                    Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees to additionally 
+                    pay for such remote access.</li>
+                <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration 
+                    with the consulting team for study and understanding.</li>
+                <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.</li>
+                <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). In the interest of timely 
+                    completion of the project, all the test cases as per the functionalities agreed in Scope of Work in this LOE are to be tested 
+                    and UAT sign-off to be provided by the customer within 14 days of moving the project to UAT.</li>
+                <li>Once the UAT sign-off is provided by the customer need to give necessary clearance to move the code to production within 7 days.</li>
+                <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, the project will be deemed to have successfully gone 
+                    live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer.</li>
+            </ol>
+            <p><b>d) Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+                the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+                scope of work for integration. It excludes
+            </p>
+            <ol style="list-style-type: lower-roman;">
+                <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+            </ol>
+            <p>
+                <b>e) Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+                appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+            </p>
+            <ol style="list-style-type: lower-roman;">
+                <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+            </ol>
+            <p>
+       Any overuse of the Services, exceeding the subscription/service details including the increase in the
+number of GSTN. Documents, User IDs, or PANs as set out in this Order Form, whether notified to
+Customer or not, will be charged additionally. Any increase in the number of invoices (Purchase or B2B
+Sales) would be charged at 2.0 per invoice. Any increase in the number of PANs would be charged at
+Rs. 10,000 per PAN Any increase in the number of GSTINs would be charged at Rs. 5,000 per GSTIN
+Any increase in the number of User IDs would be charged at Rs. 3,000 per User ID
+</p>
+           <apex:include pageName="{!nextPage39}"/>
+        </body>
+    </html>
+</apex:page>

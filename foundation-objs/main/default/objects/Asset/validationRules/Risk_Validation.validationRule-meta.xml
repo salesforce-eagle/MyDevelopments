@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND((TEXT( Risk_Status_by_KAM__c ) == &apos;Yes&apos;),   CreatedDate  &gt; DATETIMEVALUE(&quot;2021-09-17 00:00:00&quot;),
+(ISBLANK(TEXT(Churn_Reason__c)) || (ISBLANK(TEXT( Churn_Level_2_Reason__c )))
+ ))</errorConditionFormula>
+    <errorMessage>Please enter Churn / Risk Reason, Other Reason for Churn / Risk, Churn Level 2 Reason !</errorMessage>
+</ValidationRule>

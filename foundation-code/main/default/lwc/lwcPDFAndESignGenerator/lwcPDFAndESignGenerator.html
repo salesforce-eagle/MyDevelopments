@@ -1,0 +1,211 @@
+<template>
+    <lightning-card title="Update Esign and Order Form Details and Save Order Form" icon-name="custom:custom9">
+        <div if:true={showSpinner}>
+            <lightning-spinner variant="brand" alternative-text="Loading Cases" size="medium">
+            </lightning-spinner>
+       </div>
+       <div if:false={showSpinner}>
+        <div if:false={renderPDF}>
+            <lightning-record-edit-form record-id={recordId} object-api-name={objectApiName} onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                <lightning-messages></lightning-messages>
+                <div style={beforeNextStyle}>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-7"></div>
+                        <div class="slds-col slds-size_2-of-7">
+                            <!--<lightning-output-field field-name="Name" class="slds-form-element_stacked">
+                            </lightning-output-field>-->
+                            <lightning-input-field field-name="Name"
+                            class="slds-form-element_stacked" disabled="true"> 
+                        </lightning-input-field>
+                        <lightning-input-field field-name="Finance_approval_status__c" class="slds-hide"></lightning-input-field> 
+                        <lightning-input-field field-name="Total_Roll_Up_OTP__c" class="slds-hide"></lightning-input-field>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-7"></div>
+                        <div class="slds-col slds-size_2-of-7">
+                            <lightning-input-field data-id="EsignCategory" field-name="ESign_Category__c" required
+                                class="slds-form-element_stacked" value={methodValue} onchange={handleChange}> </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-7"></div>
+                    </div>
+
+                    <div if:false={condition}> <!--{ESign_Category__c = 'E-Sign'}-->
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-7"></div>
+                            <div class="slds-col slds-size_2-of-7">
+                                <!--<span style="color:red">*</span>--><lightning-input-field data-id="EsignOrder" field-name="Esign_Order__c"
+                                    value={EsignOrder}></lightning-input-field>
+                                    <lightning-input-field field-name="E_Sign_Customer_Info__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-7"></div>
+                            <div class="slds-col slds-size_2-of-7">
+                                <lightning-input-field field-name="E_Sign_Type__c" value={EsignType}></lightning-input-field>
+                                <lightning-input-field field-name="OTP_For_Electronic_Signature__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-7"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-7"></div>
+                            <div class="slds-col slds-size_2-of-7">
+                                <lightning-input-field field-name="CC__c"></lightning-input-field>
+                            </div>
+                        </div>
+                    </div>
+                    <lightning-button class="slds-m-top_small slds-text-align_center slds-align_absolute-center"
+                        label="Next" type="submit" onclick={onclickOfNext}>
+                        <!--type="submit" onclick={onclickOfNext}-->
+                    </lightning-button>
+                </div>
+                <div style={afterNextStyle}>
+                    <!--<lightning-accordion allow-multiple-sections-open>
+                    <lightning-accordion-section name="GeneralSection" label="General Section"> -->  
+                    <div style="background-color:#0070D2; color:white; padding:10px; font-size:large;">Customer And Billing Information</div>
+                    <br/>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Legal_Entity_Name_Of_The_Client__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                            <div if:true={recordTypeMethod}>
+                            <lightning-input-field field-name="Billing_GST__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                            <lightning-input-field field-name="PAN_No_as_per_PO__c" disabled={gstinVerificationBypassed}></lightning-input-field> 
+                        </div>
+                        <div if:false={recordTypeMethod}>
+                        <lightning-input-field field-name="VAT_Number_gcc__c" ></lightning-input-field>
+                        <lightning-input-field field-name="TIN_Number__c"></lightning-input-field>
+                    </div>
+                    <div if:true={recordTypeMethod}>
+                        <lightning-input-field field-name="If_SEZ__c" disabled={gstinVerificationBypassed}></lightning-input-field> 
+                    </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Place_of_Supply__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                            <div if:false={recordTypeMethod}>
+                                <lightning-input-field field-name="cr_number_gcc__c"></lightning-input-field>
+                            </div>  
+                            <div if:true={recordTypeMethod}>
+                            <lightning-input-field field-name="TAN__c"></lightning-input-field>
+                            <lightning-input-field field-name="CIN__c"></lightning-input-field>
+                        </div>
+                        </div>
+                    </div>
+                   <!--- </lightning-accordion-section>
+                    </lightning-accordion>-->
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Billing_Address__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Pincode__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Address_Line_2__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="City_2__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="State_2__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Shipping_Address__c" disabled={gstinVerificationBypassed}></lightning-input-field>
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="background-color:#0070D2; color:white; padding:10px; font-size:large;">Payment Details</div>
+                    <br/>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2"> 
+                            <lightning-input-field field-name="Finance_approval_status__c" class="slds-hide"></lightning-input-field>
+                            <lightning-input-field field-name="Total_Roll_Up_OTP__c" class="slds-hide"></lightning-input-field>
+                            <lightning-input-field field-name="Billing_F__c"></lightning-input-field>
+                            <lightning-input-field field-name="Billing_Frequency__c"></lightning-input-field>
+                            <lightning-input-field field-name="MS_Billing_Frequency__c"></lightning-input-field>
+                            <lightning-input-field field-name="Billing_Frequency_for_Integration_Prods__c"></lightning-input-field>
+                            <lightning-input-field field-name="Custom_Billing_Freq_for_Integration_Prod__c"></lightning-input-field>
+                            <lightning-input-field field-name="Billing_Method__c"></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Payment_Term__c"></lightning-input-field>
+                            <lightning-input-field field-name="Payment_Method__c"></lightning-input-field>
+                            <lightning-input-field field-name="Order_Id_Only_If_Razorpay_Payment__c"></lightning-input-field>
+                            <div if:false={recordTypeMethodCimply}>
+                                <lightning-input-field field-name="Billing_Frequency_for_retainership__c"></lightning-input-field>
+                            </div> 
+                            <div if:true={recordTypeInternational}>
+                                <lightning-input-field field-name="Fee_per_additional_usage__c"></lightning-input-field>
+                                <lightning-input-field field-name="GCC_Additional_period_months__c"></lightning-input-field>
+                                <lightning-input-field field-name="GCC_initial_term_months__c"></lightning-input-field>
+                            </div> 
+
+
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div if:true={gstAdvantageCheck}>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-input-field field-name="Special_Terms__c"></lightning-input-field>
+                        </div>
+                    </div>
+                </div>
+                    <br/>
+                    <div style="background-color:#0070D2; color:white; padding:10px; font-size:large;">Purchase Order Information</div>
+                    <br/>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-3">
+                            <lightning-input-field field-name="PO_Required__c"></lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3"></div>
+                        <div class="slds-col slds-size_1-of-3"></div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-3"><lightning-input-field field-name="PO_number__c"></lightning-input-field></div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-3"><lightning-input-field field-name="PO_Amount__c"></lightning-input-field></div>
+                    </div>
+                    <br/>
+                    <div style="background-color:#0070D2; color:white; padding:10px; font-size:large;">Contact Details</div>
+                    <br/>
+                    <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2"><lightning-input-field field-name="Company_Domain_Name__c"></lightning-input-field></div>
+                    <div class="slds-col slds-size_1-of-2"><lightning-input-field field-name="Master_admin_Email__c"></lightning-input-field></div>
+                </div>
+                    <p style="font-size:medium"> Contact Details</p>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2"><lightning-input-field  field-name="Bus_POC__c" >
+                        </lightning-input-field>
+                            
+                            <lightning-input-field   field-name="Finance_POC_contact__c" ></lightning-input-field>
+                           <lightning-input-field   field-name="IT_Head_contact__c" ></lightning-input-field></div>
+                            <div class="slds-col slds-size_1-of-2"><lightning-input-field  field-name="Finance_Head_contact__c" ></lightning-input-field>
+                            <lightning-input-field   field-name="Tax_Head_contact__c" ></lightning-input-field>
+                            <lightning-input-field   field-name="Company_Secretary__c" ></lightning-input-field></div>
+                            
+                        </div>
+
+                        
+                    <br />
+                    
+                    <lightning-button class="slds-m-top_small slds-text-align_center slds-align_absolute-center"
+                        type="submit" label="Update record and Create PDF" onclick={updateRecordAndCreatePDF}>
+                    </lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+        <div if:true={renderPDF}>
+            <!--<iframe height="400px" width="100%" src={vfURL}></iframe>-->
+            <!--<lightning:fileCard fileId="{orderFormFileId}" description="Sample Description"/>-->
+            <br/>
+            <lightning-button class="slds-m-top_small slds-text-align_center slds-align_absolute-center" variant="brand"
+                label="Save Order Form" onclick={saveOrderForm}>
+            </lightning-button>
+        </div>
+    </div>    
+    </lightning-card>
+</template>

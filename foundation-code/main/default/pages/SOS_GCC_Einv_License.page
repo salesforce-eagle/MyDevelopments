@@ -1,0 +1,54 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_Einv_License_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body style="font-family:Times New Roman !important;font-size:12px;">
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <p>
+                <b>Scope of Services for E-invoicing License</b>
+            </p>   
+            <p>
+                ClearTax to provide KSA E-invoicing solution with following features :
+            </p>
+            <ul>
+                
+                
+                <li>Generate Tax invoices, Simplified Tax invoices and their associated Credit/ debit notes</li>
+                <li>Cloud solution for generation, storage &amp; retrieval of e-invoices</li>
+                <li>E-invoice generation as per ZATCA guidelines</li>
+                <li>Connectivity with ZATCA platform for Clearance or Reporting of invoices</li>
+                <li>Invoices in English and Arabic</li>
+                <li>Smart data validations</li>
+                <li>Emailing of invoices (if applicable)</li>
+                <li>KSA data residency and data privacy</li>
+                <li>Enterprise grade security</li>
+                <li>User access management</li>
+                <li>Standard MIS and dashboards</li>
+                <li>Historical data storage and retrieval  (if applicable)</li>
+                <li>Helpdesk support (remote)</li>
+            </ul>
+            
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

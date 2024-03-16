@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Live_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Project_Stage__c,	&apos;Live&apos;),
+IF(NOT(ISBLANK(Go_Live_Date__c)), iF(Go_Live_Date__c &gt;  Benchmark_Date_Live__c ,
+&quot;RED&quot;,
+&quot;GREEN&quot;),
+IF(TODAY() &gt; Benchmark_Date_Live__c,
+&quot;RED&quot;,
+&quot;GREEN&quot;)),&apos;NA&apos;)</formula>
+    <label>Live Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsell</fullName>
+    <active>true</active>
+    <label>Upsell</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Finance Approval Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Approval In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Approval Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ESign_Category__c</picklist>
+        <values>
+            <fullName>E-Sign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical Sign</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>E_Sign_Status__c</picklist>
+        <values>
+            <fullName>E-Sign Request Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Sign Successful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Sign Unsuccessful</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>E_Sign_Type__c</picklist>
+        <values>
+            <fullName>Aadhar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Esign_Order__c</picklist>
+        <values>
+            <fullName>CTX First</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client First</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OTP_For_Electronic_Signature__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Retrigger_E_Sign__c</picklist>
+        <values>
+            <fullName>Resend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Successfully</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Billing Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Stage__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

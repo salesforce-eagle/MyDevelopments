@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Delay_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Onboarding Delay Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client availability</fullName>
+                <default>false</default>
+                <label>Client availability</label>
+            </value>
+            <value>
+                <fullName>Client not responding</fullName>
+                <default>false</default>
+                <label>Client not responding</label>
+            </value>
+            <value>
+                <fullName>Integration pending</fullName>
+                <default>false</default>
+                <label>Integration pending</label>
+            </value>
+            <value>
+                <fullName>Prerequisites not available to customer</fullName>
+                <default>false</default>
+                <label>Prerequisites not available to customer</label>
+            </value>
+            <value>
+                <fullName>Legal dependency</fullName>
+                <default>false</default>
+                <label>Legal dependency</label>
+            </value>
+            <value>
+                <fullName>MSA issues</fullName>
+                <default>false</default>
+                <label>MSA issues</label>
+            </value>
+            <value>
+                <fullName>Scope not clear – sales commitment vs actual</fullName>
+                <default>false</default>
+                <label>Scope not clear – sales commitment vs actual</label>
+            </value>
+            <value>
+                <fullName>Product dependencies / requirements</fullName>
+                <default>false</default>
+                <label>Product dependencies / requirements</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

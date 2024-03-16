@@ -1,0 +1,237 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Assist_Outward_Supply_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR-1')}">
+            <b><u> Scope of Services for Assistance in uploading outward Supply transaction data on GSTN portal 
+(GSTR-1)
+ - </u></b>
+       <p>      
+          Cleartax will provide following services to the Customer holding GST Registrations in various states, 
+          using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’). 
+          The following activities shall be undertaken in GST compliance services:</p>
+<p> <b>Services and Customer Responsibilities:  </b> </p>           
+            
+            
+            <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP with mandatory fields being available.</li>
+                <li>Cleartax to reconcile the sales registers provided by the Customer with draft GSTR-1(auto-computed in the GST portal basis generation of e-invoice). Cleartax to review  
+<ol style="list-style-type: decimal;">
+                <li>Outward supplies (including Zero Rated Supply and Advances on services).</li>
+                <li>Reconcile with the monthly trial balance / GL’s (if provided by the Customer).
+</li>
+                <li>Place of supply and appropriate tax head charged (considering the buyer’s GSTIN).
+</li>
+                <li>Reconcile draft GSTR-1(i.e, auto-populated data in the GST portal basis generation of e-invoice) with sales register to identify differences in sales register v/s e-invoice summary</li>
+                <li>Addition/deletion of additional invoices while preparation of GSTR-1 on the basis of reconciled summary of draft GSTR-1(e-invoice summary) v/s sales register.
+</li>
+                            
+                  </ol></li>
+                  Cleartax shall run a reconciliation for identification of gaps. This will enable identification of the errors in the data received from the Customer and mismatches identified in the reconciliation summary of Draft GSTR-1 v/s sales register, will be highlighted.
+Acting on the said errors and mismatches, in the books of accounts/ IT system of the Customer, shall be the sole responsibility of the Customer.
+
+                <li><b>Assist in uploading the outward transaction data on GSTN portal</b><br/>  The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+</li>
+                
+            </ol>
+            
+            </apex:outputText>
+
+          <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR-3B')}">
+          
+            <b><u> Scope of Services for Assistance in uploading summary of Outward and Inward Supply details on GSTN portal 
+(GSTR-3B)
+
+ - </u></b>
+  <p>      
+          Cleartax will provide following services to the Customer holding GST Registrations in various states, 
+          using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’). 
+          The following activities shall be undertaken in GST compliance services:</p>
+          <p> <b>Services and Customer Responsibilities:  </b> </p> 
+          
+          <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP (if any, in addition to data provided in Inward Register)</li>
+                <li>Cleartax shall:
+ <ul>
+                <li>Review inward supplies (including Imports / ISD)</li>
+                <li>Review inward supplies attracting GST under RCM and computing the same for liability.
+</li>
+              
+                <li>Identify if the credit is to the extent of prescribed limit, basis ITC Reconciliation Report;
+</li>
+                <li>Review reversals required under Law (after receiving the necessary details, if applicable / any).
+</li>
+                <li>Indicate the tax liability (incl. RCM) to be discharged (after manually setting off available ITC balance plus any balance in ECL’s).
+</li>
+                
+                <li>Setting off the liability in the return, after the Customer had discharged the tax liability.
+</li>
+
+                  </ul>
+                 Completeness and accuracy of the data provided and passing the necessary ITC set off / IRC 
+                reversal entries and discharging the GST liability, shall be the sole responsibility of the Customer.
+                  
+                  
+                  </li>
+                <li><b>Assist in uploading the above data on GSTN portal</b><br/>The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+
+</li>
+                  </ol>
+              </apex:outputText>
+              <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR-6')}">
+                  
+                            <b><u> Scope of Services for Assistance in uploading data related to Input Service Distributor (ISD) on GSTN portal 
+(GSTR-6) (if applicable) - </u></b>  
+                  
+                  <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP (if any, in addition to data provided in Inward Register)
+</li>
+                <li>Cleartax shall:
+                  <ul>
+                <li>Review Purchase register, showing procurement of services only (domestic / imports).</li>
+                <li>Check that no ITC is being distributed on procurement of goods.
+</li>
+                <li>Review eligibility of such inward supplies (on sample basis).
+</li>
+                <li>Assist in reconciliation of Inward Register with GSTR-6A.
+</li>
+                <li>Assist in identifying the amount to be distributed to the branch entities</li>
+                <li>Identify if the Customer has to raise an ISD Invoice and send to branch entities.
+</li>
+                 
+                 </ul>
+                 Completeness and accuracy of the data provided and passing the necessary transfer journal entries, shall be the sole responsibility of the Customer.
+
+                
+</li>
+                <li><b>Assist in uploading the above data on GSTN portal </b>- The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+
+</li>
+                  </ol>
+                  </apex:outputText>
+                 <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR ITC-04')}"> 
+                  
+                   <b><u> Scope of Services for Assistance in uploading data related to goods / capital goods sent to Job Worker on GSTN portal 
+(GSTR ITC-04) (if applicable)
+ - </u></b> 
+ 
+ <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP with mandatory fields being available.</li>
+                <li> Cleartax shall review:
+      <ul>
+                <li>Details of input and / or capital goods sent from Customer (i.e., Principal Manufacturer) to job worker.</li>
+                <li>Details of input and / or capital good received back from job worker to Principal Manufacturer.
+</li>
+                <li>Eligibility of such inward supplies (on sample basis).
+</li></ul>
+Acting on the errors and mismatches highlighted by Cleartax, in the books of accounts/ IT system of the Customer, shall be the sole responsibility of the Customer.
+<br/>
+Completeness and accuracy of the data provided and passing the necessary transfer journal entries, shall be the sole responsibility of the Customer.
+
+                  </li>
+            <li><b>Assist in uploading the above data on GSTN portal </b>- The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+
+</li>
+                  </ol>
+                     </apex:outputText>
+                <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR-7')}">  
+                <b><u> Scope of Services for Assistance in uploading data related to TDS on GSTN portal
+(GSTR-7)(if applicable)
+
+
+ - </u></b>   
+ <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP with mandatory fields being available</li>
+                <li>Cleartax shall review:
+  
+                  <ul>
+                <li>Details of tax deducted at source.
+</li>
+                <li>Changes if any, to details of tax deducted at source.
+</li>
+                
+                  </ul> Acting on the errors and mismatches highlighted by Cleartax, in the books of accounts/ IT system of the Customer, shall be the sole responsibility of the Customer.
+<br/>
+Completeness and accuracy of the data provided and passing the necessary transfer journal entries, shall be the sole responsibility of the Customer.
+</li>
+                <li><b>Assist in uploading the above data on GSTN portal </b>- The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+
+</li>
+                  </ol>
+                    </apex:outputText>
+                  <apex:outputText rendered="{!contains(Type_of_Compliance_service,'GSTR-8')}">
+                            <b><u> Scope of Services for Assistance in uploading data related to e-commerce operators on GSTN portal
+(GSTR-8) (if applicable)
+
+
+
+ - </u></b>   
+                  <ol style="list-style-type: decimal;">
+                <li>Customer to provide the data from their ERP with mandatory fields being available
+</li>
+                <li>Cleartax shall review:  <ul>
+                <li>Details of supplies made through e-commerce operators.
+</li>
+                <li>Changes if any, to details of supplies made in earlier statement.
+</li>
+                  </ul>Acting on the errors and mismatches highlighted by Cleartax, in the books of accounts/ IT system of the Customer, shall be the sole responsibility of the Customer.
+<br/>Completeness and accuracy of the data provided and passing the necessary transfer journal entries, shall be the sole responsibility of the Customer.
+
+</li>
+                <li><b>Assist in uploading the above data on GSTN portal </b>- The responsibility of approving and filing in the GSTN portal shall be the sole responsibility of the Customer.
+
+</li>
+                  </ol>
+                  </apex:outputText>
+                  <apex:outputText rendered="{!contains(Type_of_Compliance_service,'Return filing summary')}">
+                  <b><u> Scope of Services for Assistance in creating return filing summaries
+ - </u></b> 
+ <ol style="list-style-type: decimal;">
+                <li>Cleartax will share the return filing summary at regular interval with the Customer.
+</li>
+                <li>The summaries mentioned below gives an overview and insights on overall GST compliance health of Customer’s business and associated GSTIN:
+                  <ul>
+                <li>GSTR 3B vs GSTR 1 Tax Comparison summary.
+</li>
+                <li>GSTR 3B vs GSTR 2A ITC Comparison summary.
+</li>
+                <li>Multi month GSTR 2A summary.
+</li>
+                 <li>Monthly Tax and ITC summary.
+</li>
+                <li>GST Filing Status summary.
+</li>
+                <li>GSTR 1 Filed summary.
+</li>
+                <li>Multi- month GSTR 3B filed summary.
+</li>
+                  </ul>The summaries will be accessible on Cleartax GST Technology Platform, and the Customer can download the same at any given point of time.
+
+</li>
+                
+                  </ol>
+                      </apex:outputText>
+            <apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

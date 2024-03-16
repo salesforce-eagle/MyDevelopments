@@ -1,0 +1,545 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SubscriptionCharges_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:78px;
+                margin-top:2px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                <!-- Not working
+.text-catplize{
+text-transform : capitalize;
+}-->
+                .headding-box{
+                font-size : 10px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 2px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 2px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:auto;
+                page-break-after: avoid !important;
+                table-layout: fixed !important;
+                width:100%;}
+                
+                tr { 
+                page-break-inside:avoid; 
+                page-break-after:avoid;
+                word-wrap: break-word;
+                max-width:10%;}
+                
+                th {
+                page-break-inside:avoid; 
+                page-break-after:avoid;
+                word-wrap: break-word;
+                max-width:10%;
+                }
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px;
+}-->    
+        </head>
+        <!--To Shift the Subscription table in the new/next page--> 
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;">
+            <apex:panelGroup rendered="{!(listOfARRProdsWrapper.size > 0) && NOT(cimplifiveCheck)}">
+                <!--<div class="headding-box"> &nbsp;&nbsp;&nbsp;SUBSCRIPTION CHARGES AND TERMS </div><br/>-->
+                <b>SUBSCRIPTION CHARGES AND TERMS</b>
+                <br/><br/>
+                <table class="info-table" > <!-- style="-Fs-table-paginate: paginate" -->
+                    <tr>
+                        <th style="width:5%">S.No</th>
+                        <apex:outputText rendered="{!NOT(gccCheck)}">   
+                            <th style="width:50%">Products and Services</th>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!gccCheck}">    
+                            <th style="width:38%">Services</th>
+                        </apex:outputText>
+                        <th style="width:5%">Term<br/>(Months)</th>
+                        <th style="width:6%">Start Date<br/></th>
+                        <th style="width:6%">End Date<br/></th>
+                        <apex:outputText rendered="{!IF(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck), TRUE, FALSE)}">
+                            <th style="width:6%">List Price<br/></th>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck), TRUE, FALSE)}">
+                            <th style="width:6%">One Time Discount<br/></th>
+                        </apex:outputText>
+                        
+                        <!--<th style="width:10%">ARR Annual</th>-->
+                        
+                        <apex:outputText rendered="{!(NOT(gccCheck) && NOT(netNewIDInvoiceDiscountingTransactionalCheck) && NOT(netNewIDTenorExtension))}">    
+                            <th style="width:14%">Subscription charges for the Term (INR)</th>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!gccCheck}">    
+                            <th style="width:34%">Fee for the Term (SAR)</th>
+                        </apex:outputText>
+                        
+                       <!-- <apex:outputText rendered="{!netNewIDInvoiceDiscountingTransactionalCheck && IF(((syncedQuote.Flat_Transaction_Fee__c != NULL && syncedQuote.Flat_Transaction_Fee__c != 0) || syncedQuote.Flat_Tenor_Extension_Fees__c != NULL),true,false)}">
+                            <th style="width:14%">Transaction Fees (%)</th>
+                        </apex:outputText>
+                        
+                                         
+                        <apex:outputText rendered="{!NOT(netNewIDInvoiceDiscountingTransactionalCheck) && IF( syncedQuote.Flat_Tenor_Extension_Fees__c != NULL,true,false)}">
+                            <th style="width:14%">Transaction Fees (%)</th>
+                        </apex:outputText>-->
+                        
+     
+                       
+                      <!--  <apex:outputText rendered="{!netNewIDInvoiceDiscountingTransactionalCheck && NOT(hideTransactionSlabTable) && IF(syncedQuote.Flat_Transaction_Fee__c == NULL || syncedQuote.Flat_Transaction_Fee__c == 0 ,true,false)}">
+                            <th style="width:10%">Transaction Fees (%)</th>
+                        </apex:outputText>-->
+                        
+                        
+                         <apex:outputText rendered="{!netNewIDCheck && (netNewIDInvoiceDiscountingTransactionalCheck || netNewIDTenorExtension || NOT(hideTransactionSlabTable))}">
+                            <th style="width:10%">Transaction Fees (%)</th>
+                        </apex:outputText>
+                        
+                        <!--style="width:5%"  style="width:30%"  style="width:5%"  style="width:20%"  style="width:20%"  style="width:20%"-->
+                        
+                    </tr>
+                    <apex:outputText rendered="{IF(listOfARRProdsWrapper = NULL, True, False)}">
+                        <tr>
+                            <td>N/A</td> 
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td> 
+                            <td>N/A</td> 
+                            <!--<td>{!eachARR.AnnualARR}</td>-->
+                            <td>N/A</td>
+                            
+                            
+                            
+                        </tr>
+                    </apex:outputText>
+                    <apex:repeat value="{!listOfARRProdsWrapper}" var="eachARR">
+                        
+                        <tr>
+                            
+                            <!--{!eachARR.productCode}-->
+                            <!--{!prodCodeURLMap}-->
+                            <!-- {!prodCodeURLMap[eachARR.productCode]}-->
+                            <td>{!eachARR.SLNO}</td> 
+    
+                                <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL' }">
+                                    <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}
+                                        <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                            - {!eachARR.Description}
+                                        </apex:outputText></a></td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                    <td>{!eachARR.orderFormProductName}
+                                         <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                            - {!eachARR.Description}
+                                        </apex:outputText>
+                                    </td>
+                                </apex:outputText>
+                    
+                         
+                            <td>{!eachARR.termMonths}</td>
+                            <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.periodStartDate}"/></apex:outputText></td> 
+                            <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.periodEndDate}"/></apex:outputText></td> 
+                            <!--<td>{!eachARR.AnnualARR}</td>-->
+                            
+                            <apex:outputText rendered="{!IF(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && (eachARR.orderFormListPrice <= eachARR.listPrice) && (eachARR.listPrice - eachARR.feeForTheTerm ) > 0 && NOT(isSingleArr) && NOT(eachARR.calcBasedOnOrderFormPrice) && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck), TRUE, FALSE)}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.listPrice)}"/></apex:outputText></td>
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.listPrice - eachARR.feeForTheTerm)}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && (eachARR.orderFormListPrice <= eachARR.listPrice) && (eachARR.listPrice - eachARR.feeForTheTerm ) > 0 && NOT(isSingleArr) && eachARR.calcBasedOnOrderFormPrice && NOT(gccCheck) && NOT(cimplifiveCheck)  && NOT(netNewIDCheck), TRUE, FALSE)}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.orderFormListPrice)}"/></apex:outputText></td>
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.orderFormListPrice - eachARR.feeForTheTerm)}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && (eachARR.orderFormListPrice > eachARR.listPrice) && (eachARR.orderFormListPrice - eachARR.feeForTheTerm) > 0 && NOT(isSingleArr) && NOT(gccCheck) && NOT(cimplifiveCheck)  && NOT(netNewIDCheck), TRUE, FALSE)}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.orderFormListPrice)}"/></apex:outputText></td>
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.orderFormListPrice - eachARR.feeForTheTerm)}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF( ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && (eachARR.orderFormListPrice <= eachARR.feeForTheTerm)&& (eachARR.ListPrice <= eachARR.feeForTheTerm) && (eachARR.orderFormListPrice > eachARR.listPrice) && NOT(isSingleArr) && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck), TRUE, FALSE)}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.orderFormListPrice)}"/></apex:outputText></td>  
+                                 <td></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF( ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && (eachARR.orderFormListPrice <= eachARR.feeForTheTerm)&& (eachARR.ListPrice <= eachARR.feeForTheTerm) && (eachARR.orderFormListPrice <= eachARR.listPrice) && NOT(isSingleArr) && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck), TRUE, FALSE)}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!(eachARR.ListPrice)}"/></apex:outputText></td>  
+                                 <td></td>
+                            </apex:outputText>
+
+                                                        
+                            <apex:outputText rendered="{!(IF(eachARR.feeForTheTerm != 0 ,true,false) && NOT(netNewIDInvoiceDiscountingTransactionalCheck) && NOT(isSingleArr))}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!(isSingleArr && ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && eachARR.SLNO == 1 && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck))}">
+                                <td rowspan="{!listOfARRProdsWrapper.size}" style="text-align: center">{!roundOffArrListPriceOF}</td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20 && isSingleArr && eachARR.SLNO == 1 && NOT(gccCheck) && NOT(cimplifiveCheck) && NOT(netNewIDCheck))}">
+                                <td rowspan="{!listOfARRProdsWrapper.size}" style="text-align: center">{!roundOffArrDiscountedPriceOF} ({!roundOffArrDiscountOF }%) </td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!(isSingleArr && eachARR.SLNO == 1 && NOT(gccCheck) && NOT(netNewIDCheck) && NOT(cimplifiveCheck))}">
+                                <td rowspan="{!listOfARRProdsWrapper.size}" style="text-align: center">{!roundoffArr}</td>
+                            </apex:outputText>
+                            
+                            <!--<apex:outputText rendered="{!(IF(eachARR.feeForTheTerm != 0 ,true,false) && NOT(netNewIDInvoiceDiscountingTransactionalCheck))}" value="{0,number, ###,###,###.##}"><td><apex:param value="{!eachARR.feeForTheTerm}"/></td></apex:outputText>-->
+                            
+                            <apex:outputText rendered="{!(IF(eachARR.feeForTheTerm == 0 || eachARR.feeForTheTerm == NULL,true,false) && NOT(netNewIDInvoiceDiscountingTransactionalCheck))}"><td>N/A</td></apex:outputText>
+                            <apex:outputText rendered="{!netNewIDCheck}"> 
+                                <apex:outputText rendered="{!(NOT(hideTransactionSlabTable) && eachARR.productCode != 'ID_TENOR' && netNewIDInvoiceDiscountingTransactionalCheck && IF(syncedQuote.Flat_Transaction_Fee__c == NULL || syncedQuote.Flat_Transaction_Fee__c == 0 ,true,false))}"><td>As per “Throughput based pricing” table</td></apex:outputText>
+                                
+                                <apex:outputText rendered="{!(IF(eachARR.productCode != 'ID_TENOR' && syncedQuote.Flat_Transaction_Fee__c != NULL && syncedQuote.Flat_Transaction_Fee__c != 0 ,true,false) && netNewIDInvoiceDiscountingTransactionalCheck)}"><td>{!syncedQuote.Flat_Transaction_Fee__c}</td></apex:outputText>
+                                <apex:outputText rendered="{!(IF(eachARR.productCode != 'ID_TENOR' &&  hideTransactionSlabTable && (netNewIDInvoiceDiscountingTransactionalCheck || netNewIDTenorExtension ) && syncedQuote.Flat_Transaction_Fee__c == NULL || syncedQuote.Flat_Transaction_Fee__c == 0,true,false))}"><td></td></apex:outputText>
+                                <apex:outputText rendered="{!(IF(eachARR.productCode == 'ID_TENOR' && syncedQuote.Flat_Tenor_Extension_Fees__c  != NULL,true,false))}"><td>{!syncedQuote.Flat_Tenor_Extension_Fees__c}</td></apex:outputText>
+                                <apex:outputText rendered="{!(IF(eachARR.productCode == 'ID_TENOR' && syncedQuote.Flat_Tenor_Extension_Fees__c  == NULL,true,false))}"><td></td></apex:outputText>
+                                
+                            </apex:outputText>
+                        </tr>
+                    </apex:repeat>
+                    
+                    
+                    
+                    <apex:outputText rendered="{!(NOT(netNewIDInvoiceDiscountingTransactionalCheck) && NOT(netNewIDTenorExtension) && NOT(gccCheck)  && NOT(isSingleArr) && NOT(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20))}">
+                        <tr><td colspan="5" style="text-align: right">TOTAL</td><td>{!roundoffArr}</td></tr> <!--<apex:outputText value="{0, number, ###,###,###,##0}"><apex:param value="{!ARRProdTotal}"></apex:param> -->
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!(NOT(netNewIDInvoiceDiscountingTransactionalCheck) && NOT(netNewIDTenorExtension) && NOT(gccCheck) && NOT(netNewIDCheck) && NOT(cimplifiveCheck) && NOT(isSingleArr) && ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20)}">
+                        <tr><td colspan="5" style="text-align: right">TOTAL</td><td>{!roundOffArrListPriceOF}</td><td> {!roundOffArrDiscountedPriceOF} ({!roundOffArrDiscountOF }%)</td><td>{!roundoffArr}</td></tr> <!--<apex:outputText value="{0, number, ###,###,###,##0}"><apex:param value="{!ARRProdTotal}"></apex:param> -->
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!(gccCheck && NOT(isSingleArr) &&  NOT(ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20))}">
+                        <tr><td colspan="5" style="text-align: right">TOTAL</td>
+                            <td><apex:outputText value="{0, number, ###,###,###,##0}"><apex:param value="{!ARRProdTotal}"/></apex:outputText></td></tr> 
+                    </apex:outputText>
+                    
+    
+
+                    
+                </table>
+                
+                <br/>
+               <!-- <apex:outputText rendered="{!NOT(gccCheck) && SyncedQuote.Discount__c  > 20}">
+                    ** Above subscription charges are inclusive of one time discount of {!roundOffArrDiscountOF }% (INR {!roundOffArrDiscountedPriceOF}) 
+                </apex:outputText>-->
+                
+                 <br/>
+                <apex:outputText rendered="{!NOT(hideTransactionSlabTable) && IF(syncedQuote.Flat_Transaction_Fee__c == NULL || syncedQuote.Flat_Transaction_Fee__c == 0 ,true,false) }">
+                    <table class="info-table" style="text-align : center;">
+                        <tr>
+                            <th style="width:50%">Throughput (Monthly Crore) </th>
+                            <th style="width:50%">Transaction Fees (%)</th>
+                        </tr>
+                        <apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_1__c != null && syncedQuote.Transaction_Fee_Slab_1__c != 0,true,false)}">
+                            <tr>
+                                <td>{!syncedQuote.Monthly_throughput_Slab_1_Cr__c}</td>
+                                <td>{!syncedQuote.Transaction_Fee_Slab_1__c}</td>
+                            </tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_2__c != null && syncedQuote.Transaction_Fee_Slab_2__c != 0,true,false)}">
+                            <tr>
+                                <td>{!syncedQuote.Monthly_throughput_Slab_2_Cr__c}</td>
+                                <td>{!syncedQuote.Transaction_Fee_Slab_2__c}</td>
+                            </tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_3__c != null && syncedQuote.Transaction_Fee_Slab_3__c != 0,true,false)}">
+                            <tr>
+                                <td>{!syncedQuote.Monthly_throughput_Slab_3_Cr__c}</td>
+                                <td>{!syncedQuote.Transaction_Fee_Slab_3__c}</td>
+                            </tr>
+                        </apex:outputText>
+                        
+                    </table>
+                </apex:outputText>
+                
+                <apex:outputText rendered="{!listOfOTPProdsWrapper.size < 1}">
+                    <br/>
+                    <apex:outputText rendered="{!NOT(gccCheck)}">   
+                        <!--<span><b>TERMS</b></span>-->
+                    </apex:outputText>
+    
+                        
+                        <apex:outputText rendered="{!AND(NOT(gccCheck),NOT(netNewIDCheck))}">   
+                            <ol>
+                                <li> <i>The Customer has reviewed and agreed to the detailed scope of work accessible at the hyperlinks of each of the Products and Services listed in Section 2 (Pricing)</i>    </li>
+                                <li> <i>Clear shall invoice the Customer for the period commencing from the respective Start Date as set out in Section 2 of the Order Form</i></li>
+                                <li> <i>The Subscription Charges for each of the Products and Services and the One-time Charges as set out in Section 2 are exclusive of applicable GST.</i></li>
+                                <li> <i> Any overuse of the Services, exceeding the subscription/service details including the increase in the number of GSTINs, PANs or Documents/Invoices as set out in this Order Form, whether notified to Customer or not, will be charged additionally as mentioned in Overuse Clause under each Product/Service in Section 6</i>    </li>
+                                  <apex:outputText rendered="{!NOT(gccCheck) && NOT(cimplifiveCheck) && ARRProdDiscountOF != NULL && ARRProdDiscountOF   > 20}"><li><i> The Customer acknowledges that the pricing set forth herein  is provided by Company as a one-time exception for this order only and does not apply to future orders.</i> </li>  </apex:outputText> 
+                                <li> <i>In the event, the Customer opts for integration development, any enhancement of the scope of Services or any additional integration development which is not stipulated in the Order Form may be provided by Clear, at its sole and absolute discretion and at additional cost.</i> </li>
+                                <li> <i>In the event the Customer opts for integration consultation services, such integration consultation services shall be provided by Clear for a fixed period sixty (60) days commencing from the Integration Asset Start Date and any integration consultation services beyond the aforesaid sixty (60) days period from the Integration Asset Start Date shall be charged at such additional cost as determined by Clear.</i></li>
+                            </ol>
+                           <!-- <span style="padding-left: 0px;font-size:12px;">   
+                                <i>1. The Customer has reviewed and agreed to the detailed scope of work accessible at the hyperlinks of each of the Products and Services listed in Section 2 (Pricing)</i>    
+                            </span>
+                            <br/>
+                            <span style="padding-left: 0px;font-size:12px;">   
+                                <i>2. Clear shall invoice the Customer for the period commencing from the respective Start Date as set out in Section 2 of the Order Form</i>    
+                            </span>
+                            <br/>
+                            <span style="padding-left: 0px;font-size:12px;">   
+                                <i>3. The Subscription Charges for each of the Products and Services and the One-time Charges as set out in Section 2 are exclusive of applicable GST.</i>    
+                            </span>
+                            <br/>
+                            <span style="padding-left: 0px;font-size:12px;">   
+                                <i>4. Any overuse of the Services, exceeding the subscription/service details including the increase in the number of GSTINs, PANs or Documents/Invoices as set out in this Order Form, whether notified to Customer or not, will be charged additionally as mentioned in Overuse Clause under each Product/Service in Section 6</i>    
+                            </span>
+                            <br/>
+                            <apex:outputText rendered="{!containsIntegrationProduct}">
+                                <span style="padding-left: 0px;font-size:12px;">   
+                                    <i>5. In the event, the Customer opts for integration development, any enhancement of the scope of Services or any additional integration development which is not stipulated in the Order Form may be provided by Clear, at its sole and absolute discretion and at additional cost.</i>    
+                                </span>
+                                <span style="padding-left: 0px;font-size:12px;">   
+                                    <i>6.  In the event the Customer opts for integration consultation services, such integration consultation services shall be provided by Clear for a fixed period sixty (60) days commencing from the Integration Asset Start Date and any integration consultation services beyond the aforesaid sixty (60) days period from the Integration Asset Start Date shall be charged at such additional cost as determined by Clear.</i>    
+                                </span>
+                               
+                            </apex:outputText>
+                             -->
+                            
+                            <!--<li>    
+<span style="padding-left: 0px;">   
+<i>ClearTax shall in no event extend the subscription period for any reason unless the integration development is delayed for the reasons solely attributable to ClearTax. The period of any such extension shall be as determined by ClearTax.</i>     
+</span> 
+</li>   
+<li>    
+<span style="padding-left: 0px;">   
+<i> Cleartax may adjust the Start Date and End Date due to regulatory changes.</i>  
+</span> 
+</li>-->
+                        </apex:outputText>  
+                    <ul>
+                        <apex:outputText rendered="{!netNewIDInvoiceDiscountingSAASCheck}">
+                            <li>    
+                                <span style="padding-left: 0px;">   
+                                    <i>Xpedize shall invoice the Customer for the period commencing from the Start Date set out in this Order Form.</i> 
+                                </span> 
+                            </li>   
+                            <li>    
+                                <span style="padding-left: 0px;">   
+                                    <i>Xpedize shall in no event extend the subscription period for any reason unless the integration development 
+                                        is delayed for the reasons solely attributable to Xpedize. The period of any such extension shall be as 
+                                        determined by Xpedize.</i>      
+                                </span> 
+                            </li>   
+                            <li>    
+                                <span style="padding-left: 0px;">   
+                                    <i> Xpedize may adjust the Start Date and End Date due to regulatory changes.</i>   
+                                </span> 
+                            </li>
+                        </apex:outputText>
+                    </ul>
+                    
+                    
+                    <apex:outputText rendered="{!netNewIDInvoiceDiscountingSKUCheck}">
+                        
+                        
+                        <span style="padding-left: 0px;">   
+                            <b>Costing as per Transaction based pricing</b>
+                            <span style="padding-left: 0px;">   
+                                <b>with respect to the Services that 
+                                    shall be provided by the Xpedize to the Customer :</b>   </span></span>
+                        <ol>
+                            <li>    
+                                <span style="padding-left: 0px;">   
+                                    The Customer shall pay to the Xpedize a transaction fee for every transaction on 
+                                    the Platform as per the following calculations:     <br/>
+                                    <ul type="square">
+                                        <!--<apex:outputText rendered="{!syncedQuote.Flat_Transaction_Fee__c != NULL}">
+<li type="square">
+<span style="padding-left: 0px;">   
+Flat Transaction  Fee % = {!syncedQuote.Flat_Transaction_Fee__c}
+</span>
+</li>
+</apex:outputText>-->
+                                        <li type="square">  
+                                            <span style="padding-left: 0px;">   
+                                                Transaction Fee = % Share as above of Net Savings received from transactions carried
+                                                on Xpedize Platform by Customer.    
+                                                <br/><br/>
+                                                <!--<apex:outputText rendered="{!NOT(hideTransactionSlabTable)}">
+<table class="info-table" style="text-align : center;">
+<tr>
+<th style="width:50%">Throughput (Monthly Crore) </th>
+<th style="width:50%">Xpedize % Share</th>
+</tr>
+<apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_1__c != null && syncedQuote.Transaction_Fee_Slab_1__c != 0,true,false)}">
+<tr>
+<td>{!syncedQuote.Monthly_throughput_Slab_1_Cr__c}</td>
+<td>{!syncedQuote.Transaction_Fee_Slab_1__c}</td>
+</tr>
+</apex:outputText>
+<apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_2__c != null && syncedQuote.Transaction_Fee_Slab_2__c != 0,true,false)}">
+<tr>
+<td>{!syncedQuote.Monthly_throughput_Slab_2_Cr__c}</td>
+<td>{!syncedQuote.Transaction_Fee_Slab_2__c}</td>
+</tr>
+</apex:outputText>
+<apex:outputText rendered="{!IF(syncedQuote.Transaction_Fee_Slab_3__c != null && syncedQuote.Transaction_Fee_Slab_3__c != 0,true,false)}">
+<tr>
+<td>{!syncedQuote.Monthly_throughput_Slab_3_Cr__c}</td>
+<td>{!syncedQuote.Transaction_Fee_Slab_3__c}</td>
+</tr>
+</apex:outputText>
+
+</table>
+</apex:outputText>-->
+                                            </span> 
+                                        </li></ul><br/>
+                                    <span>Where, Net Savings= (Discount amount offered by Suppliers) – (Cost of Financing of the  transaction)
+                                        And Cost of Financing will be applicable as follows :</span><br/>
+                                    <ol>
+                                        <li>
+                                            <span>In case of using own funds, cost of financing will be considered at 3-month Bulk Deposit
+                                                FD rate of SBI (as released on https://sbi.co.in/ as on 1st business day of a month) 
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>In case of TReDS, cost of financing will be the actual cost paid to the TREDS Partner.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>In case of any other financing source, cost of financing will be the actual 
+                                                cost paid to the financer.
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </span> 
+                            </li>
+                            
+                            
+                        </ol>
+                        
+                        <br/>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{{!AND(NOT(prodCheckMaxItc),NOT(gccCheck))}}">
+                        <span style="padding-left: 0px;">   
+                            <i> The above mentioned Product values are exclusive of GST.</i>    
+                        </span>
+                    </apex:outputText>
+                    <!--<apex:outputText rendered="{!gccCheck}">
+<span style="padding-left: 0px;">   
+<i> The above mentioned Product values are exclusive of any Taxes.</i>  
+</span>
+</apex:outputText>-->
+                    
+                    
+                    
+                </apex:outputText>
+            </apex:panelGroup>
+            <apex:panelGroup rendered="{!cimplifiveCheck}">
+                <b>SUBSCRIPTION CHARGES AND PERIOD</b>
+                <br/><br/>
+                <table class="info-table" > <!-- style="-Fs-table-paginate: paginate" -->
+                    <tr>
+                        <th style="width:5%">S.No</th>
+                        <th style="width:38%">Product</th>
+                        <th style="width:6%">Start Date*<br/>(1-15/<br/>16-30/31)</th>
+                        <th style="width:6%">End Date<br/></th>
+                        <th style="width:6%">Quantity</th>
+                        <th style="width:6%">Price per unit<br/></th>
+                        <th style="width:14%">Annual Subscription Charges for the Period (INR)</th>
+                    </tr>
+                    <apex:repeat value="{!listOfARRProdsWrapper}" var="eachARR">
+                        
+                        <tr>
+                            <td>{!eachARR.SLNO}</td> 
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL'}">
+                                <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}</a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                <td>{!eachARR.orderFormProductName}</td>
+                            </apex:outputText>
+                            <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.periodStartDate}"/></apex:outputText></td> 
+                            <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.periodEndDate}"/></apex:outputText></td>
+                           <td>{!eachARR.Quantity}</td>
+                           <td>{!eachARR.unitPrice}</td>
+                            <apex:outputText rendered="{!(IF(eachARR.feeForTheTerm == 0 || eachARR.feeForTheTerm == NULL,true,false))}"><td>N/A</td></apex:outputText>
+                            <apex:outputText rendered="{!(IF(eachARR.feeForTheTerm != 0 ,true,false))}">
+                                <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            </apex:outputText>
+                        </tr>
+                    </apex:repeat>
+                    <tr><td colspan="6" style="text-align: right">TOTAL</td>
+                        <td><apex:outputText value="{0, number, ###,###,###,##0}"><apex:param value="{!ARRProdTotal}"/></apex:outputText></td></tr> 
+                </table>
+                <i>
+                    *Cimplyfive shall invoice the Subscriber prior to the Start Date set out in this Order Form. </i>
+            </apex:panelGroup>
+            
+            <apex:include pageName="{!nextPage2}"/>
+        </body>
+    </html>
+    
+</apex:page>

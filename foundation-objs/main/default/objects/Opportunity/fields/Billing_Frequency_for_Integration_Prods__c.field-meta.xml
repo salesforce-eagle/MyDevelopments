@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency_for_Integration_Prods__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Billing Freq. - Integration/Digitization</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100% Upon signing Order form</fullName>
+                <default>false</default>
+                <label>100% Upon signing Order form</label>
+            </value>
+            <value>
+                <fullName>50% Upon signing Order form &amp; 50% upon Go live</fullName>
+                <default>false</default>
+                <label>50% Upon signing Order form &amp; 50% upon Go live</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>50% on signing of this order form, 50% post UAT completion</fullName>
+                <default>false</default>
+                <label>50% on signing of this order form, 50% post UAT completion</label>
+            </value>
+            <value>
+                <fullName>100% upfront basis Integration Project start date</fullName>
+                <default>false</default>
+                <label>100% upfront basis Integration Project start date</label>
+            </value>
+            <value>
+                <fullName>50% upfront basis Integration Project start date &amp; 50% upon Go live</fullName>
+                <default>false</default>
+                <label>50% upfront basis Integration Project start date &amp; 50% upon Go live</label>
+            </value>
+            <value>
+                <fullName>50% Upon signing order form and 50% upon work completion</fullName>
+                <default>false</default>
+                <label>50% Upon signing order form and 50% upon work completion</label>
+            </value>
+            <value>
+                <fullName>50% upon signing the Order Form and 50% post UAT completion</fullName>
+                <default>false</default>
+                <label>50% upon signing the Order Form and 50% post UAT completion</label>
+            </value>
+            <value>
+                <fullName>50% Upfront basis Integration start date &amp; 50% upon UAT Handover</fullName>
+                <default>false</default>
+                <label>50% Upfront basis Integration start date &amp; 50% upon UAT Handover</label>
+            </value>
+            <value>
+                <fullName>50% Upon signing Order form &amp; 50% upon UAT</fullName>
+                <default>false</default>
+                <label>50% Upon signing Order form &amp; 50% upon UAT</label>
+            </value>
+            <value>
+                <fullName>50% Go Live</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>50% Go Live</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

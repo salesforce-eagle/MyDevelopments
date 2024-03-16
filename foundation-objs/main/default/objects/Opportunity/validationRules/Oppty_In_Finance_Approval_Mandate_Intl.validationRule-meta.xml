@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_In_Finance_Approval_Mandate_Intl</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+AND(
+TEXT(Account.Country_of_Origin__c) != &apos;&apos;,
+TEXT(Account.Country_of_Origin__c) != &apos;N/A&apos;,
+TEXT(Account.Country_of_Origin__c) != &apos;India&apos;
+),
+AND(
+ISPICKVAL(Order_Form_Required__c, &apos;Yes&apos;),
+TEXT(StageName) == &apos;In Finance approval&apos;,
+OR(ISBLANK(cr_number_gcc__c),ISBLANK(VAT_Number_gcc__c),ISBLANK( Billing_Address__c ),
+ISBLANK( Shipping_Address__c ),
+ISBLANK ( Company_Domain_Name__c ),
+ISBLANK ( Master_admin_Email__c ),
+ISPICKVAL(ClearTax_Billing_Entity__c,&quot;&quot;)
+))
+)</errorConditionFormula>
+    <errorMessage>Please enter data for Cleartax Billing Entity, CR Number, VAT number, Billing Address, Shipping Address, Company Domain name &amp; Master Admin Email !</errorMessage>
+</ValidationRule>

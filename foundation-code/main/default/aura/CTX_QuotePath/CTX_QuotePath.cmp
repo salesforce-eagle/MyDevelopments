@@ -1,0 +1,126 @@
+<aura:component controller="CTX_QuoteController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+    <aura:attribute name="thisQuote" type="Quote"/>
+    <aura:attribute name="statusPicklistField" type="object"/>
+    <aura:attribute name="recordId" type="string"/>
+    <aura:attribute name="statusSelected" type="string"/>
+    <aura:attribute name="isDiscountApproval" type="boolean"/>
+    <aura:attribute name="modalBody" type="string"/>
+    <aura:attribute name="discountValue" type="string"/>
+    <aura:attribute name="isProceedToApproval" type="boolean"/>
+    <aura:attribute name="reasonDisFieldMap" type="Map"/>   
+    <aura:attribute name="reasonForDiscountValue" type="string" default=""/>
+    <aura:attribute name="detailedReason" type="string"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="PicklistField" type="object"/>
+    <aura:attribute name="oldStatusPicklistField" type="string"/>
+    <aura:attribute name="acquisitionOppRTList" type="List"/>
+    <aura:attribute name="oppRTName" type="String"/>
+    <aura:attribute name="isOpportunityRenewal" type="String"/>
+    
+    <aura:attribute name="quoteTobeUpdatedFromPopup" type="Quote" 
+                    default="{'sObjectType' : 'Quote',
+                             'Estimated_Delivery_Cost__c' :'',
+                             'Reason_For_Not_Opting_For_Integration__c' : '',
+                             'Incumbent__c' :'',
+                             'Reason_for_Discount_Request__c' :'',
+                             'Customer_Opted_For_Integration__c' :'Yes',
+                             'Name_of_Competitor__c' :'',
+                             'Projected_Customer_Lifetime_Value__c' :'',
+                             'Products_Can_Be_Cross_Sold_In_Future__c' :'',
+                             'Detailed_reason_for_discount__c' :'',
+                             'Approval_sub_status__c':'',
+                             'Status':'',
+                             'Max_Discount__c':'',
+                             'Discount':'', 
+                             
+                             'Price_Offered_to_Match_Competitor__c' : '',
+                             'Old_Anchor_Price__c' : '', 
+                             'Next_Pitch_Date__c' : '', 
+                             'Features_not_in_Use__c' : ''
+                             
+                             }"/>
+    
+    <aura:attribute name="isQLIproductcategory" type="string"/>
+    <aura:attribute name="quoteRecordToUpdate" type="Quote" 
+                    default="{'sObjectType' : 'Quote',
+                             'Estimated_Delivery_Cost__c' :'',
+                             'Reason_For_Not_Opting_For_Integration__c' : '',
+                             'Incumbent__c' :'',
+                             'Reason_for_Discount_Request__c' :'',
+                             'Customer_Opted_For_Integration__c' :'Yes',
+                             'Name_of_Competitor__c' :'',
+                             'Projected_Customer_Lifetime_Value__c' :'',
+                             'Products_Can_Be_Cross_Sold_In_Future__c' :'',
+                             'Detailed_reason_for_discount__c' :'',
+                             'Approval_sub_status__c':'',
+                             'Status':'',
+                             'Max_Discount__c':'',
+                             'Discount':''}"/>
+    
+    
+    <aura:handler name="change" value="{!v.isProceedToApproval}" action="{!c.sendForApproval}"/>
+    <aura:handler name="change" value="{!v.statusSelected}" action="{!c.setStatusSelectedValues}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <div class="slds">
+        <div class="pathStatus"> 
+            <force:recordData aura:id="record"
+                              layoutType="FULL"
+                              recordId="{!v.recordId}"
+                              targetFields="{!v.PicklistField}"
+                              mode="EDIT"/>
+            
+            
+            
+            
+            <lightning:picklistPath aura:id="stagePicklistPath" recordId="{!v.recordId}"
+                                    variant="linear"
+                                    picklistFieldApiName="Status"
+                                    onselect="{!c.statusPicklistField}">
+            </lightning:picklistPath>
+            
+            
+        </div>
+        <aura:if isTrue="{!v.thisQuote.Approval_sub_status__c=='Discount Approval in progress'}">
+            <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Quote">
+                <p class="slds-box slds-theme_default">
+                    <lightning:outputField  fieldName="Status"  />
+                    <lightning:outputField fieldName="Approval_sub_status__c" />
+                    <lightning:outputField  fieldName="Max_Discount__c"  />
+                    <lightning:outputField  fieldName="Discount"  />
+                </p>
+            </lightning:recordViewForm>
+        </aura:if>
+        <aura:if isTrue="{!v.thisQuote.Approval_sub_status__c=='MS Approval in progress'}">
+            <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Quote">
+                <p class="slds-box slds-theme_default">
+                    <lightning:outputField  fieldName="Status"  />
+                    <lightning:outputField fieldName="Approval_sub_status__c" />
+                    <lightning:outputField  fieldName="Max_Discount__c"  />
+                    <lightning:outputField  fieldName="Discount"  />
+                </p>
+            </lightning:recordViewForm>
+        </aura:if>
+        <aura:if isTrue="{!v.isDiscountApproval}">
+            <c:CTX_PopupDialog modalHeading="Discount Approval Check"
+                               modalBody="{!v.modalBody}"
+                               successLabel="OK"
+                               discardLabel="Don't Procced"
+                               userSelection="{!v.isProceedToApproval}"
+                               isModalOpen="{!v.isDiscountApproval}"
+                               reasonFieldMap="{!v.reasonDisFieldMap}"
+                               reasonForDiscountValue="{!v.reasonForDiscountValue}"
+                               detailedReason="{!v.detailedReason}"
+                               oldStatusValue="{!v.oldStatusPicklistField}"
+                               statusSelected="{!v.statusSelected}"
+                               quoteTobeUpdated="{!v.quoteTobeUpdatedFromPopup}"
+                               isQLIproductcategory="{!v.isQLIproductcategory}"
+                               isOpportunityRenewal="{!v.isOpportunityRenewal}"
+                               />
+        </aura:if>
+        <br/><br/>
+    </div>
+</aura:component>

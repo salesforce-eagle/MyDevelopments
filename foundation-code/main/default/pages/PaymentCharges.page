@@ -1,0 +1,238 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,PaymentCharges_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                <!-- Not working
+.text-catplize{
+text-transform : capitalize;
+}-->
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px;
+}-->    
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;;page-break-inside:avoid">
+            <apex:panelGroup rendered="{!NOT(cimplifiveCheck)}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;3.&nbsp;&nbsp;PAYMENT CHARGES </div><br/>
+                <table class="info-table" style="width:100%">
+                    <apex:outputText rendered="{!displayBillingFreqSubs}">
+                        <tr>
+                            <th>Billing Frequency for Subscription Fee</th>
+                            <td>{!syncedQuote.Opportunity.Billing_F__c}</td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!NOT(gccCheck)}">
+                        <apex:outputText rendered="{!displayBillingFreqOtp}">
+                            <tr>
+                                <th>Billing Frequency for Non integration Service Fee (One time) </th>
+                                <td>{!syncedQuote.Opportunity.Billing_Frequency__c}</td>
+                            </tr>
+                        </apex:outputText>
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!gccCheck}">
+                        <apex:outputText rendered="{!IF(syncedQuote.Opportunity.Billing_Frequency__c != NULL && syncedQuote.Opportunity.Billing_Frequency__c != 'Not Applicable', TRUE, FALSE )}">
+                            <tr>
+                                <th>Billing Frequency for Non integration Service Fee (One time) </th>
+                                <td>{!syncedQuote.Opportunity.Billing_Frequency__c}</td>
+                            </tr>
+                        </apex:outputText>
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!displayBillingFreqInteg}">
+                        <tr>
+                            <th>Billing Frequency For Integration Service Fee </th>
+                            <td>{!billingFrequencyForIntegrationProds}</td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!IF(containsMsProduct && SyncedQuote.Opportunity.MS_Billing_Frequency__c != NULL, TRUE, FALSE)}">
+                        <tr>
+                            <th>Billing Frequency for Assisted Services Subscription</th>
+                            <td>{!SyncedQuote.Opportunity.MS_Billing_Frequency__c}</td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    
+                    <!--<tr><th>Billing Method:</th><td>{!syncedQuote.Opportunity.Billing_Method__c}</td><td></td><td></td></tr>-->
+                    <tr><th>Billing Method</th><td>{!syncedQuote.Opportunity.Billing_Method__c}</td></tr>
+                    <tr><th>Payment Term</th><td>{!syncedQuote.Opportunity.Payment_Term__c}</td></tr>
+                    <tr><th>Payment Method</th><td>{!syncedQuote.Opportunity.Payment_Method__c}</td></tr>
+                </table> 
+                
+                <apex:outputText rendered="{!gccCheck}">
+                    <br/>
+                    <span>Additional Payment Terms :</span>
+                    <ul>
+                        <li>
+                            The Customer should ensure that Net amount credited to Cleartax bank account shall always be equal to the invoice amount.
+                        </li>
+                        <li>
+                            Any local tax or withholding tax applicable will be additional and not included in the charges provided in this Order Form.
+                        </li>
+                        <li>
+                            Any bank charges, be it from the transferring or intermediary bank, need to be borne by the Customer.
+                        </li>
+                        <li>
+                            All payments have to be made through SWIFT/ Wire/ TT transfers  to Cleartax bank account. However, if Customer desires to make payment via Cards/ Paypal, Cleartax would send the payment link based on specific requests. The payment gateway charges will have to be borne by the Customer only.     
+                        </li>
+                        <li>
+                            Project implementation to start only upon receipt of payment.    
+                        </li>
+                        
+                    </ul>
+                </apex:outputText>
+                
+                <br/>
+            </apex:panelGroup>  
+            <apex:panelGroup rendered="{!(cimplifiveCheck)}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;3.&nbsp;&nbsp;PAYMENT CHARGES </div><br/>
+                <table class="info-table">
+                    <tr>
+                        <th>Billing Method</th>
+                        <td>Email of digitally signed invoices to the registered email address </td>
+                        
+                    </tr>
+                    <apex:outputText rendered="{!displayBillingFreqSubs}">
+                        <tr>
+                            <th>Billing Frequency for Subscription Fee</th>
+                            <td>{!syncedQuote.Opportunity.Billing_F__c}</td>
+                        </tr>
+                         <tr>
+                            <th>Billing Frequency for retainership</th>
+                            <td>{!syncedQuote.Opportunity.Billing_Frequency_for_retainership__c}</td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!displayBillingFreqOtp}">
+                        <tr>
+                            <th>Billing frequency for Digitization </th>
+                            <td>{!syncedQuote.Opportunity.Billing_Frequency__c}</td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!displayBillingFreqInteg}">
+                        <tr>
+                            <th>Billing Frequency For Integration Service Fee </th>
+                            <td>{!billingFrequencyForIntegrationProds}</td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    
+                    <!--<tr><th>Billing Method:</th><td>{!syncedQuote.Opportunity.Billing_Method__c}</td><td></td><td></td></tr>-->
+                    <tr><th>Billing Method</th><td>{!syncedQuote.Opportunity.Billing_Method__c}</td></tr>
+                    <tr><th>Payment Term</th><td>{!syncedQuote.Opportunity.Payment_Term__c}</td></tr>
+                    <tr><th>Payment Method</th><td>{!syncedQuote.Opportunity.Payment_Method__c}</td></tr>
+                    <tr>
+                        <th>Details for making NEFT/RTGS <br/><br/>
+                            <div align = "right">
+                                Name   
+                                <br/>
+                                Type of Account<br/>
+                                Account Number<br/>
+                                Bank name<br/>
+                                Branch details<br/>
+                                Bank IFSC<br/><br/>
+                            </div>
+                        </th>
+                        <td><br/><br/>CimplyFive Corporate Secretarial Services Private Limited<br/>
+                            Current Account<br/>
+                            00000034192566096<br/>
+                            State Bank of India<br/>
+                            Bommanahalli, Bangalore<br/>
+                            SBIN0011285<br/><br/>  
+                        </td>
+                    </tr>  
+                </table>
+            </apex:panelGroup>
+            
+            
+            <apex:panelGroup rendered="{!gccCheck}">
+                <apex:include pageName="PaymentSchedule"/> 
+            </apex:panelGroup>
+            
+            <apex:include pageName="{!nextPage4}"/>
+        </body>
+    </html>
+    
+</apex:page>

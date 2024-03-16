@@ -1,0 +1,583 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOW_MaxItc_Integration_Series_Z_Cont" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS1==1}">
+            <div style="page-break-after: avoid;font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;font-weight: bold;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            <br/>
+            </apex:panelGroup>
+            <div style="padding-left: 20px;">
+                
+                <h3 style="text-align:center;">
+                    <b>Scope of Services for Max ITC Integration Series Z</b>
+                </h3>
+                <p><b>Inclusions</b></p>
+<p>The deliverables shall encompass designing and development of the following components.&nbsp;</p>
+<p>Design and development of MaxITC Dashboard with the following options,</p>
+<ol>
+    <li>
+        <p>Store the Authentication token for Secure API connectivity under Account Settings</p>
+    </li>
+    <li>
+        <p>Prepare and Ingest Purchase Registers (PR)</p>
+        <ol type ="a">
+            <li>
+                <p>Customer&rsquo;s existing purchase register will be leveraged only if it meets the accuracy, completeness and performance requirements of Cleartax (95% and above) without major modifications in the existing logic.</p>
+            </li>
+            <li>
+                <p>If a customer did not have an existing PR report or did not meet the accuracy, completeness and performance requirements of Cleartax, then a new Purchase register report will be developed by Cleartax.</p>
+            </li>
+            <li>
+                <p>Users will have an option to view and download PRs based on CoCode, Fiscal Year, Posting Date, Business Place, Document number. Any modifications to the selection screen is part of additional scope and according to the feasibility study of changes requested.</p>
+            </li>
+            <li>
+                <p>Customers have an option to download the Ingested PRs from the MaxITC portal based on the said filters</p>
+            </li>
+            <li>
+                <p>PR Ingestion works based on the &lsquo;Delta Extraction Logic&rsquo;. It will be at PAN level, so all the GSTINs are considered for Ingestion.</p>
+            </li>
+            <li>
+                <p>Delta Extraction Logic:</p>
+                <ol type="i">
+                    <li>
+                        <p>Selects the Purchase Register created or modified from the last PR ingestion timestamp till current timestamp. For example, say a PR ingestion was done for the period between 1-Apr-2021 12 am to 15-Jun-2021 10:30 am. When when you run the PR ingestion again on 17-June-2021 11:30 pm, then the PRs that are created or modified between 15-June-2021 10:30 am and 17-Jun-2021 11:30 pm are ingested to cleartax</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>The MaxITC portal considers the Fiscal Year and Fiscal Period based on the Invoice Posting Date in ERP.</p>
+            </li>
+            <li>
+                <p>The fields for sending the PR to the portal is as per the PR Ingestion template. Any custom fields to be added to the template involves additional scope of work. Please refer to the link for the &nbsp;complete list of fields in the PR Ingestion template.&nbsp;<a href="https://docs.cleartax.in/cleartax-docs/max-itc-api/max-itc-api-reference/resources-and-master/input-and-output-templates">https://docs.cleartax.in/cleartax-docs/max-itc-api/max-itc-api-reference/resources-and-master/input-and-output-templates</a>&nbsp;</p>
+            </li>
+            <li>
+                <p>For the preparation of Purchase Register,&nbsp;</p>
+                <ol type="i">
+                    <li>
+                        <p>Customers should provide the complete list of ERP document types that are used for Invoice postings (Logistics based or Finance based) and Invoice adjustment postings</p>
+                    </li>
+                    <li>
+                        <p>Customers should also provide the list of Tax codes or other parameters to classify the invoices as ITC eligible/ineligible, RCM, Credit/Debit notes, Import, Goods/Service classification, etc in the format as per the attached doc.&nbsp;</p>
+                    </li>
+                    <li>
+                        <p>If there are any postings made directly to the GL accounts, without using Tax codes, then those lists of GL accounts to be shared for accurate identification and classification of type of postings</p>
+                    </li>
+                    <li>
+                        <p>The Ingestion of Purchase Register is exclusively for the purpose of MaxITC Reconciliation and 3B filing and not for any other purpose. If there are any documents posted in ERP that do not serve the said purpose, it will not be considered for PR ingestion</p>
+                    </li>
+                    <li>
+                        <p>Purchase Register Requirements Document below will be used to capture the requirements. Customers are expected to prepare the Business Requirements Document for PR extraction, so that complete requirements can be covered. Once the requirements document is signed off by the customer, the Clear team will pick up for the development.</p>
+                    </li>
+                    <li>
+                        <p><a href="https://docs.google.com/document/d/1u3NNFJDI1-gOIReVPEzjg9vCH_pcdG4B25ChaM4BDTo/edit#">https://docs.google.com/document/d/1u3NNFJDI1-gOIReVPEzjg9vCH_pcdG4B25ChaM4BDTo/edit#</a>&nbsp;</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>Trigger Reconciliation in ERP at PAN level</p>
+        <ol type="a">
+            <li>
+                <p>Option to Ingest PRs and Trigger Reconciliation from ERP with either 2A or 2B but not both</p>
+            </li>
+            <li>
+                <p>Option to View Purchase Registers that are selected to send to Portal for Reconciliation</p>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>PR Ingestion Errors</p>
+        <ol type="a">
+            <li>
+                <p>Option to send the Purchase Register Ingestion Error file as an attachment (received in ERP as part of Reconciliation Results) to the maintained &lsquo;Notification Email&rsquo; variable in TVARVC from the ERP.</p>
+            </li>
+            <li>
+                <p>Option to &ldquo;download the error file and fix the errors and upload&rdquo; is available only in Clear MaxITC portal.&nbsp;</p>
+            </li>
+            <li>
+                <p>Responsibility of PR error correction in the MaxITC Portal as well as fixing the SAP Master data and transaction data lies with the customer. (example of errors, Incorrect Invoice posting such as Interstate Transactions with CGST and SGST, Incorrect Master Data such as Incorrect MyGSTN or Supplier GSTN, Invalid GST rate, etc).&nbsp;</p>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>View Reconciliation Results</p>
+        <ol type="a">
+            <li>
+                <p>Reconciliation Summary Results</p>
+                <ol type="i">
+                    <li>
+                        <p>Shows the Reconciliation results summary of documents that are in each bucket - Exact Match, Suggested Match, Missing in PR, Missing in 2B, Mismatch, Reconciliation Result whether it&rsquo;s Success or Failure.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Reconciliation Results - Document View</p>
+                <ol type="i">
+                    <li>
+                        <p>Shows the output of Reconciliation results of each documents, including the Match status (Match, Suggested match, Mismatch, Missing in PR, Missing in 2A/2B), Suggested Payment action status (Hold GST (HGST) or Make Full Payment (MFP)), Filing Status, etc. For the full list of fields in both PR ingestion and Reconciliation Results. Please refer to this link.&nbsp;<a href="https://docs.cleartax.in/cleartax-docs/max-itc-api/max-itc-api-reference/resources-and-master/input-and-output-templates">https://docs.cleartax.in/cleartax-docs/max-itc-api/max-itc-api-reference/resources-and-master/input-and-output-templates</a>&nbsp;</p>
+                    </li>
+                    <li>
+                        <p>The selection screen to view the reconciliation results can be filtered using Business Place/MyGSTN. If there are additional selection criterias to be made available, please document the screen changes in the Requirements Document and based on feasibility analysis, the Clear team will pick up for the development.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>View Payment Block Results</p>
+        <ol type="a">
+            <li>
+                <p>Shows the results of &lsquo;Suggested Payment Status&rsquo; from the reconciliation results (whether it&rsquo;s HGST or MFP) for each invoice document, also the Hold GST JV document number and &nbsp;date, Release GST JV document number and date, among other fields.&nbsp;</p>
+            </li>
+            <li>
+                <p>The table gets updated every time when the reconciliation results are received from MaxITC portal.</p>
+            </li>
+            <li>
+                <p>Hold GST and Release GST JV documents and its details are updated for each invoice document when the MaxITC payment block program is executed.</p>
+            </li>
+            <li>
+                <p>The table is designed to hold only the relevant details of the payment blocking solution. If any additional fields are required to be added, please document the screen changes in the Requirements Document and based on feasibility analysis, the Clear team will pick up for the development.</p>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>MaxITC Payment blocking Solution</p>
+        <ol type="a">
+            <li>
+                <p>Option to Block the GST amount of the Original Invoice based on Reconciliation Results.</p>
+                <ol type="i">
+                    <li>
+                        <p>The MaxITC Payment blocking program will automatically post the JV document to hold the GST amounts when it is un-reconciled and it will automatically post the JV document to release the GST amounts once the original invoice is successfully reconciled.</p>
+                    </li>
+                    <li>
+                        <p>Payment Blocking solution in ERP is fully customizable and it is expected that Customers prepare the Business Requirements Document and share it with the Clear Integration team.</p>
+                    </li>
+                    <li>
+                        <p>The JV documents for Hold and Release GST document carries all the relevant information from the original Invoice. The details are as below.</p>
+                    </li></ol>
+<div align="left">
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                    <p>SAP Hold/Release GST Document</p>
+                </td>
+                <td>
+                    <p>SAP Original Invoice</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Vendor Invoice (XBLNR)</p>
+                </td>
+                <td>
+                    <p>Vendor Invoice (XBLNR)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Assignment (ZUONR)</p>
+                </td>
+                <td>
+                    <p>SAP Doc Number (BELNR)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Payment Terms (ZTERM)</p>
+                </td>
+                <td>
+                    <p>Payment Terms (ZTERM)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Baseline Date (ZFBDT)</p>
+                </td>
+                <td>
+                    <p>Baseline Date (ZFBDT)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Payment Method (ZLSCH)</p>
+                </td>
+                <td>
+                    <p>Payment Method (ZLSCH)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Business Place (BUPLA)</p>
+                </td>
+                <td>
+                    <p>Business Place (BUPLA)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Section Code (SECCO)</p>
+                </td>
+                <td>
+                    <p>Section Code (SECCO)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>House Bank (HBKID)</p>
+                </td>
+                <td>
+                    <p>House Bank (HBKID)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Partner Bank (BVTYP)</p>
+                </td>
+                <td>
+                    <p>Partner Bank (BVTYP)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Payment Reference (KIDNO)</p>
+                </td>
+                <td>
+                    <p>Payment Reference (KIDNO)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Payment Supplement Method (UZAWE)</p>
+                </td>
+                <td>
+                    <p>Payment Supplement Method (UZAWE)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>House Bank Account ID (HKTID)</p>
+                </td>
+                <td>
+                    <p>House Bank Account ID (HKTID)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Vendor Number (LIFNR)</p>
+                </td>
+                <td>
+                    <p>Vendor Number (LIFNR)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Company Code (BUKRS)</p>
+                </td>
+                <td>
+                    <p>Company Code (BUKRS)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Item Text (SGTXT) - Hold GST Doc - &quot;GST Held for Invoice XXX&quot;, Release GST Doc - &quot;GST Released for Invoice XXX&quot;</p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Business Area (GSBER)</p>
+                </td>
+                <td>
+                    <p>Business Area (GSBER)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Profit Center (PRCTR)</p>
+                </td>
+                <td>
+                    <p>Profit Center (PRCTR)</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</li>
+    <li>
+        <p>It uses the special GL approach to hold the GST amount.</p>
+    </li>
+    <li>
+        <p>Following is the Accounting schema for this approach</p>
+
+        <p><apex:image url="{!URLFOR($Resource.SOS_Max_Z_image)}" /></p>
+    </li>
+</ol></li></ol>
+    
+<p><b>Add-ons</b></p>
+<p>Following modules can be made available for an additional one time pricing and it will also impact the timelines for integrations. Details are listed below:</p>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                    <p>Type</p>
+                </td>
+                <td>
+                    <p>Module</p>
+                </td>
+                <td>
+                    <p>Add-on Scope</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="8">
+                    <p>Technical add-ons</p>
+                </td>
+                <td rowspan="8">
+                    <p>PR ingestion</p>
+                </td>
+                <td>
+                    <p>Integration via PI/PO middleware</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Integration via proxy node</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Integration via dell boomi middleware</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Integration via mulesoft middleware</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Connectivity through DNS</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Connectivity via cloud connector</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Connectivity via web dispatcher</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Exclusive security questionnaire</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="13">
+                    <p>Functional add-ons</p>
+                </td>
+                <td rowspan="4">
+                    <p>PR ingestion</p>
+                </td>
+                <td>
+                    <p>Preparation of new Purchase Register</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Addition of new fields in the CT PR ingestion Template (max 5)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Sending PR Ingestion errors through email after filtration to different teams - GSTIN wise/Business Place wise</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Store/View Last run PR ingestion errors in SAP tables in CT format</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <p>Recon results</p>
+                </td>
+                <td>
+                    <p>Modification of Selection Screen in Recon Results</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Access Control to view Results at CoCode/GSTIN wise/BP level as per auth object provided by customer</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="7">
+                    <p>Payment blocking</p>
+                </td>
+                <td>
+                    <p>Changes/Modifications in Payment Blocking Approach</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>ITC ledger automation</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>GST recovery from future invoices if invoice is already paid</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Addition of New fields in PB status table</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Modification of Selection Screen to view PB Status Table</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>F-53 Validations (Do not allow payment of Original Invoice if Hold GST document is present against the Original Invoice, Do not allow payment of Original Invoice if it&rsquo;s not reconciled with 2B)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Configuration of Special GL, Payment Block Indicator, Doc Type to be done by ClearTax</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+        <p></p>
+<p><b>Limitations / Exclusions</b></p>
+<p>Following services will not be available as part of the scope&nbsp;</p>
+<ul>
+    <li>
+        <p>Assistance with network / firewall / OS / &nbsp;basis configuration</p>
+    </li>
+    <li>
+        <p>Work from customer&rsquo;s location&nbsp;</p>
+    </li>
+    <li>
+        <p>Custom logic for filtering out invoices and CDNs while uploading the data to ClearTax (eg. exclude invoices for a particular date range)</p>
+    </li>
+    <li>
+        <p>Exclusion of any data validations which are part of the ClearTax SaaS logic</p>
+    </li>
+    <li>
+        <p>Real time ingestion of purchase register</p>
+    </li>
+    <li>
+        <p>Error Correction and retry upload in ERP for Ingestion Errors</p>
+    </li>
+    <li>
+        <p>Change in master data or transaction data in ERP</p>
+    </li>
+    <li>
+        <p>Custom reports in ERP (Standard Scope includes Reconciliation Results Report, Payment Block Status Results Report).</p>
+    </li>
+    <li>
+        <p>Enhancements to Standard Payment Programs, such as F110 or F-53, and SAP Standard Invoice Programs such as MIRO, FB60, etc.</p>
+    </li>
+</ul>
+<p><b>Expectations from customer</b></p>
+<ul>
+    <li>
+        <p>Share Business Requirements List for Purchase Register and Payment Blocking, Sample documents for each business scenario and 3-month sample purchase register within 5 days of project kick off.&nbsp;</p>
+    </li>
+    <li>
+        <p>Prerequisites for Integrations development should be completed within 5 working days from project Kick off.&nbsp;<a href="https://docs.google.com/document/d/1225F9XDBURRKEAu-O0WzfJd2kN1QHxtNOgvFAruQ5D8/edit">https://docs.google.com/document/d/1225F9XDBURRKEAu-O0WzfJd2kN1QHxtNOgvFAruQ5D8/edit</a>&nbsp;</p>
+    </li>
+    <li>
+        <p>Enable VPN/ERP access for at least 3 months for the entire Integration Project Duration.</p>
+    </li>
+    <li>
+        <p>Completion of User AcceptanceTesting (UAT) within 14 days of UAT handover</p>
+    </li>
+    <li>
+        <p>Move code to production within 5 days of UAT sign-off</p>
+    </li>
+    <li>
+        <p>In case the UAT sign off is not provided within 14 days as per point (ix) above, the project will be deemed to have successfully gone live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer</p>
+    </li>
+    <li>
+        <p>The scope of integration is limited to application development. &nbsp;The following items listed below are not part of the Cleartax scope of work and should be handled by the customer&rsquo;s IT team.</p>
+        <ul>
+            <li>
+                <p>Network related configurations such as DNS, Host file maintenance, etc</p>
+            </li>
+            <li>
+                <p>Firewall related settings for whitelisting the APIs, etc</p>
+            </li>
+            <li>
+                <p>Operating System patch upgrade, Kernel Upgrade, etc</p>
+            </li>
+            <li>
+                <p>SAP ERP Administration such as Basis level configurations, etc.</p>
+            </li>
+        </ul>
+    </li>
+</ul>
+<p><b>Integration Post Go-Live Support</b></p>
+<p>Cleartax will provide one-month (4-weeks) post go live support to the customer from the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes&nbsp;</p>
+<ul>
+    <li>
+        <p>additional features or enhancements which are not contained in the original scope of work&nbsp;</p>
+    </li>
+    <li>
+        <p>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope.</p>
+    </li>
+        </ul>
+<p><b>Annual Maintenance (AMC) for Integration</b></p>
+<p>Customers may avail annual maintenance services for integration for the Period of Engagement by paying appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes&nbsp;</p>
+<ul>
+    <li>
+        <p>additional features or enhancements which are not contained in the original scope of work&nbsp;</p>
+    </li>
+    <li>
+        <p>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope.</p>
+    </li>
+</ul>
+
+            <apex:include pageName="{!nextPage8}"/>
+            </div>
+        </body>
+    </html>
+</apex:page>

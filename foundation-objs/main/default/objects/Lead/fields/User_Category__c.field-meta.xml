@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Category__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>User Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CA</label>
+            </value>
+            <value>
+                <fullName>Tax Practitioner</fullName>
+                <default>false</default>
+                <label>Tax Practitioner</label>
+            </value>
+            <value>
+                <fullName>Advocate</fullName>
+                <default>false</default>
+                <label>Advocate</label>
+            </value>
+            <value>
+                <fullName>Company secretary</fullName>
+                <default>false</default>
+                <label>Company secretary</label>
+            </value>
+            <value>
+                <fullName>Small_Business</fullName>
+                <default>false</default>
+                <label>Small_Business</label>
+            </value>
+            <value>
+                <fullName>Large_Enterprise</fullName>
+                <default>false</default>
+                <label>Large_Enterprise</label>
+            </value>
+            <value>
+                <fullName>Student / Teacher</fullName>
+                <default>false</default>
+                <label>Student / Teacher</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

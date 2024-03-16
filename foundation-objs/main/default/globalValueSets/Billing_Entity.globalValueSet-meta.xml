@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CimplyFive</fullName>
+        <default>false</default>
+        <label>CimplyFive</label>
+    </customValue>
+    <customValue>
+        <fullName>ClearSharp</fullName>
+        <default>false</default>
+        <label>ClearSharp</label>
+    </customValue>
+    <customValue>
+        <fullName>Defmacro</fullName>
+        <default>false</default>
+        <label>Defmacro</label>
+    </customValue>
+    <customValue>
+        <fullName>Xpedize</fullName>
+        <default>false</default>
+        <label>Xpedize</label>
+    </customValue>
+    <masterLabel>Billing Entity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Est_Annual_Payables</fullName>
+    <active>true</active>
+    <errorConditionFormula>INCLUDES(Product__c,&apos;ID&apos;)  &amp;&amp;
+(
+ISNULL( Annual_Payables__c )
+)</errorConditionFormula>
+    <errorDisplayField>Annual_Payables__c</errorDisplayField>
+    <errorMessage>Please enter Estimated Annual Domestic Payables in Cr</errorMessage>
+</ValidationRule>

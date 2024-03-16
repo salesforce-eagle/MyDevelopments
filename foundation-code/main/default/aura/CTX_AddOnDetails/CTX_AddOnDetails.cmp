@@ -1,0 +1,248 @@
+<aura:component implements	= "force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access		= "global"
+                controller	= "CTX_AddOnDetailsClass">
+    
+    <aura:handler name="init" 
+                  value="{!this}" 
+                  action="{!c.doInit}"	/>
+    
+    <!--	Attributes : START	-->
+    <aura:attribute name="recordId" 						type="String" />
+    
+    <aura:attribute name="data" 							type="Object[]" />
+    <aura:attribute name="availableData" 					type="Object[]" />
+    <aura:attribute name="dynamicAddOns" 					type="Object[]" />
+    <aura:attribute name="columns"							type="List" />
+    
+    <aura:attribute name="noAddOnDataAvaialbe"				type="Boolean"	default = "false" />
+    <aura:attribute name="showDetails"						type="Boolean"	default = "false" />
+    <aura:attribute name="showAvailableData" 				type="Boolean" 	default = "false" />
+    <aura:attribute name="onSubmitClicked" 					type="Boolean" 	default = "false" />
+    <aura:attribute name="isCustomAddOnAvailable"			type="Boolean" 	default = "false" />
+    
+    <aura:attribute name="selectedRows" 					type="List"		/>
+    
+    <aura:attribute name="scopeAddOns" 						type="Integration_Scope_Add_On__c[]" />
+    
+    <aura:attribute name="totalDiscountedPrice"				type="Integer"	default = "0" />
+    <aura:attribute name="totalPrice"						type="Integer"	default = "0" />	
+    <aura:attribute name="totalDiscountedPriceAvailable"	type="Integer"	default = "0" />
+    <aura:attribute name="totalSellPrice"					type="Integer"	default = "0" />
+    
+    
+    <aura:attribute name="dynamicAddOnScope" 				type="String" />
+    <aura:attribute name="dynamicAddOnFinalPrice"			type="Integer"	default = "0" />
+    <aura:attribute name="customAddOnLabel"					type="String" 	default = "Add a Custom Add-On" />
+    <aura:attribute name="dynamicAddOnEffort"				type="Integer"	default = "0" />
+    
+    <!--	Attributes : START	-->
+    
+    <aura:if isTrue="{!v.noAddOnDataAvaialbe}">
+        <lightning:datatable columns="{! v.columns }"
+                             data="{! v.data }"
+                             keyField="id"
+                             onrowselection="{!c.handleSelect}"/>
+        <aura:set attribute="else">
+            <center>No More Add On Available</center>
+        </aura:set>
+    </aura:if>
+    <br/><br/>
+    
+    
+    
+    <!--	<aura:if isTrue="{!v.showDetails}">	-->
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <tr class="slds-text-title_caps" style="background-color:LightGray !important;font-weight: bold !important">
+            <th class="" scope="col">
+                <div class="slds-truncate " title="Scope">Add On Name</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Pricing">List Price</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Discount Request">Discount%</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Discounted Price">Discounted Price</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Effort Estimation">Effort(In Days)</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Status">Status</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Reject Reason">Reject Reason</div>
+            </th>
+        </tr>
+        
+        
+        <tbody>
+            <aura:if isTrue="{!v.showAvailableData}">
+                <!--	Available Data : START	-->
+                <aura:iteration items="{!v.availableData}" var="item" indexVar="index">
+                    <tr class="slds-hint-parent">
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "module"
+                                             name 		= "module" 	
+                                             value 		= "{!item.Scope__c}"	
+                                             readonly	= "true"	/>
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "listPrice"
+                                             name		= "listPrice"
+                                             type		= "number" 	
+                                             value		= "{!item.List_Price__c}"	
+                                             readonly	= "true"/>
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountRate"
+                                             name		= "discountRate"
+                                             type		= "number" 	
+                                             value		= "{!item.Discount_Percentage__c}"
+                                             onchange	= "{! c.handleChangeDiscountRate }"
+                                             readonly	= "true"
+                                             max		= "50"	/>
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountPrice"
+                                             name		= "discountPrice" 
+                                             type		= "number" 	
+                                             value		= "{!item.Discount_Rate__c}"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountPrice"
+                                             name		= "discountPrice" 
+                                             type		= "number" 	
+                                             value		= "{!item.Estimated_Effort_In_Days__c}"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "status"
+                                             name		= "status" 
+                                             type		= "text" 	
+                                             value		= "{!item.Add_On_Status__c}"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "status"
+                                             name		= "status" 
+                                             type		= "text" 	
+                                             value		= "{!item.Reject_Reason__c}"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                    </tr>
+                    
+                </aura:iteration>
+                <!--	Available Data : END	-->
+            </aura:if>
+            <br/>
+            <aura:if isTrue="{!v.showDetails}">
+                <!--	New Data : START	-->
+                <aura:iteration items="{!v.selectedRows}" var="item" indexVar="index">
+                    <tr class="slds-hint-parent">
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "module"
+                                             name 		= "module" 	
+                                             value 		= "{!item.Add_On_Scope__c}"	
+                                             readonly	= "{!item.Type__c == 'Dynamic Add On' ? false : true}"	/>
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "listPrice"
+                                             name		= "listPrice"
+                                             type		= "number" 	
+                                             value		= "{!item.List_Price__c}"	
+                                             readonly	= "{!item.Type__c == 'Dynamic Add On' ? false : true}"/>
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountRate"
+                                             name		= "discountRate"
+                                             type		= "number" 	
+                                             placeholder= "enter discount here.."		
+                                             value		= "{!item.Discount}"
+                                             onchange	= "{! c.handleChangeDiscountRate }"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountPrice"
+                                             name		= "discountPrice" 
+                                             type		= "number" 	
+                                             value		= "{!(item.List_Price__c - ((item.List_Price__c*item.Discount)/100))}"	
+                                             disabled	= "true"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "discountPrice"
+                                             name		= "discountPrice" 
+                                             type		= "number" 	
+                                             value		= "{!item.Estimated_Effort_in_Days__c}"
+                                             readonly	= "{!item.Type__c == 'Dynamic Add On' ? false : true}"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "status"
+                                             name		= "status" 
+                                             type		= "text" 	
+                                             value		= "{!item.Add_On_Status__c}"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                        <td class="slds-truncate">
+                            <lightning:input aura:id	= "status"
+                                             name		= "status" 
+                                             type		= "text" 	
+                                             value		= "Draft"
+                                             readonly	= "true"
+                                             />
+                        </td>
+                    </tr>
+                    
+                </aura:iteration>
+                <!--	New Data : END	-->
+            </aura:if>
+            
+            <tr>
+                <td class="slds-truncate">
+                    TOTAL 
+                </td>
+                <td class="slds-truncate">
+                    {!v.totalPrice}
+                </td>
+                <td class="slds-truncate">
+                    
+                </td>
+                <td class="slds-truncate">
+                    {!v.totalDiscountedPrice}
+                </td>
+                <td class="slds-truncate">
+                    
+                </td>
+                <td class="slds-truncate">
+                    
+                </td>
+                <td class="slds-truncate">
+                    
+                </td>
+                
+            </tr>
+            
+        </tbody>
+        
+    </table>
+    
+    <!--	</aura:if>	-->
+    <aura:if isTrue="{!v.showDetails}">
+        <lightning:button class="slds-float_right" variant="brand" label="Calculate Discounted Price" title="Submit" onclick="{! c.handleSubmit }" />
+    </aura:if>
+    <aura:if isTrue="{!v.onSubmitClicked}">
+        <lightning:button variant="brand" label="Send for Approval" title="Approval" onclick="{! c.handleApproval }" />
+    </aura:if>
+    
+    
+</aura:component>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Segment__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Final Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Segment 1</fullName>
+                <default>false</default>
+                <label>Segment 1</label>
+            </value>
+            <value>
+                <fullName>Segment 2</fullName>
+                <default>false</default>
+                <label>Segment 2</label>
+            </value>
+            <value>
+                <fullName>Segment 3</fullName>
+                <default>false</default>
+                <label>Segment 3</label>
+            </value>
+            <value>
+                <fullName>Segment 4</fullName>
+                <default>false</default>
+                <label>Segment 4</label>
+            </value>
+            <value>
+                <fullName>Segment 5</fullName>
+                <default>false</default>
+                <label>Segment 5</label>
+            </value>
+            <value>
+                <fullName>Segment 6</fullName>
+                <default>false</default>
+                <label>Segment 6</label>
+            </value>
+            <value>
+                <fullName>Segment 7</fullName>
+                <default>false</default>
+                <label>Segment 7</label>
+            </value>
+            <value>
+                <fullName>Segment 8</fullName>
+                <default>false</default>
+                <label>Segment 8</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordTypeId &lt;&gt; $Label.ITR_Opportuntiy_Record_Type_ID ,
+AND( ISCHANGED(StageName),
+TEXT(StageName) == &apos;Closed Lost&apos; , 
+(ISPICKVAL(Win_Loss_Details__c,&quot;&quot;) ||
+ INCLUDES(Win_Loss_Reasons__c, &quot;&quot;) ||
+(ISBLANK(TEXT(competition_Currently_Using__c)))
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Please fill Win/Loss Reasons,  Win/Loss Details,  Other Reason for Loss and Competition fields.</errorMessage>
+</ValidationRule>

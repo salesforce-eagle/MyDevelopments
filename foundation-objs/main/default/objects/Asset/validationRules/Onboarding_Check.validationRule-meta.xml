@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Check</fullName>
+    <active>false</active>
+    <errorConditionFormula>If( (PRIORVALUE(Onboarding_Check__c) = true) &amp;&amp;   ISCHANGED(Onboarding_Check__c) , true,false)</errorConditionFormula>
+    <errorDisplayField>Onboarding_status__c</errorDisplayField>
+    <errorMessage>Sorry, cannot Change the value of Onboarding Status!</errorMessage>
+</ValidationRule>

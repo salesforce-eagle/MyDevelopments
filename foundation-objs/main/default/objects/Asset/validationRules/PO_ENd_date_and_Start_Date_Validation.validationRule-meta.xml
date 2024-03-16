@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_ENd_date_and_Start_Date_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF((DateValue(CreatedDate)  &gt;=   Date(2021, 05,01 )) &amp;&amp;   (ISBLANK( PurchaseDate ) || ISBLANK(  UsageEndDate ) || (PurchaseDate &gt; UsageEndDate)),true,false)</errorConditionFormula>
+    <errorMessage>Enter Valid PO Start Date and PO End Date</errorMessage>
+</ValidationRule>

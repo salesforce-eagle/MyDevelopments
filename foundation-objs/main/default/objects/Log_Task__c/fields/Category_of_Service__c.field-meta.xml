@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_of_Service__c</fullName>
+    <externalId>false</externalId>
+    <label>Category of Service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST - Advisory</fullName>
+                <default>false</default>
+                <label>GST - Advisory</label>
+            </value>
+            <value>
+                <fullName>GST - Airline Credit</fullName>
+                <default>false</default>
+                <label>GST - Airline Credit</label>
+            </value>
+            <value>
+                <fullName>GST - Compliance</fullName>
+                <default>false</default>
+                <label>GST - Compliance</label>
+            </value>
+            <value>
+                <fullName>GST - Litigation Support</fullName>
+                <default>false</default>
+                <label>GST - Litigation Support</label>
+            </value>
+            <value>
+                <fullName>GST - Other Services</fullName>
+                <default>false</default>
+                <label>GST - Other Services</label>
+            </value>
+            <value>
+                <fullName>GST - Reconciliation</fullName>
+                <default>false</default>
+                <label>GST - Reconciliation</label>
+            </value>
+            <value>
+                <fullName>GST - Refund</fullName>
+                <default>false</default>
+                <label>GST - Refund</label>
+            </value>
+            <value>
+                <fullName>GST - Registration</fullName>
+                <default>false</default>
+                <label>GST - Registration</label>
+            </value>
+            <value>
+                <fullName>GSTR - 9 &amp; 9C - Historical Periods</fullName>
+                <default>false</default>
+                <label>GSTR - 9 &amp; 9C - Historical Periods</label>
+            </value>
+            <value>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+                <label>Business Development</label>
+            </value>
+            <value>
+                <fullName>Knowledge Management</fullName>
+                <default>false</default>
+                <label>Knowledge Management</label>
+            </value>
+            <value>
+                <fullName>Leave</fullName>
+                <default>false</default>
+                <label>Leave</label>
+            </value>
+            <value>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+                <label>Meetings</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Support SBU</fullName>
+                <default>false</default>
+                <label>Support SBU</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Advisory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Airline Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Litigation Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Other Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Reconciliation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GST - Registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billable</controllingFieldValue>
+            <valueName>GSTR - 9 &amp; 9C - Historical Periods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Business Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Knowledge Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Leave</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Meetings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non Billable</controllingFieldValue>
+            <valueName>Support SBU</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

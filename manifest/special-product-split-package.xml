@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <!--<members>OpportunityTriggerHelper</members>
+        <members>CTX_MultipleAssetCreateOnSpecialProduct</members>-->
+        <members>MetadataService</members>
+        <members></members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <!--<types>
+        <members>Asset.Identity_Resource_Constraints__c</members>
+
+        <name>CustomField</name>
+    </types>-->
+
+    <version>58.0</version>
+</Package>

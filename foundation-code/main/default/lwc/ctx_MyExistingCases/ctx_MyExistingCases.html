@@ -1,0 +1,25 @@
+<template>
+    <template if:true={isEmptyCases}>
+        <div class="slds-var-p-around_large slds-align_absolute-center">
+            No Existing Cases Found
+        </div>
+    </template>
+    <template if:false={isEmptyCases}>
+        <template for:each={myCases} for:item="item">
+            <div key={item.Id} class="slds-var-p-around_small">
+                <lightning-card icon-name="standard:case" title={item.CaseNumber}>
+                    <div class="slds-var-p-around_small">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6">
+                                <b>Case Subject : </b>{item.Subject}
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6">
+                                <b>Case Status : </b>{item.Status}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+    </template>
+</template>

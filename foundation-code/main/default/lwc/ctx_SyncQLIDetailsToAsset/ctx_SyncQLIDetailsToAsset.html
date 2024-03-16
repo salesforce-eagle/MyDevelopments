@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-var-p-around_medium" style="background-color: white;">
+        <template if:false={showSpinner}>
+            <lightning-button variant="brand" label="Sync QLI Details To Asset" title="Sync QLI Details To Asset" onclick={syncDetails} class="slds-var-p-around_medium"></lightning-button>
+        </template>
+    
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-grid">
+                <div class="slds-align_absolute-center">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

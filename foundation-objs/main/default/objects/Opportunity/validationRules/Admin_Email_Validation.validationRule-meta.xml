@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Email_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>!CONTAINS( Company_Domain_Name__c ,  TRIM(RIGHT(  Master_admin_Email__c  , LEN(Master_admin_Email__c)-FIND(&quot;@&quot;,  Master_admin_Email__c ))) )</errorConditionFormula>
+    <errorDisplayField>Master_admin_Email__c</errorDisplayField>
+    <errorMessage>Enter company specific mail id!</errorMessage>
+</ValidationRule>

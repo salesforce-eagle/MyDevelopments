@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!-- 
+    Prerequisite - Make sure objs path is true in package.xml file
+        Format: 
+                ObjectName.FieldAPI
+    -->
+    <!--
+    <types>
+        <members>Account.Id_Account_Owner__c</members>
+        <members>Account.ID_Sales_Owner__c</members>
+        
+        <members>Quote.Monthly_throughput_Slab_1_Cr__c</members>
+        <members>Quote.Monthly_throughput_Slab_2_Cr__c</members>
+        <members>Quote.Monthly_throughput_Slab_3_Cr__c</members>
+        <members>Quote.Transaction_Fee_Slab_1__c</members>
+        <members>Quote.Transaction_Fee_Slab_2__c</members>
+        <members>Quote.Transaction_Fee_Slab_3__c</members>
+        <members>Quote.Flat_Transaction_Fee__c</members>
+
+        <name>CustomField</name>
+    </types>
+-->
+<types>
+      <members>*</members>
+      <name>WorkflowAlert</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

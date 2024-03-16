@@ -1,0 +1,18 @@
+<apex:page controller="ImportMetaDataFromCSVController">
+    <apex:form >
+        <apex:pagemessages />
+        <apex:pageBlock title="Import Metadata">
+            <apex:pageBlockSection columns="2"> 
+                <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                <apex:selectList label="Select a Metadata" value="{!selectedType}" size="1">
+                    <apex:selectOptions value="{!cmdTypes}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <div>
+                    <apex:commandButton value="Import Metadata" action="{!importCSVFile}"/>
+                </div>                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

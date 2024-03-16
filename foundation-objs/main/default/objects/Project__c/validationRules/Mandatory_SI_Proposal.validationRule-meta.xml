@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_SI_Proposal</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Project_Stage__c ) &amp;&amp;
+(ISPICKVAL(Project_Stage__c,&apos;Implementation&apos;) ||
+ISPICKVAL(Project_Stage__c,&apos;UAT&apos;) ||
+ISPICKVAL(Project_Stage__c,&apos;Live&apos;)) &amp;&amp;
+In_house_project__c = False &amp;&amp;
+ISPICKVAL(Scope_Category__c,&apos;Development&apos;) &amp;&amp;
+ISBLANK(SI_Proposal_Requirement_Documentation__c)</errorConditionFormula>
+    <errorMessage>Please enter SI proposal/ Requirement documentation link.</errorMessage>
+</ValidationRule>

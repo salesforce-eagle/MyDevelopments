@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Success Clear Capture Second Task</label>
+    <protected>false</protected>
+    <values>
+        <field>Controlling_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Due_Day_From_PO_Start_Date__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Due_Day_of_Month__c</field>
+        <value xsi:type="xsd:double">14.0</value>
+    </values>
+    <values>
+        <field>Is_Integrated_Customer_Journey__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Product_Line__c</field>
+        <value xsi:type="xsd:string">Clear Capture</value>
+    </values>
+    <values>
+        <field>Stage__c</field>
+        <value xsi:type="xsd:string">Success</value>
+    </values>
+    <values>
+        <field>Task_Name__c</field>
+        <value xsi:type="xsd:string">Follow up call</value>
+    </values>
+</CustomMetadata>

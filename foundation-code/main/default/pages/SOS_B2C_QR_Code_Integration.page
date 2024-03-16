@@ -1,0 +1,107 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_B2C_QR_Code_Integration_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS_B2C_QR_Integ==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services forB2C-QR Code Integration- </u></b>
+
+            <p class="test">
+               a) Feature List of B2C QR Code for E-Invoice: API Integrations (Development):-
+            </p>
+            <table class="info-table"> 
+                <tr><th>Features</th><th>Description</th></tr>
+                <tr>
+                    <td>B2C QR Code Generation</td>
+                    <td>Support all relevant outward documents and generation of QR Code for B2C documents
+                        Steps to be taken:
+                        <ol>
+                            <li>Extract the required data / documents as prescribed by the government (Sales Invoice for B2C Transactions) from ERP.</li>
+                            <li>Transform the data / document to the correct format acceptable by CT APIs (JSON format).</li>
+                            <li>Perform validation checks as per CT validation API on the invoice content.</li>
+                            <li>Load the transformed data using RESTful APIs to ClearTax application.</li>
+                            <li>Receive the generated B2C QR Code and other metadata  from CT APIs.</li>
+                            <li>Update the B2C QR Code and other metadata back in ERP.</li>
+                            <li>B2C QR Code generation will be triggered either (i) real-time when a document is generated and / or (ii) scheduled and / or 
+                                (iii) on-click, as per client requirement
+                            </li>
+                        </ol>
+                        Below are the other B2C QR Code functionalities:
+                        <ul>
+                            <li>Custom Invoice printing (Only B2C QR Code will be updated in report) within ERP modification to be done in 3 print reports. We will add only B2C QR code in the print report.</li>
+                            <li>Placeholder for the B2C QR Code in the report to be created and provided to Cleartax by the client’s team. Placeholder should have space of 6*6 cm to accommodate QR code with module size 11 (can be scanned).</li>
+                            <li>Disable printing of invoices where B2C QR Code is applicable but not generated.</li>
+                            <li>Bulk generation and bulk printing functionality within ERP.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <p><b>b) Scope of Services for API Development</b></p>
+            <ol style="list-style-type: lower-roman;">
+                <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to 
+                    be done by the customer's IT team.</li>
+                <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra team 
+                    and the customer provides necessary access to Cleartax and its system integrator . This activity should be done by the 
+                    Customer within 5 working days from project kick-off date</li>
+                <li>Network: Cleartax does not provide end to end service on network set up.</li>
+                <li>Basis: Cleartax does not provide any support related to Basis.</li>
+                <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+                <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator.
+                    Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  
+                    If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this 
+                    Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees 
+                    to additionally pay for such remote access.</li>
+                <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration with the 
+                    consulting team for study and understanding.</li>
+                <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or 
+                    based on the milestones.</li>
+                <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). 
+                    In the interest of timely completion of the project, all the test cases as per the functionalities 
+                    agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer 
+                    within 14 days of moving the project to UAT.</li>
+                <li>Once the UAT sign-off is provided the customer need to give necessary clearance to move the code to production within 7 days. </li>
+                <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, the project will be deemed to have 
+                    successfully gone live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer. </li>
+            </ol>
+            <p><b>c) Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from the
+                go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original
+                scope of work for integration. It excludes</p>
+            <ol style="list-style-type: lower-roman;">
+                <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields)
+                    stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+            </ol>
+            <p>
+                <b>d) Annual Maintenance (AMC) for Integration -</b>Customer may avail annual maintenance services for integration for the 
+                Period of Engagement by paying appropriate AMC fee. The AMC support will include fixing any breakages in functionality 
+                only with respect to the original scope of work for integration. It excludes
+            </p>
+            <ol style="list-style-type: lower-roman;">
+                <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) 
+                    stipulated by the government/GSTN/NIC after the initially agreed scope of work. </li>
+            </ol>
+            <apex:include pageName="{!nextPageName}"/>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>T-29</label>
+    <protected>false</protected>
+    <values>
+        <field>Product_Module__c</field>
+        <value xsi:type="xsd:string">EWB</value>
+    </values>
+    <values>
+        <field>Threshold_List_Price__c</field>
+        <value xsi:type="xsd:double">100000.0</value>
+    </values>
+    <values>
+        <field>Type_of_Integration__c</field>
+        <value xsi:type="xsd:string">API - Only by CT Inhouse Custom ERP</value>
+    </values>
+</CustomMetadata>

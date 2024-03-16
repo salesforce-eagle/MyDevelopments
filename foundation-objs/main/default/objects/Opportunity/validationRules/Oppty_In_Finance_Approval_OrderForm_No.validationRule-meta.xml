@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_In_Finance_Approval_OrderForm_No</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( AND(RecordTypeId &lt;&gt; $Label.ITR_Opportuntiy_Record_Type_ID, RecordType.Name &lt;&gt; &apos;International&apos;,RecordType.Name &lt;&gt; &apos;Renewal - Multi year&apos;, Country_of_Origin__c = &apos;India&apos; || Country_of_Origin__c = &apos;&apos;
+) ,
+AND(
+TEXT(StageName) == &apos;In Finance approval&apos;,
+OR(
+ISBLANK(Legal_Entity_Name_Of_The_Client__c),
+ISBLANK(PAN_No_as_per_PO__c),
+ISBLANK(Billing_GST__c),
+ISBLANK(Place_of_Supply__c),
+ISBLANK( TAN__c ),
+ISPICKVAL( Billing_Method__c ,&apos;&apos; ),
+ISPICKVAL( If_SEZ__c ,&apos;&apos; ),
+ISPICKVAL( Payment_Method__c ,&apos;&apos; ),
+ISPICKVAL( Payment_Term__c ,&apos;&apos; ),
+ISBLANK( Billing_Address__c ),
+ISBLANK( Shipping_Address__c ),
+ISBLANK ( Company_Domain_Name__c ),
+ISBLANK ( Master_admin_Email__c ),
+(ISBLANK ( CIN__c ) &amp;&amp; PRIORVALUE(StageName)!= &apos;In Finance approval&apos; &amp;&amp; ISCHANGED(StageName) )
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Please Enter Value For Billing Frequency of Products, Billing method, Payment method, Payment term, Billing PAN, GSTIN, Legal name, TAN, CIN , Place of Supply, Billing Address, SEZ, Shipping Address, Company Domain Name and Master Admin Email</errorMessage>
+</ValidationRule>

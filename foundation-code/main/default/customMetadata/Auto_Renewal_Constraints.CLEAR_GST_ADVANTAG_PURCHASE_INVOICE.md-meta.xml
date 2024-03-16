@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CLEAR_GST_ADVANTAG_PURCHASE_INVOICE</label>
+    <protected>false</protected>
+    <values>
+        <field>Asset_Field__c</field>
+        <value xsi:type="xsd:string">Number_of_Purchase_Invoice__c</value>
+    </values>
+    <values>
+        <field>Display_Text__c</field>
+        <value xsi:type="xsd:string">Purchase Invoice</value>
+    </values>
+    <values>
+        <field>Plan_Tier__c</field>
+        <value xsi:type="xsd:string">CLEAR_GST_ADVANTAGE</value>
+    </values>
+    <values>
+        <field>Quote_Line_Item_Field__c</field>
+        <value xsi:type="xsd:string">Purchases_Invoices_one__c</value>
+    </values>
+    <values>
+        <field>Resource__c</field>
+        <value xsi:type="xsd:string">PURCHASE_INVOICE</value>
+    </values>
+</CustomMetadata>

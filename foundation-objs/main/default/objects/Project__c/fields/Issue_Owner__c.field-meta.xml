@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Owner__c</fullName>
+    <description>Who needs to act to unblock the issue?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who needs to act to unblock the issue?</inlineHelpText>
+    <label>Issue Owner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CT CSM</fullName>
+                <default>false</default>
+                <label>CT CSM</label>
+            </value>
+            <value>
+                <fullName>CT Engg Dev</fullName>
+                <default>false</default>
+                <label>CT Engg Dev</label>
+            </value>
+            <value>
+                <fullName>CT Finance</fullName>
+                <default>false</default>
+                <label>CT Finance</label>
+            </value>
+            <value>
+                <fullName>CT Integration</fullName>
+                <default>false</default>
+                <label>CT Integration</label>
+            </value>
+            <value>
+                <fullName>CT Integration SI</fullName>
+                <default>false</default>
+                <label>CT Integration SI</label>
+            </value>
+            <value>
+                <fullName>CT KAM</fullName>
+                <default>false</default>
+                <label>CT KAM</label>
+            </value>
+            <value>
+                <fullName>CT Legal</fullName>
+                <default>false</default>
+                <label>CT Legal</label>
+            </value>
+            <value>
+                <fullName>CT MS</fullName>
+                <default>false</default>
+                <label>CT MS</label>
+            </value>
+            <value>
+                <fullName>CT Product</fullName>
+                <default>false</default>
+                <label>CT Product</label>
+            </value>
+            <value>
+                <fullName>CT Sales EC</fullName>
+                <default>false</default>
+                <label>CT Sales EC</label>
+            </value>
+            <value>
+                <fullName>CT Sales LC</fullName>
+                <default>false</default>
+                <label>CT Sales LC</label>
+            </value>
+            <value>
+                <fullName>CT Sales VLC</fullName>
+                <default>false</default>
+                <label>CT Sales VLC</label>
+            </value>
+            <value>
+                <fullName>CT Sales Start Up</fullName>
+                <default>false</default>
+                <label>CT Sales Start Up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

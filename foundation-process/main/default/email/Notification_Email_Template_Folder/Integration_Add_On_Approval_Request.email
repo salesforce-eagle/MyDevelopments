@@ -1,0 +1,45 @@
+<messaging:emailTemplate subject="Integration Add On Price Approval for Quote - {!relatedTo.Name}" recipientType="User" relatedToType="Quote">
+    <messaging:htmlEmailBody >
+        <style>
+        table, tr, td {
+            border: 1px solid black;
+            font-family: arial, sans-serif;
+            text-align: left;
+            font-size: 15px;
+        }        
+</style>
+    <p>Hi ,</p>
+    <p>{!relatedTo.owner.name} has requested your approval to offer discounted Integration add on price for the following Add-Ons :</p>
+                        <br></br>
+                        <table border="1px" >
+                                <tr style="text-align: left;">
+                                    <th><b>Module</b></th>
+                                    <th><b>List Price</b></th>
+                                    <th><b>Discount Percentage</b></th>
+                                    <th><b>Discount Rate</b></th>
+                                </tr>
+                            <apex:repeat var="cx" value="{!relatedTo.Related_Quote__r}"> 
+                                
+                                <tr style="text-align: left;">
+                                     <td>{!cx.Module__c}</td>
+                                     <td>{!cx.List_Price__c}</td>
+                                     <td>{!cx.Discount_Percentage__c}</td> 
+                                    <td>{!cx.Discount_Rate__c}</td>
+                                 </tr>
+                            </apex:repeat>
+                     </table>
+                     <br></br>
+                     
+Request you to kindly review and Accept/Deny the requested price through the following link:<apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}">Click Here</apex:outputlink> OR Reply to this Email with 'Approved' or 'Rejected'.
+If Reject, please specify your reason for reject in the next line on your mail body.
+<br></br>    
+                                               
+                                                            <table class="info-table" border="1px">     
+                    <apex:repeat var="cx" value="{!relatedTo.Attachments}">
+        <tr>
+          <td style="padding: 5px;">Attachment:</td>
+          <td style="padding: 5px;"><a href="https://c.cs14.content.force.com/servlet/servlet.FileDownload?file={!cx.id}">{!cx.Name}</a></td>
+        </tr>
+</apex:repeat></table>
+ </messaging:htmlEmailBody>
+                                                    </messaging:emailTemplate>

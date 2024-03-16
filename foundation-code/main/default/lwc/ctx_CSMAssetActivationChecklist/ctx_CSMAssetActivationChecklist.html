@@ -1,0 +1,167 @@
+<template>
+    <template if:false={isEmptyTaskList}>
+        <lightning-card title={title}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th scope="col"> <div >Subject</div></th>
+                        <th scope="col"> <div >Comments</div></th>
+                        <template if:true={isHealthCheckTask}>
+                            <th scope="col"> <div >Status of Customer</div></th>
+                        </template>
+                        <th scope="col"> <div >Due Date</div></th>
+                        <th scope="col"> <div >Status</div></th>
+                        <th scope="col"> <div >Completion Date</div></th>
+                        <th scope="col"> <div ></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={tasksList} for:item="task">
+                        <tr key={task.data.Id}>
+                            <td class="slds-cell-wrap">
+                                {task.data.Subject}
+                            </td>
+                            <td class="slds-cell-wrap">
+                                {task.data.Description}
+                            </td>
+                            <template if:true={isHealthCheckTask}>
+                                <td class="slds-cell-wrap"> 
+                                    {task.data.Status_of_Customer__c}
+                                </td>
+                            </template>
+                            <td class="slds-cell-wrap">
+                                <lightning-formatted-date-time value={task.data.ActivityDate} year="numeric" month="numeric" day="numeric">
+                                </lightning-formatted-date-time>
+                                
+                            </td>
+                            <td class="slds-cell-wrap">
+                                <template if:false={task.isCompleted}>
+                                    <div class="slds-var-p-around_small">
+                                        <a data-id={task.data.Id} onclick={handleOpenModal}>
+                                            Mark as Complete
+                                        </a>
+                                        <!--<lightning-button data-id={task.data.Id} variant="brand" label="Mark as Complete" name="Mark as Complete" onclick={handleOpenModal}></lightning-button>-->
+                                    </div>
+                                </template>
+                                <template if:true={task.isCompleted}>
+                                    <div>
+                                        {task.data.Status}
+                                    </div>
+                                </template>
+                            </td>
+                            <td class="slds-cell-wrap">
+                                
+                                <lightning-formatted-date-time value={task.data.CompletedDateTime} year="numeric" month="numeric" day="numeric">
+                                </lightning-formatted-date-time>
+                            </td>
+                            <td class="slds-cell-wrap">
+                                <a data-id={task.data.Id} onclick={navigateToAttchments}>
+                                    View Attachments
+                                </a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+                
+            </table>
+        </lightning-card>
+    
+        <template if:true={showModal}>
+            <!--###### MODAL BOX Start######-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <header class="slds-modal__header slds-clearfix">
+                        <a onclick={closeModal} class="slds-modal__close">
+                            <lightning-icon icon-name="utility:close" size="small" class="icon-color-close"></lightning-icon>
+                        </a>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Task Closing Comments</b>
+                        </h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" style="position:relative;" id="modal-content-id-1">
+                        <!--<textarea name="Completion Comments" rows="6"></textarea>-->
+                        <template if:false={isHealthCheckTask}>
+                            <lightning-textarea data-id="form" data-field="Description" name="Comments" label="Comments" placeholder="Add your comments...."></lightning-textarea>
+                            <div class="slds-var-m-vertical_small">
+                                <label class="slds-form-element__label" for="form-element-03">
+                                    Upload a File
+                                </label>
+                                <!--<lightning-input data-id="caseForm" onchange={handleFilesChange} type="file" name="file"
+                                                            label="Upload File" multiple variant="label-hidden">
+                                                        </lightning-input>-->
+                                <div data-id="fileSelector" class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-file-selector slds-file-selector_images">
+                                            <div class="slds-file-selector__dropzone">
+                                                <input type="file" class="slds-file-selector__input slds-assistive-text"
+                                                    onchange={handleFilesChange} accept="image/png, image/jpeg, image/jpg" multiple
+                                                    id="file-upload-input-123" aria-describedby="error-124"
+                                                    aria-labelledby="file-selector-primary-label-121 file-selector-secondary-label122" />
+                                                <label class="slds-file-selector__body" for="file-upload-input-123"
+                                                    id="file-selector-secondary-label122">
+                                                    <span class="slds-file-selector__button slds-button slds-button_neutral">
+                                                        <lightning-icon icon-name="utility:upload" size="x-small" class="slds-var-m-right_xx-small">
+                                                        </lightning-icon>Upload file
+                                                    </span>
+                                                    <span class="slds-file-selector__text slds-show">or Drop File</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table>
+                                    <tbody>
+                                        <template for:each={filesToUpload} for:item="file">
+                                            <tr key={file.Title}>
+                                                <td>
+                                                    <label>{file.Title}</label>
+                                                </td>
+                                                <td>
+                                                    <lightning-button-icon variant="bare" data-id={file.Title} icon-name="utility:delete"
+                                                        size="small" title="Delete" onclick={handleRemoveFile}></lightning-button-icon>
+                                                </td>
+                            
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                        <template if:true={isHealthCheckTask}>
+                                <lightning-combobox
+                                        name="Status Of Customer"
+                                        label="Status Of Customer"
+                                        placeholder="Select Status of Customer"
+                                        options={statusOfCustomerOptions}
+                                        data-id="form"
+                                        data-field="Status_Of_Customer__c" 
+                                        required>
+                                </lightning-combobox>
+                                <lightning-textarea data-id="form" data-field="Description" name="Comments" label="Comments" placeholder="Add your comments...."></lightning-textarea>
+                        </template>
+                        
+                        <template if:true={showSpinner}>
+                            <div class="slds-spinner_container slds-grid">
+                                <div class="slds-align_absolute-center">
+                                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </template>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="brand" label="Submit" name="Submit" onclick={handleCompleteTask}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+        </template>
+    </template>
+</template>

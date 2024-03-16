@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Tentative_resume_date</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Integration_status__c, &apos;On-hold (&gt;30 Days)&apos;)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Please populate the &apos;Tentative resume date&apos; field !</errorMessage>
+</ValidationRule>

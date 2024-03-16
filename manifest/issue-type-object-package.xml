@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Case.Issue_Type_1_New__c</members>
+        <members>Case.Issue_Type_2_New__c</members>
+        <members>Case.Issue_Type_3_New__c</members>
+        <members>Case.Issue_Type_4_New__c</members>
+        <members>Case.Products_Available__c</members>
+        <members>Case.Tagged_To__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+
+    <version>52.0</version>
+</Package>

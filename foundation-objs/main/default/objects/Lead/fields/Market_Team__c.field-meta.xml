@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Team__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Market Team</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CA/SME</fullName>
+                <default>false</default>
+                <label>CA/SME</label>
+            </value>
+            <value>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+                <label>Channel Partner</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>Partner Community</fullName>
+                <default>false</default>
+                <label>Partner Community</label>
+            </value>
+            <value>
+                <fullName>Partner Success</fullName>
+                <default>false</default>
+                <label>Partner Success</label>
+            </value>
+            <value>
+                <fullName>SME</fullName>
+                <default>false</default>
+                <label>SME</label>
+            </value>
+            <value>
+                <fullName>Tax Expert</fullName>
+                <default>false</default>
+                <label>Tax Expert</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

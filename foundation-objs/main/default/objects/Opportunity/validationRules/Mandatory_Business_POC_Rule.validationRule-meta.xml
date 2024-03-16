@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Business_POC_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF((ISCHANGED(Bus_POC__c) &amp;&amp; !ISBLANK(Bus_POC__c)),ISBLANK( Bus_POC__r.Email ) ||
+ISBLANK( Bus_POC__r.Designation__c ) ||
+ISBLANK( Bus_POC__r.Phone ),
+false)</errorConditionFormula>
+    <errorMessage>Please fill all details(Name, Email, Department, Primary Mobile,Designation) of the contact !</errorMessage>
+</ValidationRule>

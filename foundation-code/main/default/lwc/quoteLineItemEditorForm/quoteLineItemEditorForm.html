@@ -1,0 +1,19 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleToggleSection} active-section-name={activeSections}>
+        <template for:each={quoteLineItemsList} for:item="quoteLineItem">
+            <div key={quoteLineItem.recordId}>
+                <lightning-accordion-section name={quoteLineItem.recordId} label={quoteLineItem.productName}>
+                    <div class="slds-scrollable slds-box">
+                        <lightning-record-form 
+                            record-id={quoteLineItem.recordId} 
+                            object-api-name="QuoteLineItem" 
+                            fields={quoteLineItem.fields} 
+                            columns="3">
+                        </lightning-record-form>
+                    </div>
+                </lightning-accordion-section>
+            </div>
+        </template>
+    </lightning-accordion>
+    
+</template>

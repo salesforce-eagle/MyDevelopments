@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queue__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if(Not(ISBLANK(Parent.Asset_ID_18__c)),&quot;Child of a renewed asset&quot;,
+if(ispickval(Status,&quot;Churn&quot;),&quot;Churn&quot;,
+if(ispickval(Status,&quot;Sales return&quot;),&quot;Sales return&quot;,
+if(ispickval(Onboarding_status__c,&quot;Onboarding pending&quot;),
+if(month(PurchaseDate)=month(today()),&quot;Q1 This Month&quot;,&quot;Q1 prior to this month&quot;),
+if(isblank(Last_Usage_Date__c),
+if(month(PurchaseDate)=month(today()),&quot;Q2 This Month&quot;,&quot;Q2 prior to this month&quot;),
+if(ADDMONTHS(date(year(Today()),month(today()),1),-1)&gt;Last_Usage_Date__c,
+if(month(PurchaseDate)=month(today()),&quot;Q3 This Month&quot;,&quot;Q3 prior to this month&quot;),
+&quot;Out of Queue because usage present post 1st of last month&quot;))))))</formula>
+    <label>Queue</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

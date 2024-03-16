@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tagged_To__c</fullName>
+    <externalId>false</externalId>
+    <label>Tagged To</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Issue_Type_1_New__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gstr-1</fullName>
+                <default>false</default>
+                <label>Gstr-1</label>
+            </value>
+            <value>
+                <fullName>Gstr-3B</fullName>
+                <default>false</default>
+                <label>Gstr-3B</label>
+            </value>
+            <value>
+                <fullName>Gstr-4</fullName>
+                <default>false</default>
+                <label>Gstr-4</label>
+            </value>
+            <value>
+                <fullName>Gstr-9</fullName>
+                <default>false</default>
+                <label>Gstr-9</label>
+            </value>
+            <value>
+                <fullName>CMP-08</fullName>
+                <default>false</default>
+                <label>CMP-08</label>
+            </value>
+            <value>
+                <fullName>PMT-06</fullName>
+                <default>false</default>
+                <label>PMT-06</label>
+            </value>
+            <value>
+                <fullName>IFF</fullName>
+                <default>false</default>
+                <label>IFF</label>
+            </value>
+            <value>
+                <fullName>ITC-04</fullName>
+                <default>false</default>
+                <label>ITC-04</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>3B vs. 1 vs. Books</fullName>
+                <default>false</default>
+                <label>3B vs. 1 vs. Books</label>
+            </value>
+            <value>
+                <fullName>3B vs. 2B vs. Books</fullName>
+                <default>false</default>
+                <label>3B vs. 2B vs. Books</label>
+            </value>
+            <value>
+                <fullName>3B vs. 2A &amp; 2B</fullName>
+                <default>false</default>
+                <label>3B vs. 2A &amp; 2B</label>
+            </value>
+            <value>
+                <fullName>Monthly tax &amp; ITC</fullName>
+                <default>false</default>
+                <label>Monthly tax &amp; ITC</label>
+            </value>
+            <value>
+                <fullName>Gstr-1 Filed report</fullName>
+                <default>false</default>
+                <label>Gstr-1 Filed report</label>
+            </value>
+            <value>
+                <fullName>Gstr-3B Filed report</fullName>
+                <default>false</default>
+                <label>Gstr-3B Filed report</label>
+            </value>
+            <value>
+                <fullName>Pan level - 3B vs. 1</fullName>
+                <default>false</default>
+                <label>Pan level - 3B vs. 1</label>
+            </value>
+            <value>
+                <fullName>Pan level - 3B vs. 2A</fullName>
+                <default>false</default>
+                <label>Pan level - 3B vs. 2A</label>
+            </value>
+            <value>
+                <fullName>Pan level - MM2A</fullName>
+                <default>false</default>
+                <label>Pan level - MM2A</label>
+            </value>
+            <value>
+                <fullName>Pan level - MM2B</fullName>
+                <default>false</default>
+                <label>Pan level - MM2B</label>
+            </value>
+            <value>
+                <fullName>Pan level - Gstr-1</fullName>
+                <default>false</default>
+                <label>Pan level - Gstr-1</label>
+            </value>
+            <value>
+                <fullName>Gstr-1 HSN summary</fullName>
+                <default>false</default>
+                <label>Gstr-1 HSN summary</label>
+            </value>
+            <value>
+                <fullName>Gstr-1 rate wise summary</fullName>
+                <default>false</default>
+                <label>Gstr-1 rate wise summary</label>
+            </value>
+            <value>
+                <fullName>Cash ledger</fullName>
+                <default>false</default>
+                <label>Cash ledger</label>
+            </value>
+            <value>
+                <fullName>ITC ledger</fullName>
+                <default>false</default>
+                <label>ITC ledger</label>
+            </value>
+            <value>
+                <fullName>ITC offset</fullName>
+                <default>false</default>
+                <label>ITC offset</label>
+            </value>
+            <value>
+                <fullName>Monthly Tax &amp; ITC summary</fullName>
+                <default>false</default>
+                <label>Monthly Tax &amp; ITC summary</label>
+            </value>
+            <value>
+                <fullName>3B vs. 1 comparison</fullName>
+                <default>false</default>
+                <label>3B vs. 1 comparison</label>
+            </value>
+            <value>
+                <fullName>3B vs. 2A ITC comparison</fullName>
+                <default>false</default>
+                <label>3B vs. 2A ITC comparison</label>
+            </value>
+            <value>
+                <fullName>G9 Table 8 report</fullName>
+                <default>false</default>
+                <label>G9 Table 8 report</label>
+            </value>
+            <value>
+                <fullName>G4 Table 4A report</fullName>
+                <default>false</default>
+                <label>G4 Table 4A report</label>
+            </value>
+            <value>
+                <fullName>Supplier complaince</fullName>
+                <default>false</default>
+                <label>Supplier complaince</label>
+            </value>
+            <value>
+                <fullName>E-inv Web</fullName>
+                <default>false</default>
+                <label>E-inv Web</label>
+            </value>
+            <value>
+                <fullName>E-inv API</fullName>
+                <default>false</default>
+                <label>E-inv API</label>
+            </value>
+            <value>
+                <fullName>E-inv FTP</fullName>
+                <default>false</default>
+                <label>E-inv FTP</label>
+            </value>
+            <value>
+                <fullName>EWB Web</fullName>
+                <default>false</default>
+                <label>EWB Web</label>
+            </value>
+            <value>
+                <fullName>EWB API</fullName>
+                <default>false</default>
+                <label>EWB API</label>
+            </value>
+            <value>
+                <fullName>EWB FTP</fullName>
+                <default>false</default>
+                <label>EWB FTP</label>
+            </value>
+            <value>
+                <fullName>2a vs Pr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2a vs Pr</label>
+            </value>
+            <value>
+                <fullName>2b vs Pr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2b vs Pr</label>
+            </value>
+            <value>
+                <fullName>6a Vs Pr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>6a Vs Pr</label>
+            </value>
+            <value>
+                <fullName>8a Vs Pr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>8a Vs Pr</label>
+            </value>
+            <value>
+                <fullName>G1 Vs EWB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>G1 Vs EWB</label>
+            </value>
+            <value>
+                <fullName>G1 Vs Sales</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>G1 Vs Sales</label>
+            </value>
+            <value>
+                <fullName>Gstr-2a</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gstr-2a</label>
+            </value>
+            <value>
+                <fullName>Gstr-2b</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gstr-2b</label>
+            </value>
+            <value>
+                <fullName>Gstr-6</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gstr-6</label>
+            </value>
+            <value>
+                <fullName>Gstr-7</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gstr-7</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>E-inv Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>E-inv API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>E-inv FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>EWB Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>EWB API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Data Ingestion</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB generation</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Custom Print template</controllingFieldValue>
+            <controllingFieldValue>IRN/EWB Cancellations</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>EWB FTP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>Gstr-1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>Gstr-3B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>Gstr-4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>Gstr-9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>CMP-08</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>PMT-06</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>IFF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>ITC-04</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filing</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <controllingFieldValue>Recon</controllingFieldValue>
+            <valueName>3B vs. 1 vs. Books</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <controllingFieldValue>Recon</controllingFieldValue>
+            <valueName>3B vs. 2B vs. Books</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Gstr-1 Filed report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Gstr-3B Filed report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Pan level - 3B vs. 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Pan level - 3B vs. 2A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Pan level - MM2A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Pan level - MM2B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Pan level - Gstr-1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Gstr-1 HSN summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Gstr-1 rate wise summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Cash ledger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>ITC ledger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>ITC offset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Monthly Tax &amp; ITC summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>3B vs. 1 comparison</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>3B vs. 2A ITC comparison</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>G9 Table 8 report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>G4 Table 4A report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Supplier complaince</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Recon</controllingFieldValue>
+            <valueName>3B vs. 2A &amp; 2B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Recon</controllingFieldValue>
+            <valueName>Monthly tax &amp; ITC</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

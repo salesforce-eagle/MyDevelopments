@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>lead_assigned_to_deal_desk__c</fullName>
+    <externalId>false</externalId>
+    <label>lead assigned to(deal desk)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Suhas G</fullName>
+                <default>false</default>
+                <label>Suhas G</label>
+            </value>
+            <value>
+                <fullName>Tushar Bajaj</fullName>
+                <default>false</default>
+                <label>Tushar Bajaj</label>
+            </value>
+            <value>
+                <fullName>Saurabh Sehgal(N1)</fullName>
+                <default>false</default>
+                <label>Saurabh Sehgal(N1)</label>
+            </value>
+            <value>
+                <fullName>Mayank Gupta(N2)</fullName>
+                <default>false</default>
+                <label>Mayank Gupta(N2)</label>
+            </value>
+            <value>
+                <fullName>Swamy Santosh</fullName>
+                <default>false</default>
+                <label>Swamy Santosh</label>
+            </value>
+            <value>
+                <fullName>Akhil Chabra(W2)</fullName>
+                <default>false</default>
+                <label>Akhil Chabra(W2)</label>
+            </value>
+            <value>
+                <fullName>Sameer Dubey(W1)</fullName>
+                <default>false</default>
+                <label>Sameer Dubey(W1)</label>
+            </value>
+            <value>
+                <fullName>Anand Khare(channel)</fullName>
+                <default>false</default>
+                <label>Anand Khare(channel)</label>
+            </value>
+            <value>
+                <fullName>Ayushi Rai(channel)</fullName>
+                <default>false</default>
+                <label>Ayushi Rai(channel)</label>
+            </value>
+            <value>
+                <fullName>Parimal Pandey(SME)</fullName>
+                <default>false</default>
+                <label>Parimal Pandey(SME)</label>
+            </value>
+            <value>
+                <fullName>Sweety Sharma(SME)</fullName>
+                <default>false</default>
+                <label>Sweety Sharma(SME)</label>
+            </value>
+            <value>
+                <fullName>Arushi Agrawal(IS)</fullName>
+                <default>false</default>
+                <label>Arushi Agrawal(IS)</label>
+            </value>
+            <value>
+                <fullName>Syeda Jahan</fullName>
+                <default>false</default>
+                <label>Syeda Jahan</label>
+            </value>
+            <value>
+                <fullName>Varun Kumar</fullName>
+                <default>false</default>
+                <label>Varun Kumar</label>
+            </value>
+            <value>
+                <fullName>Adwait Chandekar</fullName>
+                <default>false</default>
+                <label>Adwait Chandekar</label>
+            </value>
+            <value>
+                <fullName>Chetan Agarwal</fullName>
+                <default>false</default>
+                <label>Chetan Agarwal</label>
+            </value>
+            <value>
+                <fullName>Eshan Gupta</fullName>
+                <default>false</default>
+                <label>Eshan Gupta</label>
+            </value>
+            <value>
+                <fullName>Nitin Sreenivasan(S)</fullName>
+                <default>false</default>
+                <label>Nitin Sreenivasan(S)</label>
+            </value>
+            <value>
+                <fullName>Kanika Sehgal(IS)</fullName>
+                <default>false</default>
+                <label>Kanika Sehgal(IS)</label>
+            </value>
+            <value>
+                <fullName>Amit Desi</fullName>
+                <default>false</default>
+                <label>Amit Desi</label>
+            </value>
+            <value>
+                <fullName>Amiya Jha</fullName>
+                <default>false</default>
+                <label>Amiya Jha</label>
+            </value>
+            <value>
+                <fullName>Anand Khare</fullName>
+                <default>false</default>
+                <label>Anand Khare</label>
+            </value>
+            <value>
+                <fullName>Ankit Singhvi</fullName>
+                <default>false</default>
+                <label>Ankit Singhvi</label>
+            </value>
+            <value>
+                <fullName>Anosh Lepcha</fullName>
+                <default>false</default>
+                <label>Anosh Lepcha</label>
+            </value>
+            <value>
+                <fullName>Apoorv Katiyar</fullName>
+                <default>false</default>
+                <label>Apoorv Katiyar</label>
+            </value>
+            <value>
+                <fullName>Archit Jindal</fullName>
+                <default>false</default>
+                <label>Archit Jindal</label>
+            </value>
+            <value>
+                <fullName>Admin Queue</fullName>
+                <default>false</default>
+                <label>Admin Queue</label>
+            </value>
+            <value>
+                <fullName>Vasupraveen reddy</fullName>
+                <default>false</default>
+                <label>Vasupraveen reddy</label>
+            </value>
+            <value>
+                <fullName>Ananya bhaumki(SME)</fullName>
+                <default>false</default>
+                <label>Ananya bhaumki(SME)</label>
+            </value>
+            <value>
+                <fullName>Suparv Jain(Channel)</fullName>
+                <default>false</default>
+                <label>Suparv Jain(Channel)</label>
+            </value>
+            <value>
+                <fullName>Mufeeda Khan(MP)</fullName>
+                <default>false</default>
+                <label>Mufeeda Khan(MP)</label>
+            </value>
+            <value>
+                <fullName>Abhineet Ankur (CA)</fullName>
+                <default>false</default>
+                <label>Abhineet Ankur (CA)</label>
+            </value>
+            <value>
+                <fullName>Rudranil Dutta</fullName>
+                <default>false</default>
+                <label>Rudranil Dutta</label>
+            </value>
+            <value>
+                <fullName>Indranil Mukherjee</fullName>
+                <default>false</default>
+                <label>Indranil Mukherjee</label>
+            </value>
+            <value>
+                <fullName>Rajdip Baneerjee</fullName>
+                <default>false</default>
+                <label>Rajdip Baneerjee</label>
+            </value>
+            <value>
+                <fullName>Harsh Paliwal</fullName>
+                <default>false</default>
+                <label>Harsh Paliwal</label>
+            </value>
+            <value>
+                <fullName>Sameer Seth</fullName>
+                <default>false</default>
+                <label>Sameer Seth</label>
+            </value>
+            <value>
+                <fullName>Shemmeem CK</fullName>
+                <default>false</default>
+                <label>Shemmeem CK</label>
+            </value>
+            <value>
+                <fullName>SemmerDubey</fullName>
+                <default>false</default>
+                <label>SemmerDubey</label>
+            </value>
+            <value>
+                <fullName>AnandKhare</fullName>
+                <default>false</default>
+                <label>AnandKhare</label>
+            </value>
+            <value>
+                <fullName>AmitGupta</fullName>
+                <default>false</default>
+                <label>AmitGupta</label>
+            </value>
+            <value>
+                <fullName>SaurabhSehgal</fullName>
+                <default>false</default>
+                <label>SaurabhSehgal</label>
+            </value>
+            <value>
+                <fullName>Rajdip Banerjee</fullName>
+                <default>false</default>
+                <label>Rajdip Banerjee</label>
+            </value>
+            <value>
+                <fullName>Nitin Sreenivasan (S)</fullName>
+                <default>true</default>
+                <label>Nitin Sreenivasan (S)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

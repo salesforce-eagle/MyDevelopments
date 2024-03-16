@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Discount</field>
+        <field>Account</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Opportunity_Owner_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Max_Discount__c &lt;=0.25</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>0% - 25%</label>
+        <name>X0_25</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Super_Manager_Name__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Max_Discount__c &gt; 0.25 &amp;&amp; Max_Discount__c &lt;= 0.50 &amp;&amp; Super_Manager_Name__r.Email &lt;&gt; &apos;rohit.razdan@clear.in&apos;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>25% - 50%</label>
+        <name>X25_50</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Opportunity_Owner_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Max_Discount__c &gt; 0.25 &amp;&amp; Max_Discount__c &lt;= 0.50 &amp;&amp; Super_Manager_Name__r.Email = &apos;rohit.razdan@clear.in&apos;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>25% - 50% SM</label>
+        <name>X25_50_SM</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ent-pricing-approvals@cleartaxmailer.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>rohit.razdan@cleartax.in</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Max_Discount__c &gt; 0.50</formula>
+        </entryCriteria>
+        <label>&gt;50%</label>
+        <name>X50</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Notification_Email_Template_Folder/Quote_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>!ISPICKVAL(Approval_sub_status__c,&apos;Discount Approved&apos;) &amp;&amp;   Max_Discount__c &gt; 0 &amp;&amp; Opportunity.RecordType.DeveloperName &lt;&gt; &apos;Net_New_ID&apos; &amp;&amp; (TEXT(Opportunity.Owner.User_Category__c) = &apos;EC&apos; || TEXT(Opportunity.Owner.User_Category__c) = &apos;TL_EC&apos; || TEXT(Opportunity.Owner.User_Category__c) = &apos;TL_Channel&apos;) ||
+TEXT(Opportunity.Owner.User_Category__c) = &apos;PBM&apos; &amp;&amp; (Opportunity.RecordType.DeveloperName &lt;&gt; &apos;Renewal&apos; &amp;&amp; NOT(CONTAINS(Opportunity.Owner.Department,&apos;KAM&apos;)))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>update_on_status_when_approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>update_sub_status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>update_Status_to_previous_value</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>update_sub_status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>update_field_Approval_sub_status</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Discount Approval EC</label>
+    <processOrder>5</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

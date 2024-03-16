@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pm_Project_Owner_Lookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Project Owner from the Program Team</description>
+    <externalId>false</externalId>
+    <label>PM Owner</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <filterItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>00e2x000000UX85</value>
+        </filterItems>
+        <filterItems>
+            <field>User.Username</field>
+            <operation>equals</operation>
+            <value>shriram.bhat@cleartax.in</value>
+        </filterItems>
+        <filterItems>
+            <field>User.Username</field>
+            <operation>equals</operation>
+            <value>hanumanthu.jarpala@cleartax.in</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Asset_CSM_Details__c</members>
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>Asset.Onboarding_Stage__c</members>
+        <members>Asset.Stage__c</members>
+        <members>Asset.Parent_Asset__c</members>
+        <members>Asset.Ageing_Since_Created_Date__c</members>
+        <members>Asset.Sales_CSM_Handover_Completion_Date__c</members>
+        <members>Asset.Introduction_Email_Completion_Date__c</members>
+        <members>Asset.Prerequisite_collection_Completion_Date__c</members>
+        <members>Asset.License_Account_creation_Completion_Date__c</members>
+        <members>Asset.Product_training_Completion_Date__c</members>
+        <members>Asset.Sales_CSM_Handover_Status__c</members>
+        <members>Asset.Introduction_Email_Kickoff_call_Status__c</members>
+        <members>Asset.Customer_Prerequisite_collection_Status__c</members>
+        <members>Asset.Customer_License_Account_creation_Status__c</members>
+        <members>Asset.Product_training_Status__c</members>
+        <members>Asset.Is_Onboarding_Delayed__c</members>
+        <members>Asset.Onboarding_Delay_Reason__c</members>
+        <members>Asset.Onboarding_Delay_Reason_Comment__c</members>
+        <members>Asset.Prerequisites_Check__c</members>
+        <members>Asset.Prerequisites__c</members>
+        <members>Asset.Is_Activation_Delayed__c</members>
+        <members>Asset.Activation_Delay_Reason__c</members>
+        <members>Asset.Activation_Delay_Reason_Comment__c</members>
+        <members>Asset.Is_Asset_Activated__c</members>
+        <members>Asset.Is_Asset_Success__c</members>
+        <members>Asset.Is_Non_GST_EInv_Success__c</members>
+        <members>Asset.BackEndQuoteDiscount__c</members>
+        <members>Asset.Is_Escalation_Required__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Integration_Asset__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Related Integration Asset</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>No integration asset exists of the same module!</errorMessage>
+        <filterItems>
+            <field>Asset.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.AccountId</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Asset.Product2.Family</field>
+            <operation>equals</operation>
+            <valueField>$Source.Product_Module__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Asset.Product2.Product_category__c</field>
+            <operation>equals</operation>
+            <value>Integration</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Asset</referenceTo>
+    <relationshipLabel>Linked License Assets</relationshipLabel>
+    <relationshipName>Linked_License_Assets</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

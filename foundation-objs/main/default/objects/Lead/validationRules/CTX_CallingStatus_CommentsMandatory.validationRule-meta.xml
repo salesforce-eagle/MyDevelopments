@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_CallingStatus_CommentsMandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(IsNew()),
+RecordType.Name = &apos;International&apos;,
+ISCHANGED(Status),
+ISBLANK(Calling_Comments__c),
+ISBLANK(TEXT(Calling_Status__c))
+)</errorConditionFormula>
+    <errorMessage>Following Fields are mandatory: 
+
+- Calling Status
+- Calling Comments</errorMessage>
+</ValidationRule>

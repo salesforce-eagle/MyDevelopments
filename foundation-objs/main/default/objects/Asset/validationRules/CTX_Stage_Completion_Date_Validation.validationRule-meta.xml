@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Stage_Completion_Date_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ISCHANGED(Onboarding_process_start_date__c),
+Onboarding_process_start_date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(Sales_CSM_Handover_Completion_Date__c),
+Sales_CSM_Handover_Completion_Date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(Introduction_Email_Completion_Date__c),
+Introduction_Email_Completion_Date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(Prerequisite_collection_Completion_Date__c),
+Prerequisite_collection_Completion_Date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(License_Account_creation_Completion_Date__c),
+License_Account_creation_Completion_Date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(Product_training_Completion_Date__c),
+Product_training_Completion_Date__c &lt; Today()-1
+),
+AND(
+ISCHANGED(Onboarding_Completed_Date__c),
+Onboarding_Completed_Date__c &lt; Today()-1
+)
+)</errorConditionFormula>
+    <errorMessage>Can not Select Dates before past 1 days</errorMessage>
+</ValidationRule>

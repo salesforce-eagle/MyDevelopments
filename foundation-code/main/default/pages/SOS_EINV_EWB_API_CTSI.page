@@ -1,0 +1,260 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EINV_EWB_API_CTSI_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           <b><u> Scope of Services for E-invoicing and E-Way Bill Integration - ASP API: </u></b>
+           
+            <p><b>a)Feature List of Cleartax E-Invoicing Software is as below</b></p>
+            <table class="info-table">
+                <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li> Excel Ingestion option (Custom Mapper, govt. template, CT template).</li>
+                            <li>Excel / JSON output (In govt. template); for non-integrated clients.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Data Validation</td> 
+                    <td>
+                        <ul>
+                            <li>Validation check (for e-Invoice Schema, ANX-1, EWB Part A) on the invoice content.</li>
+                            <li>Sends invoice to Invoice Registration portal (IRP) for e-Invoice (Invoice Reference Number/QR code) generation.</li>
+                            <li>Collects the generated e-Invoice and QR code from IRP.</li>
+                        </ul>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td> 
+                        Custom invoice printing from IRP-signed JSON (incl. Digitally signed QR, co. logo, etc.)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>Basic MIS of historical e-invoicing activity on Cleartax</td>
+                </tr>
+                <tr>
+                    <td><b>Data Archive</b></td>
+                    <td></td>
+                    <td>Archiving and retrieval of e-invoices.</td>
+                </tr>
+            </table>
+            <br/>
+           
+                    <p> <b>b) Feature List of Cleartax E-way Bill Software is as below</b></p>
+                    <table class="info-table" >
+                        <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                        <tr>
+                            <td><b>Compliance</b></td>
+                            <td>E-way bill Preparation and Generation</td>
+                            <td > 
+                                Support and generation of all E-way bills.
+                                .</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Advanced Generation Features</td> 
+                            <td>
+                                Generate Consolidated E-way bill, Auto Regeneration of E-way bill, Bulk Print of all E-way bills, Bulk Update of Transporter details (Part B), Cancellation of  EWB &#38; Amendment.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Tax/Field Validation.</td>
+                            <td> 
+                                Validation / Suggestion of correct rate of tax applied, and highlight the discrepancies . Real Time Error Update facility.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>User &#38; Role Management</td> 
+                            <td>Create users with roles (admin, IT, tax accountant) and privileges (access to view/edit/delete data and tied to specific GSTIN’s).</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Dashboards and Interface portal (Web &#38; Mobile)</td>
+                            <td>Portal Accessible on web &#38; mobile. In built government notifications, acknowledgements.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>E-way bill update/Changes-Real time basis</td>
+                            <td>Future updates or changes in the NIC portal would be automatically transformed to ClearTax E-way bill Software provided to customer as part of upgradation to software</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>User Training</td>
+                            <td>Online training to finance team members on how to operate the software.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Business Intelligence Reporting</b></td>
+                            <td>Reports-Tax Ledger, State Wise</td>
+                            <td>
+                                Standard MIS reports (Recon of Sales/EWB Issued &#38; Purchase &#38; Inward EWB’s) etc other similar reports for:
+                               <!-- <ol style="list-style-type: none;">
+                                    <li>- Outward Supplies</li>
+                                    <li>- Inward Supplies</li>
+                                    <li>- CEWB Generated</li>
+                                    <li>- Cancelled Eway Bill</li>
+                                    <li>- Rejected E-way bills by me</li>
+                                    <li>- Assigned for transporters</li>
+                                </ol>-->
+                                - Outward Supplies<br/>
+                                - Inward Supplies<br/>
+                                - CEWB Generated<br/>
+                                - Cancelled Eway Bill<br/>
+                                - Rejected E-way bills by me<br/>
+                                - Assigned for transporters<br/>
+                            </td>
+                        </tr>
+                        </table>
+                        <br/>
+                        
+                        
+                        <p><b>c. Scope of Services for API Development : E-Invoicing And E-Waybill Integration</b> </p>
+                     <p>The deliverables shall encompass designing and development of the following components.</p>
+                     <p><b>1.</b>Create UI based configuration option to -</p>
+                     <ol style="list-style-type: lower-roman;">
+                     <li>To set/alter owner ID/taxable entity ID for each GSTIN</li>
+ <li>To set/alter auth token</li>
+ <li>To enable/disable integration logging</li>
+ <li>To enable/disable funnel metrics</li>
+ 
+                     </ol>
+ 
+                      <p><b>2.</b>Design and develop a dashboard in ERP (hereinafter referred to as ClearTax Compliance Cockpit)</p><!--style="white-space:pre" -->
+                    <p><b>3.</b>The selection screen shall have options to filter documents based on Company code/Plant code, Document number range/series, Document date range, Document type, Document status, Any other relevant attribute.</p>
+                    <p><b>4.</b> The report to extract and list outward and inward documents from the source ERP shall cover the following ClearTax document types relevant for E-Invoicing and E-Waybill like  Invoice, Credit Note, Debit Note, Bill of Supply, Bill of Entry, Advance, Delivery Challan, Any others document as applicable. </p>
+                    <p><b>5.</b>The report shall have all the document level columns with options to toggle visibility and order of each column. </p>
+                     <p><b>6.</b>The report shall display the status of E-Invoice and E-Waybill actions at document level. Based on the activity, the status of the documents may change with the success message and metadata (E-waybill number, IRN, QR Code, etc) or error message for the use of end users.</p>
+                      <p><b>7.</b> The report shall have UI elements to select one or more documents and action buttons to trigger the following actions either for a single document or for bulk documents (multi select):</p>
+                    <ul>
+                        <li>Generate IRN</li>
+                        <li>Cancel IRN</li>
+                         <li>Get E-Invoice by IRN</li>
+ <li>Get E-Invoice PDF (Print)</li>
+ <li>Generate B2C QR Code (Add-on Scope)</li>
+ <li>Get B2C document (Add-on Scope)</li>
+ <li>Delete B2C document (Add-on Scope)</li>
+ <li>Get B2C document PDF (Print) (Add-on Scope)</li>
+ 
+ <li>Generate E-Waybill by IRN</li>
+ <li>Generate E-Waybill (Both Part-A and Part-B)</li>
+ <li>Generate E-Waybill Part-A Only</li>
+ <li>Update Transporter</li>
+ <li>Update Transport details (Part-B)</li>
+ <li>Extend Validity of E-Waybill</li>
+ 
+ <li>Cancel E-Waybill</li>
+ <li>Get E-Waybill PDF (Print)</li>
+ <li>Multi-vehicle E-Waybill</li>
+ <li>Generate Consolidated E-Waybill</li>
+ <li>Regenerate Consolidated E-Waybill</li>
+ <li>Get Consolidated E-Waybill PDF (Print)</li>
+ <li>Download document(s) as CSV and JSON in ClearTax E-Invoicing and E-Waybill formats.</li>
+                    </ul>
+                    <p><b>8.</b> The actions can be triggered as per customer’s requirement either - </p>
+                     <ul>
+                        <li>On a real-time basis when an invoice is generated or approved and / or</li>
+                        <li>On a scheduled basis and / or </li>
+                        <li>On click of UI elements in the ClearTax Compliance Cockpit.</li>
+                    </ul>
+                    <p><b>9.</b> For each action specified above,</p>
+                     <ol style="list-style-type: lower-roman;">
+                        <li>Transform the source data/documents into the format acceptable by Cleartax APIs and/or in consonance with what is 
+                            prescribed/acceptable by the Government.</li>
+                        <li>Perform field level validation and business validation checks as per Cleartax and Government API schema.</li>
+                        <li>Load the transformed data/documents using RESTful APIs to the Cleartax application.</li>
+                        <li>Receive the response based on user action lil‹e generated IRN (Invoice Reference Number), signed e-Invoice, signed QR Code (Quick Response code), E-Waybill Number, Cancelled date, etc from Cleartax APts along with additional information, errors and other metadata.
+</li>
+                        <li>Update the generated IRN, signed e-Invoice, signed QR Code, E-Waybill Number, Cancelled date, etc and other metadata back‹ in the ERP.</li>
+                        <li>Customise invoice printing to include the IRN and QR code within ERP - up to 3 custom invoices; Disable printing of invoices where IRN and /or E way Bill is applicable but not generated.</li>
+                        <li>Handle errors and exceptions for (i) Cleartax validations (ii) Internet downtime (iii) Cleartax API downtime (iv) Invalid response from Cleartax application.</li>
+                        <li>Log complete API request and response  with URL, Headers, Payload, Method, Response status code, Response body, Request time and response time based on the user configuration to log files.</li>
+                        <li>Develop fallback option to import and update documents based on Excel and /or JSON downloaded from ClearTax.</li>
+                        <li>Send funnel metrics to ClearTax for every event and action related to ClearTax Compliance Cockpit as prescribed using ClearTax Funnel Metrics API.</li>
+                        <li>Install ClearTax SSL/TLS certificates in Customer’s environment (Development, Quality and Production).</li>
+                    </ol>
+             
+                    <p><b>d. Scope Limitations and Customer Dependencies </b></p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations 
+                            will need to be done by the customer's IT team.</li>
+                        <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra 
+                            team and the customer provides necessary access to Cleartax and its system integrator . 
+                            This activity should be done by the Customer within 5 working days from project kick-off date</li>
+                        <li>Network: Cleartax does not provide end to end service on network set up.</li>
+                        <li>Basis: Cleartax does not provide any support related to Basis.</li>
+                        <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+                        <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its 
+                            system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.
+                            If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution 
+                            of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the 
+                            Customer agrees to additionally pay for such remote access. </li>
+                        <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration 
+                            with the consulting team for study and understanding.</li>
+                        <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals 
+                            or based on the milestones.</li>
+                        <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). 
+                            In the interest of timely completion of the project, all the test cases as per the functionalities 
+                            agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer
+                            within 14 days of moving the project to UAT. </li>
+                        <li>Once the UAT sign-off is provided by the customer need to give necessary clearance to move the code to production 
+                            within 7 days.</li>
+                        <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, 
+                            the project will be deemed to have successfully gone 
+                        live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer.</li>
+                    </ol>
+                    <p><b>e. Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+                        the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+                        scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+                    <p>
+                        <b>f. Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+                        appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / 
+                            schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

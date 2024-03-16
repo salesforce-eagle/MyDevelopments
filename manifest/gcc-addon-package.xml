@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>generateOrderFormPDF</members>
+        <members>OpportunityTriggerHelper</members>
+        <members>CTX_UpsertAssetLicense</members>
+<members>CTX_Salesforce_JIRA_FilterResult</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>PricingParameters</members>
+
+        <name>ApexPage</name>
+    </types>
+
+    <!--<types>
+        <members>Quote.Data_Archival__c</members>
+        <members>Quote.Auto_Retry__c</members>
+        <members>Quote.Translation__c</members>
+        <members>Asset.Data_Archival__c</members>
+        <members>Asset.Auto_Retry__c</members>
+        <members>Asset.Translation__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Resource_Constraints.GCC_ARCHIVAL_DOWNLOAD</members>
+        <members>Resource_Constraints.GCC_RETRY_FAILED_INVOICE</members>
+        <members>Resource_Constraints.GCC_LANGUAGE_TRANSLATION</members>
+
+        <name>CustomMetadata</name>
+    </types>-->
+
+    <version>58.0</version>
+</Package>

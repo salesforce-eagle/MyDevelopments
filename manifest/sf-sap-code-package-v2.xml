@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>ReceivableTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types> 
+        <members>AdditionalGSTINs</members> 
+        <members>CTX_ErrorBanner_Opportunity</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <types>
+        <members>OpportunityTriggerHandler</members>
+        <members>GSTINValidationHelperForOpportunity</members>
+        <members>CTX_ErrorBanner_Opportunity</members>
+        <members>AdditionalGSTINsController</members>
+        <members>UpdateCardCodeOfReceivableFromSAP</members>
+        <members>GSTINValidationForAdditionlGSTINOnOppty</members>
+        <members>CTX_AdditionalGstinTriggerHandler</members>
+        <members>ReceivableTriggerHelper</members>
+        <members>ReceivableTriggerHandler</members>
+        <members>GSTINValidationHelperForAdditionalGSTIN</members>
+        <members>GSTINValidationHelperForOpportunityTest</members>
+        <members>CTX_UpsertBusinessPartner_SAP</members>
+        <members>CTX_GetBusinessPartnersDetailsCallout</members>
+        <members>CTX_UpsertSalesContract_SAP</members>
+        <members>CTX_SAPAPICallouts</members>
+        <members>CTX_DataSyncJobSAPSF</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>SAP_Integration_Settings_metadata__mdt</members>
+        <!--<members>Receivables__c</members>-->
+        <name>CustomObject</name>
+    </types>
+
+    <!--<types> 
+        <members>ByPassReceivableValidations</members> 
+        <name>Label</name> 
+    </types>-->
+    
+
+    <version>52.0</version>
+</Package>

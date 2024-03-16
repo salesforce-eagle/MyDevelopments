@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>CTX_SAPAPICallouts</members>
+        <members>CTX_GetBusinessPartnersDetailsCallout</members>
+        <members>CTX_UpsertBusinessPartner_SAP</members>
+        <members>CTX_UpsertSalesContract_SAP</members>
+        <members>CTX_BusinessPartnersWrapper</members>
+        <members>CTX_SalesContractRequestWrapper</members>
+        <members>CTX_ProcessBusinessPartnerBatch</members>
+        <members>RecursiveTriggerHandler</members>
+        <members>CTX_FetchCompanyDetailsQueable</members>
+        <members>AdditionalGSTINsController</members>
+        <members>CTX_SendLoggerEmailNotifications</members>
+        <members>LoggerTriggerHandler</members>
+        <members>CTX_AdditionalGstinTriggerHandler</members>
+        <members>AssetTriggerHandler</members>
+        
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>CTX_AdditionalGstinTrigger</members>
+
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>AdditionalGSTINs</members>
+        
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

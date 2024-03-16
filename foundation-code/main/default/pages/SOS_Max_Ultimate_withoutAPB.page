@@ -1,0 +1,108 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Max_Ultimate_withoutAPB_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for MAX Ultimate
+ - </u></b>         
+
+    <table class="info-table" >
+<tr><th>Module</th><th>
+Feature</th>
+<th>Description</th>
+</tr>
+<tr>
+<th>Onboarding
+</th>
+<th>2A/2B and PR Data Import</th>
+<th><ul><li>Multiple Excel Ingestion options (Custom Mapper, govt. template, CT template) </li><li>
+2A / 2B Download from GSTN</li>
+</ul></th></tr>
+<tr>
+<th>Reconciliation</th>
+<th>Bucketing- Match, Mismatch.</th>
+
+    <th><ul><li>Reconcile Purchase Invoices of ERP with GSTR-2A/2B data of GST Portal</li><li> Bucket into matches, suggested matches, mismatches, Missing in 2A/2B, and Missing in PR.</li><li> Take actions: Mark as ITC claim; Mark as ITC pending, Mark as ITC ineligible, Mark as Reject</li></ul>
+</th></tr>
+<tr><th></th>
+<th>Invoice Tracking</th>
+<th><ul><li>Track vendor wise invoices, ITC status, match status with 2A/2B/ PR and take actions: Accept vendor values, Accept PR values</li></ul></th>
+
+        </tr>
+<tr><th>Vendor Management</th>
+<th>Vendor Risk Assessment</th>
+<th><ul><li>Categorize vendors as Compliant, Low Risk, Medium Risk, and High Risk based on timelines of various GSTR filings done by them
+
+</li>
+</ul></th></tr>
+
+
+<tr><th></th>
+<th>Vendor Payment management</th>
+<th><ul><li>Assign default Payment terms (Make Full Payment, Hold GST Payment, Hold full amount, Block Payment forever) across each of the vendor categories. Override default payment terms at a vendor / invoice level.
+
+
+</li>
+</ul></th></tr>
+
+
+<tr><th></th>
+<th>Vendor communication</th>
+<th><ul><li>Communicate with multiple vendors across different categories</li><li>
+2-way communication tracking</li>
+<li>Automated communication based on custom rules </li><li>Provide &amp; customize custom templates across different situations</li>
+
+
+
+</ul></th></tr>
+        
+        <tr>
+
+
+
+
+
+
+
+
+<th>Business Intelligence Reporting
+
+</th>
+<th>Leadership Dashboard</th>
+<th>MIS Reports providing insights on:
+<ul><li>ITC Blocked - Summary and vendor wise details</li>
+<li>ITC ageing</li>
+<li>Vendor Risk- Assessment</li>
+<li>Vendor payment status</li>
+<li>ITC claim tracking</li>
+</ul>
+</th></tr>
+
+</table>
+
+<apex:include pageName="{!nextPage12}"/>    
+</body>
+</html>
+</apex:page>

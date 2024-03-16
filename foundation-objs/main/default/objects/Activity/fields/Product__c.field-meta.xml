@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Demo/POC field for Lead activity</description>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Airline Credit</fullName>
+                <default>false</default>
+                <label>Airline Credit</label>
+            </value>
+            <value>
+                <fullName>ASP/GSP</fullName>
+                <default>false</default>
+                <label>ASP/GSP</label>
+            </value>
+            <value>
+                <fullName>CFO Dashboard</fullName>
+                <default>false</default>
+                <label>CFO Dashboard</label>
+            </value>
+            <value>
+                <fullName>E-Invoicing</fullName>
+                <default>false</default>
+                <label>E-Invoicing</label>
+            </value>
+            <value>
+                <fullName>E-way Bill</fullName>
+                <default>false</default>
+                <label>E-way Bill</label>
+            </value>
+            <value>
+                <fullName>KAM</fullName>
+                <default>false</default>
+                <label>KAM</label>
+            </value>
+            <value>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+                <label>Managed Services</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Recon</fullName>
+                <default>false</default>
+                <label>Recon</label>
+            </value>
+            <value>
+                <fullName>ID</fullName>
+                <default>false</default>
+                <label>ID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

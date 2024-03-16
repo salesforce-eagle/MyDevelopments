@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Threshold_Price__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Threshold Price of the Product</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(Is_Combo_Price_Applicable__c, OR(Threshold_Sale_Price_E__c != NULL, Threshold_Sale_Price_E__c != 0)), Threshold_Sale_Price_E__c,
+IF(CONTAINS(LOWER(Quote.Opportunity.Account.Channel_Partner_Account_Name__c), &apos;uneecops&apos;),
+IF(AND(
+OR(
+Quote.Opportunity.RecordType.Name = &apos;Renewal&apos;,
+Quote.Opportunity.RecordType.Name = &apos;Renewal - Multi year&apos;,
+TEXT(Line_Item_Type__c) = &apos;Renewal&apos;,
+TEXT(Line_Item_Type__c) = &apos;Renewal - Multi year&apos; 
+),
+CONTAINS(Quote.Opportunity.Owner.Division,&apos;Yellow&apos;)),
+IF(Product2.ProductCode=&apos;EINV-EWB-LIC_NKAM&apos; || Product2.ProductCode=&apos;EINV_ASP-API&apos;  ,45000,Product2.Threshold_Price__c),
+
+IF(AND(OR(Quote.Opportunity.RecordType.Name = &apos;Renewal&apos;, Quote.Opportunity.RecordType.Name = &apos;Renewal - Multi year&apos;),OR(CONTAINS(Quote.Opportunity.Owner.Department, &apos;KAM&apos;),CONTAINS(Quote.Opportunity.Owner.Id, &apos;0052x000003RRvRAAW&apos;))),
+IF(Product2.ProductCode=&apos;GST-PREMIUM&apos;,150000,
+IF(Product2.ProductCode=&apos;GST-ULTIMATE&apos;,300000,IF(Product2.ProductCode=&apos;GST-ADVANTAGE_CSM&apos; ,75000,
+IF(Product2.ProductCode=&apos;GST-ADVANTAGE&apos; ,
+75000,Product2.Threshold_Price__c)))),
+
+IF(AND( OR( TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;EC&apos; , TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;TL_EC&apos;,TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;PBM&apos;,TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;TL_Channel&apos;, CONTAINS(Quote.Opportunity.Owner.Division,&apos;Yellow&apos;)), Product2.ProductCode = &apos;GST-PREMIUM&apos;, Quote.Total_B2B_PR_B2C_invoice__c &lt;= 30000), Product2.Threshold_Price__c/2,
+
+
+IF(OR(TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;EC&apos; , TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;TL_EC&apos;, TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;PBM&apos;, TEXT(Quote.Opportunity.Owner.User_Category__c) = &apos;TL_Channel&apos;, CONTAINS(Quote.Opportunity.Owner.Division,&apos;Yellow&apos;)),
+IF(OR(Product2.ProductCode=&apos;MITC-ULTIMATE&apos;, Product2.ProductCode=&apos;MITC-ULTIMATE-NOPAY&apos;),500000,
+IF(Product2.ProductCode=&apos;MITC-PREMIUM&apos; ,300000,Product2.Threshold_Price__c)),
+Product2.Threshold_Price__c)
+)
+)
+)/4,
+Calculate_Threshold_Sale_Price__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Threshold Price of the Product</inlineHelpText>
+    <label>Threshold Sale Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

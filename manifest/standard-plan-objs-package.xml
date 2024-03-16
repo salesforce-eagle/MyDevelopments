@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+ 
+    <types>
+        <!--    QuoteLineItem new fields    -->
+        <members>QuoteLineItem.No_of_PAN_one__c</members>
+        <members>QuoteLineItem.No_of_GSTIN_one__c</members>
+        <members>QuoteLineItem.BtoB_Sales_one__c</members>
+        <members>QuoteLineItem.No_of_IRNs__c</members>
+        <members>QuoteLineItem.Purchases_Invoices_one__c</members>
+        <members>QuoteLineItem.No_of_expected_B2C_invoices_for_QR_code__c</members>
+        <members>QuoteLineItem.No_of_EWBs__c</members>
+        <members>QuoteLineItem.No_of_GSTIN_verification_credits__c</members>
+        <members>QuoteLineItem.No_of_Total_invoices__c</members>
+        <members>QuoteLineItem.No_of_Vendors_one__c</members>
+        <members>QuoteLineItem.No_of_invoice_formats__c</members>
+        <members>QuoteLineItem.BtoC_Sales_one__c</members>
+        <members>QuoteLineItem.Tally_Connector_required__c</members>
+        <members>QuoteLineItem.Type_of_Compliance_service__c</members>
+        <members>QuoteLineItem.No_of_airline_invoices_annual_one__c</members>
+        <members>QuoteLineItem.No_of_User_ID_one__c</members>
+        <members>QuoteLineItem.Total_annual_domestic_payables_Rs_Cr__c</members>
+        <members>QuoteLineItem.Flat_Transaction_Fee__c</members>
+        <members>QuoteLineItem.Transaction_Fee_Slab_1__c</members>
+        <members>QuoteLineItem.No_of_recons__c</members>
+        <members>QuoteLineItem.No_of_TANs__c</members>
+        <members>QuoteLineItem.Number_of_Deductees_per_Quarter_24Q_26__c</members>
+        <members>QuoteLineItem.Number_of_Deduction_Transactions_per_Qua__c</members>
+        <members>QuoteLineItem.Partner_Count_for_GeEr_up_Reports__c</members>
+        <members>QuoteLineItem.Platform__c</members>
+        <members>QuoteLineItem.No_of_GST_GSP_API_calls_permissible__c</members>
+        <members>QuoteLineItem.No_of_API_calls_permissible__c</members>
+        <members>QuoteLineItem.No_MM2A_2B_usage_GSTIN_month__c</members>
+        <members>QuoteLineItem.ERP__c</members>
+        <members>QuoteLineItem.Number_of_eway_bill__c</members>
+        <members>QuoteLineItem.Number_of_Purchase_Invoice__c</members>
+        <members>QuoteLineItem.Product_Module_Corrected__c</members>
+
+        <!--    Product new Fields  -->
+        <members>Product2.Plan_Allowance_GSTIN__c</members>
+        <members>Product2.Plan_Allowance_PAN__c</members>
+        <members>Product2.Plan_Allowance_IRN__c</members>
+        <members>Product2.Plan_Topup_Threshold_GSTIN__c</members>
+        <members>Product2.Plan_Topup_Threshold_PAN__c</members>
+        <members>Product2.Plan_Topup_Threshold_IRN__c</members>
+        <members>Product2.Is_Custom_Plans_Allowed__c</members>
+        <members>Product2.Plan_Tier__c</members>
+        <members>Product2.Constraint_JSON__c</members>
+        <members>Product2.Product_Plan_Id__c</members>
+        <members>Product2.Is_Standard__c</members>
+        <members>Product2.Plan_Allowance_GSTIN_Verification__c</members>
+        <members>Product2.Plan_Allowance_Total_invoices__c</members>
+
+        <!--    Other Object Fields -->
+        <members>Opportunity.Platform__c</members>
+        <members>Asset.Platform__c</members>
+        <members>Asset.Is_License_Created__c</members>
+        <members>Asset.Asset_Product_Line__c</members>
+        <members>Asset.Workspace_Details__c</members>
+        <members>Asset.Master_Email__c</members>
+        <members>OpportunityLineItem.Related_QLI__c</members>
+        <members>Quote.Opportunity_Owner_User_Category__c</members>
+        <members>Quote.Total_Integration_SLA__c</members>
+        <members>Product_ScopeOfService_Junction__c.Integration_Add_On__c</members>
+        <members>Account.Number_Of_Product_Usages__c</members>
+        <members>Account.Consumed_Products__c</members>
+        <members>Account.Product_Email__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <!--    Custom Metadata -->
+        <members>Product_Table_Sync_Field_Related_Info__mdt</members>
+        <members>Product_Table_Sync_Object_Related_Info__mdt</members>
+
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+      <members>QuoteLineItem.CTX_Platform_Is_Mandatory</members>
+      <members>QuoteLineItem.Mandatory_ID_Integ</members>
+
+      <name>ValidationRule</name>
+    </types>
+<!--
+    <types>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Allowance_GSTIN</members>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Allowance_IRN</members>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Allowance_PAN</members>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Topup_Threshold_GSTIN</members>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Topup_Threshold_IRN</members>
+        <members>Product_Table_Sync_Field_Related_Info.Plan_Topup_Threshold_PAN</members>
+        <members>Product_Table_Sync_Field_Related_Info.planId</members>
+      <name>CustomMetadata</name>
+   </types>
+-->
+    <version>52.0</version>
+</Package>

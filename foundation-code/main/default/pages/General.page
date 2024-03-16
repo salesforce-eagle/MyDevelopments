@@ -1,0 +1,757 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,General_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                <!-- Not working
+.text-catplize{
+text-transform : capitalize;
+}-->
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:avoid}
+                tr { page-break-inside:avoid; page-break-after:avoid}
+                th {page-break-inside:avoid; page-break-after:avoid}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px;
+}-->    
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;page-break-inside:avoid;">
+            
+            <div class="headding-box"> &nbsp;&nbsp;&nbsp;GENERAL </div>
+            <apex:panelGroup rendered="{!AND(containsIntegrationProduct,NOT(gccCheck),NOT(netNewIDCheck),NOT(cimplifivecheck))}">
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        This Order Form shall be governed by the terms and conditions of the Clear Master Subscription and Services Agreement 
+                        and the Integration Service Agreement accessible at 
+                        <a href="https://cleartax.in/legal" style="color:black">https://cleartax.in/legal</a> (collectively referred to as “Agreements”).
+                        This Order Form and the Agreements shall supersede and prevail over any and all email correspondences, proposals,
+                        provisions, terms and conditions in the Customer's purchase orders, code of conducts, vendor registration form, 
+                        guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, 
+                        provisions and terms and policies of the Customer, shall not be binding, and have no effect, on Clear whatsoever,
+                        whether executed prior to or incidental to or subsequent to this Order Form, whether or not contrary to this Order 
+                        Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Clear. 
+                        All the provisions of the Agreements are hereby incorporated by reference and shall have the same force and effect 
+                        as though fully set forth herein. This Order Form constitutes a final, irrevocable and binding obligation on the 
+                        Customer to make payments to Clear and Clear shall not be required to execute or acknowledge or enter into any
+                        other agreement or any form or policies or document for the purpose of receiving payments as specified under this Order Form.
+
+                    </p>
+                    <!-- <h4> INTEGRATION TERMS </h4>
+<ol>
+<apex:panelGroup rendered="{!NOT(onlyContainsOnlyByCustomer)}">
+
+<li>The Customer shall, within a period of 10 business days from the date of execution of
+this Order Form, provide all the requirements sought by Clear and finalise and
+accept the Integration Development Plan provided by Clear </li>
+<li>Upon completion of the Integration Development as agreed in the Integration
+Development Plan, Clear shall deliver Integration Development to the Customer for
+user acceptance testing. The Customer shall complete the user acceptance testing within
+a period of 14 business days of submission and notify Clear of (i) its acceptance or
+(ii) any changes required in the Integration Development, failing which the Integration
+Development delivered by Clear shall be deemed accepted.</li>
+<li>Any request for changes post-delivery of the Integration Development must be in
+writing and shall set out in sufficient detail that the change requested is within the scope
+of services set out in the Order Form and is in accordance with the agreed Integration
+Development Plan. Clear shall then use commercially reasonable efforts to perform
+the changes requested to the extent feasible in Clear’s sole discretion and reissue the
+Integration Development to the Customer.</li>
+<li>The Integration Development shall be deemed accepted and the Customer shall be
+deemed liable to make all outstanding payments as agreed in this Order Form upon (i)
+delivery of the Integration Development by Clear (ii) failure of the Customer to
+conduct user acceptance testing (iii) failure of the Customer to notify Clear of the
+changes requested in sufficient detail within 14 days of submission of Integration
+Development or within 7 days of the submission of the changes requested, as the case
+may be.</li>
+<li>Any changes subsequent to the acceptance or deemed acceptance of the Integration
+Development, requested by the Customer may be carried by Clear at its sole and
+absolute discretion and at additional costs as notified by Clear.</li>
+<li>Notwithstanding anything to the contrary, the Customer agrees that any request for
+Integration Development which is not stipulated in the Order Form, shall be requests for
+enhancement of the scope of services and such additional Integration Development may
+be provided by Clear, at its sole and absolute discretion and at additional cost as
+notified by Clear.</li>
+
+</apex:panelGroup>
+
+<apex:panelGroup rendered="{!(tenHrIntegrationClause == False) && (containsOnlyByCustomer)}">
+
+<li>The Integration Consultation shall be provided by Clear for a fixed period 30 days
+commencing from the date of execution of this Order Form. Clear shall charge an
+additional amount of INR 10,000 per day, in the event the Integration Consultation
+exceeds the 30-day period. The Integration Consultation shall be deemed completed
+upon expiry of 30 days.</li>
+
+</apex:panelGroup>
+
+<apex:panelGroup rendered="{!(tenHrIntegrationClause == TRUE) && (containsOnlyByCustomer )}">
+
+<li><i>“The Integration Consultation shall be provided by Clear for a fixed period of 10 hours,only within 60days, 
+commencing from the date of execution of this Order Form. Clear shall charge an additional 
+amount of INR 2,500 per hour, in the event the Integration Consultation exceeds the 10-hour 
+period. The Integration Consultation shall be deemed completed upon expiry of 10 hours”
+</i>
+</li>
+
+</apex:panelGroup>
+
+</ol>-->
+                    
+                    <p> Upon execution of this Order Form, this Order Form and the Agreements shall become
+                        legally binding unless this Order Form is rejected by Clear for any of the following
+                        reasons:(i) changes have been made to this Order Form without the consent of Clear
+                        and, or (ii) the requested purchase order information does not match Clear’s records or
+                        the rest of this Order Form. Subscriptions and Services set out herein are non-cancellable
+                        and Charges once paid are non-refundable.</p>
+                    <p>The person executing this Order Form represents and warrants that it is duly authorized to
+                        sign on behalf of the entity and has the authority to bind the entity to the terms and
+                        conditions of this Order Form and the Agreement. The Customer represents and warrants
+                        that the information provided in this Order Form is true, complete, and accurate. </p>
+                    <p>This Order Form and the Clear Master Subscription and Services Agreement shall have
+                        an initial term of {!syncedQuote.Max_Term_Months__c} months (&quot;Initial Term&quot;) 
+                        and shall be renewed automatically for additional periods of {!syncedQuote.Max_Term_Months__c} months
+                        (each a &quot;Renewal Term&quot;), unless i) a renewed Order Form
+                        is executed with revised terms and charges, or (ii) either party notifies the other party, no
+                        less than thirty (30) days prior to the end of, the Initial Term or any Renewal Term, that it
+                        has elected not to renew the Order Form or the Agreement, or (iii) Clear intimates
+                        revision in the terms and charges post the Initial Term.  <apex:outputText rendered="{!dynamicRenewalClause}">
+                        The renewal charges shall stand increased by minimum {!renewalValuePercentage} percent of the charges set out in this Order Form.</apex:outputText>
+                    </p>
+
+                </div>
+            </apex:panelGroup>
+            
+            <apex:panelGroup rendered="{!AND(containsIntegrationProduct,gccCheck,NOT(cimplifivecheck)) }">
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        This Order Form shall be governed by the terms and conditions of the Cleartax Master Software as a Services (SaaS) Agreement and the Integration Service Agreement accessible at  
+                        <a href="https://cleartax.com/ksa/legal" style="color:black">https://cleartax.com/ksa/legal</a> (collectively referred to as “Agreements”). This Order Form and the Agreements 
+                        shall supersede and prevail over any and all email correspondences, proposals, provisions, terms and conditions in the Customer's purchase orders, code of conducts, 
+                        vendor registration form, guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, provisions and terms and 
+                        policies of the Customer, shall not be binding, and have no effect, on Cleartax whatsoever, whether executed prior to or incidental to or subsequent to this Order Form, 
+                        whether or not contrary to this Order Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Cleartax. All the provisions 
+                        of the Agreements are hereby incorporated by reference and shall have the same force and effect as though fully set forth herein. This Order Form constitutes a final, irrevocable
+                        and binding obligation on the Customer to make payments to Cleartax and Cleartax shall not be required to execute or acknowledge or enter into any other agreement or any form or 
+                        policies or document for the purpose of receiving payments as specified under this Order Form. Customer has agreed to pay the charges specified in this Order Form and all payments
+                        to Cleartax shall be made in the currency specified in the Order Form. Cleartax’s charges do not include any taxes. Customer is responsible for paying all taxes associated with
+                        its purchases hereunder as per applicable law and the Customer shall furnish all documents to Cleartax upon request in relation to its tax compliance.
+                    </p>
+                    
+                    <h4> CUSTOMER’S RESPONSIBILITY TOWARDS ZATCA COMPLIANCE </h4>
+                    <ol>
+                        <li>The Customer shall be solely responsible and liable for all statutory, regulatory and tax
+                            compliances in relation to its entity and business. Cleartax and its affiliates do not provide
+                            tax, legal, compliance or accounting advice. Cleartax is a technology service provider, and
+                            its services are not intended to provide, and should not be relied on for, tax, legal,
+                            compliance or accounting advice or compliances. 
+                        </li>
+                        
+                        <li>The Customer must ensure that all the invoices and their associated notes are shared with 
+                            ClearTax for e-invoice generation. In case Customer fails to share any invoice or its associated
+                            notes with ClearTax then ClearTax will not be responsible for compliance requirements of such 
+                            documents. The Customer will be solely responsible to provide appropriate clarification to ZATCA
+                            or any other relevant authority for such missing documents. 
+                        </li>
+                        <li>In case the Customer is maintaining a separate Books of Accounts or any other ERP/ Point of Sale (PoS)
+                            system which is not connected with ClearTax then the Customer must be solely responsible for generating
+                            E-invoices for the documents generated from such systems. 
+                        </li>
+                        <li>The Customer will be solely responsible to ensure that Customer’s ERP/ PoS system is in compliance with
+                            all the necessary prohibitory condition(s) as mentioned and updated from time to time, in the E-Invoice 
+                            Guidelines, VAT Law or any other Statute or law under the Kingdom of Saudi Arabia. Any changes required 
+                            in Customer’s internal ERP/ PoS systems to comply with such guidelines will be out of scope for ClearTax.
+                        </li>
+                        <li>From Phase II of KSA E-invoicing, Customer must share details of each e-invoice generation  device with 
+                            ClearTax and ZATCA. Customer must ensure that each device should use its own unique Device ID and no two 
+                            devices are sharing the same Device ID.
+                        </li>
+                        <li>Any changes subsequent to the acceptance or deemed acceptance of the Integration Development, 
+                            requested by the Customer may be carried by ClearTax at its sole and absolute discretion and
+                            at additional costs as notified by ClearTax.
+                        </li>
+                        <li>The Customer must provide invoice data as per ClearTax defined format (in alignment with ZATCA guidelines).
+                            ClearTax will not be responsible for issues related to input data shared by Customer’s ERP or PoS system 
+                            with ClearTax.
+                        </li>
+                        <apex:outputText rendered="{!displayGoogleTerms}">
+                            <li><b>GOOGLE TRANSLATION TERMS :</b> ClearTax utilizes Google Translation APIs for translating text from English 
+                                inputs (provided by Customer) to Arabic. ClearTax shall not be liable for any inaccuracies in translation 
+                                based on Google translation API output.
+                            </li>
+                        </apex:outputText>
+                        
+                    </ol>
+                    
+                    
+                    <apex:outputText rendered="{!displayDevelopmentTerms || displayConsultationTerms}">
+                        <h4> INTEGRATION TERMS </h4><br/>
+                        
+                        <apex:outputText rendered="{!displayDevelopmentTerms}">
+                            <span><b>Development Terms</b></span>
+                            <ol>
+                                <li>The Customer shall, within a period of 10 business days from the date of execution of this 
+                                    Order Form, provide all the requirements sought by ClearTax and finalise and accept the 
+                                    Integration Development Plan provided by ClearTax, failing which, ClearTax shall charge 
+                                    an additional amount of USD 200 per day for every additional day of delay, until the date
+                                    of acceptance of the Integration Development Plan. 
+                                </li>
+                                <li>Upon completion of the Integration Development as agreed in the Integration Development Plan,
+                                    ClearTax shall deliver Integration Development to the Customer for user acceptance testing. 
+                                    The Customer shall complete the user acceptance testing within a period of 14 business days 
+                                    of submission and notify ClearTax of (i) its acceptance or (ii) any changes required in the 
+                                    Integration Development, failing which the Integration Development delivered by ClearTax shall
+                                    be deemed accepted. In the event the Customer fails to conduct user acceptance testing within 
+                                    such period ClearTax may, in its sole discretion, charge an additional amount of USD 200 per 
+                                    day for every additional day of delay, until the date of completion of user acceptance testing.
+                                </li>
+                                <li>Any addition in the existing code components, reports, or other deliverables, that is beyond the scope
+                                 already delivered and accepted during the project implementation and not covered under the Annual Maintenance 
+                                 scope, will be considered as change request and will be chargeable with an additional charge at the rate of USD 200 
+                                 per day. Any ERP application upgrade from the current version will not be part of current scope and will be considered 
+                                 as a new project and charged additionally.
+                                </li>
+                                <li>The Integration Development shall be deemed accepted and the Customer shall be deemed liable 
+                                    to make all outstanding payments as agreed in this Order Form upon (i) delivery of the 
+                                    Integration Development by ClearTax (ii) failure of the Customer to conduct user acceptance 
+                                    testing (iii) failure of the Customer to notify ClearTax of the changes requested in sufficient
+                                    detail within 14 days of submission of Integration Development or within 7 days of the 
+                                    submission of the changes requested, as the case may be. 
+                                </li>
+                                <li>Any changes subsequent to the acceptance or deemed acceptance of the Integration Development, 
+                                    requested by the Customer may be carried by ClearTax at its sole and absolute discretion and
+                                    at additional costs as notified by ClearTax.
+                                </li>
+                                <li>Notwithstanding anything to the contrary, the Customer agrees that any request for Integration
+                                    Development which is not stipulated in the Order Form, shall be requests for enhancement of 
+                                    the scope of services and such additional Integration Development may be provided by ClearTax,
+                                    at its sole and absolute discretion and at additional cost as notified by ClearTax. 
+                                </li>
+                            </ol>
+                        </apex:outputText>
+                        
+                        
+                        
+                        <br/>
+                        <apex:outputText rendered="{!displayConsultationTerms}">
+                            <span><b>Consultation Terms</b></span>
+                            <ol>
+                                <li>The Customer shall, within a period of 10 business days from the date of execution of this 
+                                    Order Form, provide all the requirements sought by ClearTax and finalise the Integration 
+                                    Development Plan.
+                                </li>
+                                <li>The Integration Consultation shall be provided by ClearTax for a fixed period of 60 days 
+                                    commencing from the date of execution of this Order Form. The Integration Consultation shall
+                                    be deemed completed upon expiry of 60 days. ClearTax shall charge an mutually agreed additional 
+                                    amount, in the event the Integration Consultation exceeds the 60-day period.
+                                </li>
+                                <li>Notwithstanding anything to the contrary, the Customer agrees that any request for Integration 
+                                    Development which is not stipulated in the Order Form, shall be requests for enhancement of the 
+                                    scope of services and such additional Integration Development may be provided by ClearTax, at 
+                                    its sole and absolute discretion and at additional cost as notified by ClearTax. 
+                                </li>
+                            </ol>
+                        </apex:outputText>
+                        
+                        
+                    </apex:outputText>
+                    
+                    
+                    
+                    
+                    <p> Upon execution of this Order Form, this Order Form and the Agreements shall become
+                        legally binding unless this Order Form is rejected by ClearTax for any of the following
+                        reasons:(i) changes have been made to this Order Form without the consent of ClearTax
+                        and, or (ii) the requested purchase order information does not match ClearTax’s records or
+                        the rest of this Order Form. Subscriptions and Services set out herein are non-cancellable
+                        and Charges once paid are non-refundable.</p>
+                    <p>The person executing this Order Form represents and warrants that it is duly authorized to
+                        sign on behalf of the entity and has the authority to bind the entity to the terms and
+                        conditions of this Order Form and the Agreement. The Customer represents and warrants
+                        that the information provided in this Order Form is true, complete, and accurate. </p>
+                    <p>This Order Form and the ClearTax Master Subscription and Services Agreement shall have
+                        an initial term of <apex:outputText rendered="{!NOT(gccCheck)}"> &nbsp; {!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months
+                        (each a &quot;Renewal Term&quot;), unless i) a renewed Order Form
+                        is executed with revised terms and charges, or (ii) either party notifies the other party, no
+                        less than thirty (30) days prior to the end of, the Initial Term or any Renewal Term, that it
+                        has elected not to renew the Order Form or the Agreement, or (iii) ClearTax intimates
+                        revision in the terms and charges post the Initial Term.  <apex:outputText rendered="{!dynamicRenewalClause}">
+                        The renewal charges shall stand increased by minimum {!renewalValuePercentage} percent of the charges set out in this Order Form.</apex:outputText>
+                    </p>
+                </div>
+            </apex:panelGroup>
+            
+            <apex:panelGroup rendered="{!AND(NOT(gccCheck),NOT(containsIntegrationProduct),NOT(netNewIDCheck),NOT(cimplifivecheck))}">
+                <div class="text-alignment-justify">
+                    <p>
+                         This Order Form shall be governed by the terms and conditions of the Clear Master Subscription and Services Agreement accessible at 
+                        <a href="https://cleartax.in/legal" style="color:black">https://cleartax.in/legal</a> (collectively referred to as “Agreements”).
+                        This Order Form and the Agreements shall supersede and prevail over any and all email correspondences, proposals,
+                        provisions, terms and conditions in the Customer's purchase orders, code of conducts, vendor registration form, 
+                        guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, 
+                        provisions and terms and policies of the Customer, shall not be binding, and have no effect, on Clear whatsoever,
+                        whether executed prior to or incidental to or subsequent to this Order Form, whether or not contrary to this Order 
+                        Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Clear. 
+                        All the provisions of the Agreements are hereby incorporated by reference and shall have the same force and effect 
+                        as though fully set forth herein. This Order Form constitutes a final, irrevocable and binding obligation on the 
+                        Customer to make payments to Clear and Clear shall not be required to execute or acknowledge or enter into any
+                        other agreement or any form or policies or document for the purpose of receiving payments as specified under this Order Form.
+                    </p>
+                    <p>
+                        Upon execution of this Order Form, this Order Form and the Agreement shall become legally binding
+                        unless this Order Form is rejected by Clear for any of the following reasons:(i) changes have been
+                        made to this Order Form without the consent of Clear and, or (ii) the requested purchase order
+                        information does not match Clear’s records or the rest of this Order Form. Subscriptions and
+                        Services set out herein are non-cancellable and Charges once paid are non-refundable.
+                    </p>
+                    <p>
+                        The person executing this Order Form represents and warrants that it is duly authorized to sign on
+                        behalf of the entity and has the authority to bind the entity to the terms and conditions of this Order
+                        Form and the Agreement. The Customer represents and warrants that the information provided in this
+                        Order Form is true, complete and accurate.
+                    </p>
+                    <p>
+                        This Order Form and the Agreement shall have an initial term of &nbsp;<apex:outputText rendered="{!NOT(gccCheck)}"> {!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months (each a &quot;Renewal Term&quot;), unless i) a renewed Order Form
+                        is executed with revised terms and charges, or (ii) either party notifies the other party, no less than
+                        thirty (30) days prior to the end of, the Initial Term or any Renewal Term, that it has elected not to
+                        renew the Order Form or the Agreement, or (iii) Clear intimates revision in the terms and charges
+                        post the Initial Term.<apex:outputText rendered="{!dynamicRenewalClause}">The renewal charges shall stand increased by minimum {!renewalValuePercentage} percent of the charges set out
+                        in this Order Form.</apex:outputText>
+                    </p>
+                </div>
+            </apex:panelGroup>
+            <apex:panelGroup rendered="{!AND(gccCheck,NOT(containsIntegrationProduct),NOT(cimplifivecheck))}">
+                <div class="text-alignment-justify">
+                    <p>
+                        This Order Form shall be governed by the terms and conditions of the Cleartax Master Software as a Services (SaaS) Agreement and the Integration Service Agreement accessible at  
+                        <a href="https://cleartax.com/ksa/legal" style="color:black">https://cleartax.com/ksa/legal</a> (collectively referred to as “Agreements”). This Order Form and the Agreements 
+                        shall supersede and prevail over any and all email correspondences, proposals, provisions, terms and conditions in the Customer's purchase orders, code of conducts, 
+                        vendor registration form, guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, provisions and terms and 
+                        policies of the Customer, shall not be binding, and have no effect, on Cleartax whatsoever, whether executed prior to or incidental to or subsequent to this Order Form, 
+                        whether or not contrary to this Order Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Cleartax. All the provisions 
+                        of the Agreements are hereby incorporated by reference and shall have the same force and effect as though fully set forth herein. This Order Form constitutes a final, irrevocable
+                        and binding obligation on the Customer to make payments to Cleartax and Cleartax shall not be required to execute or acknowledge or enter into any other agreement or any form or 
+                        policies or document for the purpose of receiving payments as specified under this Order Form. Customer has agreed to pay the charges specified in this Order Form and all payments
+                        to Cleartax shall be made in the currency specified in the Order Form. Cleartax’s charges do not include any taxes. Customer is responsible for paying all taxes associated with
+                        its purchases hereunder as per applicable law and the Customer shall furnish all documents to Cleartax upon request in relation to its tax compliance.
+                    </p>
+                    
+                    <h4> CUSTOMER’S RESPONSIBILITY TOWARDS ZATCA COMPLIANCE </h4>
+                    <ol>
+                        <li>The Customer shall be solely responsible and liable for all statutory, regulatory and tax
+                            compliances in relation to its entity and business. Cleartax and its affiliates do not provide
+                            tax, legal, compliance or accounting advice. Cleartax is a technology service provider, and
+                            its services are not intended to provide, and should not be relied on for, tax, legal,
+                            compliance or accounting advice or compliances. 
+                        </li>
+                        
+                        <li>The Customer must ensure that all the invoices and their associated notes are shared with 
+                            ClearTax for e-invoice generation. In case Customer fails to share any invoice or its associated
+                            notes with ClearTax then ClearTax will not be responsible for compliance requirements of such 
+                            documents. The Customer will be solely responsible to provide appropriate clarification to ZATCA
+                            or any other relevant authority for such missing documents. 
+                        </li>
+                        <li>In case the Customer is maintaining a separate Books of Accounts or any other ERP/ Point of Sale (PoS)
+                            system which is not connected with ClearTax then the Customer must be solely responsible for generating
+                            E-invoices for the documents generated from such systems. 
+                        </li>
+                        <li>The Customer will be solely responsible to ensure that Customer’s ERP/ PoS system is in compliance with
+                            all the necessary prohibitory condition(s) as mentioned and updated from time to time, in the E-Invoice 
+                            Guidelines, VAT Law or any other Statute or law under the Kingdom of Saudi Arabia. Any changes required 
+                            in Customer’s internal ERP/ PoS systems to comply with such guidelines will be out of scope for ClearTax.
+                        </li>
+                        <li>From Phase II of KSA E-invoicing, Customer must share details of each e-invoice generation  device with 
+                            ClearTax and ZATCA. Customer must ensure that each device should use its own unique Device ID and no two 
+                            devices are sharing the same Device ID.
+                        </li>
+                        <li>Any changes subsequent to the acceptance or deemed acceptance of the Integration Development, 
+                            requested by the Customer may be carried by ClearTax at its sole and absolute discretion and
+                            at additional costs as notified by ClearTax.
+                        </li>
+                        <li>The Customer must provide invoice data as per Clear defined format (in alignment with ZATCA guidelines).
+                            ClearTax will not be responsible for issues related to input data shared by Customer’s ERP or PoS system 
+                            with ClearTax.
+                        </li>
+                        <apex:outputText rendered="{!displayGoogleTerms}">
+                            <li><b>GOOGLE TRANSLATION TERMS :</b> ClearTax utilizes Google Translation APIs for translating text from English 
+                                inputs (provided by Customer) to Arabic. ClearTax shall not be liable for any inaccuracies in translation 
+                                based on Google translation API output.
+                            </li>
+                        </apex:outputText>
+                        
+                    </ol>
+                    
+                    <p>
+                        Upon execution of this Order Form, this Order Form and the Agreement shall become legally binding
+                        unless this Order Form is rejected by ClearTax for any of the following reasons:(i) changes have been
+                        made to this Order Form without the consent of ClearTax and, or (ii) the requested purchase order
+                        information does not match ClearTax’s records or the rest of this Order Form. Subscriptions and
+                        Services set out herein are non-cancellable and Charges once paid are non-refundable.
+                    </p>
+                    <p>
+                        The person executing this Order Form represents and warrants that it is duly authorized to sign on
+                        behalf of the entity and has the authority to bind the entity to the terms and conditions of this Order
+                        Form and the Agreement. The Customer represents and warrants that the information provided in this
+                        Order Form is true, complete and accurate.
+                    </p>
+                    <p>
+                        This Order Form and the Agreement shall have an initial term of &nbsp;<apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months (each a &quot;Renewal Term&quot;), unless i) a renewed Order Form
+                        is executed with revised terms and charges, or (ii) either party notifies the other party, no less than
+                        thirty (30) days prior to the end of, the Initial Term or any Renewal Term, that it has elected not to
+                        renew the Order Form or the Agreement, or (iii) ClearTax intimates revision in the terms and charges
+                        post the Initial Term.<apex:outputText rendered="{!dynamicRenewalClause}">The renewal charges shall stand increased by minimum {!renewalValuePercentage} percent of the charges set out
+                        in this Order Form.</apex:outputText>
+                    </p>
+                </div>
+            </apex:panelGroup>
+            <apex:panelGroup rendered="{!AND(netNewIDCheck,NOT(containsIntegrationProduct),NOT(cimplifivecheck))}">
+                <div class="text-alignment-justify">
+                    <p>
+                        This Order Form shall be governed by the terms and conditions of the Xpedize MSSA accessible at 
+                        <a href="https://www.clear.in/s/legal" style="color:black">https://www.clear.in/s/legal</a> (collectively referred to as “Agreements”).
+                        This Order Form and the Agreements shall supersede and prevail over any and all email correspondences, proposals,
+                        provisions, terms and conditions in the Customer's purchase orders, code of conducts, vendor registration form, 
+                        guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, 
+                        provisions and terms and policies of the Customer, shall not be binding, and have no effect, on Clear whatsoever,
+                        whether executed prior to or incidental to or subsequent to this Order Form, whether or not contrary to this Order 
+                        Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Clear. 
+                        All the provisions of the Agreements are hereby incorporated by reference and shall have the same force and effect 
+                        as though fully set forth herein. This Order Form constitutes a final, irrevocable and binding obligation on the 
+                        Customer to make payments to Clear and Clear shall not be required to execute or acknowledge or enter into any
+                        other agreement or any form or policies or document for the purpose of receiving payments as specified under this Order Form.
+                    </p>
+                    <p>
+                        Upon execution of this Order Form, this Order Form and the Agreement shall become legally binding 
+                        unless this Order Form is rejected by Xpedize for any of the following reasons:(i) changes have been
+                        made to this Order Form without the consent of Xpedize and, or (ii) the requested purchase order 
+                        information does not match Xpedize’s records or the rest of this Order Form. Subscriptions and 
+                        Services set out herein are non-cancellable and Charges once paid are non-refundable.
+                        
+                    </p>
+                    <p>
+                        The person executing this Order Form represents and warrants that it is duly authorized to sign on
+                        behalf of the entity and has the authority to bind the entity to the terms and conditions of this
+                        Order Form and the Agreement. The Customer represents and warrants that the information provided
+                        in this Order Form is true, complete, and accurate.
+                        
+                    </p>
+                    <p>
+                        This Order Form and the Agreement shall have an initial term of &nbsp;<apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months (each a "Renewal Term"), unless i) a 
+                        renewed Order Form is executed with revised terms and charges, or (ii) either party notifies the 
+                        other party, no less than thirty (30) days prior to the end of, the Initial Term or any Renewal 
+                        Term, that it has elected not to renew the Order Form or the Agreement, or (iii) Xpedize intimates
+                        revision in the terms and charges post the Initial Term.
+                    </p>
+                    <apex:outputText rendered="{!containsKycApi}">
+                        <p>
+                            The Customer represents, warrants and covenants that : (a) all information and data shared or transmitted by the Customer
+                            with respect to the Customer or the Customer’s clients, users, vendors, suppliers or customers has been obtained and shared 
+                            with the express consent of the respective data owner and in full compliance with all Applicable Law and that such sharing or
+                            transmission of information and data does not violate or breach any Applicable Law in any manner whatsoever, (b) it shall
+                            maintain all rights, privileges and licenses as necessary and, or required to allow, permit and legally authorise Xpedize,
+                            its Affiliates and its third-party service providers to process compile, use, store, process, analyse, transmit, derive and
+                            retain the Customer Data, (c) it has reviewed the Services of Xpedize and confirms that the Customer’s purchase, purpose, use,
+                            monetisation and exploitation of the Services shall not be in breach of Applicable Laws including the applicable statutory laws and 
+                            regulatory guidelines, circulars, notifications, policies, bills and advisories relating to data protection; data storage data localisation 
+                            requirements and any other applicable law of the like nature or not.     
+                        </p>
+                    </apex:outputText>
+                </div>
+            </apex:panelGroup>
+            <apex:panelGroup rendered="{!AND(netNewIDCheck,containsIntegrationProduct,NOT(cimplifivecheck))}">
+                <div class="text-alignment-justify">
+                    <p>
+                         This Order Form shall be governed by the terms and conditions of the Xpedize MSSA accessible at 
+                        <a href="https://www.clear.in/s/legal" style="color:black">https://www.clear.in/s/legal</a> (collectively referred to as “Agreements”).
+                        This Order Form and the Agreements shall supersede and prevail over any and all email correspondences, proposals,
+                        provisions, terms and conditions in the Customer's purchase orders, code of conducts, vendor registration form, 
+                        guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, 
+                        provisions and terms and policies of the Customer, shall not be binding, and have no effect, on Clear whatsoever,
+                        whether executed prior to or incidental to or subsequent to this Order Form, whether or not contrary to this Order 
+                        Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Clear. 
+                        All the provisions of the Agreements are hereby incorporated by reference and shall have the same force and effect 
+                        as though fully set forth herein. This Order Form constitutes a final, irrevocable and binding obligation on the 
+                        Customer to make payments to Clear and Clear shall not be required to execute or acknowledge or enter into any
+                        other agreement or any form or policies or document for the purpose of receiving payments as specified under this Order Form.
+                    </p>
+                    <p>
+                        Upon execution of this Order Form, this Order Form and the Agreement shall become legally binding 
+                        unless this Order Form is rejected by Xpedize for any of the following reasons:(i) changes have been
+                        made to this Order Form without the consent of Xpedize and, or (ii) the requested purchase order 
+                        information does not match Xpedize’s records or the rest of this Order Form. Subscriptions and 
+                        Services set out herein are non-cancellable and Charges once paid are non-refundable.
+                        
+                    </p>
+                    <p>
+                        The person executing this Order Form represents and warrants that it is duly authorized to sign on
+                        behalf of the entity and has the authority to bind the entity to the terms and conditions of this
+                        Order Form and the Agreement. The Customer represents and warrants that the information provided
+                        in this Order Form is true, complete, and accurate.
+                        
+                    </p>
+                    <p>
+                        This Order Form and the Agreement shall have an initial term of &nbsp;<apex:outputText rendered="{!NOT(gccCheck)}">{!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}"> {!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months (each a "Renewal Term"), unless i) a 
+                        renewed Order Form is executed with revised terms and charges, or (ii) either party notifies the 
+                        other party, no less than thirty (30) days prior to the end of, the Initial Term or any Renewal 
+                        Term, that it has elected not to renew the Order Form or the Agreement, or (iii) Xpedize intimates
+                        revision in the terms and charges post the Initial Term.
+                    </p>
+                    <apex:outputText rendered="{!containsKycApi}">
+                        <p>
+                            The Customer represents, warrants and covenants that : (a) all information and data shared or transmitted by the Customer
+                            with respect to the Customer or the Customer’s clients, users, vendors, suppliers or customers has been obtained and shared 
+                            with the express consent of the respective data owner and in full compliance with all Applicable Law and that such sharing or
+                            transmission of information and data does not violate or breach any Applicable Law in any manner whatsoever, (b) it shall
+                            maintain all rights, privileges and licenses as necessary and, or required to allow, permit and legally authorise Xpedize,
+                            its Affiliates and its third-party service providers to process compile, use, store, process, analyse, transmit, derive and
+                            retain the Customer Data, (c) it has reviewed the Services of Xpedize and confirms that the Customer’s purchase, purpose, use,
+                            monetisation and exploitation of the Services shall not be in breach of Applicable Laws including the applicable statutory laws and 
+                            regulatory guidelines, circulars, notifications, policies, bills and advisories relating to data protection; data storage data localisation 
+                            requirements and any other applicable law of the like nature or not.     
+                        </p>
+                    </apex:outputText>
+                </div>
+            </apex:panelGroup>
+            <apex:panelGroup rendered="{!cimplifivecheck}">
+                <div class="text-alignment-justify">
+                    <p>
+                        This Order Form shall be governed by the terms and conditions of the Clear Master Subscription and Services Agreement 
+                        <apex:outputText rendered="{!containsIntegrationProduct}">and the Integration Service Agreement</apex:outputText>  accessible at 
+                        <a href="https://www.cimplyfive.com/cimplyfives-terms-and-conditions/" style="color:black">https://www.cimplyfive.com/cimplyfives-terms-and-conditions/</a> (collectively referred to as “Agreements”).
+                        This Order Form and the Agreements shall supersede and prevail over any and all email correspondences, proposals,
+                        provisions, terms and conditions in the Customer's purchase orders, code of conducts, vendor registration form, 
+                        guidelines, internal policies of, or any other terms issued by, the Customer, and such correspondences, proposals, 
+                        provisions and terms and policies of the Customer, shall not be binding, and have no effect, on Clear whatsoever,
+                        whether executed prior to or incidental to or subsequent to this Order Form, whether or not contrary to this Order 
+                        Form. This Order Form along with the Agreements constitute the entire agreement between the Customer and Clear. 
+                        All the provisions of the Agreements are hereby incorporated by reference and shall have the same force and effect 
+                        as though fully set forth herein. This Order Form constitutes a final, irrevocable and binding obligation on the 
+                        Customer to make payments to Clear and Clear shall not be required to execute or acknowledge or enter into any
+                        other agreement or any form or policies or document for the purpose of receiving payments as specified under this Order Form.
+                    </p>
+                    <p>
+                        Upon execution of this Order Form, this Order Form and the Agreement shall become legally binding unless this Order Form is rejected by CimplyFive for any of the following reasons:(i) changes have been made to this Order Form without the consent of CimplyFive and, or (ii) the requested purchase order information does not match CimplyFive’s records or the rest of this Order Form. Subscriptions and Services set out herein are non-cancellable and Charges once paid are non-refundable.
+                        
+                    </p>
+                    <p>
+                        The person executing this Order Form represents and warrants that it is duly authorized to sign on behalf of the entity and has the authority to bind the entity to the terms and conditions of this Order Form and the Agreement. The Subscriber represents and warrants that the information provided in this Order Form is true, complete and accurate.
+                        
+                    </p>
+                    <p>
+                        This Order Form and the Agreement shall have an initial term of<apex:outputText rendered="{!NOT(gccCheck)}"> {!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_initial_term_months__c}</apex:outputText> months ("Initial Term") and shall be
+                        renewed automatically for additional periods of <apex:outputText rendered="{!NOT(gccCheck)}"> {!syncedQuote.Max_Term_Months__c}</apex:outputText> <apex:outputText rendered="{!(gccCheck)}"> {!syncedQuote.Opportunity.GCC_Additional_period_months__c  }</apex:outputText> months (each a "Renewal Term"), unless i) a 
+                        renewed Order Form is executed with revised terms and charges, or (ii) either party notifies the 
+                        other party, no less than thirty (30) days prior to the end of, the Initial Term or any Renewal 
+                        Term, that it has elected not to renew the Order Form or the Agreement, or (iii) Cimplyfive intimates
+                        revision in the terms and charges post the Initial Term.
+                    </p>
+                </div>
+            </apex:panelGroup>
+            
+            <apex:panelGroup rendered="{!AND(NOT(gccCheck),NOT(netNewIDCheck),NOT(cimplifivecheck))}">
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        The Customer and Clear hereby agree and understand that Clear and its affiliates do not, and are not being engaged to, 
+                        provide tax, legal, regulatory, compliance or accounting related advice. The Customer shall be solely responsible and 
+                        liable for all statutory, regulatory and tax and legal compliances in relation to its entity and business. Clear is a 
+                        technology service provider, and its services are not intended to provide, and should not be relied on for, tax, legal,
+                        compliance or accounting advice or opinions.
+                    </p>
+                </div>
+            </apex:panelGroup>
+            
+            <apex:panelGroup rendered="{!(SyncedQuote.Account.EC_LC_Startup_Account__c == 'Emerging Corporate' && productNameConsulting != NULL && NOT(gccCheck)) }">
+                
+                <p>
+                    The Integration Consultation shall be provided by Clear for&nbsp;
+                    
+                    &nbsp; <apex:outputText value="{!productNameConsulting}"/>&nbsp;
+                    
+                    for a fixed period of&nbsp;
+                    
+                    &nbsp; <apex:outputText value="{!consultingHours}"/>&nbsp;
+                    
+                    respectively commencing from the start date of integration. This fixed 
+                    consultation hours can only be availed within a time period of &nbsp; 2  months from the start date of 
+                    integration. Clear shall charge an additional amount at a rate of INR &nbsp;
+                    <apex:outputText value="{!$Label.AdditionalConsultationCost}"/>, 
+                    for 5 hours, in case additional Consultation is required.
+                </p>           
+                
+            </apex:panelGroup>
+            
+            <apex:outputText rendered="{!(NOT(cimplifivecheck) && NOT(gccCheck))}">
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        The Customer shall reimburse Clear for all ordinary and reasonable out of pocket expenses (OPE) including travel, meals, accommodation or other expenses specifically incurred and paid by Clear at the request of the Customer and in connection with, or related to, the performance of the duties, responsibilities or Services under the Agreements. Further, service tax, surcharge and cess shall be charged as applicable. 
+                    </p>
+                </div>
+            </apex:outputText>
+            
+            <apex:outputText rendered="{!(netNewIDInvoiceDiscountingSAASCheck || netNewIDInvoiceDiscountingTransactionalCheck)}">
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        It is agreed between the Parties that if the Customer declines it's Vendor's request of an early payment of the invoice or if the Customer does not respond within an agreed timeline, then Xpedize shall have the right to introduce a third party to finance such Vendor's invoices of the Customer and assist in processing, and take all such actions as may be required to finance such Vendor's invoices.
+                    </p>
+                </div>
+            </apex:outputText>
+            
+            
+            <apex:panelGroup rendered="{!AND(displayRefundPolicy, (listOfARRProdsWrapper.size > 0)) && (netNewCheck || crossSellCheck)}">
+                
+                <div style="text-align: justify;">
+                    <p style="text-align: justify;">
+                        Notwithstanding anything contained in the Order From or the Agreement, it is hereby agreed between the 
+                        Parties that the Customer shall pay 100% of the subscription amount for the &nbsp;[
+                        <apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+                            <apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+                            <apex:outputText value="{!arr.orderFormProductName}"/>
+                        </apex:repeat>]
+                        in advance prior to &nbsp;[
+                        <apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+                            <apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+                            <apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!arr.periodStartDate}"/></apex:outputText>  
+                        </apex:repeat>]. In an event the Customer notifies Cleartax in writing,prior to &nbsp;[
+                        <apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+                            <apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+                            <apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!arr.periodStartDate+30}"/></apex:outputText> 
+                        </apex:repeat>],
+                        its intention to discontinue the subscription, 
+                        then, Cleartax shall refund to the Customer the remaining months advance amount <!-- of INR &nbsp;
+<apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+<apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+<apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!arr.calcRefund}"/></apex:outputText> 
+</apex:repeat>
+-->and discontinue the subscription. 
+                        It being agreed and clarified that if the Customer has not notified Cleartax in writing by &nbsp;[
+                        <apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+                            <apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+                            <apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!arr.periodStartDate+30}"/></apex:outputText>  
+                        </apex:repeat>]
+                        clearly setting out his intention to discontinue the services, Cleartax shall not be liable to refund any amounts to the Customer.<!-- 
+<apex:repeat value="{!listOfARRProdsWrapper}" var="arr">
+<apex:outputText rendered="{!IF(arr.SLNO != 1, TRUE, FALSE)}">,&nbsp; </apex:outputText>
+<apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!arr.calcRefund}"/></apex:outputText> 
+</apex:repeat>
+--></p>
+                </div>
+                
+            </apex:panelGroup>
+            
+            <apex:outputtext rendered="{!IF(NOT(CONTAINS(nextPage37,'SOS')), true, false)}">
+                
+                 <apex:outputtext rendered="{!IF(syncedQuote.Opportunity.Custom_SOW_for_MS__c != NULL, true, false)}">
+                     <div style="page-break-before: always;">
+                        <b >ANNEXURE</b>
+                    </div>
+                     <br/>
+                     <b>Custom Scope of Service</b>
+                     <p>
+                         <apex:outputText escape="false" value="{!syncedQuote.Opportunity.Custom_SOW_for_MS__c}" ></apex:outputText>
+                     </p>
+                </apex:outputtext>
+         
+            </apex:outputtext>
+            
+            
+           <apex:outputtext rendered="{!IF(CONTAINS(nextPage37,'SOS'), true, false)}">
+                <div style="page-break-before: always;">
+                    <b >ANNEXURE</b>
+                </div>
+                 <apex:outputtext rendered="{!IF(syncedQuote.Opportunity.Custom_SOW_for_MS__c != NULL, true, false)}">
+                     <br/>
+                     <b>Custom Scope of Service</b>
+                     <p>
+                         <apex:outputText escape="false" value="{!syncedQuote.Opportunity.Custom_SOW_for_MS__c}" ></apex:outputText>
+                     </p>
+                </apex:outputtext>
+         
+            </apex:outputtext>
+            
+            
+            <apex:include pageName="{!nextPage37}"/>
+            
+            
+        </body>
+    </html>
+    
+</apex:page>

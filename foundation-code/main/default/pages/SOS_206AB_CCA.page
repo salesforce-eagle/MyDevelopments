@@ -1,0 +1,73 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_206AB_CCA_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS24==1}">
+            <div style="page-break-after: avoid;" class="headding-box">&nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+             <p>
+                            <u>Feature list of Cleartax TDS Solution under Income Tax Act 1961 </u>
+                        </p>
+                        <table class="info-table">
+                            
+                            <tr><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td rowspan="2">Validation</td>
+                                <td>Validation of Permanent Account Number (PAN) numbers of the specified persons, as applicable. Highlight inaccurate PANs</td>
+                            </tr>
+                            <tr><td>Validation of PAN linkage with the Aadhaar – Section 206AA.</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Filing Status</td>
+                                <td>Filing status of income tax returns of two previous financial years of the relevant (PANs)</td>
+                            </tr>
+                            <tr>
+                                <td>Automated extraction of the amount of TDS/TCS remitted by the Customer in previous two financial years against each of the PANs, through the Customer’s TRACES login.</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Communications</td>
+                                <td>Communication with the specified persons to fetch the TDS+TCS amount remitted in the previous two financial years, only in the event the TDS+TCS remitted is less than INR 50000.</td>
+                            </tr>
+                            <tr><td>Communication emails triggered to the specified persons, as applicable.
+                                <ol><li>If non-compliant then email on the applicability of deduction of taxes under Section 206AB/206CCA.</li>
+                                    <li>If compliant then email on the deducting TDS on normal applicable rates. </li>
+                                    <li>Informing the revised applicable TDS / TCS rate (if the Company provides the existing rates to Cleartax).</li></ol><br/>
+                                Communication emails triggered to Customer’s deductors/collectors of tax at source on non applicability of Section 206AB/206CCA on the amounts payable to/collectible from the Customer. 
+                                <br/>
+                                Communication emails triggered to Customer’s the specified persons intimating applicability of Section 194Q and no tax to be collected by the specified persons under Section 206C (1H). 
+                                <br/>
+                                Communication email triggered to the specified persons, as applicable, seeking acknowledgement number of Income Tax returns and other related information. 
+                                </td></tr>
+                        </table>
+                        <br/>
+                        
+                        <p><u>Scope Limitations</u> </p>
+                        <ol>
+                            <li>The reports generated shall be based on the information furnished by the Customer.</li>
+                            <li>Applicable TDS rates as per Income Tax Act will not be validated;</li>
+                            <li>Genuineness of information or acknowledgment of ITRs, furnished by the the specified persons, as applicable, shall not be subject to further verification. Information pertaining to turnover, filing date, TDS / TCS deducted from the specified persons point of view shall not be furnished.</li>
+                            <li>Shall not include filing of returns and assessments procedures under the Income Tax Act</li>
+                        </ol>
+            <apex:include pageName="{!nextPage31}"/>
+        </body>
+    </html>
+</apex:page>

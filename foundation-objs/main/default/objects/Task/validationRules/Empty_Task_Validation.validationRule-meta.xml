@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Empty_Task_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( RecordType.DeveloperName = &apos;Asset_Update&apos; &amp;&amp; (ISBLANK(  New_Value_PO_End_date__c  ) &amp;&amp; ISBLANK( New_Value_PO_Start_date__c  ) &amp;&amp;  !Asset_to_be_deleted__c 
+&amp;&amp; ISBLANK( New_Value_Product__c ) &amp;&amp;  ISBLANK(New_Value_Price__c)),true,false)</errorConditionFormula>
+    <errorMessage>Please specify at least one change to create Task!</errorMessage>
+</ValidationRule>

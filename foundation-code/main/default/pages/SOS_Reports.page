@@ -1,0 +1,105 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Reports_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS22==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <b><u> Scope of Services for Reports Suite- </u></b>
+
+            <table class="info-table">
+                            
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>Purchase Report</b></td>
+                                <td><ol start="1">Report Supported
+                                    <li>Multimonth 2A report</li>
+                                    <li>Multimonth 2B report</li>
+                                    <li>GSTR 4A report</li>
+                                    <li>GSTR 6A report</li>
+                                    <li>GSTR Table 9 8A report</li>
+                                    <li>Supplier Compliance report</li></ol></td>
+                                <td><ol>
+                                    <li>Multi-month Download of report in one go</li>
+                                    <li>No limits in no. of GSTINs for which report can be downloaded</li>
+                                    <li>Both OTP and NON OTP download option available</li>
+                                    <li>Report Guides and FAQs</li></ol></td>
+                            </tr>
+                            <tr>
+                                <td><b>Filed Report</b></td>
+                                <td><ol>Report Supported
+                                    <li>GSTR1 Filed Report</li>
+                                    <li>GSTR3B Filed Report</li>
+                                    <li>GSTR1 HSN Summary report</li>
+                                    <li>GSTR1 Sales Summary report</li>
+                                    </ol></td>
+                                <td><ol>
+                                    <li>Multi-month Download of report in one go</li>
+                                    <li>No limits in no. of GSTINs for which report can be downloaded</li>
+                                    <li>Both Invoice level and Summary level report</li>
+                                    <li>Report Guides and FAQs</li>
+                                    </ol></td>
+                            </tr>
+                            <tr>
+                                <td><b>Comparison Report</b></td>
+                                <td><span>
+                                    <ol>
+                                        Report Supported
+                                        <li>3B vs 1 vs Books report</li>
+                                        <li>3B vs 2B vs Books report</li>
+                                        <li>3B vs 2A report</li>
+                                    </ol></span></td>
+                                <td><ol>
+                                    <li>Multi-month Download of report in one go</li>
+                                    <li>No limits in no. of GSTINs for which report can be downloaded</li>
+                                    <li>Report Guides and FAQs</li>
+                                    </ol></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ledgers Report</b></td>
+                                <td><div>
+                                    <ol>Report Supported
+                                        <li>ITC Ledger Report</li>
+                                        <li>Cash Ledger Report</li>
+                                    </ol>
+                                    </div></td>
+                                <td><ol>
+                                    <li>Multi-month Download of report in one go</li>
+                                    <li>No limits in no. of GSTINs for which report can be downloaded</li>
+                                    <li>Report Guides and FAQs</li>
+                                    </ol></td>
+                            </tr>
+                            <tr>
+                                <td><b>Filing Status</b></td>
+                                <td><ol>
+                                    <li>Filing Dashboard</li>
+                                    <li>Filing status report</li>
+                                    </ol></td>
+                                <td>Get the Access of Filing dashboard
+                                    Stay updated on Filing status of all GST Returns(like G1/G3/G4/G9/G6) , for all your GSTINS through single dashboard and Report
+                                </td></tr>
+                        </table>
+            <apex:include pageName="{!nextPage29}"/>
+        </body>
+    </html>
+</apex:page>

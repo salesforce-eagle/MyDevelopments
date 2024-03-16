@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Id_Internal_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Id - Internal Case</shortDescription>
+        <value>0012x00000ATf7AAAT</value>
+    </labels>
+    <labels>
+        <fullName>Admin_Enterprise_Queue_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Admin Enterprise Queue Id</shortDescription>
+        <value>00GC5000000N73jMAC</value>
+    </labels>
+    <labels>
+        <fullName>Asset_RecordType_Integration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Asset RecordType - Integration</shortDescription>
+        <value>0122x000000tM6QAAU</value>
+    </labels>
+    <labels>
+        <fullName>Asset_Standard_Plan_Exclude_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Asset Standard Plan Exclude Status</shortDescription>
+        <value>Expired;Churn;Sales return</value>
+    </labels>
+    <labels>
+        <fullName>Asset_Standard_Plan_Product_Line</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Asset Standard Plan Product Line</shortDescription>
+        <value>GST</value>
+    </labels>
+    <labels>
+        <fullName>Available_Products</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Products</shortDescription>
+        <value>GST,MAX ITC,Invoice Discount,E-Invoicing &amp; E-Way Bill,TDS,Capture</value>
+    </labels>
+    <labels>
+        <fullName>Business_Hours_International</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Business Hours International</shortDescription>
+        <value>01mC50000004D83</value>
+    </labels>
+    <labels>
+        <fullName>CA_SME_TDS_L1_QueueId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CA/SME TDS L1 QueueId</shortDescription>
+        <value>00GC5000000MkhHMAS</value>
+    </labels>
+    <labels>
+        <fullName>CA_SME_Tax_Cloud_L1_QueueId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CA/SME Tax Cloud L1 QueueId</shortDescription>
+        <value>00GC5000000Mkh7MAC</value>
+    </labels>
+    <labels>
+        <fullName>CSM_Intoductory_Mail_Org_Wide_Generic_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSM_Intoductory_Mail_Org_Wide_Generic_Email</shortDescription>
+        <value>notification@support.clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CSM_Journey_Org_Wide_Generic_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSM_Journey_Org_Wide_Generic_Email</shortDescription>
+        <value>notification@support.clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_2nd_Escalation_CC_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_2nd_Escalation_CC_Addresses</shortDescription>
+        <value>bibhuda.dash@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_2nd_Escalation_To_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_2nd_Escalation_To_Addresses</shortDescription>
+        <value>nirajkumar.shelke@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_3rd_Escalation_CC_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_3rd_Escalation_CC_Addresses</shortDescription>
+        <value>bibhuda.dash@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_3rd_Escalation_To_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_3rd_Escalation_To_Addresses</shortDescription>
+        <value>nirajkumar.shelke@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_Escalation_CC_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_Escalation_CC_Addresses</shortDescription>
+        <value>bibhuda.dash@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_Escalation_Day_of_Month16</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_Escalation_Day_of_Month16</shortDescription>
+        <value>16</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_Escalation_Day_of_Month2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_Escalation_Day_of_Month2</shortDescription>
+        <value>2</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Activation_Escalation_To_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_Activation_Escalation_To_Addresses</shortDescription>
+        <value>nirajkumar.shelke@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_CSMActivationEscalationBatch_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_CSMActivationEscalationBatch_Query</shortDescription>
+        <value>SELECT Id, Name, Stage__c, Account.Onboarding_Owner__r.Manager.Name, Ageing_Since_Created_Date__c, CreatedDate, PurchaseDate, Onboarding_Stage__c, Is_Onboarding_Delayed__c, Is_Activation_Delayed__c, Ageing_of_Asset__c, Account.Name, Product2.Name, Product2.Product_Line__c, Account.Onboarding_Owner__c, Account.Onboarding_Owner__r.Manager.Email, Account.Onboarding_Owner__r.Manager.Name FROM Asset WHERE RecordType.Name = &apos;License Asset&apos; AND CSM_Handled_Asset__c = true AND Stage__c = &apos;Activation&apos; AND Product2.Product_Line__c IN (&apos;GST&apos;, &apos;E-invoicing &amp; E-Way Bill&apos;) AND Is_Asset_Activated__c = false)</value>
+    </labels>
+    <labels>
+        <fullName>CTX_CSMEscalationBatch_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_CSMEscalationBatch_Query</shortDescription>
+        <value>SELECT Id, Name, Price, Stage__c, Ageing_Since_Created_Date__c, CreatedDate, PurchaseDate, Onboarding_Stage__c, Is_Onboarding_Delayed__c, Is_Activation_Delayed__c, Ageing_of_Asset__c, Account.Name, Product2.Name, Product2.Product_Line__c, Account.Onboarding_Owner__c, Account.Onboarding_Owner__r.Manager.Email, Account.Onboarding_Owner__r.Name, Account.Onboarding_Owner__r.Manager.Name FROM Asset WHERE RecordType.Name = &apos;License Asset&apos; AND CSM_Handled_Asset__c = true AND Ageing_of_Asset__c IN : escalationDays AND ((Stage__c = &apos;Onboarding&apos; AND Onboarding_Status__c != &apos;Onboarding Complete&apos;))</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Channel_Partner_Creation_Mail_CC_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX Channel Partner Creation Mail CC Addresses</shortDescription>
+        <value>growthops@cleartax.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Channel_Partner_Creation_Mail_To_Addresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX Channel Partner Creation Mail To Addresses</shortDescription>
+        <value>legal@cleartax.in,disha.gupta@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>CTX_GCC_Email_Leads_Default_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_GCC_Email_Leads_Default_Owner</shortDescription>
+        <value>005C5000000HmzqIAC</value>
+    </labels>
+    <labels>
+        <fullName>CTX_GenerateCSMTasksBatch_Query</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_GenerateCSMTasksBatch_Query</shortDescription>
+        <value>SELECT Id, Name, Product2.Product_Line__c, Stage__c, Onboarding_Completed_Date__c, Ageing_of_Asset__c, PurchaseDate, CreatedDate, Related_Integration_Asset__c, OwnerId FROM Asset WHERE RecordType.Name = &apos;License Asset&apos; AND ((Stage__c = &apos;Success&apos;))</value>
+    </labels>
+    <labels>
+        <fullName>CTX_KAM_Clause</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_KAM_Clause</shortDescription>
+        <value>KAM Clause by ClearTax,KAM Clause by Channel Partner</value>
+    </labels>
+    <labels>
+        <fullName>CTX_LicenceDeactivationAPiEndpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_LicenceDeactivationAPiEndpoint</shortDescription>
+        <value>https://salessyncservice-prod-pub.internal.cleartax.co/v0/webhooks/salesforce/4dca522b-330b-4983-b358-42009c2736bf/action/deactivateLicense/</value>
+    </labels>
+    <labels>
+        <fullName>CTX_ProductSyncByProductLineAPIEndPoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX_ProductSyncByProductLineAPIEndPoint</shortDescription>
+        <value>https://salessyncservice-prod-pub.internal.cleartax.co/v0/webhooks/salesforce/4dca522b-330b-4983-b358-42009c2736bf/products-sf-details</value>
+    </labels>
+    <labels>
+        <fullName>CTX_Status_Of_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CTX Status Of Customer</shortDescription>
+        <value>Green - No Open issues,Red - Open Issues under resolution,Red Churn - Customer has confirmed non-usage of the product</value>
+    </labels>
+    <labels>
+        <fullName>Case_Issue_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Issue Type</shortDescription>
+        <value>Complaint,Request,General Query,Feature Request,Presale Technical Query,Presale General Query,Problem</value>
+    </labels>
+    <labels>
+        <fullName>Case_Tracker_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Tracker Error</shortDescription>
+        <value>Case information will be loaded once you submit case number and contact email.</value>
+    </labels>
+    <labels>
+        <fullName>Case_Tracker_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Tracker Header</shortDescription>
+        <value>Track the status of your support case tickets here.</value>
+    </labels>
+    <labels>
+        <fullName>Channel_Partner_Types</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Channel Partner Types</shortDescription>
+        <value>Referral Partner,Both Reseller &amp; Commission Partner,Commission Partner,Distributor/Reseller</value>
+    </labels>
+    <labels>
+        <fullName>Clear_Identity_L2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Identity L2</shortDescription>
+        <value>00GC5000000NDw4MAG</value>
+    </labels>
+    <labels>
+        <fullName>Collection_Manager_Name_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Collection Manager Name 1</shortDescription>
+        <value>0052x000002uOWJAA2</value>
+    </labels>
+    <labels>
+        <fullName>Collection_Manager_Name_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Collection Manager Name 2</shortDescription>
+        <value>005C5000000IauqIAC</value>
+    </labels>
+    <labels>
+        <fullName>Collection_Manager_Name_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Collection Manager Name 3</shortDescription>
+        <value>0052x000002uOWJAA2</value>
+    </labels>
+    <labels>
+        <fullName>Credit_Intimation_to_Form_16A</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Credit Intimation to Form 16A</shortDescription>
+        <value>005C5000000J8wv</value>
+    </labels>
+    <labels>
+        <fullName>Deal_Lost_Emails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal Lost Emails</shortDescription>
+        <value>nt90matq@robot.zapier.com</value>
+    </labels>
+    <labels>
+        <fullName>Deal_Lost_Notification_Org_Wide_Email_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal Lost Notification Org Wide Email Id</shortDescription>
+        <value>0D2C500000000F6KAI</value>
+    </labels>
+    <labels>
+        <fullName>Deal_Lost_Notification_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal Lost Notification Template Id</shortDescription>
+        <value>00XC5000000M2MGMA0</value>
+    </labels>
+    <labels>
+        <fullName>Default_Email_Template_Target_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Email Template Target Id</shortDescription>
+        <value>003C5000005ZB2dIAG</value>
+    </labels>
+    <labels>
+        <fullName>Department_Values</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Department Values</shortDescription>
+        <value>Admin
+Analyst Team
+B2B Support Agent
+Category Team
+Channel Sales
+Chatter Expert
+Consumer Partnerships
+Customer Success Team
+Demand Generation
+EC
+Engineering
+ENT E Invoice L1 Team
+enterprise
+Enterprise Managed Services
+Field Sales
+Finance
+GCC Delivery Head
+Finance Controller
+EC Head,Integration,ITR team
+KAM
+LeadGen
+Learning &amp; Development
+Legal
+Managed Services
+Marketing Team
+Non KAM Support
+Pre Sales
+Customer support
+Product Team
+Sales
+Strategy Team
+VLC
+ID Sales
+Inside Sales
+Marketing
+PSU
+Management
+Automation user
+Startup
+Others</value>
+    </labels>
+    <labels>
+        <fullName>ENT_Clear_Capture_L2_Team</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ENT Clear Capture L2 Team</shortDescription>
+        <value>00GC5000000NDvpMAG</value>
+    </labels>
+    <labels>
+        <fullName>ENT_Clear_Invoice_L2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ENT Clear Invoice L2</shortDescription>
+        <value>00GC5000000NDvVMAW</value>
+    </labels>
+    <labels>
+        <fullName>ENT_TDS_L1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ENT TDS L1 QueueId</shortDescription>
+        <value>00GC5000000NDvGMAW</value>
+    </labels>
+    <labels>
+        <fullName>Email_Exclusion_CaseAck</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_Exclusion_CaseAck</shortDescription>
+        <value>team-salesforce@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>Employee_Size_Ranges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee Size Ranges</shortDescription>
+        <value>1 - 10,11 - 50,51 - 200,201 - 500,501 - 1000,1001 - 5000,5001 - 10000,10000 +</value>
+    </labels>
+    <labels>
+        <fullName>Enable_Standard_Plan</fullName>
+        <categories>YES or NO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enable Standard Plan</shortDescription>
+        <value>YES</value>
+    </labels>
+    <labels>
+        <fullName>EndPoint_StandardSync</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EndPoint StandardSync</shortDescription>
+        <value>https://salessyncservice-prod-pub.internal.cleartax.co/v0/webhooks/salesforce/4dca522b-330b-4983-b358-42009c2736bf/standard-plans</value>
+    </labels>
+    <labels>
+        <fullName>File_Exclusion_Users</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>File Exclusion Users</shortDescription>
+        <value>0052x0000026gDeAAI,005C5000000HrC8IAK</value>
+    </labels>
+    <labels>
+        <fullName>Financial_Query_RecordType_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Query RecordType Id</shortDescription>
+        <value>012C50000004KAeIAM</value>
+    </labels>
+    <labels>
+        <fullName>First_touch_resolution_exclusion_email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First touch resolution exclusion email</shortDescription>
+        <value>support@cleartaxmailer.com,bibhuda.dash@cleartax.in,chandu@warpdrivetech.in,shahanawazakhtar@warpdrivetech.in,support@notifications.cleartax.in</value>
+    </labels>
+    <labels>
+        <fullName>GCC_Asset_Email_Recipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCC Asset Email Recipients</shortDescription>
+        <value>me-salesforce@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>GCC_Integration_Asset_Email_Recipients</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCC Integration Asset Email Recipients</shortDescription>
+        <value>me-salesforce@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>GCC_Landing_Page_Leads_Default_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCC Landing Page Leads Default Owner</shortDescription>
+        <value>005C5000000HmzqIAC</value>
+    </labels>
+    <labels>
+        <fullName>GCC_delivery_head_Email_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GCC delivery head Email Id</shortDescription>
+        <value>usha.dr@clear.in</value>
+    </labels>
+    <labels>
+        <fullName>GLOBAL_Account_Clear_Identity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GLOBAL Account Clear Identity/Capture/MaxITC/ClearInvoice</shortDescription>
+        <value>0012x00000L8SmI</value>
+    </labels>
+    <labels>
+        <fullName>Greetings_from_Defmacro_Sales_Order</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Greetings from Defmacro &amp; Sales Order</shortDescription>
+        <value>0052x000003RSc7AAG</value>
+    </labels>
+    <labels>
+        <fullName>Internal_Case_RecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Internal Case RecordTypeId</shortDescription>
+        <value>012C50000004KMkIAM</value>
+    </labels>
+    <labels>
+        <fullName>International_L1_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>International L1 Queue</shortDescription>
+        <value>00GC5000000MyYI</value>
+    </labels>
+    <labels>
+        <fullName>International_Lead_Group</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>International Lead Group</shortDescription>
+        <value>00GC5000000MDdOMAW</value>
+    </labels>
+    <labels>
+        <fullName>Invoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice</shortDescription>
+        <value>005C5000000J4aCIAS</value>
+    </labels>
+    <labels>
+        <fullName>Lead_RecordType_International</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead RecordType International</shortDescription>
+        <value>012C50000004HY1IAM</value>
+    </labels>
+    <labels>
+        <fullName>New_Global_International_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Global International Account</shortDescription>
+        <value>001C5000002tAtbIAE</value>
+    </labels>
+    <labels>
+        <fullName>Notification_Default_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notification Default Id</shortDescription>
+        <value>0D22x000000kA2BCAU</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_ARR_Amount_Refund_Policy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_ARR_Amount_Refund_Policy</shortDescription>
+        <value>300000</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_International_RecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_International_RecordTypeId</shortDescription>
+        <value>012C50000004HZO</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Renewal_RecordType_Ids</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Renewal RecordType Ids</shortDescription>
+        <value>0122x000000t7bKAAQ,012C50000004HYVIA2</value>
+    </labels>
+    <labels>
+        <fullName>Order_Form_Addendum_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Form Addendum Error Message</shortDescription>
+        <value>Please Add Attachment of Type : Order Form Addendum in Files section of asset</value>
+    </labels>
+    <labels>
+        <fullName>Organisation_Wide_Address_Help_Support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organisation Wide Address Help&amp;Support</shortDescription>
+        <value>0D2C500000000F6</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Daksh_Sikka</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Daksh Sikka</shortDescription>
+        <value>0052x000002sw62AAA</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Hanumanthu_Jarpala</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Hanumanthu Jarpala</shortDescription>
+        <value>0052x000003RRsnAAG</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Harish_Pancholi</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Harish Pancholi</shortDescription>
+        <value>005C5000000Iyx5IAC</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Jayanth_Pushparaju</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Jayanth Pushparaju</shortDescription>
+        <value>0052x000003RT6vAAG</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Priyanka_Chettri</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Priyanka Chettri</shortDescription>
+        <value>005C5000000IwP1IAK</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Rajeev_Rajanala</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Rajeev Rajanala</shortDescription>
+        <value>005C5000000ItiFIAS</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Rajesh_Chandran</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Rajesh Chandran</shortDescription>
+        <value>005C5000000IbX9IAK</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Rakesh_Ranjan</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Rakesh Ranjan</shortDescription>
+        <value>005C5000000Ia2AIAS</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Sakthidoss_Gajendran</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Sakthidoss Gajendran</shortDescription>
+        <value>005C5000000I7MiIAK</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Shriram_Bhat</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Shriram Bhat</shortDescription>
+        <value>0052x000002rDhwAAE</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Usha</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Usha</shortDescription>
+        <value>005C5000000IlKKIA0</value>
+    </labels>
+    <labels>
+        <fullName>PM_Owner_Yash_Kothari</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM Owner Yash Kothari</shortDescription>
+        <value>0052x000002ufp9AAA</value>
+    </labels>
+    <labels>
+        <fullName>Priority_Admin_Enterprise_Queue_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Priority Admin Enterprise Queue Id</shortDescription>
+        <value>00GC5000000N7DK</value>
+    </labels>
+    <labels>
+        <fullName>Product_Type_B2BCASME</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Type B2BCASME</shortDescription>
+        <value>GST,TDS,Tax-cloud</value>
+    </labels>
+    <labels>
+        <fullName>Proforma_Invoice</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Proforma Invoice</shortDescription>
+        <value>005C5000000J5gu</value>
+    </labels>
+    <labels>
+        <fullName>Purchase_Order</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AR Clear Purchase Order</shortDescription>
+        <value>005C5000000J4aCIAS</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCustomValidationsBypass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteCustomValidationsBypass</shortDescription>
+        <value>Sales Head 00eC5000000LrL9IAK,System Administrator 00e2x0000012b83AAA,KAM Head 00e2x000000UWvQAAW,KAM Regional Head 00e2x000001RPrpAAG,PSU 00e2x000001RUn5AAG</value>
+    </labels>
+    <labels>
+        <fullName>SF_L1_Sales_ops_Queue_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SF L1 Sales ops Queue ID</shortDescription>
+        <value>00GC5000000N8OJMA0</value>
+    </labels>
+    <labels>
+        <fullName>SystemAdminProfileId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SystemAdminProfileId</shortDescription>
+        <value>00e2x0000012b83AAA</value>
+    </labels>
+    <labels>
+        <fullName>Task_Approver_Finance_OLD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Task Approver Finance - OLD</shortDescription>
+        <value>0052x000002rDgpAAE,Riya Prasad,0052x000002tB9QAAU,Sumeeth Vohra,0052x000003RHEeAAO,0052x000003jhdTAAQ,Vijendra,005C5000000HrC8IAK,005C5000000IyBLIA0,0052x000003Rd7KAAS</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Syncing_the_quote_only_at_Quote_Accept</fullName>
+    <active>true</active>
+    <errorConditionFormula>IsSyncing &amp;&amp; Text(Status) != &apos;Quote Accept&apos;</errorConditionFormula>
+    <errorMessage>You can only sync quote at Quote Accept</errorMessage>
+</ValidationRule>

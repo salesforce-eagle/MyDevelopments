@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PG_Growth_Lead__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if( OR(ISPICKVAL( Final_Segment__c , &quot;Segment 5&quot;),ISPICKVAL( Final_Segment__c , &quot;Segment 6&quot;),ISPICKVAL( Final_Segment__c , &quot;Segment 7&quot;),ISPICKVAL( Final_Segment__c , &quot;Segment 8&quot;)),&quot;PG&quot;,&quot;Growth&quot;)</formula>
+    <label>PG/Growth Lead</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

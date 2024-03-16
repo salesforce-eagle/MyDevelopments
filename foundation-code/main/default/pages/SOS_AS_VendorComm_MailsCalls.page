@@ -1,0 +1,84 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_VendorComm_MailsCalls_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for Assisted Services - Vendor Communication (Mails + Calls ) - </u></b>         
+    <p>
+        
+        Cleartax will provide following services to the Customer holding GST Registrations in various states, using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’).The following activities shall be undertaken -</p>
+    <p>
+        
+    
+After the confirmation and based on the comments received by the Customer on the reconciliation summary, vendor communication shall be done:
+</p>
+<p>
+  <b>Mails + Calls Scope: </b>
+    </p>
+    <table class="info-table" >
+<tr><th>No of Communication</th><th>
+Mode of Communication</th>
+<th>Communication</th>
+</tr>
+<tr>
+<th>1</th>
+<th>Email 1</th>
+<th>Triggered to such vendors seeking for information on such mismatches / missed out transactions.</th></tr>
+<tr><th>2</th>
+<th>Tele Call 1</th>
+<th>Call triggered to all the defaulting vendors.</th></tr>
+<tr><th>3</th>
+<th>Email 2</th>
+<th>Triggered to such vendors seeking for information on such mismatches / missed out transactions, who have not responded / provided inappropriate response / responded but not clarified till communication 1.
+</th></tr>
+<tr>
+<th>4</th>
+<th>Tele Call 2</th>
+<th>Call triggered to the defaulting vendors who have been non-responsive / responded inappropriately till above 3 communication rounds.</th></tr>
+<tr><th>5</th>
+<th>Final Email 3</th>
+<th>Triggered to such vendors (after communication 4) who have not responded / provided inappropriate response / responded but not clarified till communication 4.</th></tr>
+<tr>
+<th>6</th>
+<th>Tele Call 3</th>
+<th>Call triggered to with all the defaulting vendors over call who have been non-responsive / responded inappropriately till above 5 communication rounds.</th></tr>
+</table>
+
+Note:
+<ol>
+<li>Vendor communications shall be triggered post filing of GSTR-3B for the particular period.</li>
+<li>One tele call shall be deemed triggered upon completion of two attempts at calling.
+</li>
+<li>
+Vendor Communication will be triggered for top “n” vendors covering 75% of the overall tax exposure value as mutually agreed with the customer
+</li>
+</ol>
+
+
+<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

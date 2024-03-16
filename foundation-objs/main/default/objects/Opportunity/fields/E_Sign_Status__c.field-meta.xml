@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Sign_Status__c</fullName>
+    <defaultValue>&apos;E-Sign&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>E-Sign Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>E-Sign Request Sent</fullName>
+                <default>false</default>
+                <label>E-Sign Request Sent</label>
+            </value>
+            <value>
+                <fullName>E-Sign Unsuccessful</fullName>
+                <default>false</default>
+                <label>E-Sign Unsuccessful</label>
+            </value>
+            <value>
+                <fullName>E-Sign Successful</fullName>
+                <default>false</default>
+                <label>E-Sign Successful</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

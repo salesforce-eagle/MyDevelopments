@@ -1,0 +1,134 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,Annexure_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title>
+            <style type="text/css">
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding-left:1.5px !important;
+                padding-top:1.5px !important;
+                padding-bottom:1.5px !important;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:avoid}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;">
+            
+            <apex:panelGroup rendered="{!listOfGstins.size > 0}" > 
+                <br/>
+                
+                <div style="page-break-inside: avoid;">
+                    
+                    <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BILLING DETAILS</div><br/>
+                    <div>
+                        <table class="info-table" style='font-family:"Courier New", Courier, monospace; font-size:80%;font-size:12px;'>
+                            <tr>
+                                <th style="width:15%">Product Name</th>
+                                <th style="width:15%">Customer Name</th>
+                                
+                                <apex:outputText rendered="{!NOT(gccCheck)}">
+                                    <th style="width:15%">Billing GSTIN</th>
+                                </apex:outputText>
+                                
+                                <apex:outputText rendered="{!gccCheck}">
+                                    <th style="width:15%">Billing VAT</th>
+                                </apex:outputText>
+                                
+                                
+                                <th style="width:30%">Billing Address</th>
+                                <th style="width:15%">Amount  <apex:outputText rendered="{!gccCheck}">
+                                    (SAR)
+                                </apex:outputText></th>
+                            </tr>
+                            <apex:repeat value="{!listOfGstins}" var="eachRecord">
+                                <tr>
+                                    <td class="info-table-td">{!eachRecord.Quote_Line_Item__r.Product2.name}</td>
+                                    <td class="info-table-td">{!eachRecord.Name_Of_The_Customer__c}</td>
+                                    <!--<td class="info-table-td">{!eachRecord.Billing_PAN__c}</td>
+<td class="info-table-td">{!eachRecord.TAN__c}</td>-->
+                                    <td class="info-table-td">{!eachRecord.Name}</td>
+                                    <td class="info-table-td">{!eachRecord.Address__c} {!eachRecord.Address_Line_2__c} {!eachRecord.City__c} {!eachRecord.State__c} {!eachRecord.Pincode__c}</td>
+                                    <td class="info-table-td">{!eachRecord.Amount__c}</td>
+                                </tr>
+                            </apex:repeat>
+                            <tr><td colspan="4" class="info-table-td" style="text-align:right">Total</td><td class="info-table-td">{!additionalGSTINsTotal}</td></tr>
+                        </table> 
+                    </div>
+                    
+                </div>
+                
+            </apex:panelGroup>
+            
+        </body>
+    </html>
+    
+</apex:page>

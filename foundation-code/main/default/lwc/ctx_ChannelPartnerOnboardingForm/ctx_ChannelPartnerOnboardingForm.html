@@ -1,0 +1,357 @@
+<template>
+    <template if:true={showToast}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-notify_container">
+                <div class={outerClass} role="status">
+                    <span class="slds-assistive-text">{type}</span>
+                    <span class={innerClass} title={message}>
+                        <lightning-icon icon-name={getIconName} alternative-text="icon" styleclass="slds-icon slds-icon_small" variant="inverse" size="small"></lightning-icon>
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">
+                            <lightning-formatted-rich-text value={message}>
+                            </lightning-formatted-rich-text>
+                        </h2>
+                    </div>
+                    
+                    <div class="slds-notify__close">
+                        <lightning-button-icon icon-name="utility:close" size="small" variant="border-filled" class="slds-button slds-button_icon slds-button_icon-inverse" alternative-text="next" onclick={closeModel} ></lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </template>
+    <div class="background">
+        <lightning-card title="Onboarding Form" icon-name="standard:account">
+            <div class="slds-p-var-around_small" style="position:relative;">
+                <template if:false={formSubmitted}>
+                    <div style="position:relative;">
+
+                        <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleToggleSection}
+                            active-section-name={activeSections} class="accordionClass">
+                            <lightning-accordion-section name="Partner_Information" label="Partner Information">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Channel Partner Registered firm Name
+                                        </label>
+                                        <lightning-input type="text" data-form="onboardingForm" name="Name" variant="label-hidden" required>
+                                        </lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Channel Partner Type(ERP/Buisness)
+                                        </label>
+                                        <lightning-combobox data-form="onboardingForm" name="Channel_Partner_Type__c" variant="label-hidden"
+                                            required options={partnerTypes}></lightning-combobox>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Channel Partner Team Size
+                                        </label>
+                                        <lightning-combobox data-form="onboardingForm" name="Employee_Size_Range__c" variant="label-hidden"
+                                            required options={employeeSizes}></lightning-combobox>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="around-small" flexibility="auto">
+                                        <div class="slds-box slds-theme_shade">
+                                            <strong>Billing Address</strong>
+                                        </div>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Street
+                                        </label>
+                                        <lightning-textarea data-id="BillingStreet" data-form="onboardingForm" name="BillingStreet"
+                                            variant="label-hidden" required></lightning-textarea>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>City
+                                        </label>
+                                        <lightning-input type="text" data-id="BillingCity" data-form="onboardingForm" name="BillingCity"
+                                            variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>State
+                                        </label>
+                                        <lightning-input type="text" data-id="BillingState" data-form="onboardingForm" name="BillingState"
+                                            variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Country
+                                        </label>
+                                        <lightning-input type="text" data-id="BillingCountry" data-form="onboardingForm" name="BillingCountry"
+                                            variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Postal Code
+                                        </label>
+                                        <lightning-input type="text" data-id="BillingPostalCode" data-form="onboardingForm"
+                                            name="BillingPostalCode" variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="around-small" flexibility="auto">
+                                        <lightning-input type="checkbox" label="Shipping Addess Same as Billing Address?"
+                                            onchange={copyAddress}> </lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="around-small" flexibility="auto">
+                                        <div class="slds-box slds-theme_shade">
+                                            <strong>Shipping Address</strong>
+                                        </div>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Street
+                                        </label>
+                                        <lightning-textarea data-section="ShippingAddress" data-id="ShippingStreet" data-form="onboardingForm"
+                                            name="ShippingStreet" variant="label-hidden" disabled={disableShippingAddress} required>
+                                        </lightning-textarea>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>City
+                                        </label>
+                                        <lightning-input type="text" data-section="ShippingAddress" data-id="ShippingCity"
+                                            data-form="onboardingForm" name="ShippingCity" variant="label-hidden"
+                                            disabled={disableShippingAddress} required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>State
+                                        </label>
+                                        <lightning-input type="text" data-section="ShippingAddress" data-id="ShippingState"
+                                            data-form="onboardingForm" name="ShippingState" variant="label-hidden"
+                                            disabled={disableShippingAddress} required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Country
+                                        </label>
+                                        <lightning-input type="text" data-section="ShippingAddress" data-id="ShippingCountry"
+                                            data-form="onboardingForm" name="ShippingCountry" variant="label-hidden"
+                                            disabled={disableShippingAddress} required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Postal Code
+                                        </label>
+                                        <lightning-input type="text" data-section="ShippingAddress" data-id="ShippingPostalCode"
+                                            data-form="onboardingForm" name="ShippingPostalCode" variant="label-hidden"
+                                            disabled={disableShippingAddress} required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="around-small" flexibility="auto">
+                        
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                        
+                            </lightning-accordion-section>
+
+                            <lightning-accordion-section name="Additional_Information" label="Additional Information">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Total NAL with Channel Partner at the time of
+                                            onboarding
+                                        </label>
+                                        <lightning-input type="number" data-form="onboardingForm" name="Number_of_Enterprise_Clients__c"
+                                            variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>CIN/LLP No. of the firm (if applicable) Write
+                                            NA if not available
+                                        </label>
+                                        <lightning-input data-form="onboardingForm" name="CIN_code__c" variant="label-hidden" required>
+                                        </lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Onboarding/ Effective Start Date (For
+                                            Agreement)
+                                        </label>
+                                        <lightning-input type="date" data-form="onboardingForm" name="Effective_from__c" variant="label-hidden"
+                                            required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Onboarding/ Effective Close Date (For
+                                            Agreement)
+                                        </label>
+                                        <lightning-input type="date" data-form="onboardingForm" name="Expiry_Date__c" variant="label-hidden"
+                                            required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>KAM Clause
+                                        </label>
+                                        <lightning-combobox data-form="onboardingForm" name="KAM_Clause__c" variant="label-hidden" required
+                                            options={kamClause}></lightning-combobox>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Commission% New Sales
+                                        </label>
+                                        <lightning-input type="number" data-form="onboardingForm" name="Commission_New_Sales__c"
+                                            formatter="percentage" step=".01" variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Commission% Renewal Sales
+                                        </label>
+                                        <lightning-input type="number" data-form="onboardingForm" name="Commission_Renewal_Sales__c"
+                                            formatter="percentage" step=".01" variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Commission% Performance Incentive
+                                        </label>
+                                        <lightning-input type="number" data-form="onboardingForm" name="Commission_Performance_Incentive__c"
+                                            formatter="percentage" step=".01" variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </lightning-accordion-section>
+
+                            <lightning-accordion-section name="POC_Information" label="POC Information">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Authorized Signatory/ Owner's full name
+                                        </label>
+                                        <lightning-input type="text" data-id="contactform" data-contact-field-name="LastName" name="LastName"
+                                            variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Authorized Signatory/ Owner's Email ID
+                                        </label>
+                                        <lightning-input type="email" data-id="contactform" data-contact-field-name="Email"
+                                            data-form="onboardingForm" name="Master_admin_Email__c" variant="label-hidden" required>
+                                        </lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Authorized Signatory/ Owner's Mobile No.
+                                        </label>
+                                        <lightning-input type="tel" data-id="contactform" data-contact-field-name="Phone" name="Phone"
+                                            variant="label-hidden" max-length="10" required></lightning-input>
+                                    </lightning-layout-item>
+                        
+                                    <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12"
+                                        padding="horizontal-small" flexibility="auto">
+                                        <label class="slds-form-element__label" for="form-element-03">
+                                            <abbr class="slds-required" title="required">* </abbr>Registered Designation of Owner (as on Firm
+                                            Registration Certificate)
+                                        </label>
+                                        <lightning-input type="text" data-id="contactform" data-contact-field-name="Designation__c"
+                                            name="ChannelProgramLevelName" variant="label-hidden" required></lightning-input>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </lightning-accordion-section>
+
+                            <lightning-accordion-section name="Upload_Document" label="Upload Document">
+                                <lightning-layout multiple-rows>
+                                    <lightning-layout-item size="12" large-device-size="12" medium-device-size="12" small-device-size="12"
+                                        padding="around-small" flexibility="auto">
+                                        <lightning-input data-id="caseForm" onchange={handleFilesChange} type="file" name="file"
+                                            label="Upload File" multiple>
+                                        </lightning-input>
+                                        <div class="slds-text-body_small">
+                                            <span class="slds-required">* Kindly Attach Logo file, GST Certificate, PAN copy of the owner, VOF(Vendor Onboarding Form) of the owner and Cancelled Cheque or Bank details on Letter Head</span>
+                                        </div>
+                        
+                                        <template for:each={filesToUpload} for:item="file">
+                                            <p key={file.Title}>
+                                                {file.Title}
+                                                &nbsp;
+                                                &nbsp;
+                                                &nbsp;
+                                                <lightning-button-icon variant="bare" data-id={file.Title} icon-name="utility:delete"
+                                                    size="small" title="Delete" onclick={handleRemoveFile}></lightning-button-icon>
+                                            </p>
+                                        </template>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </lightning-accordion-section>
+                        </lightning-accordion>
+    
+                        <div class="slds-align_absolute-center slds-var-p-around_medium">
+                            <lightning-button class="slds-m-top_small" label="Submit Form" onclick={submitForm}></lightning-button>
+                        </div>
+                        <template if:true={showSpinner}>
+                            <div class="slds-spinner_container slds-grid">
+                                <div class="slds-align_absolute-center">
+                                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:true={formSubmitted}>
+                    <div class="slds-align_absolute-center">
+                        Congratulations Your form Submitted Successfully....!!!
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

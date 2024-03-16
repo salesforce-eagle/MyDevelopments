@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>first_conversion_date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Date this contact first submitted a form.</description>
+    <externalId>false</externalId>
+    <label>First Conversion Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

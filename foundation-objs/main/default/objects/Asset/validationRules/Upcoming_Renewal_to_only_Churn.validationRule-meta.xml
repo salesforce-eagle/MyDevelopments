@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upcoming_Renewal_to_only_Churn</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status),&apos;Upcoming Renewal&apos; ) &amp;&amp; ISCHANGED(Status) &amp;&amp; NOT(ISPICKVAL(Status,&apos;Churn&apos; )) &amp;&amp;  !Contains($User.Id,&apos;0052x000002rDhD&apos;)</errorConditionFormula>
+    <errorMessage>You can only move to Churn Manually!</errorMessage>
+</ValidationRule>

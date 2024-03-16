@@ -1,0 +1,82 @@
+<?xml version=”1.0″ encoding=”UTF-8″?>
+<Package xmlns=”http://soap.sforce.com/2006/04/metadata”>
+    
+    <types>
+<!--        
+        <members>AssetTriggerHandler</members>
+        <members>AssetTriggerHelper</members>
+        <members>AssetTriggerTest</members>
+
+        
+        <members>CreateProjectController</members>
+        <members>CreateProjectControllerTest</members>
+
+        <members>DealClosureCallOut</members>
+        <members>CTX_UpsertAssetLicense</members>
+
+        <members>CTX_CSMFlowHandler</members>
+        
+        <members>OpportunityTriggerHelper</members>
+        
+        <members>CTX_AssetExtractAPI</members>
+        <members>CTX_IntegrationEscalationHelper</members>
+        <members>CTX_ProjectEscalationEmailHelper</members>
+        
+        
+        <members>AssetRenewalScheduler</members>
+        <members>CTX_MergeAssets</members>
+        <members>CTX_IntegrationAutomatedReport_A</members>
+        <members>AssetRenewalSchedulerhelper</members>
+        <members>CTX_RenewalEmailHelper</members>
+        <members>CTX_CSMFlowEmailHelper</members>
+        
+        <members>FeedItemTiggerHandler</members>
+        <members>UpsellTriggerHelper</members>
+        <members>CTX_CSMJorneyQueueable</members>
+        <members>CTX_CSMJourneyOnbaordingFlow</members>
+        <members>SchedulableKAMEmail</members>
+        <members>CSMOwnerAssigner</members>
+        <members>TaskTriggerHandler</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>CTX_FetchAssetService</members>
+        <members>ProjectTriggerHandler</members>
+        <members>CTX_AssetDetailsCapture</members>
+        <members>QuoteProductControllerTest</members>
+        <members>TaskTriggerTest</members>
+        <members>SchedulerToEmailGccAssets</members>
+        <members>SchedulerToEmailGccIntegrationAssets</members>
+        <members>CTX_AssetRedesignBatch</members>
+        
+        <members>CTX_CSMAssetDetailsFlow</members>
+        <members>CTX_CSM_TASK_CreationFormula2</members>
+        <members>CTX_CSMJourneyOnbaordingFlow2</members>
+        <members>CTX_CSMJorneyQueueable2</members>
+        <members>CTX_CSMJourneyHandler2</members>
+        <members>CTX_CSMEscalationsBatch2</members>
+        <members>CTX_CSMActivationEscalationBatch2</members>
+
+        <members>CTX_CSMJourneyHandler</members>
+        <members>CTX_CSMEscalationsBatch</members>
+        <members>CTX_CSM_TASK_CreationFormula</members>
+        <members>CTX_CSMActivationEscalationBatch</members>
+-->
+        <members>OpportunityTriggerHelper2</members>
+        <members>CTX_UpsertAssetLicense2</members>
+        <members>AssetTriggerHandler2</members>
+        <members>AssetTriggerHelper2</members>
+        <members>CTX_CSM_TASK_CreationFormula2</members>
+        <members>CTX_CSMJorneyQueueable2</members>
+        <members>CTX_CSMJourneyOnbaordingFlow2</members>
+        <members>CTX_CSMJourneyHandler2</members>
+        <members>CTX_CSMEscalationsBatch2</members>
+        <members>CTX_CSMActivationEscalationBatch2</members>
+        <members>CTX_GenerateCSMTasksBatch2</members>
+        
+        
+
+        <name>ApexClass</name>
+    </types>
+
+
+    <version>55.0</version>
+</Package>

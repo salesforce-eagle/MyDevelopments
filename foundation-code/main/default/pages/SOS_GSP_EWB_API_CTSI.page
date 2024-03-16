@@ -1,0 +1,133 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GSP_EWB_API_CTSI_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           
+           
+                    
+                       <b><u> Scope of Services for E-Way Bill Integration - GSP API- </u></b>
+ 
+                        <p><b>a. Scope of Services for API Development </b> </p>
+                     <p>The deliverables shall encompass designing and development of the following components.</p>
+                     
+                      <p><b>1.</b>Design and develop a dashboard in ERP (hereinafter referred to as ClearTax Compliance Cockpit)</p><!--style="white-space:pre" -->
+                    <p><b>2.</b>The selection screen shall have options to filter documents based on Company code/Plant code, Document number range/series, Document date range, Document type, Document status, Any other relevant attribute.</p>
+                    <p><b>3.</b>The report to extract and list outward and inward documents from the source ERP shall cover the following ClearTax document types relevant for E-Waybill like  Invoice, Credit Note, Debit Note, Bill of Supply, Bill of Entry, Delivery Challan, Any others document as applicable. </p>
+                    <p><b>4.</b>Generation of E Way Bill using the E Way Bill API System will be blocked for the following scenarios where the Supplier is enabled for E Invoice. Such E Way Bills need to be generated either along with the IRN generation or with reference to the IRN using E Invoice System only</p>
+                    
+                    
+                    <p><b>5.</b>The report shall display the status of E-Waybill actions at document level. Based on the activity, the status of the documents may change with the success message and metadata (E-waybill number, etc) or error message for the use of end users. </p>
+             
+                      <p><b>6.</b> The report shall have UI elements to select one or more documents and action buttons to trigger the following actions either for a single document or for bulk documents (multi select):
+:</p>
+                    <ul>
+             <li>Authentication</li>
+ <li>Generate E-Waybill (Both Part-A and Part-B)</li>
+ <li>Generate E-Waybill Part-A Only</li>
+ <li>Update Transporter</li>
+ <li>Update Transport details (Part-B)</li>
+ <li>Extend Validity of E-Waybill</li>
+ 
+ <li>Cancel E-Waybill</li>
+ <li>Get E-Waybill PDF (Print)</li>
+ <li>Add Multi-vehicle E-Waybill</li>
+ <li>Change Multi-vehicle E-Waybill</li>
+ <li>Generate Consolidated E-Waybill</li>
+ <li>Regenerate Consolidated E-Waybill</li>
+ <li>Get Consolidated E-Waybill PDF (Print)</li>
+ 
+                    </ul>
+                    <p><b>7.</b> The actions can be triggered as per customer’s requirement either - </p>
+                     <ul>
+                        <li>On a real-time basis when an invoice is generated or approved and / or</li>
+                        <li>On a scheduled basis and / or </li>
+                        <li>On click of UI elements in the ClearTax Compliance Cockpit.</li>
+                    </ul>
+                    <p><b>8.</b> For each action specified above,</p>
+                     <ol style="list-style-type: lower-roman;">
+                        <li>Transform the source data/documents into the format acceptable by Cleartax APIs and/or in consonance with what is 
+                            prescribed/acceptable by the Government.</li>
+                        <li>Perform field level validation and business validation checks as per Cleartax and Government API schema.</li>
+                        <li>Load the transformed data/documents using RESTful APIs to the Cleartax application.</li>
+                        <li>Receive the response based on user action like E-Waybill Number, Cancelled date, etc from Cleartax APIs along with additional information, errors and other metadata.</li>
+                        <li>Update the E-Waybill Number, Cancelled date, etc and other metadata back in the ERP.</li>
+<li>Customise invoice printing to include the E-Waybill number within ERP - up to 3 custom invoices; Disables printing of invoices where E-Waybill is applicable but not generated.</li>
+                        
+                        <li>Handle errors and exceptions for (i) Cleartax validations (ii) Internet downtime (iii) Cleartax API downtime (iv) Invalid response from Cleartax application.</li>
+                        
+                    </ol>
+             
+                    <p><b>b. Scope Limitations and Customer Dependencies </b></p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations 
+                            will need to be done by the customer's IT team.</li>
+                        <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra 
+                            team and the customer provides necessary access to Cleartax and its system integrator . 
+                            This activity should be done by the Customer within 5 working days from project kick-off date</li>
+                        <li>Network: Cleartax does not provide end to end service on network set up.</li>
+                        <li>Basis: Cleartax does not provide any support related to Basis.</li>
+                        <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+                        <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its 
+                            system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.
+                            If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution 
+                            of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the 
+                            Customer agrees to additionally pay for such remote access. </li>
+                        <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration 
+                            with the consulting team for study and understanding.</li>
+                        <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals 
+                            or based on the milestones.</li>
+                        <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). 
+                            In the interest of timely completion of the project, all the test cases as per the functionalities 
+                            agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer
+                            within 14 days of moving the project to UAT. </li>
+                        <li>Once the UAT sign-off is provided, the customer needs to give necessary clearance to move the code to production within 7 days. </li>
+                        <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, 
+                            the project will be deemed to have successfully gone 
+                        live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer.</li>
+                        <li>Any exception that happens from the government portal side, the customer has to reach out to NIC portal for support.
+</li>
+                    </ol>
+                    <p><b>c. Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+                        the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+                        scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+                    <p>
+                        <b>d. Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+                        appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+                    </p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+                        <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / 
+                            schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+                    </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

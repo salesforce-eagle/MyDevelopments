@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GSTADVANTAGE_Validation_3</fullName>
+    <active>false</active>
+    <errorConditionFormula>( BtoB_Sales_one__c + 0.3*BtoC_Sales_one__c + Purchases_Invoices_one__c) &gt; 30000 &amp;&amp;  (GST_Advantage_Count__c &gt; 0 || GST_Advantage_with_CSM_Count__c &gt; 0) &amp;&amp;   !Contains($Label.QuoteCustomValidationsBypass,$User.ProfileId)</errorConditionFormula>
+    <errorMessage>Sum of Purchase Invoices, B2B Sales Invoices and  B2C Sales Invoices should not be more than 30K for adding GST Advantage !</errorMessage>
+</ValidationRule>

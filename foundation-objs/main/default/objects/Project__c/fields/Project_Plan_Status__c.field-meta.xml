@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Plan_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((ISPICKVAL(Project_Stage__c,	&apos;Project Plan&apos;) ||
+    ISPICKVAL(Project_Stage__c,	&apos;Implementation&apos;) ||
+    ISPICKVAL(Project_Stage__c,	&apos;UAT&apos;) ||
+    ISPICKVAL(Project_Stage__c,	&apos;Live&apos;)),
+IF(NOT(ISBLANK(Project_Plan_Sign_off_Date__c)), iF(Project_Plan_Sign_off_Date__c &gt;  Benchmark_Date_Project_Plan__c ,
+&quot;RED&quot;,
+&quot;GREEN&quot;),
+IF(TODAY() &gt; Benchmark_Date_Project_Plan__c,
+&quot;RED&quot;,
+&quot;GREEN&quot;)),&apos;NA&apos;)</formula>
+    <label>Project Plan Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

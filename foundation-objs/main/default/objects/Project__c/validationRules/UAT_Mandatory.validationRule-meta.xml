@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UAT_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Rocketlane_Integration__c=FALSE,(ISBLANK(Estimated_go_live_date_Current_status__c)&amp;&amp; ISPICKVAL(Project_Stage__c, &apos;UAT&apos;) &amp;&amp; ISCHANGED(Project_Stage__c)))</errorConditionFormula>
+    <errorDisplayField>Estimated_go_live_date_Current_status__c</errorDisplayField>
+    <errorMessage>Please enter the Estimated go live date (Current status)!</errorMessage>
+</ValidationRule>

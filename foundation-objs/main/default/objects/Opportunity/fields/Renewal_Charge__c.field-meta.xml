@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Charge__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Renewal Charge %</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(TEN) 10</fullName>
+                <default>true</default>
+                <label>(TEN) 10</label>
+            </value>
+            <value>
+                <fullName>(TWENTY) 20</fullName>
+                <default>false</default>
+                <label>(TWENTY) 20</label>
+            </value>
+            <value>
+                <fullName>(THIRTY) 30</fullName>
+                <default>false</default>
+                <label>(THIRTY) 30</label>
+            </value>
+            <value>
+                <fullName>(FORTY) 40</fullName>
+                <default>false</default>
+                <label>(FORTY) 40</label>
+            </value>
+            <value>
+                <fullName>(FIFTY) 50</fullName>
+                <default>false</default>
+                <label>(FIFTY) 50</label>
+            </value>
+            <value>
+                <fullName>(SIXTY) 60</fullName>
+                <default>false</default>
+                <label>(SIXTY) 60</label>
+            </value>
+            <value>
+                <fullName>(SEVENTY) 70</fullName>
+                <default>false</default>
+                <label>(SEVENTY) 70</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

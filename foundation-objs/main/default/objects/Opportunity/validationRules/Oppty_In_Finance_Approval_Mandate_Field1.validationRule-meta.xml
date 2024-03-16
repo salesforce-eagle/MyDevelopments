@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_In_Finance_Approval_Mandate_Field1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( AND(RecordTypeId &lt;&gt; $Label.ITR_Opportuntiy_Record_Type_ID, RecordType.Name &lt;&gt; &apos;International&apos;) ,
+AND(
+ISPICKVAL(Order_Form_Required__c, &apos;Yes&apos;),
+TEXT(StageName) == &apos;In Finance approval&apos;,
+OR(ISBLANK(PAN_No_as_per_PO__c),ISPICKVAL( ClearTax_Billing_Entity__c,&apos;&apos; )))
+)</errorConditionFormula>
+    <errorMessage>Please Enter Value For ClearTax Billing Entity, Billing PAN !</errorMessage>
+</ValidationRule>

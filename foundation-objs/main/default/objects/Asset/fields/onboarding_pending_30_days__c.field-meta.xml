@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onboarding_pending_30_days__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(and(isblank(Onboarding_Completed_Date__c),today()-max_of_opportunity_or_po__c&gt;30,max_of_opportunity_or_po__c&gt;=Date(2021,6,1)),today()-max_of_opportunity_or_po__c,today()-max_of_opportunity_or_po__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Onboarding Pending since assigned</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

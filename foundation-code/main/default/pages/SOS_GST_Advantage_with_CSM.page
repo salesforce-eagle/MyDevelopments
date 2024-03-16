@@ -1,0 +1,87 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GST_Advantage_with_CSM_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for GST Advantage with CSM - </u></b>         
+
+    <table class="info-table" >
+<tr><th>Module</th><th>
+Feature</th>
+<th>Description</th>
+</tr>
+<tr>
+<th>Data Import
+</th>
+<th>Ingestion</th>
+<th><ul><li>Ability to upload sales registers and purchase registers at single GSTIN level </li><li>
+Client specific custom data template ingestion supported</li>
+</ul></th></tr>
+<tr><th>Forms</th>
+<th>Filing</th>
+<th><ul><li>Single-GSTIN level filing of G1 and G3</li></ul>
+</th></tr>
+<tr><th>Recon</th>
+<th>Single-GSTIN Level Recon</th>
+<th><ul><li>Ability to run reconciliation at GSTIN level (2A/2B vs PR,G1 vs Sales)</li>
+<li>Bucket into matches, mismatches with ability to auto assign to shared
+
+</li>
+<li>Bulk actions to auto accept, reject, modify.</li></ul></th></tr><tr>
+<th>Reports</th>
+<th>Single-GSTIN Level Reports</th>
+<th>
+<ul><li>Standard 10 MIS Reports at GSTIN level - GSTR2A, GSTR2B, GSTR1, GSTR3B, GSTR6, GSTR6A, GSTR9-8A , Cash Ledger, ITC Ledger, Filing Dashboard
+</li><li>
+Filters by Vendors, GSTIN, branch/location, etc
+</li></ul>
+</th></tr>
+<tr>
+<th>Others</th>
+<th>Support</th>
+<th><ul><li>Online training to finance team members on how to operate the software</li>
+<li>24X7 email support</li><li>
+Customer success manager available for handling support queries
+</li></ul></th></tr>
+
+
+
+
+
+
+
+
+
+</table> 
+
+
+<p>
+In case overuse results in more than 2 PAN or more than 4 GSTINs, the plan has to be upgraded in the next tier
+</p>
+<apex:include pageName="SOS_ASPGSP_LIC_Desktop_Reusable" rendered="{!if(SyncedQuote.Tally_Connector_required__c=='Yes',true,false)}"></apex:include>   
+<apex:include pageName="{!nextpage12}"/>
+</body>
+</html>
+</apex:page>

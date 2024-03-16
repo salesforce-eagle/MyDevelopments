@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>TaskTriggerHandler</members>
+        <members>CTX_ExtendProductLicense</members>
+        <members>CTX_LicensingAssetFilterLogic</members>
+        <members>CTX_LicensingAssetFilterLogic</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        
+        <name>ApexClass</name>
+    </types>
+
+    
+
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Stages__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Sub-Stages</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KYC Pending</fullName>
+                <default>false</default>
+                <label>KYC Pending</label>
+            </value>
+            <value>
+                <fullName>KYC Completed</fullName>
+                <default>false</default>
+                <label>KYC Completed</label>
+            </value>
+            <value>
+                <fullName>Conversation Not Initiated</fullName>
+                <default>false</default>
+                <label>Conversation Not Initiated</label>
+            </value>
+            <value>
+                <fullName>Trying to Contact</fullName>
+                <default>false</default>
+                <label>Trying to Contact</label>
+            </value>
+            <value>
+                <fullName>RPOC Identified</fullName>
+                <default>false</default>
+                <label>RPOC Identified</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>Interested</fullName>
+                <default>false</default>
+                <label>Interested</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Demo Rescheduled</fullName>
+                <default>false</default>
+                <label>Demo Rescheduled</label>
+            </value>
+            <value>
+                <fullName>Demo Completed</fullName>
+                <default>false</default>
+                <label>Demo Completed</label>
+            </value>
+            <value>
+                <fullName>Unable to fetch RPOC details</fullName>
+                <default>false</default>
+                <label>Unable to fetch RPOC details</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Not associated with the company/firm</fullName>
+                <default>false</default>
+                <label>Not associated with the company/firm</label>
+            </value>
+            <value>
+                <fullName>Not the Decision maker</fullName>
+                <default>false</default>
+                <label>Not the Decision maker</label>
+            </value>
+            <value>
+                <fullName>Junk-not relevant contact</fullName>
+                <default>false</default>
+                <label>Junk-not relevant contact</label>
+            </value>
+            <value>
+                <fullName>Unable to connect</fullName>
+                <default>false</default>
+                <label>Unable to connect</label>
+            </value>
+            <value>
+                <fullName>Rude/Not cooperative</fullName>
+                <default>false</default>
+                <label>Rude/Not cooperative</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>KYC Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New</controllingFieldValue>
+            <valueName>KYC Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Qualified</controllingFieldValue>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>Demo Scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Qualified</controllingFieldValue>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>Demo Rescheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Qualified</controllingFieldValue>
+            <valueName>Demo Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>Conversation Not Initiated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>Trying to Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>Follow Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Working</controllingFieldValue>
+            <valueName>On Hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Unable to fetch RPOC details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Not Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Not associated with the company/firm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Not the Decision maker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Junk-not relevant contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Unable to connect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Rude/Not cooperative</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

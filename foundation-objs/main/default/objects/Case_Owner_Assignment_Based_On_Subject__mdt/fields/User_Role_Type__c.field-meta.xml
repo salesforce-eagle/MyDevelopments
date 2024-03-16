@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Role_Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>User Role Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Finance L0</fullName>
+                <default>true</default>
+                <label>Finance L0</label>
+            </value>
+            <value>
+                <fullName>Finance L1</fullName>
+                <default>false</default>
+                <label>Finance L1</label>
+            </value>
+            <value>
+                <fullName>Finance L2</fullName>
+                <default>false</default>
+                <label>Finance L2</label>
+            </value>
+            <value>
+                <fullName>Finance L3</fullName>
+                <default>false</default>
+                <label>Finance L3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

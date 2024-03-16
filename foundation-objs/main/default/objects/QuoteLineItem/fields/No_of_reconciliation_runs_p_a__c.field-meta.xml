@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_reconciliation_runs_p_a__c</fullName>
+    <externalId>false</externalId>
+    <label>No. of reconciliation runs p.a</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annually</fullName>
+                <default>false</default>
+                <label>Annually</label>
+            </value>
+            <value>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+                <label>Quarterly</label>
+            </value>
+            <value>
+                <fullName>Half-Yearly</fullName>
+                <default>false</default>
+                <label>Half-Yearly</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

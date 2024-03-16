@@ -1,0 +1,48 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_Einv_IntegAMC_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body style="font-family:Times New Roman !important;font-size:12px;">
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <p>
+                <b>Scope of services for Annual maintenance of ClearTax - Customer ERP/ PoS integration : </b>
+            </p>
+            
+            <p>
+                ClearTax will provide AMC support for fixing any breakages in functionality with respect to original scope of work for integration. 
+            </p>
+            
+            <p>
+                It excludes : 
+            </p>
+            
+            <ol type="a">
+                <li>additional features or enhancements which are not contained in the original scope of work for integration and </li>
+                <li>any changes arising due to changes ERP/ Database systems or system upgrades or data schema changes by customer or third parties on boarded by customer</li>
+            </ol>
+            
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

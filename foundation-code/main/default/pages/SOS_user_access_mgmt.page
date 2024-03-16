@@ -1,0 +1,65 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_user_access_mgmtcontroller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+          <b><u> Scope of Services for Cleartax User Access Management- </u></b>
+
+            <p class="test">
+Feature List of Cleartax User Access Management is as below
+            </p>
+            <table class="info-table"> 
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                            <td>
+                            Advanced Feature
+                            </td>
+                            <td>
+User Access Management
+</td>
+                            <td >
+
+<ol style="list-style-type: decimal;">
+ <li>Define branch and user level access at GSTIN/PAN level
+</li>
+ <li>Multiple workspace access
+</li>
+ <li>Transfer of workspace ownership 
+</li>
+ <li>Introduction of 6 layers of shareable business hierarchy to better organize business nodes (branch, GSTIN, PAN etc)
+</li>
+ <li>Activity based roles and multi role access
+</li>
+ <li>Custom roles module to allow users to create their own roles
+</li>
+ 
+ </ol>
+ 
+</td>
+                        </tr>
+ 
+               
+            </table>
+    <apex:include pageName="{!nextPage9}"/>
+            </body>
+        </html>
+    </apex:page>

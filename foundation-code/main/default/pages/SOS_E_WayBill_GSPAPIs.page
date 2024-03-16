@@ -1,0 +1,92 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_E_WayBill_GSPAPIs_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS14==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+           <table class="info-table">
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td ><b>Compliance</b></td>
+                                <td >E-way bill Preparation and Generation</td>
+                                <td >Support and generation of all E-way bills. Single and Bulk generation</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >Advanced Generation Features</td>
+                                <td >Generate Consolidated E-way bill, Auto Regeneration of E-way bill, Bulk Print of all E-way bills, Bulk Update of Transportation details (Part B), Bulk update Transporter Details, Cancellation of  EWB &amp; Amendment. Generate and update EWBs for multi-vehicle movement, Extend validity of E-way bills about to expire</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >Tax/Field Validation</td>
+                                <td >Validation / Suggestion of correct rate of tax applied, and highlight the discrepancies . Real Time Error Update facility. Validations check on invoice schema, transportation details to improve success rate</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >User &amp; Role Management</td>
+                                <td >Create users with roles (admin, IT, tax accountant) and privileges (access to view/edit/delete data and tied to specific GSTIN’s).</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >Dashboards and Interface portal (Web &amp; Mobile)</td>
+                                <td >Portal Accessible on web &amp; mobile. In built government notifications, acknowledgements.</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >E-way bill update/Changes-Real time basis</td>
+                                <td >Future updates or changes in the NIC portal would be automatically transformed to ClearTax E-way bill Software provided to customer as part of upgradation to software</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >User Training</td>
+                                <td >Online training to finance team members on how to operate the software.</td>
+                            </tr>
+                            <tr>
+                                <td ><b>Business Intelligence Reporting</b></td>
+                                <td >Reports-Tax Ledger, State Wise</td>
+                                <td >Standard MIS reports (Recon of Sales/EWB Issued &amp; Purchase &amp; Inward EWB’s) etc other similar reports for:<ul>                            
+                                    <li>Outward Supplies</li>
+                                    <li>Inward Supplies</li>
+                                    <li>CEWB Generated</li>
+                                    <li>Cancelled Eway Bill</li>
+                                    <li>Rejected E-way bills by me</li>
+                                    <li>Assigned for transporters</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td ><b>File based/ API import of ERP data</b></td>
+                                <td >File based ERP connector via pull based/scheduler mechanism</td>
+                                <td ><ul>                  
+                                    <li>ERP to export required fields in Licensor provided format</li>
+                                    <li>Client specific template can be field mapped to Licensor via field mapper</li>
+                                    <li>Licensor system pulls from designated folder on configured frequency basis</li>
+                                    <li>ClearTax to provide API’s for seamless integration with ERP</li></ul>
+                                </td>
+                            </tr>
+                        </table>
+            <br/>
+            <apex:include pageName="{!nextPage21}"/>
+        </body>
+    </html>
+</apex:page>

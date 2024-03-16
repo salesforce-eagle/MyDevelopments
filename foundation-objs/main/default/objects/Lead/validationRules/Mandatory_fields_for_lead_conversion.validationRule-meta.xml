@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_fields_for_lead_conversion</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Sub_Stages__c,&apos;Demo Completed&apos;) &amp;&amp;  ISBLANK(Number_of_Sales_Invoices__c) &amp;&amp;  RecordType.DeveloperName != &apos;International&apos;</errorConditionFormula>
+    <errorDisplayField>Number_of_Sales_Invoices__c</errorDisplayField>
+    <errorMessage>Please enter Number of Sales Invoices</errorMessage>
+</ValidationRule>

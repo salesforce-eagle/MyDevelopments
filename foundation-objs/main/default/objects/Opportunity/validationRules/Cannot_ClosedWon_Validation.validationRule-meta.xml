@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_ClosedWon_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordTypeId &lt;&gt;  $Label.ITR_Opportuntiy_Record_Type_ID , AND(
+ OR(
+    ISPICKVAL( StageName , &apos;Closed Won&apos;), 
+    ISPICKVAL( StageName , &apos;Onboarded&apos;)
+ ),
+				ISCHANGED(StageName) , 
+ NOT(ISPICKVAL(PRIORVALUE(StageName),&apos;In Finance Approval&apos;))
+))</errorConditionFormula>
+    <errorMessage>Finance Approval has to be approved to move stage to ClosedWon/Onboarded</errorMessage>
+</ValidationRule>

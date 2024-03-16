@@ -1,0 +1,60 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_VendorMasterCleanup_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for Assisted Services - Vendor Master Cleanup</u></b>         
+    <p>
+        
+      Cleartax will provide following services to the Customer holding GST Registrations in various states, using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’). The following activities shall be undertaken -</p>
+<p>
+Cleartax will share the GSTIN verification summary as and when required by the Customer based on the GSTIN of vendors provided.
+</p>
+<p>
+GSTIN verification summary gives an overview and insights on the overall compliance health of the vendor’s associated with the business containing the following details:
+</p>
+
+
+<ul>
+<li>
+Legal name/ Trade name
+</li>
+<li>
+Jurisdiction details
+</li><li>
+Date of registration &amp; Cancellation</li>
+<li>
+Current status
+</li>
+<li>
+Taxpayer type, i.e, SEZ or regular taxpayer</li>
+<li>Address (including principal address)</li>
+<li>Filing frequency</li>
+<li>Date of filing with AAR number</li>
+    </ul>
+            <apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+            <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

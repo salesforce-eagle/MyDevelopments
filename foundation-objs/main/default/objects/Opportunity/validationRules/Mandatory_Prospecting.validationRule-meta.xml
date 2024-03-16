@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Prospecting</fullName>
+    <active>true</active>
+    <errorConditionFormula>(TEXT(Sales_Stage_New__c) &lt;&gt; NULL &amp;&amp; 
+TEXT(Sales_Stage_New__c) &lt;&gt; &quot;Prospecting&quot;) &amp;&amp;
+ (ISNULL(Product__c)||
+ ISBLANK(What_were_problem_statements_from_Client__c ) ||
+ ISNULL(Current_process_of_the_client__c) ||
+ ISNULL(Details_for_current_process_of_client__c ) || 
+	ISNULL (Forecast_Amount__c)||
+ISNULL (TEXT(ERP_migration_planned_in_next_6_months__c)) ||
+ISNULL (TEXT(ClearTax_Billing_Entity__c)) ||
+ISNULL(Estimated_Monthly_throughput__c) ||
+ISNULL (TEXT(ID_Product_type__c) ) 
+)</errorConditionFormula>
+    <errorMessage>Please fill Opportunity stage specific questionnaire - Prospecting</errorMessage>
+</ValidationRule>

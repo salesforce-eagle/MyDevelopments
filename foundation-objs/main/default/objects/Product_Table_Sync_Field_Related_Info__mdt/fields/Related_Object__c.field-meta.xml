@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Object__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Related Object</label>
+    <referenceTo>Product_Table_Sync_Object_Related_Info__mdt</referenceTo>
+    <relationshipLabel>Related Fields</relationshipLabel>
+    <relationshipName>Product_Table_Sync_Field_Related_Info</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

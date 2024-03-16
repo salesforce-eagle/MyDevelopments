@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <!--    Delta   <members>CaseTriggerHandler</members>   -->
+        <!--<members>CTX_Salesforce_JIRA_FilterResult</members>
+        <members>CTX_JIRAIntegrationQueueable</members>
+        <members>CTX_Salesforce_JIRA_Callout</members>
+        <members>CTX_JIRAMappingClass</members>
+        <members>CTX_JiraCalloutQueuable</members>
+        <members>CTX_EMailMessageToJIRACommentCallout</members>
+        <members>CTX_JiraCaseIntegration</members>
+        <members>CaseConstants</members>
+        <members>CTX_checkRecursive</members>-->
+       
+
+       <members>CTX_JiraCaseIntegration</members>
+       <members>CTX_Salesforce_JIRA_Callout</members>
+        
+        <name>ApexClass</name>
+        </types>
+    <version>58.0</version>
+</Package>

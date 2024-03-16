@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Action_Owner_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISNEW() &amp;&amp;
+ISCHANGED(Reasons_Action_Owner__c) &amp;&amp;
+NOT(ISPICKVAL(Reasons_Action_Owner__c,&apos;&apos;)) &amp;&amp;
+(ISBLANK(Action_Owner_Comments__c) ||
+ISNULL(Promise_to_pay_date__c))</errorConditionFormula>
+    <errorMessage>Please Enter Action Owner Comments and Promise to pay date- Action owner.</errorMessage>
+</ValidationRule>

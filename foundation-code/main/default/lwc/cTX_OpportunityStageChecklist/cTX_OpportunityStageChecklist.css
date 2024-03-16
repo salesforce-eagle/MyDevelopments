@@ -1,0 +1,47 @@
+.optionListContainer {
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.optionContainer{
+    border-left: none;
+}
+.optionLabel{
+    background-color: rgba(24,24,24,0.1);
+    transition: all 0.5s ease;
+    min-width: 9.5vw;
+    margin:0 2px;
+    
+    text-align: center;
+    color: black;
+
+}
+.optionLabel:hover{
+    background-color: rgba(24,24,24,0.3);
+}
+[type='checkbox']:checked + .optionLabel {
+    background-color: rgb(1,68,134);
+}
+.backgroundInverse {
+    position: relative;
+    background-color: #16325c;
+    height: 80px;
+}
+
+.submit_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 8px;
+    position: relative;
+    color: #2a94df;
+    background: #ffffff;
+    border-color: #3084bd;
+    border-radius: 4px;
+    border-width: 1px;
+    font-weight: 300;
+    font-size: 14px;
+}

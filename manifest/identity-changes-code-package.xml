@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!--<types>
+	    <members>CTX_ClearResourceConstraintsClass</members>
+        <members>IdentityItemHelper</members>
+	    <members>QuoteLineItemTriggerHandler</members>
+        <members>CTX_LicensingConstants</members>
+	    <members>IdentityFieldTableQLI</members>
+	    <members>CTX_MetadataRetriveUtility</members>
+        <members>OpportunityTriggerHelper</members>
+        <members>CTX_MultipleAssetCreateOnSpecialProduct</members>
+        <name>ApexClass</name>
+    </types>-->
+
+    <types>
+        <members>assetIdentityFieldHelperButtonComponent</members>
+	    <members>quoteLineItemHelperComponenet</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+<!--
+	<types> 
+		<members>QuoteLineItem.Identity_Resource_Metadata__c</members> 
+		<members>QuoteLineItem.Identity_Resource_Constraints__c</members> 
+		<members>QuoteLineItem.Total_cost_price_Identity__c</members> 
+		<members>Asset.Identity_Resource_Constraints__c</members> 
+		<name>CustomField</name> 
+	</types>
+
+	<types> 
+		<members>Identity_Super_Access</members> 
+		<members>Identity_Threshold_Edit_Access</members>
+	    <name>CustomPermission</name>
+	</types>
+
+	<types> 
+		<members>Identity_Super_Access</members> 
+		<members>Identity_Threshold_Edit_Access</members>
+	    <name>PermissionSet</name>
+	</types>
+	
+	<types> 
+	    <members>QuoteLineItem.Identity_Related_Fields</members>
+	    <name>FieldSet</name> 
+	</types>
+-->
+<!--
+	<types> 
+	    <members>Resource_Constraints__mdt</members>
+        <name>CustomObject</name> 
+	</types> 
+
+	<types>
+        <members>Resource_Constraints.IDENTITY_VEHICLE_REGISTRATION_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_UPI_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_UNREGISTERED_GST_APPLICANT_DETA</members>
+        <members>Resource_Constraints.IDENTITY_UDYOG_AADHAR_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_SYNC_PAN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_QR</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_FN</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION_BASIC</members>
+        <members>Resource_Constraints.IDENTITY_PAN_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_PAN_TO_GSTIN_LIST</members>
+        <members>Resource_Constraints.IDENTITY_PAN_SIMPLE_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_PAN_OCR</members>
+        <members>Resource_Constraints.IDENTITY_PAN_DETAILED_DESCRIPTION</members>
+        <members>Resource_Constraints.IDENTITY_OTP_VERIFICATION_EMAIL</members>
+        <members>Resource_Constraints.IDENTITY_LEGAL_NAME_PAN_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_INTERNATIONAL_BUSINESS_NAME_SEA</members>
+        <members>Resource_Constraints.IDENTITY_INGESTION</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_VERIFICATION_CREDITS</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_SEARCH_BY_NAME</members>
+        <members>Resource_Constraints.IDENTITY_GSTIN_FILING_CREDITS</members>
+        <members>Resource_Constraints.IDENTITY_GST_ADVANCED_PLUS</members>
+        <members>Resource_Constraints.IDENTITY_GST_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_GSP_API</members>
+        <members>Resource_Constraints.IDENTITY_FSSAI_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_UAN_AUTH</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_BASIC</members>
+        <members>Resource_Constraints.IDENTITY_EPFO_ESTABLISHMENT_ADVANCED</members>
+        <members>Resource_Constraints.IDENTITY_EINVOICE_QR_EXTRACTION</members>
+        <members>Resource_Constraints.IDENTITY_EINVOICE_IRN_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_DRIVING_LICENSE_DETAILED</members>
+        <members>Resource_Constraints.IDENTITY_CUSTOMER_IDENTITY_FETCH</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_FINANCIALS_SUMMARY</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DETAILS</members>
+        <members>Resource_Constraints.IDENTITY_BANK_ACCOUNT_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_AADHAAR_VERIFICATION_DIGILOCKER</members>
+        <members>Resource_Constraints.IDENTITY_UPI_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_UPI_QR_GENERATION</members>
+        <members>Resource_Constraints.IDENTITY_UNREGISTERED_GST_APPLICANT_VERI</members>
+        <members>Resource_Constraints.IDENTITY_OTP_VERIFICATION_PHONE</members>
+        <members>Resource_Constraints.IDENTITY_HSN_SAC_SEARCH</members>
+        <members>Resource_Constraints.IDENTITY_GST_OWNERSHIP_VERIFICATION</members>
+        <members>Resource_Constraints.IDENTITY_GST_ANALYTICS_DETAILS</members>
+	    <members>Resource_Constraints.IDENTITY_GST_ANALYTICS_AUTH</members>
+        <members>Resource_Constraints.IDENTITY_COMPANY_DETAILS_ADVANCED</members>
+	    <members>Resource_Constraints.IDENTITY_EINVOICE_IRN_LIST</members>
+        <name>CustomMetadata</name>
+    </types>
+-->
+
+    <version>58.0</version>
+</Package>

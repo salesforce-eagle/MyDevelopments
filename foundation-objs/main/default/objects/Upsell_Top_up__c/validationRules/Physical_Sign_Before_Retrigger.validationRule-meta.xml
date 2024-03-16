@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Physical_Sign_Before_Retrigger</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Retrigger_E_Sign__c) &amp;&amp;
+(ISPICKVAL(Retrigger_E_Sign__c, &apos;Resend&apos;)             ||
+ ISPICKVAL(Retrigger_E_Sign__c, &apos;Sent&apos;)               ||
+ ISPICKVAL(Retrigger_E_Sign__c, &apos;Sent Successfully&apos;)) &amp;&amp;
+ ISPICKVAL(ESign_Category__c, &apos;Physical Sign&apos;)        &amp;&amp;
+ Physical_Sign_Completed__c = False</errorConditionFormula>
+    <errorMessage>Complete customer sign before triggering for CTX E-sign</errorMessage>
+</ValidationRule>

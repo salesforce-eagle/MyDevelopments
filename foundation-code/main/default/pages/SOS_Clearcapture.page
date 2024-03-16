@@ -1,0 +1,81 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Clearcapture_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Clear Capture - </u></b>
+            
+          
+<p> <b>Cleartax responsibility:  </b> </p>
+<p> <b>Functionality to be provided:  </b> </p>
+<table class="info-table">
+                <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                
+                <tr><td><b>Clear Capture</b></td><td>QR Code scanner</td><td><ol style="list-style-type: decimal;">
+                <li> Validate whether the incoming e-invoices are digitally signed by NIC</li>
+                <li>Highlight if an invoice has not been sent by a mandated vendor (e-invoice)</li>
+                <li>Capture QR code details, EWB data and GSTR-2A data digitally, tool to cross check all the invoice details</li>
+                <li>Run 40+ compliance checks to ensure that only valid and correct invoices are provided, tool to recommend invoice actions (accept/reject)
+</li>
+                
+            </ol></td></tr>
+               
+             <tr><td><b></b></td><td>Text scanner</td><td><ol style="list-style-type: decimal;">
+                <li>Take picture/ scan of paper E/invoices, PDF/Excel E/invoices, e-invoice json files and turn them into digital invoices</li>
+                <li>Auto extract invoice fields, review, approve and push to ERP (parse invoices from Clear vendor portal / email)
+</li>
+        
+               
+                
+            </ol></td></tr>   
+            
+            
+             
+                   
+              
+              
+               
+            </table>
+            
+<p> <b>Customer responsibility:  </b> </p>          
+            
+            
+            <ol style="list-style-type: decimal;">
+                <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.
+
+</li>
+                   <li>Customers shall obtain and maintain all licenses, registrations, approvals, consents, permissions, sanctions, etc. under all applicable laws to implement any module/s of the I2P product.
+</li>
+                <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax.
+</li>
+                <li>The customer shall provide appropriate documentation about the system configuration with the Cleartax team for study and understanding</li>
+             <li>Appropriate and timely system access to the Cleartax team shall be provided at periodic intervals or based on the milestones
+</li>
+             <li>On submission of the system to the customer team for Approval/Testing, in the interest of timely completion of the project, it’s expected that such Approvals/Testing is ideally completed at the earliest by the customer team
+</li>
+             
+
+                
+            </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

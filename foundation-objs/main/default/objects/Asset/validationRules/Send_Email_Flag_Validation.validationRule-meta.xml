@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Email_Flag_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Send_Renewal_Email__c = true &amp;&amp; ( ISBLANK(Suggested_Renewal_Pricing__c) || Multi_year__c = true ||  Billing_Type__c  &lt;&gt; &apos;ARR&apos; )</errorConditionFormula>
+    <errorDisplayField>Send_Renewal_Email__c</errorDisplayField>
+    <errorMessage>Please fill suggested pricing.
+Multi year can&apos;t be true.
+Billing type should be ARR.</errorMessage>
+</ValidationRule>

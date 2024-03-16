@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subject__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used across leads/opportunities</description>
+    <externalId>false</externalId>
+    <label>Subject</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cold Call</fullName>
+                <default>false</default>
+                <label>Cold Call</label>
+            </value>
+            <value>
+                <fullName>Prospecting Call</fullName>
+                <default>false</default>
+                <label>Prospecting Call</label>
+            </value>
+            <value>
+                <fullName>Introductory Call</fullName>
+                <default>false</default>
+                <label>Introductory Call</label>
+            </value>
+            <value>
+                <fullName>Follow up Call</fullName>
+                <default>false</default>
+                <label>Follow up Call</label>
+            </value>
+            <value>
+                <fullName>Call</fullName>
+                <default>false</default>
+                <label>Call</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+                <label>Meeting</label>
+            </value>
+            <value>
+                <fullName>Send Letter/Quote</fullName>
+                <default>false</default>
+                <label>Send Letter/Quote</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Demo Meeting</fullName>
+                <default>false</default>
+                <label>Demo Meeting</label>
+            </value>
+            <value>
+                <fullName>POC Meeting</fullName>
+                <default>false</default>
+                <label>POC Meeting</label>
+            </value>
+            <value>
+                <fullName>Integration Call</fullName>
+                <default>false</default>
+                <label>Integration Call</label>
+            </value>
+            <value>
+                <fullName>Usage/Churn risk</fullName>
+                <default>false</default>
+                <label>Usage/Churn risk</label>
+            </value>
+            <value>
+                <fullName>Onboarding Call</fullName>
+                <default>false</default>
+                <label>Onboarding Call</label>
+            </value>
+            <value>
+                <fullName>Activation pending</fullName>
+                <default>false</default>
+                <label>Activation pending</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Support Call</fullName>
+                <default>false</default>
+                <label>Support Call</label>
+            </value>
+            <value>
+                <fullName>Cash collection</fullName>
+                <default>false</default>
+                <label>Cash collection</label>
+            </value>
+            <value>
+                <fullName>Winback</fullName>
+                <default>false</default>
+                <label>Winback</label>
+            </value>
+            <value>
+                <fullName>Upsell/CrossSell</fullName>
+                <default>false</default>
+                <label>Upsell/CrossSell</label>
+            </value>
+            <value>
+                <fullName>Health check/Business Review</fullName>
+                <default>false</default>
+                <label>Health check/Business Review</label>
+            </value>
+            <value>
+                <fullName>Closure Meeting</fullName>
+                <default>false</default>
+                <label>Closure Meeting</label>
+            </value>
+            <value>
+                <fullName>Negotiation Meeting</fullName>
+                <default>false</default>
+                <label>Negotiation Meeting</label>
+            </value>
+            <value>
+                <fullName>Followup Meeting</fullName>
+                <default>false</default>
+                <label>Followup Meeting</label>
+            </value>
+            <value>
+                <fullName>Commercial Discussion Meeting</fullName>
+                <default>false</default>
+                <label>Commercial Discussion Meeting</label>
+            </value>
+            <value>
+                <fullName>Demo scheduling Call</fullName>
+                <default>false</default>
+                <label>Demo scheduling Call</label>
+            </value>
+            <value>
+                <fullName>Introductory Meeting</fullName>
+                <default>false</default>
+                <label>Introductory Meeting</label>
+            </value>
+            <value>
+                <fullName>Integration-In house Meeting</fullName>
+                <default>false</default>
+                <label>Integration-In house Meeting</label>
+            </value>
+            <value>
+                <fullName>Other Meetings</fullName>
+                <default>false</default>
+                <label>Other Meetings</label>
+            </value>
+            <value>
+                <fullName>Other Calls</fullName>
+                <default>false</default>
+                <label>Other Calls</label>
+            </value>
+            <value>
+                <fullName>CXO Meeting</fullName>
+                <default>false</default>
+                <label>CXO Meeting</label>
+            </value>
+            <value>
+                <fullName>Onboarding Meeting</fullName>
+                <default>false</default>
+                <label>Onboarding Meeting</label>
+            </value>
+            <value>
+                <fullName>Call log</fullName>
+                <default>false</default>
+                <label>Call log</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

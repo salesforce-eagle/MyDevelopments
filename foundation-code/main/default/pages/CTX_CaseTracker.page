@@ -1,0 +1,18 @@
+<apex:page docType="html-5.0">
+
+    <apex:includeLightning />
+    
+    <div  id="compContainer" />
+    <script>
+    $Lightning.use("c:LightningOutContainerApp", function() {
+        $Lightning.createComponent("c:CTX_CaseTracker_Lightning",
+                                   {},
+                                   "compContainer",
+                                   function(cmp) {
+                                       console.log("c:VFPageApp loaded successfully in VF page");
+                                   }
+                                  );
+    });
+    </script>    
+    
+</apex:page>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Issue Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client - Access Expiry</fullName>
+                <default>false</default>
+                <label>Client - Access Expiry</label>
+            </value>
+            <value>
+                <fullName>Client - Connectivity</fullName>
+                <default>false</default>
+                <label>Client - Connectivity</label>
+            </value>
+            <value>
+                <fullName>Client - ERP Not Ready</fullName>
+                <default>false</default>
+                <label>Client - ERP Not Ready</label>
+            </value>
+            <value>
+                <fullName>Client - Future Start Date</fullName>
+                <default>false</default>
+                <label>Client - Future Start Date</label>
+            </value>
+            <value>
+                <fullName>Client - Kick-off Delay</fullName>
+                <default>false</default>
+                <label>Client - Kick-off Delay</label>
+            </value>
+            <value>
+                <fullName>Client - Payment Pending</fullName>
+                <default>false</default>
+                <label>Client - Payment Pending</label>
+            </value>
+            <value>
+                <fullName>Client - Prioritizing Another Project</fullName>
+                <default>false</default>
+                <label>Client - Prioritizing Another Project</label>
+            </value>
+            <value>
+                <fullName>Client - Requirement Change</fullName>
+                <default>false</default>
+                <label>Client - Requirement Change</label>
+            </value>
+            <value>
+                <fullName>Client - Requirements Confirmation</fullName>
+                <default>false</default>
+                <label>Client - Requirements Confirmation</label>
+            </value>
+            <value>
+                <fullName>Client - Turnover Less Than Threshold</fullName>
+                <default>false</default>
+                <label>Client - Turnover Less Than Threshold</label>
+            </value>
+            <value>
+                <fullName>Client - UAT Delay</fullName>
+                <default>false</default>
+                <label>Client - UAT Delay</label>
+            </value>
+            <value>
+                <fullName>Client - Unresponsive</fullName>
+                <default>false</default>
+                <label>Client - Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Client - User Provisioning</fullName>
+                <default>false</default>
+                <label>Client - User Provisioning</label>
+            </value>
+            <value>
+                <fullName>CT - CSM Issue</fullName>
+                <default>false</default>
+                <label>CT - CSM Issue</label>
+            </value>
+            <value>
+                <fullName>CT - Integration Issue</fullName>
+                <default>false</default>
+                <label>CT - Integration Issue</label>
+            </value>
+            <value>
+                <fullName>CT - Kick-off Delay</fullName>
+                <default>false</default>
+                <label>CT - Kick-off Delay</label>
+            </value>
+            <value>
+                <fullName>CT - Legal Issue</fullName>
+                <default>false</default>
+                <label>CT - Legal Issue</label>
+            </value>
+            <value>
+                <fullName>CT - Onboarding Issue</fullName>
+                <default>false</default>
+                <label>CT - Onboarding Issue</label>
+            </value>
+            <value>
+                <fullName>CT - Product Issue</fullName>
+                <default>false</default>
+                <label>CT - Product Issue</label>
+            </value>
+            <value>
+                <fullName>CT - Sales Issue</fullName>
+                <default>false</default>
+                <label>CT - Sales Issue</label>
+            </value>
+            <value>
+                <fullName>CT - SI Delay</fullName>
+                <default>false</default>
+                <label>CT - SI Delay</label>
+            </value>
+            <value>
+                <fullName>CT - SI Payment Issue</fullName>
+                <default>false</default>
+                <label>CT - SI Payment Issue</label>
+            </value>
+            <value>
+                <fullName>CT - SI PO Issue</fullName>
+                <default>false</default>
+                <label>CT - SI PO Issue</label>
+            </value>
+            <value>
+                <fullName>Client - Cutover Delay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Client - Cutover Delay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

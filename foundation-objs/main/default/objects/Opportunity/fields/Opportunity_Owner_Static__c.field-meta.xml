@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Owner_Static__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the Owner at the time of Opportunity Closed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the Owner at the time of Opportunity Closed.</inlineHelpText>
+    <label>Opportunity Owner (Static)</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Integration__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type of Integration</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Type_of_integration_category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Type_of_Integration</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>B2C-QR Code Integration</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT SI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Y</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Z</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse SAP ECC/HANA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Y</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Z</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse SAP B1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Y</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration+AMC ARR - Series Z</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse Custom ERP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse Tally ERP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration - GST products</controllingFieldValue>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse Netsuite ERP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>FTP/SFTP Server cost by CT Integration</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>FTP/ SFTP - Only by SI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Annual Maintenance Charges - Integration Max ITC</controllingFieldValue>
+            <controllingFieldValue>FTP/SFTP Server cost by CT Integration</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>FTP/ SFTP - Only by CT Inhouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Max ITC Integration - Series X</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Y</controllingFieldValue>
+            <controllingFieldValue>Max ITC Integration - Series Z</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>ASP/GSP Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing &amp; E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>E-invoicing Integration-ASP API</controllingFieldValue>
+            <controllingFieldValue>E-Way Bill Integration - GSP API</controllingFieldValue>
+            <controllingFieldValue>B2C-QR Code Integration</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification Integration</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API- Only by Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ASP/GSP Integration - ASP API</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>FTP/SFTP - Only by customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>ID - API based Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>ID - Middleware based Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>ID - SFTP based Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>ID - Manual Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>API - Only by CT Inhouse Microsoft ERP</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

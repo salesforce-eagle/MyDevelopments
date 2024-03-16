@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Closed_Won_Mandate_Fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( AND(RecordTypeId &lt;&gt; $Label.ITR_Opportuntiy_Record_Type_ID,  Country_of_Origin__c = &apos;India&apos; ||  Country_of_Origin__c = &apos;&apos;) ,
+AND( 
+ISPICKVAL(Order_Form_Required__c, &apos;No&apos;),
+OR(TEXT(StageName) == &apos;Closed Won&apos;, 
+TEXT(StageName) == &apos;Onboarded&apos;), OR(ISBLANK(Document_No_LOE_No__c),ISNULL(PO_Received_Date__c)))
+)</errorConditionFormula>
+    <errorMessage>Please Enter Value For Document No./LOE No and PO Received date</errorMessage>
+</ValidationRule>

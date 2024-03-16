@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ankit Singhvi</fullName>
+        <default>false</default>
+        <label>Ankit Singhvi</label>
+    </customValue>
+    <customValue>
+        <fullName>Geetika Sethi</fullName>
+        <default>false</default>
+        <label>Geetika Sethi</label>
+    </customValue>
+    <customValue>
+        <fullName>Rohit Jain</fullName>
+        <default>false</default>
+        <label>Rohit Jain</label>
+    </customValue>
+    <customValue>
+        <fullName>Sagar Arora</fullName>
+        <default>false</default>
+        <label>Sagar Arora</label>
+    </customValue>
+    <customValue>
+        <fullName>Jigar Vachharajani</fullName>
+        <default>false</default>
+        <label>Jigar Vachharajani</label>
+    </customValue>
+    <customValue>
+        <fullName>Shailja Sood</fullName>
+        <default>false</default>
+        <label>Shailja Sood</label>
+    </customValue>
+    <customValue>
+        <fullName>Shrenik Shah</fullName>
+        <default>false</default>
+        <label>Shrenik Shah</label>
+    </customValue>
+    <customValue>
+        <fullName>Sunil Gupta</fullName>
+        <default>false</default>
+        <label>Sunil Gupta</label>
+    </customValue>
+    <customValue>
+        <fullName>Vipul Gupta</fullName>
+        <default>false</default>
+        <label>Vipul Gupta</label>
+    </customValue>
+    <customValue>
+        <fullName>Aneree Shah</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Aneree Shah</label>
+    </customValue>
+    <customValue>
+        <fullName>Mitanshi Goel</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mitanshi Goel</label>
+    </customValue>
+    <description>Presales reps who assist during demo / pocs</description>
+    <masterLabel>Presales Resource</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

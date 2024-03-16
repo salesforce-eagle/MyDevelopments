@@ -1,0 +1,157 @@
+<template>
+    <div class="slds-var-p-around_small body slds-scrollable">
+		<div class="slds-notify slds-notify_alert slds-alert_offline">
+			<h2>
+				Product Workspace Console
+			</h2>
+		</div>
+		<template if:true={isError}>
+			<div class="slds-var-m-around_medium">
+				<div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+					<span class="slds-assistive-text">error</span>
+					<span class="slds-icon_container slds-icon-utility-error slds-m-right_xx-small">
+						<lightning-icon icon-name="utility:error" size="xx-small" class="icon-color-close"></lightning-icon>
+					</span>
+					<div>
+						{errorMessage}
+					</div>
+					<div class="slds-notify__close">
+						<a onclick={closeError}  class="slds-modal__close">
+							<lightning-icon icon-name="utility:close" size="small" class="icon-color-close"></lightning-icon>
+						</a>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template if:true={isDisplay}>
+			<div style="position:relative;">
+				<article class="slds-card slds-card_boundary">
+					<div class="slds-card__header slds-grid">
+					  <header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<div class="slds-media__figure">
+						  <span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+								<path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+								<path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
+							</svg>
+						</span>
+						<span class="slds-assistive-text"></span>
+						</div>
+						<div class="slds-media__body">
+						  <h2 class="slds-card__header-title">
+							  <span>Workspaces related to license</span>
+						  </h2>
+						</div>
+					  </header>
+					</div>
+					<div class="slds-card__body">
+						<div class="slds-var-p-around_medium slds-required">
+							
+						</div>
+						<!--<p slot="footer">Card Footer</p>-->
+						<div class="slds-hide">{recordId}</div>
+						<template if:true={isEmptyWorkspaces}>
+							<div class="slds-box slds-align_absolute-center slds-var-m-verticle_medium slds-var-p-around_medium">
+								No Workspace is associated to the license.
+							</div>
+						</template>
+						<template if:false={isEmptyWorkspaces}>
+							<div class="slds-var-p-around_medium slds-text-color_success">
+								<!--Please find the list of workspaces related to the given product and master admin email. To make any changes, navigate to account level and change product and master admin email.-->
+								Following workspaces are associated to this license. Kindly select the workspaces needs to be removed.
+							</div>
+							<div class="slds-scrollable">
+								<table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+									<thead>
+										<tr>
+											<th scope="col">
+												<div>Select</div>
+											</th>
+											<th scope="col">
+												<div>Workspace Name</div>
+											</th>
+											<th scope="col">
+												<div>Workspace Admin Email</div>
+											</th>
+											<!--<th scope="col">
+										<div>Domain Name</div>
+									</th>-->
+											<th scope="col">
+												<div>Workspace Id</div>
+											</th>
+											<!--<th scope="col">
+												Type
+											</th>-->
+											<!--<th scope="col">
+												<div>Default Workspace</div>
+											</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<template for:each={workspaceList} for:item="junctionRec" for:index="index">
+											<tr key={junctionRec.workspaceId}>
+												<td class="slds-cell-wrap">
+													<lightning-input data-id={index} checked={junctionRec.isSelected} type="checkbox"
+														variant="label-hidden" onclick={selectWorkspace}>
+													</lightning-input>
+												</td>
+												<td class="slds-cell-wrap">
+													{junctionRec.workspaceName}
+												</td>
+												<td class="slds-cell-wrap">
+													{junctionRec.workspaceAdminEmail}
+												</td>
+												<td class="slds-cell-wrap">
+													{junctionRec.workspaceId}
+												</td>
+											</tr>
+										</template>
+									</tbody>
+								</table>
+							</div>
+						</template>
+					</div>
+					<div class="slds-card__footer">
+						<template if:false={isEmptyWorkspaces}>
+							<div class="slds-var-p-around_small slds-align_absolute-center">
+								<lightning-button class="slds-var-p-around_medium" variant="neutral" label="Close" title="Close"
+									onclick={closeQuickAction}>
+								</lightning-button>
+								<lightning-button class="slds-var-p-around_medium" variant="brand" label="Remove Workspaces"
+									title="Remove Workspaces" onclick={deleteWorkSpacesLinks}>
+								</lightning-button>
+							</div>
+						</template>
+					</div>
+				</article>
+	
+				<template if:true={showSpinner}>
+					<div class="slds-spinner_container slds-grid">
+						<div class="slds-align_absolute-center">
+							<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+								<span class="slds-assistive-text">Loading</span>
+								<div class="slds-spinner__dot-a"></div>
+								<div class="slds-spinner__dot-b"></div>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</template>
+		<template if:false={isDisplay}>
+			<div style="position: relative;">
+				<template if:true={showSpinner}>
+					<div class="slds-spinner_container slds-grid">
+						<div class="slds-align_absolute-center">
+							<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+								<span class="slds-assistive-text">Loading</span>
+								<div class="slds-spinner__dot-a"></div>
+								<div class="slds-spinner__dot-b"></div>
+							</div>
+						</div>    
+					</div>
+				</template>
+			</div>
+		</template>
+	</div>
+</template>

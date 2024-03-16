@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Number_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(  Phone )),
+NOT(REGEX( Phone , &quot;[0-9]{10}&quot;)),
+Account_Record_Type__c &lt;&gt; &apos;International&apos; 
+)</errorConditionFormula>
+    <errorMessage>Enter valid 10 digit Mobile Number</errorMessage>
+</ValidationRule>

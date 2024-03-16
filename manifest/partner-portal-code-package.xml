@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>CTX_SendPartnerAccountCreationMail</members>
+        <members>CTX_SendPartnerAccountCreationMail_TEST</members>
+        <members>CTX_PartnerAgreementESignSender</members>
+        <members>CTX_PartnerAgreementESignSender_TEST</members>
+        <members>CTX_PartnerESignQueueableForCallout</members>
+        <members>CTX_PartnerOnboardingController</members>
+        <members>CTX_PartnerOnboardingController_TEST</members>
+        <members>CTX_PartnerAgreementController</members>
+        <members>CTX_PartnerAgreementController_TEST</members>
+        <members>CTX_CPAgreementEsignStatusCheckBatch</members>
+        <members>CTX_CPAgreementForNewConVerBatch</members>
+        <members>CTX_ESignGenericRespoceMock</members>
+        <members>CTX_CreatePartnerUser</members>
+
+        <members>AccountTriggerHandler</members>
+        
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_ChannelPartnerOnboardingForm</members>
+        <members>ctx_GeneratePartnerAgreement</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <types>
+        <members>CTX_PartnerAgreementPDF</members>
+
+        <name>ApexPage</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

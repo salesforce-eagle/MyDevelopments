@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Est_GSTIN</fullName>
+    <active>true</active>
+    <errorConditionFormula>(INCLUDES(Product__c,&apos;GST&apos;) ||
+INCLUDES(Product__c,&apos;E-invoice / EWB&apos;) ||
+INCLUDES(Product__c,&apos;Max ITC&apos;)) &amp;&amp;
+ ISNULL( Estimated_Number_Of_GSTN__c )</errorConditionFormula>
+    <errorDisplayField>Estimated_Number_Of_GSTN__c</errorDisplayField>
+    <errorMessage>Please enter Estimated Number of GSTIN</errorMessage>
+</ValidationRule>

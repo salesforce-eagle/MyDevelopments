@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST</fullName>
+                <default>false</default>
+                <label>GST</label>
+            </value>
+            <value>
+                <fullName>E-Inv &amp; EWB</fullName>
+                <default>false</default>
+                <label>E-Inv &amp; EWB</label>
+            </value>
+            <value>
+                <fullName>Max ITC</fullName>
+                <default>false</default>
+                <label>Max ITC</label>
+            </value>
+            <value>
+                <fullName>Clear e-invoiceing</fullName>
+                <default>false</default>
+                <label>Clear e-invoiceing</label>
+            </value>
+            <value>
+                <fullName>Clear Capture</fullName>
+                <default>false</default>
+                <label>Clear Capture</label>
+            </value>
+            <value>
+                <fullName>TDS</fullName>
+                <default>false</default>
+                <label>TDS</label>
+            </value>
+            <value>
+                <fullName>Managed Service</fullName>
+                <default>false</default>
+                <label>Managed Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

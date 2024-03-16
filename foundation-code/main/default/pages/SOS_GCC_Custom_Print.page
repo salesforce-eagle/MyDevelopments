@@ -1,0 +1,45 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GCC_Custom_Print_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body style="font-family:Times New Roman !important;font-size:12px;">
+            <apex:panelGroup rendered="{!SOS1==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            
+            <p>
+                <b>Scope of services for Custom Print Template  : </b>
+            </p>
+            
+            <ul>
+                <li>
+                    Customer needs to sign-off on a customized invoice print template within 4 weeks of signing this order Form. Any changes requested post sign-off or post 4 weeks of signing Order Form will be treated as enhancements and will be charged separately.  
+                </li>
+                <li>
+                    Any additional brand new custom Invoice Print Template will be charged at  $1,000 + Taxes per additional template
+                </li>
+            </ul>
+            
+            <apex:include pageName="{!nextPage8}"/>
+            
+        </body>
+    </html>
+</apex:page>

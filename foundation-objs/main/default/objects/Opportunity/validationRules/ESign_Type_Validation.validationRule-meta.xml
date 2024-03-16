@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ESign_Type_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Esign_Order__c,&apos;CTX First&apos;) &amp;&amp;
+NOT(ISPICKVAL(ESign_Category__c,&apos;E-Sign&apos;))</errorConditionFormula>
+    <errorMessage>Please select Sign category as E-sign to proceed with CTX sign first, since the CTX (first) signed document will remain legally valid, only if customer should signs through Signdesk - Esign email . Non Signdesk Esign /Physical sign is not allowed.</errorMessage>
+</ValidationRule>

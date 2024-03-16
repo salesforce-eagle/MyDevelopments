@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actionable_for_CSM__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>if(isblank(CSM_KAM_handover__c),
+if(And(PurchaseDate&lt;Date(2021,6,1),Asset_success_flag__c =&apos;Success Pending&apos;),if((Today() - PurchaseDate)&lt;=90,&apos;Make the asset success within 90 days&apos;,&apos;Make Success as per Success post 90 days definition&apos;),
+if(And(PurchaseDate&gt;=Date(2021,6,1),Asset_success_flag__c =&apos;Success Pending&apos;,(Today() - PurchaseDate)&lt;=90 ),&apos;Make the asset success within 90 days&apos;,
+if(And(or(Asset_success_flag__c =&apos;Success&apos;,Asset_success_flag__c =&apos;Usage not Tracked&apos;),(Today() - PurchaseDate)&lt;=90),&apos;Continue Customer Engagement&apos;,
+if(OR(AND(PurchaseDate&gt;=Date(2021,6,1),(Today() - PurchaseDate)&gt;90),(And(or(Asset_success_flag__c =&apos;Success&apos;,Asset_success_flag__c =&apos;Usage not Tracked&apos;),PurchaseDate&lt;Date(2021,6,1),(Today() - PurchaseDate)&gt;90))),if(PurchaseDate&lt;Date(2021,6,1),&apos;Small Kam Handover to be done&apos;,&apos;Detailed Kam Handover to be done&apos;),&apos;No further action required from CSM&apos;)))),&apos;No further action required from CSM&apos;)</formula>
+    <label>Actionable for CSM</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

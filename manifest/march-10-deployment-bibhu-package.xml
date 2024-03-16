@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>leadConvertGeneric</members>
+        <members>CTX_LeadConverterHelper</members>
+        <members>ESignQueueableForCallOut</members>
+        <members>CTX_ApexRecordSharing</members>
+        <members>CTX_AccountShare</members>
+        <members>CTX_ApexRecordSharingHelper</members>
+        
+        <name>ApexClass</name>
+        </types>
+    <version>52.0</version>
+</Package>

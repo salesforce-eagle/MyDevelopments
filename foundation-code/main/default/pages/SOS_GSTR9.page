@@ -1,0 +1,71 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GSTR9_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+<apex:panelGroup rendered="{!SOS19==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+         
+         <b><u> Scope of Services for Cleartax GSTR-9 solution- </u></b>
+
+            <p>
+                            Feature List of Cleartax GSTR-9 solution is as below
+                        </p> 
+                        <table class="info-table">
+                            
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>Compliance</b></td>
+                                <td>GSTR-9 Preparation</td>
+                                <td>Support and preparation of  GSTR-9 Return</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Advanced Filing Features</td>
+                                <td>Handling Yearly GSTN data download(2A, G1, 3B) 
+                                    Auto-preparation form basis Books data and GSTN data
+                                    Audit trail computations for all Tables
+                                    Net tax payable computations
+                                    Checklist to verify the mismatches in form prepared 
+                                    Prepare GSTR-9C from GSTR-9 data
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>User Training</td>
+                                <td>Online training to finance team members on how to operate the software.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Business Intelligence Reporting</b></td>
+                                <td>Reports</td>
+                                <td>Standard MIS reports GSTIN-wise, tax ledgers, and comparison reports -GSTR-3B v/s 2A, GSTR-3B v/s 1</td>
+                            </tr>
+                            <tr>
+                                <td><b>Data Import</b></td>
+                                <td></td>
+                                <td>Client-specific template can be field mapped to Licensor via field mapper</td>
+                            </tr>
+                        </table>
+            <apex:include pageName="{!nextPage26}"/>
+        </body>
+    </html>
+</apex:page>

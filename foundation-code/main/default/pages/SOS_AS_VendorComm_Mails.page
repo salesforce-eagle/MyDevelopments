@@ -1,0 +1,66 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_VendorComm_Mails_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+<b><u> Scope of Services for Assisted Services - Vendor Communication : Mails only - </u></b>         
+    <p>
+        
+        Cleartax will provide following services to the Customer holding GST Registrations in various states, using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’).</p>
+    <p>
+        
+    The following activities shall be undertaken -
+After the confirmation and based on the comments received by the Customer on the reconciliation summary, vendor communication shall be done:
+</p>
+<p>
+  <b> Only Mails Scope: </b>
+    </p>
+    <table class="info-table" >
+<tr><th>No of Communication</th><th>
+Mode of Communication</th>
+<th>Communication</th>
+</tr>
+<tr>
+<th>1</th>
+<th>Email 1</th>
+<th>Triggered to such vendors seeking for information on such mismatches / missed out transactions.</th></tr>
+<tr><th>2</th>
+<th>Email 2</th>
+<th>Triggered to such vendors seeking for information on such mismatches / missed out transactions, who have not responded / provided inappropriate response / responded but not clarified till communication 1.</th></tr>
+<tr><th>3</th>
+<th>Final Email 3</th>
+<th>Triggered to such vendors who have not responded / provided inappropriate response / responded but not clarified till communication 2.
+</th></tr></table> 
+Note:
+<ol>
+<li>Vendor communications shall be triggered post filing of GSTR-3B for the particular period.</li>
+<li>Vendor Communication will be triggered for top “n” vendors covering 75% of the overall tax exposure value as mutually agreed with the client.
+</li>
+</ol>
+    <apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

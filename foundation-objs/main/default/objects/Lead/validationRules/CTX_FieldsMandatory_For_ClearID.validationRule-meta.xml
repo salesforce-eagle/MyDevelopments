@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_FieldsMandatory_For_ClearID</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+INCLUDES(Scope__c, &quot;ID&quot;),
+INCLUDES(Products_Interested__c, &quot;ID&quot;),
+INCLUDES(Products_Interested__c, &quot;Clear Invoice Discounting&quot;)
+),
+OR(
+ISBLANK(TEXT(Turnover__c)),
+ISBLANK(Domestic_Payables__c),
+ISBLANK(Monthly_Throughput_Cr__c),
+ISBLANK(Expected_closure_date__c),
+ISBLANK(PAN__c),
+ISBLANK(TEXT(Industry)),
+ISBLANK(TEXT(Type_of_ID_product__c)),
+ISBLANK(TEXT(ID_Integration_Type__c)), 
+ISBLANK(TEXT(Lead_priority_for_ID__c))
+) 
+)</errorConditionFormula>
+    <errorMessage>Please fill fields Turnover (picklist), Annual Domestic Payables, Expected Closure Date, Primary PAN, Industry, Lead Priority and Monthly Throughput (Cr), Type of ID Product, ID Integration Type.</errorMessage>
+</ValidationRule>

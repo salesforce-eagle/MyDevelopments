@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Strategy_Discovery</fullName>
+    <active>true</active>
+    <errorConditionFormula>(TEXT(Sales_Stage_New__c) &lt;&gt; NULL &amp;&amp;
+TEXT(Sales_Stage_New__c) &lt;&gt; &quot;Prospecting&quot; &amp;&amp;
+TEXT(Sales_Stage_New__c) &lt;&gt; &quot;Strategy/Discovery&quot;) &amp;&amp;
+ (ISNULL(Champion__c) ||
+ISNULL(Current_spends__c) ||
+ISNULL(Estimated_budget__c) ||
+ISNULL(Who_are_involved_in_purchase_process__c) ||
+ISNULL(Purchase_process_remarks__c) ||
+ISNULL(Evaluation_parameters_of_the_company__c) ||
+ISNULL(Evaluation_parameters_of_company_remarks__c))</errorConditionFormula>
+    <errorMessage>Please fill Opportunity stage specific questionnaire - Discovery</errorMessage>
+</ValidationRule>

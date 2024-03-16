@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Activation_DelayReason_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+NOT(ISNEW()),
+NOT(ISCHANGED(Is_Activation_Delayed__c)),
+Is_Activation_Delayed__c = true,
+OR(
+ISBLANK(TEXT( Activation_Delay_Reason__c )),
+ISBLANK(Activation_Delay_Reason_Comment__c )
+)
+)</errorConditionFormula>
+    <errorMessage>Kindly Submit Activation Delay Reason and Activation Delay Reason Comment.</errorMessage>
+</ValidationRule>

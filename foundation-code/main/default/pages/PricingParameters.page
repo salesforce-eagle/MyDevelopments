@@ -1,0 +1,267 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 01-18-2024
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,PricingParameters_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title> 
+            <style type="text/css">
+                
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                page-break-after: avoid !important;
+                padding: 8px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-after:avoid}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px">
+            <apex:panelGroup rendered="{!NOT(cimplifiveCheck)}">
+                <div class="headding-box"> &nbsp;&nbsp;6.&nbsp;&nbsp;SUBSCRIPTION/SERVICE DETAILS </div><br/>
+                <apex:outputText rendered="{!NOT(gccCheck) }">
+                    <table class="info-table" style="width:100%">
+                        <!--Ony Quote --> <apex:outputText rendered="{!IF(SyncedQuote.Total_annual_domestic_payables_Rs_Cr__c  != null && SyncedQuote.Total_annual_domestic_payables_Rs_Cr__c  != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' ,true,false)}"><tr><th>Total annual domestic payables (Rs. Cr) </th><td>{!SyncedQuote.Total_annual_domestic_payables_Rs_Cr__c}</td></tr></apex:outputText>
+                        <apex:outputText rendered="{!IF(SyncedQuote.ERP__c != null ,true,false)}"><tr><th>ERP Name and Version </th><td>{!SyncedQuote.ERP__c}</td></tr></apex:outputText>
+                    </table>
+                    <br/>
+                </apex:outputText>
+                <apex:repeat var="QLI" value="{!listQLI}">
+                    <div style="width:100%;page-break-is: avoid">
+                        <apex:outputText rendered="{!(NOT(gccCheck))}">
+                            <b>{!QLI.Product2.OrderForm_Product_Name__c}</b>
+                            <br/>
+                            <br/>
+                            <table class="info-table" style="width:100%;page-break-before: avoid">
+                                <apex:outputText rendered="{!IF(QLI.Quantity != null && QLI.Quantity != 0 && QLI.Product2.Product_Line__c == 'Secretarial Automation' &&  QLI.Product2.Product_category__c == 'SaaS',true,false)}"><tr><th>Quantity </th><td>{!QLI.Quantity}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_GSTIN_one__c != null && QLI.No_of_GSTIN_one__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of GSTINs </th><td>{!QLI.No_of_GSTIN_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_PAN_one__c != null && QLI.No_of_PAN_one__c != 0,true,false) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode))}"><tr><th>No. of Entities </th><td>{!QLI.No_of_PAN_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_User_ID_one__c != null && QLI.No_of_User_ID_one__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && QLI.Product2.ProductCode != 'CPT-EINV-BASIC' && QLI.Product2.ProductCode != 'CPT-EINV-ADVANCED',true,false)}"><tr><th>No. of User IDs </th><td>{!QLI.No_of_User_ID_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Type_of_Integration__c != null && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c != 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>Type of Integration </th><td>{!QLI.Type_of_Integration__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.BtoB_Sales_one__c != null && QLI.BtoB_Sales_one__c != 0  && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of Sales Invoices (B2B)/ year </th><td>{!QLI.BtoB_Sales_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.BtoC_Sales_one__c != null && QLI.BtoC_Sales_one__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)) ,true,false)}"><tr><th>No. of Sales Invoices (B2C)/ year </th><td>{!QLI.BtoC_Sales_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Purchases_Invoices_one__c != null && QLI.Purchases_Invoices_one__c != 0 && NOT(CONTAINS(QLI.Product2.ProductCode,'CLRCAP')) && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of Purchase Invoices/ year </th><td>{!QLI.Purchases_Invoices_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_GSTIN_verification_credits__c != null && QLI.No_of_GSTIN_verification_credits__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of GSTIN verification credits </th><td>{!QLI.No_of_GSTIN_verification_credits__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_MM2A_2B_usage_GSTIN_month__c!= null && QLI.No_MM2A_2B_usage_GSTIN_month__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of MM2A/2B usage/GSTIN/month </th><td>{!QLI.No_MM2A_2B_usage_GSTIN_month__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_IRNs__c != null && QLI.No_of_IRNs__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of IRNs </th><td>{!QLI.No_of_IRNs__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_Vendors_one__c != null && QLI.No_of_Vendors_one__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of Vendors </th><td>{!QLI.No_of_Vendors_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_EWBs__c != null && QLI.No_of_EWBs__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of EWB </th><td>{!QLI.No_of_EWBs__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_expected_B2C_invoices_for_QR_code__c != null && QLI.No_of_expected_B2C_invoices_for_QR_code__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of expected B2C invoices for QR code </th><td>{!QLI.No_of_expected_B2C_invoices_for_QR_code__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_invoice_formats__c != null && QLI.No_of_invoice_formats__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of invoice formats </th><td>{!QLI.No_of_invoice_formats__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_recons__c != null && QLI.No_of_recons__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of recons </th><td>{!QLI.No_of_recons__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_airline_invoices_annual_one__c != null && QLI.No_of_airline_invoices_annual_one__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of airline invoices annual </th><td>{!QLI.No_of_airline_invoices_annual_one__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_TANs__c != null && QLI.No_of_TANs__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of TANs </th><td>{!QLI.No_of_TANs__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Number_of_Deductees_per_Quarter_24Q_26__c != null && QLI.Number_of_Deductees_per_Quarter_24Q_26__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of Deductees / Qtr(24Q,26Q,27Q,27QE) </th><td>{!QLI.Number_of_Deductees_per_Quarter_24Q_26__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Number_of_Deduction_Transactions_per_Qua__c != null && QLI.Number_of_Deduction_Transactions_per_Qua__c != 0&& NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of Deduction Trans/Qtr(24Q,26Q,27Q,27QE) </th><td>{!QLI.Number_of_Deduction_Transactions_per_Qua__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Digital_Signing_Utility_for_TDS_Cert_del__c != null && QLI.Digital_Signing_Utility_for_TDS_Cert_del__c != 'No' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>Dig. Signing Utility for TDS Certificate </th><td>{!QLI.Digital_Signing_Utility_for_TDS_Cert_del__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Total_B2B_PR_B2C_invoice__c != null && QLI.Total_B2B_PR_B2C_invoice__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>Total B2B PR B2C invoice </th><td>{!QLI.Total_B2B_PR_B2C_invoice__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_Bank_verification_API__c != null && QLI.No_of_Bank_verification_API__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of Bank verification API </th><td>{!QLI.No_of_Bank_verification_API__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_API_calls_permissible__c != null &&   QLI.No_of_API_calls_permissible__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of Invoicing API calls </th><td>{!QLI.No_of_API_calls_permissible__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_MCA_Company_details_API__c != null && QLI.No_of_MCA_Company_details_API__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of MCA Company details API</th><td>{!QLI.No_of_MCA_Company_details_API__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_MSME_API__c != null && QLI.No_of_MSME_API__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of MSME API </th><td>{!QLI.No_of_MSME_API__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_PAN_verification_API__c != null && QLI.No_of_PAN_verification_API__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of PAN verification API </th><td>{!QLI.No_of_PAN_verification_API__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_TDS_206_sync_API__c != null && QLI.No_of_TDS_206_sync_API__c != 0 && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No of TDS 206 sync API </th><td>{!QLI.No_of_TDS_206_sync_API__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_Pages_in_Invoices__c != null && QLI.No_of_Pages_in_Invoices__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th> No. of Pages in Invoices </th><td>{!QLI.No_of_Pages_in_Invoices__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_PAN_to_GSTIN_APIs__c != null && QLI.No_of_PAN_to_GSTIN_APIs__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th> No of PAN to GSTIN APIs </th><td>{!QLI.No_of_PAN_to_GSTIN_APIs__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_PAN_verification_detailed_APIs__c != null && QLI.No_of_PAN_verification_detailed_APIs__c != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th> No. of PAN verification detailed APIs </th><td>{!QLI.No_of_PAN_verification_detailed_APIs__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_line_items_TCS_TDS_RL_Plans__c  != null && QLI.No_of_line_items_TCS_TDS_RL_Plans__c  != 0 && CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th> No. of line items TCS/TDS Receivable  Ledger/Plans </th><td>{!QLI.No_of_line_items_TCS_TDS_RL_Plans__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_line_items_in_Form_26AS_Annum__c  != null && QLI.No_of_line_items_in_Form_26AS_Annum__c  != 0 && CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th> No. of line items in Form 26AS/Annum </th><td>{!QLI.No_of_line_items_in_Form_26AS_Annum__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_reconciliation_runs_p_a__c  != null && CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of reconciliation runs p.a </th><td>{!QLI.No_of_reconciliation_runs_p_a__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Purpose_of_Usage__c != null  && SyncedQuote.Opportunity.ClearTax_Billing_Entity__c == 'Xpedize' && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>Purpose of Usage </th><td>{!QLI.Purpose_of_Usage__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_GST_GSP_API_calls_permissible__c != null  &&  QLI.No_of_GST_GSP_API_calls_permissible__c  != 0 && NOT(CONTAINS($Label.TDS_ProductCode,QLI.Product2.ProductCode)) && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of GST GSP API calls permissible </th><td>{!QLI.No_of_GST_GSP_API_calls_permissible__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_Of_PAN_OCR_APIs__c  		!= null  &&  QLI.No_Of_PAN_OCR_APIs__c   	  != 0 && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. Of PAN OCR APIs</th><td>{!QLI.No_Of_PAN_OCR_APIs__c}</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_Of_GST_ADVANCED_APIs__c  != null  &&  QLI.No_Of_GST_ADVANCED_APIs__c   != 0 && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. of GST ADVANCED APIs </th><td>{!QLI.No_Of_GST_ADVANCED_APIs__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_Of_GST_ADVANCED_PLUS_APIs__c   != null  &&  QLI.No_Of_GST_ADVANCED_PLUS_APIs__c    != 0 && NOT(CONTAINS($Label.Product_Exclusion_PricingParam ,QLI.Product2.ProductCode)),true,false)}"><tr><th>No. Of GST ADVANCED PLUS APIs </th><td>{!QLI.No_Of_GST_ADVANCED_PLUS_APIs__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_templates__c   != null  &&  QLI.No_of_templates__c    != 0 && CONTAINS(QLI.Product2.ProductCode,'CPT-EINV')  ,true,false)}"><tr><th>No. of templates</th><td>{!QLI.No_of_templates__c }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_fields_to_be_edited_per_template__c  != null  &&  QLI.No_of_fields_to_be_edited_per_template__c != 0 &&  CONTAINS(QLI.Product2.ProductCode,'CPT-EINV-BASIC'),true,false)}"><tr><th>No. of fields to be edited per template </th><td>{!QLI.No_of_fields_to_be_edited_per_template__c   }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.Total_no_of_Pages_in_Purchase_Invoices__c  != null  &&  QLI.Total_no_of_Pages_in_Purchase_Invoices__c != 0 &&  CONTAINS($Label.Clear_AP_Params ,QLI.Product2.ProductCode) ,true,false)}"><tr><th>Total no. of Pages in Purchase Invoices </th><td>{!QLI.Total_no_of_Pages_in_Purchase_Invoices__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.GSTIN_Level_Recon__c   == TRUE  &&  (CONTAINS(QLI.Product2.ProductCode,'GST-ADVANTAGE') ||  CONTAINS(QLI.Product2.ProductCode,'GST-PREMIUM')) ,true,false)}"><tr><th>GSTIN Level Recon </th><td>Yes</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.PAN_Level_Recon__c   == TRUE  &&  (CONTAINS(QLI.Product2.ProductCode,'GST-ULTIMATE') ||  CONTAINS(QLI.Product2.ProductCode,'GST-PREMIUM'))  ,true,false)}"><tr><th>PAN Level Recon</th><td>Yes</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.EPFO_ESTABLISHMENT_ADVANCED_API_credit__c   != null  &&  QLI.EPFO_ESTABLISHMENT_ADVANCED_API_credit__c  != 0 ,true,false)}"><tr><th>No. of EPFO ESTABLISHMENT ADVANCED API credit </th><td>{!QLI.EPFO_ESTABLISHMENT_ADVANCED_API_credit__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.EPFO_ESTABLISHMENT_BASIC_API_credit__c   != null  &&  QLI.EPFO_ESTABLISHMENT_BASIC_API_credit__c  != 0  ,true,false)}"><tr><th>No. of EPFO ESTABLISHMENT BASIC API credit</th><td>{!QLI.EPFO_ESTABLISHMENT_BASIC_API_credit__c   }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.EPFO_ESTABLISHMENT_DETAILED_API_credit__c   != null  &&  QLI.EPFO_ESTABLISHMENT_DETAILED_API_credit__c  != 0,true,false)}"><tr><th>No. of EPFO ESTABLISHMENT DETAILED API credit</th><td>{!QLI.EPFO_ESTABLISHMENT_DETAILED_API_credit__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_EPFO_UAN_FETCH_APIs__c   != null  &&  QLI.No_of_EPFO_UAN_FETCH_APIs__c  != 0 ,true,false)}"><tr><th>No. of EPFO UAN FETCH APIs </th><td>{!QLI.No_of_EPFO_UAN_FETCH_APIs__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_EPFO_UAN_AUTH_APIs__c   != null  &&  QLI.No_of_EPFO_UAN_AUTH_APIs__c  != 0  ,true,false)}"><tr><th>No. of EPFO UAN AUTH APIs </th><td>{!QLI.No_of_EPFO_UAN_AUTH_APIs__c   }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_EPFO_UAN_DETAILS_APIs__c   != null  &&  QLI.No_of_EPFO_UAN_DETAILS_APIs__c  != 0,true,false)}"><tr><th>No. of EPFO UAN DETAILS APIs</th><td>{!QLI.No_of_EPFO_UAN_DETAILS_APIs__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_GSTIN_FILING_CREDITS_APIs__c   != null  &&  QLI.No_of_GSTIN_FILING_CREDITS_APIs__c  != 0 ,true,false)}"><tr><th>No. of GSTIN FILING CREDITS APIs </th><td>{!QLI.No_of_GSTIN_FILING_CREDITS_APIs__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_GSTIN_SEARCH_BY_NAME_APIs__c   != null  &&  QLI.No_of_GSTIN_SEARCH_BY_NAME_APIs__c  != 0  ,true,false)}"><tr><th>No. of GSTIN SEARCH BY NAME APIs</th><td>{!QLI.No_of_GSTIN_SEARCH_BY_NAME_APIs__c   }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_CUSTOMER_IDENTITY_FETCH_APIs__c   != null  &&  QLI.No_of_CUSTOMER_IDENTITY_FETCH_APIs__c  != 0,true,false)}"><tr><th>No. of CUSTOMER IDENTITY FETCH APIs</th><td>{!QLI.No_of_CUSTOMER_IDENTITY_FETCH_APIs__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_DRIVING_LICENSE_DETAILED_APIs__c   != null  &&  QLI.No_of_DRIVING_LICENSE_DETAILED_APIs__c  != 0 ,true,false)}"><tr><th>No. of DRIVING LICENSE DETAILED APIs </th><td>{!QLI.No_of_DRIVING_LICENSE_DETAILED_APIs__c  }</td></tr></apex:outputText>
+                                <apex:outputText rendered="{!IF(QLI.No_of_VEHICLE_REGISTRATION_DETAILED_API__c   != null  &&  QLI.No_of_VEHICLE_REGISTRATION_DETAILED_API__c  != 0  ,true,false)}"><tr><th>No. of VEHICLE REGISTRATION DETAILED API</th><td>{!QLI.No_of_VEHICLE_REGISTRATION_DETAILED_API__c   }</td></tr></apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(QLI.No_of_COMPANY_DETAILS_FULL_APIs__c!= null && QLI.No_of_COMPANY_DETAILS_FULL_APIs__c!= 0 ,true,false)}"><tr><th>No. of COMPANY DETAILS FULL APIs</th><td>{!QLI.No_of_COMPANY_DETAILS_FULL_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_GST_ANALYTICS_AUTH_APIs__c!= null && QLI.No_of_GST_ANALYTICS_AUTH_APIs__c!= 0 ,true,false)}"><tr><th>No. of GST ANALYTICS AUTH APIs</th><td>{!QLI.No_of_GST_ANALYTICS_AUTH_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_GST_ANALYTICS_DETAILS_APIs__c!= null && QLI.No_of_GST_ANALYTICS_DETAILS_APIs__c!= 0 ,true,false)}"><tr><th>No. of GST ANALYTICS DETAILS APIs</th><td>{!QLI.No_of_GST_ANALYTICS_DETAILS_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_GST_OWNERSHIP_VERIFICATION_APIs__c!= null && QLI.No_of_GST_OWNERSHIP_VERIFICATION_APIs__c!= 0 ,true,false)}"><tr><th>No. of GST OWNERSHIP VERIFICATION APIs</th><td>{!QLI.No_of_GST_OWNERSHIP_VERIFICATION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_HSN_SAC_SEARCH_APIs__c!= null && QLI.No_of_HSN_SAC_SEARCH_APIs__c!= 0 ,true,false)}"><tr><th>No. of HSN SAC SEARCH APIs</th><td>{!QLI.No_of_HSN_SAC_SEARCH_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_OTP_VERIFICATION_PHONE_APIs__c!= null && QLI.No_of_OTP_VERIFICATION_PHONE_APIs__c!= 0 ,true,false)}"><tr><th>No. of OTP VERIFICATION PHONE APIs</th><td>{!QLI.No_of_OTP_VERIFICATION_PHONE_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_UNREGISTERED_GST_APPLICANT_VERIFI__c!= null && QLI.No_of_UNREGISTERED_GST_APPLICANT_VERIFI__c!= 0 ,true,false)}"><tr><th>No. of UNREGISTERED GST APPLICANT VERIFICATION APIs</th><td>{!QLI.No_of_UNREGISTERED_GST_APPLICANT_VERIFI__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_UPI_QR_GENERATION_APIs__c!= null && QLI.No_of_UPI_QR_GENERATION_APIs__c!= 0 ,true,false)}"><tr><th>No. of UPI QR GENERATION APIs</th><td>{!QLI.No_of_UPI_QR_GENERATION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_UPI_VERIFICATION_APIs__c!= null && QLI.No_of_UPI_VERIFICATION_APIs__c!= 0 ,true,false)}"><tr><th>No. of UPI VERIFICATION APIs</th><td>{!QLI.No_of_UPI_VERIFICATION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_AADHAAR_VERIFICATION_DIGILOCKER_A__c!= null && QLI.No_of_AADHAAR_VERIFICATION_DIGILOCKER_A__c!= 0 ,true,false)}"><tr><th>No. of AADHAAR VERIFICATION DIGILOCKER APIs</th><td>{!QLI.No_of_AADHAAR_VERIFICATION_DIGILOCKER_A__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_COMPANY_FINANCIALS_DETAILS_APIs__c!= null && QLI.No_of_COMPANY_FINANCIALS_DETAILS_APIs__c!= 0 ,true,false)}"><tr><th>No. of COMPANY FINANCIALS DETAILS APIs</th><td>{!QLI.No_of_COMPANY_FINANCIALS_DETAILS_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_EINVOICE_IRN_DETAILS_APIs__c!= null && QLI.No_of_EINVOICE_IRN_DETAILS_APIs__c!= 0 ,true,false)}"><tr><th>No. of EINVOICE IRN DETAILS APIs</th><td>{!QLI.No_of_EINVOICE_IRN_DETAILS_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_EINVOICE_IRN_LIST_APIs__c!= null && QLI.No_of_EINVOICE_IRN_LIST_APIs__c!= 0 ,true,false)}"><tr><th>No. of EINVOICE IRN LIST APIs</th><td>{!QLI.No_of_EINVOICE_IRN_LIST_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_EINVOICE_QR_EXTRACTION_APIs__c!= null && QLI.No_of_EINVOICE_QR_EXTRACTION_APIs__c!= 0 ,true,false)}"><tr><th>No. of EINVOICE QR EXTRACTION APIs</th><td>{!QLI.No_of_EINVOICE_QR_EXTRACTION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_FSSAI_VERIFICATION_APIs__c!= null && QLI.No_of_FSSAI_VERIFICATION_APIs__c!= 0 ,true,false)}"><tr><th>No. of FSSAI VERIFICATION APIs</th><td>{!QLI.No_of_FSSAI_VERIFICATION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_GSP_APIs__c!= null && QLI.No_of_GSP_APIs__c!= 0 ,true,false)}"><tr><th>No. of GSP APIs</th><td>{!QLI.No_of_GSP_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_INGESTION_APIs__c!= null && QLI.No_of_INGESTION_APIs__c!= 0 ,true,false)}"><tr><th>No. of INGESTION APIs</th><td>{!QLI.No_of_INGESTION_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_INTERNATIONAL_BUSINESS_NAME_SEARC__c!= null && QLI.No_of_INTERNATIONAL_BUSINESS_NAME_SEARC__c!= 0 ,true,false)}"><tr><th>No. of INTERNATIONAL BUSINESS NAME SEARCH APIs</th><td>{!QLI.No_of_INTERNATIONAL_BUSINESS_NAME_SEARC__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_LEGAL_NAME_PAN_FETCH_APIs__c!= null && QLI.No_of_LEGAL_NAME_PAN_FETCH_APIs__c!= 0 ,true,false)}"><tr><th>No. of LEGAL NAME PAN FETCH APIs</th><td>{!QLI.No_of_LEGAL_NAME_PAN_FETCH_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_OTP_VERIFICATION_EMAIL_APIs__c!= null && QLI.No_of_OTP_VERIFICATION_EMAIL_APIs__c!= 0 ,true,false)}"><tr><th>No. of OTP VERIFICATION EMAIL APIs</th><td>{!QLI.No_of_OTP_VERIFICATION_EMAIL_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_PAN_SIMPLE_DETAILS_APIs_No_of_FS__c!= null && QLI.No_of_PAN_SIMPLE_DETAILS_APIs_No_of_FS__c!= 0 ,true,false)}"><tr><th>No. of PAN SIMPLE DETAILS APIs</th><td>{!QLI.No_of_PAN_SIMPLE_DETAILS_APIs_No_of_FS__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_PAN_VERIFICATION_BASIC_APIs__c!= null && QLI.No_of_PAN_VERIFICATION_BASIC_APIs__c!= 0 ,true,false)}"><tr><th>No. of PAN VERIFICATION BASIC APIs</th><td>{!QLI.No_of_PAN_VERIFICATION_BASIC_APIs__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_PAN_Verification_with_Father_Name__c!= null && QLI.No_of_PAN_Verification_with_Father_Name__c!= 0 ,true,false)}"><tr><th>No. of PAN Verification with Father Name API</th><td>{!QLI.No_of_PAN_Verification_with_Father_Name__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_PAN_verification_API_QR__c!= null && QLI.No_of_PAN_verification_API_QR__c!= 0 ,true,false)}"><tr><th>No. of PAN verification API</th><td>{!QLI.No_of_PAN_verification_API_QR__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_UNREGISTERED_GST_APPLICANT_DETAIL__c!= null && QLI.No_of_UNREGISTERED_GST_APPLICANT_DETAIL__c!= 0 ,true,false)}"><tr><th>No. of UNREGISTERED GST APPLICANT DETAILS APIs</th><td>{!QLI.No_of_UNREGISTERED_GST_APPLICANT_DETAIL__c}</td></tr></apex:outputText>
+<apex:outputText rendered="{!IF(QLI.No_of_UPI_FETCH_APIs__c!= null && QLI.No_of_UPI_FETCH_APIs__c!= 0 ,true,false)}"><tr><th>No. of UPI FETCH APIs</th><td>{!QLI.No_of_UPI_FETCH_APIs__c}</td></tr></apex:outputText>
+
+                            </table>
+                            <br/>{!QLI.Overuse__c}<br/><br/>
+                        </apex:outputText>
+                        
+                        
+                    </div>
+                </apex:repeat>
+                <apex:outputText rendered="{!gccCheck}">
+                    <table class="info-table" style="width:100%">
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_Customised_Invoice_Print_template__c != null && SyncedQuote.No_of_Customised_Invoice_Print_template__c != 0 ,true,false)}">
+                            <tr><th>No. of Customised Invoice Print template </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_Customised_Invoice_Print_template__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(SyncedQuote.ERP_GCC__c  != null ,true,false)}">
+                            <tr><th>ERP Name and Version </th><td>{!SyncedQuote.ERP_GCC__c }</td></tr>
+                        </apex:outputText>  
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_VAT__c != null && SyncedQuote.No_of_VAT__c != 0 ,true,false)}">
+                            <tr><th>No. of VAT </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_VAT__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.BtoB_Sales_one__c != null && SyncedQuote.BtoB_Sales_one__c != 0,true,false)}">
+                            <tr><th>No. of B2B Sales invoices and associated credit or debit notes/ year </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.BtoB_Sales_one__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.BtoC_Sales_one__c != null && SyncedQuote.BtoC_Sales_one__c != 0 ,true,false)}">
+                            <tr><th>No. of B2C Sales invoices and associated credit or debit notes/ year </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.BtoC_Sales_one__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_Online_devices__c  != null && SyncedQuote.No_of_Online_devices__c  != 0 ,true,false)}">
+                            <tr><th>No. of Online devices </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_Online_devices__c }"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_Offline_devices__c  != null && SyncedQuote.No_of_Offline_devices__c  != 0 ,true,false)}">
+                            <tr><th>No. of Offline devices </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_Offline_devices__c }"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_Vendors_one__c != null && SyncedQuote.No_of_Vendors_one__c != 0 ,true,false)}">
+                            <tr><th>No. of Vendors </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_Vendors_one__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.No_of_User_ID_one__c != null && SyncedQuote.No_of_User_ID_one__c != 0 ,true,false)}">
+                            <tr><th>No. of User IDs </th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!SyncedQuote.No_of_User_ID_one__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(SyncedQuote.POS_system__c  != null ,true,false)}">
+                            <tr><th>POS system </th><td>{!SyncedQuote.POS_system__c }</td></tr>
+                        </apex:outputText> 
+                        
+                        <apex:outputText rendered="{!IF(SyncedQuote.Data_Archival__c,true,false)}">
+                            <tr><th>Data Archival </th><td>Yes</td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(SyncedQuote.Auto_Retry__c,true,false)}">
+                            <tr><th>Auto Retry </th><td>Yes</td></tr>
+                        </apex:outputText> 
+                        <apex:outputText rendered="{!IF(SyncedQuote.Translation__c,true,false)}">
+                            <tr><th>Translation </th><td>Yes</td></tr>
+                        </apex:outputText>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </table>
+                    <br/>
+                    <i>Any overuse of the services, which means the use of the services exceeding the number of e-invoices specified above will be billed to the customer at an additional charge of SAR &nbsp;<apex:outputText value="{!SyncedQuote.Opportunity.Fee_per_additional_usage__c}"></apex:outputText>&nbsp; per additional invoices or assosciated credit/debit note and the customer shall be liable to pay such additional charges on a quarterly basis to Cleartax.</i>
+                </apex:outputText>
+                
+            </apex:panelGroup>
+            <apex:include pageName="{!nextPage7}"/>
+            
+        </body>
+    </html>
+    
+</apex:page>

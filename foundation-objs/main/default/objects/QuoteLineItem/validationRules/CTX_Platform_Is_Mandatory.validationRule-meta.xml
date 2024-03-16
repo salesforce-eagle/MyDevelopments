@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Platform_Is_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISNEW()) &amp;&amp; 
+AND(
+TEXT(Product2.Product_Line__c) = &apos;GST&apos;,
+ISBLANK(TEXT(Platform__c))
+)</errorConditionFormula>
+    <errorMessage>For GST Product Kindly Select Platform</errorMessage>
+</ValidationRule>

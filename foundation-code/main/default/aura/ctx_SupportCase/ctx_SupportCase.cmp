@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <aura:html tag="style">
+        .slds-modal__content{
+        overflow-y:auto !important;
+        height:unset !important;
+        max-height:unset !important;     
+        }
+        .slds-modal__container { min-width: 60% !important; }
+    </aura:html>
+	<c:ctx_CreateSupportCase oncloseaction="{!c.closeQuickAction}"></c:ctx_CreateSupportCase>
+</aura:component>

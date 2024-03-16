@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_update_from_CSM__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( OR(ISPICKVAL(Activation_Pending_Reasons__c,&apos;Potential Churn&apos;),ISPICKVAL(Activation_Pending_Reasons__c,&apos;Potential Sales Return&apos;)), &apos;Yes&apos;, &apos;No&apos;)</formula>
+    <label>Risk update from CSM</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Initiated_by__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Opportunity Initiated by</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Clear Team</fullName>
+                <default>false</default>
+                <label>Clear Team</label>
+            </value>
+            <value>
+                <fullName>Xpedize Team</fullName>
+                <default>true</default>
+                <label>Xpedize Team</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

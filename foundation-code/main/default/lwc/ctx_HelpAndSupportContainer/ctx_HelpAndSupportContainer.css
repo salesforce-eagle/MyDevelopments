@@ -1,0 +1,10 @@
+/*@media all and (max-width: 980px) {
+    .background {
+        background-color : white;
+    }
+}*/
+@media all and (min-width: 980px) {
+    .background {
+        margin: 0% 20%;
+    }
+}

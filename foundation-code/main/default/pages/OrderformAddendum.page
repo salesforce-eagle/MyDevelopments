@@ -1,0 +1,349 @@
+<apex:page renderAs="PDF" standardController="Upsell_Top_up__c" extensions="CTX_OrderFormAddendumController" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            
+            <style type="text/css">
+                .mainPageblock{
+                margin: 15px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                display: block;
+                font-size : 12px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                
+                .headding-box{
+                font-size : 15px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                width: 100%;
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:avoid}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;">
+            
+            <div class="header">
+                <apex:panelGroup >
+                    <img src="{!$Resource.OrderFormPDFLogo}" alt="ClearTax Logo" width="110px;"/> 
+                </apex:panelGroup>
+            </div>
+            <div class="footer">
+                <hr/>
+                <table style="width:100%" class="last" >
+                    <apex:panelGroup rendered="{!IF(Upsell_Top_up__c.Asset__r.Opportunity__r.ClearTax_Billing_Entity__c != 'Xpedize', TRUE, FALSE)}">
+                        <tr>
+                            <td style="width:50%;">For <b>Defmacro Software Private Limited</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!Upsell_Top_up__c.Asset__r.Opportunity__r.Legal_Entity_Name_Of_The_Client__c}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                    <apex:panelGroup rendered="{!IF(Upsell_Top_up__c.Asset__r.Opportunity__r.ClearTax_Billing_Entity__c == 'Xpedize', TRUE, FALSE)}">
+                        <tr>
+                            <td style="width:50%;">For <b>Xpedize Ventures Private Limited</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!Upsell_Top_up__c.Asset__r.Opportunity__r.Legal_Entity_Name_Of_The_Client__c}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                </table>
+                <br/><br/><br/><br/>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:50%;text-align:left;">Authorized Signatory : &nbsp;</td>
+                        <apex:panelGroup rendered="{!Upsell_Top_up__c.ESign_Category__c == 'E-Sign'}">
+                            <td style="width:50%;text-align:right;">Authorized Signatory : {!Upsell_Top_up__c.E_Sign_Customer_Info__r.Name}</td>
+                        </apex:panelGroup>
+                        <apex:panelGroup rendered="{!Upsell_Top_up__c.ESign_Category__c == 'Physical Sign'}">
+                            <td style="width:50%;text-align:right;">Authorized Signatory : </td>
+                        </apex:panelGroup>
+                        
+                    </tr>
+                    
+                    
+                    <tr>
+                        
+                        <td></td>
+                        
+                        <apex:panelGroup rendered="{!Upsell_Top_up__c.ESign_Category__c == 'E-Sign'}">
+                            <td style="width:50%;text-align:right;">Designation : {!Upsell_Top_up__c.E_Sign_Customer_Info__r.Designation__c}</td>
+                        </apex:panelGroup>
+                        <apex:panelGroup rendered="{!Upsell_Top_up__c.ESign_Category__c == 'Physical Sign'}">
+                            <td style="width:50%;text-align:right;">Designation : </td>
+                        </apex:panelGroup>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div class="mainPageblock">
+                <apex:panelGroup >
+                    <apex:panelGroup rendered="{!IF(Upsell_Top_up__c.Asset__r.ClearTax_Billing_Entity__c == 'Defmacro', TRUE, FALSE)}">
+                        <table class="firstTable">
+                            <tr>
+                                <td style="width:45%"><b>Defmacro Software Private Limited</b></td>
+                                <td style="width:20%"></td>
+                                <th style="width:18%">Addendum No: </th>
+                                <td style="width:18%">{!Upsell_Top_up__c.Order_Form_Number__c }</td>
+                                <apex:outputText >
+                                    <td style="width:20%"></td>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                
+                                <td rowspan="3">Corporate Office: 23, 24 AMR Tech Park, Block 1, 
+                                    First Floor, Hosur Main Road, Hongasandra, 
+                                    Bangalore, Karnataka - 560068<br/> 
+                                    CIN No. U72200DL2016PTC290345
+                                </td>
+                                <td style="width:20%"></td>
+                                <th style="width:18%">Order Form No: </th>
+                                <apex:outputText >
+                                    <td style="width:18%">{!Upsell_Top_up__c.Order_Form_LOE_Number__c }</td>
+                                </apex:outputText>  
+                            </tr>
+                            <tr style="border:1px solid red;">
+                                <td style="width:15%;"></td> 
+                                
+                            </tr>
+                            
+                        </table>
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup rendered="{!IF(Upsell_Top_up__c.Asset__r.Opportunity__r.ClearTax_Billing_Entity__c == 'Xpedize', TRUE, FALSE)}">
+                        <table class="firstTable">
+                            <tr>
+                                <td style="width:45%"><b>Xpedize Ventures Private Limited</b></td>
+                                <td style="width:20%"></td>
+                                <th style="width:18%">Addendum No: </th>
+                                <td style="width:18%">{!Upsell_Top_up__c.Order_Form_Number__c }</td>
+                                <apex:outputText >
+                                    <td style="width:20%"></td>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">7th floor, Vatika Triangle, 
+                                    Mehrauli-Gurgaon Road, Block B,Sushant Lok Phase 1,
+                                    Gurugram 122002, Haryana, India<br/> 
+                                    CIN No. U74999HR2017PTC070319
+                                </td>
+                                <td style="width:20%"></td>
+                                <th style="width:18%">Order Form No: </th>
+                                <apex:outputText >
+                                    <td style="width:18%">{!Upsell_Top_up__c.Order_Form_LOE_Number__c }</td>
+                                </apex:outputText>  
+                            </tr>
+                            <tr style="border:1px solid red;">
+                                <td style="width:15%;"></td> 
+                                
+                            </tr>
+                            
+                        </table>
+                    </apex:panelGroup>
+                    
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <div class="center-align" style="text-transform : capitalize"> ORDER FORM ADDENDUM</div>
+                <br/>
+                <hr/>
+                <br/>
+                
+            </div>
+            
+            
+            <apex:outputText >
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; 1. &nbsp;&nbsp;&nbsp;Customer Product Information</div><br/><br/>
+                <table class="info-table">
+                    <tr><th>Customer Name</th> <td class="info-table-td">{!Upsell_Top_up__c.Asset__r.Opportunity__r.Legal_Entity_Name_Of_The_Client__c}</td></tr> <!--class="info-table-th" -->
+                    <tr><th>Product Name</th> <td class="info-table-td">{!Upsell_Top_up__c.Product__r.OrderForm_Product_Name__c}</td></tr>
+                    <!--<tr><th>Asset Billing Type</th> <td class="info-table-td">{!Upsell_Top_up__c.Asset__r.Billing_Type__c}</td></tr>-->
+                    
+                    <tr><th>Asset Start Date</th> <td class="info-table-td"><apex:outputText value="{0,date, dd'/'MM'/'yyyy}"><apex:param value="{!Upsell_Top_up__c.Asset__r.PurchaseDate}"></apex:param></apex:outputText></td></tr>
+                    <tr><th>Asset End Date</th><td class="info-table-td"><apex:outputText value="{0,date, dd'/'MM'/'yyyy}"><apex:param value="{!Upsell_Top_up__c.Asset__r.UsageEndDate}"></apex:param></apex:outputText></td></tr>
+                    <tr><th>Original Asset Price</th><td class="info-table-td">{!Upsell_Top_up__c.Asset__r.Price}</td>  </tr>
+                </table> 
+            </apex:outputText>
+            <br/>
+            <br/>
+            <apex:outputText >
+                <div style="page-break-inside: avoid;">
+                    <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp; 2. &nbsp;&nbsp;&nbsp;Additional Resources Request - Details</div><br/>
+                    <p>Details on additional resources over and above what’s already purchased</p>
+                    <table class="info-table">
+                        <tr><th>Additional usage enabled till</th> <td class="info-table-td"><apex:outputText value="{0,date, dd'/'MM'/'yyyy}"><apex:param value="{!Upsell_Top_up__c.Asset__r.UsageEndDate}"></apex:param></apex:outputText></td></tr> 
+                        <tr><th>Additional Price</th><td class="info-table-td">{!Upsell_Top_up__c.Additional_Price__c}</td></tr>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_GSTIN__c  != null && Upsell_Top_up__c.No_of_GSTIN__c  != 0 ,true,false)}">
+                            <tr><th>Additional no. of GSTINs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_GSTIN__c }"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PANs__c != null && Upsell_Top_up__c.No_of_PANs__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PANs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PANs__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_user_IDs__c != null && Upsell_Top_up__c.No_of_user_IDs__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of user IDs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_user_IDs__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_B2B_Sales_invoice__c != null && Upsell_Top_up__c.No_of_B2B_Sales_invoice__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of B2B Sales invoice</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_B2B_Sales_invoice__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_B2C_Sales_invoice__c != null && Upsell_Top_up__c.No_of_B2C_Sales_invoice__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of B2C Sales invoice</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_B2C_Sales_invoice__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_purchase_invoice__c != null && Upsell_Top_up__c.No_of_purchase_invoice__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of purchase invoice</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_purchase_invoice__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_vendors__c != null && Upsell_Top_up__c.No_of_vendors__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of vendors</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_vendors__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_IRNs__c != null && Upsell_Top_up__c.No_of_IRNs__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of IRNs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_IRNs__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_E_way_bill__c != null && Upsell_Top_up__c.No_of_E_way_bill__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of E-way bill</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_E_way_bill__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_GSTIN_verification_credits__c != null && Upsell_Top_up__c.No_of_GSTIN_verification_credits__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of GSTIN verification credits</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_GSTIN_verification_credits__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.Number_of_TANs__c  != null && Upsell_Top_up__c.Number_of_TANs__c  != 0 ,true,false)}">
+                            <tr><th>Additional no. of TANs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.Number_of_TANs__c }"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_Bank_verification_API__c != null && Upsell_Top_up__c.No_of_Bank_verification_API__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of Bank verification API</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_Bank_verification_API__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_MCA_Company_details_API__c != null && Upsell_Top_up__c.No_of_MCA_Company_details_API__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of MCA Company details API</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_MCA_Company_details_API__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_MSME_API__c != null && Upsell_Top_up__c.No_of_MSME_API__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of MSME API</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_MSME_API__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PAN_to_GSTIN_APIs__c != null && Upsell_Top_up__c.No_of_PAN_to_GSTIN_APIs__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PAN to GSTIN_APIs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PAN_to_GSTIN_APIs__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PAN_verification_API__c != null && Upsell_Top_up__c.No_of_PAN_verification_API__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PAN verification API</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PAN_verification_API__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_TDS_206_sync_API__c != null && Upsell_Top_up__c.No_of_TDS_206_sync_API__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of TDS 206 sync API</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_TDS_206_sync_API__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PAN_verification_detailed_APIs__c != null && Upsell_Top_up__c.No_of_PAN_verification_detailed_APIs__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PAN verification detailed APIs</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PAN_verification_detailed_APIs__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PAN_verification_API_old__c != null && Upsell_Top_up__c.No_of_PAN_verification_API_old__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PAN verification API (Old)</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PAN_verification_API_old__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(Upsell_Top_up__c.No_of_PAN_Verification_with_Father_Name__c != null && Upsell_Top_up__c.No_of_PAN_Verification_with_Father_Name__c != 0 ,true,false)}">
+                            <tr><th>Additional no. of PAN Verification with Father Name</th><td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!Upsell_Top_up__c.No_of_PAN_Verification_with_Father_Name__c}"></apex:param></apex:outputText></td></tr>
+                        </apex:outputText>
+                        
+                    </table>   
+                    
+                </div>
+                
+            </apex:outputText>
+            <br/>
+            <br/>
+            
+            <apex:outputText rendered="{!IF(billing_Ids != NULL,true,false)}">
+                <div style="page-break-inside: avoid;">
+                    <div style="page-break-after: avoid;" class="headding-box">&nbsp;&nbsp;&nbsp;ANNEXURE</div><br/><br/>
+                    <b>Additional Billing GSTINs</b>
+                    <br/>  <br/>
+                    <table class="info-table">
+                        <tr>
+                            <th style="width:15%">Customer Name</th>
+                            <th style="width:15%">Billing GSTIN</th>
+                            <th style="width:30%">Billing Address</th>
+                            <th style="width:15%">Amount</th>
+                        </tr>
+                        
+                        <apex:repeat value="{!billing_Ids}" var="billingId">
+                            <tr>
+                                <td class="info-table-td">{!billingId.Name_Of_The_Customer__c}</td>
+                                <td class="info-table-td">{!billingId.Name}</td>
+                                <td class="info-table-td">{!billingId.Address__c} {!billingId.Address_Line_2__c} {!billingId.City__c} {!billingId.State__c} {!billingId.Pincode__c}</td>
+                                <td class="info-table-td"><apex:outputText value="{0,number, ###,###,###.##}"><apex:param value="{!billingId.Add_on_split__c}"></apex:param></apex:outputText></td>
+                            </tr>
+                            
+                        </apex:repeat>
+                        <tr>
+                            <td colspan="3" style="text-align: right">TOTAL</td><td>{!additionalGSTINTotal}</td>
+                        </tr>
+                        
+                        
+                    </table>
+                    
+                </div>
+                
+                
+            </apex:outputText>
+            
+            <br/>
+            <br/>
+            <p>
+                Upon acceptance and execution of this addendum, it is legally binding on the client to pay for the additional usage terms stated above and the payment for the same should be done immediately on the date of acceptance unless the customer signs up for an explicit payment term. If not the additional usage provisioning will get suspended. 
+                <br/>
+                Charges stated above are exclusive of applicable GST
+            </p>
+            
+            
+        </body>
+    </html>
+    
+</apex:page>

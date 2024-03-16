@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2B_Enterprise</fullName>
+    <active>true</active>
+    <businessProcess>B2B Support Process</businessProcess>
+    <compactLayoutAssignment>Custom_Layout</compactLayoutAssignment>
+    <label>B2B Enterprise</label>
+    <picklistValues>
+        <picklist>Issue_Type_1_New__c</picklist>
+        <values>
+            <fullName>Account Management</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Connectors%2FIntegration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Filing</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>GSTN Interaction</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Licensing</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Non Enterprise Inquiries</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Recon</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Sales %2F CSM Inquiries</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Software Downtime</fullName>
+            <default>false</default>
+            </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Type_2_New__c</picklist>
+        <values>
+            <fullName>API - Auth token</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Business Settings</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Custom field related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>DSC configuration related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Email configuration related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Email Settings</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Form settings related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>FTP Client</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>GSTIN %2F NIC credentials</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Login Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Member Access Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Templates related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Marketing Preference</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>User Profile</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Vendor Contact Master</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Workspace Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>FTP%2FSAP%2FERP</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>New Tally</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Challan Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Ingestion</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Preparation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Upload</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>2B Pull Failure</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Challan Related Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Error Report Issue</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>GSTN Downtime%2FSlowness</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Non Receipt Of Otp</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Refresh Ledger Balance</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Reset GSTIN Data</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Exceptions</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Copy Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Discrepancy</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>License Activation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Refund Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Sandbox activation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Sandbox validity extension</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Subscription details</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>CA%2FSME Inquiries</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invest_Save</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>ITR Filing</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Junk</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Marketplace Services</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Tax Compliance Queries</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Document View</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download Report</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Run Recon</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Table 4 Generation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Call Back Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>DEMO request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Fresh-Sale</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>500 Error</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slowness</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>New custom print template</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Modification</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>FTP</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Not Visible</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Custom Template</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>EWB Template with IRN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>EWB Template without IRN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Government Template</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Customer ERP Issue</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invalid API response</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>SSL Certificate issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Tally Connector</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Archived Invoice</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Cancel After 24 Hours</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>EWB Already Verified</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>EWB Has Been Generated</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Remarks Missing</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Multi Vehicle</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slow EWB Generation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slow IRN Generation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Status</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Transporter</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Validation Error</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Change Requests</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Digital Signature</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Incorrect Details In Print</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>New Template Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Qr Code Issue</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slow Print</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Archives</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download EWB From NIC</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Einvoice Report</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>EWB Report</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Mis Reports</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>NIC</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Our Portal</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>SSL</fullName>
+            <default>false</default>
+            </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Type_3_New__c</picklist>
+        <values>
+            <fullName>Create</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Manage %2F Delete</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Delete %2F Edit</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add GSTIN %2F Branch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Recipient Contacts missing</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable to mail</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Feature requests</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add %2F Update</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Delete Phone Number</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Desktop App</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Password Reset</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unaware Of Migration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add%2FDelete Team Member</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Issues Inviting Members</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Roles%2FPermissions</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Subscribe</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unsubscribe</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Email / Phone</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Filing Frequency</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Filing Type</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Nic/Gst Credentials</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add/Delete Vendor</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Upload</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add/Modify/Update Branch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add/Modify/Update GSTIN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add/Modify/Update Pan</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Change settings %28pro%3C%3Ebiz%29</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Delete/Retrieve Data</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>DSC Configuration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Logo Update</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Update Workspace Owner</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Switch Workspace</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Ingestion Failed</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Partial Data Ingested</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Payload Error</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Request Failed</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Request Url</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Requires Auth Token</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Requires Taxable Entity</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Configuration Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Installation Request</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Validation Errors</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Offset</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Delete Data</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Ingested Data Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Ingestion Failures</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Taking too much time</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Template Related Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Auto-Fill Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Download From GSTN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Overview Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Generate Summary</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Negative Values</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>View/Edit Invoices</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Error Report Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Filing Frequency Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Hsn Error</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Inactive Api</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Inactive GSTIN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invalid GSTIN Credentials</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Level Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Json Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Preview Summary</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Reset Data</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>GSTIN Verification Credits</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Validity Extension</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>License Validity</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Plan Components</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Reverse Migration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>SF Asset Issue</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Demo Asset Activation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Incorrectly Nagged</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Migration 1.0 > 2.0</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Add Remarks</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Filters Not Working</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Not Matched</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Link%2FDelink%2FEdit Linking</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Multi Link Documents</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Share Report</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Summary Count Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Partial Report Downloaded</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Report Generation Failed</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Report Not Downloaded</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slowness</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Advance Options</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Failure</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>ITC Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download Report</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Incorrect Autofill Data</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Regenerating Table 4</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Doc Count Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download From GSTN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Partial Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Report Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Report Generation</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Values Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Server down</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>File not found</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Upload Failure</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Wrong Value Passed</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Wrong Configuration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Connect</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Certificate Upload</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>New License</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Not Able To Add Digital Signature</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download In Pdf Format</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slow Download</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Find Old Invoices</fullName>
+            <default>false</default>
+            </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Type_4_New__c</picklist>
+        <values>
+            <fullName>Antivirus%2FFirewall Block</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Upload DSC</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Doc. Count Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Value Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Data Formatting Errors</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Igst%2FPos Errors</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invalid GSTIN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invalid Hsn%2FSac</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Missing Headers</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Wrong Data Ingested</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Custom Integration Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Downloading E-Comm%2FCt%2FGovt</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>File Size Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Header Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Auto Fill Failure</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Sales%2FPurchase Documents</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Using Gstr-1 And 2B</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Ledger Download Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Failure</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Slowness</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>B2C Auto Compute</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Doc Series Auto Compute</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Hsn Auto Compute</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Nil Rated Supplies</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Count Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Unable To Save/Edit</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Mismatch CDN'S Date/Number</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>B2C Poc Issues</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Inv%2FCDN Date Before Registration</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Already Uploaded</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Invoice Exists In CTIN</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Payload Error</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>SEZ Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Taxable Value Related</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download Ct Summary</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download Govt Summary</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Summary Mismatch</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Asset Period Overlap</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Incorrect Asset Logged</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>No Asset Logged</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Download Error file</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Action Reset</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Claim ITC</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Pdf%2FExcel</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Insights</fullName>
+            <default>false</default>
+            </values>
+            <values>
+            <fullName>Reports%2FSummary</fullName>
+            <default>false</default>
+            </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Web Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>OUTAGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>P3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Products_Available__c</picklist>
+        <values>
+            <fullName>Capture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cimplyfive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clear Identity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clear Invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E Invoice - KSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Invoicing %26 E-Way Bill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GST 1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GST 2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAX ITC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Cloud</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tagged_To__c</picklist>
+        <values>
+            <fullName>3B vs%2E 1 comparison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3B vs%2E 1 vs%2E Books</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3B vs%2E 2A %26 2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3B vs%2E 2A ITC comparison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3B vs%2E 2B vs%2E Books</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CMP-08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash ledger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-inv API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-inv FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-inv Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWB API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWB FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWB Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G4 Table 4A report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G9 Table 8 report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-1 Filed report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-1 HSN summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-1 rate wise summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-3B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-3B Filed report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gstr-9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITC ledger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITC offset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITC-04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Tax %26 ITC summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly tax %26 ITC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMT-06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan level - 3B vs%2E 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan level - 3B vs%2E 2A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan level - Gstr-1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan level - MM2A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan level - MM2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier complaince</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junk</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,117 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,POInformation_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id </title>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                <!-- Not working
+.text-catplize{
+text-transform : capitalize;
+}-->
+                .headding-box{
+                font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+            <!--td:nth-child(2) {
+padding-right: 20px; 
+}-->    
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;4.&nbsp;&nbsp;PURCHASE ORDER INFORMATION </div><br/>
+            <div>
+                <apex:outputText rendered="{!NOT(gccCheck)}">
+                    Is a Purchase Order (PO) required for the purchase or payment of the products on this Order Form? 
+                </apex:outputText>
+                <apex:outputText rendered="{!gccCheck}">
+                    Is a Purchase Order (PO) required for the purchase or payment of the services on this Order Form? 
+                </apex:outputText>
+                
+                <apex:panelGroup rendered="{!showNoPO == true}">
+                    <span><b>No</b></span> <!--<apex:image url="{!$Resource.Tick_Mark_Img}" width="50" height="20"/> -->
+                </apex:panelGroup>
+                
+                <apex:panelGroup rendered="{!showYesPO == true}">
+                    <span><b>Yes</b></span>
+                    <p><b>PO Number:</b> {!syncedQuote.Opportunity.PO_number__c}  &nbsp;&nbsp;&nbsp;&nbsp;  <b>PO Amount:</b> {!syncedQuote.Opportunity.PO_Amount__c}</p>
+                </apex:panelGroup>
+            </div>
+            <apex:include pageName="{!nextPage5}"/>
+        </body>
+    </html>
+    
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSU_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Lead_Owner_Full_Name__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>PSU__c</columns>
+    <columns>Turnover_in_cr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PSU__c</field>
+        <operation>equals</operation>
+        <value>PSU</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>notEqual</operation>
+        <value>Marella</value>
+    </filters>
+    <label>PSU Leads</label>
+    <sharedTo>
+        <role>PSU_Head</role>
+    </sharedTo>
+</ListView>

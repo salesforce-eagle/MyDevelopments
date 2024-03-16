@@ -1,0 +1,99 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_MAX_ITC_Growth_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+         
+ <b><u>    Scope of Services for Max ITC - Growth Edition Software - </u></b>
+           <p>
+                     <b>    a)   Feature List of Cleartax Max ITC Software is as below </b>
+                        </p>
+                        <table class="info-table">
+                            
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>Onboarding</b></td>
+                                <td>2A and PR Data Import</td>
+                                <td><li>Multiple Excel Ingestion options (Custom Mapper, govt. template, CT template)</li>
+                                    <li>2A / 2B Download from GSTN</li></td>
+                            </tr>
+                            <tr>
+                                <td><b>Reconciliation </b></td>
+                                <td>Bucketing- Match, Mismatch.</td>
+                                <td>Reconcile ERP Purchase Register against 2A. <br/>
+ Bucket into
+ <ul>
+  <li>matches</li>
+  <li>suggested matches</li>
+  <li>mismatches</li>
+  <li> Missing in 2A</li>
+  <li>Missing in PR</li>
+</ul>  
+Take actions:
+ <ul>
+  <li>Mark as ITC claim</li>
+  <li>Mark as ITC pending</li>
+  <li>Mark as ITC ineligible</li>
+  <li> Mark as Reject</li>
+
+</ul>  
+                         </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Invoice Tracking</td>
+                                <td>Track vendor wise invoices, ITC status, match status with 2A/ PR and take actions: Accept vendor values, Accept PR values </td>
+                            </tr>
+                            <tr>
+                                <td><b>Vendor Management</b></td>
+                                <td>Vendor Risk Assessment</td>
+                                <td>Categorize vendors as Compliant, Low Risk, Medium Risk, and High Risk based on timelines of various GSTR filings done by them</td>
+                            </tr>
+                            
+                            <tr>
+                                <td></td>
+                                <td>Vendor communication</td>
+                                <td><li>Communicate with multiple vendors across different categories</li>
+                                    <li>2-way communication tracking</li>
+                                    <li>Automated communication based on custom rules</li>
+                                    <li>Provide &amp; customise custom templates across different situations</li>
+                                    <li>Send reminders via SMS also </li></td>
+                            </tr>
+                            <tr>
+                                <td><b>Business Intelligence Reporting</b></td>
+                                <td>Leadership Dashboard</td>
+                                <td><ul>MIS Reports providing insights on:
+                                    <li>ITC Blocked - Summary and vendor wise details</li>
+                                    <li>ITC ageing</li>
+                                    <li>Vendor Risk Assessment</li>
+                                    <li>Vendor payment status</li>
+                                    <li>ITC claim tracking</li></ul>
+                                </td>
+                            </tr>
+                        </table>
+            <br/>
+<apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,323 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,PaymentSchedule_Controller" showheader="false" cache="true"  applyBodyTag="false" applyHtmlTag="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                } 
+                }        
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                margin-bottom:70px;
+                margin-top:10px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 10px;
+                font-weight: bold;
+                }
+                .headding-box{
+                font-size : 10px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                font-size : 6px;
+                width: 100%;
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-size : 6px;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-after:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                font-size : 10px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                
+            </style>
+            
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;padding:2px">
+            <b>PAYMENT SCHEDULE</b> <br/><br/>
+            
+            <table class="info-table" >
+                <tr>
+                    <th style="width:12%">Invoice Date</th>   
+                    <th style="width:42%">Services</th>
+                    
+                    <th style="width:15%">Fee for the term (SAR)</th>
+                    <th style="width:16%">Applicable fees as per payment terms<br/></th>
+                    <th style="width:15%">Invoice Amount (SAR)<br/></th>
+                    
+                </tr>
+                
+                <apex:repeat value="{!listOfARRProdsWrapper}" var="eachARR">
+                    <!-- Invoice Date 1 --> 
+                    
+                    <apex:outputText rendered="{!IF(eachARR.invoiceDate1 != NULL, TRUE, FALSE)}">
+                        <tr>
+                            <apex:outputText rendered="{!IF(eachARR.firstInvoiceDate == NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.invoiceDate1}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.firstInvoiceDate != NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.firstInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                <td>{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            
+                            <td>{!eachARR.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.calcARRInvoiceAmt}"/></apex:outputText></td>
+                            
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    <!-- Invoice Date 2 -->
+                    <apex:outputText rendered="{!IF(eachARR.invoiceDate2 != NULL , TRUE, FALSE)}">
+                        <tr>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.secondInvoiceDate == NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.invoiceDate2}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.secondInvoiceDate != NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.secondInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                <td>{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            
+                            <td>{!eachARR.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.calcARRInvoiceAmt}"/></apex:outputText></td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    <!-- Invoice Date 3 -->
+                    <apex:outputText rendered="{!IF(eachARR.invoiceDate3 != NULL, TRUE, FALSE)}">
+                        <tr>
+                            <apex:outputText rendered="{!IF(eachARR.thirdInvoiceDate == NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.invoiceDate3}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.thirdInvoiceDate != NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.thirdInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            
+                            
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                <td>{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            
+                            <td>{!eachARR.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.calcARRInvoiceAmt}"/></apex:outputText></td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    <!-- Invoice Date 4 -->
+                    <apex:outputText rendered="{!IF(eachARR.invoiceDate4 != NULL , TRUE, FALSE)}">
+                        <tr>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.fourthInvoiceDate == NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.invoiceDate4}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF(eachARR.fourthInvoiceDate != NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachARR.fourthInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachARR.productCode]}" target="_blank">{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachARR.productCode] == 'NULL'}">
+                                <td>{!eachARR.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachARR.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachARR.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.feeForTheTerm}"/></apex:outputText></td>
+                            
+                            <td>{!eachARR.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachARR.calcARRInvoiceAmt}"/></apex:outputText></td>
+                        </tr>
+                        
+                        
+                    </apex:outputText>
+                    
+                    
+                </apex:repeat>
+                <apex:repeat value="{!listOfOTPProdsWrapper}" var="eachOTP">
+                    
+                    <apex:outputText rendered="{!IF(eachOTP.invoiceDate1 != NULL, TRUE, FALSE)}">
+                        <tr>
+                             <apex:outputText rendered="{!IF(eachOTP.firstInvoiceDate == NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachOTP.invoiceDate1}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                             <apex:outputText rendered="{!IF(eachOTP.firstInvoiceDate != NULL, TRUE, FALSE)}"> 
+                            		<td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachOTP.firstInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!prodCodeURLMap[eachOTP.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachOTP.productCode]}" target="_blank">{!eachOTP.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachOTP.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachOTP.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachOTP.productCode] == 'NULL'}">
+                                <td>{!eachOTP.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachOTP.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachOTP.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachOTP.fee}"/></apex:outputText></td>
+                            
+                            <td>{!eachOTP.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachOTP.calcOTPInvoiceAmt}"/></apex:outputText></td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    <apex:outputText rendered="{!IF(eachOTP.invoiceDate2 != NULL, TRUE, FALSE)}">
+                        <tr>
+                            <apex:outputText rendered="{!IF(eachOTP.secondInvoiceDate == NULL, TRUE, FALSE)}"> 
+                                <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachOTP.invoiceDate2}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(eachOTP.secondInvoiceDate != NULL, TRUE, FALSE)}"> 
+                                <td><apex:outputText value="{0,date,dd-MMM-yyyy}" ><apex:param value="{!eachOTP.secondInvoiceDate}"/></apex:outputText></td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!prodCodeURLMap[eachOTP.productCode] != 'NULL' }">
+                                <td><a href="{!prodCodeURLMap[eachOTP.productCode]}" target="_blank">{!eachOTP.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachOTP.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachOTP.Description}
+                                    </apex:outputText></a></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!prodCodeURLMap[eachOTP.productCode] == 'NULL'}">
+                                <td>{!eachOTP.orderFormProductName}
+                                    <apex:outputText rendered="{!IF(eachOTP.Description != NULL, TRUE, FALSE)}">
+                                        - {!eachOTP.Description}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachOTP.fee}"/></apex:outputText></td>
+                            
+                            <td>{!eachOTP.applicableFee}%</td>
+                            
+                            <td><apex:outputText value="{0,number, ###,##0 }"><apex:param value="{!eachOTP.calcOTPInvoiceAmt}"/></apex:outputText></td>
+                        </tr>
+                    </apex:outputText>
+                    
+                    
+                    
+                </apex:repeat>
+                
+                <tr><td colspan="4" style="text-align: right">TOTAL</td>
+                    <td>SAR <apex:outputText value="{0, number, ###,###,###,##0}"><apex:param value="{!totalInvoiceAmount}"/></apex:outputText></td></tr>                
+                
+                
+            </table>
+            <br/>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type_for_Account__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Follow Up Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Subject_Only_Account__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EL to be shared/follow up</fullName>
+                <default>false</default>
+                <label>EL to be shared/follow up</label>
+            </value>
+            <value>
+                <fullName>Pricing Negotiation</fullName>
+                <default>false</default>
+                <label>Pricing Negotiation</label>
+            </value>
+            <value>
+                <fullName>Meeting scheduled</fullName>
+                <default>false</default>
+                <label>Meeting scheduled</label>
+            </value>
+            <value>
+                <fullName>Next follow up date</fullName>
+                <default>false</default>
+                <label>Next follow up date</label>
+            </value>
+            <value>
+                <fullName>Renewal Closed</fullName>
+                <default>false</default>
+                <label>Renewal Closed</label>
+            </value>
+            <value>
+                <fullName>Follow up on usage</fullName>
+                <default>false</default>
+                <label>Follow up on usage</label>
+            </value>
+            <value>
+                <fullName>Product issue/Feature Request</fullName>
+                <default>false</default>
+                <label>Product issue/Feature Request</label>
+            </value>
+            <value>
+                <fullName>OB completed</fullName>
+                <default>false</default>
+                <label>OB completed</label>
+            </value>
+            <value>
+                <fullName>Expected Usage start</fullName>
+                <default>false</default>
+                <label>Expected Usage start</label>
+            </value>
+            <value>
+                <fullName>Expected integration completion</fullName>
+                <default>false</default>
+                <label>Expected integration completion</label>
+            </value>
+            <value>
+                <fullName>Activated</fullName>
+                <default>false</default>
+                <label>Activated</label>
+            </value>
+            <value>
+                <fullName>Training Done</fullName>
+                <default>false</default>
+                <label>Training Done</label>
+            </value>
+            <value>
+                <fullName>Expected payment on</fullName>
+                <default>false</default>
+                <label>Expected payment on</label>
+            </value>
+            <value>
+                <fullName>Invoice issue</fullName>
+                <default>false</default>
+                <label>Invoice issue</label>
+            </value>
+            <value>
+                <fullName>Demo scheduled</fullName>
+                <default>false</default>
+                <label>Demo scheduled</label>
+            </value>
+            <value>
+                <fullName>Deal Won</fullName>
+                <default>false</default>
+                <label>Deal Won</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Upsell/CrossSell</controllingFieldValue>
+            <valueName>EL to be shared/follow up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Upsell/CrossSell</controllingFieldValue>
+            <valueName>Pricing Negotiation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Meeting scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Cash collection</controllingFieldValue>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Upsell/CrossSell</controllingFieldValue>
+            <valueName>Next follow up date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <valueName>Renewal Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Health Check / QBR</controllingFieldValue>
+            <controllingFieldValue>Renewal + Cross-sell</controllingFieldValue>
+            <controllingFieldValue>Usage/Churn risk</controllingFieldValue>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <controllingFieldValue>Activation pending</controllingFieldValue>
+            <controllingFieldValue>Renewal</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Product issue/Feature Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Usage/Churn risk</controllingFieldValue>
+            <valueName>Follow up on usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onboarding</controllingFieldValue>
+            <valueName>OB completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activation pending</controllingFieldValue>
+            <valueName>Expected Usage start</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activation pending</controllingFieldValue>
+            <valueName>Expected integration completion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Activation pending</controllingFieldValue>
+            <valueName>Activated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Training Done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cash collection</controllingFieldValue>
+            <valueName>Expected payment on</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cash collection</controllingFieldValue>
+            <valueName>Invoice issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Upsell/CrossSell</controllingFieldValue>
+            <valueName>Demo scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Winback</controllingFieldValue>
+            <controllingFieldValue>Upsell/CrossSell</controllingFieldValue>
+            <valueName>Deal Won</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

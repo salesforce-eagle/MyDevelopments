@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>universe__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>AND( Billing_Type__c=&apos;ARR&apos;, PurchaseDate&lt;=Today(),OR(IsPickval(Status,&apos;&apos;),IsPickval(Status,&apos;Active&apos;),IsPickval(Status,&apos;At Risk&apos;),IsPickval(Status,&apos;Inactive&apos;),IsPickval(Status,&apos;Registered&apos;),IsPickval(Status,&apos;Upcoming Renewal&apos;),IsPickval(Status,&apos;Upsold&apos;),IsPickval(Status,&apos;Valid&apos;),IsPickval(Status,&apos;Future&apos;),IsPickval(Status,&apos;Valid &amp; Renewed&apos;)),Account.ParentId=&apos;&apos;, UsageEndDate &gt;=Today(), Asset_success_flag__c &lt;&gt;&apos;Managed Services&apos;)</formula>
+    <label>universe</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

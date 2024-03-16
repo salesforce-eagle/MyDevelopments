@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default</fullName>
+    <active>true</active>
+    <label>Default</label>
+    <picklistValues>
+        <picklist>Client_ERP__c</picklist>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In house%2FCustom ERP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infor LN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infor Sun Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Edwards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365 Business Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365 Finance and Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics AX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics NAV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle E-Business Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle NetSuite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Opera PMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle PeopleSoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POS systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QAD Java</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP B1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP ECC %2F S4 Hana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tally ERP 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tally Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TallyPrime</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ID_Project_Stage__c</picklist>
+        <values>
+            <fullName>Access to system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOW and Prerequisite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Owner__c</picklist>
+        <values>
+            <fullName>CT CSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Engg Dev</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Integration SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT KAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Sales EC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Sales LC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Sales Start Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT Sales VLC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Type__c</picklist>
+        <values>
+            <fullName>CT - CSM Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Integration Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Kick-off Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Legal Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Onboarding Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Product Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - SI Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - SI PO Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - SI Payment Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Sales Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Access Expiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - ERP Not Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Future Start Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Kick-off Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Prioritizing Another Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Requirement Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Requirements Confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Turnover Less Than Threshold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - UAT Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Unresponsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - User Provisioning</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Developer__c</picklist>
+        <values>
+            <fullName>Abhay Singh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Akhilesh Tiwari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anand Udhwani</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ankala Balaraju</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anmol Singh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashwin Ayyappan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avinash Mishra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banesh Dummani</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gottapu Rajesh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guguloth Lachhiram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hariharan Ramasamy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hunny Meghnani</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indra Sena</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kamadani Vamsi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kanagala Shiva Prasad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kothapalli Bhargavi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manish Kumar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mayank Mani</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mohan Ganjalagunte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mukul Trivedi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nazneen Nidha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ninad Patil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oindrila Biswas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pintu Kumar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preksha Singhal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ram Kumar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ramesh Kothapally</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roshni Garg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sachin Mehndiratta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sakthidoss Gajendran</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sanjeev Kumar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saravanan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satyasri Sista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seli Pradhan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shraddha Dadhich</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sivaranjani Jayarajan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soumita Ghosh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sowmya Bandaru</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sridhar Lakshmanan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subrata Sahu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sushmita Pai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vijendra Singh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viknesh Sa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vikram Puri</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vishal Shah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yokesh K B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mode_of_Integration__c</picklist>
+        <values>
+            <fullName>FTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>File upload API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JSON API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Upload</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>ASP%2FGSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clear Capture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clear Invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EINV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EWB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GSTIN Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Discounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KSA EINV I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KSA_EINV_II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Max ITC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TDS 206 AB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Phases__c</picklist>
+        <values>
+            <fullName>Developer Confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERP %26 Network access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Go-Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation %26 Internal testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requirement gathering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Stage__c</picklist>
+        <values>
+            <fullName>Awaiting Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SI_Payment_Tracker__c</picklist>
+        <values>
+            <fullName>50%25 payment done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final payment done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO Release</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scope_Category__c</picklist>
+        <values>
+            <fullName>AMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-hold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Turnover_In_Cr__c</picklist>
+        <values>
+            <fullName>%3C 50 Lakhs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C25Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - 5 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 - 20 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1001-2500 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>101-200 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 - 25 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>201-500 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25-50Cr</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2501-5000 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - 10 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 Lakhs - 1Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5001%2B Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501-1000 Cr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>51-100 Cr</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

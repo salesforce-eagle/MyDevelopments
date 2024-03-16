@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+                <label>Lost to Competitor</label>
+            </value>
+            <value>
+                <fullName>No Budget / Lost Funding</fullName>
+                <default>false</default>
+                <label>No Budget / Lost Funding</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Low Paying Capacity/Less turnover</fullName>
+                <default>false</default>
+                <label>Low Paying Capacity/Less turnover</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Issues From Top Management</fullName>
+                <default>false</default>
+                <label>Issues From Top Management</label>
+            </value>
+            <value>
+                <fullName>Old Opportunity/No Context/Opportunity Cleanup</fullName>
+                <default>false</default>
+                <label>Old Opportunity/No Context/Opportunity Cleanup</label>
+            </value>
+            <value>
+                <fullName>Wants to continue with Local consultant/Consulting Firms</fullName>
+                <default>false</default>
+                <label>Wants to continue with Local consultant/Consulting Firms</label>
+            </value>
+            <value>
+                <fullName>Wants to Continue with the Manual process</fullName>
+                <default>false</default>
+                <label>Wants to Continue with the Manual process</label>
+            </value>
+            <value>
+                <fullName>Will need more time</fullName>
+                <default>false</default>
+                <label>Will need more time</label>
+            </value>
+            <value>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <label>Not interested</label>
+            </value>
+            <value>
+                <fullName>POC Not responsive/Out of Touch/Left the Org</fullName>
+                <default>false</default>
+                <label>POC Not responsive/Out of Touch/Left the Org</label>
+            </value>
+            <value>
+                <fullName>Closed with another entity/Opportunity</fullName>
+                <default>false</default>
+                <label>Closed with another entity/Opportunity</label>
+            </value>
+            <value>
+                <fullName>Feature not available</fullName>
+                <default>false</default>
+                <label>Feature not available</label>
+            </value>
+            <value>
+                <fullName>Low Compliance Pain</fullName>
+                <default>false</default>
+                <label>Low Compliance Pain</label>
+            </value>
+            <value>
+                <fullName>CA involved</fullName>
+                <default>false</default>
+                <label>CA involved</label>
+            </value>
+            <value>
+                <fullName>plan dropped</fullName>
+                <default>false</default>
+                <label>plan dropped</label>
+            </value>
+            <value>
+                <fullName>Customer not responding</fullName>
+                <default>false</default>
+                <label>Customer not responding</label>
+            </value>
+            <value>
+                <fullName>Competition</fullName>
+                <default>false</default>
+                <label>Competition</label>
+            </value>
+            <value>
+                <fullName>order won in another id</fullName>
+                <default>false</default>
+                <label>order won in another id</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

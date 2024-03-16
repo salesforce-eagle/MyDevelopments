@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_go_live_date_Current_status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter the estimated go-live date according to the current status. This will keep changing if there is a delay or change in status.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the estimated go-live date according to the current status. This will keep changing if there is a delay or change in status.</inlineHelpText>
+    <label>Estimated Go Live Date (Rev)</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+  <types>
+        <members>Account.Enable_Max_Auto_Renewal__c</members>
+        <members>Account.Enable_TDS_Auto_Renewal__c</members>
+        <name>CustomField</name>
+    </types>
+<types>
+      <members>Auto_Renewal_Product_Enablement</members>
+      <name>CustomLabel</name>
+    </types>
+<types>
+      <members>AccountTriggerHandler</members>
+      <members>CTX_FetchUsageDetails</members>
+      <members>CTX_GetRenewalParameterAndPrice</members>
+      <members>CTX_Miscellaneous</members>
+      <name>ApexClass</name>
+    </types>
+    
+    <version>58.0</version>
+</Package>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Asset.pt_Success_Flag__c</members>
+        <members>Asset.pt_Activation_date__c</members>
+        <members>Asset.pt_Success_Date__c</members>
+        <members>Asset.pt_Last_Usage_Date__c</members>
+        <members>Asset.pt_Usage_Based_Unactivation_Reason__c</members>
+        <members>Asset.pt_Usage_Based_Unsuccessful_Reason__c</members>
+        <members>Asset.pt_last_metabase_sync_time__c</members>
+        <members>Asset.pt_E_Invoice_Usage_Churn__c</members>
+        <members>Asset.pt_E_Invoice_EWB_Usage_Churn__c</members>
+        <members>Asset.pt_ASP_GSP_Usage_Churn__c</members>
+        <members>Asset.pt_Integration_Churn__c</members>
+        <members>Asset.pt_Renewal_Churn__c</members>
+        <members>Asset.pt_EWB_Usage_Churn__c</members>
+        <members>Asset.pt_Onboarding_Churn__c</members>
+        <members>Asset.pt_Remarks__c</members>
+        <members>Asset.pt_activation_flag__c</members>
+
+        <name>CustomField</name>
+        </types>
+    <version>52.0</version>
+</Package>

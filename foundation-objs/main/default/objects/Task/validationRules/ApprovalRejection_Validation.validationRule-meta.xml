@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ApprovalRejection_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>If((ISPICKVAL(Status,&apos;Approved&apos;) || ISPICKVAL(Status,&apos;Rejected&apos;)) &amp;&amp; (ISBLANK( Approval_Rejected_Comment__c )), true, false)</errorConditionFormula>
+    <errorDisplayField>Approval_Rejected_Comment__c</errorDisplayField>
+    <errorMessage>Please specify Approval/Rejected comment!</errorMessage>
+</ValidationRule>

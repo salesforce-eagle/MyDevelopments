@@ -1,0 +1,121 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_ASPGSPAPI_CT_InTally_ERP_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services forASP/GSP Integration - ASP API- </u></b>
+
+            <p class="test">
+              <b> A. Feature List of Cleartax ASP GSP GST Software is as below </b>
+            </p>
+            <table class="info-table"> 
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                    <td><b>Compliance</b></td>
+                    <td>GSTR Preparation</td>
+                    <td>* Support and preparation of  GSTR Returns.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">Advanced filing features</td> 
+                    <td style="border-collapse: collapse;">* Handling stock transfers, reverse charge scenarios, b2b vs. b2c rollups.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td  style="border-collapse: collapse;">Reconciliation: Bucketing - Match, Mismatch.</td>
+                    <td style="border-collapse: collapse;"><!--style="white-space:pre" --> 
+                        * Reconcile ERP Purchase Register against Vendor-filed GSTR1. 
+                        Bucket into matches, mismatches with ability to auto assign to 
+                        shared.<br/>
+                        * Bulk actions to auto accept, reject, modify.<br/>
+                        * Filters by Vendors, GSTIN, branch/location, etc.<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">User Training</td>
+                    <td style="border-collapse: collapse;">* Online training to finance team members on how to operate the software.</td>
+                </tr>
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>* Standard MIS reports GSTIN-wise, tax ledgers.</td>
+                </tr>
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>* Client-specific template can be field mapped to Licensor via field mapper.</td>
+                </tr>
+                <tr>
+                    <td><b>Integrated Invoicing system</b></td>
+                    <td>GST compliant invoicing system</td>
+                    <td>* Ability to generate, print GST compliant invoices from the compliance solution. </td>
+                </tr>
+            </table>
+
+            <p> The deliverables shall encompass designing and development of the following components. </p>
+
+<b> B. Features of Tally Connector Desktop Application for GST :  </b>
+<p>GST Tally connector part of ClearTax Desktop app connects to the Tally software present in the user machine and imports the Sales and Purchase documents to ClearTax. 
+
+For GST tally connector integration for Enterprises, there are few system requirements and prerequisites to be done prior to sale commitments and integration 
+</p>
+Desktop app
+
+ <ol style="list-style-type: lower-roman;">
+  <li>Permissions to install Desktop app on customer premise</li>
+  <li>OS Supported: Windows 7, 10    </li>
+<li>RAM 4GB  and above </li>
+<li>Direct internet connectivity to be available (means, internet connectivity via proxy server is not supported yet)</li>
+<li>Whitelist of Desktop app in antivirus softwares (incase needed)</li>
+</ol>
+Tally requirements
+<ol style="list-style-type: lower-roman;">
+<li>Tally ERP 9 and Prime </li>
+<li>Volume of sales and purchase document supported as follows:  
+~ 10K at FY level  shall be supported currently. </li>
+    
+<li>Accounting entries done in Tally should be in the standard convention.  All the documents (sales/purchase/ expense vouchers, journals, ledgers etc) that are marked as "GST applicable" in Tally software get imported. Note: Accounting entries done in non-standard methods will result in mismatch in data.</li>
+<li>Multiple GSTINs present under Single company in Tally are currently not supported (i.e. Customized Tally software is not supported) </li>
+<li>If Remote desktop software is used for accessing tally, there might be a need to check the feasibility for connecting to Tally software from the client machine. </li>
+  
+</ol>
+
+<b> C. Scope Limitations and Customer Dependencies </b>
+
+    <ol type="i">
+
+<li>The scope of installation and configuration. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.</li>
+<li>Infra: Cleartax will  commence the project once infra is set up by the customer’s infra team and the customer provides necessary access to Cleartax and its system integrator . This activity should be done by the Customer within 5 working days from project kick-off date </li>
+<li>Network: Cleartax does not provide end to end service on network set up. </li>
+<li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+<li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees to additionally pay for such remote access. </li>
+<li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.</li>
+<li>No Tally related customizations to be provided by Cleartax.</li>
+
+   
+    </ol>         
+            
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

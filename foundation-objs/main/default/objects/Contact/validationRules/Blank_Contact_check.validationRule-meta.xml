@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blank_Contact_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(MobilePhone) &amp;&amp; ISBLANK(Phone) &amp;&amp; ISBLANK(Email) &amp;&amp; ISBLANK(Email_ID_Personal__c)</errorConditionFormula>
+    <errorMessage>Please enter one of the following : Email ID (Personal) or Email or Primary Mobile or Alternate Mobile</errorMessage>
+</ValidationRule>

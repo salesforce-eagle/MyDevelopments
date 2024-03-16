@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!-- 
+    Prerequisite - Make sure objs path is true in package.xml file
+        Format: 
+                ObjectName-LayoutName
+    
+    <types>
+        <members>Account-Net New - ID</members>
+        <members>Lead-Enterprise</members>
+        <members>Lead-International Lead</members>
+        <members>Opportunity-Net New</members>
+        <members>Opportunity-Net New - Id</members>
+        <members>Opportunity-Renewal</members>
+
+
+        <name>Layout</name>
+    </types>-->
+
+    <types>
+        <members>*</members>
+        <name>WorkflowRule</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

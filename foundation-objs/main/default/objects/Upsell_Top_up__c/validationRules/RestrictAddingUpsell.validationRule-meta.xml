@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictAddingUpsell</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Asset__r.Product_Name__c = &apos;GST Advantage with CSM&apos; ||
+Asset__r.Product_Name__c = &apos;GST Advantage without CSM&apos;) &amp;&amp;
+((Asset__r.License_no_of_pans__c + No_of_PANs__c) &gt; 2 ||  (Asset__r.License_no_of_gstins__c + No_of_GSTIN__c) &gt;10 ||  Asset__r.Total_B2B_PR_B2C_invoice__c+( No_of_B2B_Sales_invoice__c + No_of_B2C_Sales_invoice__c + No_of_purchase_invoice__c ) &gt; 30000)</errorConditionFormula>
+    <errorMessage>GST Advantage is only applicable for PAN&lt;=2, GSTINs&lt;=10, Total Invoices&lt;=30K. 
+Please upgrade to GST Premium or Ultimate.</errorMessage>
+</ValidationRule>

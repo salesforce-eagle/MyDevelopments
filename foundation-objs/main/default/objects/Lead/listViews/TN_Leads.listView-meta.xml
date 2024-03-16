@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TN_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>State__c</field>
+        <operation>equals</operation>
+        <value>Tamil Nadu</value>
+    </filters>
+    <filters>
+        <field>Turnover__c</field>
+        <operation>equals</operation>
+        <value>501-1000 Cr,1001-2500 Cr,2501-5000 Cr,5001+ Cr</value>
+    </filters>
+    <label>TN Leads</label>
+    <sharedTo>
+        <roleAndSubordinates>City_Sales_Rep_TN</roleAndSubordinates>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-hide">{recordId}</div>
+    <div style="position: relative; min-height:400px" class="slds-scollable">
+        <h2>Kindly resolve all the errors and try again.</h2>
+        <template if:true={isError}>
+            <template for:each={errors} for:item="error">
+                <div class="slds-var-m-around_medium" key={error.Number}>
+                    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                        <span class="slds-assistive-text">error</span>
+                        <span class="slds-icon_container slds-icon-utility-error slds-m-right_xx-small">
+                            <lightning-icon icon-name="utility:error" size="xx-small" class="icon-color-close"></lightning-icon>
+                        </span>
+                        <div>
+                            {error.Error_Type__c} request Failed due to following reasons. Please fix the errors and ensure the data sync.</br>
+                            {error.Error_Message__c}
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-grid">
+                <div class="slds-align_absolute-center">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

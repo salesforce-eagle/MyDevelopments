@@ -1,0 +1,127 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Invoice_topay_controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Invoice To Pay - </u></b>
+            
+          
+<p> <b>Cleartax responsibility:  </b> </p>
+<p> <b>Functionality to be provided:  </b> </p>
+<table class="info-table">
+                <tr ><th>Module</th><th>Feature</th><th>Description</th></tr>
+                
+                <tr><td><b>Clear Capture</b></td><td>QR Code scanner</td><td><ol style="list-style-type: decimal;">
+                <li> Validate whether the incoming e-invoices are digitally signed by NIC</li>
+				<li>Highlight if an invoice has not been sent by a mandated vendor (e-invoice)</li>
+				<li>Capture QR code details, EWB data and GSTR-2A data digitally, tool to cross check all the invoice details</li>
+                
+            </ol></td></tr>
+               
+			 <tr><td><b></b></td><td>Text scanner</td><td><ol style="list-style-type: decimal;">
+                <li>Take picture/ scan of paper E/invoices, PDF/Excel E/invoices, e-invoice json files and turn them into digital invoices</li>
+				<li>Auto extract invoice fields, review, approve and push to ERP (parse invoices from Clear vendor portal / email)
+</li>
+		<tr><td><b>Clear Vendor</b></td><td>Compliance health check</td><td><ol style="list-style-type: decimal;">
+                <li>Verification for new suppliers(single/bulk)<ol style="list-style-type: lower-latin;">
+                <li>GSTIN status; Check 59(6) compliance on whether vendor is blocked for filing GSTR-1
+</li>
+				<li>206 AB and 206 CCA status compliance/PAN linking status
+E-invoicing compliance, Bank account, MSME, Aadhar status
+</li>
+				
+                
+            </ol>
+</li>
+				<li>Vendor master to be periodically updated and pushed to ERP with e-compliance details of suppliers
+</li>
+				
+                
+            </ol></td></tr>
+               
+                
+            </ol></td></tr>   
+			
+			 <tr><td><b></b></td><td>Onboarding</td><td> <ol style="list-style-type: decimal;">
+                <li>Suppliers to login with individual accounts</li><li>Suppliers can scan/upload E-invoices/invoices either directly or corresponding to PO shared
+</li><li> Supplier can create invoices/E-invoices either directly or corresponding to the PO shared (digitally signed)
+</li>
+                   </ol>
+ </td></tr>
+                <tr><td><b></b></td><td>2-way communication</td><td><ol style="list-style-type: decimal;">
+                <li>AP/Finance can send invoice status/notifications to suppliers - Rejected, On Hold, Approved, Part payment
+</li>
+				<li>AP/Finance can chat with supplier teams to notify of further actions/ask for documents
+</li>
+				<li>AP/FInance/IDT teams can send bulk communication on compliance status of supplier</li>
+				<li> Provide and customise custom templates across different situations
+</li>
+				<li>Send reminders via SMS also
+</li>
+                   </ol></td></tr>
+				   
+                <tr><td><b></b></td><td>One-way document exchange</td><td>Custom email address/inbox (either at client’s domain or Clear’s) to receive the scanned copies of the invoices (At Enterprise end)
+
+</td></tr>
+                <tr><td><b></b></td><td>2-way document exchange</td><td>Enterprises can share the POs/CN/DN with vendors, track PO status real-time, vendors can mark and upload the invoice corresponding to a PO/other document</td></tr>
+                <tr><td><b>Invoice Management</b></td><td>Validation and matching</td><td>Match incoming invoices with PO/GRN/SRN or any other customizable document and push the entry to ERP (Matching rules can be configured basis user requirement)</td></tr>
+                <tr><td><b></b></td><td>Configurable approval workflows</td><td>Smart workflows to approve digitised invoices as per desired user access configuration (Rules can be set according to invoice amount, organizational hierarchy etc.)</td></tr>
+                <tr><td><b></b></td><td>Personalized Dashboards
+
+</td><td>Persona based dashboards/reporting available to AP/Finance/Treasury/Procurement/CFO user<ol style="list-style-type: decimal;">
+                <li>MIS Reports providing insights on:Pending invoices/POs - Vendor/Invoice wise issues
+</li>
+				<li>Vendor compliance status
+</li>
+				<li>Vendor Risk Assessment
+</li>
+				<li> Invoice compliance status
+</li>
+				<li>Recommended actionables on invoices
+</li>
+                   </ol></td></tr>
+               
+            </table>
+			
+<p> <b>Customer responsibility:  </b> </p>			
+            
+			
+			<ol style="list-style-type: decimal;">
+                <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.
+
+</li>
+				   <li>Customers shall obtain and maintain all licenses, registrations, approvals, consents, permissions, sanctions, etc. under all applicable laws to implement any module/s of the I2P product.
+</li>
+				<li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax.
+</li>
+				<li>The customer shall provide appropriate documentation about the system configuration with the Cleartax team for study and understanding</li>
+             <li>Appropriate and timely system access to the Cleartax team shall be provided at periodic intervals or based on the milestones
+</li>
+             <li>n submission of the system to the customer team for Approval/Testing, in the interest of timely completion of the project, it’s expected that such Approvals/Testing is ideally completed at the earliest by the customer team
+</li>
+             
+
+                
+            </ol>
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

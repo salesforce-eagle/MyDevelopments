@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_JIRA</fullName>
+    <columns>MasterLabel</columns>
+    <columns>Team_Responsible__c</columns>
+    <columns>Project_Code__c</columns>
+    <columns>Assignee__c</columns>
+    <columns>Assignee_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>SF &lt;&gt; JIRA</label>
+</ListView>

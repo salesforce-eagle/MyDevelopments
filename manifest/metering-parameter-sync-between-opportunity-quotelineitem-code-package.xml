@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <!--<members>CTX_Opportunity_QLI_ParameterSync</members>-->
+        <!--<members>CTX_CreateContactUsingProductEmail</members>
+        <members>CTX_GSTINAPICalloutManually</members>
+        <members>CTX_FetchUsageDetails</members>-->
+        <members>CTX_SuspendLicenseOnPaymentFail</members>
+        
+        <name>ApexClass</name>
+    </types>
+    
+    <!--<types>
+        <members>opportunityParameterSyncToQLI</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>-->
+
+
+    <version>58.0</version>
+</Package>

@@ -1,0 +1,321 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOW_MaxItc_Integration_Series_Y_Cont" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+                color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS1==1}">
+            <div style="page-break-after: avoid;font-size : 20px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;font-weight: bold;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            <br/>
+            </apex:panelGroup>
+            
+            <div style="padding-left: 20px;">
+                
+                <h3 style="text-align:center;">
+                    <b>Scope of Services for Max ITC Integration Series Y</b>
+                </h3>
+                <b><u> Reconciliation Module</u></b>
+                
+                <ul>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Extract PR invoices based on the customer’s existing purchase register (if available) 
+                            or based on agreed logic for the new purchase register as per Cleartax PR Template. 
+                            Any addition to the template needs to be discussed and agreed upon.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Ingestion of Purchase Registers is designed to be run either on a scheduled basis or 
+                            manually using the Dashboard screen. In order to facilitate that, the program uses 
+                            ‘Delta Extraction Logic’ to pick up the PRs from ERP.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Transformations such as removal of special characters in invoice number, mapping to certain 
+                            fields to government acceptable values (eg. state code)
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to display purchase register in ERP before upload to ClearTax.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to perform error correction of purchase invoices is available in the ClearTax MaxITC portal.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to send the email with PR ingestion errors to configured email id.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to ‘Trigger Reconciliation’ from ERP.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to ‘Retrieve Results of Reconciliation’ and store it in custom table.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to ‘View Document Level Results’. It will have a set of standard fields.
+                            Any addition to these fields, needs to be discussed and agreed upon.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Option to ‘View Payment Block Status’. It will have a set of standard fields. 
+                            Any addition to these fields needs to be discussed and agreed upon.
+                        </span> 
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            MaxITC Dashboard
+                            <ul>
+                                <li>    
+                                    <span style="padding-left: 0px;">   
+                                        Provides an option to Trigger the reconciliation
+                                    </span> 
+                                </li>
+                                <li>    
+                                    <span style="padding-left: 0px;">   
+                                        Provides an option to View the PR
+                                    </span> 
+                                </li>
+                                <li>    
+                                    <span style="padding-left: 0px;">   
+                                        Provides an option to View the Results
+                                        <ul>
+                                            <li>    
+                                                <span style="padding-left: 0px;">   
+                                                    Summary Level Reconciliation Results
+                                                </span> 
+                                            </li>
+                                            <li>    
+                                                <span style="padding-left: 0px;">   
+                                                    Document Level Reconciliation Results
+                                                </span> 
+                                            </li>
+                                            <li>    
+                                                <span style="padding-left: 0px;">   
+                                                    Payment Block Status Results
+                                                </span> 
+                                            </li>
+                                        </ul>
+                                    </span> 
+                                </li>
+                                <li>    
+                                    <span style="padding-left: 0px;">   
+                                        Provides an option to test network connectivity
+                                    </span> 
+                                </li>
+                            </ul>
+                        </span>
+                    </li>
+                    <li>    
+                        <span style="padding-left: 0px;">   
+                            Dashboard Screen
+                            <p>
+                                <img src="{!$Resource.SOW_Dashboard_Screen}" alt="ClearTax Logo" width="310px;"/>
+                            </p>
+                            
+                            <b>Account Settings Screen</b>
+                            <p>
+                                <img src="{!$Resource.SOW_Account_Setting_Screen}" alt="SOW_Account_Setting_Screen" width="510px;"/>
+                            </p>
+                            
+                            Account settings screen shows the
+                            <ol>
+                                <li>
+                                    Authentication Token used by the APIs to authenticate the connection
+                                </li>
+                                <li>
+                                    Admin Email
+                                </li>
+                                <li>
+                                    Admin Phone Number
+                                </li>
+                                <li>
+                                    Payment Block Option: ‘Hold-GST’ or ‘Full-Invoice’
+                                </li>
+                            </ol>
+                            <br/>
+                            <b>Run Reconciliation Screen</b>
+                            <p>
+                                <img src="{!$Resource.SOW_Run_Reconciliation_Screen}" alt="ClearTax Logo" width="510px;"/>
+                            </p>
+                            
+                            In the Run Reconciliation screen, you have an option to
+                            <ol>
+                                <li>
+                                    Select the Company to
+                                    <ul>
+                                        <li>
+                                            View the Purchase Register Report
+                                        </li>
+                                        <li>
+                                            Trigger the Reconciliation
+                                        </li>
+                                    </ul>
+                                    
+                                </li>
+                            </ol>
+                            <p>
+                                Purchase Register Report includes all the fields as per the Cleartax Template.
+                            </p>
+                            <br/>
+                            <b>Reconciliation Screen</b>
+                            <p>
+                                <img src="{!$Resource.SOW_Reconciliation_Screen}" alt="ClearTax Logo" width="510px;"/>
+                            </p>
+                            
+                            View Reconciliation Result screen, you have an option to
+                            <ol>
+                                <li>
+                                    Select the Company to
+                                    <ul>
+                                        <li>
+                                            Display Reconciliation Summary<br/>
+                                            <img src="{!$Resource.SOW_Display_Reconciliation_Summary}" alt="ClearTax Logo" width="510px;"/>
+                                        </li>
+                                        <li>
+                                            View Document Level Results<br/>
+                                            <img src="{!$Resource.SOW_Document_Level_Results}" alt="ClearTax Logo" width="510px;"/>
+                                        </li>
+                                        <li>
+                                            View Payment Block Status<br/>
+                                            <img src="{!$Resource.SOW_Payment_Block_Status}" alt="ClearTax Logo" width="510px;"/>
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                </li>
+                            </ol>
+                            <br/><br/>
+                            <b>Test Connectivity</b>
+                            <p>
+                                Provides an option to test the network connectivity between ERP and Cleartax Portal for the 
+                                MaxITC APIs
+                            </p>
+                            
+                            <img src="{!$Resource.SOW_Test_Connectivity}" alt="ClearTax Logo" width="510px;"/>
+                            
+                        </span> 
+                    </li>
+                </ul>
+                <br/>
+                
+                    <b>Deliverables:</b><br/>
+                    <ol>
+                        <li>
+                            Technical Specification Document
+                        </li>
+                        <li>
+                            FUT Test Cases Document
+                        </li>
+                        <li>
+                            UAT user guide
+                        </li>
+                        <li>
+                            Cutover Checklist for Golive
+                        </li>
+                    </ol>
+                    
+                
+                <br/>
+                <b><u>Not Part of Standard Scope</u></b>
+                <ul>
+                    <li>
+                        Identification of ineligible, RCM, Bill of supply or capital goods using a custom logic ie,
+                        not using standard ERP tax codes.
+                    </li>
+                    <li>
+                        Email for invoices with validation errors to be sent to multiple emails based on branch / GSTIN
+                    </li>
+                    <li>
+                        Access control to view purchase invoices (display PR, PR validation errors) at company code level
+                    </li>
+                    <li>
+                        Access control to view purchase invoices (display PR, PR validation errors) at GSTIN level
+                    </li>
+                    <li>
+                        ERP utility to view purchase invoices with Ingestion errors.
+                    </li>
+                    <li>
+                        Additional fields in Purchase Register
+                    </li>
+                    <li>
+                        Additional fields in Payment Block Status Table
+                    </li>
+                    <li>
+                        Help with configuration of ERP for enabling payment blocking module 
+                        (such as Doc type config, Payment Block Ind, etc)
+                    </li>
+                    <li>
+                        Any other approach for Payment Blocking within ERP 
+                    </li>
+                </ul>
+                <b><u>Out of scope </u></b>
+                <ul>
+                    <li>
+                        Custom logic for identification of invoices and CDNs to be included or excluded for 
+                        upload to ClearTax (eg. invoices based on date / FY)
+                    </li>
+                    <li>
+                        Excluding data validations which are part of the ClearTax ingestion logic 
+                    </li>
+                    <li>
+                        Summary reports for viewing purchase register before upload to ClearTax 
+                        (PR extraction is designed for auto upload to maxITC portal, not any ordinary report that
+                        runs for monthly reporting purpose)
+                    </li>
+                    <li>
+                        Real time ingestion of purchase register 
+                    </li>
+                    <li>
+                        Error Correction in ERP for Ingestion Errors.
+                    </li>
+                    <li>
+                        It is always, either Option 1 or Option 2 of the payment blocking solution 
+                        (either Hold GST or Hold Full Invoice) will be provided, but not both.
+                    </li>
+                    <li>
+                        Change in master data
+                    </li>
+                    <li>
+                        No Enhancements to Standard Payment Programs, F110 or F-53 (Applicable for SAP)
+                    </li>
+                    <li>
+                        Any custom reports in ERP
+                    </li>
+                </ul>
+            </div>
+            <apex:include pageName="{!nextPage8}"/>
+        </body>
+    </html>
+</apex:page>

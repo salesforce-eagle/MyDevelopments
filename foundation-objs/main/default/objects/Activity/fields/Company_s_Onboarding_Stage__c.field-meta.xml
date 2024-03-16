@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_s_Onboarding_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Company&apos;s Onboarding Stage</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LOE Verification</fullName>
+                <default>false</default>
+                <label>LOE Verification</label>
+            </value>
+            <value>
+                <fullName>CSM introduction mail</fullName>
+                <default>false</default>
+                <label>CSM introduction mail</label>
+            </value>
+            <value>
+                <fullName>Introductory call with the client</fullName>
+                <default>false</default>
+                <label>Introductory call with the client</label>
+            </value>
+            <value>
+                <fullName>Client Expectation Checklist</fullName>
+                <default>false</default>
+                <label>Client Expectation Checklist</label>
+            </value>
+            <value>
+                <fullName>Changes in LOE &amp; SF</fullName>
+                <default>false</default>
+                <label>Changes in LOE &amp; SF</label>
+            </value>
+            <value>
+                <fullName>Onboarding plan design</fullName>
+                <default>false</default>
+                <label>Onboarding plan design</label>
+            </value>
+            <value>
+                <fullName>Onboarding mail</fullName>
+                <default>false</default>
+                <label>Onboarding mail</label>
+            </value>
+            <value>
+                <fullName>Onboarding pre-requisites from client</fullName>
+                <default>false</default>
+                <label>Onboarding pre-requisites from client</label>
+            </value>
+            <value>
+                <fullName>Onboarding Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>Onboarding Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>Training / Onboarding session</fullName>
+                <default>false</default>
+                <label>Training / Onboarding session</label>
+            </value>
+            <value>
+                <fullName>Post onboarding mail</fullName>
+                <default>false</default>
+                <label>Post onboarding mail</label>
+            </value>
+            <value>
+                <fullName>Feedback collection</fullName>
+                <default>false</default>
+                <label>Feedback collection</label>
+            </value>
+            <value>
+                <fullName>Success Engagement call</fullName>
+                <default>false</default>
+                <label>Success Engagement call</label>
+            </value>
+            <value>
+                <fullName>Client Support Call</fullName>
+                <default>false</default>
+                <label>Client Support Call</label>
+            </value>
+            <value>
+                <fullName>Client Re-training post onboarding completion</fullName>
+                <default>false</default>
+                <label>Client Re-training post onboarding completion</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

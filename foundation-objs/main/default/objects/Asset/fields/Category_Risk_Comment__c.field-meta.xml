@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Risk_Comment__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Category Risk Comment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ASP Usage</fullName>
+                <default>false</default>
+                <label>ASP Usage</label>
+            </value>
+            <value>
+                <fullName>E-Invoice &amp; EWB Usage</fullName>
+                <default>false</default>
+                <label>E-Invoice &amp; EWB Usage</label>
+            </value>
+            <value>
+                <fullName>EINV Usage</fullName>
+                <default>false</default>
+                <label>EINV Usage</label>
+            </value>
+            <value>
+                <fullName>EWB Usage</fullName>
+                <default>false</default>
+                <label>EWB Usage</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

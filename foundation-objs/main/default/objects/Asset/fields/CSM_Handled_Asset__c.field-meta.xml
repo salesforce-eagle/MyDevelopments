@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Handled_Asset__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>AND(
+NOT(Is_Test_Asset__c),
+NOT(CONTAINS($Label.Exclude_Account_Record_Types_CSM_Journey, Account.RecordTypeId)),
+If( ISBLANK(Account.Channel_Partner_Account_Name__c), true, NOT(CONTAINS(LOWER(Account.Channel_Partner_Account_Name__c), &apos;uneecops&apos;))),
+ParentId == null,
+NOT(ISPICKVAL(Stage_in_MY__c, &apos;Middle Year&apos;)),
+NOT(ISPICKVAL(Stage_in_MY__c, &apos;Last Year&apos;)),
+Product2.CSM_Handled_Product__c = true,
+CONTAINS(TEXT(Product2.Product_category__c),&apos;SaaS&apos;)
+,
+OR(
+AND(
+ ISPICKVAL(Product2.Product_Line__c, &apos;GST&apos;),
+ NOT(CONTAINS(LOWER(Product2.Name), &apos;without csm&apos;)),
+ Price &gt;= 50000
+),
+AND(
+ ISPICKVAL(Product2.Product_Line__c, &apos;E-invoicing &amp; E-Way Bill&apos;),
+ Price &gt;= 35000
+),
+ TEXT(Product2.Product_Line__c) = &apos;Invoicing API&apos;,
+ TEXT(Product2.Product_Line__c) = &apos;Clear Capture&apos;,
+ TEXT(Product2.Product_Line__c) = &apos;Max&apos;,
+ TEXT(Product2.Product_Line__c) = &apos;TDS&apos;
+)
+) ||
+
+TEXT(Account.Country_of_Origin__c) != &apos;India&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CSM Handled Asset?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

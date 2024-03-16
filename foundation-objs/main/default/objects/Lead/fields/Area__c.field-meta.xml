@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Area</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Location_Master__c.City__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.City__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Location_Master__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Area</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Location_Master__c</referenceTo>
+    <relationshipLabel>Leads (Area)</relationshipLabel>
+    <relationshipName>Leads_Area</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

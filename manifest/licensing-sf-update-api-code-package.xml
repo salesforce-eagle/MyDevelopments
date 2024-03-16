@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>CTX_UpdateAssetWithLicense_Single</members>
+        <members>CTX_UpdateAssetWithLicense_Bulk</members>
+        <members>CTX_UpdateAccountProductEmail_Single</members>
+        <members>CTX_UpdateAccountProductEmail_Bulk</members>
+        
+        <name>ApexClass</name>
+    </types>
+
+    
+
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClearTax_Billing_Entity__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>ClearTax Billing Entity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Defmacro</fullName>
+                <default>false</default>
+                <label>Defmacro</label>
+            </value>
+            <value>
+                <fullName>Xpedize</fullName>
+                <default>false</default>
+                <label>Xpedize</label>
+            </value>
+            <value>
+                <fullName>CimplyFive</fullName>
+                <default>false</default>
+                <label>CimplyFive</label>
+            </value>
+            <value>
+                <fullName>ClearSharp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ClearSharp</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

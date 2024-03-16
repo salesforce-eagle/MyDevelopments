@@ -1,0 +1,17 @@
+<template>
+    <template if:true={isVisible}>
+        <lightning-card title="Billing ID" variant="narrow" icon-name="standard:opportunity_splits">
+            <div class="slds-var-m-around_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={additionalGstnList}
+                    columns={additionalGstnsColumns}
+                    onsave={handleSave}
+                    draft-values={draftValues}
+                    column-widths-mode="auto"
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </lightning-card> 
+    </template>
+</template>

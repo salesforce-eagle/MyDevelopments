@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_you_feel_comfortable_handling_Filing__c</fullName>
+    <deprecated>false</deprecated>
+    <description>After the demo session, do you feel comfortable handling the GST filing related activities on Cleartax?
+(Please select Yes or No if your product is G-1, G-3, Recon &amp; Report, otherwise select &apos;Not Applicable from the below option&apos;)</description>
+    <externalId>false</externalId>
+    <label>Do you feel comfortable handling Filing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

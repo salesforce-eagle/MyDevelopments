@@ -1,0 +1,27 @@
+.THIS .wrapped-content{
+    overflow-wrap: break-word;
+}
+.THIS.right_padding{
+   padding-right: 30px; 
+}
+
+.THIS  .box_size{
+  height: 240px
+}
+
+.THIS.headerImg {
+    /* max-width: 100%; */
+    height: auto;
+    background: black;
+    width: 90rem;
+    padding-bottom: 40px;
+}
+.THIS.widthForBody{
+    max-width: 50%;
+    width: 60%;
+}
+
+.THIS .logoClass{
+  width: 300px;
+    padding-top:30px;
+}

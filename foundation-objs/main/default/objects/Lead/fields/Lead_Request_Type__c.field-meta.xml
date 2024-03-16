@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Request_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Lead Request Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RAD</fullName>
+                <default>false</default>
+                <label>RAD</label>
+            </value>
+            <value>
+                <fullName>Signup</fullName>
+                <default>false</default>
+                <label>Signup</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

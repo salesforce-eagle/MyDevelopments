@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integration_status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Integration status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SI Assigned</fullName>
+                <default>false</default>
+                <label>SI Assigned</label>
+            </value>
+            <value>
+                <fullName>Awaiting kick-off</fullName>
+                <default>false</default>
+                <label>Awaiting kick-off</label>
+            </value>
+            <value>
+                <fullName>Project Plan</fullName>
+                <default>false</default>
+                <label>Project Plan</label>
+            </value>
+            <value>
+                <fullName>Build in progress</fullName>
+                <default>false</default>
+                <label>Build in progress</label>
+            </value>
+            <value>
+                <fullName>UAT</fullName>
+                <default>false</default>
+                <label>UAT</label>
+            </value>
+            <value>
+                <fullName>Project complete</fullName>
+                <default>false</default>
+                <label>Project complete</label>
+            </value>
+            <value>
+                <fullName>On-hold (&lt;30 Days)</fullName>
+                <default>false</default>
+                <label>On-hold (&lt;30 Days)</label>
+            </value>
+            <value>
+                <fullName>On-hold (&gt;30 Days)</fullName>
+                <default>false</default>
+                <label>On-hold (&gt;30 Days)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

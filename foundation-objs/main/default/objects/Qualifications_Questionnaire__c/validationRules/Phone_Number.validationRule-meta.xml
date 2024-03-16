@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Number</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Questionnaire__c = &apos;CFO Phone Number&apos; || 
+Questionnaire__c = &apos;Economic Buyer Phone Number&apos; ||
+Questionnaire__c = &apos;Influencer Phone Number&apos; ||
+Questionnaire__c = &apos;IDT Head / Tax Phone Number&apos; ||
+Questionnaire__c = &apos;CTO Phone Number&apos;) &amp;&amp;
+NOT(REGEX(  Answer__c  , &quot;[0-9]{10}&quot;)) &amp;&amp; !ISNEW()</errorConditionFormula>
+    <errorMessage>Enter valid 10 digit Mobile Number</errorMessage>
+</ValidationRule>

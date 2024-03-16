@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Category_Value_ARR_OTP__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF((Record_Type_cumulated__c = &apos;Net_New_ID&apos; ||
+      ISPICKVAL(ClearTax_Billing_Entity__c, &apos;Xpedize&apos;)) &amp;&amp;
+      !ISPICKVAL(Xpedize_Product_Type__c, &apos;KYC APIs&apos;), Forecast_Amount__c,
+      if (Total_Amount__c = 0, Amount__c, Total_Amount__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunity Category Value(ARR+OTP)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

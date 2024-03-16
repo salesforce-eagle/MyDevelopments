@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Go_live_confirmation</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Project_Stage__c ) &amp;&amp;
+ISPICKVAL(Project_Stage__c,&apos;Live&apos;) &amp;&amp;
+ISBLANK(Go_Live_Confirmation__c)</errorConditionFormula>
+    <errorMessage>Please check Go live confirmation.</errorMessage>
+</ValidationRule>

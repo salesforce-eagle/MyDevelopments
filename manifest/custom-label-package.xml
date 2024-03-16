@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!-- 
+    Prerequisite - Make sure objs path is true in package.xml file
+        Format: 
+                ObjectName-LayoutName
+    -->
+     <types>
+      <members>*</members>
+      <name>CustomLabel</name>
+    </types>
+
+
+    <version>52.0</version>
+</Package>

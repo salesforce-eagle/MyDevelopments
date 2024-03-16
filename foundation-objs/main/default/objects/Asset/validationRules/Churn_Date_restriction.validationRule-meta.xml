@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Date_restriction</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED( Churn_Date__c ) &amp;&amp; TODAY() - Churn_Date__c &gt; 30</errorConditionFormula>
+    <errorDisplayField>Churn_Date__c</errorDisplayField>
+    <errorMessage>Please specify a churn date within past 30 days!</errorMessage>
+</ValidationRule>

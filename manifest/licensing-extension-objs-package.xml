@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Activity.Days_to_Extend__c</members>
+        <members>Asset.License_Extension_Count__c</members>
+        <members>Activity.Comment__c</members>
+        <members>Asset.Days_to_Extend__c</members>
+        <members>Asset.Extended_Period_End_Date__c</members>
+        
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Task.Days_To_Extend_Restriction_Rule</members>
+        
+        <name>ValidationRule</name>
+    </types>
+
+    
+
+    <version>52.0</version>
+</Package>

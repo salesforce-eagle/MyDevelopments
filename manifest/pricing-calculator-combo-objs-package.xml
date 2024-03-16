@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Product_Combo_Discount_Logic__mdt</members>
+        <members>Product_Combo_Logic_Inclusion__mdt</members>
+
+        <name>CustomObject</members>
+    </types>
+
+    <types>
+        <members>QuoteLineItem.Threshold_List_Price__c</members>
+        <members>QuoteLineItem.Product_Billing_Type_Formula__c</members>
+        <members>QuoteLineItem.Is_Special_Price_Applicable__c</members>
+        <members>QuoteLineItem.Combo_Discount_On_QLI__c</members>
+        <members>QuoteLineItem.Is_Combo_Price_Applicable__c</members>
+        <members>QuoteLineItem.Pre_Discount_Price__c</members>
+        <members>QuoteLineItem.Is_Formula_Price_Applicable__c</members>
+        <members>QuoteLineItem.Parent_Product_Code__c</members>
+        <members>QuoteLineItem.Threshold_Sale_Price_E__c</members>
+        <members>QuoteLineItem.Threshold_List_Price_E__c</members>
+        <members>Quote.Is_Negotiation_Stage_Checked__c</members>
+        
+        <name>CustomField</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

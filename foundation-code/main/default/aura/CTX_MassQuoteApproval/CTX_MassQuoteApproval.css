@@ -1,0 +1,30 @@
+.THIS .floatRight {
+    float: right;
+}
+.THIS .multiApproval {
+    background-color: #f9f7f7;
+}
+.THIS .multiApproval .btnDiv {
+    min-width: 240px;
+}
+.THIS .multiApproval .headerIcon {
+    height: 24px;
+}
+.THIS .multiApproval .headerText {
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 700;
+    padding: 3px;
+}
+.THIS .approvalTable thead th {
+    background-color:#ecebeb !important;
+}
+.THIS .approvalTable thead tr th:nth-child(1){
+    width:15%;
+}
+.THIS .approvalTable thead tr th:nth-child(2){
+    width:35%;
+}
+.THIS .approvalTable thead tr th:nth-child(3){
+    width:50%;
+}

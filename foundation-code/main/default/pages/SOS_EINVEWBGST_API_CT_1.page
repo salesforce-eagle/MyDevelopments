@@ -1,0 +1,98 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_EINVEWBGST_API_CT_Controller_1" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;
+            <b>
+            Scope of Services  </b>
+</div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Annual Maintenance Charges - Integration - </u></b>
+
+           <p>This typically includes application bug fixes, fixes to reports that are inaccurate, correcting business rules that contain bad logic. The scope of work under the annual maintenance covers maintenance of the deliverables delivered under the scope of Development and Enhancement Services agreed with the Customer. The Company agrees to maintain, repair or rectify defect or remedy to ensure that the functionality of the said deliverables are restored to the desirable condition. Notwithstanding anything contained herein, these services shall be limited to the deliverables delivered by the Company and shall not cover any feature enhancement, new development or integration, and shall be subjected to the scope limitations and customer dependencies set out in  below.<br/><br/>
+           
+Customer may avail annual maintenance services for integration during the Period of Engagement (mentioned  below) by paying appropriate fee for AMC. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It shall exclude:
+</p>
+           <ol style="list-style-type: lower-roman;">
+           <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+ <li>breakages in functionality arising out of changes in the ERP/billing software version/platform/infrastructure changes (e.g. operating system upgrades or ERP upgrades).</li>
+ <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work. 
+</li>
+ 
+           </ol>
+ 
+            <p>The Company shall perform Annual Maintenance Services that require modifications to fix problems in the developed solution caused by design, logic, or coding errors. This type of maintenance is often triggered by an explicit service desk ticket. Issues that may require corrective maintenance are as follows: </p>
+<ol style="list-style-type: lower-roman;">
+<li>Calculations that generate incorrect totals</li>
+ <li>Data screens that omit a required entry or store an entry in the improper location</li>
+ <li>Improper logic in business rules</li>
+ <li>Aborted programs</li>
+ <li>Error messages</li>
+ <li>Interfaces that are not functioning as designed</li>
+ <li>Application configuration issues</li>
+ 
+</ol>
+ 
+<p>
+
+The Company shall perform corrective maintenance and activities required to fix the integration problems. This usually involves replacing or repairing the software component that is responsible for the failure in the system. Corrective maintenance is performed at unpredictable intervals. The objective of corrective maintenance is to restore the system to satisfactory operation within the shortest possible time.
+
+</p>
+                    
+                        
+                      
+                    <p><b>Scope Limitations and Customer Dependencies </b></p>
+                    <ol style="list-style-type: lower-roman;">
+                        <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations 
+                            will need to be done by the customer's IT team.</li>
+                        <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra 
+                            team and the customer provides necessary access to Cleartax and its system integrator . 
+                            This activity should be done by the Customer within 5 working days from project kick-off date</li>
+                        <li>Network: Cleartax does not provide end to end service on network set up.</li>
+                        <li>Basis: Cleartax does not provide any support related to Basis.</li>
+                        <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+                        <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its 
+                            system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.
+                            If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution 
+                            of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the 
+                            Customer agrees to additionally pay for such remote access. </li>
+                        <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration 
+                            with the consulting team for study and understanding.</li>
+                        <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals 
+                            or based on the milestones.</li>
+                        <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). 
+                            In the interest of timely completion of the project, all the test cases as per the functionalities 
+                            agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer
+                            within 14 days of moving the project to UAT. </li>
+                        <li>Once the UAT sign-off is provided, the customer needs to give necessary clearance to move the code to production within 7 days. </li>
+                        <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, 
+                            the project will be deemed to have successfully gone 
+                        live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer.</li>
+                    </ol>
+                   
+                   
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

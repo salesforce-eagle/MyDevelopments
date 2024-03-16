@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : pramodh@warpdrivetech.in
+  @group             : 
+  @last modified on  : 10-08-2020
+  @last modified by  : pramodh@warpdrivetech.in
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   09-07-2020   pramodh@warpdrivetech.in           Initial Version
+-->
+<template>
+  <template if:false={noProductToShowError}>
+    {error}
+        <lightning-datatable
+                    key-field="Id"
+                    columns={quoteColumns}
+                    data={refreshedQuoteItems}
+                    onsave={handleSave}
+                    draft-values={draftValues}
+                    default-sort-direction={defaultSortDirection}
+                    sorted-direction={sortDirection}
+                    sorted-by={sortedBy}
+                    onsort={onHandleSort}
+                    hide-checkbox-column>
+            </lightning-datatable>
+       </template>
+            <template if:true={noProductToShowError}>
+              <p class="slds-text-color_error slds-align_absolute-center"> <b>{label.NoProducttoedit}</b></p>
+              </template>
+  </template>

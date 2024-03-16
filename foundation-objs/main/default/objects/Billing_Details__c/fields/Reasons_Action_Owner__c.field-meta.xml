@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons_Action_Owner__c</fullName>
+    <externalId>false</externalId>
+    <label>Reasons - Action Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Issue</fullName>
+                <default>false</default>
+                <label>Product Issue</label>
+            </value>
+            <value>
+                <fullName>Integration Issue</fullName>
+                <default>false</default>
+                <label>Integration Issue</label>
+            </value>
+            <value>
+                <fullName>Service Issue</fullName>
+                <default>false</default>
+                <label>Service Issue</label>
+            </value>
+            <value>
+                <fullName>CT Finance Issues</fullName>
+                <default>false</default>
+                <label>CT Finance Issues</label>
+            </value>
+            <value>
+                <fullName>Potential Churn</fullName>
+                <default>false</default>
+                <label>Potential Churn</label>
+            </value>
+            <value>
+                <fullName>Push to Future Billing</fullName>
+                <default>false</default>
+                <label>Push to Future Billing</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>P2P Confirmed</fullName>
+                <default>false</default>
+                <label>Promise to Pay  Confirmed (No Issues)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

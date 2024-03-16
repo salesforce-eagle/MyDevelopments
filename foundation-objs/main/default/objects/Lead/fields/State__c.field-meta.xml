@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>State</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Location_Master__c.Region__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Region__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Location_Master__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>State</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Location_Master__c</referenceTo>
+    <relationshipLabel>Leads (State)</relationshipLabel>
+    <relationshipName>Leads_State</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

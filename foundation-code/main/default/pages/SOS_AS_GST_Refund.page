@@ -1,0 +1,49 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_GST_Refund_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>                        <b><u> Scope of Services for Assistance in GST Refund
+ - </u></b>
+  <p>      
+          As and when requested by the Client, to provide GST refund services (Zero-rated / Supply to SEZ with payment / Inverted Duty Structure / Wrong tax payment / Wrong ITC Adjustment / any other reason) we shall be providing:
+</p>
+          
+          
+          <ul>
+<li>          Advise the Client in collation of necessary documents / information’s required for preparation of periodic refund claim application;</li>
+<li> Preparation of the refund application for management’s review, approval and filing.
+</li>
+<li> Advise in relation to compiling underlying documents required to be submitted along with the refund application on periodical intervals based on the information provided to us.
+</li>
+<li> Addressing the queries raised by the Department by way of issue of deficiency memo or other related queries relating to Refund application filed.</li></ul>
+
+
+
+
+<!--<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>-->
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

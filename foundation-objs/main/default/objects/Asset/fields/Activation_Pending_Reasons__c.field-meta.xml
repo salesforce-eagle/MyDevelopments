@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activation_Pending_Reasons__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Activation Pending Reasons</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Delay from Client-Side</fullName>
+                <default>false</default>
+                <label>Delay from Client-Side - Others</label>
+            </value>
+            <value>
+                <fullName>Potential Churn</fullName>
+                <default>false</default>
+                <label>Potential Churn</label>
+            </value>
+            <value>
+                <fullName>Assisted Service /  Unecops / NA</fullName>
+                <default>false</default>
+                <label>Assisted Service /  Unecops / NA</label>
+            </value>
+            <value>
+                <fullName>Integration pending - Client side</fullName>
+                <default>false</default>
+                <label>Integration pending - Client side</label>
+            </value>
+            <value>
+                <fullName>Client not reachable</fullName>
+                <default>false</default>
+                <label>Client Not Responded</label>
+            </value>
+            <value>
+                <fullName>Using with different email id</fullName>
+                <default>false</default>
+                <label>QS Mapping Issue</label>
+            </value>
+            <value>
+                <fullName>Integration pending - Clear Tax</fullName>
+                <default>false</default>
+                <label>Integration pending - Clear Tax</label>
+            </value>
+            <value>
+                <fullName>Customer Print Template Delay</fullName>
+                <default>false</default>
+                <label>Delay from Client-Side - CPT</label>
+            </value>
+            <value>
+                <fullName>Partially Using other competitor tools</fullName>
+                <default>false</default>
+                <label>Limited Use Case</label>
+            </value>
+            <value>
+                <fullName>Einv and EWB Sold - EWB not required by client</fullName>
+                <default>false</default>
+                <label>Einv and EWB Sold - EWB not required by client</label>
+            </value>
+            <value>
+                <fullName>Einv and EWB Sold - Einv not required  by client</fullName>
+                <default>false</default>
+                <label>Einv and EWB Sold - Einv not required  by client</label>
+            </value>
+            <value>
+                <fullName>Extension agreed with Sales</fullName>
+                <default>false</default>
+                <label>Extension agreed with Sales</label>
+            </value>
+            <value>
+                <fullName>Potential Sales Return</fullName>
+                <default>false</default>
+                <label>Potential Sales Return</label>
+            </value>
+            <value>
+                <fullName>Success</fullName>
+                <default>false</default>
+                <label>Success</label>
+            </value>
+            <value>
+                <fullName>Will be successful by EOM</fullName>
+                <default>false</default>
+                <label>Will be successful by EOM</label>
+            </value>
+            <value>
+                <fullName>Product Issue</fullName>
+                <default>false</default>
+                <label>Product Issue</label>
+            </value>
+            <value>
+                <fullName>Non Trackable</fullName>
+                <default>false</default>
+                <label>Non Trackable</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Success Pending</fullName>
+                <default>false</default>
+                <label>Success Pending</label>
+            </value>
+            <value>
+                <fullName>B2C-QR date extension post 1 July</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>B2C-QR date extension post 1st Oct</label>
+            </value>
+            <value>
+                <fullName>Deadline Extended from govt side</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deadline Extended from govt side</label>
+            </value>
+            <value>
+                <fullName>Business impacted due to COVID</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay from Client-Side - Covid</label>
+            </value>
+            <value>
+                <fullName>Delay from Client-Side - ERP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay from Client-Side - ERP</label>
+            </value>
+            <value>
+                <fullName>Delay from Client-Side - Internal restructuring</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay from Client-Side - Internal restructuring</label>
+            </value>
+            <value>
+                <fullName>Delay from Client-Side - SPOC unavaillable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay from Client-Side - SPOC unavaillable</label>
+            </value>
+            <value>
+                <fullName>EINV &lt;50 cr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EINV &lt;50 cr</label>
+            </value>
+            <value>
+                <fullName>Extension agreed with Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Extension agreed with Integration</label>
+            </value>
+            <value>
+                <fullName>One time yearly usage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GSTR9 - 2021- Post Sept</label>
+            </value>
+            <value>
+                <fullName>Low Invoice Count</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low Invoice Count</label>
+            </value>
+            <value>
+                <fullName>MS - Delivering Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MS - Delivering Pending</label>
+            </value>
+            <value>
+                <fullName>Managed Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Managed Service</label>
+            </value>
+            <value>
+                <fullName>No issue &amp; Tentative Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No issue &amp; Tentative Date</label>
+            </value>
+            <value>
+                <fullName>Onboarding Delayed - Both Sales handover &amp; Training not done</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding Delayed - Both Sales handover &amp; Training not done</label>
+            </value>
+            <value>
+                <fullName>Onboarding Delayed - Sales Handover not done</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding Delayed - Sales Handover not done</label>
+            </value>
+            <value>
+                <fullName>Onboarding Delayed - Training not done</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding Delayed - Training not done</label>
+            </value>
+            <value>
+                <fullName>Onboarding Scheduled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding Scheduled</label>
+            </value>
+            <value>
+                <fullName>One To Many Deal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One To Many Deal</label>
+            </value>
+            <value>
+                <fullName>One to Many</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One to Many</label>
+            </value>
+            <value>
+                <fullName>Print template pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Print template pending</label>
+            </value>
+            <value>
+                <fullName>Client product knowledge gap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retraining required</label>
+            </value>
+            <value>
+                <fullName>SPOC details not available</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SPOC details not available</label>
+            </value>
+            <value>
+                <fullName>Suspended Bucket</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Suspended Bucket</label>
+            </value>
+            <value>
+                <fullName>Usage will start in coming week</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Usage will start in coming week</label>
+            </value>
+            <value>
+                <fullName>Using Product With Different Email ID</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Using Product With Different Email ID</label>
+            </value>
+            <value>
+                <fullName>Wrong Asset in The System</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wrong Asset in The System</label>
+            </value>
+            <value>
+                <fullName>Wrong POC Details</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wrong POC Details</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_E_invoicing_Products_C__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>No of E-invoicing Products(C)</label>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Product_Name__c</field>
+        <operation>contains</operation>
+        <value>E-invoicing,EWB,EINV,ClearOne,E-Way Bill,B2C-QR</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_comment_mandatory_on_Risk_KAM</fullName>
+    <active>false</active>
+    <errorConditionFormula>!ISPICKVAL( Risk_Status_by_KAM__c, &apos;&apos; ) &amp;&amp; ISBLANK( Risk_update_from_Category_KAM__c )</errorConditionFormula>
+    <errorDisplayField>Risk_update_from_Category_KAM__c</errorDisplayField>
+    <errorMessage>Please update Risk Update from Category/ KAM field</errorMessage>
+</ValidationRule>

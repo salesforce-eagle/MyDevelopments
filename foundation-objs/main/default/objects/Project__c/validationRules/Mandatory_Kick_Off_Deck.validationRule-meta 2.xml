@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Kick_Off_Deck</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED( Project_Stage__c ) &amp;&amp;
+(ISPICKVAL(Project_Stage__c,&apos;Implementation&apos;) ||
+ISPICKVAL(Project_Stage__c,&apos;UAT&apos;) ||
+ISPICKVAL(Project_Stage__c,&apos;Live&apos;)) &amp;&amp;
+ISBLANK(Kick_Off_Deck__c)</errorConditionFormula>
+    <errorMessage>Please enter Kick off deck link.</errorMessage>
+</ValidationRule>

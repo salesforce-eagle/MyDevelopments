@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Value_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>New Product</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>$Source.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <valueField>Product2.CurrencyIsoCode</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Task Asset Modification New Product</relationshipLabel>
+    <relationshipName>New_Product</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

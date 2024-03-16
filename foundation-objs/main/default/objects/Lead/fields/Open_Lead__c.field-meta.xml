@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Lead__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>NOT(OR(ISPICKVAL(Status, &apos;Unqualified&apos;), ISPICKVAL(Status, &apos;Rejected&apos;), ISPICKVAL(Status, &apos;Duplicate&apos;),ISPICKVAL(Status, &apos;Qualified&apos;) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open Lead</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Access</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( AND(AND(($User.LastName  != &apos;Solanky&apos;  &amp;&amp; $User.LastName  != &apos;Patel&apos; &amp;&amp; $User.LastName  != &apos;Lepcha&apos;) ,  ($User.FirstName !=&apos;Arvind&apos; &amp;&amp; $User.FirstName !=&apos;Aman&apos; &amp;&amp; $User.FirstName !=&apos;Anosh&apos;)), ISCHANGED(Status) ,ISPICKVAL(Status , &apos;Sales return&apos;)),true,false )</errorConditionFormula>
+    <errorMessage>Please Contact Anosh Lepcha or  Arvind Solanky for changing the asset to Sales return!</errorMessage>
+</ValidationRule>

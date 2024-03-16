@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_On_Hold__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Reason On Hold</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Existing Contract</fullName>
+                <default>false</default>
+                <label>Existing Contract</label>
+            </value>
+            <value>
+                <fullName>Budget Isuues</fullName>
+                <default>false</default>
+                <label>Budget Isuues</label>
+            </value>
+            <value>
+                <fullName>Change in management</fullName>
+                <default>false</default>
+                <label>Change in management</label>
+            </value>
+            <value>
+                <fullName>Evaluating other Vendors</fullName>
+                <default>false</default>
+                <label>Evaluating other Vendors</label>
+            </value>
+            <value>
+                <fullName>Implementing a new ERP</fullName>
+                <default>false</default>
+                <label>Implementing a new ERP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

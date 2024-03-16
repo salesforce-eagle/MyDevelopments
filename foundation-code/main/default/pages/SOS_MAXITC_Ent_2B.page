@@ -1,0 +1,53 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_MAXITC_Ent_2B_controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+         <b><u> Scope of Services for Clear GST Advanced PAN Recon (2B vs PR) - </u></b>
+
+           <p>
+                          a)  Feature List of the Software is as below
+                        </p>
+                        <table class="info-table">
+                            
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>Reconciliation </b></td>
+                                <td>Bucketing- Match, Mismatch.</td>
+                                <td>Reconcile ERP Purchase Register against 2A/2B. Bucket into matches, suggested matches, mismatches, Missing in 2A/2B, and Missing in PR. Take actions: Mark as ITC claim; Mark as ITC pending, Mark as ITC ineligible, Mark as Reject</td>
+                            </tr>
+                        </table>
+              <p>
+       Any overuse of the Services, exceeding the subscription/service details including the increase in the
+number of GSTN. Documents, User IDs, or PANs as set out in this Order Form, whether notified to
+Customer or not, will be charged additionally. Any increase in the number of invoices (Purchase or B2B
+Sales) would be charged at 2.0 per invoice. Any increase in the number of PANs would be charged at
+Rs. 10,000 per PAN Any increase in the number of GSTINs would be charged at Rs. 5,000 per GSTIN
+Any increase in the number of User IDs would be charged at Rs. 3,000 per User ID
+</p>
+            <br/>
+<apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

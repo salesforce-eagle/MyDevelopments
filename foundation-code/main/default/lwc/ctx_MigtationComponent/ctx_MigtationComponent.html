@@ -1,0 +1,137 @@
+<template>
+    <div style="position:relative" class="slds-scollable">
+        <template if:true={isError}>
+			<div class="slds-var-m-around_medium">
+				<div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+					<span class="slds-assistive-text">error</span>
+					<span class="slds-icon_container slds-icon-utility-error slds-m-right_xx-small">
+						<lightning-icon icon-name="utility:error" size="xx-small" class="icon-color-close"></lightning-icon>
+					</span>
+					<div>
+						{errorMessage}
+					</div>
+					<div class="slds-notify__close">
+						<a onclick={closeError}  class="slds-modal__close">
+							<lightning-icon icon-name="utility:close" size="small" class="icon-color-close"></lightning-icon>
+						</a>
+					</div>
+				</div>
+			</div>
+		</template>
+        <template if:true={isDisplayCreateLicense}>
+            <div class="slds-grid slds-wrap">
+                <!--<div class="slds-notify_container">
+                    <div class="slds-notify slds-notify_alert slds-theme_success" role="alert">
+                      <span class="slds-assistive-text">success</span>
+                      <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small ">
+                            GST 1.0 Licenses Deactivated successfully. To move ahead with Migration to create new GST 2.0 License Kindly Select the Valid Product and workspace.
+                        </h2>
+                      </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="slds-var-p-around_small slds-var-m-top_medium">
+                <!--<lightning-record-edit-form object-api-name="Asset" record-id={recordId}>
+                    <div>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="form-element-03">
+                              <abbr class="slds-required" title="required">* </abbr>Select Product
+                            </label>
+                            <lightning-input-field field-name="Product2Id" data-id="productid" value="" variant="label-hidden" onchange={handleProductChange}></lightning-input-field>
+                        </div>
+                    </div>
+                </lightning-record-edit-form>-->
+                <!--<c-ctx_-custom-lookup-generic obj-name="Product2" search-placeholder="Select Product" field-name="Plan_Tier__c" icon-name="standard:product" filter="Plan_Tier__c != NULL" onlookupselected={handleProductChange}> </c-ctx_-custom-lookup-generic>-->
+                <lightning-combobox
+                        name="Product"
+                        label="Enter the GST 2.0 Product which needs to be activated in the below workspace. Please check with the migration team for the right SKU."
+                        value={productId}
+                        placeholder="Select Product"
+                        options={products}
+                        onchange={handleProductChange}
+                        required
+                ></lightning-combobox>
+            </div>
+            <div>
+                <c-ctx_-link-asset-workspace record-id={recordId} save-label="Migrate License" onerror={handleError} is-migrate-license=true onmigratelicense={activateSingleLicense}></c-ctx_-link-asset-workspace>
+            </div>
+        </template>
+        <template if:false={isDisplayCreateLicense}>
+            <div class="slds-var-p-around_xx-large">
+                <div class="slds-var-m-vertical_medium">
+                    The following licenses associated to <b>{productEmail}</b> is active in ASP/GSP. Please select the license to be deactivated and click on proceed.
+                </div>
+
+                <template if:false={oldGSTLicensesEmpty}>
+                    <div class="slds-scrollable">
+                        <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <lightning-input type="checkbox"
+                                            variant="label-hidden" onclick={selectAllLicenses}>
+                                        </lightning-input>
+                                    </th>
+                                    <th scope="col">
+                                        <div>License Id</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div>Start Date</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div>End Date</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={oldGSTLicenses} for:item="licenseObj" for:index="index">
+                                    <tr key={licenseObj.licenseId}>
+                                        <td class="slds-cell-wrap">
+                                            <lightning-input data-id={index} checked={licenseObj.isSelected} type="checkbox"
+                                                variant="label-hidden" onclick={handleSelectLicenses}>
+                                            </lightning-input>
+                                        </td>
+                                        <td class="slds-cell-wrap">
+                                            {licenseObj.licenseId}
+                                        </td>
+                                        <td class="slds-cell-wrap">
+                                            {licenseObj.startAt}
+                                        </td>
+                                        <td class="slds-cell-wrap">
+                                            {licenseObj.endAt}
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+                <template if:true={oldGSTLicensesEmpty}>
+                    <div class="slds-box slds-align_absolute-center slds-var-m-verticle_medium slds-var-p-around_medium">
+                        No Old GST Licenses found with given product email ID, Please click on proceed to continue with migration.</br>
+                        Please create a GST L2 support ticket to deactivate old licenses
+                    </div>
+                </template>
+    
+                <div class="slds-align_absolute-center">
+                    <lightning-button label="Close" variant="neutral" title="Close" onclick={closeQuickAction} class="slds-var-p-around_medium"></lightning-button>
+                    <lightning-button label="Proceed" variant="brand" title="Proceed" onclick={handleDeactivateLicense} disabled={selectedLicense} class="slds-var-p-around_medium"></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-grid">
+                <div class="slds-align_absolute-center">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>    
+            </div>
+        </template>
+    </div>
+    
+</template>

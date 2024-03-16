@@ -1,0 +1,57 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GSP_GST_API_Controller" showheader="false">
+        <html>
+            <head>
+                <style type="text/css">
+                    .info-table{
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    padding: 8px;
+                    }
+                    .info-table th,.info-table td{
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    padding: 8px;
+                    }
+                    table { page-break-inside:auto}
+                    tr { page-break-inside:avoid; page-break-after:auto}
+                    th {page-break-inside:avoid; page-break-after:auto}
+                </style>
+            </head>
+            <body>
+                <apex:panelGroup rendered="{!SOS2==1}">
+                    <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+                </apex:panelGroup>
+                
+               <b><u> Scope of Services for ASP/GSP Integration - GSP API- </u></b>
+
+               
+    <b> <br/> A.Scope of Services for GST GSP API Integration Consultation </b>
+<ol style="list-style-type: lower-roman;">
+ <li>Cleartax shall provide technical documentation on APIs exposed.</li>
+ <li>Cleartax shall provide consultation on technical feasibility and data sufficiency from the API perspective to enable speedy execution and completion for the customer.</li>
+ <li>All the GST APIs provided by GSTN/NIC to Cleartax as the GSP shall be further released in the same form and quantum as may be provided to it by GSTN/NIC. The GSP shall not discriminate or show bias or give preferential treatment, directly or indirectly, in sharing of the aforesaid APIs.</li>
+ <li>Cleartax as a GSP will expose relevant APIs to the customer and shall generate sub-license key for authenticating to the GSTN/NIC server and for encryption and decryption of the data from and to the GSTN/NIC server. </li>
+ <li>Cleartax as the GSP will provide continuous Services at all times unless it is prevented by reason of any Force Majeure Event or for any other reason that is beyond its reasonable control and /or for exceptions as may be set out under the SLA as defined by GSTN.</li>
+ <li>Cleartax as the GSP shall add and reflect, on its GSP Application, such disclaimers as GSTN/NIC may require from time to time. </li>
+ <li>Cleartax as the GSP will comply with data privacy, encryption, authorization features provided by GSTN. </li>
+ <li>Cleartax as the GSP will ensure security, privacy and integrity of data travelling from end user application to its system and to GSTN/NIC
+</li>
+ </ol>
+     
+    
+     
+    <b> B. Scope Limitations</b>
+    <ol style="list-style-type: lower-roman;">
+ <li>Any exception that happens from the government portal side, the customer has to reach out to NIC portal for support. </li>
+ <li>Any consultation related to the customer ERP, network or IT environment is explicitly out of scope.
+</li>
+ </ol>
+ 
+
+
+             
+                
+                <apex:include pageName="{!nextPage9}"/>
+            </body>
+        </html>
+    </apex:page>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Phases__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Project Phases</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Integration Onboarding</fullName>
+                <default>false</default>
+                <label>Integration Onboarding</label>
+            </value>
+            <value>
+                <fullName>ERP &amp; Network access</fullName>
+                <default>false</default>
+                <label>IT Pre-requisites</label>
+            </value>
+            <value>
+                <fullName>Requirement gathering</fullName>
+                <default>false</default>
+                <label>Requirement gathering</label>
+            </value>
+            <value>
+                <fullName>Developer Confirmation</fullName>
+                <default>false</default>
+                <label>Developer Confirmation</label>
+            </value>
+            <value>
+                <fullName>Implementation &amp; Internal testing</fullName>
+                <default>false</default>
+                <label>Implementation &amp; Internal testing</label>
+            </value>
+            <value>
+                <fullName>UAT</fullName>
+                <default>false</default>
+                <label>UAT</label>
+            </value>
+            <value>
+                <fullName>Go-Live</fullName>
+                <default>false</default>
+                <label>Go-Live</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

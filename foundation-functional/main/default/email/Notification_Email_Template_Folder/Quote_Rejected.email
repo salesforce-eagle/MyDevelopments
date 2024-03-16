@@ -1,0 +1,62 @@
+<messaging:emailTemplate subject="Discounted Price Approval- {!relatedTo.Account.Name} - Rejected" recipientType="User" relatedToType="Quote">
+    <messaging:htmlEmailBody >
+        <style>
+        table, tr, td {
+            border: 1px solid black;
+            font-family: arial, sans-serif;
+            text-align: left;
+            font-size: 15px;
+        }        
+</style>
+    <p>Hi {!relatedTo.Owner.name},</p>
+    <p>Below request has been rejected for the following case:</p>
+                        <br></br>
+                        <table border="1px" >
+                                <tr>
+                                    <th><b>Account Name</b></th>
+                                    <th><b>Segment</b></th>
+                                    <th><b>Opportunity Owner</b></th>
+                                    <th><b>Owner Department</b></th>
+                                    <th><b>Opportunity Type</b></th>
+                                    <th><b>Total List Price</b></th>
+                                    <th><b>Overall Discount</b></th>
+                                    <th><b>Total Sell Price</b></th>
+                                    <th><b>Reason for Discount Rejection</b></th>
+                                    <th><b>Rejected By</b></th>
+                                </tr>
+                                
+                                <tr>
+                                     <td>{!relatedTo.opportunity.account.name}</td>
+                                     <td>{!relatedTo.opportunity.account.final_segment__c}</td>
+                                     <td>{!relatedTo.opportunity.owner.name}</td>
+                                     <td>{!relatedTo.opportunity.owner.department}</td>
+                                     <td>{!relatedTo.opportunity.recordType.name}</td>
+                                     <td>{!relatedTo.subtotal}</td>
+                                     <td>{!relatedTo.Discount__c}</td>
+                                     <td>{!relatedTo.Grand_Total__c}</td>
+                                     <td>{!relatedTo.Reason_for_Discount_Rejection__c}</td>
+                                     <td>{!relatedTo.Approved_or_Rejected_By__c}</td>
+                                </tr>
+                     </table>
+                     <br></br>
+                        <table border="1px" >
+                                <tr>
+                                    <th><b>Product Name</b></th>
+                                    <th><b>List Price</b></th>
+                                    <th><b>Discount %</b></th>
+                                    <th><b>Reason for Discount</b></th>
+                                    <th><b>Sell Price</b></th>
+                                </tr>
+                            <apex:repeat var="cx" value="{!relatedTo.QuoteLineItems}"> 
+                                
+                                <tr>
+                                     <td>{!cx.Product2.Name}</td>
+                                     <td>{!cx.UnitPrice}</td>
+                                     <td>{!cx.Discount}</td>
+                                     <td>{!cx.Quote.Reason_for_Discount_Request__c}</td>
+                                     <td>{!cx.Sale_Price__c}</td>
+                                </tr>
+                            </apex:repeat>
+                     </table>
+                  </messaging:htmlEmailBody>
+                                                    </messaging:emailTemplate>

@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Provide Verification Details" icon-name="standard:user">
+        <div class="slds-var-p-around_small">
+            <lightning-input data-id="input" type="email" onkeyup={onEmailChange} value={contactEmail} label="Enter Email"
+                placeholder="Enter email for verification" required> </lightning-input>
+                <div class="divOuter">
+                    <div class="divInner">
+                        <div data-id='demoBlock' style="padding-left:15px;"></div>
+                    </div>
+                </div>
+        </div>
+        <div class="slds-var-p-around_small">
+            <button class="slds-button slds-button_brand" onclick={generateOTP} disabled={disableGenerateOtp}>Generate OTP</button>
+        </div>
+        <template if:true={disableGenerateOtp}>
+            <div class="slds-var-p-around_small">
+                <b>We have sent an OTP on {contactEmail}.<br /><br /> Please Enter the OPT here.<br /></b>
+    
+                <div class="slds-p-top_x-small slds-p-bottom_x-small">
+                    <!--<lightning-input type="Number" data-id="inputOTP" name="OTP" value={getOTP} label="OTP" placeholder="Enter OTP Here.."
+                        disabled={disableOtp}>
+                    </lightning-input>
+                    <div class="slds-var-p-top_x-small">
+                        <button class="slds-button slds-button_brand" onclick={generateOTP} disabled={disableGenerateOtp}>Generate OTP</button>
+                    </div>-->
+                    <!--<div class="divOuter">
+                        <div class="divInner">
+                            <input class="slds-input partitioned" onkeyup={onOTPToVerifyChange} value={otpToverify} style={cssLetterSpacing} type="text" maxlength="6" placeholder="XXXXXX"/>
+                        </div>
+                    </div>-->
+                    <c-ctx_-submit-o-t-p-box css-letter-spacing={cssLetterSpacing} otp-error={otpError} error-message={errorMessage} onotpchange={handleReEnterOTP} onverifyotp={handleVerifyOTP}></c-ctx_-submit-o-t-p-box>
+                    <!--<template if:true={otpError}>
+                        <b class="slds-text-color_error">{errorMessage}</b>
+                    </template>-->
+                    <!--<c-ctx_-o-t-p-input-box onverifyotp={handleVerifyOTP}></c-ctx_-o-t-p-input-box>-->
+                    <a onclick={sendOTPtoEmail}>Didn't get OTP? Resend OTP</a>
+                </div>
+    
+                <template if:true={disableGenerateOtp}>
+                    <b>Your OTP will be valid for : {timer}</b>
+                    <!--<c-ctx_-o-t-p-timer timer={timer}></c-ctx_-o-t-p-timer>-->
+                </template>
+                <template if:false={disableGenerateOtp}>
+                    <div class="slds-clearfix">
+                        <div class="slds-float_center">
+                            <b style="color:red">Session Expired. Please cancel and retry.</b>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

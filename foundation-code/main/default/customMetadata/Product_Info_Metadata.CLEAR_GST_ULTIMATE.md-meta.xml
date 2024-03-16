@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CLEAR_GST_ULTIMATE</label>
+    <protected>false</protected>
+    <values>
+        <field>Plan_Tier__c</field>
+        <value xsi:type="xsd:string">CLEAR_GST_ULTIMATE</value>
+    </values>
+    <values>
+        <field>Product_Code__c</field>
+        <value xsi:type="xsd:string">GST-ULTIMATE</value>
+    </values>
+    <values>
+        <field>Product_Family__c</field>
+        <value xsi:type="xsd:string">Tax Technology</value>
+    </values>
+    <values>
+        <field>Product_Id__c</field>
+        <value xsi:type="xsd:string">01tC5000000HOIuIAO</value>
+    </values>
+    <values>
+        <field>Product_Line__c</field>
+        <value xsi:type="xsd:string">GST</value>
+    </values>
+    <values>
+        <field>Product_Metering_Fields__c</field>
+        <value xsi:type="xsd:string">No_of_PAN_one__c, No_of_GSTIN_one__c, Number_of_Purchase_Invoice__c, BtoB_Sales_one__c, BtoC_Sales_one__c</value>
+    </values>
+    <values>
+        <field>Required_Fields__c</field>
+        <value xsi:type="xsd:string">Id, Product2.Plan_Tier__c, BtoB_Sales_one__c, BtoC_Sales_one__c, Flat_Transaction_Fee__c, Number_of_Deductees_per_Quarter_24Q_26__c, Number_of_Deduction_Transactions_per_Qua__c, No_of_EWBs__c, No_of_expected_B2C_invoices_for_QR_code__c, No_of_GST_GSP_API_calls_permissible__c, No_of_GSTIN_one__c, No_of_invoice_formats__c, No_of_IRNs__c, No_of_PAN_one__c, No_of_recons__c, No_of_TANs__c, No_of_Total_invoices__c, No_of_User_ID_one__c, No_of_Vendors_one__c, No_of_airline_invoices_annual_one__c, Number_of_eway_bill__c, Partner_Count_for_GeEr_up_Reports__c, Purchases_Invoices_one__c, Tally_Connector_required__c, Transaction_Fee_Slab_1__c, Type_of_Compliance_service__c, platform__c, No_MM2A_2B_usage_GSTIN_month__c, Type_of_Integration__c, No_of_API_calls_permissible__c, Digital_Signing_Utility_for_TDS_Cert_del__c, Total_B2B_PR_B2C_invoice__c, POS_system__c, No_of_retail_stores__c, CDC_Applicable__c, Number_of_Pulls__c, OTP_SKUs__c, No_of_fields_to_be_edited_per_template__c, No_of_templates__c, Number_of_Purchase_Invoice__c, GSTIN_Level_Recon__c, PAN_Level_Recon__c, Quantity, QuoteId, Sale_Price__c, Parent_Asset__c, Is_TDS_Applicable__c, Applicable_TDS__c, TAN_Number__c, PricebookEntryId, UnitPrice, Is_Plan_Upgradable__c, Recommended_Plan_Tier__c, Recommended_Plan_Parameters__c, No_of_days_to_Upgrade__c, Renewal_Service_Payload__c, Total_Tax_Value_Recommended__c, Total_Renewal_Price_Recommended__c, TDS_Price_Recommended__c, Total_Tax_Value__c, Total_Renewal_Price__c, TDS_Price__c</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,317 @@
+<aura:component>
+    
+    <aura:attribute name="modalHeading" 				type="string" 	default="false"	/>
+    <aura:attribute name="modalBody" 					type="string" 	default="false"	/>
+    <aura:attribute name="successLabel" 				type="string" 	default="false"	/>
+    <aura:attribute name="discardLabel" 				type="string" 	default="false"	/>
+    <aura:attribute name="isModalOpen" 					type="boolean" 	default="false"	/>
+    <aura:attribute name="userSelection" 				type="boolean" 	default="false"	/>
+    <aura:attribute name="reasonForDiscountValue" 		type="string" 	default=""		/>
+    <aura:attribute name="reasonFieldMap" 				type="Map"						/>
+    <aura:attribute name="detailedReason" 				type="string"					/>
+    <aura:attribute name="detailedReasonRequired"		type="boolean"					/>
+    <aura:attribute name="submitButtonDisable" 			type="boolean" 	default="true"	/>
+    <aura:attribute name="oldStatusValue" 				type="string"					/>
+    <aura:attribute name="statusSelected" 				type="string"					/>
+    <aura:attribute name="isQLIproductcategory" 		type="boolean" 					/>
+    <aura:attribute name="isOpportunityRenewal" 		type="boolean" 					/>
+    <aura:attribute name="CustomerOptedForIntegration" 	type="String"					/>
+    <aura:attribute name="quoteTobeUpdated" 			type="Quote" 
+                    default="{
+                             'sObjectType' 									: 'Quote',
+                             'Estimated_Delivery_Cost__c' 					: '',
+                             'Customer_Opted_For_Integration__c' 			: 'Yes',
+                             'Reason_For_Not_Opting_For_Integration__c' 	: '',
+                             'Incumbent__c' 								: '',
+                             'Reason_for_Discount_Request__c' 				: '',
+                             'Name_of_Competitor__c' 						: '',
+                             'Projected_Customer_Lifetime_Value__c' 		: '',
+                             'Products_Can_Be_Cross_Sold_In_Future__c' 		: '',
+                             'Detailed_reason_for_discount__c' 				: '',
+                             
+                             'Price_Offered_to_Match_Competitor__c' 		: '',
+                             'Old_Anchor_Price__c' 							: '', 
+                             'Next_Pitch_Date__c' 							: '', 
+                             'Features_not_in_Use__c' 						: '',
+                             'Projected_Arr__c' 							: '',
+                             'IncumbentPrice__c' 							: '' 
+                             }"															/>
+    
+    
+    <div class="slds-m-around_xx-large">
+        
+        <lightning:button variant	=	"brand"
+                          label		=	""
+                          title		=	""
+                          onclick	=	"{! c.openModel }"	/>
+        
+        <aura:if isTrue="{!v.isModalOpen}">
+            
+            <section role				= "dialog" 
+                     tabindex			= "-1" 
+                     aria-labelledby	= "modal-heading-01" 
+                     aria-modal			= "true" 
+                     aria-describedby	= "modal-content-id-1" 
+                     class				= "slds-modal slds-fade-in-open"	>
+                
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        
+                        <lightning:buttonIcon iconName			= "utility:close"
+                                              onclick			= "{!c.closeModel}"
+                                              alternativeText	= "close"
+                                              variant			= "bare-inverse"
+                                              class				= "slds-modal__close"	/>
+                        
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            {!v.modalHeading}
+                        </h2>
+                    </header>
+                    
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        
+                        <p><b>{!v.modalBody}</b></p>
+                        
+                        <p>	<br/><br/>
+                            
+                            <aura:if isTrue="{!v.isOpportunityRenewal}">
+                                
+                                <!--Reason for discount-->
+                                <lightning:select aura:id	= "formFieldToValidate" 
+                                                  value		= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c}" 
+                                                  onchange	= "{!c.handleOnChange}" 
+                                                  name		= "reasonForDiscountValue" 
+                                                  label		= "Reason For Discount" 
+                                                  required	= "true">
+                                    <option value="">--None--</option>
+                                    <aura:iteration items="{!v.reasonFieldMap}" var="i" indexVar="key">
+                                        <option text		= "{!i.value}" 
+                                                value		= "{!i.key}" 
+                                                selected	= "{!i.key==v.reasonForDiscountValue}"/>
+                                    </aura:iteration>
+                                    <br/>
+                                </lightning:select>
+                                
+                                <!--	Dynamic Section Based on "Reason For Discount" : START	-->
+                                
+                                <!--	"Reason For Discount" == Competitor / Incumbent are offering lesser quote price	-->
+                                <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}">
+                                    
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "What is the Competitor Name ?" 
+                                                     label		= "What is the Competitor Name ?" 
+                                                     value		= "{!v.quoteTobeUpdated.Name_of_Competitor__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"	/>
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "Price being offered ?" 
+                                                     label		= "Price being offered ?" 
+                                                     value		= "{!v.quoteTobeUpdated.Price_Offered_to_Match_Competitor__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"
+                                                     type		= "number"/>
+                                </aura:if>
+                                
+                                <!--	"Reason For Discount" == Low Price Anchor (CT) - Sister Company / CA Product / Old Quote	-->
+                                <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Low Price Anchor (CT) - Sister Company / CA Product / Old Quote'}">
+                                    
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "Old / Anchor Price ?" 
+                                                     label		= "Old / Anchor Price ?" 
+                                                     value		= "{!v.quoteTobeUpdated.Old_Anchor_Price__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Low Price Anchor (CT) - Sister Company / CA Product / Old Quote'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"
+                                                     type		= "number"/>
+                                </aura:if>
+                                
+                                <!--	"Reason For Discount" == Cross Sell / Upsell Potential	-->
+                                <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}">
+                                    
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "Products that could be Cross sold / Upsold in future" 
+                                                     label		= "Products that could be Cross sold / Upsold in future" 
+                                                     value		= "{!v.quoteTobeUpdated.Products_Can_Be_Cross_Sold_In_Future__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"	/>
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "Products that could be Cross sold / Upsold in future" 
+                                                     label		= "Products that could be Cross sold / Upsold in future" 
+                                                     value		= "{!v.quoteTobeUpdated.Next_Pitch_Date__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"
+                                                     type		= "date"						/>
+                                    
+                                </aura:if>
+                                
+                                <!--	"Reason For Discount" == Partial product use	-->
+                                <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Partial product use'}">
+                                    <lightning:input aura:id	= "formFieldToValidate" 
+                                                     name		= "When can we pitch these products" 
+                                                     label		= "When can we pitch these products" 
+                                                     value		= "{!v.quoteTobeUpdated.Features_not_in_Use__c}"
+                                                     required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Partial product use'}"
+                                                     onchange	= "{!c.onchangeofDisReason}"	/>
+                                </aura:if>
+                                <!--	Dynamic Section Based on "Reason For Discount" : END	-->
+                                
+                                <aura:set attribute="else">
+                                    <div class="slds-text-heading_large slds-text-title_bold"> 
+                                        <aura:if isTrue="{!v.isQLIproductcategory}">
+                                            <lightning:textarea aura:id="formFieldToValidate" 
+                                                                name="What is the estimated delivery cost? (For Assisted Services product)" label="What is the estimated delivery cost? (For Assisted Services product)" 
+                                                                value="{!v.quoteTobeUpdated.Estimated_Delivery_Cost__c}"
+                                                                placeholder="" />
+                                            <br/>
+                                            <br/>
+                                        </aura:if>
+                                        
+                                        <lightning:select aura:id="formFieldToValidate" value="{!v.quoteTobeUpdated.Customer_Opted_For_Integration__c}" name="HasCustomerIntegration" label="Has the customer opted for integration?" required="true">
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </lightning:select>
+                                        <br/>
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Customer_Opted_For_Integration__c =='Yes'}">
+                                            <lightning:input aura:id="formFieldToValidate" 
+                                                             name="How much is the customer currently paying to the Existing Vendor/ Incumbent?" label="How much is the customer currently paying to the Existing Vendor/ Incumbent?" 
+                                                             value="{!v.quoteTobeUpdated.Incumbent__c}"
+                                                             required="true"
+                                                             placeholder=""
+                                                             onchange ="{!c.onchangeofDisReason}"/>
+                                            <br/>
+                                            <br/>
+                                        </aura:if>
+                                        <!--<lightning:textarea aura:id="formFieldToValidate" 
+                                                            name="How much is the customer currently paying to the Existing Vendor/ Incumbent?" label="How much is the customer currently paying to the Existing Vendor/ Incumbent?" 
+                                                            value="{!v.quoteTobeUpdated.Incumbent__c}"
+                                                            required="true"
+                                                            onchange ="{!c.onchangeofDisReason}"/>
+                                        <br/>
+                                        <br/>-->
+                                        <!--Reason for discount-->
+                                        <lightning:select aura:id="formFieldToValidate" value="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c}" onchange="{!c.handleOnChange}" name="reasonForDiscountValue" label="Reason For Discount" required="true">
+                                            <option value="">--None--</option>
+                                            <aura:iteration items="{!v.reasonFieldMap}" var="i" indexVar="key">
+                                                <option text="{!i.value}" value="{!i.key}" selected="{!i.key==v.reasonForDiscountValue}"/>
+                                            </aura:iteration>
+                                            <br/>
+                                        </lightning:select>
+                                        <br/>
+                                        <!--	Dynamic Section Based on "Reason For Discount" : START	-->
+                                        
+                                        <!--	"Reason For Discount" == Competitor / Incumbent are offering lesser quote price	-->
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}">
+                                            
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "Name of the Competitor / Incumbent" 
+                                                             label		= "Name of the Competitor / Incumbent" 
+                                                             value		= "{!v.quoteTobeUpdated.Name_of_Competitor__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"	/>
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "Price being offered ?" 
+                                                             label		= "Price being offered ?" 
+                                                             value		= "{!v.quoteTobeUpdated.Price_Offered_to_Match_Competitor__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Competitor / Incumbent are offering lesser quote price'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"
+                                                             type		= "number"/>
+                                        </aura:if>
+                                        
+                                        <!--	"Reason For Discount" == Low Price Anchor (CT) - Sister Company / CA Product / Old Quote	-->
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Low Price Anchor (CT) - Sister Company / CA Product / Old Quote'}">
+                                            
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "Old / Anchor Price ?" 
+                                                             label		= "Old / Anchor Price ?" 
+                                                             value		= "{!v.quoteTobeUpdated.Old_Anchor_Price__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Low Price Anchor (CT) - Sister Company / CA Product / Old Quote'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"
+                                                             type		= "number"/>
+                                        </aura:if>
+                                        
+                                        <!--	"Reason For Discount" == Customer paying the incumbent very less	-->
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Customer paying the incumbent very less'}">
+                                            
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "How much was the customer paying to the incumbent?" 
+                                                             label		= "How much was the customer paying to the incumbent?" 
+                                                             value		= "{!v.quoteTobeUpdated.IncumbentPrice__c }"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Customer paying the incumbent very less'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"
+                                                             type		= "number"/>
+                                        </aura:if>
+                                        
+                                        <!--	"Reason For Discount" == Cross Sell / Upsell Potential	-->
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}">
+                                            
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "Products that could be Cross sold / Upsold in future" 
+                                                             label		= "Products that could be Cross sold / Upsold in future" 
+                                                             value		= "{!v.quoteTobeUpdated.Products_Can_Be_Cross_Sold_In_Future__c}"
+                                                             required	= "false"
+                                                             onchange	= "{!c.onchangeofDisReason}"	/>
+                                            
+                                            <!-- "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}"-->
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "What is the projected total ARR which we can possibly get in future cross-sell?" 
+                                                             label		= "What is the projected total ARR which we can possibly get in future cross-sell?" 
+                                                             value		= "{!v.quoteTobeUpdated.Projected_Arr__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"
+                                                             type		= "number"						/>
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "When can we pitch these products ?" 
+                                                             label		= "When can we pitch these products ?" 
+                                                             value		= "{!v.quoteTobeUpdated.Next_Pitch_Date__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Cross Sell / Upsell Potential'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"
+                                                             type		= "date"						/>
+                                            
+                                            
+                                        </aura:if>
+                                        
+                                        <!--	"Reason For Discount" == Partial product use	-->
+                                        <aura:if isTrue="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Partial product use'}">
+                                            <lightning:input aura:id	= "formFieldToValidate" 
+                                                             name		= "Features not in use ?" 
+                                                             label		= "Features not in use ?" 
+                                                             value		= "{!v.quoteTobeUpdated.Features_not_in_Use__c}"
+                                                             required	= "{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Partial product use'}"
+                                                             onchange	= "{!c.onchangeofDisReason}"	/>
+                                        </aura:if>
+                                        <!--	Dynamic Section Based on "Reason For Discount" : END	-->
+                                        
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                            <lightning:input aura:id="formFieldToValidate" 
+                                             name=" Detailed reason for discount" label="Detailed Reason For Discount" 
+                                             value="{!v.quoteTobeUpdated.Detailed_reason_for_discount__c}"
+                                             placeholder="Give Detailed reason for discount.." 
+                                             onchange ="{!c.onchangeofDisReason}"
+                                             required="{!v.quoteTobeUpdated.Reason_for_Discount_Request__c=='Any other'}"
+                                             />
+                        </p>
+                    </div>
+                    
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="{!v.discardLabel}"
+                                          title="{!v.discardLabel}"
+                                          onclick="{! c.closeModel }"/>
+                        <lightning:button variant="brand"
+                                          label="{!v.successLabel}"
+                                          title="{!v.successLabel}"
+                                          onclick="{!c.submitDetails}"
+                                          disabled= "{!v.submitButtonDisable}"
+                                          />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+       <members>Asset_CSM_Details__c.Account__c</members>
+        <members>Asset_CSM_Details__c.Activation_Delay_Reason_Comment__c</members>
+        <members>Asset_CSM_Details__c.Activation_Delay_Reason__c</members>
+        <members>Asset_CSM_Details__c.Ageing_Since_Created_Date__c</members>
+        <members>Asset_CSM_Details__c.Ageing_of_Asset__c</members>
+        <members>Asset_CSM_Details__c.Asset__c</members>
+        <members>Asset_CSM_Details__c.CSM_Handled_Asset__c</members>
+        <members>Asset_CSM_Details__c.Customer_License_Account_creation_Status__c</members>
+        <members>Asset_CSM_Details__c.Customer_Prerequisite_collection_Status__c</members>
+        <members>Asset_CSM_Details__c.Introduction_Email_Completion_Date__c</members>
+        <members>Asset_CSM_Details__c.Introduction_Email_Kickoff_Call_Status__c</members>
+        <members>Asset_CSM_Details__c.Is_Activation_Delayed__c</members>
+        <members>Asset_CSM_Details__c.Is_Asset_Activated__c</members>
+        <members>Asset_CSM_Details__c.Is_Asset_Success__c</members>
+        <members>Asset_CSM_Details__c.Is_Escalation_Required__c</members>
+        <members>Asset_CSM_Details__c.Is_Non_GST_EInv_Success__c</members>
+        <members>Asset_CSM_Details__c.Is_Onboarding_Delayed__c</members>
+        <members>Asset_CSM_Details__c.License_Account_creation_Completion_Date__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_Completed_Date__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_Delay_Reason_Comment__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_Delay_Reason__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_Process_Start_Date__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_Stage__c</members>
+        <members>Asset_CSM_Details__c.Onboarding_status__c</members>
+        <members>Asset_CSM_Details__c.Prerequisite_collection_Completion_Date__c</members>
+        <members>Asset_CSM_Details__c.Prerequisites_Check__c</members>
+        <members>Asset_CSM_Details__c.Prerequisites__c</members>
+        <members>Asset_CSM_Details__c.Product_training_Completion_Date__c</members>
+        <members>Asset_CSM_Details__c.Product_training_Status__c</members>
+        <members>Asset_CSM_Details__c.Sales_CSM_Handover_Completion_Date__c</members>
+        <members>Asset_CSM_Details__c.Sales_CSM_Handover_Status__c</members>
+        <members>Asset_CSM_Details__c.Stage__c</members>
+
+        <members>Asset_Usage_Details__c.Account__c</members>
+        <members>Asset_Usage_Details__c.Asset__c</members>
+        <members>Asset_Usage_Details__c.CDC_Applicable__c</members>
+        <members>Asset_Usage_Details__c.Digital_Signing_Utility_for_TDS_Certific__c</members>
+        <members>Asset_Usage_Details__c.ERP_GCC__c</members>
+        <members>Asset_Usage_Details__c.Flat_Transaction_Fee__c</members>
+        <members>Asset_Usage_Details__c.Is_Deactivate_License__c</members>
+        <members>Asset_Usage_Details__c.License_B2B_SalesInvoice_per_year__c</members>
+        <members>Asset_Usage_Details__c.License_B2C_SalesInvoice_per_year__c</members>
+        <members>Asset_Usage_Details__c.License_No_of_MM2A_2B_usage_GSTIN_mon__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_Recon__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_gstin_verification_credits__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_gstins__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_invoice_formats__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_irns_per_year__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_pans__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_total_Sales_Invoices__c</members>
+        <members>Asset_Usage_Details__c.License_no_of_userids__c</members>
+        <members>Asset_Usage_Details__c.Monthly_throughput_Slab_1_Cr__c</members>
+        <members>Asset_Usage_Details__c.Monthly_throughput_Slab_2_Cr__c</members>
+        <members>Asset_Usage_Details__c.Monthly_throughput_Slab_3_Cr__c</members>
+        <members>Asset_Usage_Details__c.No_of_API_calls_permissible__c</members>
+        <members>Asset_Usage_Details__c.No_of_Bank_verification_API__c</members>
+        <members>Asset_Usage_Details__c.No_of_MCA_Company_details_API__c</members>
+        <members>Asset_Usage_Details__c.No_of_MSME_API__c</members>
+        <members>Asset_Usage_Details__c.No_of_Offline_devices__c</members>
+        <members>Asset_Usage_Details__c.No_of_Online_devices__c</members>
+        <members>Asset_Usage_Details__c.No_of_PAN_to_GSTIN_APIs__c</members>
+        <members>Asset_Usage_Details__c.No_of_PAN_verification_API__c</members>
+        <members>Asset_Usage_Details__c.No_of_PAN_verification_detailed_APIs__c</members>
+        <members>Asset_Usage_Details__c.No_of_TDS_206_sync_API__c</members>
+        <members>Asset_Usage_Details__c.No_of_VAT__c</members>
+        <members>Asset_Usage_Details__c.No_of_Vendor__c</members>
+        <members>Asset_Usage_Details__c.No_of_airline_invoices__c</members>
+        <members>Asset_Usage_Details__c.No_of_airline_invoices_annual__c</members>
+        <members>Asset_Usage_Details__c.No_of_expected_B2C_invoices_for_QR_code__c</members>
+        <members>Asset_Usage_Details__c.Number_of_Deductees_per_Quarter_24Q_26__c</members>
+        <members>Asset_Usage_Details__c.Number_of_Deduction_Transactions_per_Qua__c</members>
+        <members>Asset_Usage_Details__c.Number_of_Pulls__c</members>
+        <members>Asset_Usage_Details__c.Number_of_Purchase_Invoice__c</members>
+        <members>Asset_Usage_Details__c.Number_of_TANs__c</members>
+        <members>Asset_Usage_Details__c.Number_of_eway_bill__c</members>
+        <members>Asset_Usage_Details__c.One_to_Many_Type__c</members>
+        <members>Asset_Usage_Details__c.POS_system__c</members>
+        <members>Asset_Usage_Details__c.Partner_Count_for_GeEr_up_Reports__c</members>
+        <members>Asset_Usage_Details__c.Tally_Connector_required__c</members>
+        <members>Asset_Usage_Details__c.Total_annual_domestic_payables_Rs_Cr__c</members>
+        <members>Asset_Usage_Details__c.Transaction_Fee_Slab_1__c</members>
+        <members>Asset_Usage_Details__c.Transaction_Fee_Slab_2__c</members>
+        <members>Asset_Usage_Details__c.Transaction_Fee_Slab_3__c</members>
+        <members>Asset_Usage_Details__c.Is_Deactivate_License__c</members>
+
+        <!--<members>Billing_Details__c.Payment_term__c</members>
+        <members>Billing_Details__c.Payment_method__c</members>-->
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Asset_CSM_Details__c</members>
+        <members>Asset_Usage_Details__c</members>
+        <members>Asset_KAM_Details__c</members>
+        <!--<members>Billing_Details__c</members>-->
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>Asset_Usage_Details__c.Licensing_Usage_Fields</members>
+        <members>Asset.Licensing_Fields</members>
+        <name>FieldSet</name>
+    </types>
+
+    <types>
+        <members>Asset_CSM_Details__c.CTX_Activation_DelayReason_Mandatory</members>
+        <members>Asset_CSM_Details__c.CTX_DelayReason_Comments_Mandatory</members>
+        <members>Asset_CSM_Details__c.CTX_PrerequesitesMandatoryValidation</members>
+        <members>Asset_CSM_Details__c.CTX_Restrict_Stage_Change</members>
+        <members>Asset_CSM_Details__c.CTX_Stage_Completion_Date_Validation</members>
+        <members>Asset_CSM_Details__c.CTX_Stage_Move_Back_Restriction</members>
+        <name>ValidationRule</name>
+    </types>
+
+    <types>
+        <members>Asset_CSM_Details_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <types>
+        <members>ctx_CSMAssetActivationChecklist</members>
+        <members>ctx_CSMAssetOnboardingSection</members>
+        <members>ctx_CustomPath</members>
+        <members>ctx_IntroductoryEmailPreview</members>
+        <members>ctx_MultiSelectLookup</members>
+
+        <members>ctx_ActivateSingleLicense</members>
+        <members>ctx_DeactivateLicense</members>
+        <members>ctx_DeleteAssetWorkspaceLink</members>
+        <members>ctx_LinkAssetWorkspace</members>
+        <members>ctx_ListenSalesSyncFailureEvent</members>
+        <members>ctx_MigtationComponent</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>CTX_CSMAssetDetailsFlow</members>
+        <members>CTX_CSM_TASK_CreationFormula2</members>
+        <members>CTX_CSMJourneyOnbaordingFlow2</members>
+        <members>CTX_CSMJorneyQueueable2</members>
+        <members>CTX_CSMJourneyHandler2</members>
+        <members>CTX_CSMEscalationsBatch2</members>
+        <members>CTX_CSMActivationEscalationBatch2</members>
+        <members>AssetCSMDetailsTriggerHandler</members>
+        <members>CTX_ExtendProductLicense</members>
+
+        <members>AssetTriggerHandler</members>
+        <members>AssetUsageTriggerHandler</members>
+        <members>CTX_AssetRelatedRecords</members>
+        <members>CTX_AssetWorkspaceLinkageController</members>
+        <members>CTX_LicensingAssetFilterLogic2</members>
+        <members>CTX_UpsertAssetLicense2</members>
+        <members>CTX_UpsertAssetLicensingClass</members>
+        <members>RecursiveTriggerHandler</members>
+
+        <members>OpportunityTriggerHelper2</members>
+        <members>CTX_UpsertAssetLicense2</members>
+        <members>AssetTriggerHandler2</members>
+        <members>AssetTriggerHelper2</members>
+        <members>CTX_CSM_TASK_CreationFormula2</members>
+        <members>CTX_CSMJorneyQueueable2</members>
+        <members>CTX_CSMJourneyOnbaordingFlow2</members>
+        <members>CTX_CSMJourneyHandler2</members>
+        <members>CTX_CSMEscalationsBatch2</members>
+        <members>CTX_CSMActivationEscalationBatch2</members>
+        <members>CTX_GenerateCSMTasksBatch2</members>
+
+        <members>AssetUsageTriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+    
+    <types>
+        <members>AssetCSMDetailsTrigger</members>
+        <members>AssetUsageTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>Asset_Usage_Details__c-Asset Usage Details Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Asset_Usage_Details__c.All</members>
+        <name>ListView</name>
+    </types>
+
+    <types>
+        <members>Asset_CSM_Details_Stage</members>
+        <name>PathAssistant</name>
+    </types>
+
+    <version>57.0</version>
+</Package>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_information__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Call information</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Churn</fullName>
+                <default>false</default>
+                <label>Churn</label>
+            </value>
+            <value>
+                <fullName>Contact details not available</fullName>
+                <default>false</default>
+                <label>Contact details not available</label>
+            </value>
+            <value>
+                <fullName>Customer having Pricing issue</fullName>
+                <default>false</default>
+                <label>Customer having Pricing issue</label>
+            </value>
+            <value>
+                <fullName>Customer not reachable</fullName>
+                <default>false</default>
+                <label>Customer not reachable</label>
+            </value>
+            <value>
+                <fullName>EINV not applicable</fullName>
+                <default>false</default>
+                <label>EINV not applicable</label>
+            </value>
+            <value>
+                <fullName>Feature required not available</fullName>
+                <default>false</default>
+                <label>Feature required not available</label>
+            </value>
+            <value>
+                <fullName>Final approval pending-Client</fullName>
+                <default>false</default>
+                <label>Final approval pending-Client</label>
+            </value>
+            <value>
+                <fullName>Incorrect KAM mapping</fullName>
+                <default>false</default>
+                <label>Incorrect KAM mapping</label>
+            </value>
+            <value>
+                <fullName>Incorrect SF update</fullName>
+                <default>false</default>
+                <label>Incorrect SF update</label>
+            </value>
+            <value>
+                <fullName>Integration completed but not updated in SF</fullName>
+                <default>false</default>
+                <label>Integration completed but not updated in SF</label>
+            </value>
+            <value>
+                <fullName>Integration pending - Client</fullName>
+                <default>false</default>
+                <label>Integration pending - Client</label>
+            </value>
+            <value>
+                <fullName>Integration pending - CT</fullName>
+                <default>false</default>
+                <label>Integration pending - CT</label>
+            </value>
+            <value>
+                <fullName>Integration pending - SI</fullName>
+                <default>false</default>
+                <label>Integration pending - SI</label>
+            </value>
+            <value>
+                <fullName>Integration pending but using product manually</fullName>
+                <default>false</default>
+                <label>Integration pending but using product manually</label>
+            </value>
+            <value>
+                <fullName>No Risk - But using govt tool/ consultant as well</fullName>
+                <default>false</default>
+                <label>No Risk - But using govt tool/ consultant as well</label>
+            </value>
+            <value>
+                <fullName>No Risk - Low volume</fullName>
+                <default>false</default>
+                <label>No Risk - Low volume</label>
+            </value>
+            <value>
+                <fullName>No Risk - Once a month activity (EINV)</fullName>
+                <default>false</default>
+                <label>No Risk - Once a month activity (EINV)</label>
+            </value>
+            <value>
+                <fullName>No Risk -Renewal Period correction</fullName>
+                <default>false</default>
+                <label>No Risk -Renewal Period correction</label>
+            </value>
+            <value>
+                <fullName>Onboarding completed but not updated in SF</fullName>
+                <default>false</default>
+                <label>Onboarding completed but not updated in SF</label>
+            </value>
+            <value>
+                <fullName>Onboarding denied due to pending integration</fullName>
+                <default>false</default>
+                <label>Onboarding denied due to pending integration</label>
+            </value>
+            <value>
+                <fullName>Onboarding pending-Client</fullName>
+                <default>false</default>
+                <label>Onboarding pending-Client</label>
+            </value>
+            <value>
+                <fullName>Onboarding pending-CT</fullName>
+                <default>false</default>
+                <label>Onboarding pending-CT</label>
+            </value>
+            <value>
+                <fullName>One time engagement</fullName>
+                <default>false</default>
+                <label>One time engagement</label>
+            </value>
+            <value>
+                <fullName>Only API client</fullName>
+                <default>false</default>
+                <label>Only API client</label>
+            </value>
+            <value>
+                <fullName>Parent renewal completed - SF needs to be updated</fullName>
+                <default>false</default>
+                <label>Parent renewal completed - SF needs to be updated</label>
+            </value>
+            <value>
+                <fullName>POC change - Not responding</fullName>
+                <default>false</default>
+                <label>POC change - Not responding</label>
+            </value>
+            <value>
+                <fullName>Pricing approval pending with CT-Finance</fullName>
+                <default>false</default>
+                <label>Pricing approval pending with CT-Finance</label>
+            </value>
+            <value>
+                <fullName>Product bugs/issue</fullName>
+                <default>false</default>
+                <label>Product bugs/issue</label>
+            </value>
+            <value>
+                <fullName>Renewal completed but not updated in SF</fullName>
+                <default>false</default>
+                <label>Renewal completed but not updated in SF</label>
+            </value>
+            <value>
+                <fullName>Support issue/ training required</fullName>
+                <default>false</default>
+                <label>Support issue/ training required</label>
+            </value>
+            <value>
+                <fullName>Uneecops deals</fullName>
+                <default>false</default>
+                <label>Uneecops deals</label>
+            </value>
+            <value>
+                <fullName>Using the product (Email to be shared)</fullName>
+                <default>false</default>
+                <label>Using the product (Email to be shared)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Status_Date_Field_Validat</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Rocketlane_Integration__c=FALSE,(if(ISPICKVAL(Project_Stage__c,&apos;Implementation&apos;) &amp;&amp; (!CONTAINS(Upper(TEXT(Client_ERP__c)),&apos;TALLY&apos;)|| ISPICKVAL(Client_ERP__c,&apos;&apos;))  &amp;&amp; (!CONTAINS(Upper(SI_Partner_Account__c),&apos;UNEECOP&apos;) || 
+ ISBLANK(SI_Partner_Account__c))   &amp;&amp; (
+ISBLANK(Project_Kick_off_Date__c) || 
+ISBLANK(Project_Plan_Sign_off_Date__c) || 
+ISBLANK(Estimated_Implementation_End_Date__c) || 
+ISBLANK(Estimated_UAT_End_Date__c) || 
+ISBLANK(Estimated_Go_Live_Date__c) || 
+ISBLANK(Implementation_Start_Date__c)
+
+), true, false)))</errorConditionFormula>
+    <errorMessage>Enter all project timeline dates up to &apos;Implementation Start Date&apos;.</errorMessage>
+</ValidationRule>

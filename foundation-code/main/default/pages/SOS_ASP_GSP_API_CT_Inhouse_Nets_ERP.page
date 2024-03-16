@@ -1,0 +1,145 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_ASPGSPAPI_CT_InNets_ERP_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services forASP/GSP Integration - ASP API- </u></b>
+
+            <p class="test">
+              <b> A. Feature List of Cleartax ASP GSP GST Software is as below </b>
+            </p>
+            <table class="info-table"> 
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                    <td><b>Compliance</b></td>
+                    <td>GSTR Preparation</td>
+                    <td>* Support and preparation of  GSTR Returns.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">Advanced filing features</td> 
+                    <td style="border-collapse: collapse;">* Handling stock transfers, reverse charge scenarios, b2b vs. b2c rollups.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td  style="border-collapse: collapse;">Reconciliation: Bucketing - Match, Mismatch.</td>
+                    <td style="border-collapse: collapse;"><!--style="white-space:pre" --> 
+                        * Reconcile ERP Purchase Register against Vendor-filed GSTR1. 
+                        Bucket into matches, mismatches with ability to auto assign to 
+                        shared.<br/>
+                        * Bulk actions to auto accept, reject, modify.<br/>
+                        * Filters by Vendors, GSTIN, branch/location, etc.<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">User Training</td>
+                    <td style="border-collapse: collapse;">* Online training to finance team members on how to operate the software.</td>
+                </tr>
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>* Standard MIS reports GSTIN-wise, tax ledgers.</td>
+                </tr>
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>* Client-specific template can be field mapped to Licensor via field mapper.</td>
+                </tr>
+                <tr>
+                    <td><b>Integrated Invoicing system</b></td>
+                    <td>GST compliant invoicing system</td>
+                    <td>* Ability to generate, print GST compliant invoices from the compliance solution. </td>
+                </tr>
+            </table>
+
+            <p>   </p>
+
+<b> B. Features of Cleartax Netsuite Connector Application for GST </b>
+
+
+
+ <ol style="list-style-type: lower-roman;">
+  <li>Prerequisites
+  <ol style="list-style-type: decimal;">
+  <li>Setup ClearTax for Netsuite
+  <ol style="list-style-type: lower-latin;">
+  <li>Create a ClearTax account via ClearTax Portal
+   <ol style="list-style-type: lower-roman;">
+    <li>Customers can sign up on their own and take Sales/KAM help to enable integration.</li>
+ <li>Payments will be held offline, as self-checkout flow is not available presently.</li>
+
+   </ol>
+
+  </li>
+<li>Configure Businesses in the ClearTax portal - Customers need to configure their PANs and GSTINs on the ClearTax account.</li>
+
+  
+  </ol>
+ 
+  </li>
+  <li>NetSuite Bundles required prior to Cleartax installation
+   <ol style="list-style-type: lower-roman;">
+    <li>India Localization SuiteTax Engine (Bundle ID: 253246)</li>
+ <li>India Localization SuiteTax Reports (Bundle ID: 255126)</li>
+
+   </ol>
+
+  </li>
+  </ol>
+  </li>
+  
+ <li>Features
+ <ol style="list-style-type: decimal;">
+   <li>Netsuite connector Syncs all the documents from the Netsuite ERP to ClearTax GST portal on a real-time basis as soon as the invoice is saved</li>
+ <li>No need of creating excel for the all the document and upload at the portal at the time of filing</li>
+
+  </ol></li>
+  
+
+ <li>Limitations
+ <ol style="list-style-type: decimal;">
+   <li>Currently, the integration does not transfer the data before the installation of the ClearTax suite app</li>
+ <li>Data stored using the custom entry forms cannot be synced.</li>
+
+  </ol></li>
+  
+</ol>
+
+<b> C. Scope Limitations and Customer Dependencies </b>
+
+    <ol type="i">
+<li>The scope of installation and configuration. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.</li>
+<li>Infra: Cleartax will  commence the project once infra is set up by the customer’s infra team and the customer provides necessary access to Cleartax and its system integrator . This activity should be done by the Customer within 5 working days from project kick-off date </li>
+<li>Network: Cleartax does not provide end to end service on network set up. </li>
+<li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+<li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees to additionally pay for such remote access. </li>
+<li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.</li>
+
+<li>No Netsuite related customizations to be provided by Cleartax.</li>
+   
+    </ol>         
+            
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

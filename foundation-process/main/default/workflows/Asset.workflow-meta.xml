@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Churn_Email</fullName>
+        <ccEmails>rahul.k@cleartax.in,sumit.kawariya@cleartax.in,dream-lt@cleartax.in,anosh.lepcha@cleartax.in,billing@cleartax.in</ccEmails>
+        <description>Churn Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>Central_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_North</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_South</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_West</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional_Head_West_North</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>South_Regional_KAM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>amit.desai@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>arvind.solanky@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>bhagyashree.kothari@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kanik.arora@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>manas.madhup@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nishant.garg@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>riya.prasad@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rohit.lodha@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rohit.razdan@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vishal.dubey@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Managed_Service_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/asset_churn_closure</template>
+    </alerts>
+    <alerts>
+        <fullName>Integration_Email_Asset</fullName>
+        <description>Integration Email Asset</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>daksh.sikka@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>yash.kothari@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Integration_Asset_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Onboarding_Complete_Email</fullName>
+        <ccEmails>billing@cleartax.in</ccEmails>
+        <description>Onboarding Complete Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Onboarding_Complete_Email_Template_Asset</template>
+    </alerts>
+    <alerts>
+        <fullName>Tentative_resume_date</fullName>
+        <ccEmails>integrations-delivery@cleartax.in</ccEmails>
+        <description>Tentative resume date</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Tentative_resume_date_email_template</template>
+    </alerts>
+    <alerts>
+        <fullName>Tentative_resume_date_1_day</fullName>
+        <ccEmails>integrations-delivery@cleartax.in</ccEmails>
+        <description>Tentative resume date 1 day</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Tentative_resume_date_email_template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Awaiting_Kick_Off_End_Date</fullName>
+        <field>Project_Awaiting_Kick_Off_End_Date__c</field>
+        <formula>If( ((ISPICKVAL((PRIORVALUE( Project_Stage__c )),&apos;Awaiting Kick-off&apos;)) &amp;&amp; ISCHANGED(Project_Stage__c) &amp;&amp; ISNULL(  Project_Awaiting_Kick_Off_End_Date__c  )) , Today(), Project_Awaiting_Kick_Off_End_Date__c )</formula>
+        <name>Awaiting Kick Off End Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Billed_Upto_Date</fullName>
+        <field>Billed_Upto__c</field>
+        <formula>IF(ISPICKVAL(Status,&apos;Sales return&apos;),  PurchaseDate , Billed_Upto__c )</formula>
+        <name>Billed Upto Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Capture_Asset_Churn_Date</fullName>
+        <field>Churn_Date__c</field>
+        <formula>Today()</formula>
+        <name>Capture Asset Churn Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Capture_Training_Completed_Date</fullName>
+        <field>Training_Completed_Onboarding_Status__c</field>
+        <formula>NOW()</formula>
+        <name>Capture Training Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Capture_Usage_Started_Date</fullName>
+        <field>Usage_Started_Onboarding_Status__c</field>
+        <formula>Now()</formula>
+        <name>Capture Usage Started Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Capture_date_on_which_Asset_is_lost</fullName>
+        <field>Lost_Date__c</field>
+        <formula>Today()</formula>
+        <name>Capture date on which Asset is lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>On_Hold_End_date</fullName>
+        <field>Project_On_Hold_End_Date__c</field>
+        <formula>If( ((ISPICKVAL((PRIORVALUE( Project_Status__c )),&apos;On-hold&apos;)) &amp;&amp;  ISCHANGED(Project_Status__c) &amp;&amp; ISNULL(Project_On_Hold_End_Date__c)) , Today(),  Project_On_Hold_End_Date__c )</formula>
+        <name>On Hold End date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>On_Hold_Update</fullName>
+        <field>Project_On_Hold_Date__c</field>
+        <formula>If(ISNULL(PRIORVALUE( Project_On_Hold_Date__c )), On_Hold_date_for_flow__c , Project_On_Hold_Date__c)</formula>
+        <name>On Hold Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PopuateAssetRenewedDateToToday</fullName>
+        <field>Renewed_Date_Current_Asset__c</field>
+        <formula>IF(TEXT(Renewal_Opportunity__r.StageName) = &apos;Closed Won&apos;  , Renewal_Opportunity__r.CloseDate,Parent.Renewed_Date_Current_Asset__c)</formula>
+        <name>PopuateAssetRenewedDateToToday</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ProjecT_UAT_Update</fullName>
+        <field>Project_UAT_Date__c</field>
+        <formula>If(ISNULL(PRIORVALUE(  Project_UAT_Date__c  )),  UAT_Date_for_flow__c  , Project_UAT_Date__c )</formula>
+        <name>ProjecT UAT Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Awaiting_Kick_Off_Update</fullName>
+        <field>Project_Awaiting_Kick_Off_Date__c</field>
+        <formula>If(ISNULL(PRIORVALUE( Project_Awaiting_Kick_Off_Date__c )),  Awaiting_Kick_Off_date_for_flow__c ,  Project_Awaiting_Kick_Off_Date__c )</formula>
+        <name>Project Awaiting Kick Off Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UAT_End_Date_Update</fullName>
+        <field>Project_UAT_End_Date__c</field>
+        <formula>If( ((ISPICKVAL((PRIORVALUE( Project_Stage__c )),&apos;UAT&apos;)) &amp;&amp; ISCHANGED(Project_Stage__c) &amp;&amp; ISNULL( Project_UAT_End_Date__c )) , Today(), Project_UAT_End_Date__c )</formula>
+        <name>UAT End Date Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Actionable</fullName>
+        <description>Updating the csm actionable</description>
+        <field>Dummy_Actionable__c</field>
+        <formula>if(not(isblank(CSM_KAM_handover__c)),&quot;No further action required from CSM&quot;,
+if(isblank(Onboarding_Completed_Date__c),
+if(isblank(Asset_success_flag__c),&quot;If Onboarding is completed, mark Onboarding Completed Date in SF, else finish Onboarding&quot;,
+if(max_of_opportunity_or_po__c&gt;=Date(2021,6,1),
+if(Activation_status_new__c=&quot;Unactivated&quot;,if(Ageing_since_max_opp_and_po__c&lt;12,&quot;If Onboarding is completed, mark Onboarding Completed Date in SF, else finish Onboarding&quot;,&quot;Onboarding delayed, if not a genuine case send formal mail of Potential Sales Return&quot;),
+if(Activation_status_new__c=&quot;Activated&quot;,&quot;Mark Onboarding Completed Date in SF&quot;,&quot;If Onboarding is completed, mark Onboarding Completed Date in SF, else finish Onboarding&quot;)),
+if(Asset_success_flag__c=&apos;Success Pending&apos;,if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Make success as per Success within 90 days definition&quot;,&quot;Make success as per Success Prior to 1st June assets definition&quot;),if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Do engagement&quot;,&quot;Small KAM Handover to be done&quot;)))),
+if(isblank(Asset_success_flag__c),
+if(max_of_opportunity_or_po__c&gt;=Date(2021,6,1),if(Ageing_since_max_opp_and_po__c&lt;80,&quot;Make success as per Success within 90 days definition&quot;,&quot;Initiate KAM Handover&quot;),if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Make success as per Success within 90 days definition&quot;,&quot;Make success as per Success Prior to 1st June assets definition&quot;)),
+if(max_of_opportunity_or_po__c&lt;Date(2021,6,1),
+if(Asset_success_flag__c=&apos;Success Pending&apos;,if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Make success as per Success within 90 days definition&quot;,&quot;Make success as per Success Prior to 1st June assets definition&quot;),if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Do engagement&quot;,&quot;Small KAM Handover to be done&quot;)),
+if(Asset_success_flag__c=&apos;Success Pending&apos;,if(Activation_status_new__c=&quot;Unactivated&quot;,if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Make success as per Success within 90 days definition&quot;,&quot;Activate the asset&quot;),if(Ageing_since_max_opp_and_po__c&lt;80,&quot;Make success as per Success within 90 days definition&quot;,if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Intiate KAM Handover Process&quot;,&quot;Close KAM Handover Process&quot;))),
+if(OR(Asset_success_flag__c=&apos;Success&apos;,Asset_success_flag__c=&apos;Usage not Tracked&apos;),if(Ageing_since_max_opp_and_po__c&lt;80,&quot;Do engagement&quot;,if(Ageing_since_max_opp_and_po__c&lt;=90,&quot;Intiate KAM Handover Process&quot;,&quot;Close KAM Handover Process&quot;)),&quot;&quot;))))))</formula>
+        <name>Update CSM Actionable</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Asset Churn%2FSales return</fullName>
+        <actions>
+            <name>Churn_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Asset.Status</field>
+            <operation>equals</operation>
+            <value>Churn,Sales return</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Asset Onboarding Mail</fullName>
+        <actions>
+            <name>Onboarding_Complete_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Onboarding_status__c</field>
+            <operation>equals</operation>
+            <value>Onboarding Complete,Usage Started</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Capture Onboarding Status Usage Started Date</fullName>
+        <actions>
+            <name>Capture_Usage_Started_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Onboarding_status__c</field>
+            <operation>equals</operation>
+            <value>Usage Started</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Capture Onboarding statusTraining Completed Date</fullName>
+        <actions>
+            <name>Capture_Training_Completed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Onboarding_status__c</field>
+            <operation>equals</operation>
+            <value>Training Complete</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email before 7 days of Tentative resume date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Tentative_Resume_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>mail is sent to &apos;&apos;integrations-delivery@cleartax.in&apos;&apos; and the respective KAM&apos;s Email ID 7 days before the &quot;Tentative resume date&apos;&apos; for any integration asset.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Tentative_resume_date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Asset.Tentative_Resume_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Tentative_resume_date_1_day</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Asset.Tentative_Resume_Date__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>PopuateAssetRenewedDate</fullName>
+        <actions>
+            <name>PopuateAssetRenewedDateToToday</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Status</field>
+            <operation>equals</operation>
+            <value>Renewed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Project UAT%2FOn Hold%2FAwaiting Kick Off</fullName>
+        <actions>
+            <name>Awaiting_Kick_Off_End_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>On_Hold_End_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>On_Hold_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ProjecT_UAT_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Project_Awaiting_Kick_Off_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UAT_End_Date_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>If( (ISNULL(PRIORVALUE( On_Hold_date_for_flow__c )) &amp;&amp; ISCHANGED(On_Hold_date_for_flow__c)) 
+|| 
+(ISNULL(PRIORVALUE(  Awaiting_Kick_Off_date_for_flow__c  )) &amp;&amp; ISCHANGED(Awaiting_Kick_Off_date_for_flow__c)) ||
+(ISNULL(PRIORVALUE(  UAT_Date_for_flow__c   )) &amp;&amp; ISCHANGED(UAT_Date_for_flow__c) || 
+(ISCHANGED(Project_Status__c)) || (ISCHANGED(Project_Stage__c))
+) || ISNEW(), true,false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Asset Lost Date</fullName>
+        <actions>
+            <name>Churn_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Billed_Upto_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Capture_Asset_Churn_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Asset.Status</field>
+            <operation>equals</operation>
+            <value>Churn,Sales return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Asset.Export__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update CSM Actionable flow</fullName>
+        <actions>
+            <name>Update_CSM_Actionable</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Bypassing</description>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>integration Asset</fullName>
+        <actions>
+            <name>Integration_Email_Asset</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(Product2.Product_category__c,&apos;Integration&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

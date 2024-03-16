@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Churn_Reason_L2__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Churn / Risk Reason L2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>First_Churn_Reason_L1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Airline credit account</fullName>
+                <default>false</default>
+                <label>Airline credit account</label>
+            </value>
+            <value>
+                <fullName>Cancellation of E-invoice &amp; Ewaybill issue</fullName>
+                <default>false</default>
+                <label>Cancellation of E-invoice &amp; Ewaybill issue</label>
+            </value>
+            <value>
+                <fullName>Company POC left the organization</fullName>
+                <default>false</default>
+                <label>Company POC left the organization</label>
+            </value>
+            <value>
+                <fullName>Company Restructuring / external factors</fullName>
+                <default>false</default>
+                <label>Company Restructuring / external factors</label>
+            </value>
+            <value>
+                <fullName>Competitor offered better service / product feature</fullName>
+                <default>false</default>
+                <label>Competitor offered better service / product feature</label>
+            </value>
+            <value>
+                <fullName>Competitor offering significant discount / Govt tender</fullName>
+                <default>false</default>
+                <label>Competitor offering significant discount / Govt tender</label>
+            </value>
+            <value>
+                <fullName>Custom print templates required by client</fullName>
+                <default>false</default>
+                <label>Custom print templates required by client</label>
+            </value>
+            <value>
+                <fullName>Do not have contact of the KAM / support team</fullName>
+                <default>false</default>
+                <label>Do not have contact of the KAM / support team</label>
+            </value>
+            <value>
+                <fullName>Download of E-invoice &amp; Ewaybill issue</fullName>
+                <default>false</default>
+                <label>Download of E-invoice &amp; Ewaybill issue</label>
+            </value>
+            <value>
+                <fullName>Einvoice with other vendor hence lost ASP / Ewaybill</fullName>
+                <default>false</default>
+                <label>Einvoice with other vendor hence lost ASP / Ewaybill</label>
+            </value>
+            <value>
+                <fullName>Filing of GST returns issue</fullName>
+                <default>false</default>
+                <label>Filing of GST returns issue</label>
+            </value>
+            <value>
+                <fullName>Free usage</fullName>
+                <default>false</default>
+                <label>Free usage</label>
+            </value>
+            <value>
+                <fullName>G1 auto populated from Einv / low value seen in ASP product and vice versa</fullName>
+                <default>false</default>
+                <label>G1 auto populated from Einv / low value seen in ASP product and vice versa</label>
+            </value>
+            <value>
+                <fullName>Generation of E-invoice &amp; Ewaybill issue</fullName>
+                <default>false</default>
+                <label>Generation of E-invoice &amp; Ewaybill issue</label>
+            </value>
+            <value>
+                <fullName>Govt tool is easier</fullName>
+                <default>false</default>
+                <label>Govt tool is easier</label>
+            </value>
+            <value>
+                <fullName>Ingestion of Sales/Purchase Data issue</fullName>
+                <default>false</default>
+                <label>Ingestion of Sales/Purchase Data issue</label>
+            </value>
+            <value>
+                <fullName>INT-Delayed integration</fullName>
+                <default>false</default>
+                <label>INT-Delayed integration</label>
+            </value>
+            <value>
+                <fullName>INT-Did not get required support during Integration / Slow response for Integration</fullName>
+                <default>false</default>
+                <label>INT-Did not get required support during Integration / Slow response for Integration</label>
+            </value>
+            <value>
+                <fullName>Integrated with Govt API directly</fullName>
+                <default>false</default>
+                <label>Integrated with Govt API directly</label>
+            </value>
+            <value>
+                <fullName>INT- Integration not properly done</fullName>
+                <default>false</default>
+                <label>INT- Integration not properly done</label>
+            </value>
+            <value>
+                <fullName>Low Invoice count</fullName>
+                <default>false</default>
+                <label>Low Invoice count</label>
+            </value>
+            <value>
+                <fullName>Managed Services did not meet the client timelines / output quality expectations</fullName>
+                <default>false</default>
+                <label>Managed Services did not meet the client timelines / output quality expectations</label>
+            </value>
+            <value>
+                <fullName>Management Mandate for Big 4</fullName>
+                <default>false</default>
+                <label>Management Mandate for Big 4</label>
+            </value>
+            <value>
+                <fullName>OBD-Delay in onboarding / incomplete onboarding / support issue</fullName>
+                <default>false</default>
+                <label>OBD-Delay in onboarding / incomplete onboarding / support issue</label>
+            </value>
+            <value>
+                <fullName>OBD- Did not get proper training / no training</fullName>
+                <default>false</default>
+                <label>OBD- Did not get proper training / no training</label>
+            </value>
+            <value>
+                <fullName>Other Product Issues</fullName>
+                <default>false</default>
+                <label>Other Product Issues</label>
+            </value>
+            <value>
+                <fullName>OTP was incorrectly marked as ARR</fullName>
+                <default>false</default>
+                <label>OTP was incorrectly marked as ARR</label>
+            </value>
+            <value>
+                <fullName>Prefers local CA</fullName>
+                <default>false</default>
+                <label>Prefers local CA</label>
+            </value>
+            <value>
+                <fullName>Printing of E-invoice &amp; Ewaybill issue</fullName>
+                <default>false</default>
+                <label>Printing of E-invoice &amp; Ewaybill issue</label>
+            </value>
+            <value>
+                <fullName>Queries were unanswered / Not getting enough support</fullName>
+                <default>false</default>
+                <label>Queries were unanswered / Not getting enough support</label>
+            </value>
+            <value>
+                <fullName>Reconciliation issue</fullName>
+                <default>false</default>
+                <label>Reconciliation issue</label>
+            </value>
+            <value>
+                <fullName>Reports issue</fullName>
+                <default>false</default>
+                <label>Reports issue</label>
+            </value>
+            <value>
+                <fullName>Sales commitment were not possible to be delivered</fullName>
+                <default>false</default>
+                <label>Sales commitment were not possible to be delivered</label>
+            </value>
+            <value>
+                <fullName>Upgrade to Tally prime</fullName>
+                <default>false</default>
+                <label>Upgrade to Tally prime</label>
+            </value>
+            <value>
+                <fullName>Using Cleartax CA offering</fullName>
+                <default>false</default>
+                <label>Using Cleartax CA offering</label>
+            </value>
+            <value>
+                <fullName>Wrong product sold / Customer not aware of any engagement</fullName>
+                <default>false</default>
+                <label>Wrong product sold / Customer not aware of any engagement</label>
+            </value>
+            <value>
+                <fullName>Generating EWB along with EINV</fullName>
+                <default>false</default>
+                <label>Generating EWB along with EINV</label>
+            </value>
+            <value>
+                <fullName>GST Product Issues</fullName>
+                <default>false</default>
+                <label>GST Product Issues</label>
+            </value>
+            <value>
+                <fullName>Training not properly given / Lack of timely support</fullName>
+                <default>false</default>
+                <label>Training not properly given / Lack of timely support</label>
+            </value>
+            <value>
+                <fullName>SF correction</fullName>
+                <default>false</default>
+                <label>SF correction</label>
+            </value>
+            <value>
+                <fullName>KAM not aware</fullName>
+                <default>false</default>
+                <label>KAM not aware</label>
+            </value>
+            <value>
+                <fullName>Eway bill &amp; Einv Product Issues</fullName>
+                <default>false</default>
+                <label>Eway bill &amp; Einv Product Issues</label>
+            </value>
+            <value>
+                <fullName>Integration Delayed / not done properly</fullName>
+                <default>false</default>
+                <label>Integration Delayed / not done properly</label>
+            </value>
+            <value>
+                <fullName>Historic Churn</fullName>
+                <default>false</default>
+                <label>Historic Churn</label>
+            </value>
+            <value>
+                <fullName>Not Risk as per KAM</fullName>
+                <default>false</default>
+                <label>Not Risk as per KAM</label>
+            </value>
+            <value>
+                <fullName>Client fixing their ERP issues internally</fullName>
+                <default>false</default>
+                <label>Client fixing their ERP issues internally</label>
+            </value>
+            <value>
+                <fullName>Client Unresponsive</fullName>
+                <default>false</default>
+                <label>Client Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Client business shut down</fullName>
+                <default>false</default>
+                <label>Client business shut down</label>
+            </value>
+            <value>
+                <fullName>Airline credit churn due to low airline invoice / limit travel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Airline credit churn due to low airline invoice / limit travel</label>
+            </value>
+            <value>
+                <fullName>Company Restructuring</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company Restructuring</label>
+            </value>
+            <value>
+                <fullName>Custom Data Ingestion issue (tax rate, upload time, ERP data mismatch)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Data Ingestion issue (tax rate, upload time, ERP data mismatch)</label>
+            </value>
+            <value>
+                <fullName>Delay in Integration consultancy projects (complex program, higher support expectation / guidance missing)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay in Integration consultancy projects (complex program, higher support expectation / guidance missing)</label>
+            </value>
+            <value>
+                <fullName>Free upgrade to Tally prime</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Free upgrade to Tally prime</label>
+            </value>
+            <value>
+                <fullName>Free usage (active in greater than 10 gstins/ filed atleast 1 gstin)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Free usage (active in greater than 10 gstins/ filed atleast 1 gstin)</label>
+            </value>
+            <value>
+                <fullName>G1 autopopulated from Einv / low value seen in ASP product</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>G1 autopopulated from Einv / low value seen in ASP product</label>
+            </value>
+            <value>
+                <fullName>Low Invoices / usage/ wallet share</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low Invoices / usage/ wallet share</label>
+            </value>
+            <value>
+                <fullName>Managed Services did not met the client timelines and output quality expectations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Managed Services did not met the client timelines and output quality expectations</label>
+            </value>
+            <value>
+                <fullName>Management Mandate for Big 4 / Management Mandate for Cygent (advanced tool - subjective view)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Management Mandate for Big 4 / Management Mandate for Cygent (advanced tool - subjective view)</label>
+            </value>
+            <value>
+                <fullName>One time Engagement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>One time Engagement</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Product Feature ask (autofill buyer &amp; supplier details, Invoicing tool limitation of 100 invoices, branch level access)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Feature ask (autofill buyer &amp; supplier details, Invoicing tool limitation of 100 invoices, branch level access)</label>
+            </value>
+            <value>
+                <fullName>Significant discount in Pricing due to competition/ govt tender (MS deals)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Significant discount in Pricing due to competition/ govt tender (MS deals)</label>
+            </value>
+            <value>
+                <fullName>Support / Training during onboarding issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Support / Training during onboarding issues</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Cancellation of E-invoice &amp; Ewaybill issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Custom print templates required by client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Do not have contact of the KAM / support team</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Download of E-invoice &amp; Ewaybill issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Filing of GST returns issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Generation of E-invoice &amp; Ewaybill issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>INT-Delayed integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>INT-Did not get required support during Integration / Slow response for Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>INT- Integration not properly done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Managed Services did not meet the client timelines / output quality expectations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>OBD-Delay in onboarding / incomplete onboarding / support issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>OBD- Did not get proper training / no training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Other Product Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Printing of E-invoice &amp; Ewaybill issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Queries were unanswered / Not getting enough support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Reconciliation issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Reports issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>GST Product Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Training not properly given / Lack of timely support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Eway bill &amp; Einv Product Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Integration Delayed / not done properly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Competitor offered better service / product feature</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Competitor offering significant discount / Govt tender</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Einvoice with other vendor hence lost ASP / Ewaybill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Govt tool is easier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Integrated with Govt API directly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Management Mandate for Big 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Prefers local CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Upgrade to Tally prime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Airline credit account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Company Restructuring / external factors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>G1 auto populated from Einv / low value seen in ASP product and vice versa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Ingestion of Sales/Purchase Data issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Low Invoice count</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Generating EWB along with EINV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Company POC left the organization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Free usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>OTP was incorrectly marked as ARR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Sales commitment were not possible to be delivered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using Cleartax CA offering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Wrong product sold / Customer not aware of any engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>SF correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>KAM not aware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Historic Churn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Not Risk as per KAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Client fixing their ERP issues internally</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Client Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Client business shut down</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

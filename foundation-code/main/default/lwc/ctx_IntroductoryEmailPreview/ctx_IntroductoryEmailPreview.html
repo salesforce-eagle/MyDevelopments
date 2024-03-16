@@ -1,0 +1,52 @@
+<template>
+    <lightning-button variant="brand" label="Send Introduction Email" title="Send Introduction Email" onclick={handleToggleModal}></lightning-button>
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <header class="slds-modal__header slds-clearfix">
+                        <a onclick={handleToggleModal} class="slds-modal__close">
+                            <lightning-icon icon-name="utility:close" size="small" class="icon-color-close"></lightning-icon>
+                        </a>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><b>Email Preview</b>
+                        </h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" style="position:relative;" id="modal-content-id-1">
+                        <c-ctx_-multi-select-lookup 
+                            field-name="Name,Email" 
+                            lookup-filter-condition={lookupFilterCondition} 
+                            label="To Contacts" 
+                            object-name="Contact" 
+                            selected-contacts={emailWrapper.toContacts}
+                            icon-name="standard:contact" 
+                            onselected={handleRecordSelected}
+                            class="slds-var-p-around_small">
+                        </c-ctx_-multi-select-lookup>
+                        <lightning-input type="text" label="Subject" name="Subject" value={emailWrapper.subject} onchange={handleSubjectChange} class="slds-var-p-around_small"></lightning-input>
+                        <lightning-input-rich-text label="Body" value={emailWrapper.htmlBody} onchange={handleEmailBodyChange} class="slds-var-p-around_small"></lightning-input-rich-text>
+
+                        <template if:true={showSpinner}>
+                            <div class="slds-spinner_container slds-grid">
+                                <div class="slds-align_absolute-center">
+                                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </template>
+
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="brand" label="Send" name="Send" onclick={handleSendEmail} disabled={showSpinner}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+    </template>
+</template>

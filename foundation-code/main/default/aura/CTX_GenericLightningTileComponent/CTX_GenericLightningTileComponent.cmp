@@ -1,0 +1,26 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="tileLabel"	type="String" />
+    <aura:attribute name="tileMap" 		type="List" />
+    
+    <lightning:tile >
+        
+        <aura:iteration items="{!v.tileMap}" var="item">
+            
+            <dl class="slds-dl_horizontal slds-region_narrow">
+                
+                <dt class="slds-dl_horizontal__label">
+                    <p class="slds-truncate" title="{!item.key}">{!item.key}</p>
+                </dt>
+                <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate slds-hyphenate no-text-overflow" title="{!item.value}">
+                        <lightning:formattedText value="{!item.value}" /></p>
+                </dd>
+            </dl>
+            
+        </aura:iteration>
+        
+    </lightning:tile>
+    
+</aura:component>

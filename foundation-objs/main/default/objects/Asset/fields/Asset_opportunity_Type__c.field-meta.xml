@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_opportunity_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Asset_opportunity Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+                <label>Channel Partner</label>
+            </value>
+            <value>
+                <fullName>Cross Sell/Upsell</fullName>
+                <default>false</default>
+                <label>Cross Sell/Upsell</label>
+            </value>
+            <value>
+                <fullName>ITR</fullName>
+                <default>false</default>
+                <label>ITR</label>
+            </value>
+            <value>
+                <fullName>Net New</fullName>
+                <default>false</default>
+                <label>Net New</label>
+            </value>
+            <value>
+                <fullName>Partner Success</fullName>
+                <default>false</default>
+                <label>Partner Success</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Winback</fullName>
+                <default>false</default>
+                <label>Winback</label>
+            </value>
+            <value>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+                <label>Upsell</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>Net New - ID</fullName>
+                <default>false</default>
+                <label>Net New - ID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

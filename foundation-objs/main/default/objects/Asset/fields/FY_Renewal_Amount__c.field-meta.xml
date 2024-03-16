@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FY_Renewal_Amount__c</fullName>
+    <description>Future Year Renewal Amount.</description>
+    <externalId>false</externalId>
+    <formula>IF( NOT( ISNULL( Renewal_Opportunity__c ) ) ,  Renewal_Opportunity__r.Actual_Amount__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FY Renewal Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

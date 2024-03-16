@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualified_Meeting__c</fullName>
+    <deprecated>false</deprecated>
+    <description>weather the data was injested from the backend for tracking purpose and can be duplicate record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Weather Meeting is Accept or Reject by Sales</inlineHelpText>
+    <label>Qualified Meeting</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accept</fullName>
+                <default>false</default>
+                <label>Accept</label>
+            </value>
+            <value>
+                <fullName>Reject</fullName>
+                <default>false</default>
+                <label>Reject</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

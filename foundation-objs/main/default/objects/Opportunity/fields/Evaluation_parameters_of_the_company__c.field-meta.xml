@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_parameters_of_the_company__c</fullName>
+    <externalId>false</externalId>
+    <label>Deal evaluation parameters of the client</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Seamless ERP integration</fullName>
+                <default>false</default>
+                <label>Seamless ERP integration</label>
+            </value>
+            <value>
+                <fullName>Time to integrate</fullName>
+                <default>false</default>
+                <label>Time to integrate</label>
+            </value>
+            <value>
+                <fullName>Time to implement</fullName>
+                <default>false</default>
+                <label>Time to implement</label>
+            </value>
+            <value>
+                <fullName>Product superiority</fullName>
+                <default>false</default>
+                <label>Product superiority</label>
+            </value>
+            <value>
+                <fullName>POC results</fullName>
+                <default>false</default>
+                <label>POC results</label>
+            </value>
+            <value>
+                <fullName>Existing customer</fullName>
+                <default>false</default>
+                <label>Existing customer</label>
+            </value>
+            <value>
+                <fullName>None - Add in below text field</fullName>
+                <default>false</default>
+                <label>None - Add in below text field</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

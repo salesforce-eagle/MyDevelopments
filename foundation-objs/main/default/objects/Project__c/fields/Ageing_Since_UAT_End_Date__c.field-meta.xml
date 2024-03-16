@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ageing_Since_UAT_End_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>If(((TODAY() -  UAT_End_Date__c))&lt;= 15,&quot;0 - 15 Days&quot;,IF(AND(((TODAY() - UAT_End_Date__c) &gt; 15 ), ((TODAY() - UAT_End_Date__c) &lt;=30)),&quot;16 - 30 Days&quot; ,IF(AND(((TODAY() - UAT_End_Date__c) &gt;30) , ((TODAY() - UAT_End_Date__c) &lt;=60)), &quot;31 - 60 Days&quot; ,IF(AND(((TODAY() - UAT_End_Date__c) &gt; 60) , ((TODAY() - UAT_End_Date__c) &lt;= 90)) ,&quot;60 - 90 Days&quot; , IF(ISBLANK(UAT_End_Date__c),&quot; &quot;,&quot;Greater than 90 Days&quot;)))))</formula>
+    <label>Ageing (Since UAT End Date)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

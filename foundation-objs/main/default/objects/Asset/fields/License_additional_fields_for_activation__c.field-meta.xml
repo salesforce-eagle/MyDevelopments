@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_additional_fields_for_activation__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Additional features</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2FA</fullName>
+                <default>false</default>
+                <label>2FA</label>
+            </value>
+            <value>
+                <fullName>Audit Trail</fullName>
+                <default>false</default>
+                <label>Audit Trail</label>
+            </value>
+            <value>
+                <fullName>Branch Level Access</fullName>
+                <default>false</default>
+                <label>Branch Level Access</label>
+            </value>
+            <value>
+                <fullName>Maker - Checker</fullName>
+                <default>false</default>
+                <label>Maker - Checker</label>
+            </value>
+            <value>
+                <fullName>PAN Module</fullName>
+                <default>false</default>
+                <label>PAN Module</label>
+            </value>
+            <value>
+                <fullName>Custom Roles</fullName>
+                <default>false</default>
+                <label>Custom Roles</label>
+            </value>
+            <value>
+                <fullName>Multiple Workspaces</fullName>
+                <default>false</default>
+                <label>Multiple Workspaces</label>
+            </value>
+            <value>
+                <fullName>Feature request and tracking</fullName>
+                <default>false</default>
+                <label>Feature request and tracking</label>
+            </value>
+            <value>
+                <fullName>Domain Name Check</fullName>
+                <default>false</default>
+                <label>Domain Name Check</label>
+            </value>
+            <value>
+                <fullName>Spynet</fullName>
+                <default>false</default>
+                <label>Spynet</label>
+            </value>
+            <value>
+                <fullName>Auto Log out</fullName>
+                <default>false</default>
+                <label>Auto Log out</label>
+            </value>
+            <value>
+                <fullName>Group Clients/ Offices</fullName>
+                <default>false</default>
+                <label>Group Clients/ Offices</label>
+            </value>
+            <value>
+                <fullName>Teams in LP0/ LP1</fullName>
+                <default>false</default>
+                <label>Teams in LP0/ LP1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

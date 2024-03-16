@@ -1,0 +1,53 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_EWB_GSTR1_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>                        <b><u> Scope of Services for Assistance in Reconciliation of EWB v/s GSTR-1 - </u></b>
+  <p>      
+          Cleartax will provide following services to the Customer holding GST Registrations in various states, 
+          using Cleartax’s GST Technology Platform (‘hereinafter referred to as GST Technology Platform’). 
+          The following activities shall be undertaken in GST compliance services:</p>
+          <p> <b>Services and Customer Responsibilities:  </b> </p> 
+          <ol style="list-style-type: decimal;">
+                <li> Customer to provide GSTR-1 filed data &amp; EWB credentials for download of historical data
+</li>
+                <li>Cleartax to reconcile GSTR-1 filed invoices with EWB summary and shall identify the following gaps:
+                <ul>
+                <li>GSTIN level summary of matched invoices.</li>
+                <li>GSTIN level summary of Invoices in GSTR1 for which E-way bill is not generated and vice-versa.</li>
+                <li>GSTIN level summary of Invoice mismatch (along with reason specified therein) in E-way bill and GSTR-1.</li>
+                <li>PAN level reconciliation summary reflecting the status viz. matched, mismatched, missing either side.</li>
+                </ul>
+                  
+</li>
+
+                </ol>Acting on the said errors and mismatches, in the books of accounts/ IT system of the Customer, 
+                shall be the sole responsibility of the Customer.  
+            
+<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

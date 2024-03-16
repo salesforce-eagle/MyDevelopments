@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>license expired rule</label>
+    <protected>false</protected>
+    <values>
+        <field>AssignedUser__c</field>
+        <value xsi:type="xsd:string">0052x000002uOOPAA2</value>
+    </values>
+    <values>
+        <field>IsActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Keywords__c</field>
+        <value xsi:type="xsd:string">license expired,trial expiry,account expired,trial account expire,activate license,activate account, license expiry</value>
+    </values>
+    <values>
+        <field>RecordTypes__c</field>
+        <value xsi:type="xsd:string">0122x000000t9ZTAAY,0122x000000tM37AAE,0122x000000t9ZUAAY</value>
+    </values>
+    <values>
+        <field>runInsert__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>runUpdate__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

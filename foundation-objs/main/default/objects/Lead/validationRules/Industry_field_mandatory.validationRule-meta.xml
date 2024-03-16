@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_field_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>if((RecordTypeId == &apos;0122x000000t7bD&apos; || RecordTypeId == &apos;0122x000000t7bF&apos;),AND( ISPICKVAL( Channel_Partner_Type__c , &apos;Custom ERP&apos;) ,
+ OR(ISBLANK( Industry_in_case_of_custom_ERP__c ), ISNULL( Industry_in_case_of_custom_ERP__c ))
+),false)</errorConditionFormula>
+    <errorDisplayField>Industry_in_case_of_custom_ERP__c</errorDisplayField>
+    <errorMessage>Complete this field</errorMessage>
+</ValidationRule>

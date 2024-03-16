@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Churn_Reason_L3__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Churn / Risk Reason L3</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>First_Churn_Reason_L1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Free usage of product after period end date hence renewal not done</fullName>
+                <default>false</default>
+                <label>Free usage of product after period end date hence renewal not done</label>
+            </value>
+            <value>
+                <fullName>9/9C</fullName>
+                <default>false</default>
+                <label>9/9C</label>
+            </value>
+            <value>
+                <fullName>Additional adhoc customized request from Client and SI is taking time to close the bug/request</fullName>
+                <default>false</default>
+                <label>Additional adhoc customized request from Client and SI is taking time to close the bug/request</label>
+            </value>
+            <value>
+                <fullName>Additional measurement parameters, lines, currency options required</fullName>
+                <default>false</default>
+                <label>Additional measurement parameters, lines, currency options required</label>
+            </value>
+            <value>
+                <fullName>Additional request after the completion of integration</fullName>
+                <default>false</default>
+                <label>Additional request after the completion of integration</label>
+            </value>
+            <value>
+                <fullName>Airline credit account loss due to low invoices</fullName>
+                <default>false</default>
+                <label>Airline credit account loss due to low invoices</label>
+            </value>
+            <value>
+                <fullName>APIs</fullName>
+                <default>false</default>
+                <label>APIs</label>
+            </value>
+            <value>
+                <fullName>Big4 offered lower price</fullName>
+                <default>false</default>
+                <label>Big4 offered lower price</label>
+            </value>
+            <value>
+                <fullName>Branch level access is not available in CT</fullName>
+                <default>false</default>
+                <label>Branch level access is not available in CT</label>
+            </value>
+            <value>
+                <fullName>Business slowdown / degrowth</fullName>
+                <default>false</default>
+                <label>Business slowdown / degrowth</label>
+            </value>
+            <value>
+                <fullName>Cleartax Integration team could not fulfill the customer requirements</fullName>
+                <default>false</default>
+                <label>Cleartax Integration team could not fulfill the customer requirements</label>
+            </value>
+            <value>
+                <fullName>Client can comfortably use govt portal as it is free and he does not want to pay for the services which are available free of cost</fullName>
+                <default>false</default>
+                <label>Client can comfortably use govt portal as it is free and he does not want to pay for the services which are available free of cost</label>
+            </value>
+            <value>
+                <fullName>Client does not have the mandatory headers required by CT software</fullName>
+                <default>false</default>
+                <label>Client does not have the mandatory headers required by CT software</label>
+            </value>
+            <value>
+                <fullName>Client ERP getting migrated</fullName>
+                <default>false</default>
+                <label>Client ERP getting migrated</label>
+            </value>
+            <value>
+                <fullName>Client expects on call IT expert from CT</fullName>
+                <default>false</default>
+                <label>Client expects on call IT expert from CT</label>
+            </value>
+            <value>
+                <fullName>Client expects on call IT expert from CT / better technical support</fullName>
+                <default>false</default>
+                <label>Client expects on call IT expert from CT / better technical support</label>
+            </value>
+            <value>
+                <fullName>Client is getting additional services from CA (advisory, in office visits)</fullName>
+                <default>false</default>
+                <label>Client is getting additional services from CA (advisory, in office visits)</label>
+            </value>
+            <value>
+                <fullName>Client IT team is not from India</fullName>
+                <default>false</default>
+                <label>Client IT team is not from India</label>
+            </value>
+            <value>
+                <fullName>Client moved to CA as it is more cost effective for client</fullName>
+                <default>false</default>
+                <label>Client moved to CA as it is more cost effective for client</label>
+            </value>
+            <value>
+                <fullName>Client only using some of CT products and the competitor offered a lucrative whole package deal</fullName>
+                <default>false</default>
+                <label>Client only using some of CT products and the competitor offered a lucrative whole package deal</label>
+            </value>
+            <value>
+                <fullName>Client prioritizes other projects over integration</fullName>
+                <default>false</default>
+                <label>Client prioritizes other projects over integration</label>
+            </value>
+            <value>
+                <fullName>Client was not willing to pay ARR</fullName>
+                <default>false</default>
+                <label>Client was not willing to pay ARR</label>
+            </value>
+            <value>
+                <fullName>Client was offered highly discounted prices by competitors</fullName>
+                <default>false</default>
+                <label>Client was offered highly discounted prices by competitors</label>
+            </value>
+            <value>
+                <fullName>Clients&apos; IT team is confident with Govt portal and well equipped to problem solve adhoc issues if they come up</fullName>
+                <default>false</default>
+                <label>Clients&apos; IT team is confident with Govt portal and well equipped to problem solve adhoc issues if they come up</label>
+            </value>
+            <value>
+                <fullName>Competition offering end to end solution</fullName>
+                <default>false</default>
+                <label>Competition offering end to end solution</label>
+            </value>
+            <value>
+                <fullName>Contacts of the decision maker are missing</fullName>
+                <default>false</default>
+                <label>Contacts of the decision maker are missing</label>
+            </value>
+            <value>
+                <fullName>CT integration taking time, thus moved to Tally prime</fullName>
+                <default>false</default>
+                <label>CT integration taking time, thus moved to Tally prime</label>
+            </value>
+            <value>
+                <fullName>Customer expected timelines were not met</fullName>
+                <default>false</default>
+                <label>Customer expected timelines were not met</label>
+            </value>
+            <value>
+                <fullName>Customer more comfortable in using Tally software (data management tool)</fullName>
+                <default>false</default>
+                <label>Customer more comfortable in using Tally software (data management tool)</label>
+            </value>
+            <value>
+                <fullName>Cygnet offered all forms</fullName>
+                <default>false</default>
+                <label>Cygnet offered all forms</label>
+            </value>
+            <value>
+                <fullName>Data cleaning required before uploading on CT</fullName>
+                <default>false</default>
+                <label>Data cleaning required before uploading on CT</label>
+            </value>
+            <value>
+                <fullName>Data is in a different template than what is required by CT</fullName>
+                <default>false</default>
+                <label>Data is in a different template than what is required by CT</label>
+            </value>
+            <value>
+                <fullName>Data pull issues from GSTN</fullName>
+                <default>false</default>
+                <label>Data pull issues from GSTN</label>
+            </value>
+            <value>
+                <fullName>Delay in customer request resolution by KAM</fullName>
+                <default>false</default>
+                <label>Delay in customer request resolution by KAM</label>
+            </value>
+            <value>
+                <fullName>Delay in ticket resolution from CT</fullName>
+                <default>false</default>
+                <label>Delay in ticket resolution from CT</label>
+            </value>
+            <value>
+                <fullName>Easier process for low volume invoices</fullName>
+                <default>false</default>
+                <label>Easier process for low volume invoices</label>
+            </value>
+            <value>
+                <fullName>EINV was already integrated and doing integration for other product as well</fullName>
+                <default>false</default>
+                <label>EINV was already integrated and doing integration for other product as well</label>
+            </value>
+            <value>
+                <fullName>End to End filing flow missing from CT, client has to go to govt portal anyway</fullName>
+                <default>false</default>
+                <label>End to End filing flow missing from CT, client has to go to govt portal anyway</label>
+            </value>
+            <value>
+                <fullName>End to end filling journey is possible (Filling &amp; Payment)</fullName>
+                <default>false</default>
+                <label>End to end filling journey is possible (Filling &amp; Payment)</label>
+            </value>
+            <value>
+                <fullName>Free upgrade to Tally prime</fullName>
+                <default>false</default>
+                <label>Free upgrade to Tally prime</label>
+            </value>
+            <value>
+                <fullName>G1 auto populated from Einv hence doing filing in Govt portal directly</fullName>
+                <default>false</default>
+                <label>G1 auto populated from Einv hence doing filing in Govt portal directly</label>
+            </value>
+            <value>
+                <fullName>GSTN Verification</fullName>
+                <default>false</default>
+                <label>GSTN Verification</label>
+            </value>
+            <value>
+                <fullName>Importing Purchase register issue</fullName>
+                <default>false</default>
+                <label>Importing Purchase register issue</label>
+            </value>
+            <value>
+                <fullName>Incorrect Expectation setting for KAM by Sales</fullName>
+                <default>false</default>
+                <label>Incorrect Expectation setting for KAM by Sales</label>
+            </value>
+            <value>
+                <fullName>Incorrect expectations from client (consulting/full time)</fullName>
+                <default>false</default>
+                <label>Incorrect expectations from client (consulting/full time)</label>
+            </value>
+            <value>
+                <fullName>Invoicing tool limitation of 100 invoices</fullName>
+                <default>false</default>
+                <label>Invoicing tool limitation of 100 invoices</label>
+            </value>
+            <value>
+                <fullName>Lost during Govt tender as our quote was higher</fullName>
+                <default>false</default>
+                <label>Lost during Govt tender as our quote was higher</label>
+            </value>
+            <value>
+                <fullName>Lot of data gap/mismatch in the filing reports</fullName>
+                <default>false</default>
+                <label>Lot of data gap/mismatch in the filing reports</label>
+            </value>
+            <value>
+                <fullName>Lot of to and fro communication happening</fullName>
+                <default>false</default>
+                <label>Lot of to and fro communication happening</label>
+            </value>
+            <value>
+                <fullName>Merger / Demerger of company</fullName>
+                <default>false</default>
+                <label>Merger / Demerger of company</label>
+            </value>
+            <value>
+                <fullName>Moved to CA product for ~5k</fullName>
+                <default>false</default>
+                <label>Moved to CA product for ~5k</label>
+            </value>
+            <value>
+                <fullName>Not able to bifurcate in Tax brackets</fullName>
+                <default>false</default>
+                <label>Not able to bifurcate in Tax brackets</label>
+            </value>
+            <value>
+                <fullName>Not seeing value in the product as Recon is not required</fullName>
+                <default>false</default>
+                <label>Not seeing value in the product as Recon is not required</label>
+            </value>
+            <value>
+                <fullName>Onboarding team could not solve doubts on time</fullName>
+                <default>false</default>
+                <label>Onboarding team could not solve doubts on time</label>
+            </value>
+            <value>
+                <fullName>Onboarding team were busy / unresponsive</fullName>
+                <default>false</default>
+                <label>Onboarding team were busy / unresponsive</label>
+            </value>
+            <value>
+                <fullName>One time Vendor Comm</fullName>
+                <default>false</default>
+                <label>One time Vendor Comm</label>
+            </value>
+            <value>
+                <fullName>Overall format of the einvoice needs to be changed</fullName>
+                <default>false</default>
+                <label>Overall format of the einvoice needs to be changed</label>
+            </value>
+            <value>
+                <fullName>Received notices from Govt due to incorrect filling</fullName>
+                <default>false</default>
+                <label>Received notices from Govt due to incorrect filling</label>
+            </value>
+            <value>
+                <fullName>Recon taking time</fullName>
+                <default>false</default>
+                <label>Recon taking time</label>
+            </value>
+            <value>
+                <fullName>Recon Training/ Support was not given properly</fullName>
+                <default>false</default>
+                <label>Recon Training/ Support was not given properly</label>
+            </value>
+            <value>
+                <fullName>Regular Bugs</fullName>
+                <default>false</default>
+                <label>Regular Bugs</label>
+            </value>
+            <value>
+                <fullName>Sales did not introduce KAM to client</fullName>
+                <default>false</default>
+                <label>Sales did not introduce KAM to client</label>
+            </value>
+            <value>
+                <fullName>Sales handshake not done properly</fullName>
+                <default>false</default>
+                <label>Sales handshake not done properly</label>
+            </value>
+            <value>
+                <fullName>Senior management of client wants to go for Big 4</fullName>
+                <default>false</default>
+                <label>Senior management of client wants to go for Big 4</label>
+            </value>
+            <value>
+                <fullName>SI partner was not able to understand the requirements</fullName>
+                <default>false</default>
+                <label>SI partner was not able to understand the requirements</label>
+            </value>
+            <value>
+                <fullName>Software is very slow</fullName>
+                <default>false</default>
+                <label>Software is very slow</label>
+            </value>
+            <value>
+                <fullName>Status on CT is complete but not showing on govt portal</fullName>
+                <default>false</default>
+                <label>Status on CT is complete but not showing on govt portal</label>
+            </value>
+            <value>
+                <fullName>Supertax/PowerGST/velocis/others offered lucrative deals(monetarily)</fullName>
+                <default>false</default>
+                <label>Supertax/PowerGST/velocis/others offered lucrative deals(monetarily)</label>
+            </value>
+            <value>
+                <fullName>System integrator had done integration for Einv and now doing for other products as well</fullName>
+                <default>false</default>
+                <label>System integrator had done integration for Einv and now doing for other products as well</label>
+            </value>
+            <value>
+                <fullName>Tally set up is easy to install and use</fullName>
+                <default>false</default>
+                <label>Tally set up is easy to install and use</label>
+            </value>
+            <value>
+                <fullName>The decision making authority has changed</fullName>
+                <default>false</default>
+                <label>The decision making authority has changed</label>
+            </value>
+            <value>
+                <fullName>The decision making authority has changed due to company restructuring</fullName>
+                <default>false</default>
+                <label>The decision making authority has changed due to company restructuring</label>
+            </value>
+            <value>
+                <fullName>Timelines not provided by the Product team</fullName>
+                <default>false</default>
+                <label>Timelines not provided by the Product team</label>
+            </value>
+            <value>
+                <fullName>Training on EINV template creation was not given</fullName>
+                <default>false</default>
+                <label>Training on EINV template creation was not given</label>
+            </value>
+            <value>
+                <fullName>UI/UX issues</fullName>
+                <default>false</default>
+                <label>UI/UX issues</label>
+            </value>
+            <value>
+                <fullName>Values/Count Mismatch</fullName>
+                <default>false</default>
+                <label>Values/Count Mismatch</label>
+            </value>
+            <value>
+                <fullName>Not using Reports, Recon, Filling</fullName>
+                <default>false</default>
+                <label>Not using Reports, Recon, Filling</label>
+            </value>
+            <value>
+                <fullName>KAM not aware of the status</fullName>
+                <default>false</default>
+                <label>KAM not aware of the status</label>
+            </value>
+            <value>
+                <fullName>Other product ask</fullName>
+                <default>false</default>
+                <label>Other product ask</label>
+            </value>
+            <value>
+                <fullName>Asset created incorrectly-need to delete</fullName>
+                <default>false</default>
+                <label>Asset created incorrectly-need to delete</label>
+            </value>
+            <value>
+                <fullName>Using only Filing and Reports</fullName>
+                <default>false</default>
+                <label>Using only Filing and Reports</label>
+            </value>
+            <value>
+                <fullName>Due date/Amount to be changed</fullName>
+                <default>false</default>
+                <label>Due date/Amount to be changed</label>
+            </value>
+            <value>
+                <fullName>Using only Recon and Reports</fullName>
+                <default>false</default>
+                <label>Using only Recon and Reports</label>
+            </value>
+            <value>
+                <fullName>EINV was already integrated/lost to other vendor and now they are moving to them completely</fullName>
+                <default>false</default>
+                <label>EINV was already integrated/lost to other vendor and now they are moving to them completely</label>
+            </value>
+            <value>
+                <fullName>One time Recon</fullName>
+                <default>false</default>
+                <label>One time Recon</label>
+            </value>
+            <value>
+                <fullName>Delay in ticket / query resolution from CT</fullName>
+                <default>false</default>
+                <label>Delay in ticket / query resolution from CT</label>
+            </value>
+            <value>
+                <fullName>One time G9 engagement</fullName>
+                <default>false</default>
+                <label>One time G9 engagement</label>
+            </value>
+            <value>
+                <fullName>No Risk- usage not getting captured</fullName>
+                <default>false</default>
+                <label>No Risk- usage not getting captured</label>
+            </value>
+            <value>
+                <fullName>Legal Notice thus no usage</fullName>
+                <default>false</default>
+                <label>Legal Notice thus no usage</label>
+            </value>
+            <value>
+                <fullName>One time MS deal</fullName>
+                <default>false</default>
+                <label>One time MS deal</label>
+            </value>
+            <value>
+                <fullName>G1 data in GSTN and CT portal not matching</fullName>
+                <default>false</default>
+                <label>G1 data in GSTN and CT portal not matching</label>
+            </value>
+            <value>
+                <fullName>EWB Usage is low</fullName>
+                <default>false</default>
+                <label>EWB Usage is low</label>
+            </value>
+            <value>
+                <fullName>Tally connector is not working properly</fullName>
+                <default>false</default>
+                <label>Tally connector is not working properly</label>
+            </value>
+            <value>
+                <fullName>Client is expecting new features at same price</fullName>
+                <default>false</default>
+                <label>Client is expecting new features at same price</label>
+            </value>
+            <value>
+                <fullName>Renewal Risk</fullName>
+                <default>false</default>
+                <label>Renewal Risk</label>
+            </value>
+            <value>
+                <fullName>Not seing value due to very low volume</fullName>
+                <default>false</default>
+                <label>Not seing value due to very low volume</label>
+            </value>
+            <value>
+                <fullName>Integrated with Govt API directly</fullName>
+                <default>false</default>
+                <label>Integrated with Govt API directly</label>
+            </value>
+            <value>
+                <fullName>SI was blacklisted, thus delay</fullName>
+                <default>false</default>
+                <label>SI was blacklisted, thus delay</label>
+            </value>
+            <value>
+                <fullName>Client prioritises other projects over integration</fullName>
+                <default>false</default>
+                <label>Client prioritises other projects over integration</label>
+            </value>
+            <value>
+                <fullName>Group company / one of the entity is with other vendor</fullName>
+                <default>false</default>
+                <label>Group company / one of the entity is with other vendor</label>
+            </value>
+            <value>
+                <fullName>Lot of Data cleanup required- resulting in errors</fullName>
+                <default>false</default>
+                <label>Lot of Data cleanup required- resulting in errors</label>
+            </value>
+            <value>
+                <fullName>Karvy deal - KAM not aware of the status</fullName>
+                <default>false</default>
+                <label>Karvy deal - KAM not aware of the status</label>
+            </value>
+            <value>
+                <fullName>Customer more comfortable in using Tally software (data mangement tool)</fullName>
+                <default>false</default>
+                <label>Customer more comfortable in using Tally software (data mangement tool)</label>
+            </value>
+            <value>
+                <fullName>IRN generation information in Govt portal and CT not matching</fullName>
+                <default>false</default>
+                <label>IRN generation information in Govt portal and CT not matching</label>
+            </value>
+            <value>
+                <fullName>Filing &amp; Recon Training was not given properly</fullName>
+                <default>false</default>
+                <label>Filing &amp; Recon Training was not given properly</label>
+            </value>
+            <value>
+                <fullName>Using only Reports</fullName>
+                <default>false</default>
+                <label>Using only Reports</label>
+            </value>
+            <value>
+                <fullName>Asking discount due to low usage /invoices</fullName>
+                <default>false</default>
+                <label>Asking discount due to low usage /invoices</label>
+            </value>
+            <value>
+                <fullName>Historic churn - KAM not aware of the reason</fullName>
+                <default>false</default>
+                <label>Historic churn - KAM not aware of the reason</label>
+            </value>
+            <value>
+                <fullName>Others - One time Engagement</fullName>
+                <default>false</default>
+                <label>Others - One time Engagement</label>
+            </value>
+            <value>
+                <fullName>SI not able to meet the timelines</fullName>
+                <default>false</default>
+                <label>SI not able to meet the timelines</label>
+            </value>
+            <value>
+                <fullName>Using only Recon and Filing</fullName>
+                <default>false</default>
+                <label>Using only Recon and Filing</label>
+            </value>
+            <value>
+                <fullName>Client filling through a CA /consultant</fullName>
+                <default>false</default>
+                <label>Client filling through a CA /consultant</label>
+            </value>
+            <value>
+                <fullName>Using only Filling</fullName>
+                <default>false</default>
+                <label>Using only Filling</label>
+            </value>
+            <value>
+                <fullName>G1 autopopulated from Einv hence doing filing in Govt portal directly</fullName>
+                <default>false</default>
+                <label>G1 autopopulated from Einv hence doing filing in Govt portal directly</label>
+            </value>
+            <value>
+                <fullName>Different teams deal - KAM not aware of the status</fullName>
+                <default>false</default>
+                <label>Different teams deal - KAM not aware of the status</label>
+            </value>
+            <value>
+                <fullName>Using only Recon</fullName>
+                <default>false</default>
+                <label>Using only Recon</label>
+            </value>
+            <value>
+                <fullName>Integration delayed due to Consultant capability</fullName>
+                <default>false</default>
+                <label>Integration delayed due to Consultant capability</label>
+            </value>
+            <value>
+                <fullName>GSTN Verification- one time use case</fullName>
+                <default>false</default>
+                <label>GSTN Verification- one time use case</label>
+            </value>
+            <value>
+                <fullName>Airline Credit churn due to low airline invoices</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Airline Credit churn due to low airline invoices</label>
+            </value>
+            <value>
+                <fullName>Asking discount due to business slow down</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Asking discount due to business slow down</label>
+            </value>
+            <value>
+                <fullName>Company Restructuring</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Company Restructuring</label>
+            </value>
+            <value>
+                <fullName>Custom Data Ingestion  issue - ERP data has multiple issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Data Ingestion  issue - ERP data has multiple issues</label>
+            </value>
+            <value>
+                <fullName>Custom Data Ingestion issue- ERP data output needs lot of data recon before ingestion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Data Ingestion issue- ERP data output needs lot of data recon before ingestion</label>
+            </value>
+            <value>
+                <fullName>Custom Data Ingestion issue- not able to bifurcate in terms of tax rate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Custom Data Ingestion issue- not able to bifurcate in terms of tax rate</label>
+            </value>
+            <value>
+                <fullName>Data uploading is taking long time resulting in late filing of returns</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data uploading is taking long time resulting in late filing of returns</label>
+            </value>
+            <value>
+                <fullName>Delay in consultancy Integration due to support expectation from CT to convert data from SQL to JSON</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay in consultancy Integration due to support expectation from CT to convert data from SQL to JSON</label>
+            </value>
+            <value>
+                <fullName>Delay in consultancy integration due to complex programming</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delay in consultancy integration due to complex programming</label>
+            </value>
+            <value>
+                <fullName>Free usage of product hence renewal not done / move to CA product at 5k</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Free usage of product hence renewal not done / move to CA product at 5k</label>
+            </value>
+            <value>
+                <fullName>G1 data getting auto populated through Einv, hence ASP/GSP not required</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>G1 data getting auto populated through Einv, hence ASP/GSP not required</label>
+            </value>
+            <value>
+                <fullName>Integration delayed over a year</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration delayed over a year</label>
+            </value>
+            <value>
+                <fullName>Lost EWB as EINV was earlier signed with other vendor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost EWB as EINV was earlier signed with other vendor</label>
+            </value>
+            <value>
+                <fullName>Lost during govt tender as our price were higher</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost during govt tender as our price were higher</label>
+            </value>
+            <value>
+                <fullName>Low invoices hence not seeing value in Cleartax</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low invoices hence not seeing value in Cleartax</label>
+            </value>
+            <value>
+                <fullName>Managed Services did not met the client timelines and output quality expectations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Managed Services did not met the client timelines and output quality expectations</label>
+            </value>
+            <value>
+                <fullName>Management mandate to go with EY as they were offering whole package</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Management mandate to go with EY as they were offering whole package</label>
+            </value>
+            <value>
+                <fullName>Moved to Tally prime at zero cost because it was at par in terms of value and had not paid to CT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Moved to Tally prime at zero cost because it was at par in terms of value and had not paid to CT</label>
+            </value>
+            <value>
+                <fullName>OTP were incorrectly marked as ARR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTP were incorrectly marked as ARR</label>
+            </value>
+            <value>
+                <fullName>Product ask -autofill buyer and supplier details available in Govt utility</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product ask -autofill buyer and supplier details available in Govt utility</label>
+            </value>
+            <value>
+                <fullName>Proper training / handholding during onboarding was not provided</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Proper training / handholding during onboarding was not provided</label>
+            </value>
+            <value>
+                <fullName>Recon training /support were not given properly</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recon training /support were not given properly</label>
+            </value>
+            <value>
+                <fullName>Velocis offered very low price which we could not compete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Velocis offered very low price which we could not compete</label>
+            </value>
+            <value>
+                <fullName>We had quoted very higher price over Big 4 quote</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>We had quoted very higher price over Big 4 quote</label>
+            </value>
+            <value>
+                <fullName>Will lose ASP/GSP as EINV was earlier signed with other vendor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Will lose ASP/GSP as EINV was earlier signed with other vendor</label>
+            </value>
+            <value>
+                <fullName>Will lose as Branch level access is not available in CT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Will lose as Branch level access is not available in CT</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Additional adhoc customized request from Client and SI is taking time to close the bug/request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Additional measurement parameters, lines, currency options required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Additional request after the completion of integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Branch level access is not available in CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Cleartax Integration team could not fulfill the customer requirements</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Client ERP getting migrated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Client expects on call IT expert from CT / better technical support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Client IT team is not from India</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Client prioritizes other projects over integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Customer expected timelines were not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Data pull issues from GSTN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Delay in customer request resolution by KAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Delay in ticket resolution from CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>End to End filing flow missing from CT, client has to go to govt portal anyway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Importing Purchase register issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Incorrect expectations from client (consulting/full time)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Invoicing tool limitation of 100 invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Lot of data gap/mismatch in the filing reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Lot of to and fro communication happening</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Onboarding team could not solve doubts on time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Onboarding team were busy / unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Overall format of the einvoice needs to be changed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Received notices from Govt due to incorrect filling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Recon taking time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Recon Training/ Support was not given properly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Regular Bugs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Sales did not introduce KAM to client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Sales handshake not done properly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>SI partner was not able to understand the requirements</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Software is very slow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Status on CT is complete but not showing on govt portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Timelines not provided by the Product team</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Training on EINV template creation was not given</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>UI/UX issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Values/Count Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Other product ask</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Delay in ticket / query resolution from CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>G1 data in GSTN and CT portal not matching</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Tally connector is not working properly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>SI was blacklisted, thus delay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Client prioritises other projects over integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Lot of Data cleanup required- resulting in errors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>IRN generation information in Govt portal and CT not matching</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Filing &amp; Recon Training was not given properly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>SI not able to meet the timelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Experience with cleartax is not great</controllingFieldValue>
+            <valueName>Integration delayed due to Consultant capability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Big4 offered lower price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Client can comfortably use govt portal as it is free and he does not want to pay for the services which are available free of cost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client is getting additional services from CA (advisory, in office visits)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client moved to CA as it is more cost effective for client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client only using some of CT products and the competitor offered a lucrative whole package deal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client was not willing to pay ARR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client was offered highly discounted prices by competitors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Clients&apos; IT team is confident with Govt portal and well equipped to problem solve adhoc issues if they come up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Competition offering end to end solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>CT integration taking time, thus moved to Tally prime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Customer more comfortable in using Tally software (data management tool)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Cygnet offered all forms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Easier process for low volume invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>EINV was already integrated and doing integration for other product as well</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>End to end filling journey is possible (Filling &amp; Payment)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Free upgrade to Tally prime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Lost during Govt tender as our quote was higher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Senior management of client wants to go for Big 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Supertax/PowerGST/velocis/others offered lucrative deals(monetarily)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>System integrator had done integration for Einv and now doing for other products as well</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Tally set up is easy to install and use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>EINV was already integrated/lost to other vendor and now they are moving to them completely</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client is expecting new features at same price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Integrated with Govt API directly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Customer more comfortable in using Tally software (data mangement tool)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Much better service providers</controllingFieldValue>
+            <valueName>Client filling through a CA /consultant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Airline credit account loss due to low invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Business slowdown / degrowth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Client does not have the mandatory headers required by CT software</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Data cleaning required before uploading on CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Data is in a different template than what is required by CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>G1 auto populated from Einv hence doing filing in Govt portal directly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Merger / Demerger of company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Not able to bifurcate in Tax brackets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Not seeing value in the product as Recon is not required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>The decision making authority has changed due to company restructuring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Legal Notice thus no usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Not seing value due to very low volume</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Group company / one of the entity is with other vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>Asking discount due to low usage /invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Do not see value in the product</controllingFieldValue>
+            <valueName>G1 autopopulated from Einv hence doing filing in Govt portal directly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Free usage of product after period end date hence renewal not done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>9/9C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>APIs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Contacts of the decision maker are missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>GSTN Verification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Incorrect Expectation setting for KAM by Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Moved to CA product for ~5k</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>One time Vendor Comm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>The decision making authority has changed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Not using Reports, Recon, Filling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>KAM not aware of the status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Asset created incorrectly-need to delete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Filing and Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Due date/Amount to be changed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Recon and Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>One time Recon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>One time G9 engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>No Risk- usage not getting captured</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>One time MS deal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>EWB Usage is low</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Renewal Risk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Karvy deal - KAM not aware of the status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Historic churn - KAM not aware of the reason</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Others - One time Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Recon and Filing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Filling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Different teams deal - KAM not aware of the status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>Using only Recon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self goals</controllingFieldValue>
+            <valueName>GSTN Verification- one time use case</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

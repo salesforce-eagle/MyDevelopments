@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_PAN_should_be_10_digits</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordType.DeveloperName &lt;&gt; &apos;International&apos;,
+AND(
+NOT(ISBLANK( PAN_No_as_per_PO__c)), 
+NOT(REGEX( PAN_No_as_per_PO__c	, &quot;[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}&quot;))
+)) &amp;&amp; PAN_No_as_per_PO__c != Account.PAN__c</errorConditionFormula>
+    <errorMessage>Please Enter valid 10 characters in PAN</errorMessage>
+</ValidationRule>

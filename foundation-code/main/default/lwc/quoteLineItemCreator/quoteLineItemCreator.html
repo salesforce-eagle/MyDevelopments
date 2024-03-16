@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : pramodh@warpdrivetech.in
+  @group             : 
+  @last modified on  : 10-04-2020
+  @last modified by  : pramodh@warpdrivetech.in
+  Modifications Log 
+  Ver   Date         Author                     Modification
+  1.0   09-29-2020   pramodh@warpdrivetech.in   Initial Version
+-->
+<template>
+    <template if:false={noProductToShowError}>
+        <template if:true={error}>
+            {error}
+        </template>
+        <!--input type = "search" value={searchKey} onchange={handleOnSearchChange}-->
+        <template if:false={showLineItem}>
+            <lightning-datatable key-field="Id" columns={productColumns} data={productListData}
+                default-sort-direction={defaultSortDirection} sorted-direction={sortDirection} sorted-by={sortedBy}
+                onsort={onHandleSort} onrowselection={getSelectedId}>
+            </lightning-datatable>
+            <template if:true={isProductSelected}>
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="brand" label="Selected" title="Products Selected" onclick={saveProduct}
+                        class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </template>
+        </template>
+        <template if:true={showLineItem}>
+            <!--<c-quote-line-item-editor-form quote-id={recordId} inserted-records={insertedRecord}>
+            </c-quote-line-item-editor-form>-->
+        </template>
+    </template>
+    <template if:true={noProductToShowError}>
+        <p class="slds-text-color_error slds-align_absolute-center"> <b>{label.NoProductToAdd}</b></p>
+    </template>
+</template>

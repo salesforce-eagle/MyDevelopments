@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>CaseTriggerHandler</members>
+        <members>CaseFormController</members>
+        <members>CaseConstants</members>
+        <members>CaseCommentTriggerHelper</members>
+        <members>CaseTriggerHelper</members>
+        <members>EmailMessageTriggerHandler</members>
+        <members>EmailMessageTriggerHelper</members>
+        <members>CTX_CaseOwnerMappingBasedOnSubject</members>
+        <members>CTX_CaseValidations</members>
+        <members>CTX_AccountCollectionManagerLogic</members>
+
+        <name>ApexClass</name>
+    </types>
+    <version>52.0</version>
+</Package>

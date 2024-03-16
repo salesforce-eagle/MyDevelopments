@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_POC_Phone_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(  Business_POC_Contact_Number__c )),
+NOT(REGEX( Business_POC_Contact_Number__c, &quot;[0-9]{10}&quot;))
+)</errorConditionFormula>
+    <errorMessage>Enter valid Business POC Contact Number</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_EWB_GSTR1_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>                        <b><u> Scope of Services for Assisted Service - MCA strike off status - </u></b>
+<p>
+    
+     Cleartax will provide following services to the Customer, using Cleartax's Income Tax Technology
+Platform ('hereinafter referred to as Income Tax Technology Platform*):</p> 
+<p>
+    Services and Customer Responsibilities :
+
+    </p>    
+<ol>
+    <li>The Customer shall provide list of PAN or Party Name.</li>
+    <li>Clear team will provide strike-off status and other details as per MCA
+records based on the PAN/Party name shared by the Customer</li>
+    </ol>    
+    
+<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

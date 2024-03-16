@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <types>
+        <members>Opportunity_ITR_page</members>
+        <members>Opportunity_Page_360</members>
+        <members>Opportunity_Record_Page</members>
+        
+        <!--<members>Asset_KAM_Details__c</members>
+        <members>Asset_Usage_Details__c</members>
+        <members>Asset</members>-->
+        <name>FlexiPage</name>
+    </types>
+<!--
+    <types>
+        <members>Asset.License_B2B_SalesInvoice_per_year__c</members>
+        <members>Asset.Number_of_TANs__c</members>
+        <members>Asset.Number_of_Deductees_per_Quarter_24Q_26__c</members>
+        <members>Asset.Number_of_Deduction_Transactions_per_Qua__c</members>
+        <members>Asset.Digital_Signing_Utility_for_TDS_Certific__c</members>
+        <members>Asset.License_B2C_SalesInvoice_per_year__c</members>
+        <members>Asset.License_no_of_gstins__c</members>
+        <members>Asset.License_no_of_pans__c</members>
+        <members>Asset.License_no_of_userids__c</members>
+        <members>Asset.No_of_Vendor__c</members>
+        <members>Asset.No_of_airline_invoices_annual__c</members>
+        <members>Asset.No_of_airline_invoices__c</members>
+        <members>Asset.Number_of_Sales_Invoices__c</members>
+        <members>Asset.Number_of_eway_bill__c</members>
+        <members>Asset.Number_of_Purchase_Invoice__c</members>
+        <members>Asset.One_to_Many_Type__c</members>
+        <members>Asset.Number_of_eway_bill__c</members>
+        <members>Asset.License_no_of_invoice_formats__c</members>
+        <members>Asset.License_no_of_gstin_verification_credits__c</members>
+        <members>Asset.License_no_of_irns_per_year__c</members>
+        <members>Asset.License_No_of_MM2A_2B_usage_GSTIN_mon__c</members>
+        <members>Asset.License_no_of_Recon__c</members>
+        <members>Asset.No_of_expected_B2C_invoices_for_QR_code__c</members>
+        <members>Asset.Partner_Count_for_GeEr_up_Reports__c</members>
+        <members>Asset.Monthly_throughput_Slab_1_Cr__c</members>
+        <members>Asset.Monthly_throughput_Slab_2_Cr__c</members>
+        <members>Asset.Monthly_throughput_Slab_3_Cr__c</members>
+        <members>Asset.Transaction_Fee_Slab_1__c</members>
+        <members>Asset.Transaction_Fee_Slab_2__c</members>
+        <members>Asset.Transaction_Fee_Slab_3__c</members>
+        <members>Asset.Flat_Transaction_Fee__c</members>
+        <members>Asset.Tally_Connector_required__c</members>
+        <members>Asset.Total_annual_domestic_payables_Rs_Cr__c</members>
+        <members>Asset.POS_system__c</members>
+        <members>Asset.No_of_Bank_verification_API__c</members>
+        <members>Asset.No_of_API_calls_permissible__c</members>
+        <members>Asset.No_of_MCA_Company_details_API__c</members>
+        <members>Asset.No_of_MSME_API__c</members>
+        <members>Asset.No_of_PAN_verification_API__c</members>
+        <members>Asset.No_of_TDS_206_sync_API__c</members>
+        <members>Asset.No_of_PAN_to_GSTIN_APIs__c</members>
+        <members>Asset.No_of_PAN_verification_detailed_APIs__c</members>
+        <members>GCC</members>
+        <members>Asset.No_of_VAT__c</members>
+        <members>Asset.License_no_of_userids__c</members>
+        <members>Asset.POS_system__c</members>
+        <members>Asset.ERP_GCC__c</members>
+        <members>Asset.No_of_Online_devices__c</members>
+        <members>Asset.No_of_Offline_devices__c</members>
+        <members>Asset.License_B2B_SalesInvoice_per_year__c</members>
+        <members>Asset.License_B2C_SalesInvoice_per_year__c</members>       
+
+        <name>CustomField</name>
+    </types>
+-->
+
+    <version>52.0</version>
+</Package>

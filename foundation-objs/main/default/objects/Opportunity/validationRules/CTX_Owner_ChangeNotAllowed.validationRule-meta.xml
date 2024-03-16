@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Owner_ChangeNotAllowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+AND(
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+NOT( CONTAINS($Profile.Name, &apos;Head&apos;)),
+NOT( CONTAINS($UserRole.Name, &apos;Head&apos;)),
+NOT( CONTAINS($UserRole.Name, &apos;TL&apos;)),
+NOT( CONTAINS($Profile.Name, &apos;TL&apos;)),
+NOT( CONTAINS($Profile.Name, &apos;SDR Team&apos;)),
+NOT( CONTAINS( $User.Department, &apos;SDR team&apos;))
+),
+ISCHANGED(OwnerId)
+)</errorConditionFormula>
+    <errorMessage>Reach out to SalesOps team for owner change</errorMessage>
+</ValidationRule>

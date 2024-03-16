@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+ 
+    <types>
+        <!--    Account new fields    -->
+        <members>Account.KAM_Clause__c</members>
+        <members>Account.Commission_New_Sales__c</members>
+        <members>Account.Commission_Renewal_Sales__c</members>
+        <members>Account.Commission_Performance_incentive__c</members>
+        <members>Account.Partner_Onboarding_Stage__c</members>
+        <members>Account.Esign_Order__c</members>
+        <members>Account.Agreement_Sign_Method__c</members>
+        <members>Account.CC__c</members>
+        <members>Account.E_Sign_Type__c</members>
+        <members>Account.OTP_For_Electronic_Signature__c</members>
+        <members>Account.E_Sign_Status__c</members>
+        <members>Account.Esign_CTX_Status__c</members>
+        <members>Account.Esign_Partner_Status__c</members>
+        <members>Account.ESign_BE_Reference_Doc_ID__c</members>
+        <members>Account.ESign_BE_Document_ID__c</members>
+        <members>Account.ESign_BE_Docket_ID__c</members>
+        <members>Account.Retrigger_E_Sign__c</members>
+        <members>Account.ESign_Message__c</members>
+        <members>Account.Physical_Sign_completed__c</members>
+        <members>Account.ESign_Doc_Updated__c</members>
+        <members>Account.Is_Partner_Live__c</members>
+        <members>Account.Approval_Status__c</members>
+
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Account.Generate_Partner_Agreement_Form</members>
+        
+        <name>QuickAction</name>
+    </types>
+
+    <types>
+        <members>Account-Channel Partner</members>
+
+        <name>Layout</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

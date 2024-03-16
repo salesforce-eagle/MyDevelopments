@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_of_Meeting__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Source of Meeting</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SDR Team</fullName>
+                <default>false</default>
+                <label>SDR Team</label>
+            </value>
+            <value>
+                <fullName>MQL Team</fullName>
+                <default>false</default>
+                <label>MQL Team</label>
+            </value>
+            <value>
+                <fullName>KAM</fullName>
+                <default>false</default>
+                <label>KAM</label>
+            </value>
+            <value>
+                <fullName>LeadGen</fullName>
+                <default>false</default>
+                <label>LeadGen</label>
+            </value>
+            <value>
+                <fullName>Channel</fullName>
+                <default>false</default>
+                <label>Channel</label>
+            </value>
+            <value>
+                <fullName>Self-generated</fullName>
+                <default>false</default>
+                <label>Self-generated</label>
+            </value>
+            <value>
+                <fullName>Call log</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Call log</label>
+            </value>
+            <value>
+                <fullName>Cross-sell/ Upsell</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cross-sell/ Upsell</label>
+            </value>
+            <value>
+                <fullName>Health Check/ Business Review</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Health Check/ Business Review</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

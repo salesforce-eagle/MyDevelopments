@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delete_Asset_Restriction_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>Asset_to_be_deleted__c &amp;&amp; (!ISBLANK( New_Value_PO_End_date__c )|| !ISBLANK( New_Value_PO_Start_date__c ) || !ISBLANK( New_Value_Product__c )|| !ISBLANK( New_Value_Price__c ) )</errorConditionFormula>
+    <errorDisplayField>Asset_to_be_deleted__c</errorDisplayField>
+    <errorMessage>Please Uncheck &apos;Asset to be deleted&apos; to submit modify request !</errorMessage>
+</ValidationRule>

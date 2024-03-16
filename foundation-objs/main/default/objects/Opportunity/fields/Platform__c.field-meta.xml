@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Platform</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>App.Clear</fullName>
+                <default>false</default>
+                <label>App.Clear</label>
+            </value>
+            <value>
+                <fullName>ASP/GSP</fullName>
+                <default>false</default>
+                <label>ASP/GSP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

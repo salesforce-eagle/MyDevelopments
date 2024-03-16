@@ -1,0 +1,224 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_ASP_GSP_FTP_Inh_Controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services forASP/GSP Integration - ASP API- </u></b>
+
+            <p class="test">
+              <b> A. Feature List of Cleartax ASP GSP GST Software is as below </b>
+            </p>
+            <table class="info-table"> 
+                
+                <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                <tr>
+                    <td><b>Compliance</b></td>
+                    <td>GSTR Preparation</td>
+                    <td>* Support and preparation of  GSTR Returns.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">Advanced filing features</td> 
+                    <td style="border-collapse: collapse;">* Handling stock transfers, reverse charge scenarios, b2b vs. b2c rollups.</td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td  style="border-collapse: collapse;">Reconciliation: Bucketing - Match, Mismatch.</td>
+                    <td style="border-collapse: collapse;"><!--style="white-space:pre" --> 
+                        * Reconcile ERP Purchase Register against Vendor-filed GSTR1. 
+                        Bucket into matches, mismatches with ability to auto assign to 
+                        shared.<br/>
+                        * Bulk actions to auto accept, reject, modify.<br/>
+                        * Filters by Vendors, GSTIN, branch/location, etc.<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-collapse: collapse;"></td>
+                    <td style="border-collapse: collapse;">User Training</td>
+                    <td style="border-collapse: collapse;">* Online training to finance team members on how to operate the software.</td>
+                </tr>
+                <tr>
+                    <td><b>Business Intelligence Reporting</b></td>
+                    <td>Reports</td> 
+                    <td>* Standard MIS reports GSTIN-wise, tax ledgers.</td>
+                </tr>
+                <tr>
+                    <td><b>Data Import</b></td>
+                    <td></td>
+                    <td>* Client-specific template can be field mapped to Licensor via field mapper.</td>
+                </tr>
+                <tr>
+                    <td><b>Integrated Invoicing system</b></td>
+                    <td>GST compliant invoicing system</td>
+                    <td>* Ability to generate, print GST compliant invoices from the compliance solution. </td>
+                </tr>
+            </table>
+
+            
+
+<b>B. Scope of Services for SFTP Integration for GST </b> 
+<p>The deliverables shall encompass designing and development of the following components.
+</p>
+<p>
+GST invoice / credit note / Advance extractor will be developed in ERP system which will perform the following- </p>
+ <ol style="list-style-type: lower-roman;">
+ <li>Extraction of Invoices, Credit notes and Advances from standard and custom SAP tables for below selection criteria--
+ 
+ <ol style="list-style-type: lower-latin;">
+ <li>Invoice documents , range
+</li>
+ <li>Invoice creation date, range
+</li>
+ <li>Company code, range
+</li>
+ <li>Document Types, range
+</li>
+ <li>Fiscal Year, parameter(single value)
+</li>
+ <li>Radio-button to select SD invoices / FI invoices / other document types
+</li>
+ 
+ 
+ </ol>
+ 
+ </li>
+<li>A file will be created and placed on SFTP server
+
+</li>
+ <li>Application logs will be stored in SAP/Custom tables (optional)
+
+</li>
+ <li>SFTP magnet running at ClearTax side will pick up the file 
+
+</li>
+ <li>Any failure there will be an email response to the designated mailbox from SFTP magnet
+
+</li>
+  
+  
+    
+ 
+</ol>
+
+
+<p><b>
+Assumptions </b></p>
+ <ol style="list-style-type: lower-roman;">
+ <li>Data fetching logic from DB tables will be provided by the client team including any customizations in place. This includes but not limited to condition configurations to fetch CGST, SGST, IGST, CESS amounts etc
+ </li>
+<li>Client team will be able to configure background schedule of the program as per their requirements, data volumes and timings of their existing jobs
+</li>
+<li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.
+
+</li>
+
+
+  <li>Client team needs to help identify below scenarios for inward and outward documents--
+  <ul>
+ <li>Inter-state and Intra-state transactions
+</li>
+ <li>Exports, Imports and SEZ transactions
+</li>
+ <li>Amended and cancelled transactions
+</li>
+ <li>Reverse charge transactions
+</li>
+ <li>Nil rated, zero rated and exempted items in documents
+</li>
+  </ul>
+  </li>
+
+  
+    
+ 
+</ol>
+
+<p><b>
+Limitations </b></p>
+ <ol style="list-style-type: lower-roman;">
+ <li>Any code changes to existing client code will be out of scope of ClearTax </li>
+  <li>Any custom table development / logging for SFTP scenario will be outside the scope of work
+</li>
+ <li>Archiving of the files in the SFTP directories will be handled by Client/ Client’s IT team
+</li>
+ <li>Data pushed to ClearTax will not be pushed to government portal on real-time basis, client with GST software will evaluate the data on GST.CLEARTAX.COM and will push the data as per the business need (monthly / weekly / any specific schedules) 
+</li>
+
+   
+ 
+</ol>
+
+<b> C. Scope Limitations and Customer Dependencies </b>
+
+    <ol style="list-style-type: lower-roman;">
+ <li>The scope of integration is limited to application development. Any network, firewall, OS, Basis level configurations will need to be done by the customer's IT team.
+</li>
+  <li>Infra: Cleartax and its system integrator will  commence the project once infra is set up by the customer’s infra team and the customer provides necessary access to Cleartax and its system integrator . This activity should be done by the Customer within 5 working days from project kick-off date</li>
+
+ <li>Network: Cleartax does not provide end to end service on network set up. </li>
+ <li>Basis: Cleartax does not provide any support related to Basis.</li>
+ <li>Maintaining master and transaction data: Cleartax will not create or maintain the master and transaction data.</li>
+ <li>A remote connection / VPN / iVPN connectivity would be required at the delivery center of ClearTax /its system integrator. Alternatively the customer may provide a laptop  incase   VPN access cannot be provided.  If the Customer chooses to provide a laptop then it shall be provided within 7 working days of the execution of this Engagement Letter. Skype or any other mode of remote access shall not be acceptable  unless the Customer agrees to additionally pay for such remote access. 
+</li>
+ <li>Customer shall share appropriate Business requirement/functional documentation about the system configuration with the consulting team for study and understanding.
+</li>
+ <li>Appropriate and timely system access to the consulting team shall be provided at periodic intervals or based on the milestones.
+</li>
+ <li>ClearTax/SI shall submit the system to the customer team for Approval/User AcceptanceTesting (UAT). In the interest of timely completion of the project, all the test cases as per the functionalities agreed in Scope of Work in this LOE are to be tested and UAT sign-off to be provided by the customer within 14 days of moving the project to UAT. 
+</li>
+ <li>Once the UAT sign-off is provided the customer need to give necessary clearance to move the code to production within 7 days. 
+</li>
+ <li>In case the UAT sign off is not provided within 14 days as per point (ix) above, the project will be deemed to have successfully gone live and ClearTax shall be entitled to raise invoices for the amounts payable by the Customer. 
+</li>
+
+    </ol>
+  
+<b>D. Integration Post Go-Live Support</b>
+
+  
+ – Cleartax will provide one-month post go live support to the customer from the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+    <ol style="list-style-type: lower-roman;">
+      <li>additional features or enhancements which are not contained in the original scope of work for integration.
+</li>
+      <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work. 
+</li>
+    </ol>
+  
+
+
+
+
+
+<b>E. Annual Maintenance (AMC) for Integration </b>
+ Customer may avail annual maintenance services for integration for the Period of Engagement by paying appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+
+    <ol style="list-style-type: lower-roman;">
+      <li>additional features or enhancements which are not contained in the original scope of work for integration.
+</li>
+      <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work. 
+</li> 
+    </ol>
+         
+            
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

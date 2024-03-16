@@ -1,0 +1,60 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_GSP_EWB_API_Controller" showheader="false" >
+   <html>
+      <head>
+         <style type="text/css">
+            .test{
+            color:blue;
+            }
+            .info-table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            }
+            .info-table th,.info-table td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            }
+            table { page-break-inside:auto}
+            tr { page-break-inside:avoid; page-break-after:auto}
+            th {page-break-inside:avoid; page-break-after:auto}
+         </style>
+      </head>
+      <body>
+         <apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+         </apex:panelGroup>
+        
+        <b><u> Scope of Services for E-Way Bill Integration - GSP API- </u></b>
+
+         <p><b>a. 
+            Scope of Services for API Integration Consultation </b> 
+         </p>
+         <ol style="list-style-type: lower-roman;">
+            <li>Exposing relevant APIs to the customer and providing authentication tokens.</li>
+            <li>Providing technical documentation on APIs exposed.</li>
+            <li>Providing consultation on technical feasibility and data sufficiency from the API perspective to enable speedy execution and completion for the customer.</li>
+         </ol>
+         <p><b>b. Scope Limitation:</b> Any consultation related to the customer ERP, network or IT environment is explicitly out of scope.</p>
+         <p><b>c. Integration Post Go-Live Support –</b> Cleartax will provide one-month post go live support to the customer from 
+            the go-live date of integration. Such support includes fixing any breakages in functionality only with respect to the original 
+            scope of work for integration. It excludes
+         <ol style="list-style-type: lower-roman;">
+            <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+            <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.</li>
+         </ol>
+         </p>
+         <p>
+            <b>d. Annual Maintenance (AMC) for Integration -</b> Customer may avail annual maintenance services for integration for the Period of Engagement by paying 
+            appropriate AMC fee. The AMC support will include fixing any breakages in functionality only with respect to the original scope of work for integration. It excludes
+         <ol style="list-style-type: lower-roman;">
+            <li>additional features or enhancements which are not contained in the original scope of work for integration.</li>
+            <li>breakages in functionality arising out of any subsequent changes (including but not limited to changes in APIs / 
+               schema fields) stipulated by the government/GSTN/NIC after the initially agreed scope of work.
+            </li>
+         </ol>
+         </p>
+         <apex:include pageName="{!nextPage9}"/>
+      </body>
+   </html>
+</apex:page>

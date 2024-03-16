@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_House_Project_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+AND( RecordType.DeveloperName &lt;&gt;&apos;International&apos;,(No_Of_EInvoice_Product__c &gt; 0 ||  No_Of_EWB_Product__c &gt;0 ||  No_of_E_Invoice_E_way_Bill_Product__c &gt;0 ||  No_of_ASP_GSP_Product__c 
+ &gt; 0),ISPICKVAL(In_House_Project__c,&apos;&apos;),!CONTAINS( (UPPER(  $Profile.Name )),(UPPER(&apos;admin&apos;))) ),true,false)</errorConditionFormula>
+    <errorMessage>Please Choose a value for In-House Project!</errorMessage>
+</ValidationRule>

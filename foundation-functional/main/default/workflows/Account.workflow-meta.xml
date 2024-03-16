@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CTX_Channel_Partner_Creation_Mail_Alert</fullName>
+        <description>CTX Channel Partner Creation Mail Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Master_admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>notification@support.clear.in</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CTX_Channel_Partner_Creation_Mail</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Business Approval In Progress</literalValue>
+        <name>Update Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Channel_Partner_Onboarding_Stage</fullName>
+        <field>Partner_Onboarding_Stage__c</field>
+        <literalValue>In Finance Approval</literalValue>
+        <name>Update Channel Partner Onboarding Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Channel_Partner_Onboarding_Stage1</fullName>
+        <field>Partner_Onboarding_Stage__c</field>
+        <literalValue>In Business Approval</literalValue>
+        <name>Update Channel Partner Onboarding Stage1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Channel_Partner_Onboarding_Stage3</fullName>
+        <field>Partner_Onboarding_Stage__c</field>
+        <literalValue>In Legal Approval</literalValue>
+        <name>Update Channel Partner Onboarding Stage3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

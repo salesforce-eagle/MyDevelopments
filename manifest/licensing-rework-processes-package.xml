@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <!--<types>
+        <members>Asset.Add_Workspace</members>
+        <members>Asset.Remove_Workspaces</members>
+        <members>Asset.Deactivate_License</members>
+        <members>Asset.Activate_License</members>
+        
+        <name>QuickAction</name>
+    </types>-->
+
+    <types>
+        <members>Asset_Record_Page5</members>
+        <members>Opportunity_Record_Page</members>
+        <members>Opportunity_Page_360</members>
+        
+        <name>FlexiPage</name>
+    </types>
+
+    <!--<types>
+        <members>SalesSyncService_Workspace_Suggestion</members>
+        <members>SalesSync_Add_Workspace_To_Asset</members>
+        <members>SalesSync_Remove_Workspace_From_Asset</members>
+        <members>SalesSync_Upsert_Asset_Endpoint</members>
+        <members>SalesSync_License_Deactivation_Endpoint</members>
+        <members>Update_License_Fieldset</members>
+        <members>CTX_LoggerNotificationEmailAddresses</members>
+        
+        <name>CustomLabel</name>
+    </types>
+    
+    FlexiPage : Asset_Record_Page5, Opportunity_Record_Page, Opportunity_Page_360
+    -->
+    
+    
+    <version>52.0</version>
+</Package>

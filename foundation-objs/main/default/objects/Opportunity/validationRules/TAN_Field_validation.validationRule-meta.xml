@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAN_Field_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(CONTAINS(TEXT(StageName),&apos;Closed&apos;)),
+NOT(ISBLANK( TAN__c )),
+LEN( TAN__c ) &lt;&gt; 10,  $Profile.Name != &apos;System Administrator&apos;
+)</errorConditionFormula>
+    <errorMessage>Please Enter valid 10 digit TAN in opportunity level</errorMessage>
+</ValidationRule>

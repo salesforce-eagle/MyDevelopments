@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>calling_status_deal_desk__c</fullName>
+    <externalId>false</externalId>
+    <label>calling status deal desk</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo scheduled</fullName>
+                <default>false</default>
+                <label>Demo scheduled</label>
+            </value>
+            <value>
+                <fullName>Interested</fullName>
+                <default>false</default>
+                <label>Interested</label>
+            </value>
+            <value>
+                <fullName>Not interested</fullName>
+                <default>false</default>
+                <label>Not interested</label>
+            </value>
+            <value>
+                <fullName>Email sent</fullName>
+                <default>false</default>
+                <label>Email sent</label>
+            </value>
+            <value>
+                <fullName>Language barrier</fullName>
+                <default>false</default>
+                <label>Language barrier</label>
+            </value>
+            <value>
+                <fullName>Callback again</fullName>
+                <default>false</default>
+                <label>Callback again</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Invalid phone number</fullName>
+                <default>false</default>
+                <label>Invalid phone number</label>
+            </value>
+            <value>
+                <fullName>Not Right POC</fullName>
+                <default>false</default>
+                <label>Not Right POC</label>
+            </value>
+            <value>
+                <fullName>Not interested(Did not get approval from head)</fullName>
+                <default>false</default>
+                <label>Not interested(Did not get approval from head)</label>
+            </value>
+            <value>
+                <fullName>Switched off</fullName>
+                <default>false</default>
+                <label>Switched off</label>
+            </value>
+            <value>
+                <fullName>Other Non-actionable leads</fullName>
+                <default>false</default>
+                <label>Other Non-actionable leads</label>
+            </value>
+            <value>
+                <fullName>Existing Client</fullName>
+                <default>false</default>
+                <label>Existing Client</label>
+            </value>
+            <value>
+                <fullName>In touch with ClearTax</fullName>
+                <default>false</default>
+                <label>In touch with ClearTax</label>
+            </value>
+            <value>
+                <fullName>Junk-Explorer/Student</fullName>
+                <default>false</default>
+                <label>Junk-Explorer/Student</label>
+            </value>
+            <value>
+                <fullName>DNP/RNR</fullName>
+                <default>false</default>
+                <label>DNP/RNR</label>
+            </value>
+            <value>
+                <fullName>Not Connected</fullName>
+                <default>false</default>
+                <label>Not Connected</label>
+            </value>
+            <value>
+                <fullName>Multiple DNP</fullName>
+                <default>false</default>
+                <label>Multiple DNP</label>
+            </value>
+            <value>
+                <fullName>Directed to right POC</fullName>
+                <default>false</default>
+                <label>Directed to right POC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

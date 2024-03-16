@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>LoggerTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    
+    <types>
+        <members>CTX_LicensingAssetFilterLogic</members>
+        <members>CTX_UpsertAssetLicense</members>
+        <members>CTX_UpsertAssetLicensingClass</members>
+        <members>CTX_LicensingAPICalloutClass</members>
+        <members>CTX_AssetWorkspaceLinkageController</members>
+        <members>CTX_ProductWorkspace_Response_Parser</members>
+        <members>LoggerTriggerHandler</members>
+        <members>CTX_CSMJorneyQueueable</members>
+        <members>CTX_SendLoggerEmailNotifications</members>
+        <members>AssetConstants</members>
+        <!--    Common Apex Changes
+        <members>AssetTriggerHandler</members> 
+                Delta Merge Required(After Update, CTX_CSMJorneyQueueable - After Insert, Before Insert )
+                Max 30Days Allowed PO End Date
+                Parent Asset Tagging
+        <members>OpportunityTriggerHelper</members> 
+                Delta Merge Required (CreateOrder Newassets.Create_License_on_Asset_Creation__c = TRUE; Renewal Block )
+        <members>QuoteLineItemTriggerHandler</members>
+                Delta Merge Required ( Before Insert and Update Added BY Niraj to Exclude Weekend Dates )
+        -->
+        <members>AssetTriggerHandler</members>
+        <members>OpportunityTriggerHelper</members>
+        <members>QuoteLineItemTriggerHandler</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ctx_DeleteAssetWorkspaceLinkContainer</members>
+        <members>ctx_LinkAssetWorkspaceContainer</members>
+        <members>ctx_DeactivateLicenseAura</members>
+        <members>Ctx_ActivateSingleLicenseContainer</members>
+        
+        <name>AuraDefinitionBundle</name>
+    </types>
+
+    <types>
+        <members>ctx_LinkAssetWorkspace</members>
+        <members>ctx_DeleteAssetWorkspaceLink</members>
+        <members>ctx_DeactivateLicense</members>
+        <members>ctx_ActivateSingleLicense</members>
+        <members>ctx_BannerWithRelatedRecordLink</members>
+        <members>ctx_ListenSalesSyncFailureEvent</members>
+        
+        <name>LightningComponentBundle</name>
+    </types>
+
+
+    <version>52.0</version>
+</Package>

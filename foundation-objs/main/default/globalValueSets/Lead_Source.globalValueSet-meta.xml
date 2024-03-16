@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Sales Generated</fullName>
+        <default>false</default>
+        <label>Sales Generated</label>
+    </customValue>
+    <customValue>
+        <fullName>SDR</fullName>
+        <default>false</default>
+        <label>SDR</label>
+    </customValue>
+    <customValue>
+        <fullName>MQL</fullName>
+        <default>false</default>
+        <label>MQL</label>
+    </customValue>
+    <customValue>
+        <fullName>Event (List)</fullName>
+        <default>false</default>
+        <label>Event (List)</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Campaign (List)</fullName>
+        <default>false</default>
+        <label>Marketing Campaign (List)</label>
+    </customValue>
+    <description>Lead Source and Opportunity Source Values (New)</description>
+    <masterLabel>Lead Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

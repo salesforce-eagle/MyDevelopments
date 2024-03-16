@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_to_Many_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>One to Many Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DMS</fullName>
+                <default>false</default>
+                <label>DMS</label>
+            </value>
+            <value>
+                <fullName>GEeR Up Reports</fullName>
+                <default>false</default>
+                <label>GEeR Up Reports</label>
+            </value>
+            <value>
+                <fullName>GEeR Up Nodes</fullName>
+                <default>false</default>
+                <label>GEeR Up Nodes</label>
+            </value>
+            <value>
+                <fullName>OTM Partnership</fullName>
+                <default>false</default>
+                <label>OTM Partnership</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

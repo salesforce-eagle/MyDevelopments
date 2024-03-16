@@ -1,0 +1,42 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_AS_GST_Advisory_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+<body>
+
+<apex:panelGroup rendered="{!SOS2==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>                        <b><u> Scope of Services for Assistance in GST Advisory Services
+ - </u></b>
+  <p>      
+          As and when called upon by the Company, to provide advisory services (verbal, e-mail or written, as agreed) on matters relating to Indirect tax arising out of the routine transactions of the Company, comprising of the following:</p>
+          
+          
+          <ul>
+<li>           Advising on tax implication on transactions</li>
+<li> Input Tax Credit advisory services for Company identified transactions.</li>
+<li> Assistance in routine transaction and contract structuring</li>
+    </ul>
+<apex:include pageName="SOS_Scope_Limitations" rendered="{!SOSLimitaionCheck==1}"/>
+    <apex:include pageName="{!nextPage12}"/>
+</body>
+</html>
+</apex:page>

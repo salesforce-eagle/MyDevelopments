@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activation_status_new__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field to identify if an asset status if it is activated or not based on the new definition.
+Updated daily using the data provided from the query by analyst team.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to identify if an asset status if it is activated or not based on the new definition.
+Updated daily using the data provided from the query by analyst team.</inlineHelpText>
+    <label>Asset Activation flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

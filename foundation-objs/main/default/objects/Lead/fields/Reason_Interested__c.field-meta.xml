@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Interested__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Reason Interested</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wants to automate the process</fullName>
+                <default>false</default>
+                <label>Wants to automate the process</label>
+            </value>
+            <value>
+                <fullName>Wants a tool for recon</fullName>
+                <default>false</default>
+                <label>Wants a tool for recon</label>
+            </value>
+            <value>
+                <fullName>Wants ERP integration to transition from their current filing process</fullName>
+                <default>false</default>
+                <label>Wants ERP integration to transition from their current filing process</label>
+            </value>
+            <value>
+                <fullName>Wants to explore to compare with their current system</fullName>
+                <default>false</default>
+                <label>Wants to explore to compare with their current system</label>
+            </value>
+            <value>
+                <fullName>Interested in vendor communication and Team creation modules for ransperent insights.</fullName>
+                <default>false</default>
+                <label>Interested in vendor communication and Team creation modules for ransperent insights.</label>
+            </value>
+            <value>
+                <fullName>Interested in getting annual taxation reports and analytics for monthly and yearly basis.</fullName>
+                <default>false</default>
+                <label>Interested in getting annual taxation reports and analytics for monthly and yearly basis.</label>
+            </value>
+            <value>
+                <fullName>Wants Airline credits to claim ITC</fullName>
+                <default>false</default>
+                <label>Wants Airline credits to claim ITC</label>
+            </value>
+            <value>
+                <fullName>Comparitive Study</fullName>
+                <default>false</default>
+                <label>Comparitive Study</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

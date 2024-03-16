@@ -1,0 +1,350 @@
+<!--
+@description       : 
+@author            : pramodh@warpdrivetech.in
+@group             : 
+@last modified on  : 03-06-2021
+@last modified by  : pramodh@warpdrivetech.in
+Modifications Log 
+Ver   Date         Author                     Modification
+1.0   03-06-2021   pramodh@warpdrivetech.in   Initial Version
+-->
+<apex:page renderAs="PDF" 
+           standardController="Opportunity"
+           extensions="generateOrderFormPDF"
+           showheader="false"
+           cache="true"
+           applyBodyTag="false"
+           applyHtmlTag="false" >
+    <html>
+        <head>
+            <title>Opportunity Id</title>
+            <style type="text/css">
+                <!-- *{
+text-align: justify;
+letter-spacing: 0px;
+word-spacing: normal;
+}-->
+                .mainPageblock{
+                margin: 10px !important;
+                }        
+                @page {
+                <!-- background-image: url("{!$Resource.Do_not_use_5}");
+                background-repeat: no-repeat;
+                background-position: center;-->
+                size:A4;
+                margin-top: 150px;
+                padding:0px;
+                margin-bottom: 150px;
+                
+                @top-left {
+                content: element(header);
+                }                           
+                @bottom-left {   
+                content: element(footer);
+                }
+                
+                }
+                div.header {
+                margin-top:10px;
+                position: running(header);
+                width: 100%;
+                margin-right: 10px;
+                }
+                div.footer {
+                display: block;
+                font-size : 12px;
+                position: running(footer);
+                width: 100%;
+                border:1px solid white;
+                }
+                
+                .center-align{
+                text-align : center;
+                font-size : 20px;
+                font-weight: bold;
+                }
+                
+                .headding-box{
+                font-size : 12px;
+                padding:10px 5px 10px 5px;
+                background-color : #4072CA;
+                font-family: "Times New Roman", Times, serif;
+                font-weight: bold;
+                }
+                
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 4px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding-left:1.5px !important;
+                padding-top:1.5px !important;
+                padding-bottom:1.5px !important;
+                }
+                
+                .repeatTableHeader{
+                -fs-table-paginate: paginate;
+                }
+                
+                table { page-break-inside:avoid}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+                
+                .text-alignment-justify{
+                text-align: justify;
+                }
+                .signature-table-td{
+                Width:50%;
+                padding-bottom:30px;
+                }
+                #testing:before{ 
+                content: counters(item, "."); counter-increment: item 
+                }
+                .pageNumber{
+                position:relative;
+                text-align:center;
+                }
+                .pageNumber:before{
+                content: "Page " counter(page);
+                position:absolute;
+                bottom:2px;
+                left:50%;
+                width:100%
+                }
+            </style>
+            
+        </head>
+        <body style="font-family:Times New Roman !important;margin-left:12px;margin-right:12px;font-size:12px;">
+            <div class="header">
+                <apex:panelGroup rendered="{!(NOT(netNewIDCheck) && NOT(gccCheck) && NOT(cimplifiveCheck))}">
+                    <img src="{!$Resource.ClearNewLogo}" alt="ClearTax Logo" width="110px;"/> 
+                </apex:panelGroup>
+                <apex:panelGroup rendered="{!cimplifiveCheck}">
+                    <img src="{!$Resource.Cimplifive_logo2}" alt="ClearTax Logo" width="280px;"/> 
+                </apex:panelGroup>
+                <apex:panelGroup rendered="{!gccCheck}">
+                    <img src="{!$Resource.ClearLogoGCC }" alt="ClearTax Logo" width="110px;"/> 
+                </apex:panelGroup>
+                
+                <apex:panelGroup rendered="{!netNewIDCheck && NOT(cimplifiveCheck)}">
+                    <img src="{!$Resource.ClearAndXpedize}" alt="ClearAndXpedize Logo" width="700px;"/> 
+                    
+                    <!--<table class="firstTable">
+<tr>
+<th style="width:45%"><img src="{!$Resource.ClearNewLogo}" alt="Clear Logo" width="110px;"/> </th>
+<td style="width:30%"></td>
+<th style="width:21%;text-align:right;"><img src="{!$Resource.XpedizeLogo}" alt="Clear Logo" width="110px;"/> </th>
+</tr>
+
+</table> -->
+                </apex:panelGroup>
+                
+            </div>        
+            <div class="footer">
+                <hr/>
+                <table style="width:100%" class="last" >
+                    <apex:panelGroup rendered="{!NOT(netNewIDCheck) && NOT(cimplifiveCheck) && NOT(gccCheck)}">
+                        <tr>
+                            <td style="width:50%;">For <b>Defmacro Software Private Limited</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!accountName}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup rendered="{!NOT(netNewIDCheck) && NOT(cimplifiveCheck) && gccCheck}">
+                        <tr>
+                            <td style="width:50%;">For <b>Branch of Defmacro Software Private Limited, KSA</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!accountName}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                        
+                    <apex:panelGroup rendered="{!netNewIDCheck && NOT(cimplifiveCheck)}">
+                        <tr>
+                            <td style="width:50%;">For <b>Xpedize Ventures Private Limited</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!accountName}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                                        <apex:panelGroup rendered="{!cimplifiveCheck}">
+                        <tr>
+                            <td style="width:50%;">For <b>CimplyFive Corporate Secretarial Services Private Limited</b></td>
+                            <td style="width:50%;text-align:right;">For <b>{!accountName}</b></td>
+                        </tr>
+                    </apex:panelGroup>
+                </table>
+                <br/><br/><br/>
+                <table style="width:100%;">
+                    <tr>
+                         <td style="width:50%;text-align:left;">Authorized Signatory : &nbsp;
+                              <apex:outputText rendered="{!gccCheck}" value="{!$Label.GccAuthorizedSignatory}"></apex:outputText></td>
+                        <apex:panelGroup rendered="{!Opportunity.ESign_Category__c == 'E-Sign'}">
+                            <td style="width:50%;text-align:right;">Authorized Signatory : {!syncedQuote.Opportunity.E_Sign_Customer_Info__r.Name}</td>
+                        </apex:panelGroup>
+                        <apex:panelGroup rendered="{!Opportunity.ESign_Category__c == 'Physical Sign'}">
+                            <td style="width:50%;text-align:right;">Authorized Signatory : </td>
+                        </apex:panelGroup>
+                        
+                    </tr>
+            
+                    <tr>
+                      <td></td>
+                      <apex:panelGroup rendered="{!cimplifiveCheck}">
+                            <td style="width:80%;text-align:right;">Email:{!syncedQuote.Opportunity.E_Sign_Customer_Info__r.Email}</td>
+                        </apex:panelGroup>
+                        </tr>
+                    
+                    <tr>
+                        <apex:panelGroup rendered="{!gccCheck}">
+                            <td style="width:30%;text-align:left;">Designation : {!$Label.GccAuthorizedSignatoryDesignation} </td>
+                        </apex:panelGroup>
+                         <apex:panelGroup rendered="{!NOT(gccCheck)}">
+                            <td></td>
+                        </apex:panelGroup>
+                       
+                        <!-- <td style="width:50%;">Designation : {!CTXSigneeDesig}</td>-->
+                        <apex:panelGroup rendered="{!Opportunity.ESign_Category__c == 'E-Sign'}">
+                            <td style="width:50%;text-align:right;">Designation:{!syncedQuote.Opportunity.E_Sign_Customer_Info__r.Designation__c}</td>
+                        </apex:panelGroup>
+                        <apex:panelGroup rendered="{!Opportunity.ESign_Category__c == 'Physical Sign'}">
+                            <td style="width:50%;text-align:right;">Designation:</td>
+                        </apex:panelGroup>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td  class="pageNumber"></td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div class="mainPageblock">
+                <apex:panelGroup rendered="{!NOT(netNewIDCheck) && NOT(cimplifiveCheck)}">
+                    <table class="firstTable">
+                        <tr>
+                            <apex:outputText rendered="{!NOT(gccCheck)}">
+                                <td style="width:45%"><b>Defmacro Software Private Limited</b></td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!gccCheck}">
+                                <td style="width:45%"><b>Branch of Defmacro Software Private Limited</b></td>
+                            </apex:outputText>
+                            
+                            <td style="width:20%"></td>
+                            <th style="width:21%">Order Form No: </th>
+                            
+                            <apex:outputText rendered="{!gccCheck}">
+                                <td style="width:20%">KSA{!syncedQuote.QuoteNumber}</td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!NOT(gccCheck)}">
+                                <td style="width:20%">{!syncedQuote.QuoteNumber}</td>
+                            </apex:outputText>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <apex:outputText rendered="{!NOT(gccCheck)}">
+                                <td rowspan="3">Corporate Office: 23, 24 AMR Tech Park, Block 1, 
+                                    First Floor, Hosur Main Road, Hongasandra, 
+                                    Bangalore, Karnataka - 560068<br/> 
+                                    CIN No. U72200DL2016PTC290345
+                                </td>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!gccCheck}">
+                                <td rowspan="3">3141, Anas Bin Malik, Al Malqa Dist, Riyadh, KSA.<br/> 
+                                    PIN: 13521<br/> 
+                                    VAT: 311555804900003
+                                </td>
+                            </apex:outputText>
+                            
+                            <td style="width:15%"></td>
+                            <apex:outputText rendered="{!gccCheck}">
+                                <th style="width:20%">Date: </th>
+                            </apex:outputText>
+                            <td style="width:20%">
+                                <apex:outputText rendered="{!gccCheck}">
+                                    <apex:outputText value="{0,date,MMM d',' yyyy}">
+                                        <apex:param value="{!Today()}"/>
+                                    </apex:outputText>
+                                </apex:outputText>
+                            </td>
+                            <!--<th>Order Form Date:</th>
+<td> <apex:outputText value="{0,date,dd/MM/yyyy}" ><apex:param value="{!syncedQuote.Opportunity.Period_Start_date__c}"/></apex:outputText></td>-->
+                        </tr>
+                        <tr style="border:1px solid red;">
+                            <td style="width:15%;"></td> <!-- border:1px solid green;-->
+                            <!--<th style="padding-top: 0px;">Sales Representative ID:</th>--> 
+                            <!--<td> {!syncedQuote.Opportunity.Owner.Employee_ID__c}</td>--> 
+                        </tr>
+                        <!--<tr>
+<td style="width:15%"></td>
+<th>Offer Valid Upto:</th>
+<td> <apex:outputText value="{0,date,dd/MM/yyyy}" ><apex:param value="{!syncedQuote.Opportunity.Period_End_date__c}"/></apex:outputText></td>
+</tr>
+<tr>
+<td style="width:15%"></td>
+<th>Sales Representative ID:</th>
+<td>{!syncedQuote.Opportunity.Owner.Employee_ID__c}</td>
+</tr>-->
+                    </table>
+                </apex:panelGroup>
+                <apex:panelGroup rendered="{!netNewIDCheck && NOT(cimplifiveCheck)}">
+                    
+                    <table class="firstTable">
+                        <tr>
+                            <td style="width:45%"><b>Xpedize Ventures Private Limited</b></td>
+                            <td style="width:20%"></td>
+                            <th style="width:21%">Order Form No: </th>
+                            <td style="width:20%">ID-{!syncedQuote.QuoteNumber}</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">7th floor, Vatika Triangle, 
+                                Mehrauli-Gurgaon Road, Block B,Sushant Lok Phase 1,
+                                Gurugram 122002, Haryana, India<br/> 
+                                CIN No. U74999HR2017PTC070319
+                            </td>
+                               
+                            <td style="width:15%"></td>
+                        </tr>
+                        <tr style="border:1px solid red;">
+                            <td style="width:15%;"></td>
+                        </tr>
+                        
+                    </table>
+                </apex:panelGroup>
+                     <apex:panelGroup rendered="{!cimplifiveCheck}">
+                    
+                    <table class="firstTable">
+                        <tr>
+                            <td style="width:45%"><b>CimplyFive Corporate Secretarial Services Private Limited</b></td>
+                            <td style="width:20%"></td>
+                            <td style="width:50%"><b>Order Form No:</b> {!syncedQuote.QuoteNumber}<br/><b>Date:</b> <apex:outputText value="{0,date,' 'MMM d',' yyyy}"><apex:param value="{!Today()}"/>
+                                    </apex:outputText> </td>
+                            <td style="width:20%"></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Corporate Office: 5th Floor, Vishnu Priya, Next to Srirampura 
+                                Metro, Above Karnataka Bank, Mahakavi Kuvempu Road, 
+                                Bangalore 560021, Karnataka India.<br/> 
+                                CIN No. U74900KA2014PTC076173
+                            </td>
+                            <td style="width:15%"></td>
+                        </tr>
+                        <tr style="border:1px solid red;">
+                            <td style="width:15%;"></td>
+                        </tr>
+                        
+                    </table>
+                </apex:panelGroup>
+                <br/>
+                <div class="center-align" style="text-transform : capitalize"> ORDER FORM </div>
+                <br/>
+                <hr/>
+                <apex:include pageName="{!nextPage}"/>
+            </div>
+           <!-- <p style="page-break-after: auto"></p>-->
+            
+        </body>
+    </html>
+    
+</apex:page>

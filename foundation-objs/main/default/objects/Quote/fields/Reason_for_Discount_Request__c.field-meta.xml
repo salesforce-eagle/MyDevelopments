@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Discount_Request__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for Discount Request</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Opportunity_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>test</fullName>
+                <default>false</default>
+                <label>test</label>
+            </value>
+            <value>
+                <fullName>Competitor / Incumbent are offering lesser quote price</fullName>
+                <default>false</default>
+                <label>Competitor / Incumbent are offering lesser quote price</label>
+            </value>
+            <value>
+                <fullName>Budget conscious customer</fullName>
+                <default>false</default>
+                <label>Budget conscious customer</label>
+            </value>
+            <value>
+                <fullName>Cross Sell / Upsell Potential</fullName>
+                <default>false</default>
+                <label>Cross Sell / Upsell Potential</label>
+            </value>
+            <value>
+                <fullName>Customer paying the incumbent very less</fullName>
+                <default>false</default>
+                <label>Customer paying the incumbent very less</label>
+            </value>
+            <value>
+                <fullName>Foot in the Door for a large brand</fullName>
+                <default>false</default>
+                <label>Foot in the Door for a large brand</label>
+            </value>
+            <value>
+                <fullName>Customer not satisfied with cleartax support</fullName>
+                <default>false</default>
+                <label>Customer not satisfied with cleartax support</label>
+            </value>
+            <value>
+                <fullName>Customer not using the product (or has very limited use)</fullName>
+                <default>false</default>
+                <label>Customer not using the product (or has very limited use)</label>
+            </value>
+            <value>
+                <fullName>Renewal floor price is very steep and is not consistent with usage data</fullName>
+                <default>false</default>
+                <label>Renewal floor price is very steep and is not consistent with usage data</label>
+            </value>
+            <value>
+                <fullName>Covid related slow-down at customer</fullName>
+                <default>false</default>
+                <label>Covid related slow-down at customer</label>
+            </value>
+            <value>
+                <fullName>Any other</fullName>
+                <default>false</default>
+                <label>Any other</label>
+            </value>
+            <value>
+                <fullName>Low Price Anchor (CT) - Sister Company / CA Product / Old Quote</fullName>
+                <default>false</default>
+                <label>Low Price Anchor (CT) - Sister Company / CA Product / Old Quote</label>
+            </value>
+            <value>
+                <fullName>Partial product use</fullName>
+                <default>false</default>
+                <label>Partial product use</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Competitor / Incumbent are offering lesser quote price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Budget conscious customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Cross Sell / Upsell Potential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <valueName>Foot in the Door for a large brand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Low Price Anchor (CT) - Sister Company / CA Product / Old Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acquisition</controllingFieldValue>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Partial product use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Customer not satisfied with cleartax support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Customer not using the product (or has very limited use)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Renewal floor price is very steep and is not consistent with usage data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Covid related slow-down at customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Retention</controllingFieldValue>
+            <valueName>Any other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

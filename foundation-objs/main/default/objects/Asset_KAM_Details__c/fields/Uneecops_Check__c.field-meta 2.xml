@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uneecops_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(or((Asset__r.Account.Owner.LastName)=&apos;Varun (Uneecops)&apos;, (Asset__r.Opportunity__r.Owner.LastName)=&apos;Varun (Uneecops)&apos;),&apos;yes&apos;,&apos;no&apos;)</formula>
+    <label>Uneecops Check (Unlocked)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

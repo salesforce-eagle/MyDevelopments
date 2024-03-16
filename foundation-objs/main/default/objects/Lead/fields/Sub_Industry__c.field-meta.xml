@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Industry__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Sub-Industry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACCOUNTING AND COMPUTING MACHINERY</fullName>
+                <default>false</default>
+                <label>ACCOUNTING AND COMPUTING MACHINERY</label>
+            </value>
+            <value>
+                <fullName>ACTIVITIES AUXILIARY TO FINANCIAL INTERMEDIATION</fullName>
+                <default>false</default>
+                <label>ACTIVITIES AUXILIARY TO FINANCIAL INTERMEDIATION</label>
+            </value>
+            <value>
+                <fullName>ACTIVITIES OF MEMBERSHIP ORGANISATIONS N.E.C.</fullName>
+                <default>false</default>
+                <label>ACTIVITIES OF MEMBERSHIP ORGANISATIONS N.E.C.</label>
+            </value>
+            <value>
+                <fullName>ACTIVITIES OF PRIVATE HOUSEHOLDS AS EMPLOYERS OF DOMESTIC STAFF</fullName>
+                <default>false</default>
+                <label>ACTIVITIES OF PRIVATE HOUSEHOLDS AS EMPLOYERS OF DOMESTIC STAFF</label>
+            </value>
+            <value>
+                <fullName>ACTIVITIES OF TRAVEL AGENCIES</fullName>
+                <default>false</default>
+                <label>ACTIVITIES OF TRAVEL AGENCIES</label>
+            </value>
+            <value>
+                <fullName>AGRICULTURE</fullName>
+                <default>false</default>
+                <label>AGRICULTURE</label>
+            </value>
+            <value>
+                <fullName>AIR TRANSPORT</fullName>
+                <default>false</default>
+                <label>AIR TRANSPORT</label>
+            </value>
+            <value>
+                <fullName>COLLECTION</fullName>
+                <default>false</default>
+                <label>COLLECTION</label>
+            </value>
+            <value>
+                <fullName>COMPULSORY SOCIAL SECURITY</fullName>
+                <default>false</default>
+                <label>COMPULSORY SOCIAL SECURITY</label>
+            </value>
+            <value>
+                <fullName>COMPUTER AND RELATED ACTIVITIES</fullName>
+                <default>false</default>
+                <label>COMPUTER AND RELATED ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>CONSTRUCTION</fullName>
+                <default>false</default>
+                <label>CONSTRUCTION</label>
+            </value>
+            <value>
+                <fullName>CULTURAL AND SPORTING ACTIVITIES</fullName>
+                <default>false</default>
+                <label>CULTURAL AND SPORTING ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>DRESSING AND DYEING OF FUR</fullName>
+                <default>false</default>
+                <label>DRESSING AND DYEING OF FUR</label>
+            </value>
+            <value>
+                <fullName>EDUCATION</fullName>
+                <default>false</default>
+                <label>EDUCATION</label>
+            </value>
+            <value>
+                <fullName>ELECTRICITY</fullName>
+                <default>false</default>
+                <label>ELECTRICITY</label>
+            </value>
+            <value>
+                <fullName>EXCEPT COMPULSORY SOCIAL SECURITY</fullName>
+                <default>false</default>
+                <label>EXCEPT COMPULSORY SOCIAL SECURITY</label>
+            </value>
+            <value>
+                <fullName>EXCEPT FURNITURE</fullName>
+                <default>false</default>
+                <label>EXCEPT FURNITURE</label>
+            </value>
+            <value>
+                <fullName>EXCEPT INSURANCE AND PENSION FUNDING</fullName>
+                <default>false</default>
+                <label>EXCEPT INSURANCE AND PENSION FUNDING</label>
+            </value>
+            <value>
+                <fullName>EXCEPT MACHINERY AND EQUIPMENTS</fullName>
+                <default>false</default>
+                <label>EXCEPT MACHINERY AND EQUIPMENTS</label>
+            </value>
+            <value>
+                <fullName>EXCEPT OF MOTOR VEHICLES AND MOTORCYCLES</fullName>
+                <default>false</default>
+                <label>EXCEPT OF MOTOR VEHICLES AND MOTORCYCLES</label>
+            </value>
+            <value>
+                <fullName>EXTRACTION OF CRUDE PETROLEUM AND NATURAL GAS</fullName>
+                <default>false</default>
+                <label>EXTRACTION OF CRUDE PETROLEUM AND NATURAL GAS</label>
+            </value>
+            <value>
+                <fullName>EXTRACTION OF PEAT</fullName>
+                <default>false</default>
+                <label>EXTRACTION OF PEAT</label>
+            </value>
+            <value>
+                <fullName>EXTRA TERRITORIAL ORGANIZATIONS AND BODIES</fullName>
+                <default>false</default>
+                <label>EXTRA TERRITORIAL ORGANIZATIONS AND BODIES</label>
+            </value>
+            <value>
+                <fullName>FINANCIAL INTERMEDIATION</fullName>
+                <default>false</default>
+                <label>FINANCIAL INTERMEDIATION</label>
+            </value>
+            <value>
+                <fullName>FISHING</fullName>
+                <default>false</default>
+                <label>FISHING</label>
+            </value>
+            <value>
+                <fullName>FORESTRY</fullName>
+                <default>false</default>
+                <label>FORESTRY</label>
+            </value>
+            <value>
+                <fullName>GAS</fullName>
+                <default>false</default>
+                <label>GAS</label>
+            </value>
+            <value>
+                <fullName>HANDBAGS SADDLERY</fullName>
+                <default>false</default>
+                <label>HANDBAGS SADDLERY</label>
+            </value>
+            <value>
+                <fullName>HEALTH AND SOCIAL WORK</fullName>
+                <default>false</default>
+                <label>HEALTH AND SOCIAL WORK</label>
+            </value>
+            <value>
+                <fullName>HOTELS AND RESTAURANTS</fullName>
+                <default>false</default>
+                <label>HOTELS AND RESTAURANTS</label>
+            </value>
+            <value>
+                <fullName>HUNTING AND RELATED SERVICE ACTIVITIES</fullName>
+                <default>false</default>
+                <label>HUNTING AND RELATED SERVICE ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>INSURANCE AND PENSION FUNDING</fullName>
+                <default>false</default>
+                <label>INSURANCE AND PENSION FUNDING</label>
+            </value>
+            <value>
+                <fullName>LAND TRANSPORT</fullName>
+                <default>false</default>
+                <label>LAND TRANSPORT</label>
+            </value>
+            <value>
+                <fullName>LOGGING AND RELATED SERVICE ACTIVITIES</fullName>
+                <default>false</default>
+                <label>LOGGING AND RELATED SERVICE ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>MAINTENANCE AND REPAIR OF MOTOR VEHICLES AND MOTORCYCLES</fullName>
+                <default>false</default>
+                <label>MAINTENANCE AND REPAIR OF MOTOR VEHICLES AND MOTORCYCLES</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF ARTICLES OF STRAW AND PLATING MATERIALS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF ARTICLES OF STRAW AND PLATING MATERIALS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF BASIC METALS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF BASIC METALS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF CHEMICALS AND CHEMICAL PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF CHEMICALS AND CHEMICAL PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF COKE</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF COKE</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF ELECTRICAL MACHINERY AND APPARATUS N.E.C.</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF ELECTRICAL MACHINERY AND APPARATUS N.E.C.</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF FABRICATED METAL PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF FABRICATED METAL PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF FOOD PRODUCTS AND BEVERAGES</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF FOOD PRODUCTS AND BEVERAGES</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF FURNITURE</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF FURNITURE</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF LUGGAGE</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF LUGGAGE</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF MACHINERY AND EQUIPMENT N.E.C.</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF MACHINERY AND EQUIPMENT N.E.C.</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF MEDICAL</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF MEDICAL</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF MOTOR VEHICLES</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF MOTOR VEHICLES</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF OFFICE</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF OFFICE</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF OTHER NON-METALLIC MINERAL PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF OTHER NON-METALLIC MINERAL PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF OTHER TRANSPORT EQUIPMENT</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF OTHER TRANSPORT EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF PAPER AND PAPER PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF PAPER AND PAPER PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF RADIO</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF RADIO</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF RUBBER AND PLASTIC PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF RUBBER AND PLASTIC PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF TEXTILES</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF TEXTILES</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF TOBACCO PRODUCTS</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF TOBACCO PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF WEARING APPAREL</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF WEARING APPAREL</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURE OF WOOD AND OF PRODUCTS OF WOOD AND CORK</fullName>
+                <default>false</default>
+                <label>MANUFACTURE OF WOOD AND OF PRODUCTS OF WOOD AND CORK</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURING N.E.C.</fullName>
+                <default>false</default>
+                <label>MANUFACTURING N.E.C.</label>
+            </value>
+            <value>
+                <fullName>MINING OF COAL AND LIGNITE</fullName>
+                <default>false</default>
+                <label>MINING OF COAL AND LIGNITE</label>
+            </value>
+            <value>
+                <fullName>MINING OF METAL ORES</fullName>
+                <default>false</default>
+                <label>MINING OF METAL ORES</label>
+            </value>
+            <value>
+                <fullName>MINING OF URANIUM AND THORIUM ORES</fullName>
+                <default>false</default>
+                <label>MINING OF URANIUM AND THORIUM ORES</label>
+            </value>
+            <value>
+                <fullName>OPERATION OF FISH HATCHERIES AND FISH FARMS</fullName>
+                <default>false</default>
+                <label>OPERATION OF FISH HATCHERIES AND FISH FARMS</label>
+            </value>
+            <value>
+                <fullName>OTHER BUSINESS ACTIVITIES</fullName>
+                <default>false</default>
+                <label>OTHER BUSINESS ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>OTHER MINING AND QUARRYING</fullName>
+                <default>false</default>
+                <label>OTHER MINING AND QUARRYING</label>
+            </value>
+            <value>
+                <fullName>OTHER SERVICE ACTIVITIES</fullName>
+                <default>false</default>
+                <label>OTHER SERVICE ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>POST AND TELECOMMUNICATIONS</fullName>
+                <default>false</default>
+                <label>POST AND TELECOMMUNICATIONS</label>
+            </value>
+            <value>
+                <fullName>PRECISION AND OPTICAL INSTRUMENTS</fullName>
+                <default>false</default>
+                <label>PRECISION AND OPTICAL INSTRUMENTS</label>
+            </value>
+            <value>
+                <fullName>PRINTING AND REPRODUCTION OF RECORDED MEDIA</fullName>
+                <default>false</default>
+                <label>PRINTING AND REPRODUCTION OF RECORDED MEDIA</label>
+            </value>
+            <value>
+                <fullName>PUBLIC ADMINISTRATION AND DEFENCE</fullName>
+                <default>false</default>
+                <label>PUBLIC ADMINISTRATION AND DEFENCE</label>
+            </value>
+            <value>
+                <fullName>PUBLISHING</fullName>
+                <default>false</default>
+                <label>PUBLISHING</label>
+            </value>
+            <value>
+                <fullName>PURIFICATION AND DISTRIBUTION OF WATER</fullName>
+                <default>false</default>
+                <label>PURIFICATION AND DISTRIBUTION OF WATER</label>
+            </value>
+            <value>
+                <fullName>REAL ESTATE ACTIVITIES</fullName>
+                <default>false</default>
+                <label>REAL ESTATE ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>RECREATIONAL</fullName>
+                <default>false</default>
+                <label>RECREATIONAL</label>
+            </value>
+            <value>
+                <fullName>RECYCLING</fullName>
+                <default>false</default>
+                <label>RECYCLING</label>
+            </value>
+            <value>
+                <fullName>REFINED PETROLEUM PRODUCTS AND NUCLEAR FUEL</fullName>
+                <default>false</default>
+                <label>REFINED PETROLEUM PRODUCTS AND NUCLEAR FUEL</label>
+            </value>
+            <value>
+                <fullName>RENTING OF MACHINERY AND EQUIPMENT WITHOUT OPERATOR AND OF PERSONAL AND HOUSEHOLD GOODS</fullName>
+                <default>false</default>
+                <label>RENTING OF MACHINERY AND EQUIPMENT WITHOUT OPERATOR AND OF PERSONAL AND HOUSEHOLD GOODS</label>
+            </value>
+            <value>
+                <fullName>REPAIR OF PERSONAL AND HOUSEHOLD GOODS</fullName>
+                <default>false</default>
+                <label>REPAIR OF PERSONAL AND HOUSEHOLD GOODS</label>
+            </value>
+            <value>
+                <fullName>RESEARCH AND DEVELOPMENT</fullName>
+                <default>false</default>
+                <label>RESEARCH AND DEVELOPMENT</label>
+            </value>
+            <value>
+                <fullName>RETAIL SALE OF AUTOMOTIVE FUEL</fullName>
+                <default>false</default>
+                <label>RETAIL SALE OF AUTOMOTIVE FUEL</label>
+            </value>
+            <value>
+                <fullName>RETAIL TRADE</fullName>
+                <default>false</default>
+                <label>RETAIL TRADE</label>
+            </value>
+            <value>
+                <fullName>SALE</fullName>
+                <default>false</default>
+                <label>SALE</label>
+            </value>
+            <value>
+                <fullName>SANITATION AND SIMILAR ACTIVITIES</fullName>
+                <default>false</default>
+                <label>SANITATION AND SIMILAR ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>SERVICE ACTIVITIES INCIDENTAL TO FISHING</fullName>
+                <default>false</default>
+                <label>SERVICE ACTIVITIES INCIDENTAL TO FISHING</label>
+            </value>
+            <value>
+                <fullName>SERVICE ACTIVITIES INCIDENTAL TO OIL AND GAS EXTRACTION EXCLUDING SURVEYING</fullName>
+                <default>false</default>
+                <label>SERVICE ACTIVITIES INCIDENTAL TO OIL AND GAS EXTRACTION EXCLUDING SURVEYING</label>
+            </value>
+            <value>
+                <fullName>SEWAGE AND REFUSE DISPOSAL</fullName>
+                <default>false</default>
+                <label>SEWAGE AND REFUSE DISPOSAL</label>
+            </value>
+            <value>
+                <fullName>STEAM AND HOT WATER SUPPLY</fullName>
+                <default>false</default>
+                <label>STEAM AND HOT WATER SUPPLY</label>
+            </value>
+            <value>
+                <fullName>SUPPORTING AND AUXILLIARY TRANSPORT ACTIVITIES</fullName>
+                <default>false</default>
+                <label>SUPPORTING AND AUXILLIARY TRANSPORT ACTIVITIES</label>
+            </value>
+            <value>
+                <fullName>TANNING AND DRESSING OF LEATHER</fullName>
+                <default>false</default>
+                <label>TANNING AND DRESSING OF LEATHER</label>
+            </value>
+            <value>
+                <fullName>TELEVISION AND COMMUNICATION EQUIPMENT AND APPARATUS</fullName>
+                <default>false</default>
+                <label>TELEVISION AND COMMUNICATION EQUIPMENT AND APPARATUS</label>
+            </value>
+            <value>
+                <fullName>TRAILERS AND SEMI-TRAILERS</fullName>
+                <default>false</default>
+                <label>TRAILERS AND SEMI-TRAILERS</label>
+            </value>
+            <value>
+                <fullName>TRANSPORT VIA PIPELINES</fullName>
+                <default>false</default>
+                <label>TRANSPORT VIA PIPELINES</label>
+            </value>
+            <value>
+                <fullName>UNDIFFERENCIATED SERVICE-PRODUCING ACTIVITIES OF PRIVATE HOUSEHOLDS FOR OWN USE</fullName>
+                <default>false</default>
+                <label>UNDIFFERENCIATED SERVICE-PRODUCING ACTIVITIES OF PRIVATE HOUSEHOLDS FOR OWN USE</label>
+            </value>
+            <value>
+                <fullName>WATCHES AND CLOCKS</fullName>
+                <default>false</default>
+                <label>WATCHES AND CLOCKS</label>
+            </value>
+            <value>
+                <fullName>WATER TRANSPORT</fullName>
+                <default>false</default>
+                <label>WATER TRANSPORT</label>
+            </value>
+            <value>
+                <fullName>WHOLESALE TRADE AND COMMISSION TRADE</fullName>
+                <default>false</default>
+                <label>WHOLESALE TRADE AND COMMISSION TRADE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

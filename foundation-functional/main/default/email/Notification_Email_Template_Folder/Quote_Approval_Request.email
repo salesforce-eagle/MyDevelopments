@@ -1,0 +1,109 @@
+<messaging:emailTemplate subject="Discounted Price Approval- {!relatedTo.Account.Name} - {!relatedTo.opportunity.Name}" recipientType="User" relatedToType="Quote">
+    <messaging:htmlEmailBody >
+        <style>
+        table, tr, td {
+            border: 1px solid black;
+            font-family: arial, sans-serif;
+            text-align: left;
+            font-size: 15px;
+        }        
+</style>
+    <p>Hi ,</p>
+    <p>{!relatedTo.opportunity.owner.name} has requested your approval to offer discounted price for the following case:</p>
+                        <br></br>
+                        
+                     <br></br>
+                     <table border="1px" >
+                                <tr style="text-align: left;">
+                                    <th><b>Customer Name:</b></th>
+                                    <td>{!relatedTo.opportunity.account.name}</td></tr>
+                                   <tr style="text-align: left;"> <th><b>Opportunity Owner</b></th>
+                                    <td>{!relatedTo.opportunity.owner.name}({!relatedTo.opportunity.owner.department})</td></tr>
+                                   <tr style="text-align: left;"> <th><b>Opportunity Type</b></th>
+                                    <td>{!relatedTo.opportunity.recordType.name}</td></tr>
+                                   <tr style="text-align: left;"> <th><b>Customer Segment</b></th>
+                                    <td>{!relatedTo.opportunity.account.final_segment__c}</td></tr>
+                                   <tr style="text-align: left;"> <th><b>Turnover</b></th>
+                                    <td>{!relatedTo.opportunity.account.turnover__c}</td></tr>
+                                    <tr style="text-align: left;"><th><b>ERP</b></th>
+                                   <td>{!relatedTo.erp__c}</td></tr>
+                                   <apex:outputText rendered="{!IF(relatedTo.ERP_Name__c != null ,true,false)}"><tr style="text-align: left;"><th><b>Name of ERP ,if others</b></th>
+                                   <td>{!relatedTo.ERP_Name__c}</td></tr></apex:outputText>
+                                   <tr style="text-align: left;"> <th><b>Incumbent</b></th>
+                                   <td>{!relatedTo.Existing_Vendor__c}</td></tr>
+                                <apex:outputText rendered="{!IF(relatedTo.Existing_Vendor__c=='Others' ,true,false)}"> <apex:outputText rendered="{!IF(relatedTo.Incumbent_Name__c!= null ,true,false)}"> <tr style="text-align: left;"> <th><b>Name of Incumbent, if others</b></th>
+                                   <td>{!relatedTo.Incumbent_Name__c}</td></tr></apex:outputText></apex:outputText>
+                                    <tr style="text-align: left;"><th><b>Customer current ARR</b></th>
+                                    <td>{!relatedTo.opportunity.account.Sum_of_ARR_Assets__c}</td></tr>
+                                    <tr style="text-align: left;"><th><b>Total List price on Quote offered</b></th>
+                                    <td>{!relatedTo.subtotal}</td></tr>
+                                    <tr style="text-align: left;"><th><b>Total Sale Price on Quote offered</b></th>
+                                    <td>{!relatedTo.Grand_Total__c}</td></tr>
+                                     <tr style="text-align: left;"><th><b>Non integration maximum discount</b></th>
+                                    <td>{!relatedTo.Non_Integration_Maximum_Discount__c}%</td></tr>
+                                   <tr style="text-align: left;"> <th><b>Total Discount offered on Quote</b></th>
+                                     <td> <apex:outputText value="{0, number, 00.00}">
+                                     <apex:param value="{!relatedTo.Discount__c}" ></apex:param>
+                                     </apex:outputText>%</td></tr>
+                                    <tr style="text-align: left;"><th><b>Max. Discount given against a Product within this quote</b></th>
+                                    <td>{!relatedTo.Max_Discount__c}%</td></tr>
+                                    <tr style="text-align: left;"><th><b>Created Date</b></th>
+                                    <td>{!relatedTo.CreatedDate}</td></tr>
+                                    <tr style="text-align: left;"><th><b>Opportunity Owner Team (New)</b></th>
+                                    <td>{!relatedTo.opportunity.Opportunity_Owner_Team_New__c}</td></tr>
+                                    <apex:outputText rendered="{!IF(relatedTo.Flat_Transaction_Fee__c!= null ,true,false)}"><tr style="text-align: left;"><th> Flat Transaction Fee </th><td>{!relatedTo.Flat_Transaction_Fee__c}</td></tr></apex:outputText>  
+                                    <apex:outputText rendered="{!IF(relatedTo.Transaction_Fee_Slab_1__c!= null ,true,false)}"><tr style="text-align: left;"><th> Transaction Fee % (Slab 1) </th><td>{!relatedTo.Transaction_Fee_Slab_1__c}</td></tr></apex:outputText>  
+                                    <apex:outputText rendered="{!IF(relatedTo.Transaction_Fee_Slab_2__c!= null ,true,false)}"><tr style="text-align: left;"><th> Transaction Fee % (Slab 2) </th><td>{!relatedTo.Transaction_Fee_Slab_2__c}</td></tr></apex:outputText>  
+                                    <apex:outputText rendered="{!IF(relatedTo.Transaction_Fee_Slab_3__c!= null ,true,false)}"><tr style="text-align: left;"><th> Transaction Fee % (Slab 3) </th><td>{!relatedTo.Transaction_Fee_Slab_3__c}</td></tr></apex:outputText>
+                                    
+                     </table>
+                     <br></br>
+                        <table border="1px" >
+                                <tr style="text-align: left;">
+                                    <th><b>Product Name</b></th>
+                                    <th><b>Billing Type</b></th>
+                                    <th><b>List Price</b></th>
+                                    <th><b>Sell Price</b></th>
+                                    <th><b>Discount %</b></th>
+                                    <th><b>Type of Integration</b></th>
+                                </tr>
+                            <apex:repeat var="cx" value="{!relatedTo.QuoteLineItems}"> 
+                                
+                                <tr style="text-align: left;">
+                                     <td>{!cx.Product2.Name}</td>
+                                     <td>{!cx.product2.Billing_Type__c}</td>
+                                     <td>{!cx.UnitPrice}</td> 
+                                    <td>{!cx.Sale_Price__c}</td>
+                                   <apex:outputText rendered="{!IF(cx.Discount!=null ,true,false)}"> <td>{!cx.Discount}</td></apex:outputText>
+                                   <apex:outputText rendered="{!IF(cx.Discount==null ,true,false)}"> <td>0</td></apex:outputText>
+                                   <td>{!cx.Type_of_Integration__c}</td>
+                                </tr>
+                            </apex:repeat>
+                     </table>
+                     <br></br>
+                     <div style="page-break-after: avoid;" class="headding-box"><b> &nbsp;&nbsp;&nbsp;Detailed Information pertaining to Discount - </b></div>
+                <table class="info-table" border="1px">
+                     <apex:outputText rendered="{!IF(relatedTo.Estimated_Delivery_Cost__c != null ,true,false)}"><tr style="text-align: left;"><th>What is the estimated delivery cost? (For Assisted Services product) </th><td>{!relatedTo.Estimated_Delivery_Cost__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Customer_Opted_For_Integration__c != null ,true,false)}"><tr style="text-align: left;"><th>Has the customer opted for integration? </th><td> <apex:outputText rendered="{!IF(relatedTo.Customer_Opted_For_Integration__c==true,true,false)}"> Yes</apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Customer_Opted_For_Integration__c==false,true,false)}">No</apex:outputText></td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Reason_For_Not_Opting_For_Integration__c != null ,true,false)}"><tr style="text-align: left;"><th>If No, then why Not? </th><td>{!relatedTo.Reason_For_Not_Opting_For_Integration__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Incumbent__c != null ,true,false)}"><tr style="text-align: left;"><th>How much is the customer currently paying to the Existing Vendor/ Incumbent? </th><td>{!relatedTo.Incumbent__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Reason_for_Discount_Request__c != null ,true,false)}"><tr style="text-align: left;"><th>Reason for Discount Request</th><td>{!relatedTo.Reason_for_Discount_Request__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Name_of_Competitor__c != null ,true,false)}"><tr style="text-align: left;"><th>If the quote is lower by competition, what is the name of the competitor and what is their quote value? </th><td>{!relatedTo.Name_of_Competitor__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Projected_Customer_Lifetime_Value__c != null ,true,false)}"><tr style="text-align: left;"><th>Projected Customer Lifetime Value (LTV) over 3 years </th><td>{!relatedTo.Projected_Customer_Lifetime_Value__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Products_Can_Be_Cross_Sold_In_Future__c != null ,true,false)}"><tr style="text-align: left;"><th>What products can be cross sold in future? And When? </th><td>{!relatedTo.Products_Can_Be_Cross_Sold_In_Future__c}</td></tr></apex:outputText>
+                     <apex:outputText rendered="{!IF(relatedTo.Detailed_reason_for_discount__c != null ,true,false)}"><tr style="text-align: left;"><th>Any other comments describing reason for discount </th><td>{!relatedTo.Detailed_reason_for_discount__c}</td></tr></apex:outputText>  
+                     </table><br></br>
+Request you to kindly review and Accept/Deny the requested price through the following link:<apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}">Click Here</apex:outputlink> OR Reply to this Email with 'Approved' or 'Rejected'.
+If Reject, please specify your reason for reject in the next line on your mail body.
+<br></br>    
+                                               
+                                                            <table class="info-table" border="1px">     
+                    <apex:repeat var="cx" value="{!relatedTo.Attachments}">
+        <tr>
+          <td style="padding: 5px;">Attachment:</td>
+          <td style="padding: 5px;"><a href="https://c.cs14.content.force.com/servlet/servlet.FileDownload?file={!cx.id}">{!cx.Name}</a></td>
+        </tr>
+</apex:repeat></table>
+ </messaging:htmlEmailBody>
+                                                    </messaging:emailTemplate>

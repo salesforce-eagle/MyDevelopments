@@ -1,0 +1,10 @@
+<template>
+    <template if:true={showError}>
+        <lightning-card title="Attention" icon-name="utility:error">
+            <div class="slds-m-around_medium">
+            <b>You cannot create Net new, cross-sell/upsell or renewal opportunity for this Account. A parent account already exists for this Account.</b>
+        </div>
+        </lightning-card>
+
+    </template>
+</template>

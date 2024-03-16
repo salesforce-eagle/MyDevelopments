@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Integration__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Integration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>API - Only by CT SI</fullName>
+                <default>false</default>
+                <label>API - Only by CT SI</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse SAP ECC/HANA</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse SAP ECC/HANA</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse SAP B1</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse SAP B1</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse Custom ERP</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse Custom ERP</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse Tally ERP</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse Tally ERP</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse Netsuite ERP</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse Netsuite ERP</label>
+            </value>
+            <value>
+                <fullName>FTP/SFTP - Only by customer</fullName>
+                <default>false</default>
+                <label>FTP/SFTP - Only by customer</label>
+            </value>
+            <value>
+                <fullName>API- Only by Customer</fullName>
+                <default>false</default>
+                <label>API- Only by Customer</label>
+            </value>
+            <value>
+                <fullName>FTP/ SFTP - Only by CT Inhouse</fullName>
+                <default>false</default>
+                <label>FTP/ SFTP - Only by CT Inhouse</label>
+            </value>
+            <value>
+                <fullName>FTP/ SFTP - Only by SI</fullName>
+                <default>false</default>
+                <label>FTP/ SFTP - Only by SI</label>
+            </value>
+            <value>
+                <fullName>ID - API based Integration</fullName>
+                <default>false</default>
+                <label>ID - API based Integration</label>
+            </value>
+            <value>
+                <fullName>ID - Middleware based Integration</fullName>
+                <default>false</default>
+                <label>ID - Middleware based Integration</label>
+            </value>
+            <value>
+                <fullName>ID - SFTP based Integration</fullName>
+                <default>false</default>
+                <label>ID - SFTP based Integration</label>
+            </value>
+            <value>
+                <fullName>ID - Manual Integration</fullName>
+                <default>false</default>
+                <label>ID - Manual Integration</label>
+            </value>
+            <value>
+                <fullName>API - Only by CT Inhouse Microsoft ERP</fullName>
+                <default>false</default>
+                <label>API - Only by CT Inhouse Microsoft ERP</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Invoice Discounting</fullName>
+                <default>false</default>
+                <label>Invoice Discounting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

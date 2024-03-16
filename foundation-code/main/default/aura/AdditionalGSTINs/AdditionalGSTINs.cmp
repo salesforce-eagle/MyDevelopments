@@ -1,0 +1,409 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId"
+    controller="AdditionalGSTINsController" 
+    access="global">
+
+<!-- Attributes-->
+<aura:attribute name="recordId" type="String"/>
+<aura:attribute name="showSpinner" type="Boolean" default="false"/>
+<aura:attribute name="showError" type="Boolean" default="false"/>
+<aura:attribute name="hideSaveDelete" type="Boolean" default="false"/>
+<aura:attribute name="mainWrapper" type="Object" />
+<aura:attribute name="listOfExistingGSTINRecordToDelete" type="List"/>
+<aura:attribute name="productOptions" type="List"/>
+<aura:attribute name="sezOption" type="List" default = "[{'label': 'Yes','value': 'Yes'} ,{'label': 'No','value': 'No'}]"/>
+<aura:attribute name="displayCompanyInfo" type="Boolean" default="false"/>
+<aura:attribute name="isGcc" type="Boolean" default="false"/>
+
+<!-- Handlers -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<!--Style-->
+<aura:html tag="style">
+.slds-modal__container{
+max-width: 95rem !important;
+width:95% !important;
+}
+</aura:html>
+
+<!-- Component body -->
+<aura:if isTrue="{!v.showSpinner}">
+<div class="demo-only" style="height:6rem">
+<div class="slds-spinner_container">
+    <div role="status" class="slds-spinner slds-spinner_large">
+        <span class="slds-assistive-text">Loading..</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+    </div>
+</div>
+</div>
+</aura:if>
+<!-- Error MSG-->
+<aura:if isTrue="{!v.mainWrapper.errorMsg != undefined}">
+<div class="slds-box slds-theme_error"><span><lightning:icon class="slds-current-color" iconName="utility:error" alternativeText="Error!" title="Error" /></span>&nbsp;&nbsp;&nbsp;&nbsp;{!v.mainWrapper.errorMsg}</div>
+</aura:if>
+
+<!-- Showing all products of an Synced Quote -->
+<aura:if isTrue="{!v.mainWrapper.listOfQLI != undefined}">
+<!--<center>-->
+<aura:if isTrue="{!v.hideSaveDelete}">
+<div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+    <span class="slds-assistive-text">warning</span>
+    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+        <lightning:icon iconName="utility:warning"></lightning:icon>
+    </span>
+    <aura:if isTrue="{!v.isGcc}">
+        <h2>
+            Additional VATs can be added only when opportunity is not "In finance approval" or "Closed". Please move stage back to fill details.
+        </h2>
+    </aura:if>  
+    <aura:if isTrue="{!NOT(v.isGcc)}">
+        <h2>
+            Additional GSTINs can be added only when opportunity is not "In finance approval" or "Closed". Please move stage back to fill details.
+        </h2>
+    </aura:if> 
+    
+</div>
+</aura:if>
+<div style="width:100%;border:1px solid #d4d6d5;">
+<div style="width:100%;height:30px;">
+    <center>
+        <p style="margin-top:20px;margin-bottom:20px;font-size:15px;"><b>All Products of the opportunity</b></p>
+    </center>
+</div>
+<table style="width:100%" class="slds-table slds-table_cell-buffer slds-table_bordered">
+    
+    <thead>
+        <tr class="slds-text-title--caps">
+            <th scope="col" aria-label="Product Name" style="width:50px;">
+                <span class="slds-truncate" title="Product Name">Product Name</span>
+            </th>
+            <th scope="col" aria-label="Product Price" style="width:50px;">
+                <span class="slds-truncate" title="Product Price">Product Price</span>
+            </th>
+            <th scope="col" aria-label="Billing Type" style="width:50px;">
+                <span class="slds-truncate" title="Billing Type">Billing Type</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <aura:iteration items="{!v.mainWrapper.listOfQLI}" var="eachQLI" indexVar="i"> 
+            <tr class="slds-hint-parent">
+                <td class="slds-cell-shrink" scope="row" data-label="Product Name">
+                    <div class="slds-truncate" title="Product Name">
+                        {!eachQLI.Product2.Name}
+                    </div>
+                </td>
+                <td class="slds-cell-shrink" scope="row" data-label="Product Price">
+                    <div class="slds-truncate" title="Product Price">
+                        <lightning:formattedNumber value="{!eachQLI.Total_Price__c}" minimumFractionDigits="0" maximumFractionDigits="0"/><br/>
+                    </div>
+                </td>
+                <td class="slds-cell-shrink" scope="row" data-label="Billing Type">
+                    <div class="slds-truncate" title="Billing Type">
+                        {!eachQLI.Product2.Billing_Type__c}
+                    </div>
+                </td>
+            </tr>
+        </aura:iteration>
+        <!-- For reference <ui:outPutNumber aura:id="myNumberFormat" format="#,##0,000" value="594140.62"/><br/>
+            <ui:outPutNumber aura:id="myNumberFormat" format="###0000" value="594140.62"/><br/>
+            <lightning:formattedNumber value="123" minimumFractionDigits="0" maximumFractionDigits="0"/>-->
+    </tbody>
+</table>
+</div>
+<!-- </center>-->
+</aura:if>
+<br/>
+
+<!-- Show Exising Records Of Additional GSTINs Object -->
+
+<!--<aura:if isTrue="{!v.mainWrapper.listOfAdditionGSTIN.length > 0}">-->
+<div class = "slds-scrollable slds-box" style="height:100%;width:100%;">
+<table id="existingTable" class="slds-table slds-table_cell-buffer slds-table_bordered">
+
+<thead>
+    <tr class="slds-text-title--caps">
+        <th scope="col" aria-label="Product Name">
+            <span class="slds-truncate" title="Product Name"><span style="color:#CE2029;font-size:15px;">*</span>Product Name</span>
+        </th>
+        <aura:if isTrue="{!v.isGcc}">
+            <th scope="col" aria-label="VAT">
+                <span class="slds-truncate" title="VAT"><span style="color:#CE2029;font-size:15px;">*</span>Billing VAT</span>
+            </th>
+        </aura:if>
+        
+        <aura:if isTrue="{!NOT(v.isGcc)}">
+            <th scope="col" aria-label="GSTIN">
+                <span class="slds-truncate" title="GSTIN"><span style="color:#CE2029;font-size:15px;">*</span>Billing GSTIN</span>
+            </th>
+        </aura:if>
+        
+        
+        <aura:if isTrue="{!(v.displayCompanyInfo || v.isGcc)}">
+            <th scope="col" aria-label="Customer Name">
+                <span class="slds-truncate" title="Customer Name"><span style="color:#CE2029;font-size:15px;">*</span>Customer Name</span>
+            </th>
+            <th scope="col" aria-label="Address Line 1">
+                <span class="slds-truncate" title="Address Line 1"><span style="color:#CE2029;font-size:15px;">*</span>Address Line 1</span>
+            </th>
+            <th scope="col" aria-label="Address Line 2">
+                <span class="slds-truncate" title="Address Line 2"><span style="color:#CE2029;font-size:15px;"></span>Address Line 2</span>
+            </th>
+            <th scope="col" aria-label="City">
+                <span class="slds-truncate" title="City"><span style="color:#CE2029;font-size:15px;">*</span>Billing City</span>
+            </th>
+            <th scope="col" aria-label="State">
+                <span class="slds-truncate" title="State"><span style="color:#CE2029;font-size:15px;">*</span>Billing State</span>
+            </th>
+            <th scope="col" aria-label="Pincode">
+                <span class="slds-truncate" title="Pincode"><span style="color:#CE2029;font-size:15px;">*</span>Pincode</span>
+            </th>
+            
+            <aura:if isTrue="{!NOT(v.isGcc)}">
+                <th scope="col" aria-label="SEZ(Yes/No)">
+                    <span class="slds-truncate" title="SEZ(Yes/No)"><span style="color:#CE2029;font-size:15px;">*</span>SEZ(Yes/No)</span>
+                </th>
+                
+            </aura:if>
+            
+            
+        </aura:if>
+        <!-- <th scope="col" aria-label="ARR" style="width:15%;">
+                <span class="slds-truncate" title="ARR"><span style="color:#CE2029;font-size:15px;">*</span>ARR Amount</span>
+            </th>
+            <th scope="col" aria-label="OTP" style="width:15%;">
+                <span class="slds-truncate" title="OTP"><span style="color:#CE2029;font-size:15px;">*</span>OTP Amount</span>
+            </th>-->   
+        <aura:if isTrue="{!v.isGcc}">
+            <th scope="col" aria-label="CR Number">
+                <span class="slds-truncate" title="CR Number"><span style="color:#CE2029;font-size:15px;">*</span>CR Number</span>
+            </th>
+            <th scope="col" aria-label="Tin Number">
+                <span class="slds-truncate" title="Tin Number"><span style="color:#CE2029;font-size:15px;">*</span>Tin Number</span>
+            </th>
+        </aura:if>
+        <aura:if isTrue="{!NOT(v.isGcc)}">
+            <th scope="col" aria-label="Billing PAN">
+                    <span class="slds-truncate" title="Billing PAN"><span style="color:#CE2029;font-size:15px;">*</span>Billing PAN</span>
+            </th>
+            <th scope="col" aria-label="Billing TAN">
+                <span class="slds-truncate" title="Billing TAN"><span style="color:#CE2029;font-size:15px;">*</span>Billing TAN</span>
+            </th>
+            <th scope="col" aria-label="CIN No">
+                <span class="slds-truncate" title="CIN No."><span style="color:#CE2029;font-size:15px;">*</span>CIN No.</span>
+            </th>
+        </aura:if>
+    
+        <th scope="col" aria-label="Name of Entity">
+            <span class="slds-truncate" title="Name of Entity"><span style="color:#CE2029;font-size:15px;">*</span>Name of Entity</span>
+        </th>
+   
+        <th scope="col" aria-label="Amount">
+            <span class="slds-truncate" title="Amount"><span style="color:#CE2029;font-size:15px;">*</span>Amount</span>
+        </th>
+        <th style="width:2%"></th>
+        <th style="width:4%"></th>
+    </tr>
+</thead>
+<tbody>
+    <aura:iteration items="{!v.mainWrapper.listOfAdditionGSTIN}" var="eachAddtnGSTIN" indexVar="i"> <!--items="{!v.mainWrapper.listOfAdtnlGSTIN}" -->
+        
+        <tr class="slds-hint-parent">
+            <td class="slds-cell-shrink" scope="row" data-label="ProductName">
+                <lightning:combobox name="{!i}" value="{!eachAddtnGSTIN.QuteLineItemId}"  options="{!v.productOptions}"  dropdownAlignment="left" variant="standard"></lightning:combobox> <!--value="{!eachAddtnGSTIN.Quote_Line_Item__r.Product2Id}" -->
+            </td>
+            <td class="slds-cell-shrink" scope="row" data-label="GSTIN">
+                <div class="slds-truncate" title="GSTIN"> 
+                    <lightning:input name="{!i}" type="text" maxlength="15" messageWhenTooShort="GSTIN must be 15 characters." value="{!eachAddtnGSTIN.GSTIN}" disabled="false"/> <!-- onchange="{!c.gstinValidation}" --> <!--value="{!eachAddtnGSTIN.Name}" minlength="15"-->
+                </div>
+            </td>
+            <aura:if isTrue="{!(v.displayCompanyInfo)}">
+                <aura:if isTrue="{!NOT(v.isGcc)}">
+                    <!--value="{!eachAddtnGSTIN.Name}" -->
+                    <td class="slds-cell-shrink" scope="row" data-label="Customer Name">
+                        <div class="slds-truncate" title="Customer Name"> 
+                            <lightning:textarea name="{!i}" type="text"  value="{!eachAddtnGSTIN.nameOfTheCustomer}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/> 
+                        </div>
+                    </td>
+                    
+                    <!--value="{!eachAddtnGSTIN.Address__c}" -->
+                    <td class="slds-cell-shrink" scope="row" data-label="Address Line 1">
+                        <div class="slds-truncate" title="Address Line 1">
+                            <lightning:textarea name="{!i}" type="text"    value="{!eachAddtnGSTIN.billingAddrs1}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/>
+                        </div>
+                    </td>
+                    
+                    
+                    <td class="slds-cell-shrink" scope="row" data-label="Address Line 2">
+                        <div class="slds-truncate" title="Address Line 2">
+                            <lightning:textarea name="{!i}" type="text"    value="{!eachAddtnGSTIN.billingAddrs2}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/> 
+                        </div>
+                    </td>
+                    
+                    
+                    <td class="slds-cell-shrink" scope="row" data-label="City">
+                        <div class="slds-truncate" title="City">
+                            <lightning:input name="{!i}" type="text"    value="{!eachAddtnGSTIN.city}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/>
+                        </div>
+                    </td>
+                    
+                    <!--value="{!eachAddtnGSTIN.Address__c}" -->
+                    <td class="slds-cell-shrink" scope="row" data-label="State">
+                        <div class="slds-truncate" title="State">
+                            <lightning:input name="{!i}" type="text"    value="{!eachAddtnGSTIN.state}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/> 
+                        </div>
+                    </td>
+                    
+                    <td class="slds-cell-shrink" scope="row" data-label="Pincode">
+                        <div class="slds-truncate" title="Pincode">
+                            <lightning:input name="{!i}" type="text"  max="7"  value="{!eachAddtnGSTIN.pincode}" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"/> 
+                        </div>
+                    </td>
+                    <td class="slds-cell-shrink" scope="row" data-label="SEZ(Yes/No)">
+                        <lightning:combobox name="{!i}" placeholder = "Select" value="{!eachAddtnGSTIN.sez}" options="{!v.sezOption}"  dropdownAlignment="left" variant="standard" disabled="{!NOT(eachAddtnGSTIN.disbaleInfo)}"></lightning:combobox>
+                    </td>
+        
+                </aura:if>
+                
+                
+                
+            </aura:if>
+            
+            <aura:if isTrue="{!NOT(v.isGcc )}">
+                <td class="slds-cell-shrink" scope="row" data-label="Billing PAN">
+                    <div class="slds-truncate" title="Billing PAN">
+                        <lightning:input name="{!i}" type="text"  max="10"  value="{!eachAddtnGSTIN.billingPan}" disabled="false"/> 
+                    </div>
+                </td>
+                <td class="slds-cell-shrink" scope="row" data-label="TAN">
+                    <div class="slds-truncate" title="TAN">
+                        <lightning:textarea name="{!i}" type="text"  max="10"  value="{!eachAddtnGSTIN.tan}" disabled="false"/> 
+                    </div>
+                </td>
+                <td class="slds-cell-shrink" scope="row" data-label="CIN">
+                    <div class="slds-truncate" title="CIN">
+                        <lightning:textarea name="{!i}" type="text"  max="10"  value="{!eachAddtnGSTIN.cin}" disabled="false"/> 
+                    </div>
+                </td>
+            </aura:if>
+            
+            
+            
+            
+            <!-- GCC -->
+            
+            <aura:if isTrue="{!(v.isGcc )}">
+                <!--value="{!eachAddtnGSTIN.Name}" -->
+                <td class="slds-cell-shrink" scope="row" data-label="Customer Name">
+                    <div class="slds-truncate" title="Customer Name"> 
+                        <lightning:textarea name="{!i}" type="text"  value="{!eachAddtnGSTIN.nameOfTheCustomer}"/> 
+                    </div>
+                </td>
+                
+                <!--value="{!eachAddtnGSTIN.Address__c}" -->
+                <td class="slds-cell-shrink" scope="row" data-label="Address Line 1">
+                    <div class="slds-truncate" title="Address Line 1">
+                        <lightning:textarea name="{!i}" type="text"    value="{!eachAddtnGSTIN.billingAddrs1}"/>
+                    </div>
+                </td>
+                
+                
+                <td class="slds-cell-shrink" scope="row" data-label="Address Line 2">
+                    <div class="slds-truncate" title="Address Line 2">
+                        <lightning:textarea name="{!i}" type="text"    value="{!eachAddtnGSTIN.billingAddrs2}"/> 
+                    </div>
+                </td>
+                
+                
+                <td class="slds-cell-shrink" scope="row" data-label="City">
+                    <div class="slds-truncate" title="City">
+                        <lightning:input name="{!i}" type="text"    value="{!eachAddtnGSTIN.city}" />
+                    </div>
+                </td>
+                
+                <!--value="{!eachAddtnGSTIN.Address__c}" -->
+                <td class="slds-cell-shrink" scope="row" data-label="State">
+                    <div class="slds-truncate" title="State">
+                        <lightning:input name="{!i}" type="text"    value="{!eachAddtnGSTIN.state}"/> 
+                    </div>
+                </td>
+                
+                <td class="slds-cell-shrink" scope="row" data-label="Pincode">
+                    <div class="slds-truncate" title="Pincode">
+                        <lightning:input name="{!i}" type="text"  max="7"  value="{!eachAddtnGSTIN.pincode}"/> 
+                    </div>
+                </td>
+                
+                <td class="slds-cell-shrink" scope="row" data-label="CR Number">
+                    <div class="slds-truncate" title="CR Number">
+                        <lightning:input name="{!i}" type="text" value="{!eachAddtnGSTIN.CRNumber}"/> 
+                    </div>
+                </td>
+                
+                <td class="slds-cell-shrink" scope="row" data-label="TIN Number">
+                    <div class="slds-truncate" title="TIN Number">
+                        <lightning:input name="{!i}" type="text"  value="{!eachAddtnGSTIN.tinNumber}"/> 
+                    </div>
+                </td>
+                
+            </aura:if>
+            
+            <!-- GCC END -->
+            <!--<td  class="slds-cell-shrink" data-label="ARR"> 
+                    <div class="slds-truncate" title="ARR">
+                        <lightning:input name="{!i}" type="number"  max="10000000"  value="{!eachAddtnGSTIN.ARR__c}" disabled="false"/>
+                    </div>
+                </td>
+                <td  class="slds-cell-shrink" data-label="OTP"> 
+                    <div class="slds-truncate" title="OTP">
+                        <lightning:input name="{!i}" type="number"  max="10000000"  value="{!eachAddtnGSTIN.OTP_Integration__c}" disabled="false" onchange="{!c.calculateTotalPriceForExistingList}"/>
+                    </div>
+                </td>-->
+                
+                    <td  class="slds-cell-shrink" data-label="Name of Entity"> 
+                    <div class="slds-truncate" title="Name of Entity">
+                        <lightning:input name="{!i}" type="text" max="20" value="{!eachAddtnGSTIN.nameOfEntity}" disabled="false"/> 
+                    </div>
+                </td>
+           
+            
+            <td  class="slds-cell-shrink" data-label="Amount"> 
+                <div class="slds-truncate" title="Amount">
+                    <lightning:input name="{!i}" type="number" value="{!eachAddtnGSTIN.amount}" disabled="false"/> <!--value="{!eachAddtnGSTIN.Amount__c}" -->
+                </div>
+            </td>
+            <aura:if isTrue="{!!v.hideSaveDelete}">
+                <td class="slds-cell-shrink" data-label="Delete Icon">
+                    <div class="slds-truncate" title="DeleteIcon">
+                        <button id="{!'deleteBtn'+';'+eachAddtnGSTIN.Id+';'+i}" style="background-color:white;border:1px solid #F3F3F3" type="button" onclick="{!c.removeRow}" disabled="false">
+                            <lightning:icon class="delete-icon" iconName="utility:delete" size="small" alternativeText="Delete Utility image" title="Delete"/>
+                        </button>
+                    </div>
+                </td>
+            </aura:if>
+            <td>
+                <!--<button id="{!'cloneBtn'+';'+eachAddtnGSTIN.Id}" label="Clone" style="backgound-color:#005FB2" type="button" onclick="{!c.onClickOfClone}"/>-->
+                <!--<lightning:button aura:id="" class="slds-theme_brand" variant="brand" label="Clone" onclick="{!c.onClickOfClone}"></lightning:button>-->
+            </td>
+        </tr>
+    </aura:iteration>
+    <br/>
+    <aura:if isTrue="{!!v.hideSaveDelete}">
+        <div class="slds-float_left slds-p-bottom_small">
+            <h1 class="slds-page-header__title" style="margin-left:15px;">Add Row 
+                <lightning:buttonIcon iconName="utility:add"  size="large" variant="bare" alternativeText="Add" onclick="{!c.addRow}"/>
+            </h1>
+        </div>
+    </aura:if>
+</tbody>
+</table>
+</div>
+<aura:if isTrue="{!!v.hideSaveDelete}">
+<div>
+<center>
+    <lightning:button class="slds-theme_brand" variant="brand" label="Save" onclick="{!c.onClickOfSave}"></lightning:button>
+</center>  
+</div>
+</aura:if>
+<!-- </aura:if>-->
+</aura:component>

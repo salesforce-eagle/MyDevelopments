@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Substages__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Substages</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo Completed</fullName>
+                <default>false</default>
+                <label>Demo Completed</label>
+            </value>
+            <value>
+                <fullName>Engagement Ongoing</fullName>
+                <default>false</default>
+                <label>Engagement Ongoing</label>
+            </value>
+            <value>
+                <fullName>POC Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>POC Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>POC Date Received</fullName>
+                <default>false</default>
+                <label>POC Date Received</label>
+            </value>
+            <value>
+                <fullName>POC Report Generate</fullName>
+                <default>false</default>
+                <label>POC Report Generate</label>
+            </value>
+            <value>
+                <fullName>POC Meeting Completed</fullName>
+                <default>false</default>
+                <label>POC Meeting Completed</label>
+            </value>
+            <value>
+                <fullName>Quote Preparation</fullName>
+                <default>false</default>
+                <label>Quote Preparation</label>
+            </value>
+            <value>
+                <fullName>Quote Shared</fullName>
+                <default>false</default>
+                <label>Quote Shared</label>
+            </value>
+            <value>
+                <fullName>Negotiation Meeting Fixed</fullName>
+                <default>false</default>
+                <label>Negotiation Meeting Fixed</label>
+            </value>
+            <value>
+                <fullName>Negotiation Ongoing</fullName>
+                <default>false</default>
+                <label>Negotiation Ongoing</label>
+            </value>
+            <value>
+                <fullName>Negotiation Closed</fullName>
+                <default>false</default>
+                <label>Negotiation Closed</label>
+            </value>
+            <value>
+                <fullName>CTX Evaluation</fullName>
+                <default>false</default>
+                <label>CTX Evaluation</label>
+            </value>
+            <value>
+                <fullName>Closure Meetings(SOW)</fullName>
+                <default>false</default>
+                <label>Closure Meetings(SOW)</label>
+            </value>
+            <value>
+                <fullName>PO/LoE Awaiting</fullName>
+                <default>false</default>
+                <label>PO/LoE Awaiting</label>
+            </value>
+            <value>
+                <fullName>Delays on Customer end</fullName>
+                <default>false</default>
+                <label>Delays on Customer end</label>
+            </value>
+            <value>
+                <fullName>Contact Customer in Future</fullName>
+                <default>false</default>
+                <label>Contact Customer in Future</label>
+            </value>
+            <value>
+                <fullName>Demo Done</fullName>
+                <default>false</default>
+                <label>Demo Done</label>
+            </value>
+            <value>
+                <fullName>Demo to be rescheduled</fullName>
+                <default>false</default>
+                <label>Demo to be rescheduled</label>
+            </value>
+            <value>
+                <fullName>Multiple customer No Show</fullName>
+                <default>false</default>
+                <label>Multiple customer No Show</label>
+            </value>
+            <value>
+                <fullName>Junk Explorer</fullName>
+                <default>false</default>
+                <label>Junk Explorer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pre SQL</controllingFieldValue>
+            <valueName>Demo Done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre SQL</controllingFieldValue>
+            <valueName>Demo to be rescheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre SQL</controllingFieldValue>
+            <valueName>Multiple customer No Show</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre SQL</controllingFieldValue>
+            <valueName>Junk Explorer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SQL</controllingFieldValue>
+            <valueName>Demo Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SQL</controllingFieldValue>
+            <valueName>Engagement Ongoing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SQL</controllingFieldValue>
+            <valueName>POC Meeting Scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POC</controllingFieldValue>
+            <valueName>POC Date Received</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POC</controllingFieldValue>
+            <valueName>POC Report Generate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POC</controllingFieldValue>
+            <valueName>POC Meeting Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Management</controllingFieldValue>
+            <valueName>Quote Preparation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Management</controllingFieldValue>
+            <valueName>Quote Shared</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote Management</controllingFieldValue>
+            <valueName>Negotiation Meeting Fixed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negotiation Meetings</controllingFieldValue>
+            <valueName>Negotiation Ongoing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Negotiation Meetings</controllingFieldValue>
+            <valueName>Negotiation Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closure Meetings</controllingFieldValue>
+            <valueName>CTX Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closure Meetings</controllingFieldValue>
+            <valueName>Closure Meetings(SOW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closure Meetings</controllingFieldValue>
+            <valueName>PO/LoE Awaiting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold</controllingFieldValue>
+            <valueName>Delays on Customer end</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold</controllingFieldValue>
+            <valueName>Contact Customer in Future</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

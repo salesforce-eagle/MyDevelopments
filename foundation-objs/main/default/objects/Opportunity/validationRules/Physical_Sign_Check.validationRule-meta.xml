@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Physical_Sign_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISPICKVAL(Finance_approval_status__c, &apos;Finance Approval Approved&apos;) &amp;&amp; !ISPICKVAL(Finance_approval_status__c, &apos;Legal Approval Approved&apos;) &amp;&amp; ISCHANGED( Physical_Sign_completed__c ) 
+&amp;&amp; Physical_Sign_completed__c</errorConditionFormula>
+    <errorDisplayField>Physical_Sign_completed__c</errorDisplayField>
+    <errorMessage>Please get it Legal/Finance approved first!</errorMessage>
+</ValidationRule>

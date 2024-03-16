@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Risk_Status_AccountOwn_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISNEW() &amp;&amp;
+ISCHANGED(Risk_Status_by_Account_Owner__c) &amp;&amp;
+NOT(ISPICKVAL( Risk_Status_by_Account_Owner__c ,&apos;&apos;)) &amp;&amp;
+(ISBLANK( Risk_Comments_Account_Owner__c ) ||
+ISNULL( Expected_Green_Date_Account_Owner__c ))</errorConditionFormula>
+    <errorMessage>Please Enter Risk Comments - Account Owner and Expected Green Date - Account Owner.</errorMessage>
+</ValidationRule>

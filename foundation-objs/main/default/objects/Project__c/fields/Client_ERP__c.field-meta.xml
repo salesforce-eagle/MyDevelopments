@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_ERP__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Client ERP</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Infor LN</fullName>
+                <default>false</default>
+                <label>Infor LN</label>
+            </value>
+            <value>
+                <fullName>JD Edwards</fullName>
+                <default>false</default>
+                <label>JD Edwards</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics 365</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics 365</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics 365 Business Central</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics 365 Business Central</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics 365 Finance and Operations</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics 365 Finance and Operations</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics AX</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics AX</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics CRM</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics CRM</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics GP</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics GP</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics NAV</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics NAV</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics SL</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics SL</label>
+            </value>
+            <value>
+                <fullName>Microsoft Others</fullName>
+                <default>false</default>
+                <label>Microsoft Others</label>
+            </value>
+            <value>
+                <fullName>Oracle E-Business Suite</fullName>
+                <default>false</default>
+                <label>Oracle E-Business Suite</label>
+            </value>
+            <value>
+                <fullName>Oracle Fusion</fullName>
+                <default>false</default>
+                <label>Oracle Fusion</label>
+            </value>
+            <value>
+                <fullName>Oracle NetSuite</fullName>
+                <default>false</default>
+                <label>Oracle NetSuite</label>
+            </value>
+            <value>
+                <fullName>Oracle Others</fullName>
+                <default>false</default>
+                <label>Oracle Others</label>
+            </value>
+            <value>
+                <fullName>Oracle PeopleSoft</fullName>
+                <default>false</default>
+                <label>Oracle PeopleSoft</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>SAP B1</fullName>
+                <default>false</default>
+                <label>SAP B1</label>
+            </value>
+            <value>
+                <fullName>SAP ECC / S4 Hana</fullName>
+                <default>false</default>
+                <label>SAP ECC / S4 Hana</label>
+            </value>
+            <value>
+                <fullName>SAP Others</fullName>
+                <default>false</default>
+                <label>SAP Others</label>
+            </value>
+            <value>
+                <fullName>Tally ERP 9</fullName>
+                <default>false</default>
+                <label>Tally ERP 9</label>
+            </value>
+            <value>
+                <fullName>Tally Others</fullName>
+                <default>false</default>
+                <label>Tally Others</label>
+            </value>
+            <value>
+                <fullName>TallyPrime</fullName>
+                <default>false</default>
+                <label>TallyPrime</label>
+            </value>
+            <value>
+                <fullName>IDS</fullName>
+                <default>false</default>
+                <label>IDS</label>
+            </value>
+            <value>
+                <fullName>Infor Sun Systems</fullName>
+                <default>false</default>
+                <label>Infor Sun Systems</label>
+            </value>
+            <value>
+                <fullName>Oracle Opera PMS</fullName>
+                <default>false</default>
+                <label>Oracle Opera PMS</label>
+            </value>
+            <value>
+                <fullName>QAD Java</fullName>
+                <default>false</default>
+                <label>QAD Java</label>
+            </value>
+            <value>
+                <fullName>In house/Custom ERP</fullName>
+                <default>false</default>
+                <label>Custom / In-house ERP</label>
+            </value>
+            <value>
+                <fullName>POS systems</fullName>
+                <default>false</default>
+                <label>POS systems</label>
+            </value>
+            <value>
+                <fullName>SAP Business One</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SAP Business One</label>
+            </value>
+            <value>
+                <fullName>SAP ECC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SAP ECC</label>
+            </value>
+            <value>
+                <fullName>SAP S/4HANA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SAP S/4HANA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

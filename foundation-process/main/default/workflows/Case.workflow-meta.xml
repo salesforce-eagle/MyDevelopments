@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_on_SLA_Breach_of_First_Reply_Milestone</fullName>
+        <description>Alert on SLA Breach of First Reply Milestone</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Case_Owners_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Suppport_Notification_Email_to_Manager_Or_TL_First_reply_SLa</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerting_P0_to_L2</fullName>
+        <ccEmails>l2-gst-p0-aaaaeihxuxojf2fhxfpjdpkdwu@cleartaxtech.slack.com</ccEmails>
+        <description>Alerting P0 to L2 GST</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/L2_P0_escalating</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerting_P0_to_L2_Einvoice</fullName>
+        <ccEmails>l2-einvoice-p0-aaaaejvcdph4glva25h5k7s57m@cleartaxtech.slack.com</ccEmails>
+        <description>Alerting P0 to L2 Einvoice</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/L2_P0_escalating</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerting_to_Neo_Channel</fullName>
+        <ccEmails>neo-aaaabh5han3lbxmmus2fj2u34m@cleartaxtech.slack.com</ccEmails>
+        <description>Alerting to Neo Channel</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>Alerting_to_mantis_prod_issue</fullName>
+        <ccEmails>mantis-prod-issue-aaaaeh4fwg73py7dagqs4ebmhe@cleartaxtech.slack.com</ccEmails>
+        <description>Alerting to mantis-prod-issue</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>L3_Jarvis_Alerting</fullName>
+        <ccEmails>jarvis-zendesk-ticket-aaaab27p4jfcmezouqcpmu24wm@cleartaxtech.slack.com</ccEmails>
+        <description>L3 Jarvis Alerting</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_To_Case_Owner_on_Latest_Email_Update</fullName>
+        <description>Notification To Case Owner on Latest Email Update</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_Case_Owner_on_Latest_Email_of_B2C_Type</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_To_IT_on_Hacker_KeyWords</fullName>
+        <description>Notification To IT on Hacker KeyWords</description>
+        <protected>false</protected>
+        <recipients>
+            <field>IT_Email_ID__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_on_Hacker_Keywords_on_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Manager_Tl_on_SLA_Breach_Customer_Wait_time</fullName>
+        <description>Notification to Manager/Tl on SLA Breach Customer Wait time</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Case_Owners_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>biswajit.nayak@cleartax.in</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Suppport_Notification_Email_to_Manager_Or_TL_Customer_Wait_time_breach</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Manager_Tl_on_SLA_Breach_Periodic_Update</fullName>
+        <description>Notification to Manager/Tl on SLA Breach Periodic Update</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Case_Owners_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Suppport_Notification_Email_to_Manager_Or_TL_Perodic_Update</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Manager_if_Case_is_in_Solved_status_for_3_days</fullName>
+        <description>Notification to Manager if Case is in Solved status for 3 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Case_Owners_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Suppport_Notification_Email_to_Manager_on_Solved_3_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Customer_on_New_Case_Creation</fullName>
+        <description>Notify Customer on New Case Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORTWebtoCaseemailresponseSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>SendDay1Notifications</fullName>
+        <description>SendDay1Notifications</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_Notification_To_IT_Team_On_Latest_EmailMessage_With_Hacker_KeyWords</fullName>
+        <description>Send Email Notification To IT Team On Latest EmailMessage With Hacker KeyWords</description>
+        <protected>false</protected>
+        <recipients>
+            <field>IT_Email_ID__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_on_Hacker_Keywords_on_Case_Latest_EmailMessage</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_Notification_on_Case_Creation_to_Customer</fullName>
+        <description>Send Email Notification on Case Creation to Customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Case_Creation_Template_for_B2C_Cases</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Case_Contact_on_assigining_the_case_to_L2_Team</fullName>
+        <description>Send Email to Case Contact on assigining the case to L2 Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_to_Case_Contact_on_Owner_Change_to_L2_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Case_Owner_on_Assignment</fullName>
+        <description>Send Email to Case Owner on Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Case_Owner_on_Reopen</fullName>
+        <description>Send Email to Case Owner on Reopen</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notify_the_Case_Owner_On_Reopen</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Child_Cases</fullName>
+        <description>Send Email to Child Cases</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_1</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_Customer_on_Customer_Wait_Time_SLA_Breach</fullName>
+        <description>Send Email to Customer on Customer Wait Time SLA Breach</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_to_Customer_on_Customer_Wait_Time_SLA_Breach</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Notification_IT_Team</fullName>
+        <description>Send Notification IT Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>IT_Email_ID__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_on_Hacker_Keywords_on_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Case_Form_Submitter</fullName>
+        <description>Send email to Case Form Submitter</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Web_Form_Submitter_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_to_Case_Form_Submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>Support_Notification_To_Customer_on_B2C_Case_Solved</fullName>
+        <description>Support_Notification_To_Customer_on_B2C_Case_Solved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_To_Customer_on_B2C_Case_Solved</template>
+    </alerts>
+    <alerts>
+        <fullName>Ticket_movement_within_L2_team</fullName>
+        <ccEmails>l2-ticket-movement-aaaaemdhtkwlbd74bp3zolat4a@cleartaxtech.slack.com</ccEmails>
+        <description>Ticket movement within L2 team</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Movement_of_L2_tickets_within_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>alerting_to_Groot_slack_channel</fullName>
+        <ccEmails>groot-integration-l3-aaaaetdoe27kc6oivksemzvuvu@cleartaxtech.slack.com</ccEmails>
+        <description>alerting to Groot slack channel</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>alerting_to_Non_tech_slack_channel</fullName>
+        <ccEmails>taxteam_support_ticke-aaaaer3umtzganndwkib6n7wkm@cleartaxtech.slack.com</ccEmails>
+        <description>alerting to Non-tech slack channel</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>alerting_to_Phenoix_slack_channel</fullName>
+        <ccEmails>phoenix-aaaacaei4ou4i5dnochxgoyob4@cleartaxtech.slack.com</ccEmails>
+        <description>alerting to Phenoix slack channel</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>alerting_to_gst_prod_customer_issues_slack_channel</fullName>
+        <ccEmails>gst-prod-customer-iss-aaaadhzhem2mpmitxscefcf6gy@cleartaxtech.slack.com</ccEmails>
+        <description>alerting to gst-prod-customer-issues slack channel</description>
+        <protected>false</protected>
+        <senderAddress>notifications.sf@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Escalated_to_L3</template>
+    </alerts>
+    <alerts>
+        <fullName>send_Email_Notification_To_Previous_Owner</fullName>
+        <description>send Email Notification To Previous Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Previous_Owner_EmailId__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_on_Owner_Change_to_Gst_Dev_on_call_Previous_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>send_Email_To_Contacts_on_Closed_on_Problem_to_Child_Cases</fullName>
+        <description>send Email To Contacts on Closed on Problem to Child Cases</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Notification_on_Closing_the_Incident_Cases_From_Parent_Problem</template>
+    </alerts>
+    <alerts>
+        <fullName>send_Email_to_Old_Owner_TL_Manager_within_L2_Team</fullName>
+        <description>send Email to Old Owner TL/Manager within L2 Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Old_Owner_TL_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@cleartaxmailer.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Notication_to_Old_Case_Owner_within_L2_team</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Last_pod_Assign_Time</fullName>
+        <field>LastPodAssignTime__c</field>
+        <formula>NOW()</formula>
+        <name>Last pod Assign Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_BackEnd_Status</fullName>
+        <field>Back_End_Status__c</field>
+        <literalValue>Transfered To Dev On Call</literalValue>
+        <name>Update BackEnd Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Back_End_Status</fullName>
+        <description>Update Back End Status  To Control the Omni-Channel</description>
+        <field>Back_End_Status__c</field>
+        <literalValue>Transfered To Onboard/KAM</literalValue>
+        <name>Update Back End Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Owner_to_Dev_On_Call</fullName>
+        <field>OwnerId</field>
+        <lookupValue>devoncall@cleartaxmailer.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update Case Owner to Dev On Call</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_to_Auto_Close</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Update Case to Auto Close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Wait_Time_Violation</fullName>
+        <field>Customer_Wait_Time_Violation_Date_Time__c</field>
+        <formula>now()</formula>
+        <name>Update  Customer Wait Time Violation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_First_Reply_Violation_DateTime</fullName>
+        <field>First_Reply_Violation_DateTime__c</field>
+        <formula>Now()</formula>
+        <name>Update First Reply Violation DateTime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_IS_Owner_Changed_to_True</fullName>
+        <field>Is_Owner_Changed__c</field>
+        <literalValue>1</literalValue>
+        <name>Update IS Owner Changed to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Customer_Unblocked</fullName>
+        <field>Is_Customer_Unblocked__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is Customer Unblocked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Internal_CommentCreatedAsFalse</fullName>
+        <field>Is_Internal_Comment_Created__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Is Internal CommentCreatedAsFalse</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_OwnerID</fullName>
+        <field>OwnerId</field>
+        <lookupValue>devoncall@cleartaxmailer.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update OwnerID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_To_Adamya</fullName>
+        <field>OwnerId</field>
+        <lookupValue>adamya.agnihotri@cleartax.in</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update Owner To Adamya</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Periodic_UpdateViolation_DateTime</fullName>
+        <field>Periodic_Update_Violation_DateTime__c</field>
+        <formula>NOW()</formula>
+        <name>Update Periodic UpdateViolation DateTime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sub_Status_to_Blank</fullName>
+        <field>Sub_Status__c</field>
+        <name>Update Sub Status to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_the_Case_Sub_Status_as_Auto_Close</fullName>
+        <field>Sub_Status__c</field>
+        <literalValue>Auto Closed</literalValue>
+        <name>Update the Case Sub Status as Auto Close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Status_to_Open</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>update Status to Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Alerting P0 to L2 Einvoice</fullName>
+        <actions>
+            <name>Alerting_P0_to_L2_Einvoice</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Case.Case_Owner_Department__c</field>
+            <operation>equals</operation>
+            <value>ENT E Invoice L2 Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New,Reopen,Assigned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>ENT E Invoice L2 Team</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alerting P0 to L2 GST</fullName>
+        <actions>
+            <name>Alerting_P0_to_L2</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 5 OR 6 )AND 2 AND 3 AND (4 OR 7 OR 8)</booleanFilter>
+        <criteriaItems>
+            <field>Case.User_Role_Type__c</field>
+            <operation>equals</operation>
+            <value>GST L2 Support Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New,Reopen,Transfer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>GST L2 Support Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.User_Role_Type__c</field>
+            <operation>equals</operation>
+            <value>ENT GST L2 Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.User_Role_Type__c</field>
+            <operation>equals</operation>
+            <value>Priority ENT GST L2 Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>ENT GST L2 Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>Priority ENT GST L2 team</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Assign the Case from  E Invoice KAM - Queue To Adamya</fullName>
+        <actions>
+            <name>Update_Back_End_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner_To_Adamya</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_Status_to_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>IF(ISCHANGED(OwnerId  )  &amp;&amp;  Owner:Queue.DeveloperName =&quot;E_Invoice_KAM_Queue&quot;, true , false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Close the Case After 3days from Solved Date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Solved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Case_to_Auto_Close</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Update_the_Case_Sub_Status_as_Auto_Close</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.Case_Solved_DataTime__c</offsetFromField>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Case Email Alert on Reopen the Case</fullName>
+        <actions>
+            <name>Send_Email_to_Case_Owner_on_Reopen</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This Workflow will help to Notify the Owner Of the case when the case is Reopened from System or manually by the agent</description>
+        <formula>ISCHANGED( Status ) &amp;&amp;   BEGINS(OwnerId , &apos;005&apos;) &amp;&amp; ISPICKVAL(Status,&apos;Reopen&apos;) &amp;&amp;  (Do_not_send_Automated_mails__c!=true ||   Do_Not_Send_Public_Replies__c!=true )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 CA taxteam_support_tickets channel alert</fullName>
+        <actions>
+            <name>alerting_to_Non_tech_slack_channel</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Non-Tech</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to taxteam_support_tickets channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 Einvoice alert</fullName>
+        <actions>
+            <name>alerting_to_Phenoix_slack_channel</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Phoenix</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 Neo channel alert</fullName>
+        <actions>
+            <name>Alerting_to_Neo_Channel</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Neo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to Neo channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 groot-integration-l3-cases channel alert</fullName>
+        <actions>
+            <name>alerting_to_Groot_slack_channel</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Groot,Tally-Einvoicing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to groot-integration-l3-cases channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 gst-prod-customer-issues channel alert</fullName>
+        <actions>
+            <name>alerting_to_gst_prod_customer_issues_slack_channel</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7  ) AND 8 AND 9</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Thanos</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Galactus</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Tally</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>GST Account Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Mantis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Mojo jojo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Non-Tech</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to gst-prod-customer-issues channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 jarvis-zendesk-tickets channel alert</fullName>
+        <actions>
+            <name>L3_Jarvis_Alerting</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Jarvis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to jarvis-zendesk-tickets channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L3 mantis-prod-issue channel alert</fullName>
+        <actions>
+            <name>Alerting_to_mantis_prod_issue</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.POD_Group__c</field>
+            <operation>equals</operation>
+            <value>Mantis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>P0,P1,P2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Reopen,Transfer</value>
+        </criteriaItems>
+        <description>Alerts to mantis-prod-issue channel</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Last pod Assign Time</fullName>
+        <actions>
+            <name>Last_pod_Assign_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Last pod Assign Time</description>
+        <formula>ISCHANGED(POD_Group__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notification Case Owner on later Email from Customer</fullName>
+        <actions>
+            <name>Notification_To_Case_Owner_on_Latest_Email_Update</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Latest_EmailMessage__c),NOT(ISBLANK(SuppliedEmail)),BEGINS(OwnerId,&quot;005&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify First Auto response Customer on B2B Case Creation</fullName>
+        <actions>
+            <name>Notify_Customer_on_New_Case_Creation</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>Contains(RecordType.Name,&quot;B2B&quot;) &amp;&amp; SuppliedEmail !=null &amp;&amp; NOT(ISBLANK(SuppliedEmail))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify First Auto response Customer on B2C Case Creation</fullName>
+        <actions>
+            <name>Send_Email_Notification_on_Case_Creation_to_Customer</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>Contains(RecordType.Name,&quot;B2C&quot;) &amp;&amp; SuppliedEmail !=null &amp;&amp; NOT(ISBLANK(SuppliedEmail))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email To IT Email Id on Latest CaseComment Update on case</fullName>
+        <actions>
+            <name>Send_Notification_IT_Team</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Latest_CaseComment__c) &amp;&amp; (    Latest_CaseComment__c !=null &amp;&amp;      (         CONTAINS(Latest_CaseComment__c,&quot;vulnerability&quot;)         || CONTAINS(Latest_CaseComment__c,&quot;hack&quot;)          || CONTAINS(Latest_CaseComment__c,&quot;forgery&quot;)         || CONTAINS(Latest_CaseComment__c,&quot;theft&quot;)         || CONTAINS(Latest_CaseComment__c,&quot;attack&quot;)         || CONTAINS(Latest_CaseComment__c,&quot;security&quot;)     )  	)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email To IT Email Id on Latest EmailMessage Update on case</fullName>
+        <actions>
+            <name>Send_Email_Notification_To_IT_Team_On_Latest_EmailMessage_With_Hacker_KeyWords</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Latest_EmailMessage__c) &amp;&amp; (    Latest_EmailMessage__c !=null &amp;&amp;      (         CONTAINS(Latest_EmailMessage__c,&quot;vulnerability&quot;)         || CONTAINS(Latest_EmailMessage__c,&quot;hack&quot;)          || CONTAINS(Latest_EmailMessage__c,&quot;forgery&quot;)         || CONTAINS(Latest_EmailMessage__c,&quot;theft&quot;)         || CONTAINS(Latest_EmailMessage__c,&quot;attack&quot;)         || CONTAINS(Latest_EmailMessage__c,&quot;security&quot;)     )  	)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email on Owner Change</fullName>
+        <actions>
+            <name>Send_Email_to_Case_Owner_on_Assignment</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This Workflow is used to send the Email Alert to the New Owner When the Owner is Chnaged  by System or by the User Manually</description>
+        <formula>IF( ISCHANGED( OwnerId ) &amp;&amp; BEGINS(OwnerId,&apos;005&apos;) &amp;&amp; ( 							Do_not_send_Automated_mails__c!=true  				   || 							Do_Not_Send_Public_Replies__c!=true 			) ,true ,false 		)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Notification On Case Solved for B2C Cases</fullName>
+        <actions>
+            <name>Support_Notification_To_Customer_on_B2C_Case_Solved</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND ( 				OR(NOT(ISPICKVAL(Issue_Type__c,&quot;ClearSave&quot;)), 				NOT(ISPICKVAL(Issue_Type__c,&quot;Free Support&quot;)), 				NOT(ISPICKVAL(Issue_Type__c,&quot;Tax Cloud&quot;)), 				NOT(ISPICKVAL(Issue_Type__c,&quot;Free Support&quot;)) 						), 				OR(NOT(ISPICKVAL(Issue_Type_1__c,&quot;Process&quot;)), 						NOT(ISPICKVAL(Issue_Type_1__c,&quot;E-Filing&quot;)), 						NOT(ISPICKVAL(Issue_Type_1__c,&quot;Not clear question&quot;)) 						),   				OR(NOT(ISPICKVAL(Issue_Type_2__c,&quot;Not clear question&quot;)), 							NOT(ISPICKVAL(Issue_Type_2__c,&quot;No query&quot;)), 							NOT(ISPICKVAL(Issue_Type_2__c,&quot;Spam&quot;)), 							NOT(ISPICKVAL(Issue_Type_2__c,&quot;Issue Unclear&quot;)) 				), 				ISCHANGED(Status), 				ISPICKVAL(Status,&apos;Solved&apos;), 				NOT(ISBLANK(SuppliedEmail)), 				Contains(RecordType.Name,&quot;B2C&quot;)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Ticket movement within the team L2</fullName>
+        <actions>
+            <name>Ticket_movement_within_L2_team</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 and 4</booleanFilter>
+        <criteriaItems>
+            <field>Case.User_Role_Type__c</field>
+            <operation>contains</operation>
+            <value>GST L2 Support Team,Priority ENT GST L2 Team,ENT GST L2 Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Previous_Owner__c</field>
+            <operation>contains</operation>
+            <value>Ravi Shekhar,Ayisha khanum,Diana Ronisha,Thanveer Baba,Gulati Tejasvi,Pallishri Pattanayak,Nivedita Naikar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>contains</operation>
+            <value>Ravi Shekhar,Ayisha khanum,Diana Ronisha,Thanveer Baba,Gulati Tejasvi,Pallishri Pattanayak,Nivedita Naikar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Is_Owner_Changed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case Status to Open</fullName>
+        <actions>
+            <name>update_Status_to_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Case Status to Open When the Case Owner Changes from Queue to User</description>
+        <formula>IF(ISCHANGED(OwnerId) &amp;&amp; BEGINS(PRIORVALUE(OwnerId), &apos;00G&apos;) &amp;&amp; BEGINS(OwnerId,&apos;005&apos;) &amp;&amp;(CONTAINS( RecordType.DeveloperName , &apos;B2B&apos;) || CONTAINS( RecordType.DeveloperName , &apos;B2C&apos;) ) &amp;&amp; NOT(ISPICKVAL(Status,&apos;Reopen&apos;)) , true , false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Dev on Call owner</fullName>
+        <actions>
+            <name>Update_BackEnd_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_OwnerID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_Status_to_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>Owner:Queue.DeveloperName  = &apos;Priority_ENT_GST_Dev_On_Call_Team&apos; || Owner:Queue.DeveloperName  = &apos;GST_Dev_On_Call_Team&apos; || Owner:Queue.DeveloperName  = &apos;ENT_GST_Dev_On_Call_Team&apos; || Owner:Queue.DeveloperName  = &apos;ENT_E_Invoice_Dev_On_Call_Team&apos; || Owner:Queue.DeveloperName  = &apos;Priority_ENT_E_Invoice_Dev_On_Call_Team&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Is Owner Change</fullName>
+        <actions>
+            <name>Update_IS_Owner_Changed_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Is Owner Change for tracking the KAM Teams Work</description>
+        <formula>NOT(ISNEW()) &amp;&amp;  ISCHANGED(OwnerId)&amp;&amp; NOT(Is_Owner_Changed__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sub Status to Blank on Change of Owner to Dev On call Team</fullName>
+        <actions>
+            <name>Update_Sub_Status_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(      ISCHANGED(OwnerId),      ISPICKVAL(Owner:User.User_Role_Type__c,&apos;GST Dev On Call Team&apos;),      ISPICKVAL( Status,&apos;Solved&apos;),      OR(      ISPICKVAL( Sub_Status__c ,&apos;Resolved&apos;),          ISPICKVAL( Sub_Status__c ,&apos;Not Resolved&apos;),          ISPICKVAL( Sub_Status__c ,&apos;No response from customer&apos;),       ISPICKVAL( Sub_Status__c ,&apos;Not our product issue&apos;),      ISPICKVAL( Sub_Status__c ,&apos;Duplicate ticket&apos;)      )   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sub Status to Blank on Change of Status from Pending to Open</fullName>
+        <actions>
+            <name>Update_Sub_Status_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(      ISCHANGED(Status), TEXT(PRIORVALUE(Status))=&apos;Pending&apos;, 				ISPICKVAL(Status,&apos;Open&apos;) 					)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update status to open  when New case assigned to User</fullName>
+        <actions>
+            <name>update_Status_to_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(PRIORVALUE(  Status  ), &apos;New&apos; ) &amp;&amp; BEGINS(PRIORVALUE( OwnerId ),&apos;00G&apos; )  &amp;&amp;  BEGINS( OwnerId , &apos;005&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>send Email Alert to Manager after 3 days if Case is solved status</fullName>
+        <active>true</active>
+        <formula>( ISPICKVAL(Type,&apos;Feature Request&apos;)   &amp;&amp;  NOT(ISPICKVAL(Status,&apos;Solved&apos;))   &amp;&amp;   (   ISPICKVAL(Owner:User.User_Role_Type__c,&apos;GST Dev on Call Team&apos;) ||     ISPICKVAL(Owner:User.User_Role_Type__c,&apos;GST L2 Support Team&apos;) )   &amp;&amp;   NOT(ISBLANK(Case_Owners_Manager_Email__c ))   &amp;&amp;   Do_not_send_Automated_mails__c = False )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Notification_to_Manager_if_Case_is_in_Solved_status_for_3_days</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>send Email to Customer on Customer Wait time SLA Breach</fullName>
+        <actions>
+            <name>Send_Email_to_Customer_on_Customer_Wait_Time_SLA_Breach</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Customer_Wait_Time_Violation_Date_Time__c) &amp;&amp; NOT(IsPICKVAL(Status,&apos;Solved&apos;)) &amp;&amp; NOT(ISPICKVAL(Priority,&apos;P2&apos;)) &amp;&amp; NOT(ISBLANK(SuppliedEmail))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>send Email to customer on cases assigining to L2 team</fullName>
+        <actions>
+            <name>Send_Email_to_Case_Contact_on_assigining_the_case_to_L2_Team</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>ISCHANGED(OwnerId)  &amp;&amp; ( 				CONTAINS(RecordType.Name,&apos;B2B&apos;)  				&amp;&amp; 				NOT(CONTAINS(RecordType.Name,&apos;B2B Internal&apos;)) 			) &amp;&amp; ISPICKVAL(Owner:User.User_Role_Type__c,&apos;GST L2 Support Team&apos;)&amp;&amp;(  Do_not_send_Automated_mails__c!=true || Do_Not_Send_Public_Replies__c!=true)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>send notification to Google form submitter</fullName>
+        <actions>
+            <name>Send_email_to_Case_Form_Submitter</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Web_Form_Submitter_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>update Is Customer Unblocked</fullName>
+        <actions>
+            <name>Update_Is_Customer_Unblocked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(    (IsCHANGED(Status) ||  IsCHANGED(Sub_Status__c)) &amp;&amp;     (    (     ISPICKVAL(Status,&apos;Solved&apos;) &amp;&amp;      (      ISPICKVAL(Sub_Status__c,&apos;Resolved&apos;) ||       ISPICKVAL(Sub_Status__c,&apos;Not our Product Issue&apos;)      )    )      ||     ISPICKVAL(Status,&apos;Duplicate&apos;)     ||    (     ISPICKVAL(Status,&apos;Unresolved&apos;)      &amp;&amp; ( ISPICKVAL(Sub_Status__c,&apos;workaround provided&apos;)        ||  ISPICKVAL(Sub_Status__c,&apos;Unresolvable&apos;) )    )    )   ||    ( ISPICKVAL(Status,&apos;Closed&apos;)     &amp;&amp;      (      ISPICKVAL(Sub_Status__c,&apos;No Response from Customer&apos;)     )    )  )  &amp;&amp;   Is_Customer_Unblocked__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

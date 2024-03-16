@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_hold_tentative_resume_date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Client should be consulted to give the tentative on-hold resume date. This should be mandatorily filled to change the status of the project to &quot;on-hold&quot;</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Client should be consulted to give the tentative on-hold resume date. This should be mandatorily filled to change the status of the project to &quot;on-hold&quot;</inlineHelpText>
+    <label>On-hold tentative resume date</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

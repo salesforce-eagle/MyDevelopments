@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Compact_Layout</fullName>
+    <fields>Project_Name__c</fields>
+    <fields>Product__c</fields>
+    <fields>Scope_Category__c</fields>
+    <fields>Client_ERP__c</fields>
+    <fields>Project_Stage__c</fields>
+    <fields>CTX_SE__c</fields>
+    <fields>Overall_Status__c</fields>
+    <fields>Estimated_Go_Live_Date__c</fields>
+    <fields>Status__c</fields>
+    <label>Project Compact Layout</label>
+</CompactLayout>

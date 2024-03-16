@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ASP/GSP Integration - ASP API</fullName>
+        <default>false</default>
+        <label>ASP/GSP Integration - ASP API</label>
+    </customValue>
+    <customValue>
+        <fullName>ASP/GSP Integration - GSP API</fullName>
+        <default>false</default>
+        <label>ASP/GSP Integration - GSP API</label>
+    </customValue>
+    <customValue>
+        <fullName>E-invoicing &amp; E-Way Bill Integration - ASP API</fullName>
+        <default>false</default>
+        <label>E-invoicing &amp; E-Way Bill Integration - ASP API</label>
+    </customValue>
+    <customValue>
+        <fullName>E-invoicing &amp; E-Way Bill Integration - GSP API</fullName>
+        <default>false</default>
+        <label>E-invoicing &amp; E-Way Bill Integration - GSP API</label>
+    </customValue>
+    <customValue>
+        <fullName>E-invoicing Integration-ASP API</fullName>
+        <default>false</default>
+        <label>E-invoicing Integration-ASP API</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Way Bill Integration - ASP API</fullName>
+        <default>false</default>
+        <label>E-Way Bill Integration - ASP API</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Way Bill Integration - GSP API</fullName>
+        <default>false</default>
+        <label>E-Way Bill Integration - GSP API</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual Maintenance Charges - Integration</fullName>
+        <default>false</default>
+        <label>Annual Maintenance Charges - Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>B2C-QR Code Integration</fullName>
+        <default>false</default>
+        <label>B2C-QR Code Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>GSTIN Verification Integration</fullName>
+        <default>false</default>
+        <label>GSTIN Verification Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration</fullName>
+        <default>false</default>
+        <label>Max ITC Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual Maintenance Charges - Integration - GST products</fullName>
+        <default>false</default>
+        <label>Annual Maintenance Charges - Integration - GST products</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual Maintenance Charges - Integration Max ITC</fullName>
+        <default>false</default>
+        <label>Annual Maintenance Charges - Integration Max ITC</label>
+    </customValue>
+    <customValue>
+        <fullName>FTP/SFTP Server cost by CT Integration</fullName>
+        <default>false</default>
+        <label>FTP/SFTP Server cost by CT Integration</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration - Series X</fullName>
+        <default>false</default>
+        <label>Max ITC Integration - Series X</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration - Series Y</fullName>
+        <default>false</default>
+        <label>Max ITC Integration - Series Y</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration - Series Z</fullName>
+        <default>false</default>
+        <label>Max ITC Integration - Series Z</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration+AMC ARR - Series X</fullName>
+        <default>false</default>
+        <label>Max ITC Integration+AMC ARR - Series X</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration+AMC ARR - Series Y</fullName>
+        <default>false</default>
+        <label>Max ITC Integration+AMC ARR - Series Y</label>
+    </customValue>
+    <customValue>
+        <fullName>Max ITC Integration+AMC ARR - Series Z</fullName>
+        <default>false</default>
+        <label>Max ITC Integration+AMC ARR - Series Z</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>true</default>
+        <label>Others</label>
+    </customValue>
+    <masterLabel>Type of integration category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

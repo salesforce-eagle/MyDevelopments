@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Handled_Asset__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+NOT(CONTAINS($Label.Exclude_Account_Record_Types_CSM_Journey, Account__r.RecordTypeId)),
+If( ISBLANK(Account__r.Channel_Partner_Account_Name__c), true, NOT(CONTAINS(LOWER(Account__r.Channel_Partner_Account_Name__c), &apos;uneecops&apos;))),
+Asset__r.ParentId == null,
+Asset__r.Product2.CSM_Handled_Product__c = true,
+CONTAINS(TEXT(Asset__r.Product2.Product_category__c),&apos;SaaS&apos;)
+,
+OR(
+AND(
+ISPICKVAL(Asset__r.Product2.Product_Line__c, &apos;GST&apos;),
+NOT(CONTAINS(LOWER(Asset__r.Product2.Name), &apos;without csm&apos;)),
+Asset__r.Price &gt;= 50000
+),
+AND(
+ISPICKVAL(Asset__r.Product2.Product_Line__c, &apos;E-invoicing &amp; E-Way Bill&apos;),
+Asset__r.Price &gt;= 35000
+),
+TEXT(Asset__r.Product2.Product_Line__c) = &apos;Invoicing API&apos;,
+TEXT(Asset__r.Product2.Product_Line__c) = &apos;Clear Capture&apos;,
+TEXT(Asset__r.Product2.Product_Line__c) = &apos;Max&apos;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Handled By CSM?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Request</fullName>
+                <default>false</default>
+                <label>Request</label>
+            </value>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>General Query</fullName>
+                <default>false</default>
+                <label>General Query</label>
+            </value>
+            <value>
+                <fullName>Due Diligence Questionnaire</fullName>
+                <default>false</default>
+                <label>Due Diligence Questionnaire</label>
+            </value>
+            <value>
+                <fullName>Presale Technical Query</fullName>
+                <default>false</default>
+                <label>Presale Technical Query</label>
+            </value>
+            <value>
+                <fullName>Presale General Query</fullName>
+                <default>false</default>
+                <label>Presale General Query</label>
+            </value>
+            <value>
+                <fullName>Project Requirement</fullName>
+                <default>false</default>
+                <label>Project Requirement</label>
+            </value>
+            <value>
+                <fullName>Project Change Request</fullName>
+                <default>false</default>
+                <label>Project Change Request</label>
+            </value>
+            <value>
+                <fullName>Implementation Support</fullName>
+                <default>false</default>
+                <label>Implementation Support</label>
+            </value>
+            <value>
+                <fullName>Post go-live support</fullName>
+                <default>false</default>
+                <label>Post go-live support</label>
+            </value>
+            <value>
+                <fullName>Problem</fullName>
+                <default>false</default>
+                <label>Problem</label>
+            </value>
+            <value>
+                <fullName>Incident of problem</fullName>
+                <default>false</default>
+                <label>Incident of problem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

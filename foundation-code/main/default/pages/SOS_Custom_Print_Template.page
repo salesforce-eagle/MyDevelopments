@@ -1,0 +1,63 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Custom_Print_Template_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            
+<apex:panelGroup rendered="{!SOS7==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Custom Print Template- </u></b>
+
+            <p class="test">
+                Feature List of Cleartax Custom Print Template is as below
+            </p>
+            <table class="info-table">
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>e-Invocing Print</b></td>
+                                <td><div>
+                                    <ol>
+                                        <li>5 base print templates</li>
+                                        <li>Editable field headers, mapping and position</li>
+                                        <li>Editable standard CT template</li>
+                                        <li>Facility to store permanent details (CIN, Address, LUT No.)</li>
+                                        <li>Custom Fields - 10 at invoice level, 5 at line item level</li>
+                                        <li>Templates can be built for both sandbox and production accounts</li>
+                                    </ol>
+                                    </div></td>
+                                <td><ol>
+                                    <li>User gets to choose the e-invoice layout among the base samples</li>
+                                    <li>Templates are 100% editable and position of fields, even the QR code can be customized</li>
+                                    <li>Separate section to save certain details to avoid multiple uploads of same information</li>
+                                    <li>Standard ClearTax template (editable) available for B2B, CN, DN and EXP invoices</li>
+                                    <li>Users can add 15 custom fields and choose their position on print template</li>
+                                    <li>Print templates can be developed in testing environment first for dry runs and then replicated to production account of customer</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+            <br/>
+            <apex:include pageName="{!nextPage32}"/>
+
+        </body>
+    </html>
+</apex:page>

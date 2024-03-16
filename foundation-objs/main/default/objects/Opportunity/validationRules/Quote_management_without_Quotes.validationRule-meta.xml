@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_management_without_Quotes</fullName>
+    <active>true</active>
+    <description>will not allow Quote management stage without Quotes</description>
+    <errorConditionFormula>AND(RecordType.Name &lt;&gt; &apos;Renewal - Multi year&apos;,RecordType.Name &lt;&gt; &apos;Net New Cimplyfive&apos;, No_of_Quotes_Created__c=0, or(ISPICKVAL( StageName ,&quot;Quote Management&quot;),ISPICKVAL( StageName ,&quot;Negotiation Meetings&quot;),ISPICKVAL( StageName ,&quot;Closure Meetings&quot;),ISPICKVAL( StageName ,&quot;Follow Up&quot;),ISPICKVAL( StageName ,&quot;In Finance Approval&quot;),ISPICKVAL( StageName ,&quot;Quoting&quot;),ISPICKVAL( StageName ,&quot;On Track&quot;),ISPICKVAL( StageName ,&quot;At Risk&quot;))) &amp;&amp; (Country_of_Origin__c = &apos;India&apos; || Country_of_Origin__c = &apos;N/A&apos;)</errorConditionFormula>
+    <errorMessage>You cannot Proceed to Quote Management + Stages without Quotes</errorMessage>
+</ValidationRule>

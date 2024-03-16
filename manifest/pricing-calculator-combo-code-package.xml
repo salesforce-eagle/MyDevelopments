@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Stack</members>
+        <members>CTX_CustomStringToFormulaParser</members>
+        <members>CTX_CustomEvaluateString</members>
+        <members>CTX_ProductComboLogicImplementation</members>
+        <members>QuoteTriggerHandler</members>
+        <members>QuoteTriggerHelper</members>
+        <members>QuoteLineItemTriggerHandler</members>
+        <members>QuoteLineItemHelper</members>
+        <members>CTX_CustomStackUnderflowException</members>
+
+        <name>ApexClass</name>
+    </types>
+
+    <version>52.0</version>
+</Package>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_hold_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.DeveloperName &lt;&gt; &apos;AMC_Module&apos; &amp;&amp;
+If(ISPICKVAL(Status__c,&apos;On-hold&apos;)  &amp;&amp; (
+ISBLANK( On_hold_start_date__c ) ||
+ISBLANK( On_hold_tentative_resume_date__c )
+), true, false)</errorConditionFormula>
+    <errorMessage>Please enter On hold start date &amp; On hold tentative resume date.</errorMessage>
+</ValidationRule>

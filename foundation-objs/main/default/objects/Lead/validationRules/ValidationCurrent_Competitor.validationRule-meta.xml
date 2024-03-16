@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidationCurrent_Competitor</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Sub_Stages__c,&apos;Demo Completed&apos;) &amp;&amp; ispickval(Competition_Currently_Using__c,&apos;&apos;) &amp;&amp;  (RecordType.DeveloperName != &apos;International&apos; &amp;&amp; RecordType.Name != &apos;Cimplyfive&apos;) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;ID&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISSLISTED-EQUITY&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISSLISTED-DEBT&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISSDOCS&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISSPLUS&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISSGLOBAL&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;BLISS&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;CIMPLYBEST&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;DIGITIZATION&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;RETAINERSHIP&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;CUSTOMIZATION&apos;)) &amp;&amp;
+NOT(INCLUDES(Scope__c, &apos;ON-PREM&apos;))</errorConditionFormula>
+    <errorDisplayField>Competition_Currently_Using__c</errorDisplayField>
+    <errorMessage>Please enter Competition/Currently Using</errorMessage>
+</ValidationRule>

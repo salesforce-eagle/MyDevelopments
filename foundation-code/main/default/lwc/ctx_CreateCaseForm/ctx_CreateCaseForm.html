@@ -1,0 +1,144 @@
+<template>
+    <template if:true={showToast}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-notify_container">
+                <div class={outerClass} role="status">
+                    <span class="slds-assistive-text">{type}</span>
+                    <span class={innerClass} title={message}>
+                        <lightning-icon icon-name={getIconName} alternative-text="icon" styleclass="slds-icon slds-icon_small" variant="inverse" size="small"></lightning-icon>
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">
+                            <lightning-formatted-rich-text value={message}>
+                            </lightning-formatted-rich-text>
+                        </h2>
+                    </div>
+                    
+                    <div class="slds-notify__close">
+                        <lightning-button-icon icon-name="utility:close" size="small" variant="border-filled" class="slds-button slds-button_icon slds-button_icon-inverse" alternative-text="next" onclick={closeModel} ></lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<c-ctx_-toast-component type={type} message={message} icon={icon} onclosemodel={closeModel}></c-ctx_-toast-component>-->
+    </template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid slds-box slds-theme_shade">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="Case">
+                        <lightning-icon icon-name="standard:case"></lightning-icon>
+                        <span class="slds-assistive-text">Create a Case</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a class="slds-card__header-link slds-truncate" title="Case">
+                            <span>Create a Case</span>
+                        </a>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div style="position:relative;">
+                <div class="slds-var-p-around_small slds-grid slds-wrap">
+                    <!--<lightning-record-form 
+                        object-api-name="Case"
+                        record-id=""
+                        fields={fields}
+                        mode="edit"
+                        columns="1">
+                    </lightning-record-form>-->
+                    <!--<lightning-record-edit-form object-api-name="Case" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                        <lightning-messages></lightning-messages>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_12-of-12">
+                                <lightning-input type="Email" label="Contact Email" value={email}></lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Products_Available__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Issue_Type__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Subject"></lightning-input-field>
+                            </div>
+        
+                            <div class="slds-align_absolute-center" >
+                                <lightning-button
+                                    class="slds-m-top_small"
+                                    type="submit"
+                                    label="Save">
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </lightning-record-edit-form>-->
+                    <template if:false={existingContact}>
+                        <div class="slds-col slds-size_12-of-12">
+                            <lightning-input data-id="caseForm" type="text" label="Fisrt Name" value={firstName} onchange={handleFirstNameChange}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_12-of-12">
+                            <lightning-input data-id="caseForm" type="text" label="Last Name" value={lastName} onchange={handleLastNameChange} required></lightning-input>
+                        </div>
+                    </template>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-input data-id="caseForm" type="Email" label="Contact Email" value={email} disabled></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-combobox data-id="caseForm" name="Product" label="Select Product" value={product} placeholder="Select Product"
+                            options={productsAvailable} onchange={handleProductChange} required></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-combobox data-id="caseForm" name="Issue Type" label="Issue Type" value={issueType} placeholder="Select Issue Type"
+                            options={issueTypes} onchange={handleIssueTypeChange} required></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-input data-id="caseForm" type="text" label="Subject" value={subject} onchange={handleSubjectChange}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-textarea data-id="caseForm" label="Description" value={description}
+                            onchange={handleDescriptionChange}>
+                        </lightning-textarea>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-input data-id="caseForm" onchange={handleFilesChange} type="file" name="file"
+                            label="Upload File" multiple>
+                        </lightning-input>
+        
+                        <template for:each={filesToUpload} for:item="file">
+                            <p key={file.Title}>
+                                {file.Title}
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <lightning-button-icon variant="bare" data-id={file.Title} icon-name="utility:delete"  size="small" title="Delete" onclick={handleRemoveFile}></lightning-button-icon>
+                            </p>
+                        </template>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-align_absolute-center" >
+                        <lightning-button
+                            class="slds-m-top_small"
+                            label="Create Case"
+                            onclick={handleSubmit}>
+                        </lightning-button>
+                    </div>
+                </div>
+                <template if:true={showSpinner}>
+                    <div class="slds-spinner_container slds-grid">
+                        <div class="slds-align_absolute-center">
+                            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>    
+                    </div>
+                </template>
+            </div>
+        </div>
+        <footer class="slds-card__footer">
+        </footer>
+    </article>
+</template>

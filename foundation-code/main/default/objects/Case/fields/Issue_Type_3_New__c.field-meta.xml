@@ -1,0 +1,2192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type_3_New__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue Type - 3 (New)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Issue_Type_2_New__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SF asset issue</fullName>
+                <default>false</default>
+                <label>SF asset issue</label>
+            </value>
+            <value>
+                <fullName>Demo asset activation</fullName>
+                <default>false</default>
+                <label>Demo asset activation</label>
+            </value>
+            <value>
+                <fullName>Incorrectly nagged</fullName>
+                <default>false</default>
+                <label>Incorrectly nagged</label>
+            </value>
+            <value>
+                <fullName>Migration 1.0 &gt; 2.0</fullName>
+                <default>false</default>
+                <label>Migration 1.0 &gt; 2.0</label>
+            </value>
+            <value>
+                <fullName>Validity extension</fullName>
+                <default>false</default>
+                <label>Validity extension</label>
+            </value>
+            <value>
+                <fullName>Sandbox validity</fullName>
+                <default>false</default>
+                <label>Sandbox validity</label>
+            </value>
+            <value>
+                <fullName>Gstin verification credits</fullName>
+                <default>false</default>
+                <label>Gstin verification credits</label>
+            </value>
+            <value>
+                <fullName>License validity</fullName>
+                <default>false</default>
+                <label>License validity</label>
+            </value>
+            <value>
+                <fullName>Plan components</fullName>
+                <default>false</default>
+                <label>Plan components</label>
+            </value>
+            <value>
+                <fullName>Update Email / Phone</fullName>
+                <default>false</default>
+                <label>Update Email / Phone</label>
+            </value>
+            <value>
+                <fullName>Update filing type</fullName>
+                <default>false</default>
+                <label>Update filing type</label>
+            </value>
+            <value>
+                <fullName>Update filing frequency</fullName>
+                <default>false</default>
+                <label>Update filing frequency</label>
+            </value>
+            <value>
+                <fullName>Add/Delete team member</fullName>
+                <default>false</default>
+                <label>Add/Delete team member</label>
+            </value>
+            <value>
+                <fullName>Update roles/permissions</fullName>
+                <default>false</default>
+                <label>Update roles/permissions</label>
+            </value>
+            <value>
+                <fullName>Issues inviting members</fullName>
+                <default>false</default>
+                <label>Issues inviting members</label>
+            </value>
+            <value>
+                <fullName>Update workspace owner</fullName>
+                <default>false</default>
+                <label>Update workspace owner</label>
+            </value>
+            <value>
+                <fullName>Add/Modify/Update PAN</fullName>
+                <default>false</default>
+                <label>Add/Modify/Update PAN</label>
+            </value>
+            <value>
+                <fullName>Add/Modify/Update GSTIN</fullName>
+                <default>false</default>
+                <label>Add/Modify/Update GSTIN</label>
+            </value>
+            <value>
+                <fullName>Add/Modify/Update Branch</fullName>
+                <default>false</default>
+                <label>Add/Modify/Update Branch</label>
+            </value>
+            <value>
+                <fullName>Delete/retrive data</fullName>
+                <default>false</default>
+                <label>Delete/retrive data</label>
+            </value>
+            <value>
+                <fullName>Change settings (pro&lt;&gt;biz)</fullName>
+                <default>false</default>
+                <label>Change settings (pro&lt;&gt;biz)</label>
+            </value>
+            <value>
+                <fullName>Subscribe</fullName>
+                <default>false</default>
+                <label>Subscribe</label>
+            </value>
+            <value>
+                <fullName>Unsubscribe</fullName>
+                <default>false</default>
+                <label>Unsubscribe</label>
+            </value>
+            <value>
+                <fullName>Ingested data mismatch</fullName>
+                <default>false</default>
+                <label>Ingested data mismatch</label>
+            </value>
+            <value>
+                <fullName>Ingestion failures</fullName>
+                <default>false</default>
+                <label>Ingestion failures</label>
+            </value>
+            <value>
+                <fullName>Delete data</fullName>
+                <default>false</default>
+                <label>Delete data</label>
+            </value>
+            <value>
+                <fullName>Generate summary</fullName>
+                <default>false</default>
+                <label>Generate summary</label>
+            </value>
+            <value>
+                <fullName>View/Edit invoices</fullName>
+                <default>false</default>
+                <label>View/Edit invoices</label>
+            </value>
+            <value>
+                <fullName>Negative values</fullName>
+                <default>false</default>
+                <label>Negative values</label>
+            </value>
+            <value>
+                <fullName>Data overview Download</fullName>
+                <default>false</default>
+                <label>Data overview Download</label>
+            </value>
+            <value>
+                <fullName>ITC related</fullName>
+                <default>false</default>
+                <label>ITC related</label>
+            </value>
+            <value>
+                <fullName>Auto-Fill related</fullName>
+                <default>false</default>
+                <label>Auto-Fill related</label>
+            </value>
+            <value>
+                <fullName>HSN error</fullName>
+                <default>false</default>
+                <label>HSN error</label>
+            </value>
+            <value>
+                <fullName>Filing frequency mismatch</fullName>
+                <default>false</default>
+                <label>Filing frequency mismatch</label>
+            </value>
+            <value>
+                <fullName>Inactive GSTIN</fullName>
+                <default>false</default>
+                <label>Inactive GSTIN</label>
+            </value>
+            <value>
+                <fullName>Inactive GSTIN credentials</fullName>
+                <default>false</default>
+                <label>Inactive GSTIN credentials</label>
+            </value>
+            <value>
+                <fullName>Inactive API</fullName>
+                <default>false</default>
+                <label>Inactive API</label>
+            </value>
+            <value>
+                <fullName>JSON download</fullName>
+                <default>false</default>
+                <label>JSON download</label>
+            </value>
+            <value>
+                <fullName>Invoice level issues</fullName>
+                <default>false</default>
+                <label>Invoice level issues</label>
+            </value>
+            <value>
+                <fullName>Preview Summary</fullName>
+                <default>false</default>
+                <label>Preview Summary</label>
+            </value>
+            <value>
+                <fullName>Installation request</fullName>
+                <default>false</default>
+                <label>Installation request</label>
+            </value>
+            <value>
+                <fullName>Configuration issues</fullName>
+                <default>false</default>
+                <label>Configuration issues</label>
+            </value>
+            <value>
+                <fullName>Validation errors</fullName>
+                <default>false</default>
+                <label>Validation errors</label>
+            </value>
+            <value>
+                <fullName>Data mismatch</fullName>
+                <default>false</default>
+                <label>Data mismatch</label>
+            </value>
+            <value>
+                <fullName>Data ingestion failed</fullName>
+                <default>false</default>
+                <label>Data ingestion failed</label>
+            </value>
+            <value>
+                <fullName>Partial data ingested</fullName>
+                <default>false</default>
+                <label>Partial data ingested</label>
+            </value>
+            <value>
+                <fullName>Request URL</fullName>
+                <default>false</default>
+                <label>Request URL</label>
+            </value>
+            <value>
+                <fullName>Request failed</fullName>
+                <default>false</default>
+                <label>Request failed</label>
+            </value>
+            <value>
+                <fullName>Requires Auth token</fullName>
+                <default>false</default>
+                <label>Requires Auth token</label>
+            </value>
+            <value>
+                <fullName>Requires Taxable entity</fullName>
+                <default>false</default>
+                <label>Requires Taxable entity</label>
+            </value>
+            <value>
+                <fullName>Payload error</fullName>
+                <default>false</default>
+                <label>Payload error</label>
+            </value>
+            <value>
+                <fullName>Business hierarchy</fullName>
+                <default>false</default>
+                <label>Business hierarchy</label>
+            </value>
+            <value>
+                <fullName>API credentials</fullName>
+                <default>false</default>
+                <label>API credentials</label>
+            </value>
+            <value>
+                <fullName>Contact Master</fullName>
+                <default>false</default>
+                <label>Contact Master</label>
+            </value>
+            <value>
+                <fullName>User Access</fullName>
+                <default>false</default>
+                <label>User Access</label>
+            </value>
+            <value>
+                <fullName>Recipient Contacts missing</fullName>
+                <default>false</default>
+                <label>Recipient Contacts missing</label>
+            </value>
+            <value>
+                <fullName>Unable to mail</fullName>
+                <default>false</default>
+                <label>Unable to mail</label>
+            </value>
+            <value>
+                <fullName>Feature requests</fullName>
+                <default>false</default>
+                <label>Feature requests</label>
+            </value>
+            <value>
+                <fullName>Payment in Finance Approval</fullName>
+                <default>false</default>
+                <label>Payment in Finance Approval</label>
+            </value>
+            <value>
+                <fullName>In Discussion</fullName>
+                <default>false</default>
+                <label>In Discussion</label>
+            </value>
+            <value>
+                <fullName>Add Workspace</fullName>
+                <default>false</default>
+                <label>Add Workspace</label>
+            </value>
+            <value>
+                <fullName>Update SSL Certificate</fullName>
+                <default>false</default>
+                <label>Update SSL Certificate</label>
+            </value>
+            <value>
+                <fullName>Generate New Auth Token</fullName>
+                <default>false</default>
+                <label>Generate New Auth Token</label>
+            </value>
+            <value>
+                <fullName>Invalid Auth Token</fullName>
+                <default>false</default>
+                <label>Invalid Auth Token</label>
+            </value>
+            <value>
+                <fullName>Unable to Connect</fullName>
+                <default>false</default>
+                <label>Unable to Connect</label>
+            </value>
+            <value>
+                <fullName>Wrong Config</fullName>
+                <default>false</default>
+                <label>Wrong Config</label>
+            </value>
+            <value>
+                <fullName>License Extension</fullName>
+                <default>false</default>
+                <label>License Extension</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <label>Testing</label>
+            </value>
+            <value>
+                <fullName>Custom template</fullName>
+                <default>false</default>
+                <label>Custom template</label>
+            </value>
+            <value>
+                <fullName>Government Template</fullName>
+                <default>false</default>
+                <label>Government Template</label>
+            </value>
+            <value>
+                <fullName>EWB template with IRN</fullName>
+                <default>false</default>
+                <label>EWB template with IRN</label>
+            </value>
+            <value>
+                <fullName>EWB template without IRN</fullName>
+                <default>false</default>
+                <label>EWB template without IRN</label>
+            </value>
+            <value>
+                <fullName>FTP server down</fullName>
+                <default>false</default>
+                <label>FTP server down</label>
+            </value>
+            <value>
+                <fullName>Input file not found</fullName>
+                <default>false</default>
+                <label>Input file not found</label>
+            </value>
+            <value>
+                <fullName>NIC</fullName>
+                <default>false</default>
+                <label>NIC</label>
+            </value>
+            <value>
+                <fullName>Clear</fullName>
+                <default>false</default>
+                <label>Clear</label>
+            </value>
+            <value>
+                <fullName>Basic</fullName>
+                <default>false</default>
+                <label>Basic</label>
+            </value>
+            <value>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+                <label>Advanced</label>
+            </value>
+            <value>
+                <fullName>New license</fullName>
+                <default>false</default>
+                <label>New license</label>
+            </value>
+            <value>
+                <fullName>Certificate upload</fullName>
+                <default>false</default>
+                <label>Certificate upload</label>
+            </value>
+            <value>
+                <fullName>Not able to add digital signature</fullName>
+                <default>false</default>
+                <label>Not able to add digital signature</label>
+            </value>
+            <value>
+                <fullName>Download in PDF Format</fullName>
+                <default>false</default>
+                <label>Download in PDF Format</label>
+            </value>
+            <value>
+                <fullName>Unable to Find Old Invoices</fullName>
+                <default>false</default>
+                <label>Unable to Find Old Invoices</label>
+            </value>
+            <value>
+                <fullName>Slow download</fullName>
+                <default>false</default>
+                <label>Slow download</label>
+            </value>
+            <value>
+                <fullName>Modification</fullName>
+                <default>false</default>
+                <label>Modification</label>
+            </value>
+            <value>
+                <fullName>New Custom Print template</fullName>
+                <default>false</default>
+                <label>New Custom Print template</label>
+            </value>
+            <value>
+                <fullName>Update Nic/Gst Credentials</fullName>
+                <default>false</default>
+                <label>Update Nic/Gst Credentials</label>
+            </value>
+            <value>
+                <fullName>Switch Workspace</fullName>
+                <default>false</default>
+                <label>Switch Workspace</label>
+            </value>
+            <value>
+                <fullName>Taking too much time</fullName>
+                <default>false</default>
+                <label>Taking too much time</label>
+            </value>
+            <value>
+                <fullName>JSON Upload failure</fullName>
+                <default>false</default>
+                <label>JSON Upload failure</label>
+            </value>
+            <value>
+                <fullName>Unable to delete data</fullName>
+                <default>false</default>
+                <label>Unable to delete data</label>
+            </value>
+            <value>
+                <fullName>Feature request</fullName>
+                <default>false</default>
+                <label>Feature request</label>
+            </value>
+            <value>
+                <fullName>Ecommerce aborts</fullName>
+                <default>false</default>
+                <label>Ecommerce aborts</label>
+            </value>
+            <value>
+                <fullName>Unable to edit invoice</fullName>
+                <default>false</default>
+                <label>Unable to edit invoice</label>
+            </value>
+            <value>
+                <fullName>HSN invalid</fullName>
+                <default>false</default>
+                <label>HSN invalid</label>
+            </value>
+            <value>
+                <fullName>GSTIN Invalid</fullName>
+                <default>false</default>
+                <label>GSTIN Invalid</label>
+            </value>
+            <value>
+                <fullName>Headers Missing</fullName>
+                <default>false</default>
+                <label>Headers Missing</label>
+            </value>
+            <value>
+                <fullName>import failed</fullName>
+                <default>false</default>
+                <label>import failed</label>
+            </value>
+            <value>
+                <fullName>Slowness in Upload</fullName>
+                <default>false</default>
+                <label>Slowness in Upload</label>
+            </value>
+            <value>
+                <fullName>Upload fail</fullName>
+                <default>false</default>
+                <label>Upload fail</label>
+            </value>
+            <value>
+                <fullName>2b vs pr</fullName>
+                <default>false</default>
+                <label>2b vs pr</label>
+            </value>
+            <value>
+                <fullName>2a vs pr</fullName>
+                <default>false</default>
+                <label>2a vs pr</label>
+            </value>
+            <value>
+                <fullName>Document count mismatch</fullName>
+                <default>false</default>
+                <label>Document count mismatch</label>
+            </value>
+            <value>
+                <fullName>Unable to Reset</fullName>
+                <default>false</default>
+                <label>Unable to Reset</label>
+            </value>
+            <value>
+                <fullName>Tax Value Mismatch</fullName>
+                <default>false</default>
+                <label>Tax Value Mismatch</label>
+            </value>
+            <value>
+                <fullName>Invoice Count Mismatch</fullName>
+                <default>false</default>
+                <label>Invoice Count Mismatch</label>
+            </value>
+            <value>
+                <fullName>Incorrect Data Reflected</fullName>
+                <default>false</default>
+                <label>Incorrect Data Reflected</label>
+            </value>
+            <value>
+                <fullName>Partial Data Downloaded</fullName>
+                <default>false</default>
+                <label>Partial Data Downloaded</label>
+            </value>
+            <value>
+                <fullName>Download Failed</fullName>
+                <default>false</default>
+                <label>Download Failed</label>
+            </value>
+            <value>
+                <fullName>Updated data not reflected</fullName>
+                <default>false</default>
+                <label>Updated data not reflected</label>
+            </value>
+            <value>
+                <fullName>Taking long time</fullName>
+                <default>false</default>
+                <label>Taking long time</label>
+            </value>
+            <value>
+                <fullName>Detailed Report</fullName>
+                <default>false</default>
+                <label>Detailed Report</label>
+            </value>
+            <value>
+                <fullName>Insights Report</fullName>
+                <default>false</default>
+                <label>Insights Report</label>
+            </value>
+            <value>
+                <fullName>Summary Report</fullName>
+                <default>false</default>
+                <label>Summary Report</label>
+            </value>
+            <value>
+                <fullName>Filed Report PDF</fullName>
+                <default>false</default>
+                <label>Filed Report PDF</label>
+            </value>
+            <value>
+                <fullName>Data download from GSTN</fullName>
+                <default>false</default>
+                <label>Data download from GSTN</label>
+            </value>
+            <value>
+                <fullName>Report Generation failed</fullName>
+                <default>false</default>
+                <label>Report Generation failed</label>
+            </value>
+            <value>
+                <fullName>Download slowness</fullName>
+                <default>false</default>
+                <label>Download slowness</label>
+            </value>
+            <value>
+                <fullName>500 error</fullName>
+                <default>false</default>
+                <label>500 error</label>
+            </value>
+            <value>
+                <fullName>No verification link</fullName>
+                <default>false</default>
+                <label>No verification link</label>
+            </value>
+            <value>
+                <fullName>No reset email</fullName>
+                <default>false</default>
+                <label>No reset email</label>
+            </value>
+            <value>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+                <label>Aborted</label>
+            </value>
+            <value>
+                <fullName>Phase 1/Phase 2 Switching</fullName>
+                <default>false</default>
+                <label>Phase 1/Phase 2 Switching</label>
+            </value>
+            <value>
+                <fullName>Login error</fullName>
+                <default>false</default>
+                <label>Login error</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Unexpected error</fullName>
+                <default>false</default>
+                <label>Unexpected error</label>
+            </value>
+            <value>
+                <fullName>Account blocking request</fullName>
+                <default>false</default>
+                <label>Account blocking request</label>
+            </value>
+            <value>
+                <fullName>Blocked or nagged prematurely or put on trial</fullName>
+                <default>false</default>
+                <label>Blocked or nagged prematurely or put on trial</label>
+            </value>
+            <value>
+                <fullName>Client wants to subscribe</fullName>
+                <default>false</default>
+                <label>Client wants to subscribe</label>
+            </value>
+            <value>
+                <fullName>Client wants to unsubscribe</fullName>
+                <default>false</default>
+                <label>Client wants to unsubscribe</label>
+            </value>
+            <value>
+                <fullName>License activation</fullName>
+                <default>false</default>
+                <label>License activation</label>
+            </value>
+            <value>
+                <fullName>License not yet activated</fullName>
+                <default>false</default>
+                <label>License not yet activated</label>
+            </value>
+            <value>
+                <fullName>Renewal request</fullName>
+                <default>false</default>
+                <label>Renewal request</label>
+            </value>
+            <value>
+                <fullName>Validity and limits not as promised</fullName>
+                <default>false</default>
+                <label>Validity and limits not as promised</label>
+            </value>
+            <value>
+                <fullName>Incase of Wrong Credentials</fullName>
+                <default>false</default>
+                <label>Incase of Wrong Credentials</label>
+            </value>
+            <value>
+                <fullName>Adding or removing users from workspace</fullName>
+                <default>false</default>
+                <label>Adding or removing users from workspace</label>
+            </value>
+            <value>
+                <fullName>Change workspace owner (primary email)</fullName>
+                <default>false</default>
+                <label>Change workspace owner (primary email)</label>
+            </value>
+            <value>
+                <fullName>Issues with inviting a team member (deletion of original account)</fullName>
+                <default>false</default>
+                <label>Issues with inviting a team member (deletion of original account)</label>
+            </value>
+            <value>
+                <fullName>Modify role for current users</fullName>
+                <default>false</default>
+                <label>Modify role for current users</label>
+            </value>
+            <value>
+                <fullName>Edit information</fullName>
+                <default>false</default>
+                <label>Edit information</label>
+            </value>
+            <value>
+                <fullName>Reset password or retrieve credentials</fullName>
+                <default>false</default>
+                <label>Reset password or retrieve credentials</label>
+            </value>
+            <value>
+                <fullName>Unable to create account</fullName>
+                <default>false</default>
+                <label>Unable to create account</label>
+            </value>
+            <value>
+                <fullName>Unsubscribe mailing list</fullName>
+                <default>false</default>
+                <label>Unsubscribe mailing list</label>
+            </value>
+            <value>
+                <fullName>Add or remove or modify a TIN or VAT or Branch ( Business )</fullName>
+                <default>false</default>
+                <label>Add or remove or modify a TIN or VAT or Branch ( Business )</label>
+            </value>
+            <value>
+                <fullName>Delete or retrieve data</fullName>
+                <default>false</default>
+                <label>Delete or retrieve data</label>
+            </value>
+            <value>
+                <fullName>Unable to register on UI</fullName>
+                <default>false</default>
+                <label>Unable to register on UI</label>
+            </value>
+            <value>
+                <fullName>Jar not working</fullName>
+                <default>false</default>
+                <label>Jar not working</label>
+            </value>
+            <value>
+                <fullName>Copy and paste errors</fullName>
+                <default>false</default>
+                <label>Copy and paste errors</label>
+            </value>
+            <value>
+                <fullName>CCSID error</fullName>
+                <default>false</default>
+                <label>CCSID error</label>
+            </value>
+            <value>
+                <fullName>PCSID Error</fullName>
+                <default>false</default>
+                <label>PCSID Error</label>
+            </value>
+            <value>
+                <fullName>OTP Issue</fullName>
+                <default>false</default>
+                <label>OTP Issue</label>
+            </value>
+            <value>
+                <fullName>Not able to see the documents under respective headers</fullName>
+                <default>false</default>
+                <label>Not able to see the documents under respective headers</label>
+            </value>
+            <value>
+                <fullName>Not able to switch among different section</fullName>
+                <default>false</default>
+                <label>Not able to switch among different section</label>
+            </value>
+            <value>
+                <fullName>Filter not getting applied</fullName>
+                <default>false</default>
+                <label>Filter not getting applied</label>
+            </value>
+            <value>
+                <fullName>Result not coming as per filter</fullName>
+                <default>false</default>
+                <label>Result not coming as per filter</label>
+            </value>
+            <value>
+                <fullName>Search not working after applied filter</fullName>
+                <default>false</default>
+                <label>Search not working after applied filter</label>
+            </value>
+            <value>
+                <fullName>Field length limit exceeded</fullName>
+                <default>false</default>
+                <label>Field length limit exceeded</label>
+            </value>
+            <value>
+                <fullName>Mandatory fields missing</fullName>
+                <default>false</default>
+                <label>Mandatory fields missing</label>
+            </value>
+            <value>
+                <fullName>Pin code missing or incorrect</fullName>
+                <default>false</default>
+                <label>Pin code missing or incorrect</label>
+            </value>
+            <value>
+                <fullName>TIN or VAT invalid</fullName>
+                <default>false</default>
+                <label>TIN or VAT invalid</label>
+            </value>
+            <value>
+                <fullName>Total Invoice value incorrect</fullName>
+                <default>false</default>
+                <label>Total Invoice value incorrect</label>
+            </value>
+            <value>
+                <fullName>Add new compliance</fullName>
+                <default>false</default>
+                <label>Add new compliance</label>
+            </value>
+            <value>
+                <fullName>Issue with current compliance</fullName>
+                <default>false</default>
+                <label>Issue with current compliance</label>
+            </value>
+            <value>
+                <fullName>Supported files</fullName>
+                <default>false</default>
+                <label>Supported files</label>
+            </value>
+            <value>
+                <fullName>Un-supported files</fullName>
+                <default>false</default>
+                <label>Un-supported files</label>
+            </value>
+            <value>
+                <fullName>Download failing for CSV</fullName>
+                <default>false</default>
+                <label>Download failing for CSV</label>
+            </value>
+            <value>
+                <fullName>Firewall settings</fullName>
+                <default>false</default>
+                <label>Firewall settings</label>
+            </value>
+            <value>
+                <fullName>Product Issue</fullName>
+                <default>false</default>
+                <label>Product Issue</label>
+            </value>
+            <value>
+                <fullName>Browser settings Changes</fullName>
+                <default>false</default>
+                <label>Browser settings Changes</label>
+            </value>
+            <value>
+                <fullName>Bulk print issue</fullName>
+                <default>false</default>
+                <label>Bulk print issue</label>
+            </value>
+            <value>
+                <fullName>Print failing for One or Few Documents Selected</fullName>
+                <default>false</default>
+                <label>Print failing for One or Few Documents Selected</label>
+            </value>
+            <value>
+                <fullName>Ingestion Failure</fullName>
+                <default>false</default>
+                <label>Ingestion Failure</label>
+            </value>
+            <value>
+                <fullName>Some field are missing</fullName>
+                <default>false</default>
+                <label>Some field are missing</label>
+            </value>
+            <value>
+                <fullName>Ingestion taking time</fullName>
+                <default>false</default>
+                <label>Ingestion taking time</label>
+            </value>
+            <value>
+                <fullName>Server issues</fullName>
+                <default>false</default>
+                <label>Server issues</label>
+            </value>
+            <value>
+                <fullName>Not able to see total in summary section, wrong doc counts and value</fullName>
+                <default>false</default>
+                <label>Not able to see total in summary section, wrong doc counts and value</label>
+            </value>
+            <value>
+                <fullName>Not able to see total in summary section</fullName>
+                <default>false</default>
+                <label>Not able to see total in summary section</label>
+            </value>
+            <value>
+                <fullName>Wrong doc counts and value</fullName>
+                <default>false</default>
+                <label>Wrong doc counts and value</label>
+            </value>
+            <value>
+                <fullName>Reverse Migration</fullName>
+                <default>false</default>
+                <label>Reverse Migration</label>
+            </value>
+            <value>
+                <fullName>Add GSTIN / Branch</fullName>
+                <default>false</default>
+                <label>Add GSTIN / Branch</label>
+            </value>
+            <value>
+                <fullName>Add / Update</fullName>
+                <default>false</default>
+                <label>Add / Update</label>
+            </value>
+            <value>
+                <fullName>Delete Phone Number</fullName>
+                <default>false</default>
+                <label>Delete Phone Number</label>
+            </value>
+            <value>
+                <fullName>Desktop App</fullName>
+                <default>false</default>
+                <label>Desktop App</label>
+            </value>
+            <value>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+                <label>Password Reset</label>
+            </value>
+            <value>
+                <fullName>Unaware Of Migration</fullName>
+                <default>false</default>
+                <label>Unaware Of Migration</label>
+            </value>
+            <value>
+                <fullName>Add/Delete Vendor</fullName>
+                <default>false</default>
+                <label>Add/Delete Vendor</label>
+            </value>
+            <value>
+                <fullName>Unable To Upload</fullName>
+                <default>false</default>
+                <label>Unable To Upload</label>
+            </value>
+            <value>
+                <fullName>DSC Configuration</fullName>
+                <default>false</default>
+                <label>DSC Configuration</label>
+            </value>
+            <value>
+                <fullName>Logo Update</fullName>
+                <default>false</default>
+                <label>Logo Update</label>
+            </value>
+            <value>
+                <fullName>Create</fullName>
+                <default>false</default>
+                <label>Create</label>
+            </value>
+            <value>
+                <fullName>Manage / Delete</fullName>
+                <default>false</default>
+                <label>Manage / Delete</label>
+            </value>
+            <value>
+                <fullName>Delete / Edit</fullName>
+                <default>false</default>
+                <label>Delete / Edit</label>
+            </value>
+            <value>
+                <fullName>Unable To Download</fullName>
+                <default>false</default>
+                <label>Unable To Download</label>
+            </value>
+            <value>
+                <fullName>Unable To Offset</fullName>
+                <default>false</default>
+                <label>Unable To Offset</label>
+            </value>
+            <value>
+                <fullName>Invalid GSTIN Credentials</fullName>
+                <default>false</default>
+                <label>Invalid GSTIN Credentials</label>
+            </value>
+            <value>
+                <fullName>Reset Data</fullName>
+                <default>false</default>
+                <label>Reset Data</label>
+            </value>
+            <value>
+                <fullName>Doc Count Mismatch</fullName>
+                <default>false</default>
+                <label>Doc Count Mismatch</label>
+            </value>
+            <value>
+                <fullName>Download From GSTN</fullName>
+                <default>false</default>
+                <label>Download From GSTN</label>
+            </value>
+            <value>
+                <fullName>Partial Download</fullName>
+                <default>false</default>
+                <label>Partial Download</label>
+            </value>
+            <value>
+                <fullName>Report Download</fullName>
+                <default>false</default>
+                <label>Report Download</label>
+            </value>
+            <value>
+                <fullName>Report Generation</fullName>
+                <default>false</default>
+                <label>Report Generation</label>
+            </value>
+            <value>
+                <fullName>Values Mismatch</fullName>
+                <default>false</default>
+                <label>Values Mismatch</label>
+            </value>
+            <value>
+                <fullName>Add Remarks</fullName>
+                <default>false</default>
+                <label>Add Remarks</label>
+            </value>
+            <value>
+                <fullName>Filters Not Working</fullName>
+                <default>false</default>
+                <label>Filters Not Working</label>
+            </value>
+            <value>
+                <fullName>Invoice Not Matched</fullName>
+                <default>false</default>
+                <label>Invoice Not Matched</label>
+            </value>
+            <value>
+                <fullName>Link/Delink/Edit Linking</fullName>
+                <default>false</default>
+                <label>Link/Delink/Edit Linking</label>
+            </value>
+            <value>
+                <fullName>Multi Link Documents</fullName>
+                <default>false</default>
+                <label>Multi Link Documents</label>
+            </value>
+            <value>
+                <fullName>Share Report</fullName>
+                <default>false</default>
+                <label>Share Report</label>
+            </value>
+            <value>
+                <fullName>Summary Count Mismatch</fullName>
+                <default>false</default>
+                <label>Summary Count Mismatch</label>
+            </value>
+            <value>
+                <fullName>Partial Report Downloaded</fullName>
+                <default>false</default>
+                <label>Partial Report Downloaded</label>
+            </value>
+            <value>
+                <fullName>Report Not Downloaded</fullName>
+                <default>false</default>
+                <label>Report Not Downloaded</label>
+            </value>
+            <value>
+                <fullName>Slowness</fullName>
+                <default>false</default>
+                <label>Slowness</label>
+            </value>
+            <value>
+                <fullName>Advance Options</fullName>
+                <default>false</default>
+                <label>Advance Options</label>
+            </value>
+            <value>
+                <fullName>Failure</fullName>
+                <default>false</default>
+                <label>Failure</label>
+            </value>
+            <value>
+                <fullName>Download Report</fullName>
+                <default>false</default>
+                <label>Download Report</label>
+            </value>
+            <value>
+                <fullName>Incorrect Autofill Data</fullName>
+                <default>false</default>
+                <label>Incorrect Autofill Data</label>
+            </value>
+            <value>
+                <fullName>Regenerating Table 4</fullName>
+                <default>false</default>
+                <label>Regenerating Table 4</label>
+            </value>
+            <value>
+                <fullName>Update Status</fullName>
+                <default>false</default>
+                <label>Update Status</label>
+            </value>
+            <value>
+                <fullName>Taxable/Tax/Total Values Mismatch</fullName>
+                <default>false</default>
+                <label>Taxable/Tax/Total Values Mismatch</label>
+            </value>
+            <value>
+                <fullName>Invalid Gstn</fullName>
+                <default>false</default>
+                <label>Invalid Gstn</label>
+            </value>
+            <value>
+                <fullName>Invalid Document type/ Sub Type</fullName>
+                <default>false</default>
+                <label>Invalid Document type/ Sub Type</label>
+            </value>
+            <value>
+                <fullName>Pincode error</fullName>
+                <default>false</default>
+                <label>Pincode error</label>
+            </value>
+            <value>
+                <fullName>Inactive Gstn</fullName>
+                <default>false</default>
+                <label>Inactive Gstn</label>
+            </value>
+            <value>
+                <fullName>Hsn Code Incorrect</fullName>
+                <default>false</default>
+                <label>Hsn Code Incorrect</label>
+            </value>
+            <value>
+                <fullName>Export Details Missing</fullName>
+                <default>false</default>
+                <label>Export Details Missing</label>
+            </value>
+            <value>
+                <fullName>UPI ID</fullName>
+                <default>false</default>
+                <label>UPI ID</label>
+            </value>
+            <value>
+                <fullName>E-Inv Not Reflect in G1</fullName>
+                <default>false</default>
+                <label>E-Inv Not Reflect in G1</label>
+            </value>
+            <value>
+                <fullName>EWB portal Related</fullName>
+                <default>false</default>
+                <label>EWB portal Related</label>
+            </value>
+            <value>
+                <fullName>Nic/Irp Credentials</fullName>
+                <default>false</default>
+                <label>Nic/Irp Credentials</label>
+            </value>
+            <value>
+                <fullName>Invalid Shipto/Dispto Pincode</fullName>
+                <default>false</default>
+                <label>Invalid Shipto/Dispto Pincode</label>
+            </value>
+            <value>
+                <fullName>You don&apos;t have access</fullName>
+                <default>false</default>
+                <label>You don&apos;t have access</label>
+            </value>
+            <value>
+                <fullName>CT Passowrd Reset</fullName>
+                <default>false</default>
+                <label>CT Passowrd Reset</label>
+            </value>
+            <value>
+                <fullName>Template related issues</fullName>
+                <default>false</default>
+                <label>Template related issues</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sales Data ingestion</controllingFieldValue>
+            <controllingFieldValue>Purchase Data ingestion</controllingFieldValue>
+            <controllingFieldValue>Gstr1 Filed report</controllingFieldValue>
+            <controllingFieldValue>GSTR3B V/S GSTR2B V/S Books</controllingFieldValue>
+            <controllingFieldValue>GSTR3B V/S GSTR1 V/S Books</controllingFieldValue>
+            <controllingFieldValue>GSTR-1</controllingFieldValue>
+            <controllingFieldValue>GSTR-3B</controllingFieldValue>
+            <controllingFieldValue>GSTR- 6</controllingFieldValue>
+            <controllingFieldValue>New Tally</controllingFieldValue>
+            <controllingFieldValue>GSTR-9</controllingFieldValue>
+            <valueName>Data mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Archieves</controllingFieldValue>
+            <controllingFieldValue>Archives</controllingFieldValue>
+            <valueName>Download in PDF Format</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Archieves</controllingFieldValue>
+            <controllingFieldValue>Archives</controllingFieldValue>
+            <valueName>Unable to Find Old Invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Archieves</controllingFieldValue>
+            <controllingFieldValue>Archives</controllingFieldValue>
+            <valueName>Slow download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mismatch</controllingFieldValue>
+            <valueName>Tax Value Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mismatch</controllingFieldValue>
+            <valueName>Invoice Count Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Incorrect Data Reflected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Partial Data Downloaded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Download Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Updated data not reflected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <controllingFieldValue>Report Download</controllingFieldValue>
+            <valueName>Taking long time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Doc Count Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Download From GSTN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Partial Download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Report Download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Report Generation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Download</controllingFieldValue>
+            <valueName>Values Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Report Download</controllingFieldValue>
+            <valueName>Detailed Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Report Download</controllingFieldValue>
+            <valueName>Insights Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Report Download</controllingFieldValue>
+            <valueName>Summary Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Report Download</controllingFieldValue>
+            <valueName>Filed Report PDF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gstr1 Filed report</controllingFieldValue>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>Data download from GSTN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gstr1 Filed report</controllingFieldValue>
+            <controllingFieldValue>GSTR3B V/S GSTR2B V/S Books</controllingFieldValue>
+            <controllingFieldValue>GSTR3B V/S GSTR1 V/S Books</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification report</controllingFieldValue>
+            <controllingFieldValue>Download Report</controllingFieldValue>
+            <valueName>Report Generation failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gstr1 Filed report</controllingFieldValue>
+            <controllingFieldValue>GSTIN Verification report</controllingFieldValue>
+            <valueName>Download slowness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>JSON</controllingFieldValue>
+            <valueName>JSON Upload failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data deletion</controllingFieldValue>
+            <valueName>Unable to delete data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data deletion</controllingFieldValue>
+            <controllingFieldValue>Data ingestion</controllingFieldValue>
+            <valueName>Feature request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ecommerce</controllingFieldValue>
+            <valueName>Ecommerce aborts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Edit</controllingFieldValue>
+            <valueName>Unable to edit invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation Errors</controllingFieldValue>
+            <valueName>HSN invalid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation Errors</controllingFieldValue>
+            <valueName>GSTIN Invalid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Template Related</controllingFieldValue>
+            <controllingFieldValue>Templates related</controllingFieldValue>
+            <valueName>Headers Missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GSTR-1</controllingFieldValue>
+            <controllingFieldValue>GSTR-3B</controllingFieldValue>
+            <controllingFieldValue>GSTR-9</controllingFieldValue>
+            <controllingFieldValue>ITC-04</controllingFieldValue>
+            <controllingFieldValue>GSTR-9C</controllingFieldValue>
+            <valueName>Slowness in Upload</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GSTR-1</controllingFieldValue>
+            <controllingFieldValue>GSTR-3B</controllingFieldValue>
+            <controllingFieldValue>GSTR- 6</controllingFieldValue>
+            <controllingFieldValue>GSTR-9</controllingFieldValue>
+            <controllingFieldValue>ITC-04</controllingFieldValue>
+            <controllingFieldValue>GSTR-9C</controllingFieldValue>
+            <valueName>Upload fail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Update marketing preference</controllingFieldValue>
+            <valueName>Subscribe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Update marketing preference</controllingFieldValue>
+            <valueName>Unsubscribe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data ingestion</controllingFieldValue>
+            <valueName>Ingested data mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data ingestion</controllingFieldValue>
+            <valueName>Ingestion failures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data ingestion</controllingFieldValue>
+            <valueName>Delete data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data ingestion</controllingFieldValue>
+            <valueName>Taking too much time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>Generate summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>View/Edit invoices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>Negative values</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>Data overview Download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <controllingFieldValue>Run Recon</controllingFieldValue>
+            <valueName>ITC related</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>Auto-Fill related</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Preview Summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <controllingFieldValue>Run Recon</controllingFieldValue>
+            <controllingFieldValue>Vendor communication</controllingFieldValue>
+            <valueName>2b vs pr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <valueName>2a vs pr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Invalid GSTIN Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data preparation</controllingFieldValue>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Reset Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>HSN error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Filing frequency mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Inactive GSTIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Inactive GSTIN credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Inactive API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>JSON download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>Invoice level issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Upload</controllingFieldValue>
+            <valueName>E-Inv Not Reflect in G1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Challan related issues</controllingFieldValue>
+            <controllingFieldValue>Challan Related</controllingFieldValue>
+            <valueName>Unable To Download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Challan related issues</controllingFieldValue>
+            <controllingFieldValue>Challan Related</controllingFieldValue>
+            <valueName>Unable To Offset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Error</controllingFieldValue>
+            <valueName>500 error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Error</controllingFieldValue>
+            <valueName>Aborted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Error</controllingFieldValue>
+            <valueName>Login error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Error</controllingFieldValue>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <controllingFieldValue>Workspace</controllingFieldValue>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Error</controllingFieldValue>
+            <valueName>Unexpected error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>License activation</controllingFieldValue>
+            <valueName>SF asset issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>License activation</controllingFieldValue>
+            <valueName>Demo asset activation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>License activation</controllingFieldValue>
+            <valueName>Incorrectly nagged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>License activation</controllingFieldValue>
+            <valueName>Migration 1.0 &gt; 2.0</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>License activation</controllingFieldValue>
+            <valueName>Reverse Migration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email Verification</controllingFieldValue>
+            <valueName>No verification link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceptions</controllingFieldValue>
+            <valueName>Validity extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceptions</controllingFieldValue>
+            <valueName>Sandbox validity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceptions</controllingFieldValue>
+            <valueName>Gstin verification credits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Password Reset</controllingFieldValue>
+            <valueName>No reset email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Switch Phase</controllingFieldValue>
+            <valueName>Phase 1/Phase 2 Switching</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Invoice discrepancy</controllingFieldValue>
+            <valueName>License validity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Invoice discrepancy</controllingFieldValue>
+            <valueName>Plan components</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>License Extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Account blocking request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Blocked or nagged prematurely or put on trial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Client wants to subscribe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Client wants to unsubscribe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>License activation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>License not yet activated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Renewal request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Licensing</controllingFieldValue>
+            <valueName>Validity and limits not as promised</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <controllingFieldValue>Workspace</controllingFieldValue>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <controllingFieldValue>Email Settings</controllingFieldValue>
+            <valueName>Feature requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <valueName>Adding or removing users from workspace</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <valueName>Change workspace owner (primary email)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <valueName>Issues with inviting a team member (deletion of original account)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Team role permissions</controllingFieldValue>
+            <valueName>Modify role for current users</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Login issues</controllingFieldValue>
+            <valueName>Delete Phone Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Login issues</controllingFieldValue>
+            <valueName>Desktop App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Login issues</controllingFieldValue>
+            <valueName>Password Reset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Login issues</controllingFieldValue>
+            <valueName>Unaware Of Migration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Login issues</controllingFieldValue>
+            <valueName>EWB portal Related</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace</controllingFieldValue>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Edit information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace</controllingFieldValue>
+            <valueName>Add or remove or modify a TIN or VAT or Branch ( Business )</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace</controllingFieldValue>
+            <valueName>Delete or retrieve data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Update Email / Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Update filing type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Update filing frequency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Update Nic/Gst Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Reset password or retrieve credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <controllingFieldValue>API - Auth token</controllingFieldValue>
+            <controllingFieldValue>FTP Client</controllingFieldValue>
+            <valueName>Unable to create account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>User profile</controllingFieldValue>
+            <valueName>Unsubscribe mailing list</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Offline utility</controllingFieldValue>
+            <valueName>Unable to register on UI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Offline utility</controllingFieldValue>
+            <valueName>Jar not working</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Member access related</controllingFieldValue>
+            <valueName>Add/Delete team member</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Member access related</controllingFieldValue>
+            <valueName>Update roles/permissions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Member access related</controllingFieldValue>
+            <valueName>Issues inviting members</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unable to add/modify info</controllingFieldValue>
+            <controllingFieldValue>New Tally</controllingFieldValue>
+            <controllingFieldValue>CT validation errors</controllingFieldValue>
+            <controllingFieldValue>ZATCA validation errors</controllingFieldValue>
+            <valueName>Validation errors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unable to add/modify info</controllingFieldValue>
+            <valueName>Copy and paste errors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Update workspace owner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Add/Modify/Update PAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Add/Modify/Update GSTIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Add/Modify/Update Branch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Delete/retrive data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Change settings (pro&lt;&gt;biz)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Switch Workspace</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>DSC Configuration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workspace related</controllingFieldValue>
+            <valueName>Logo Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Tally</controllingFieldValue>
+            <valueName>Installation request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Tally</controllingFieldValue>
+            <valueName>Configuration issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Data ingestion failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Partial data ingested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Request URL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Request failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Requires Auth token</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Requires Taxable entity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP/SAP/ERP</controllingFieldValue>
+            <valueName>Payload error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZATCA issues</controllingFieldValue>
+            <valueName>CCSID error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZATCA issues</controllingFieldValue>
+            <valueName>PCSID Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTP Issue</controllingFieldValue>
+            <valueName>OTP Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>All Documents Others</controllingFieldValue>
+            <controllingFieldValue>All Documents Sales</controllingFieldValue>
+            <controllingFieldValue>All documents Supplier</controllingFieldValue>
+            <valueName>Not able to see the documents under respective headers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>All Documents Others</controllingFieldValue>
+            <controllingFieldValue>All Documents Sales</controllingFieldValue>
+            <controllingFieldValue>All documents Supplier</controllingFieldValue>
+            <valueName>Not able to switch among different section</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>All Documents Others</controllingFieldValue>
+            <controllingFieldValue>All documents Supplier</controllingFieldValue>
+            <valueName>Not able to see total in summary section, wrong doc counts and value</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>All Documents Sales</controllingFieldValue>
+            <valueName>Not able to see total in summary section</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>All Documents Sales</controllingFieldValue>
+            <valueName>Wrong doc counts and value</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer GSTIN</controllingFieldValue>
+            <controllingFieldValue>Customer Name</controllingFieldValue>
+            <controllingFieldValue>Customise Column Filter</controllingFieldValue>
+            <controllingFieldValue>Document date</controllingFieldValue>
+            <controllingFieldValue>Document Linking id</controllingFieldValue>
+            <controllingFieldValue>Draft</controllingFieldValue>
+            <controllingFieldValue>Order Id</controllingFieldValue>
+            <controllingFieldValue>Reject</controllingFieldValue>
+            <controllingFieldValue>Supply Type</controllingFieldValue>
+            <controllingFieldValue>Taxable Amount</controllingFieldValue>
+            <valueName>Filter not getting applied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer GSTIN</controllingFieldValue>
+            <controllingFieldValue>Customer Name</controllingFieldValue>
+            <controllingFieldValue>Customise Column Filter</controllingFieldValue>
+            <controllingFieldValue>Document date</controllingFieldValue>
+            <controllingFieldValue>Document Linking id</controllingFieldValue>
+            <controllingFieldValue>Draft</controllingFieldValue>
+            <controllingFieldValue>Order Id</controllingFieldValue>
+            <controllingFieldValue>Reject</controllingFieldValue>
+            <controllingFieldValue>Supply Type</controllingFieldValue>
+            <controllingFieldValue>Taxable Amount</controllingFieldValue>
+            <valueName>Result not coming as per filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer GSTIN</controllingFieldValue>
+            <controllingFieldValue>Customer Name</controllingFieldValue>
+            <controllingFieldValue>Customise Column Filter</controllingFieldValue>
+            <controllingFieldValue>Document date</controllingFieldValue>
+            <controllingFieldValue>Document Linking id</controllingFieldValue>
+            <controllingFieldValue>Draft</controllingFieldValue>
+            <controllingFieldValue>Order Id</controllingFieldValue>
+            <controllingFieldValue>Reject</controllingFieldValue>
+            <controllingFieldValue>Supply Type</controllingFieldValue>
+            <controllingFieldValue>Taxable Amount</controllingFieldValue>
+            <valueName>Search not working after applied filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Business hierarchy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>API credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>Contact Master</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Settings</controllingFieldValue>
+            <valueName>User Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email Settings</controllingFieldValue>
+            <valueName>Recipient Contacts missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Email Settings</controllingFieldValue>
+            <valueName>Unable to mail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>Field length limit exceeded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>Mandatory fields missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>Pin code missing or incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>TIN or VAT invalid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Upload validation</controllingFieldValue>
+            <valueName>Total Invoice value incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web/API</controllingFieldValue>
+            <valueName>Add new compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web/API</controllingFieldValue>
+            <valueName>Issue with current compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web/API</controllingFieldValue>
+            <valueName>Supported files</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web/API</controllingFieldValue>
+            <valueName>Un-supported files</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download CSV</controllingFieldValue>
+            <valueName>Download failing for CSV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download CSV Detailed</controllingFieldValue>
+            <controllingFieldValue>Download CSV Detailed in bulk</controllingFieldValue>
+            <controllingFieldValue>Download CSV Lite</controllingFieldValue>
+            <controllingFieldValue>Download Print Template in Bulk</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <valueName>Firewall settings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download CSV Detailed</controllingFieldValue>
+            <controllingFieldValue>Download CSV Detailed in bulk</controllingFieldValue>
+            <controllingFieldValue>Download CSV Lite</controllingFieldValue>
+            <controllingFieldValue>Download Print Template in Bulk</controllingFieldValue>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <valueName>Product Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SSL Certificate</controllingFieldValue>
+            <valueName>Add Workspace</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SSL Certificate</controllingFieldValue>
+            <valueName>Update SSL Certificate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auth Token</controllingFieldValue>
+            <valueName>Generate New Auth Token</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auth Token</controllingFieldValue>
+            <valueName>Invalid Auth Token</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tally Connector</controllingFieldValue>
+            <valueName>Unable to Connect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tally Connector</controllingFieldValue>
+            <valueName>import failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer ERP Issue</controllingFieldValue>
+            <valueName>Wrong Config</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sandbox</controllingFieldValue>
+            <valueName>Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Custom template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Government Template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>EWB template with IRN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>EWB template without IRN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <valueName>Browser settings Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <valueName>Bulk print issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print Invoice for one or few documents</controllingFieldValue>
+            <valueName>Print failing for One or Few Documents Selected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failed</controllingFieldValue>
+            <valueName>Ingestion Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Invoice data is missing in exported CSV</controllingFieldValue>
+            <valueName>Some field are missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Slow export of data</controllingFieldValue>
+            <valueName>Ingestion taking time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Async reporting issues</controllingFieldValue>
+            <controllingFieldValue>CT server errors</controllingFieldValue>
+            <controllingFieldValue>XML reporting issues</controllingFieldValue>
+            <controllingFieldValue>ZATCA server errors</controllingFieldValue>
+            <valueName>Server issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP</controllingFieldValue>
+            <valueName>FTP server down</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FTP</controllingFieldValue>
+            <valueName>Input file not found</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Taxable/Tax/Total Values Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Invalid Gstn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Invalid Document type/ Sub Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Pincode error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Inactive Gstn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Hsn Code Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Export Details Missing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Nic/Irp Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>Invalid Shipto/Dispto Pincode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Validation error</controllingFieldValue>
+            <valueName>You don&apos;t have access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Downtime</controllingFieldValue>
+            <valueName>NIC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Downtime</controllingFieldValue>
+            <valueName>Clear</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Settings</controllingFieldValue>
+            <valueName>Add GSTIN / Branch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GSTIN / NIC credentials</controllingFieldValue>
+            <valueName>Add / Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom Print Template</controllingFieldValue>
+            <valueName>Basic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom Print Template</controllingFieldValue>
+            <valueName>Advanced</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital signature</controllingFieldValue>
+            <valueName>New license</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital signature</controllingFieldValue>
+            <valueName>Certificate upload</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital signature</controllingFieldValue>
+            <valueName>Not able to add digital signature</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vendor Contact Master</controllingFieldValue>
+            <valueName>Add/Delete Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vendor Contact Master</controllingFieldValue>
+            <valueName>Unable To Upload</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>API - Auth token</controllingFieldValue>
+            <controllingFieldValue>FTP Client</controllingFieldValue>
+            <valueName>Create</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>API - Auth token</controllingFieldValue>
+            <controllingFieldValue>FTP Client</controllingFieldValue>
+            <valueName>Manage / Delete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>API - Auth token</controllingFieldValue>
+            <valueName>Delete / Edit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Add Remarks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Filters Not Working</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Invoice Not Matched</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Link/Delink/Edit Linking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Multi Link Documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Share Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document View</controllingFieldValue>
+            <valueName>Summary Count Mismatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Basic</controllingFieldValue>
+            <valueName>Modification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Advanced</controllingFieldValue>
+            <valueName>New Custom Print template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download Report</controllingFieldValue>
+            <valueName>Partial Report Downloaded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download Report</controllingFieldValue>
+            <valueName>Report Not Downloaded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Download Report</controllingFieldValue>
+            <valueName>Slowness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Table 4 Generation</controllingFieldValue>
+            <valueName>Download Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Table 4 Generation</controllingFieldValue>
+            <valueName>Incorrect Autofill Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Table 4 Generation</controllingFieldValue>
+            <valueName>Regenerating Table 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duplicate IRN</controllingFieldValue>
+            <valueName>Update Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B2C QR Code</controllingFieldValue>
+            <valueName>UPI ID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Run Recon</controllingFieldValue>
+            <valueName>Advance Options</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Run Recon</controllingFieldValue>
+            <valueName>Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Incase of Wrong Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ITC reset</controllingFieldValue>
+            <valueName>Unable to Reset</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

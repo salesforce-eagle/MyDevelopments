@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Record_Type</fullName>
+    <active>true</active>
+    <label>Task Record Type</label>
+    <picklistValues>
+        <picklist>Asset_Activation_flag__c</picklist>
+        <values>
+            <fullName>Historic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage not Tracked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Asset_opportunity_Type__c</picklist>
+        <values>
+            <fullName>Channel Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cross Sell%2FUpsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winback</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_information__c</picklist>
+        <values>
+            <fullName>Churn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact details not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer having Pricing issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not reachable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EINV not applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature required not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final approval pending-Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect KAM mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect SF update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration completed but not updated in SF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration pending - CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration pending - Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration pending - SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration pending but using product manually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Risk - But using govt tool%2F consultant as well</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Risk - Low volume</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Risk - Once a month activity %28EINV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Risk -Renewal Period correction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding completed but not updated in SF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding denied due to pending integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding pending-CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding pending-Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One time engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Only API client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POC change - Not responding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent renewal completed - SF needs to be updated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing approval pending with CT-Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product bugs%2Fissue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal completed but not updated in SF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support issue%2F training required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uneecops deals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Using the product %28Email to be shared%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Company_s_Onboarding_Stage__c</picklist>
+        <values>
+            <fullName>CSM introduction mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changes in LOE %26 SF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Expectation Checklist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Re-training post onboarding completion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Support Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feedback collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Introductory call with the client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOE Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding Meeting Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding plan design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding pre-requisites from client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post onboarding mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Engagement call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training %2F Onboarding session</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ERP__c</picklist>
+        <values>
+            <fullName>Infor LN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infor Sun Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Edwards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365 Business Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics 365 Finance and Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics AX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics NAV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Dynamics SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle E-Business Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle NetSuite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Opera PMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle PeopleSoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QAD Java</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP B1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Business One</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP ECC %2F S4 Hana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tally ERP 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tally Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TallyPrime</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Existing_Vendor__c</picklist>
+        <values>
+            <fullName>BDO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Big 4%2FTCS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brillo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cygnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cygnet%2FMaster%2FWep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deloitte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farvision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Focus GST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Govt Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H%26R Block</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HeroGST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In house Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jio GST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KPMG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karvy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masters GST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSDL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Octa GST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oracle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PWC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Punjabbulls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relyon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAP ASP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SuperTax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supertax%2FKarvey%2FH%26R Bloack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tally</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TaxGenie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Udyog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Velocis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WEP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIpro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webtel%2FComputax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winman</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mode__c</picklist>
+        <values>
+            <fullName>CALL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMAIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEETING</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Account__c</picklist>
+        <values>
+            <fullName>ASP%2FGSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airline credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B2C QR code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-way Bill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GSTIN verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GSTR 9%2F9C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconciliation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Issue_Type__c</picklist>
+        <values>
+            <fullName>Cancellation of E-invoice%2FEway bill%2FB2C QR Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Download of E-invoice%2FEway bill%2FB2C QR Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filing of GST returns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generation of E-invoice%2FEway bill%2FB2C QR Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingestion of Sales%2FPurchase Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printing of E-invoice%2FEway bill%2FB2C QR Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconciliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>ASP%2FGSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airline Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CFO Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Invoicing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-way Bill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recon</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Products__c</picklist>
+        <values>
+            <fullName>ASP%2FGSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airline Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Max ITC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TDS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Stage__c</picklist>
+        <values>
+            <fullName>Awaiting Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-hold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Qualified_Meeting__c</picklist>
+        <values>
+            <fullName>Accept</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reject</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source_of_Meeting__c</picklist>
+        <values>
+            <fullName>Channel%C2%A0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LeadGen%C2%A0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MQL Team%C2%A0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SDR Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-generated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ReScheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status_of_Customer__c</picklist>
+        <values>
+            <fullName>Green - No Open issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red - Open Issues under resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red Churn - Customer has confirmed non-usage of the product</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type_for_Account__c</picklist>
+        <values>
+            <fullName>Activated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EL to be shared%2Ffollow up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expected Usage start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expected integration completion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expected payment on</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up on usage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next follow up date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OB completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product issue%2FFeature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Done</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To Do</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject_Only_Account__c</picklist>
+        <values>
+            <fullName>Activation pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell%2FCrossSell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage%2FChurn risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winback</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject__c</picklist>
+        <values>
+            <fullName>Activation pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CXO Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call log</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closure Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Discussion Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo scheduling Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Followup Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health check%2FBusiness Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration-In house Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Introductory Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Introductory Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Meetings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POC Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter%2FQuote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell%2FCrossSell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage%2FChurn risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winback</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject_for_asset_account__c</picklist>
+        <values>
+            <fullName>Cash Collection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Usage %26 Onboarding</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Consultation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Implementation Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Feasibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Integration__c</picklist>
+        <values>
+            <fullName>API - Only by CT Inhouse Custom ERP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Only by CT Inhouse Netsuite ERP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Only by CT Inhouse SAP B1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Only by CT Inhouse SAP ECC%2FHANA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Only by CT Inhouse Tally ERP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Only by CT SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API- Only by Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FTP%2F SFTP - Only by CT Inhouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FTP%2F SFTP - Only by SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FTP%2FSFTP - Only by customer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

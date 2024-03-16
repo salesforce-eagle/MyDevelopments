@@ -1,0 +1,17 @@
+.body {
+    min-height: 400px;
+    width: 100%;
+}
+
+.card {
+    display: block;
+}
+
+.icon-color-close {
+    --sds-c-icon-color-foreground-default: #ffffff !important;
+}
+
+h2 {
+    font-size: 18px !important;
+    font-weight: bold !important;
+}

@@ -1,0 +1,82 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_Invoice_discounting_controller" showheader="false">
+    <html>
+        <head>
+            <style type="text/css">
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS2==1 && NOT(idSOSCheck)}">
+                <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services for Invoice Discounting – </u></b>
+           
+          
+<p> <b>Xpedize responsibility: </b> </p>
+<p>Xpedize will work with the Customer team to: </p>
+
+            <ul>
+                <li>Design the flow architecture from Xpedize to Customer ERP and vice versa</li>
+                <li>Identify options to integrate various business systems, application directories and security enablers
+</li>
+                <li>Develop all the necessary interfaces in the Customer ERP
+</li>
+                <li>Perform unit testing and business testing
+</li>
+                <li>Provide documentation of the new interfaces
+</li>
+                <li>Provide knowledge transfer to Customer end-users</li>
+                <li>Provide go-live support and post-go-live activities</li>
+            </ul>
+            
+<p> <b>Functionality to be provided:</b> </p>      
+<ol style="list-style-type: decimal;">
+<li>License to use the Software on a non-exclusive, revocable basis for the term of the Agreement.</li>
+<li>Provide access to the Software to the suppliers of the Customer.</li>
+<li>Provide training to the employees of the Customer and the Supplier in efficiently using the Software platform, in a manner that shall be decided by the Xpedize in its sole discretion.
+</li><li>Provide to the Customer periodic MIS reports and/or analytics.</li>
+<li>Provide the details of the invoices based on the request submitted on the Software by the Customer or Suppliers to the Financiers (Banks/NBFCs/ Financial Institutions/ TReDS exchanges) for further processing and discounting of such invoices.</li>
+            
+</ol>       
+<p> <b>Customer responsibilty:</b> </p>  
+            <ol style="list-style-type: decimal;">
+                <li>The Customer shall allow the Xpedize to set-up technology integration of the Software with their ERP systems to pick up data or any other form of data connectivity including but not limited to secured file transfer or as may be mutually agreed between the Parties.
+
+</li>
+                <li>The Customer shall not reverse engineer, decompile, decode, decrypt, disassemble, or in any way derive source code from the Software.
+
+</li>
+
+<li>Customer has and shall maintain all rights as are required to allow Xpedize to provide the  Services to Customer as set forth in this order form, including without limitation to approach its suppliers for onboarding to the program or to apprise / enroll them of any changes / pilots that will be carried out intermittently to increase platform usage / throughput / revenue.</li>
+<li>
+Customer will obtain prior written approval of the data owners before sharing any data with Xpedize.</li>
+<li>To meet the service objectives as stated above, Customer shall facilitate sharing of vendor master data during integration / deployment to facilitate faster onboarding of all its vendors. Any additional vendors (who were already onboarded by the Customer at the time of execution of this Order Form) that require onboarding after the first 2 months of Go-Live will be charged at INR 1000 / vendor
+</li>
+                
+            </ol>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <apex:include pageName="{!nextPage9}"/>
+        </body>
+    </html>
+</apex:page>

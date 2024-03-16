@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Frequency__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Billing Frequency for Service Fee (OTP)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100% Upon signing Order form</fullName>
+                <default>false</default>
+                <label>100% Upon signing Order form</label>
+            </value>
+            <value>
+                <fullName>50% upon signing the Order form &amp; 50% after delivery</fullName>
+                <default>false</default>
+                <label>50% upon signing the Order form &amp; 50% after delivery</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>50% upon signing the Order Form and 50% post UAT completion</fullName>
+                <default>false</default>
+                <label>50% upon signing the Order Form and 50% post UAT completion</label>
+            </value>
+            <value>
+                <fullName>80% on signing the order form and 20% post go-live</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>80% on signing the order form and 20% post go-live</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>Quarterly in End (Approval Driven)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quarterly in End (Approval Driven)</label>
+            </value>
+            <value>
+                <fullName>Quarterly in advance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quarterly in advance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<template>
+    <template if:false={showSpinner}>
+        <lightning-card title="Task status"> 
+            <div class="slds-var-m-around_medium">
+                <fieldset class="slds-form-element">
+                    <div class=" slds-form-element__control ">
+                        <div class="optionListContainer" >
+                            <template for:each={optionValues} for:item="option">
+                                <div key={option} class="slds-button slds-checkbox_button optionContainer">
+                                    <input type="checkbox" data-id="checkbox" id={option} value={option}
+                                        data-value={option} name="checkbox" />
+                                    <label class="slds-checkbox_button__label optionLabel " for={option}>
+                                        <span class="slds-checkbox_faux">{option} </span>
+                                    </label>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+                <center>
+                    <button class="submit_button" onclick={updateOpportunity}>Mark as completed</button>
+                </center>
+
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={showSpinner}>
+        <div class="backgroundInverse">
+            <lightning-spinner alternative-text="Loading" variant="inverse"></lightning-spinner>
+        </div>
+    </template>
+</template>

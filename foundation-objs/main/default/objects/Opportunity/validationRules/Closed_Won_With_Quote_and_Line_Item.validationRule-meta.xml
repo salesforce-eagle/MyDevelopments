@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_With_Quote_and_Line_Item</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordTypeId &lt;&gt; $Label.ITR_Opportuntiy_Record_Type_ID , IF(AND(OR(TEXT(StageName) == &apos;Onboarded&apos; , TEXT(StageName) == &apos;In Finance Approval&apos;) , AcceptQuoteWithLineSyncedBE__c &lt;= 0) , true ,false)
+)</errorConditionFormula>
+    <errorMessage>Please Sync an Quote which is Primary and Status Accepted</errorMessage>
+</ValidationRule>

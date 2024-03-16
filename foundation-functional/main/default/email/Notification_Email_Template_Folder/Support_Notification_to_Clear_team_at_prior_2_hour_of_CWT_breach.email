@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi {!Case.OwnerFullName} ,<br />
+&nbsp;
+
+<p>Ticket Number  &nbsp;&nbsp;: &nbsp;&nbsp;{!Case.CaseNumber} </br></p>
+<p>Team Responsible &nbsp;&nbsp;: &nbsp;&nbsp; {!Case.User_Role_Type__c}</br></p>
+<p>Owner &nbsp;&nbsp;: &nbsp;&nbsp; {!Case.OwnerFullName}</br></p>
+<p>Remaining time (hour:min)&nbsp;&nbsp;: &nbsp;&nbsp;2:00</br></p>
+<p>Please close it asap to avoid any milestone violation</br></p>
+<p>&nbsp;</p>
+Thanks,<br />
+{!Organization.Name}
+<p>&nbsp;</p>
+</body>
+</html>

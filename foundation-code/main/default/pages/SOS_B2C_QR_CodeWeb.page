@@ -1,0 +1,66 @@
+<apex:page renderAs="PDF" standardController="Opportunity" extensions="generateOrderFormPDF,SOS_B2C_QR_CodeWeb_Controller" showheader="false" >
+    <html>
+        <head>
+            <style type="text/css">
+                .test{
+               color:blue;
+                }
+                .info-table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                .info-table th,.info-table td{
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                }
+                table { page-break-inside:auto}
+                tr { page-break-inside:avoid; page-break-after:auto}
+                th {page-break-inside:avoid; page-break-after:auto}
+            </style>
+        </head>
+        <body>
+            <apex:panelGroup rendered="{!SOS13==1}">
+            <div style="page-break-after: avoid;" class="headding-box"> &nbsp;&nbsp;&nbsp;SCOPE OF SERVICES </div>
+            </apex:panelGroup>
+            <b><u> Scope of Services forB2C-QR Code Web- </u></b>
+
+            <table class="info-table">
+                            
+                            <tr><th >Module</th><th>Feature</th><th>Description</th></tr>
+                            <tr>
+                                <td><b>Compliance</b></td>
+                                <td>B2C QR Code Preparation and Generation</td>
+                                <td>Support and generation of all B2C QR Code based invoices. Print and Download generated invoices</td></tr>
+                            <tr>
+                                <td ></td>
+                                <td >Data Ingestion</td>
+                                <td >Ingestion of data via B2C specific Template and also custom Template</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td >Data Validation</td>
+                                <td >Basic validations on input data to improve success rate and avoid errors</td>
+                            </tr>
+                            <tr>
+                                <td ></td>
+                                <td ></td>
+                                <td >Custom invoice printing ( co. logo, etc.)</td>
+                            </tr>
+                            <tr>
+                                <td ><b>Business Intelligence Reporting</b></td>
+                                <td >MIS Dashboard</td>
+                                <td >Basic MIS of historical B2C QR code based invoices generated on Cleartax</td>
+                            </tr>
+                            <tr>
+                                <td ><b>Data Archive</b></td>
+                                <td ></td>
+                                <td >Archiving and retrieval of e-invoices.</td>
+                            </tr>
+                        </table>
+            <br/>
+            <apex:include pageName="{!nextPage20}"/>
+        </body>
+    </html>
+</apex:page>

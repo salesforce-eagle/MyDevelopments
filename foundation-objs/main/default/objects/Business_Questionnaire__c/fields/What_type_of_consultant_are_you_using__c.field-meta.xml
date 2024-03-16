@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_type_of_consultant_are_you_using__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>What type of consultant are you using</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Big 4</fullName>
+                <default>false</default>
+                <label>Big 4</label>
+            </value>
+            <value>
+                <fullName>Local CA firm</fullName>
+                <default>false</default>
+                <label>Local CA firm</label>
+            </value>
+            <value>
+                <fullName>Independent consultant</fullName>
+                <default>false</default>
+                <label>Independent consultant</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

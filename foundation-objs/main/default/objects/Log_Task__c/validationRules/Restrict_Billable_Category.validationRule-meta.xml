@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Billable_Category</fullName>
+    <active>true</active>
+    <errorConditionFormula>Asset__r.AccountId = &apos;0012x00000ATf7A&apos; &amp;&amp;  
+ TEXT(Category__c) &lt;&gt; &apos;Non Billable&apos;</errorConditionFormula>
+    <errorMessage>Please select Non Billable category</errorMessage>
+</ValidationRule>

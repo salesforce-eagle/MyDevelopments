@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LSQ_Onboarding_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>LSQ - Onboarding Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fully Onboarded</fullName>
+                <default>false</default>
+                <label>Fully Onboarded</label>
+            </value>
+            <value>
+                <fullName>OBHH Void - Biz Users</fullName>
+                <default>false</default>
+                <label>OBHH Void - Biz Users</label>
+            </value>
+            <value>
+                <fullName>WIP</fullName>
+                <default>false</default>
+                <label>WIP</label>
+            </value>
+            <value>
+                <fullName>Partially Onboarded</fullName>
+                <default>false</default>
+                <label>Partially Onboarded</label>
+            </value>
+            <value>
+                <fullName>Refund Request</fullName>
+                <default>false</default>
+                <label>Refund Request</label>
+            </value>
+            <value>
+                <fullName>New - Untouched</fullName>
+                <default>false</default>
+                <label>New - Untouched</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

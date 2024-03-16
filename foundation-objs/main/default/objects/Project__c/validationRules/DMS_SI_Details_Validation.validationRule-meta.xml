@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DMS_SI_Details_Validation</fullName>
+    <active>true</active>
+    <description>In case you want to update SI details for DMS projects, it has to be checked</description>
+    <errorConditionFormula>AND(!Dealer_Management_system__c, 
+!ISBLANK(Client_SI_company_name_DMS_project__c)   ||
+!ISBLANK(SI_name_DMS_project_only__c)   ||
+!ISBLANK(SI_email_DMS_project_only__c)  || 
+!ISBLANK(Client_SI_contact_DMS_project_only__c )
+)</errorConditionFormula>
+    <errorMessage>You can enter this field only if Dealer management system (DMS) field is checked</errorMessage>
+</ValidationRule>

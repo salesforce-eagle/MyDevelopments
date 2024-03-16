@@ -1,0 +1,877 @@
+<apex:page standardController="Case"  extensions="CaseFormController" showHeader="false" lightningStylesheets="false" id="Page" >
+    
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" />
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" />
+    <apex:styleSheet value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css" />
+    
+    <apex:slds />
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"/>
+            <style>
+            .displayNone { 
+                display:none; 
+            }
+    .displayBlock {
+        display:block;
+    }
+    .ui-autocomplete-loading { 
+        background: white url(/img/loading32.gif) right center no-repeat;
+        background-size:15px 15px; 
+    }
+    .placeHolder {
+        font-style: italic;
+    }
+    .ui-autocomplete {
+        position: absolute;
+    }
+    
+    .caseTab .tertiaryPalette, .individualPalette .caseBlock .tertiaryPalette, .layoutEdit .individualPalette .caseBlock .tertiaryPalette {
+        background-color: #3a6690 !important;
+        border-color: #3a6690 !important;
+    }
+    
+    .secondaryPalette {
+        
+        border-color: #3a6690 !important;
+    }
+    
+    .bPageBlock {
+        padding: 0;
+        margin-bottom: 10px;
+        border-top-width: 1px !important;
+    }
+    
+    </style>
+    
+    
+    <center><br/><br/>
+        <div class="g-signin2" data-width="200" data-height="35" data-longtitle="true" data-onsuccess="onSignIn">
+            
+            </div>
+        
+        </center>
+        
+        <apex:form id="form">
+            
+            <apex:outputPanel id="test">
+                
+                
+                
+                <center>  <h1>
+                {!VFMessage}
+            </h1>
+            <br/>
+                <button type="button" data-width="100" data-height="25" class="btn btn-default btn-sm" onclick="signOut()">
+                    <span class="glyphicon glyphicon-log-out"></span> Sign Out
+                    </button>
+                    <br/><br/>
+                        </center>   
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <apex:actionRegion >
+                        <apex:actionFunction action="{!emailId}" name="methodOneInJavascript" rerender="test">
+                            <apex:param name="firstParam" assignTo="{!loggedEmailID}" value="" />
+                                <apex:param name="secondParam" assignTo="{!googleIDToken}" value="" />
+                                    </apex:actionFunction>
+                                </apex:actionRegion>  
+                                
+                                <apex:pageMessages id="msg"></apex:pageMessages>
+                                <apex:outputPanel rendered="{!showFormUI}">
+                                    <c:LoadingScreen />
+                                        
+                                        <center>
+                                        
+                                        
+                                        
+                                        <apex:pageBlock id="pageBlock">
+                                            
+                                            <apex:actionRegion >
+                                                <center>
+                                                <apex:outputPanel id="formtype" style="margin-left: -6%;">                
+                                                    <apex:outputLabel Value="Form Type :- " />
+                                                        <apex:selectList id="teams"  size="1" required="true" multiselect="false" value="{!team1}" label="Form Type">
+                                                            <apex:selectOptions value="{!items}" />
+                                                                <apex:actionSupport status="loadStatus" event="onchange" reRender="test,pageblock1,pageblock2,pageblock3" />
+                                                                    </apex:selectList>
+                                                                </apex:outputPanel>
+                                                                
+                                                                </center>
+                                                                </apex:actionRegion>  
+                                                                
+                                                                
+                                                                
+                                                                </apex:pageBlock>
+                                                                
+                                                                <apex:outputPanel id="pageblock1"  rendered="{!team1 == 'B2B CA/SME'}">                 
+                                                                    <apex:pageBlock >  
+                                                                        
+                                                                        <apex:pageBlockSection title="B2B CA/SME Case detail" collapsible="false">
+                                                                            <apex:pageBlockSectionItem >
+                                                                                <apex:outputLabel value="Customer Segment"/>
+                                                                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                                                                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                                                                            <apex:selectList id="B2BCS"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                                                                                                <apex:selectOptions value="{!B2B_Customer_Segment_CA_SME}" />   
+                                                                                                    </apex:selectList>
+                                                                                                </apex:outputPanel>
+                                                                                                </apex:pageBlockSectionItem>
+                                                                                                <apex:pageBlockSectionItem >                                                                                                 
+                                                                                                    <apex:outputLabel value="Product Type"/>
+                                                                                                        <apex:outputPanel layout="block" styleClass="requiredInput">
+                                                                                                            <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                                                                                                <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                                                                                                                    <apex:selectOptions value="{!Product_type_OptionsB2BCASME}" />   
+                                                                                                                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                                                                                                                            </apex:selectList>
+                                                                                                                        <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                                                                                                                            </apex:outputPanel>
+                                                                                                                        </apex:pageBlockSectionItem>
+                                                                                                                        
+                                                                                                                        <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_CA_SME_Field_Set}" var="f">
+                                                                                                                            <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+                                                                                                                                </apex:repeat>
+                                                                                                                            </apex:pageBlockSection>                           
+                                                                                                                            <center>
+                                                                                                                                <div style="margin-left:-25%;">
+                                                                                                                                    <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                                                                                                                                        <!--/td--> &nbsp;&nbsp;&nbsp;
+                                                                                                                                    <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+                                                                                                                                        </div>
+                                                                                                                                    </center>
+                                                                                                                                    </apex:pageBlock>
+                                                                                                                                    
+                                                                                                                                    <script type="text/javascript">
+                                                                                                                                        
+                                                                                                                                        
+                                                                                                                                        $('.searchSelect').select2();
+    
+    </script>
+</apex:outputPanel>
+
+
+<apex:outputPanel id="pageblocke1ent"  rendered="{!team1 == 'B2B Enterprise'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="B2B Enterprise Case detail" collapsible="false">
+            
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_Enterprise}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <!--Product Type-->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                        <apex:selectOptions value="{!Product_type_Options}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_GST_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+
+<apex:outputPanel id="maxitcid"  rendered="{!team1 == 'Max ITC'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Max ITC Case detail" collapsible="false">
+            
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_EnterpriseMaxITC}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <!--Product Type-->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                        <apex:selectOptions value="{!Product_type_OptionsMaxITC}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_GST_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+
+<apex:outputPanel id="pageblocke1env"  rendered="{!team1 == 'E Invoice'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="E Invoice Case detail" collapsible="false">
+            
+            
+            
+            <!--<apex:pageBlockSectionItem >
+<apex:outputLabel value="Issue Type"/>
+<apex:outputPanel layout="block" styleClass="requiredInput">
+<apex:outputpanel layout="block" styleClass="requiredBlock"/>
+<apex:selectList value="{!caseInstance.Lookup_Issue_Type_EInv__c }" required="true" styleClass="searchSelect" >
+<apex:selectOptions value="{!eInvIssueTypes}"/>                       
+</apex:selectList> 
+</apex:outputPanel>
+</apex:pageBlockSectionItem>-->
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_Einvoice}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_E_Invoice_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+            <!--E-invoice field for new requirement -->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="E-invoice Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="EinvoiceProductType"  styleClass="searchSelect"  value="{!E_invoice_product_type_Selected}" label="E-invoice Product Type">
+                        <apex:selectOptions value="{!E_invoice_product_type_Options}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+<!--GCC-->
+<apex:outputPanel id="gccInvoice"  rendered="{!team1 == 'International'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="International Invoice Case detail" collapsible="false">
+            
+            
+            
+            <!-- <apex:pageBlockSectionItem >
+<apex:outputLabel value="Issue Type"/>
+<apex:outputPanel layout="block" styleClass="requiredInput">
+<apex:outputpanel layout="block" styleClass="requiredBlock"/>
+<apex:selectList value="{!caseInstance.Lookup_Issue_Type_EInv__c }" required="true" styleClass="searchSelect" >
+<apex:selectOptions value="{!eInvIssueTypes}"/>                       
+</apex:selectList> 
+</apex:outputPanel>
+</apex:pageBlockSectionItem>-->
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_For_Web_Case_GCC_E_invoice }" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Country"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="countryList" value="{!internationalCountry_Selected}" required="true" styleClass="searchSelect"  label="internationalCountry">
+                        <apex:selectOptions value="{!internationalCountryList}"/>                       
+                    </apex:selectList> 
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_International_Field_Sets}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+            <!--E-invoice field for new requirement -->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="E-invoice Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="EinvoiceProductType"  styleClass="searchSelect"  value="{!E_invoice_product_type_Selected}" label="E-invoice Product Type">
+                        <apex:selectOptions value="{!E_invoice_product_type_Options}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+<apex:outputPanel id="clearIdentity"  rendered="{!team1 == 'Clear Identity'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Clear Identity Case detail" collapsible="false">
+            
+         
+            
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_EnterpriseClearId}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <!--Product Type-->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                        <apex:selectOptions value="{!Product_type_OptionsClearId}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_GST_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+   
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+<apex:outputPanel id="clearCapture"  rendered="{!team1 == 'Clear Capture'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Clear Capture Case detail" collapsible="false">
+            
+         
+            
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_EnterpriseClearCapture}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <!--Product Type-->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                        <apex:selectOptions value="{!Product_type_OptionsClearCapture}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_GST_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+   
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+<apex:outputPanel id="clearInvoice"  rendered="{!team1 == 'Clear Invoice'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Clear Invoice Case detail" collapsible="false">
+            
+         
+            
+            
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2BEnt"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2B_Customer_Segment_EnterpriseClearInvoice}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <!--Product Type-->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Product Type"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="ProductType"  styleClass="searchSelect"  value="{!Product_type_Selected}" label="Product Type">
+                        <apex:selectOptions value="{!Product_type_OptionsClearInvoice}" />   
+                        <!--<apex:actionSupport event="onchange"  onsubmit="pageblocke1ent,pbsIEInvoice,pbsIGstEnterprise" />-->
+                    </apex:selectList>
+                    <!--apex:inputField value="{!caseInstance.Customer_Segment__c}"/-->
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_GST_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}"  required="{!OR(f.required, f.dbrequired)}"/>
+            </apex:repeat>
+   
+            
+        </apex:pageBlockSection>
+        
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    
+    </script>
+</apex:outputPanel>
+
+
+<apex:outputPanel id="pageblock2"  rendered="{!team1 == 'Consumer'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Consumer Case detail" collapsible="false">
+            
+            
+            
+            <!--   <apex:pageBlockSectionItem >
+<apex:outputLabel value="Issue Type"/>
+<apex:outputPanel layout="block" styleClass="requiredInput">
+<apex:outputpanel layout="block" styleClass="requiredBlock"/>
+<apex:selectList value="{!caseInstance.Lookup_Issue_Type1__c}" required="true" styleClass="searchSelect" >
+<apex:selectOptions value="{!b2cIssueTypes}"/>                       
+</apex:selectList> 
+</apex:outputPanel>
+</apex:pageBlockSectionItem>-->
+            
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Segment"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                    <apex:selectList id="B2CCS"  required="true" styleClass="searchSelect"  value="{!caseInstance.Customer_Segment__c}" label="Customer Segment">
+                        <apex:selectOptions value="{!B2C_Customer_Segment}" />                         
+                    </apex:selectList>
+                    
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            
+            
+            
+            
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_Consumer_Field_Set}" var="f">
+                <apex:inputField value="{!caseInstance[f]}" 
+                                 required="{!OR(f.required, f.dbrequired)}"/>
+                
+            </apex:repeat>
+            
+            
+        </apex:pageBlockSection>
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    </script>
+</apex:outputPanel>
+
+<apex:outputPanel id="pageblock3"  rendered="{!team1 == 'Internal Case'}">                 
+    
+    
+    
+    <apex:pageBlock >  
+        
+        <apex:pageBlockSection title="Internal Case detail" collapsible="false">
+            <apex:repeat value="{!$ObjectType.Case.fieldsets.CaseForm_Internal_Field_Set }" var="f">
+                <apex:inputField value="{!caseInstance[f]}" 
+                                 required="{!OR(f.required, f.dbrequired)}"/>
+                
+            </apex:repeat>
+        </apex:pageBlockSection>
+        
+        <center>
+            <div style="margin-left:-25%;">
+                <br/>Upload a File New:<input size="20" type="file" multiple="true" id="myfile" name="myfile" class="btn"/>
+                <!--/td--> &nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!insertCase}" value="Submit" oncomplete="saveAttachment('{!newCaseId}')" styleClass="slds-button slds-button--brand" status="loadStatus"  reRender="saveBlock" />
+            </div>
+        </center>
+    </apex:pageBlock>
+    
+    <script type="text/javascript">
+    
+    
+    $('.searchSelect').select2();
+    
+    </script>
+</apex:outputPanel>
+
+
+</center>        
+</apex:outputPanel>  
+
+
+<apex:actionFunction name="casecreationcomplete" action="{!resetCase}" reRender="form,test"/>
+<apex:actionFunction name="casecreationuncomplete" action="{!error}" reRender="form,test"/>
+
+<div id="load_scrl1" class="loadingBox1 loader" style="display:none"> </div>
+<div class="loadingBox1 overlay"> </div>
+</apex:outputPanel> 
+</apex:form>
+
+
+
+
+
+
+
+<apex:outputPanel id="saveBlock" >
+    <script type="text/javascript">
+    debugger;
+    var fileupload=0;
+    var fileuploadRequire=0;
+    function saveAttachment(val){            
+        fileuploadRequire=0;
+        fileupload=0;
+        
+        if(val != null && val != ''){                    
+            
+            var fileSelect = document.getElementById('myfile');
+            
+            var files = fileSelect.files;
+            
+            fileLenght = files.length;  
+            console.log('***fileLenght '+fileLenght);
+            if(fileLenght <= 0){
+                $('.loadingBox1').hide();
+                casecreationcomplete();
+            }
+            else{
+                $('#load_scrl1').css('top', $(document).scrollTop() + 200);
+                $('.loadingBox1').show();
+                fileuploadRequire=files.length;                         
+                for (var i = 0; i < files.length; i++) {  
+                    var file = files[i]; 
+                    
+                    
+                    uploadFile(i,val,file);
+                    
+                }
+            }
+        }
+        else{
+            $('.loadingBox1').hide();
+            casecreationuncomplete();
+        }
+        
+        
+    }
+    
+    
+    function uploadFile(i,val,file){
+        console.log('***val-->'+val);
+        var xhr = new XMLHttpRequest();
+        // Open the connection.
+        xhr.open('POST', 'https://cleartax.secure.force.com/CaseForm/services/apexrest/FileDownloadService', true); //added by lokesh to change the endpoint url dynamically
+        //set header for more params
+        // like parent Case Id
+        //This is done in this way beacuse of limitation
+        console.log('***val-->'+val);
+        
+        xhr.setRequestHeader('recordId', val);
+        console.log('***val-->'+val);
+        xhr.setRequestHeader('fileName', file.name);
+        
+        //alert({!caseId});
+        // Set up a handler for when the task for the request is complete.
+        xhr.onload = function () {
+            let responseObj = xhr.response;
+            console.log('xhr'+JSON.stringify(responseObj));
+            console.log('xhr'+xhr);
+            console.log('xhrstatus'+xhr.status);                        
+            if (xhr.status === 200) {
+                
+                //statusDiv.innerHTML = 'Your upload is successful..';
+                console.log('****in file upload'+i);
+                fileupload=fileupload+1;
+                
+            } else if(xhr.status !== 0){
+                
+                alert('An error occurred during the upload. Try again.');
+                //statusDiv.innerHTML = 'An error occurred during the upload. Try again.';
+                console.log('****erro');
+            }
+            
+            
+            if(fileupload==fileuploadRequire){
+                console.log('completed');
+                $('.loadingBox1').hide();
+                casecreationcomplete();
+            }
+            
+        };
+        
+        
+        // Send the data.
+        xhr.send(file);
+        
+    }
+    
+    function validateform(){
+        console.log('inside');
+        $("#form").validate();
+        
+    };
+    
+    </script> 
+</apex:outputPanel>
+
+
+
+<script src="https://apis.google.com/js/platform.js" ></script>
+<!--<meta name="google-signin-client_id" content="751199466534-g06q1toa5djsnccbo5pr3u5fahc8itsh.apps.googleusercontent.com"/>-->
+    <meta name="google-signin-client_id" content="110340045555-t1deoecrffvsflkstjldktafbtsighud.apps.googleusercontent.com"/>
+        <!--<meta name="google-signin-client_id" content="994524175313-ab12nhof3a7mnitpiaeqabjr54v3pn6t.apps.googleusercontent.com"/>-->
+            
+            
+            <script>
+            //search
+            //110340045555-t1deoecrffvsflkstjldktafbtsighud.apps.googleusercontent.com - ctx serviceuat
+            // 267090853070-iivdi0c0rnhajbsh90kslfmjsi0qnjmb.apps.googleusercontent.com - wd 
+            //994524175313-9a4r61c5mpfpplm2qpnnihkvhsq8q4ig.apps.googleusercontent.com - serviceuat and servicedev testing
+            // 751199466534-g06q1toa5djsnccbo5pr3u5fahc8itsh.apps.googleusercontent.com - ctx uat
+            
+            
+            function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;       
+            var profile = googleUser.getBasicProfile();       
+            methodOneInJavascript(profile.getEmail(),id_token);
+            
+            
+        }
+        
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.disconnect();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+            var out = '@loggedout.';
+            methodOneInJavascript(out,null);
+        }
+</script>
+
+</apex:page>

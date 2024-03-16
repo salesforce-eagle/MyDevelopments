@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>EINVOICE_ULTIMATE</label>
+    <protected>false</protected>
+    <values>
+        <field>CGST_Percentage__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>IGST_Percentage__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Over_Usage_Formula__c</field>
+        <value xsi:type="xsd:string">( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 5000000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 5000000 ) * 0.25 + 2118750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 2500000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 2500000 ) * 0.35 + 1243750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 1000000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 1000000 ) * 0.4 + 643750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 300000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 300000 ) * 0.5 + 293750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 100000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 100000 ) * 0.75 + 143750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 50000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 50000 ) * 1.25 + 81250 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 25000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 25000 ) * 1.5 + 43750 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 10000 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F - 10000 ) * 1.75 + 17500 : ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) &gt; 0 ? ( $FNo_of_EWBs__c$F + $FNo_of_IRNs__c$F ) * 1.75 : 0</value>
+    </values>
+    <values>
+        <field>Plan_Tier__c</field>
+        <value xsi:type="xsd:string">EINVOICE_ULTIMATE</value>
+    </values>
+    <values>
+        <field>SGST_Percentage__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

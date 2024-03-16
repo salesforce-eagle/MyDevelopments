@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_3_contacts</fullName>
+    <active>false</active>
+    <errorConditionFormula>(
+(
+(ISBLANK( Finance_POC_contact__c ) || ISBLANK( Finance_POC_contact__r.Email ) || ISBLANK( Finance_POC_contact__r.Designation__c )
+|| ISBLANK( Finance_POC_contact__r.Phone )) &amp;&amp; (ISBLANK( Finance_Head_contact__c )|| ISBLANK( Finance_Head_contact__r.Email ) || ISBLANK( Finance_Head_contact__r.Designation__c )
+|| ISBLANK( Finance_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( Tax_Head_contact__c) || ISBLANK( Tax_Head_contact__r.Email ) || ISBLANK( Tax_Head_contact__r.Designation__c )
+|| ISBLANK( Tax_Head_contact__r.Phone ))&amp;&amp; (ISBLANK( IT_Head_contact__c ) || ISBLANK( IT_Head_contact__r.Email ) || ISBLANK( IT_Head_contact__r.Designation__c )
+|| ISBLANK( IT_Head_contact__r.Phone ))
+) ||
+(
+(ISBLANK( Finance_POC_contact__c ) || ISBLANK( Finance_POC_contact__r.Email ) || ISBLANK( Finance_POC_contact__r.Designation__c )
+|| ISBLANK( Finance_POC_contact__r.Phone )) &amp;&amp; (ISBLANK( Finance_Head_contact__c ) || ISBLANK( Finance_Head_contact__r.Email ) || ISBLANK( Finance_Head_contact__r.Designation__c )
+|| ISBLANK( Finance_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( Tax_Head_contact__c)|| ISBLANK( Tax_Head_contact__r.Email ) || ISBLANK( Tax_Head_contact__r.Designation__c )
+|| ISBLANK( Tax_Head_contact__r.Phone )) ) ||
+(
+(ISBLANK( Finance_POC_contact__c )|| ISBLANK( Finance_POC_contact__r.Email ) || ISBLANK( Finance_POC_contact__r.Designation__c )
+|| ISBLANK( Finance_POC_contact__r.Phone )) &amp;&amp; (ISBLANK( Finance_Head_contact__c )|| ISBLANK( Finance_Head_contact__r.Email ) || ISBLANK( Finance_Head_contact__r.Designation__c )
+|| ISBLANK( Finance_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( IT_Head_contact__c)|| ISBLANK( IT_Head_contact__r.Email ) || ISBLANK( IT_Head_contact__r.Designation__c )
+|| ISBLANK( IT_Head_contact__r.Phone ))
+) ||
+(
+(ISBLANK( Tax_Head_contact__c )|| ISBLANK( Tax_Head_contact__r.Email ) || ISBLANK( Tax_Head_contact__r.Designation__c )
+|| ISBLANK( Tax_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( Finance_Head_contact__c ) || ISBLANK( Finance_Head_contact__r.Email ) || ISBLANK( Finance_Head_contact__r.Designation__c )
+|| ISBLANK( Finance_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( IT_Head_contact__c) || ISBLANK( IT_Head_contact__r.Email ) || ISBLANK( IT_Head_contact__r.Designation__c )
+|| ISBLANK( IT_Head_contact__r.Phone ))
+) ||
+(
+(ISBLANK( Tax_Head_contact__c ) || ISBLANK( Tax_Head_contact__r.Email ) || ISBLANK( Tax_Head_contact__r.Designation__c )
+|| ISBLANK( Tax_Head_contact__r.Phone )) &amp;&amp; (ISBLANK( Finance_POC_contact__c ) || ISBLANK( Finance_POC_contact__r.Email ) || ISBLANK( Finance_POC_contact__r.Designation__c )
+|| ISBLANK( Finance_POC_contact__r.Phone )) &amp;&amp; (ISBLANK( IT_Head_contact__c) || ISBLANK( IT_Head_contact__r.Email ) || ISBLANK( IT_Head_contact__r.Designation__c )
+|| ISBLANK( IT_Head_contact__r.Phone ))
+)
+) &amp;&amp;
+ISCHANGED( StageName ) &amp;&amp;
+ISPICKVAL(StageName , &apos;In Finance Approval&apos;)
+&amp;&amp;
+ISPICKVAL( Order_Form_Required__c , &apos;Yes&apos;)</errorConditionFormula>
+    <errorMessage>Please fill all details(Name, Email, Department, Primary Mobile,Designation) of the contacts !</errorMessage>
+</ValidationRule>

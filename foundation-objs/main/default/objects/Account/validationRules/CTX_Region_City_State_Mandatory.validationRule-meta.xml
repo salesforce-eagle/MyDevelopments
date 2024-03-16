@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTX_Region_City_State_Mandatory</fullName>
+    <active>true</active>
+    <description>This validation rule makes Region, State, City fields mandatory while creating Chanel Partner Type Account if the Country of Origin is India.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Channel_Partner&apos;,
+TEXT(Country_of_Origin__c) = &apos;India&apos;,
+OR(
+Region__c = NULL,
+State__c = NULL,
+City__c = NULL
+) 
+)</errorConditionFormula>
+    <errorMessage>Please fill Region, State and City as it is mandatory !</errorMessage>
+</ValidationRule>

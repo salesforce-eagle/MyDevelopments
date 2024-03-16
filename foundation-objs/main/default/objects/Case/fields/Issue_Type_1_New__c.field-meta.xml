@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type_1_New__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue Type - 1 (New)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Products_Available__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+                <label>Licensing</label>
+            </value>
+            <value>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+                <label>Account Management</label>
+            </value>
+            <value>
+                <fullName>Filing</fullName>
+                <default>false</default>
+                <label>Filing</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Recon</fullName>
+                <default>false</default>
+                <label>Recon</label>
+            </value>
+            <value>
+                <fullName>GSTN Interaction</fullName>
+                <default>false</default>
+                <label>GSTN Interaction</label>
+            </value>
+            <value>
+                <fullName>Connectors/Integration</fullName>
+                <default>false</default>
+                <label>Connectors/Integration</label>
+            </value>
+            <value>
+                <fullName>Platform issues</fullName>
+                <default>false</default>
+                <label>Platform issues</label>
+            </value>
+            <value>
+                <fullName>Software downtime</fullName>
+                <default>false</default>
+                <label>Software downtime</label>
+            </value>
+            <value>
+                <fullName>Non Enterprise Inquiries</fullName>
+                <default>false</default>
+                <label>Non Enterprise Inquiries</label>
+            </value>
+            <value>
+                <fullName>Sales / CSM Inquiries</fullName>
+                <default>false</default>
+                <label>Sales / CSM Inquiries</label>
+            </value>
+            <value>
+                <fullName>Integration</fullName>
+                <default>false</default>
+                <label>Integration</label>
+            </value>
+            <value>
+                <fullName>IRN/EWB generation</fullName>
+                <default>false</default>
+                <label>IRN/EWB generation</label>
+            </value>
+            <value>
+                <fullName>Print</fullName>
+                <default>false</default>
+                <label>Print</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Sales enquiry</fullName>
+                <default>false</default>
+                <label>Sales enquiry</label>
+            </value>
+            <value>
+                <fullName>Custom Print template</fullName>
+                <default>false</default>
+                <label>Custom Print template</label>
+            </value>
+            <value>
+                <fullName>IRN/EWB Cancellations</fullName>
+                <default>false</default>
+                <label>IRN/EWB Cancellations</label>
+            </value>
+            <value>
+                <fullName>Device Registration</fullName>
+                <default>false</default>
+                <label>Device Registration</label>
+            </value>
+            <value>
+                <fullName>Dashboard</fullName>
+                <default>false</default>
+                <label>Dashboard</label>
+            </value>
+            <value>
+                <fullName>Document Summary</fullName>
+                <default>false</default>
+                <label>Document Summary</label>
+            </value>
+            <value>
+                <fullName>Filters</fullName>
+                <default>false</default>
+                <label>Filters</label>
+            </value>
+            <value>
+                <fullName>Ingestion</fullName>
+                <default>false</default>
+                <label>Ingestion</label>
+            </value>
+            <value>
+                <fullName>Invoice download</fullName>
+                <default>false</default>
+                <label>Invoice download</label>
+            </value>
+            <value>
+                <fullName>Invoice Export</fullName>
+                <default>false</default>
+                <label>Invoice Export</label>
+            </value>
+            <value>
+                <fullName>Invoice Generation</fullName>
+                <default>false</default>
+                <label>Invoice Generation</label>
+            </value>
+            <value>
+                <fullName>Summary</fullName>
+                <default>false</default>
+                <label>Summary</label>
+            </value>
+            <value>
+                <fullName>Data Ingestion</fullName>
+                <default>false</default>
+                <label>Data Ingestion</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Licensing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Account Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Device Registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Dashboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Document Summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Filters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Ingestion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Invoice download</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Invoice Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Invoice Generation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E Invoice - KSA</controllingFieldValue>
+            <valueName>Summary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Filing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Recon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>GSTN Interaction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Connectors/Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Platform issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Software downtime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Non Enterprise Inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GST 1.0</controllingFieldValue>
+            <controllingFieldValue>MAX ITC</controllingFieldValue>
+            <controllingFieldValue>GST 2.0</controllingFieldValue>
+            <valueName>Sales / CSM Inquiries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>IRN/EWB generation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Print</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Sales enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Custom Print template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>IRN/EWB Cancellations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E-Invoicing &amp; E-Way Bill</controllingFieldValue>
+            <valueName>Data Ingestion</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

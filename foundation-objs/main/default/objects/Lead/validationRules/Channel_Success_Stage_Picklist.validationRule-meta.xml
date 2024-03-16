@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Success_Stage_Picklist</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF((RecordTypeId == &apos;0122x000000t7bD&apos; || RecordTypeId == &apos;0122x000000t7bF&apos;) ,(ISPICKVAL(Channel_Partner_Type__c, &apos;System Integrator&apos;) ||
+ISPICKVAL(Channel_Partner_Type__c, &apos;Strategic Partner&apos;) ||
+ISPICKVAL(Channel_Partner_Type__c, &apos;Distributor/Reseller&apos;)
+)&amp;&amp; 
+ ISBLANK( TEXT( Partner_s_primary_OEM__c)),false)</errorConditionFormula>
+    <errorDisplayField>Partner_s_primary_OEM__c</errorDisplayField>
+    <errorMessage>Select a Value</errorMessage>
+</ValidationRule>
